@@ -1,13 +1,5 @@
 <Type Name="IAsyncResult" FullName="System.IAsyncResult">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="56207376ea45311a89513d489abf736700b1c63f" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48642717" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IAsyncResult" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="af8939f7e8a088eef165eb31b54cab1092f9abee" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52733217" /></Metadata><TypeSignature Language="C#" Value="public interface IAsyncResult" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAsyncResult" />
   <TypeSignature Language="DocId" Value="T:System.IAsyncResult" />
   <TypeSignature Language="VB.NET" Value="Public Interface IAsyncResult" />
@@ -132,12 +124,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Реализация этого свойства позволяет вызывающему объекту асинхронной операции получения определяемый приложением объект, указанный в начале операции.</para>
-        </block>
-        <block subset="none" type="usage">
-          <para>Этот объект может использоваться для передачи сведений о состоянии для асинхронной операции для <see cref="T:System.AsyncCallback" /> вами.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Реализация этого свойства позволяет вызывающему объекту асинхронной операции получения определяемый приложением объект, указанный в начале операции.</para></block>
+        <block subset="none" type="usage"><para>Этот объект может использоваться для передачи сведений о состоянии для асинхронной операции для <see cref="T:System.AsyncCallback" /> вами.</para></block>
         <altmember cref="T:System.AsyncCallback" />
       </Docs>
     </Member>
@@ -201,17 +189,13 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Объект, реализующий <see cref="T:System.IAsyncResult" /> не нужно создавать <see cref="T:System.Threading.WaitHandle" /> пока <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> свойство доступно для чтения. Это выбор <see cref="T:System.IAsyncResult" /> исполнителя. Тем не менее если разработчик создает <see cref="P:System.IAsyncResult.AsyncWaitHandle" />, возлагается на разработчика, чтобы сообщить <see cref="T:System.Threading.WaitHandle" /> , прекращается при обнаружении в соответствующее время ожидания. Например <see cref="T:System.Runtime.Remoting.Messaging.AsyncResult" /> прекращает Ожидание от имени вызывающего объекта, при возврате асинхронно вызываемый метод. После создания <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> должны функционировать, пока пользователь не вызовет метод, который завершает асинхронную операцию. В этот момент объект <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> могут быть удалены.</para>
-        </block>
-        <block subset="none" type="usage">
-          <para>Клиенты, дождитесь завершения (в отличие от опроса) операции использовать это свойство для получения объекта синхронизации для ожидания.  
+        <block subset="none" type="overrides"><para>Объект, реализующий <see cref="T:System.IAsyncResult" /> не нужно создавать <see cref="T:System.Threading.WaitHandle" /> пока <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> свойство доступно для чтения. Это выбор <see cref="T:System.IAsyncResult" /> исполнителя. Тем не менее если разработчик создает <see cref="P:System.IAsyncResult.AsyncWaitHandle" />, возлагается на разработчика, чтобы сообщить <see cref="T:System.Threading.WaitHandle" /> , прекращается при обнаружении в соответствующее время ожидания. Например <see cref="T:System.Runtime.Remoting.Messaging.AsyncResult" /> прекращает Ожидание от имени вызывающего объекта, при возврате асинхронно вызываемый метод. После создания <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> должны функционировать, пока пользователь не вызовет метод, который завершает асинхронную операцию. В этот момент объект <see cref="P:System.IAsyncResult.AsyncWaitHandle" /> могут быть удалены.</para></block>
+        <block subset="none" type="usage"><para>Клиенты, дождитесь завершения (в отличие от опроса) операции использовать это свойство для получения объекта синхронизации для ожидания.  
   
  <block subset="none" type="note"><para>  
  При использовании <see langword="BeginInvoke" /> метод делегата для асинхронного вызова метода и получения дескриптора ожидания из полученных <see cref="T:System.IAsyncResult" />, рекомендуется закрывать дескриптор ожидания, сразу же после завершения работы в его, вызвав <see cref="M:System.Threading.WaitHandle.Close" /> метод. Если вы просто удалить все ссылки на дескриптор ожидания, системные ресурсы будут освобождены при удалении дескриптора ожидания сборщиком мусора, но сборщик мусора работает более эффективно Уничтожаемые объекты явно закрыт или удален. Дополнительные сведения см. в описании свойства <see cref="P:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle" />.  
   
-</para></block></para>
-        </block>
+</para></block></para></block>
       </Docs>
     </Member>
     <Member MemberName="CompletedSynchronously">
@@ -256,12 +240,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Большинство разработчиков <see cref="T:System.IAsyncResult" /> интерфейс не будет использовать это свойство и должен возвращать <see langword="false" />. Начиная с версии [!INCLUDE[net_v45](~/includes/net-v45-md.md)], задачу, которая создается с <see cref="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult},System.Threading.Tasks.TaskCreationOptions)" /> метод не завершается, если это свойство не реализовано правильно. См. в разделе [совместимость приложений в 4.5](~/docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md).</para>
-        </block>
-        <block subset="none" type="usage">
-          <para>Это свойство используется для определения того, если асинхронная операция завершилась синхронно. Например, это свойство может возвращать <see langword="true" /> для асинхронной операции ввода-вывода, если запрос ввода-вывода был небольшим.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Большинство разработчиков <see cref="T:System.IAsyncResult" /> интерфейс не будет использовать это свойство и должен возвращать <see langword="false" />. Начиная с версии [!INCLUDE[net_v45](~/includes/net-v45-md.md)], задачу, которая создается с <see cref="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult},System.Threading.Tasks.TaskCreationOptions)" /> метод не завершается, если это свойство не реализовано правильно. См. в разделе [совместимость приложений в 4.5](~/docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md).</para></block>
+        <block subset="none" type="usage"><para>Это свойство используется для определения того, если асинхронная операция завершилась синхронно. Например, это свойство может возвращать <see langword="true" /> для асинхронной операции ввода-вывода, если запрос ввода-вывода был небольшим.</para></block>
       </Docs>
     </Member>
     <Member MemberName="IsCompleted">
@@ -297,7 +277,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, выполнена ли асинхронная операция.</summary>
-        <value>Значение <see langword="true" />, если операция завершена; в противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если операция выполнена; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -322,12 +302,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Разработчики обычно возвращают значение закрытого поля или внутренней проверки в качестве значения этого свойства.</para>
-        </block>
-        <block subset="none" type="usage">
-          <para>Клиенты, опросить состояние операции (в отличие от ожидания объекта синхронизации) использовать это свойство, чтобы определить состояние операции.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Разработчики обычно возвращают значение закрытого поля или внутренней проверки в качестве значения этого свойства.</para></block>
+        <block subset="none" type="usage"><para>Клиенты, опросить состояние операции (в отличие от ожидания объекта синхронизации) использовать это свойство, чтобы определить состояние операции.</para></block>
       </Docs>
     </Member>
   </Members>

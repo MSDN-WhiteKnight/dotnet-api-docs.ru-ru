@@ -1,13 +1,5 @@
 <Type Name="IVsaPersistSite" FullName="Microsoft.Vsa.IVsaPersistSite">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cb2d318579885d43294b4d36d3c7209a9ea29d0a" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971566" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IVsaPersistSite" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="56d85c7c2b9577b1835e256e8abb32aae266f1c0" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55306671" /></Metadata><TypeSignature Language="C#" Value="public interface IVsaPersistSite" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaPersistSite" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Vsa.IVsaPersistSite" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVsaPersistSite" />
@@ -23,15 +15,15 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
       <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("E0C0FFE3-7eea-4ee2-b7e4-0080c7eb0b74")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Управляет состоянием долговременного хранения проекта и сохраняет и извлекает код и другие элементы с помощью операций сохранения и загрузки, реализуемых ведущим приложением.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -55,9 +47,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">Имя элемента кода для загрузки. При загрузке файла проекта возможна пустая ссылка.</param>
+        <summary>Возвращает исходную строку, ранее сохраненную с помощью метода SaveElement.</summary>
+        <returns>Содержимое элемента исходного кода, связанного с параметром name.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +74,9 @@
         <Parameter Name="source" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="source">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">Имя для сопоставления с заданным исходным элементом. При сохранении файла проекта возможна пустая ссылка.</param>
+        <param name="source">Исходная строка для элемента.</param>
+        <summary>Сохраняет произвольно выбранную исходную строку с заданным параметром name, который впоследствии можно использовать в вызове метода LoadElement для перезагрузки этой строки.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

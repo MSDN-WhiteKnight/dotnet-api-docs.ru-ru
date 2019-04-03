@@ -1,13 +1,5 @@
 <Type Name="XPathNodeIterator" FullName="System.Xml.XPath.XPathNodeIterator">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2be6c707dc9d3a01ee4aae010f1f3e082c29bb35" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48606882" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class XPathNodeIterator : ICloneable, System.Collections.IEnumerable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a1c110907a5dbf8a7f33b8519e7fa97c54ea303d" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56354160" /></Metadata><TypeSignature Language="C#" Value="public abstract class XPathNodeIterator : ICloneable, System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XPathNodeIterator extends System.Object implements class System.Collections.IEnumerable, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathNodeIterator" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XPathNodeIterator&#xA;Implements ICloneable, IEnumerable" />
@@ -45,12 +37,12 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
       <AttributeName>System.Diagnostics.DebuggerDisplay("Position={CurrentPosition}, Current={debuggerDisplayProxy}")</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Предоставляет итератор по выбранному набору узлов.</summary>
+    <summary>Обеспечивает итератор над выбранным набором узлов.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -119,16 +111,14 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При наследовании от <see cref="T:System.Xml.XPath.XPathNodeIterator" /> класса, необходимо переопределить следующие члены: 
+    <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Xml.XPath.XPathNodeIterator" /> класса, необходимо переопределить следующие члены: 
 -   <see cref="M:System.Xml.XPath.XPathNodeIterator.Clone" />  
   
 -   <see cref="P:System.Xml.XPath.XPathNodeIterator.Current" />  
   
 -   <see cref="P:System.Xml.XPath.XPathNodeIterator.CurrentPosition" />  
   
--   <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" /></para>
-    </block>
+-   <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" /></para></block>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -293,8 +283,8 @@
         <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает <see cref="T:System.Xml.XPath.XPathNavigator" /> для этого объекта <see cref="T:System.Xml.XPath.XPathNodeIterator" />, размещенного в контексте текущего узла.</summary>
-        <value>Объект <see cref="T:System.Xml.XPath.XPathNavigator" /> расположен в узле контекста, из которого был выбран набор узлов. Для перемещения <see cref="T:System.Xml.XPath.XPathNodeIterator" /> в первый узел в выбранном наборе необходимо вызвать метод <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" />.</value>
+        <summary>При переопределении в производном классе получает объект <see cref="T:System.Xml.XPath.XPathNavigator" /> для данного <see cref="T:System.Xml.XPath.XPathNodeIterator" />, который размещается в текущем контекстном узле.</summary>
+        <value>Объект <see cref="T:System.Xml.XPath.XPathNavigator" /> размещается в контекстном узле, из которого был выбран набор узлов. Необходимо вызвать метод <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" /> для перемещения <see cref="T:System.Xml.XPath.XPathNodeIterator" /> в первый узел в выбранном наборе.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -500,8 +490,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе перемещает объект <see cref="T:System.Xml.XPath.XPathNavigator" />, возвращенный свойством <see cref="P:System.Xml.XPath.XPathNodeIterator.Current" />, к следующему узлу в выбранном наборе узлов.</summary>
-        <returns>Значение <see langword="true" />, если объект <see cref="T:System.Xml.XPath.XPathNavigator" /> перемещен в следующий узел; значение <see langword="false" />, если выделенных узлов больше нет.</returns>
+        <summary>При переопределении в производном классе объект <see cref="T:System.Xml.XPath.XPathNavigator" />, возвращенный свойством <see cref="P:System.Xml.XPath.XPathNodeIterator.Current" />, перемещается в следующий узел выбранного набора узлов.</summary>
+        <returns><see langword="true" />, если объект <see cref="T:System.Xml.XPath.XPathNavigator" /> перемещен в следующий узел; <see langword="false" />, если отсутствуют другие выбранные узлы.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -616,7 +606,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Xml.XPath.XPathNodeIterator> приведен к типу интерфейса <xref:System.ICloneable>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Xml.XPath.XPathNodeIterator> приведен к типу интерфейса <xref:System.ICloneable>.  
   
  ]]></format>
         </remarks>

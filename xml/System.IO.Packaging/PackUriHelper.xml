@@ -1,13 +1,5 @@
 <Type Name="PackUriHelper" FullName="System.IO.Packaging.PackUriHelper">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="857781a3a438110ddea5e1b2a065fbfb2cefad0e" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49134048" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class PackUriHelper" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ba821d8557e2b61ca7c28282d6cec17c0db9b3a7" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57953168" /></Metadata><TypeSignature Language="C#" Value="public static class PackUriHelper" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed PackUriHelper extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackUriHelper" />
   <TypeSignature Language="VB.NET" Value="Public Class PackUriHelper" />
@@ -18,6 +10,7 @@
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.2.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
+    <AssemblyVersion>4.0.4.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>WindowsBase</AssemblyName>
@@ -53,8 +46,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="firstPackUri" Type="System.Uri" />
-        <Parameter Name="secondPackUri" Type="System.Uri" />
+        <Parameter Name="firstPackUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="secondPackUri" Type="System.Uri" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="firstPackUri">Первый URI типа pack.</param>
@@ -82,10 +75,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="firstPackUri" /> или <paramref name="secondPackUri" /> не является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
+        <exception cref="T:System.ArgumentException"><paramref name="firstPackUri" /> или <paramref name="secondPackUri" /> не является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
   
-- или - 
+-или- 
 <paramref name="firstPackUri" /> или <paramref name="secondPackUri" /> не начинается со схемы "pack://".</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.ComparePartUri(System.Uri,System.Uri)" />
       </Docs>
@@ -103,6 +95,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -152,7 +145,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Создает новый URI типа pack.</summary>
+        <summary> Создает новый URI типа pack.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -161,24 +154,24 @@
   
 |`packageUri`|`partUri`|`fragment`|Возвращенный URI ТИПА pack.|  
 |------------------|---------------|----------------|-----------------------|  
-|http://www.proseware.com/mypackage.pkg|/Page1.XAML|#intro|pack://http:,, www.proseware.com, mypackage.pkg/page1.xaml#intro|  
-|http://www.proseware.com/mypackage.pkg|/Page2.XAML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
-|http://www.proseware.com/mypackage.pkg|/a/page4.XAML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
-|http://www.proseware.com/mypackage.pkg|/%41/%61.XML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
-|http://www.proseware.com/mypackage.pkg|/%25XY.XML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
-|http://www.proseware.com/mypackage.pkg|/a/page5.XAML|#summary|pack://http:,, www.proseware.com, mypackage.pkg/a/page5.xaml#summary|  
-|http://www.proseware.com/packages.aspx?pkg04|/Page1.XAML|#intro|pack://http:,, www.proseware.com, packages.aspx%3fpkg04/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page1.xaml|#intro|pack://http:,, www.proseware.com, mypackage.pkg/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|/a/page5.xaml|#summary|pack://http:,, www.proseware.com, mypackage.pkg/a/page5.xaml#summary|  
+|http://www.proseware.com/packages.aspx?pkg04|/page1.xaml|#intro|pack://http:,, www.proseware.com, packages.aspx%3fpkg04/page1.xaml#intro|  
 |http://www.proseware.com/mypackage.pkg|**null**|**null**|pack://http:,, www.proseware.com, mypackage.pkg|  
-|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/myDoc.XAML|**null**|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
-|file:///d:/Packages/mypackage2.pkg|/a/Bar.XAML|#xref|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|**null**|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|#xref|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
   
  Создание URI типа pack — это многоэтапный процесс.  Например, один шаг при создании URI типа pack является для замены символов косой черты (/) из `packageUri` запятыми (,).  
   
- Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
  ]]></format>
         </remarks>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="Create">
@@ -206,7 +199,7 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="packageUri" Type="System.Uri" />
+        <Parameter Name="packageUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="packageUri">URI связанного <see cref="T:System.IO.Packaging.Package" />.</param>
@@ -223,12 +216,12 @@
 |`packageUri`|Возвращенный URI ТИПА pack.|  
 |------------------|-----------------------|  
 |http://www.proseware.com/mypackage.pkg|pack://http:,, www.proseware.com, mypackage.pkg|  
-|ftp://ftp.proseware.com/packages/mypackage1.abc|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc|  
-|file:///d:/Packages/mypackage2.pkg|pack://file:,, d:,packages,mypackage2.pkg|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|pack://ftp:,,ftp.proseware.com,packages,mypackage1.abc|  
+|file:///d:/packages/mypackage2.pkg|pack://file:,, d:,packages,mypackage2.pkg|  
   
  Создание URI типа pack — это многоэтапный процесс.  Например, один шаг при создании URI типа pack является для замены символов косой черты (/) из `packageUri` запятыми (,).  
   
- Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
    
   
@@ -240,10 +233,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="packageUri" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="packageUri" /> не является абсолютным URI.</exception>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <exception cref="T:System.ArgumentNullException"><paramref name="packageUri" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="packageUri" /> не является абсолютным URI.</exception>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -271,8 +263,8 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="packageUri" Type="System.Uri" />
-        <Parameter Name="partUri" Type="System.Uri" />
+        <Parameter Name="packageUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="partUri" Type="System.Uri" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="packageUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] выражения <see cref="T:System.IO.Packaging.Package" />.</param>
@@ -291,17 +283,17 @@
   
 |`packageUri`|`partUri`|Возвращенный URI ТИПА pack.|  
 |------------------|---------------|-----------------------|  
-|http://www.proseware.com/mypackage.pkg|/Page2.XAML|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
-|http://www.proseware.com/mypackage.pkg|/a/page4.XAML|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
-|http://www.proseware.com/mypackage.pkg|/%41/%61.XML|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
-|http://www.proseware.com/mypackage.pkg|/%25XY.XML|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
 |http://www.proseware.com/mypackage.pkg|**null**|pack://http:,, www.proseware.com, mypackage.pkg|  
-|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/myDoc.XAML|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
-|file:///d:/Packages/mypackage2.pkg|/a/Bar.XAML|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|  
   
  Создание URI типа pack — это многоэтапный процесс.  Например, один шаг при создании URI типа pack является для замены символов косой черты (/) из `packageUri` запятыми (,).  
   
- Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
    
   
@@ -313,13 +305,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="packageUri" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="packageUri" /> не является абсолютным URI.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="packageUri" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="packageUri" /> не является абсолютным URI.  
   
-- или - 
+-или- 
  <paramref name="partUri" /> не является допустимым синтаксисом URI части.</exception>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -342,9 +333,9 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="packageUri" Type="System.Uri" />
-        <Parameter Name="partUri" Type="System.Uri" />
-        <Parameter Name="fragment" Type="System.String" />
+        <Parameter Name="packageUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="partUri" Type="System.Uri" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="fragment" Type="System.String" Index="2" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="packageUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] выражения <see cref="T:System.IO.Packaging.Package" />.</param>
@@ -366,20 +357,20 @@
   
 |`packageUri`|`partUri`|`fragment`|Возвращенный URI ТИПА pack.|  
 |------------------|---------------|----------------|-----------------------|  
-|http://www.proseware.com/mypackage.pkg|/Page1.XAML|#intro|pack://http:,, www.proseware.com, mypackage.pkg/page1.xaml#intro|  
-|http://www.proseware.com/mypackage.pkg|/Page2.XAML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
-|http://www.proseware.com/mypackage.pkg|/a/page4.XAML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
-|http://www.proseware.com/mypackage.pkg|/%41/%61.XML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
-|http://www.proseware.com/mypackage.pkg|/%25XY.XML|**null**|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
-|http://www.proseware.com/mypackage.pkg|/a/page5.XAML|#summary|pack://http:,, www.proseware.com, mypackage.pkg/a/page5.xaml#summary|  
-|http://www.proseware.com/packages.aspx?pkg04|/Page1.XAML|#intro|pack://http:,, www.proseware.com, packages.aspx%3fpkg04/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page1.xaml|#intro|pack://http:,, www.proseware.com, mypackage.pkg/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|**null**|pack://http:,, www.proseware.com, mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|/a/page5.xaml|#summary|pack://http:,, www.proseware.com, mypackage.pkg/a/page5.xaml#summary|  
+|http://www.proseware.com/packages.aspx?pkg04|/page1.xaml|#intro|pack://http:,, www.proseware.com, packages.aspx%3fpkg04/page1.xaml#intro|  
 |http://www.proseware.com/mypackage.pkg|**null**|**null**|pack://http:,, www.proseware.com, mypackage.pkg|  
-|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/myDoc.XAML|**null**|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
-|file:///d:/Packages/mypackage2.pkg|/a/Bar.XAML|#xref|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|**null**|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|#xref|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
   
  Создание URI типа pack — это многоэтапный процесс.  Например, один шаг при создании URI типа pack является для замены символов косой черты (/) из `packageUri` запятыми (,).  
   
- Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Дополнительные сведения о преобразовании строк и каким образом формируются URI типа pack см. в разделе приложение A.4 «Примеры преобразования строк» и приложении б.3 «Составление пакет URI» в спецификации Open Packaging Conventions, можно загрузить по адресу [спецификации и лицензирование загрузки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
    
   
@@ -391,16 +382,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="packageUri" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="packageUri" /> не является абсолютным URI.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="packageUri" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="packageUri" /> не является абсолютным URI.  
   
-- или - 
+-или- 
  <paramref name="partUri" /> не является допустимым синтаксисом URI части.  
   
-- или - 
+-или- 
  <paramref name="fragment" /> является пустым или начинается с символа "#".</exception>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="CreatePartUri">
@@ -416,6 +406,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -438,7 +429,7 @@
 ## Remarks  
  [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] Из <xref:System.IO.Packaging.PackagePart> всегда есть ссылка из <xref:System.IO.Packaging.Package> корневой.  
   
- Возвращенный <xref:System.IO.Packaging.PackagePart> URI является абсолютным, который всегда начинается с «/» и соответствующий синтаксис, определяемый в [открытых спецификаций соглашения упаковки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Возвращенный <xref:System.IO.Packaging.PackagePart> URI является абсолютным, который всегда начинается с «/» и соответствующий синтаксис, определяемый в [открытых спецификаций соглашения упаковки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
  В следующей таблице показаны образцы вариантов для <xref:System.IO.Packaging.PackUriHelper.CreatePartUri%2A>.  
   
@@ -446,8 +437,8 @@
 |---------------|-----------------------|  
 |picture1.jpg|/picture1.jpg|  
 |/picture2.jpg|/picture2.jpg|  
-|a/myDoc.XAML|/a/myDoc.XAML|  
-|/b/Bar.XAML|/b/Bar.XAML|  
+|a/myDoc.XAML|/a/mydoc.xaml|  
+|/b/bar.xaml|/b/bar.xaml|  
   
    
   
@@ -461,8 +452,8 @@
         </remarks>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.ResolvePartUri(System.Uri,System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=160055">Пример записи пакета</related>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=160055">Пример записи пакета</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="GetNormalizedPartUri">
@@ -478,6 +469,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -502,13 +494,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="partUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="partUri" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.String.Normalize" />
         <altmember cref="T:System.Text.NormalizationForm" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.ComparePartUri(System.Uri,System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPackageUri(System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="GetPackageUri">
@@ -531,7 +523,7 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="packUri" Type="System.Uri" />
+        <Parameter Name="packUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="packUri">URI типа pack, из которого следует получить код URI пакета <see cref="T:System.IO.Packaging.Package" />.</param>
@@ -548,14 +540,14 @@
 |pack://http:,, www.proseware.com, mypackage.xyz/a/mydoc.xaml|http://www.proseware.com/mypackage.xyz|  
 |pack://http:,, www.proseware.com, packages.aspx%3fmypackage/a/bar.xaml|http://www.proseware.com/packages.aspx?mypackage|  
 |pack://http:,, www.proseware.com, mypackage.pkg|http://www.proseware.com/mypackage.pkg|  
-|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|ftp://ftp.proseware.com/packages/mypackage1.abc|  
-|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|file:///d:/Packages/mypackage2.pkg|  
+|pack://ftp:,,ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|ftp://ftp.proseware.com/packages/mypackage1.abc|  
+|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|file:///d:/packages/mypackage2.pkg|  
   
  ]]></format>
         </remarks>
         <altmember cref="Overload:System.IO.Packaging.PackUriHelper.Create" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="GetPartUri">
@@ -578,7 +570,7 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="packUri" Type="System.Uri" />
+        <Parameter Name="packUri" Type="System.Uri" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="packUri">URI типа pack, из которого следует получить URI <see cref="T:System.IO.Packaging.PackagePart" />.</param>
@@ -588,24 +580,24 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Возвращенный <xref:System.IO.Packaging.PackagePart> URI задается относительно корневого каталога пакета и является абсолютным, всегда начинается с «/» и соответствующий синтаксис, определяемый в [открытых спецификаций соглашения упаковки](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Возвращенный <xref:System.IO.Packaging.PackagePart> URI задается относительно корневого каталога пакета и является абсолютным, всегда начинается с «/» и соответствующий синтаксис, определяемый в [открытых спецификаций соглашения упаковки](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
  В следующей таблице показаны образцы вариантов для <xref:System.IO.Packaging.PackUriHelper.GetPartUri%2A>.  
   
 |`packUri`|Возвращенный URI части.|  
 |---------------|-----------------------|  
-|pack://http:,, www.proseware.com, mypackage.xyz/a/mydoc.xaml|/a/myDoc.XAML|  
-|pack://http:,, www.proseware.com, packages.aspx%3fmypackage/a/bar.xaml|/a/Bar.XAML|  
+|pack://http:,, www.proseware.com, mypackage.xyz/a/mydoc.xaml|/a/mydoc.xaml|  
+|pack://http:,, www.proseware.com, packages.aspx%3fmypackage/a/bar.xaml|/a/bar.xaml|  
 |pack://http:,, www.proseware.com, mypackage.pkg|null|  
-|pack://FTP:,, ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|/a/Picture.jpg|  
-|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|/a/Bar.XAML|  
+|pack://ftp:,,ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|/a/picture.jpg|  
+|pack://file:,, d:,packages,mypackage2.pkg/a/bar.xaml|/a/bar.xaml|  
   
  ]]></format>
         </remarks>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.CreatePartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetNormalizedPartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPackageUri(System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="GetRelationshipPartUri">
@@ -621,6 +613,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -634,8 +627,7 @@
         <Parameter Name="partUri" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="partUri">
-          <see cref="P:System.IO.Packaging.PackagePart.Uri" /> объекта <see cref="T:System.IO.Packaging.PackagePart" /> для возврата URI связанного с ним объекта <see cref="T:System.IO.Packaging.PackageRelationship" />.</param>
+        <param name="partUri"><see cref="P:System.IO.Packaging.PackagePart.Uri" /> объекта <see cref="T:System.IO.Packaging.PackagePart" /> для возврата URI связанного с ним объекта <see cref="T:System.IO.Packaging.PackageRelationship" />.</param>
         <summary>Возвращает [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] части связи, связанной с заданным объектом <see cref="T:System.IO.Packaging.PackagePart" />.</summary>
         <returns>URI части <see cref="T:System.IO.Packaging.PackageRelationship" />, связанной с объектом <see cref="T:System.IO.Packaging.PackagePart" />, идентифицируемым <paramref name="partUri" />.</returns>
         <remarks>
@@ -644,24 +636,24 @@
 ## Remarks  
  `partUri` необходимо указать либо <xref:System.IO.Packaging.Package> («/») или <xref:System.IO.Packaging.PackagePart> , не <xref:System.IO.Packaging.PackageRelationship> часть.  
   
- Дополнительные сведения о <xref:System.IO.Packaging.PackageRelationship> частей, см. в разделе 9.3 раздел «Связей» в открытых спецификаций соглашения упаковки, можно загрузить по адресу [формировании](http://go.microsoft.com/fwlink/?LinkID=71255).  
+ Дополнительные сведения о <xref:System.IO.Packaging.PackageRelationship> частей, см. в разделе 9.3 раздел «Связей» в открытых спецификаций соглашения упаковки, можно загрузить по адресу [формировании](https://go.microsoft.com/fwlink/?LinkID=71255).  
   
    
   
 ## Examples  
  [URI типа "pack" в WPF](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
   
- [Спецификации Open Packaging соглашения](http://go.microsoft.com/fwlink/?LinkID=71255)  
+ [Спецификации Open Packaging соглашения](https://go.microsoft.com/fwlink/?LinkID=71255)  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="partUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="partUri" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Синтаксис <paramref name="partUri" /> не является допустимым синтаксисом URI части пакета.  
   
-- или - 
+-или- 
  <paramref name="partUri" /> является абсолютным URI.  
   
-- или - 
+-или- 
  <paramref name="partUri" /> указывает на часть связи.</exception>
       </Docs>
     </Member>
@@ -678,6 +670,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -704,15 +697,15 @@
   
 |`sourcePartUri`|`targetPartUri`|Возвращаемый относительный URI|  
 |---------------------|---------------------|---------------------------|  
-|/myDoc/Markup/Page.XML|/myDoc/Markup/Picture.jpg|Picture.jpg|  
-|/myDoc/Markup/Page.XML|/myDoc/Picture.jpg|.. /Picture.jpg|  
-|/myDoc/Markup/Page.XML|/myDoc/Images/Picture.jpg|.. /Images/Picture.jpg|  
+|/myDoc/Markup/Page.XML|/mydoc/markup/picture.jpg|picture.jpg|  
+|/myDoc/Markup/Page.XML|/mydoc/picture.jpg|../picture.jpg|  
+|/myDoc/Markup/Page.XML|/mydoc/images/picture.jpg|../images/picture.jpg|  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourcePartUri" /> или <paramref name="targetPartUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourcePartUri" /> или <paramref name="targetPartUri" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.ResolvePartUri(System.Uri,System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="GetSourcePartUriFromRelationshipPartUri">
@@ -728,6 +721,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -743,8 +737,7 @@
       <Docs>
         <param name="relationshipPartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] части связи, из которой следует вернуть <see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" />.</param>
         <summary>Возвращает <see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" /> из <see cref="T:System.IO.Packaging.PackageRelationship" /> с заданным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].</summary>
-        <returns>
-          <see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" /> объекта <see cref="T:System.IO.Packaging.PackagePart" /> из связи с заданным <paramref name="relationshipPartUri" />.</returns>
+        <returns><see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" /> объекта <see cref="T:System.IO.Packaging.PackagePart" /> из связи с заданным <paramref name="relationshipPartUri" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -755,20 +748,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="relationshipPartUri" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="relationshipPartUri" /> является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
+        <exception cref="T:System.ArgumentNullException"><paramref name="relationshipPartUri" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="relationshipPartUri" /> является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
   
-- или - 
+-или- 
  Синтаксис <paramref name="relationshipPartUri" /> не является допустимым для <see cref="T:System.IO.Packaging.PackagePart" />.  
   
-- или - 
+-или- 
  <paramref name="relationshipPartUri" /> не указывает на часть связи.  
   
-- или - 
+-или- 
 <see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" /> части связи указывает на другую часть связи (недопустимо).</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetRelationshipPartUri(System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="IsRelationshipPartUri">
@@ -784,6 +776,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -799,18 +792,16 @@
       <Docs>
         <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)], проверяемый для части <see cref="T:System.IO.Packaging.PackageRelationship" />.</param>
         <summary>Возвращает значение, указывающее, является ли заданный [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] идентификатором [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] части <see cref="T:System.IO.Packaging.PackageRelationship" />.</summary>
-        <returns>
-          <see langword="true" />, если <paramref name="partUri" /> идентифицирует часть <see cref="T:System.IO.Packaging.PackageRelationship" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <paramref name="partUri" /> идентифицирует часть <see cref="T:System.IO.Packaging.PackageRelationship" />; в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="partUri" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="partUri" /> является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
+        <exception cref="T:System.ArgumentNullException"><paramref name="partUri" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="partUri" /> является абсолютным [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
   
-- или - 
+-или- 
  Синтаксис <paramref name="partUri" /> не является допустимым синтаксисом <see cref="T:System.IO.Packaging.PackagePart" />.</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetRelativeUri(System.Uri,System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="ResolvePartUri">
@@ -826,6 +817,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -852,31 +844,31 @@
   
 |`sourcePartUri`|`targetUri`|Полученный URI|  
 |---------------------|-----------------|------------------|  
-|/myDoc/Markup/Page.XML|Picture.jpg|/myDoc/Markup/Picture.jpg|  
-|/myDoc/Markup/Page.XML|Images/Picture.jpg|/myDoc/Markup/Images/Picture.jpg|  
-|/myDoc/Markup/Page.XML|./Picture.jpg|/myDoc/Markup/Picture.jpg|  
-|/myDoc/Markup/Page.XML|.. /Picture.jpg|/myDoc/Picture.jpg|  
-|/myDoc/Markup/Page.XML|.. /Images/Picture.jpg|/myDoc/Images/Picture.jpg|  
-|/|Images/Picture.jpg|/Images/Picture.jpg|  
+|/myDoc/Markup/Page.XML|picture.jpg|/mydoc/markup/picture.jpg|  
+|/myDoc/Markup/Page.XML|images/picture.jpg|/mydoc/markup/images/picture.jpg|  
+|/myDoc/Markup/Page.XML|./picture.jpg|/mydoc/markup/picture.jpg|  
+|/myDoc/Markup/Page.XML|../picture.jpg|/mydoc/picture.jpg|  
+|/myDoc/Markup/Page.XML|../images/picture.jpg|/mydoc/images/picture.jpg|  
+|/|images/picture.jpg|/images/picture.jpg|  
   
    
   
 ## Examples  
- В следующем примере показано, как использовать метод <xref:System.IO.Packaging.PackUriHelper.ResolvePartUri%2A>.  Полный пример см. в разделе [пример чтения пакета](http://go.microsoft.com/fwlink/?LinkID=160034).  
+ В следующем примере показано, как использовать метод <xref:System.IO.Packaging.PackUriHelper.ResolvePartUri%2A>.  Полный пример см. в разделе [пример чтения пакета](https://go.microsoft.com/fwlink/?LinkID=160034).  
   
  [!code-csharp[PackageRead#PackageReadUsing](~/samples/snippets/csharp/VS_Snippets_Wpf/PackageRead/CSharp/PackageRead.cs#packagereadusing)]
  [!code-vb[PackageRead#PackageReadUsing](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PackageRead/visualbasic/packageread.vb#packagereadusing)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourcePartUri" /> или <paramref name="targetUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourcePartUri" /> или <paramref name="targetUri" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="sourcePartUri" /> не содержит допустимый URI части.  
   
-- или - 
+-или- 
  Параметр <paramref name="targetUri" /> не содержит допустимый относительный URI.</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
         <altmember cref="M:System.IO.Packaging.PackUriHelper.GetRelativeUri(System.Uri,System.Uri)" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Спецификации Open Packaging соглашения</related>
       </Docs>
     </Member>
     <Member MemberName="UriSchemePack">
@@ -892,6 +884,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>

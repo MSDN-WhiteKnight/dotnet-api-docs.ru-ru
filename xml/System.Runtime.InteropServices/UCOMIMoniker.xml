@@ -1,13 +1,5 @@
 <Type Name="UCOMIMoniker" FullName="System.Runtime.InteropServices.UCOMIMoniker">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c68eb71bcf48be2d2266d457a9fecc2fda412779" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48661306" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface UCOMIMoniker" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d3cfa457eac623a12b58b4bbf832bc91da8ad9f2" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52238536" /></Metadata><TypeSignature Language="C#" Value="public interface UCOMIMoniker" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract UCOMIMoniker" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.UCOMIMoniker" />
   <TypeSignature Language="VB.NET" Value="Public Interface UCOMIMoniker" />
@@ -78,7 +70,7 @@
         <param name="pbc">Ссылка на интерфейс <see langword="IBindCtx" /> объекта контекстной привязки, используемого в данной операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер слева от данного моникера, если моникер является частью составного моникера.</param>
         <param name="riidResult">Идентификатор интерфейса (IID), выбранного клиентом для установки соединения с объектом, который определен моникером.</param>
-        <param name="ppvResult">При успешном возвращении — ссылка на интерфейс, запрошенный <c>riidResult</c>.</param>
+        <param name="ppvResult">При успешном возвращении — ссылка на интерфейс, запрошенный <paramref name="riidResult" />.</param>
         <summary>Использует моникер для привязки к определяемому объекту.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -118,7 +110,7 @@
         <param name="pbc">Ссылка на интерфейс <see langword="IBindCtx" /> объекта контекстной привязки, используемого в процессе операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер слева от данного моникера, если моникер является частью составного моникера.</param>
         <param name="riid">Идентификатор IID запрошенного интерфейса хранилища.</param>
-        <param name="ppvObj">При успешном возвращении — ссылка на интерфейс, запрошенный <c>riid</c>.</param>
+        <param name="ppvObj">При успешном возвращении — ссылка на интерфейс, запрошенный <paramref name="riid" />.</param>
         <summary>Возвращает указатель интерфейса на хранилище, в котором содержится объект, определенный моникером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -154,7 +146,7 @@
       </Parameters>
       <Docs>
         <param name="pmkOther">Ссылка на интерфейс <see langword="IMoniker" /> другого моникера, сравниваемого сравнить с данным для выявления общего префикса.</param>
-        <param name="ppmkPrefix">При успешном возвращении содержит моникер, являющийся общим префиксом данного моникера и моникера <c>pmkOther</c>.</param>
+        <param name="ppmkPrefix">При успешном возвращении содержит моникер, являющийся общим префиксом данного моникера и моникера <paramref name="pmkOther" />.</param>
         <summary>Создает новый моникер на основании общего префикса, который данный моникер использует совместно с другим моникером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -191,7 +183,7 @@
       </Parameters>
       <Docs>
         <param name="pmkRight">Ссылка на интерфейс <see langword="IMoniker" /> моникера, для добавления в конец данного моникера.</param>
-        <param name="fOnlyIfNotGeneric">Если значение равно <see langword="true" />, вызывающему объекту требуется нестандартное объединение. Таким образом, операция продолжается, только если <c>pmkRight</c> является классом моникера, с которым данный моникер может быть объединен каким-либо способом, кроме образования универсального объединения. Если значение равно <see langword="false" />, при необходимости метод может создать универсальное объединение.</param>
+        <param name="fOnlyIfNotGeneric">Если значение равно <see langword="true" />, вызывающему объекту требуется нестандартное объединение. Таким образом, операция продолжается, только если <paramref name="pmkRight" /> является классом моникера, с которым данный моникер может быть объединен каким-либо способом, кроме образования универсального объединения. Если значение равно <see langword="false" />, при необходимости метод может создать универсальное объединение.</param>
         <param name="ppmkComposite">При успешном возвращении — ссылка на итоговый составной моникер.</param>
         <summary>Объединяет текущий моникер с другим, создавая составной моникер.</summary>
         <remarks>
@@ -653,8 +645,8 @@
         <param name="pbc">Ссылка на контекст привязки, используемый при выполнении данной операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер, созданный из отображаемого имени до данной точки.</param>
         <param name="pszDisplayName">Ссылка на строку, содержащую оставшуюся часть анализируемого отображаемого имени.</param>
-        <param name="pchEaten">При удачном возвращении содержит число символов в <c>pszDisplayName</c>, использованных на этом шаге.</param>
-        <param name="ppmkOut">Ссылка на моникер, созданный из <c>pszDisplayName</c>.</param>
+        <param name="pchEaten">При удачном возвращении содержит число знаков в <paramref name="pszDisplayName" />, использованных на этом шаге.</param>
+        <param name="ppmkOut">Ссылка на моникер, созданный из <paramref name="pszDisplayName" />.</param>
         <summary>Считывает столько знаков указанного отображаемого имени, сколько может воспринять, и создает моникер, соответствующий считанной части.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

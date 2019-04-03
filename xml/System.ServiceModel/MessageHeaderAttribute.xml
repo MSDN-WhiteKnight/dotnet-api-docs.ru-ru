@@ -1,13 +1,5 @@
 <Type Name="MessageHeaderAttribute" FullName="System.ServiceModel.MessageHeaderAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d0e812b1978170a2455061fb66a6e77f7c590709" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49153251" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class MessageHeaderAttribute : System.ServiceModel.MessageContractMemberAttribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f96795951846e4d5cee3d3f0e6b1caa91f21b71c" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56788694" /></Metadata><TypeSignature Language="C#" Value="public class MessageHeaderAttribute : System.ServiceModel.MessageContractMemberAttribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageHeaderAttribute extends System.ServiceModel.MessageContractMemberAttribute" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageHeaderAttribute" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageHeaderAttribute&#xA;Inherits MessageContractMemberAttribute" />
@@ -24,22 +16,20 @@
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.1</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ServiceModel.MessageContractMemberAttribute</BaseTypeName>
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="xamarinmac-3.0">
-      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Property, Inherited=false)</AttributeName>
-    </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;dotnet-plat-ext-2.1">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false, Inherited=false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false, Inherited=false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, Inherited=false)</AttributeName>
     </Attribute>
   </Attributes>
@@ -65,23 +55,23 @@
   
  Атрибут `Actor` или `Role` задает универсальный код ресурса (URI) узла, для которого предназначен данный заголовок. Атрибут `MustUnderstand` указывает, должен ли заголовок поддерживать обработку узла. Атрибут `Relay` указывает, надо ли передавать заголовок на нижележащие узлы. Windows Communication Foundation (WCF) не выполняет обработку этих атрибутов во входящих сообщениях, за исключением `MustUnderstand` атрибута.  
   
- Однако эти атрибуты можно считать и записать, даже если они не отправлены по умолчанию. Задать значения для атрибута можно двумя способами. Первый способ заключается в изменении свойств <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A>, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A> и <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A> атрибута <xref:System.ServiceModel.MessageHeaderAttribute>. (Свойство `Role` отсутствует; присвойте значение свойству <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A>, и `Role` передается, если используется SOAP 1.2.) Пример:  
+ Однако эти атрибуты можно считать и записать, даже если они не отправлены по умолчанию. Задать значения для атрибута можно двумя способами. Первый способ заключается в изменении свойств <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A>, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A> и <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A> атрибута <xref:System.ServiceModel.MessageHeaderAttribute>. (Имеется не `Role` свойство - значение <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> свойство и `Role` передается, если используется SOAP 1.2). Например:  
   
   
   
- Второй способ управления этими атрибутами заключается в изменении требуемого типа заголовка на параметр типа класса <xref:System.ServiceModel.MessageHeader%601> и использовании полученного типа вместе с атрибутом <xref:System.ServiceModel.MessageHeaderAttribute>. Затем используйте свойства <xref:System.ServiceModel.MessageHeader%601> программными средствами, чтобы задать атрибуты SOAP. Пример:  
-  
-  
-  
-  
-  
- Если используются и динамический, и статический механизмы управления, статические параметры используются по умолчанию, однако могут позднее быть переопределены с помощью динамического механизма. Пример:  
+ Второй способ управления этими атрибутами заключается в изменении требуемого типа заголовка на параметр типа класса <xref:System.ServiceModel.MessageHeader%601> и использовании полученного типа вместе с атрибутом <xref:System.ServiceModel.MessageHeaderAttribute>. Затем используйте свойства <xref:System.ServiceModel.MessageHeader%601> программными средствами, чтобы задать атрибуты SOAP. Например:  
   
   
   
   
   
- Допускается создание повторяющихся заголовков с динамическим управлением атрибутами. Пример:  
+ Если используются и динамический, и статический механизмы управления, статические параметры используются по умолчанию, однако могут позднее быть переопределены с помощью динамического механизма. Например:  
+  
+  
+  
+  
+  
+ Допускается создание повторяющихся заголовков с динамическим управлением атрибутами. Например:  
   
 ```  
 [MessageHeaderArray] public MessageHeader<Person> documentApprovers[];  
@@ -121,6 +111,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -193,6 +184,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">

@@ -1,13 +1,5 @@
 <Type Name="SqlPersonalizationProvider" FullName="System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d1121a93199a09b0bafb83a9b2ab05f347a2fc9a" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46622354" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SqlPersonalizationProvider : System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0506fbb3b230e6b07ecfafe6d66d9301201b3e25" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53393944" /></Metadata><TypeSignature Language="C#" Value="public class SqlPersonalizationProvider : System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlPersonalizationProvider extends System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class SqlPersonalizationProvider&#xA;Inherits PersonalizationProvider" />
@@ -32,19 +24,19 @@
   
  Структуры данных для персонализации веб-частей с SQL Server зависит от существования двух распространенных таблиц базы данных SQL, и поддерживающие их хранимые процедуры, которые являются общими для большинства реализаций функций на основе SQL. Эти таблицы и представления можно установить и удалить с помощью следующих скриптов:  
   
--   installpagepersonalization.SQL — устанавливает персонализации таблиц, представлений и связанных хранимых процедур.  
+-   installpagepersonalization.SQL - устанавливает персонализации таблиц, представлений и связанных хранимых процедур.  
   
--   uninstallpagepersonalization.SQL — удаляет персонализации таблиц, представлений и связанных хранимых процедур.  
+-   uninstallpagepersonalization.SQL - удаляет персонализации таблиц, представлений и связанных хранимых процедур.  
   
  Это важно помнить, что персонализации завершится ошибкой, если веб-приложение не выполняется у доверия по умолчанию уровень <xref:System.Web.AspNetHostingPermissionLevel.Medium> или более поздней версии (можно задать пользовательский уровень доверия в файле Web.config с помощью `<trust level="" />` элемент). <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration> И <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> оба класса Проверьте уровень доверия <xref:System.Web.AspNetHostingPermissionLevel.Low> при инициализации. При настройке приложения для запуска в отношение доверия с уровнем <xref:System.Web.AspNetHostingPermissionLevel.Low>, и по умолчанию <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> поставщика для управления данными персонализации для вашего приложения, при первом приложение пытается получить доступ к данным персонализации, он будет сбой, так как рабочий процесс ASP.NET, работающих в <xref:System.Web.AspNetHostingPermissionLevel.Low> доверия не имеет разрешения, необходимые для вызова различных классов в <xref:System.Data.SqlClient> пространства имен.  
   
  ]]></format>
     </remarks>
     <altmember cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
-    <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320">Общие сведения о персонализации частях Web</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/a88d2bd5-4932-4ec1-b176-7d7da45f85d9">Пошаговое руководство: Реализация персонализации веб-частей, пользовательскими элементами управления</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/7885563f-7bbe-45a0-b5e2-c6bf1bc2deaa">Персонализация веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320">Общие сведения о персонализации частях Web</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/a88d2bd5-4932-4ec1-b176-7d7da45f85d9">Пошаговое руководство. Реализации персонализации веб-частей, пользовательскими элементами управления</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/7885563f-7bbe-45a0-b5e2-c6bf1bc2deaa">Персонализация веб-частей</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -153,7 +145,7 @@
   
  Этот метод передает символы-шаблоны запросов в базовом хранилище данных. Поддержка подстановочных знаков определяется в настоящее время как каждый поставщик обрабатывает символы, например звездочку (*), символ процента (%) или символ подчеркивания (_).  
   
- Как правило, для хранилища данных SQL-совместимым, можно выполнить поиск с подстановочными символами на частичный путь с символом-шаблоном, которые появятся в начале, конечную или середины текст для поиска строки в <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство. Например, чтобы найти все пути, начинающиеся с «~/approot» <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство будет иметь значение «~/approot%».  
+ Как правило, для хранилища данных SQL-совместимым, можно выполнить поиск с подстановочными символами на частичный путь с символом-шаблоном, которые появятся в начале, конечную или середины текст для поиска строки в <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство. Например, чтобы найти все пути, начинающиеся с "\~/approot», <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство будет иметь значение"\~/approot%».  
   
  Аналогичным образом, поиск с подстановочными символами на имя частичного пользователя может иметь подстановочный знак отображаться в любом месте текстовой строки <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A> свойство. Например, чтобы найти все имена пользователей, которые начинаются с «Иван» <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A> параметр выглядит следующим образом «Джон %».  
   
@@ -179,22 +171,22 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="pageIndex" /> меньше нуля.  
   
-\- или - 
- Значение <paramref name="pageSize" /> не больше нуля.  
+-или- 
+ Значение <paramref name="pageSize" /> меньше или равно нулю.  
   
-\- или - 
+- или - 
 Сумма <paramref name="pageIndex" /> и <paramref name="pageSize" /> больше, чем значение <see cref="F:System.Int32.MaxValue" />.  
   
-\- или - 
+-или- 
  Значение параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> не равно <see langword="null" /> и является пустой строкой ("") после усечения.  
   
-\- или - 
+-или- 
 Длина параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> превышает 256 символов, в то время как значение не равно <see langword="null" />.  
   
-\- или - 
+-или- 
  Значение параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" /> не равно <see langword="null" /> и является пустой строкой после усечения.  
   
-\- или - 
+- или - 
 Длина параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" /> превышает 256 символов, в то время как значение не равно <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Указанное значение <paramref name="scope" /> не является допустимым значением перечисления <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />.</exception>
       </Docs>
@@ -230,7 +222,7 @@
 ## Remarks  
  Этот метод передает символы-шаблоны запросов в базовом хранилище данных. Поддержка подстановочных знаков определяется в настоящее время как каждый поставщик обрабатывает символы, например звездочку (*), символ процента (%) или символ подчеркивания (_).  
   
- Как правило, для хранилища данных SQL-совместимым, можно выполнить поиск с подстановочными символами на частичный путь с символом-шаблоном, которые появятся в начале, конечную или середины текст для поиска строки в <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство. Например, чтобы найти все пути, начинающиеся с «~/approot» <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство будет иметь значение «~/approot%».  
+ Как правило, для хранилища данных SQL-совместимым, можно выполнить поиск с подстановочными символами на частичный путь с символом-шаблоном, которые появятся в начале, конечную или середины текст для поиска строки в <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство. Например, чтобы найти все пути, начинающиеся с "\~/approot», <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A> свойство будет иметь значение"\~/approot%».  
   
  Аналогичным образом, поиск с подстановочными символами на имя частичного пользователя может иметь подстановочный знак отображаться в любом месте текстовой строки <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A> свойство. Например, чтобы найти все имена пользователей, которые начинаются с «Иван» <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A> параметр выглядит следующим образом «Джон %».  
   
@@ -256,13 +248,13 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Значение параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> не равно <see langword="null" /> и является пустой строкой ("") после усечения.  
   
-\- или - 
+-или- 
 Длина параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> превышает 256 символов, в то время как значение не равно <see langword="null" />.  
   
-\- или - 
+-или- 
  Значение параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" /> не равно <see langword="null" /> и является пустой строкой после усечения.  
   
-\- или - 
+- или - 
 Длина параметра <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" /> превышает 256 символов, в то время как значение не равно <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Указанное значение <paramref name="scope" /> не является допустимым значением перечисления <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />.</exception>
       </Docs>
@@ -301,16 +293,16 @@
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">Строка подключения не настроена для поставщика.  
   
-\- или - 
+-или- 
 Строка подключения для поставщика не найдена.  
   
-\- или - 
+-или- 
 Помимо атрибутов, описанных в параметрах конфигурации, в элементе <see langword="&lt;add&gt;" /> поставщика имеются дополнительные атрибуты.  
   
-\- или - 
+-или- 
 Длина имени приложения превышает 256 символов.  
   
-\- или - 
+- или - 
 Домен приложений, в котором находится приложение, работает при уровне доверия ниже <see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />.</exception>
         <exception cref="T:System.ArgumentNullException">Свойство <paramref name="configSettings" /> имеет значение <see langword="null" />.</exception>
       </Docs>
@@ -462,7 +454,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Либо параметр <paramref name="paths" />, либо параметр <paramref name="usernames" /> является пустым массивом.  
   
-\- или - 
+-или- 
 Параметры <paramref name="paths" /> и <paramref name="usernames" />, которые содержатся в соответствующих массивах, не соответствуют условиям проверки.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Указанное значение <paramref name="scope" /> не является членом перечисления <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />.</exception>
       </Docs>
@@ -516,7 +508,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> равен пустой строке.  
   
-\- или - 
+-или- 
 Длина пути превышает 256 символов.</exception>
       </Docs>
     </Member>

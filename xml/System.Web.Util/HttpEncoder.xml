@@ -1,13 +1,5 @@
 <Type Name="HttpEncoder" FullName="System.Web.Util.HttpEncoder">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2474ea2afb6fd952074dbcdd29d6df7607fbbd04" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39750468" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class HttpEncoder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6c850ad4d898af0ca92a20c28ec46edd2944b59e" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57946850" /></Metadata><TypeSignature Language="C#" Value="public class HttpEncoder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi HttpEncoder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Util.HttpEncoder" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpEncoder" />
@@ -60,9 +52,10 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При создании пользовательского кодировщика класса и переопределять базовые методы базового класса, производного кодировщик может вызывать исключение из любой из переопределенных методов. Тем не менее, в следующих случаях вызова такого исключения может привести к непредвиденному поведению в среде ASP.NET:-Если страница ошибки, вызванной необработанное исключение, которое было вызвано из пользовательского кодировщика отрисовки ASP.NET, ASP.NET не пытается его o ошибка кодирования выходные данные во, вызывая пользовательский кодировщик. Это позволяет избежать условий ошибки рекурсивной.  -Когда ASP.NET отправляет заголовки HTTP в IIS, ASP.NET не имеет возможности для необработанных исключений. Таким образом стандартная страница ошибки ASP.NET отображаются (если это параметры конфигурации позволяет эту страницу, чтобы отобразить).</para>
-    </block>
+    <block subset="none" type="overrides"><para>При создании пользовательского кодировщика класса и переопределять базовые методы базового класса, производного кодировщик может вызывать исключение из любой из переопределенных методов. Тем не менее в следующих случаях вызова такого исключения может привести к непредвиденному поведению в среде ASP.NET: 
+— Если страница ошибки, вызванной необработанное исключение, которое было вызвано из пользовательского кодировщика отрисовки ASP.NET, ASP.NET не пытается закодировать его вывод ошибок, вызывая пользовательский кодировщик. Это позволяет избежать условий ошибки рекурсивной.  
+  
+-Когда ASP.NET отправляет заголовки HTTP в IIS, ASP.NET не имеет возможности для необработанных исключений. Таким образом стандартная страница ошибки ASP.NET отображаются (если это параметры конфигурации позволяет эту страницу, чтобы отобразить).</para></block>
     <altmember cref="T:System.Web.HttpUtility" />
     <altmember cref="T:System.Web.HttpServerUtility" />
     <altmember cref="T:System.Web.Configuration.HttpRuntimeSection" />
@@ -265,7 +258,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="output" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="HtmlDecode">
@@ -293,7 +286,7 @@
         <Parameter Name="output" Type="System.IO.TextWriter" />
       </Parameters>
       <Docs>
-        <param name="value">Декодируемая строка.</param>
+        <param name="value">Строка для расшифровки.</param>
         <param name="output">Модуль записи текста, в который необходимо записать декодированное значение.</param>
         <summary>Декодирует значение из строки в кодировке HTML.</summary>
         <remarks>
@@ -310,7 +303,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="output" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="HtmlEncode">
@@ -360,7 +353,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="output" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="JavaScriptStringEncode">
@@ -379,7 +372,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Кодируемая строка.</param>
@@ -422,8 +415,8 @@
       </Parameters>
       <Docs>
         <param name="bytes">Массив байтов, который необходимо закодировать.</param>
-        <param name="offset">Позиция в массиве <c>bytes</c>, с которой начинается кодирование.</param>
-        <param name="count">Количество кодируемых элементов массива <c>bytes</c>.</param>
+        <param name="offset">Позиция в массиве <paramref name="bytes" />, с которой начинается кодирование.</param>
+        <param name="count">Количество кодируемых элементов массива <paramref name="bytes" />.</param>
         <summary>Кодирует массив недопустимых в URL-адресе символов в шестнадцатеричный эквивалент сущности знака.</summary>
         <returns>Массив кодируемых символов.</returns>
         <remarks>
@@ -434,7 +427,7 @@
   
  <xref:System.Web.Util.HttpEncoder.UrlEncode%2A> Метод кодирует в URL-адрес любой символ, который не входит в набор ASCII символы, считается безопасной URL-адрес. Пробелы кодируются в формате ASCII "`+"` символ. Безопасные знаки URL-ASCII включают символы ASCI (от A до Z и до z), цифры (от 0 до 9) и некоторые знаки препинания. В следующей таблице перечислены пунктуации, которые считаются как символы ASCII безопасное.  
   
-|Знак|Описание:|  
+|Знак|Описание|  
 |---------------|-----------------|  
 |-|Дефис|  
 |_|Символ подчеркивания|  
@@ -446,12 +439,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> меньше нуля или больше, чем длина массива <paramref name="bytes" />.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> меньше нуля или больше, чем длина массива <paramref name="bytes" />.  
   
-- или - 
+-или- 
  <paramref name="count" /> меньше нуля, или <paramref name="count" /> плюс <paramref name="offset" /> больше, чем длина массива <paramref name="bytes" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="UrlPathEncode">

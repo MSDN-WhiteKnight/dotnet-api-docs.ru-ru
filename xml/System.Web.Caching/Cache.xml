@@ -1,13 +1,5 @@
 <Type Name="Cache" FullName="System.Web.Caching.Cache">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="66494e77c14b64422e3e44712ede7fd8f523307c" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46641398" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Cache : System.Collections.IEnumerable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fc6de83e77ae587ed550c1ef703a386a6b8f6b45" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936853" /></Metadata><TypeSignature Language="C#" Value="public sealed class Cache : System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cache extends System.Object implements class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.Caching.Cache" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Cache&#xA;Implements IEnumerable" />
@@ -41,7 +33,7 @@
    
   
 ## Examples  
- В следующем примере — это страница, показывающая пользователей значение, присвоенное элементу в кэше и затем уведомляет их, когда элемент удаляется из кэша. Он создает `RemovedCallback` метод, который имеет сигнатуру из `CacheItemRemovedCallback` делегата для уведомления пользователей об удалении элемента кэша, и использует <xref:System.Web.Caching.CacheItemRemovedReason> перечисления сообщить о том, почему была удалена. Кроме того, он использует <xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType> свойство для добавления объектов в кэш и получения значения этих объектов. В `AddItemToCache` метод, он использует <xref:System.Web.Caching.Cache.Add%2A?displayProperty=nameWithType> метод, чтобы добавить элемент в кэш. Чтобы использовать `CacheItemRemovedCallback` делегировать, необходимо добавить элемент в кэш с помощью этого метода или <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType> метод, который автоматически вносит необходимые методы ASP.NET вызывает при удалении элемента. Пользовательский `RemoveItemFromCache` использует метод <xref:System.Web.Caching.Cache.Remove%2A?displayProperty=nameWithType> метод явным образом удалить элемент из кэша, вызывая `RemovedCallback` вызываемого метода.  
+ В следующем примере — это страница, показывающая пользователей значение, присвоенное элементу в кэше и затем уведомляет их, когда элемент удаляется из кэша. Он создает `RemovedCallback` метод, который имеет сигнатуру из `CacheItemRemovedCallback` делегата для уведомления пользователей об удалении элемента кэша, и использует <xref:System.Web.Caching.CacheItemRemovedReason> перечисления сообщить о том, почему была удалена. Кроме того, он использует <xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType> свойство для добавления объектов в кэш и получения значения этих объектов. В `AddItemToCache` метод, он использует <xref:System.Web.Caching.Cache.Add%2A?displayProperty=nameWithType> метод, чтобы добавить элемент в кэш. Чтобы использовать `CacheItemRemovedCallback` делегировать, необходимо добавить элемент в кэш с помощью этого метода или <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType> вызывает метод, который используется ASP.NET автоматически вносит необходимые методы, когда элемент удаляется. Пользовательский `RemoveItemFromCache` использует метод <xref:System.Web.Caching.Cache.Remove%2A?displayProperty=nameWithType> метод явным образом удалить элемент из кэша, вызывая `RemovedCallback` вызываемого метода.  
   
 > [!NOTE]
 >  Экземпляр кэша, к которому обращаются приведенный ниже фрагмент кода является членом <xref:System.Web.UI.Page> объект, который наследует этот образец.  
@@ -112,8 +104,8 @@
         <param name="key">Ключ кэша, используемый для ссылки на элемент.</param>
         <param name="value">Элемент, добавляемый в кэш.</param>
         <param name="dependencies">Зависимости файла или ключа кэша для элемента. Если какая-либо зависимость меняется, объект становится недопустимым и удаляется из кэша. Если зависимости отсутствуют, данный параметр имеет значение <see langword="null" />.</param>
-        <param name="absoluteExpiration">Время истечения срока действия добавленного объекта и его удаления из кэша. Если используется скользящий срок действия, параметру <c>absoluteExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
-        <param name="slidingExpiration">Интервал между временем последнего обращения к добавленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истечет, и он будет удален из кэша через 20 минут после последнего обращения к этому объекту. Если используется абсолютный срок действия, параметру <c>slidingExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
+        <param name="absoluteExpiration">Время истечения срока действия добавленного объекта и его удаления из кэша. Если используется скользящий срок действия, параметр <paramref name="absoluteExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
+        <param name="slidingExpiration">Интервал между временем последнего обращения к добавленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истечет, и он будет удален из кэша через 20 минут после последнего обращения к этому объекту. Если используется абсолютный срок действия, параметр <paramref name="slidingExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
         <param name="priority">Относительная цена объекта, выраженная перечислением <see cref="T:System.Web.Caching.CacheItemPriority" />. Это значение используется в кэше при исключении объектов. Объекты с более низкой ценой удаляются из кэша раньше, чем объекты с более высокой ценой.</param>
         <param name="onRemoveCallback">При наличии делегата он вызывается в случае удаления объекта из кэша. Его можно использовать для уведомления приложений при удалении объектов из кэша.</param>
         <summary>Добавление указанного элемента в объект <see cref="T:System.Web.Caching.Cache" /> с зависимостями, политиками сроков действия и приоритетов, а также с делегатом, которого можно использовать для уведомления приложения при удалении вставленного элемента из <see langword="Cache" />.</summary>
@@ -213,7 +205,7 @@
 ## Remarks  
  <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> Свойство возвращает процент физической памяти, доступной для приложения. При нехватке доступных процент, алгоритм кэширования начинает удаление элементов из кэша.  
   
- <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> Свойство можно задать с помощью `percentagePhysicalMemoryUsedLimit` атрибут [элемент cache для кэширования (схема параметров ASP.NET)](http://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) элемент в файле конфигурации приложения. Если `percentagePhysicalMemoryUsedLimit` атрибут не задан, алгоритм кэша определяет максимальный размер кэша и <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> свойство вычисляется.  
+ <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> Свойство можно задать с помощью `percentagePhysicalMemoryUsedLimit` атрибут [элемент cache для кэширования (схема параметров ASP.NET)](https://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) элемент в файле конфигурации приложения. Если `percentagePhysicalMemoryUsedLimit` атрибут не задан, алгоритм кэша определяет максимальный размер кэша и <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> свойство вычисляется.  
   
  <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> впервые появился в .NET Framework версии 3.5.  Дополнительные сведения см. в статье [Версии и зависимости платформы .NET Framework](~/docs/framework/migration-guide/versions-and-dependencies.md).  
   
@@ -247,7 +239,7 @@
 ## Remarks  
  <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> Свойство возвращает число байтов, которые могут использоваться в процессе приложения. Когда этот предел достигнут, алгоритм кэширования начинает активно очистки кэша.  
   
- <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> Свойство можно задать с помощью `privateBytesLimit` атрибут [элемент cache для кэширования (схема параметров ASP.NET)](http://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) элемент в файле конфигурации приложения. Когда `privateBytesLimit` атрибут не задан, алгоритм кэша определяет максимальный размер кэша и <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> свойство содержит размер выбранного алгоритма.  
+ <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> Свойство можно задать с помощью `privateBytesLimit` атрибут [элемент cache для кэширования (схема параметров ASP.NET)](https://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) элемент в файле конфигурации приложения. Когда `privateBytesLimit` атрибут не задан, алгоритм кэша определяет максимальный размер кэша и <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> свойство содержит размер выбранного алгоритма.  
   
    
   
@@ -464,8 +456,8 @@
         <param name="key">Ключ кэша, используемый для ссылки на объект.</param>
         <param name="value">Объект для вставки в кэш.</param>
         <param name="dependencies">Зависимости файла или ключа кэша для вставленного объекта. Если какая-либо зависимость меняется, объект становится недопустимым и удаляется из кэша. Если зависимости отсутствуют, данный параметр имеет значение <see langword="null" />.</param>
-        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" />, а не <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметру <c>slidingExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
-        <param name="slidingExpiration">Интервал между временем последнего обращения к вставленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметру <c>absoluteExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
+        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" />, а не <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметр <paramref name="slidingExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
+        <param name="slidingExpiration">Интервал между временем последнего обращения к вставленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметр <paramref name="absoluteExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
         <summary>Вставка объекта в <see cref="T:System.Web.Caching.Cache" /> с зависимостями и политиками сроков действия.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -518,19 +510,19 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="System.String" />
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="dependencies" Type="System.Web.Caching.CacheDependency" />
-        <Parameter Name="absoluteExpiration" Type="System.DateTime" />
-        <Parameter Name="slidingExpiration" Type="System.TimeSpan" />
-        <Parameter Name="onUpdateCallback" Type="System.Web.Caching.CacheItemUpdateCallback" />
+        <Parameter Name="key" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dependencies" Type="System.Web.Caching.CacheDependency" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="absoluteExpiration" Type="System.DateTime" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="slidingExpiration" Type="System.TimeSpan" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="onUpdateCallback" Type="System.Web.Caching.CacheItemUpdateCallback" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="key">Ключ кэша, используемый для ссылки на объект.</param>
         <param name="value">Объект, вставляемый в кэш.</param>
         <param name="dependencies">Зависимости файла или ключа кэша для элемента. Если какая-либо зависимость меняется, объект становится недопустимым и удаляется из кэша. Если зависимости отсутствуют, данный параметр имеет значение <see langword="null" />.</param>
-        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" /> вместо <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметру <c>slidingExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
-        <param name="slidingExpiration">Интервал между временем последнего обращения к кэшируемому объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметру <c>absoluteExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
+        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" /> вместо <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметру <paramref name="slidingExpiration" /> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
+        <param name="slidingExpiration">Интервал между временем последнего обращения к кэшируемому объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметру <paramref name="absoluteExpiration" /> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
         <param name="onUpdateCallback">Делегат, который будет вызываться перед удалением объекта из кэша. Можно использовать этот вызов для обновления кэшируемого элемента, с тем чтобы он не был удален из кэша.</param>
         <summary>Вставляет в объект <see cref="T:System.Web.Caching.Cache" /> объект с зависимостями, политиками сроков действия и делегатом, который можно использовать для уведомления приложения перед удалением элемента из кэша.</summary>
         <remarks>
@@ -547,11 +539,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="key" />, <paramref name="value" /> или <paramref name="onUpdateCallback" /> равно <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="key" />, <paramref name="value" /> или <paramref name="onUpdateCallback" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для параметра <paramref name="slidingExpiration" /> указывается значение меньше <see langword="TimeSpan.Zero" /> или больше одного года.</exception>
         <exception cref="T:System.ArgumentException">Оба параметра — <paramref name="absoluteExpiration" /> и <paramref name="slidingExpiration" /> — заданы для элемента, который вы пытаетесь добавить в <see langword="Cache" />.  
   
-- или - 
+-или- 
 Параметр <paramref name="dependencies" /> имеет значение <see langword="null" />, параметру <paramref name="absoluteExpiration" /> присвоено значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />, а параметру <paramref name="slidingExpiration" /> — <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</exception>
         <altmember cref="T:System.Web.Caching.CacheItemUpdateCallback" />
       </Docs>
@@ -586,8 +578,8 @@
         <param name="key">Ключ кэша, используемый для ссылки на объект.</param>
         <param name="value">Объект для вставки в кэш.</param>
         <param name="dependencies">Зависимости файла или ключа кэша для элемента. Если какая-либо зависимость меняется, объект становится недопустимым и удаляется из кэша. Если зависимости отсутствуют, данный параметр имеет значение <see langword="null" />.</param>
-        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" />, а не <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметру <c>slidingExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
-        <param name="slidingExpiration">Интервал между временем последнего обращения к вставленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметру <c>absoluteExpiration</c> следует присвоить значение <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
+        <param name="absoluteExpiration">Время истечения срока действия вставленного объекта и его удаления из кэша. Чтобы избежать возможных проблем с местным временем, например перехода от стандартного времени к летнему, используйте для этого параметра значение <see cref="P:System.DateTime.UtcNow" />, а не <see cref="P:System.DateTime.Now" />. Если используется абсолютный срок действия, параметр <paramref name="slidingExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</param>
+        <param name="slidingExpiration">Интервал между временем последнего обращения к вставленному объекту и временем истечения срока действия этого объекта. Если это значение равно 20 минутам, срок действия объекта истекает и он удаляется из кэша через 20 минут после последнего обращения. Если используется скользящий срок действия, параметр <paramref name="absoluteExpiration" /> должен быть <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />.</param>
         <param name="priority">Цена объекта относительно других элементов, сохраненных в кэше, выраженная перечислением <see cref="T:System.Web.Caching.CacheItemPriority" />. Это значение используется в кэше при исключении объектов. Объекты с более низкой ценой удаляются из кэша раньше, чем объекты с более высокой ценой.</param>
         <param name="onRemoveCallback">Делегат, который, будучи предоставленным, будет вызываться при удалении объекта из кэша. Его можно использовать для уведомления приложений при удалении объектов из кэша.</param>
         <summary>Вставка объекта в объект <see cref="T:System.Web.Caching.Cache" /> с зависимостями, политиками сроков действия и приоритетов, а также с делегатом, которого можно использовать для уведомления приложения при удалении вставленного элемента из <see langword="Cache" />.</summary>
@@ -607,7 +599,7 @@
  Следующий пример демонстрирует назначение элементу высокого приоритета при вставке его в приложении `Cache` объекта.  
   
 > [!NOTE]
->  Дополнительные сведения об использовании этого метода с <xref:System.Web.Caching.CacheItemRemovedCallback> делегат, см. в разделе [как: уведомления приложений при удалении элемента из кэша](http://msdn.microsoft.com/library/38c33aa0-afe9-40ba-a1a4-1ebab95286ef).  
+>  Дополнительные сведения об использовании этого метода с <xref:System.Web.Caching.CacheItemRemovedCallback> делегат, см. в разделе [как: Уведомлять приложение, когда элемент удаляется из кэша](https://msdn.microsoft.com/library/38c33aa0-afe9-40ba-a1a4-1ebab95286ef).  
   
  [!code-csharp[Classic Cache.Insert3 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Cache.Insert3 Example/CS/source.cs#1)]
  [!code-vb[Classic Cache.Insert3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Cache.Insert3 Example/VB/source.vb#1)]  

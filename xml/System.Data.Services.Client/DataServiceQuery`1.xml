@@ -1,13 +1,5 @@
 <Type Name="DataServiceQuery&lt;TElement&gt;" FullName="System.Data.Services.Client.DataServiceQuery&lt;TElement&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2c22a46a02e84e60485bfc422d559a48852905ff" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51320856" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class DataServiceQuery&lt;TElement&gt; : System.Data.Services.Client.DataServiceQuery, System.Collections.Generic.IEnumerable&lt;TElement&gt;, System.Linq.IQueryable&lt;TElement&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e82a36eebdacf6d4b283ec25a86da40a5de1a6a6" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53498400" /></Metadata><TypeSignature Language="C#" Value="public class DataServiceQuery&lt;TElement&gt; : System.Data.Services.Client.DataServiceQuery, System.Collections.Generic.IEnumerable&lt;TElement&gt;, System.Linq.IQueryable&lt;TElement&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceQuery`1&lt;TElement&gt; extends System.Data.Services.Client.DataServiceQuery implements class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt;, class System.Collections.IEnumerable, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!TElement&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceQuery`1" />
   <TypeSignature Language="VB.NET" Value="Public Class DataServiceQuery(Of TElement)&#xA;Inherits DataServiceQuery&#xA;Implements IEnumerable(Of TElement), IQueryable(Of TElement)" />
@@ -26,6 +18,9 @@
     <BaseTypeName>System.Data.Services.Client.DataServiceQuery</BaseTypeName>
   </Base>
   <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
     <Interface>
       <InterfaceName>System.Collections.Generic.IEnumerable&lt;TElement&gt;</InterfaceName>
     </Interface>
@@ -126,10 +121,9 @@
       </Parameters>
       <Docs>
         <param name="callback">Делегат, вызываемый после завершения операции.</param>
-        <param name="state">Определяемый пользователем объект, используемый для переноса состояния между началом операции и обратным вызовом, который определен в параметре <c>callback</c>.</param>
+        <param name="state">Определяемый пользователем объект, используемый для переноса состояния между запуском операции и обратным вызовом, который определен параметром <paramref name="callback" />.</param>
         <summary>Запускает асинхронную сетевую операцию, выполняющую запрос, который представлен этим экземпляром объекта.</summary>
-        <returns>
-          <see cref="T:System.IAsyncResult" />, представляющий состояние асинхронной операции.</returns>
+        <returns><see cref="T:System.IAsyncResult" />, представляющий состояние асинхронной операции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,6 +135,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ ElementType { Type ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.ElementType : Type" Usage="System.Data.Services.Client.DataServiceQuery&lt;'Element&gt;.ElementType" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Linq.IQueryable.ElementType</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -188,7 +185,7 @@
         <summary>Завершает асинхронный запрос к службе данных.</summary>
         <returns>Возвращает экземпляр <see cref="T:System.Collections.Generic.IEnumerable`1" />, содержащий результаты выполнения операции запроса.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">Когда служба данных возвращает ошибку HTTP 404: Resource Not Found.</exception>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">Когда служба данных возвращает ошибку "HTTP 404: ресурс не найден".</exception>
       </Docs>
     </Member>
     <Member MemberName="Execute">
@@ -220,7 +217,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">Когда служба данных возвращает ошибку HTTP 404: Resource Not Found.</exception>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">Когда служба данных возвращает ошибку "HTTP 404: ресурс не найден".</exception>
       </Docs>
     </Member>
     <Member MemberName="Expand">
@@ -258,6 +255,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Linq::Expressions::Expression ^ Expression { System::Linq::Expressions::Expression ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Expression : System.Linq.Expressions.Expression" Usage="System.Data.Services.Client.DataServiceQuery&lt;'Element&gt;.Expression" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Linq.IQueryable.Expression</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -359,6 +359,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Linq::IQueryProvider ^ Provider { System::Linq::IQueryProvider ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Provider : System.Linq.IQueryProvider" Usage="System.Data.Services.Client.DataServiceQuery&lt;'Element&gt;.Provider" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Linq.IQueryable.Provider</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>

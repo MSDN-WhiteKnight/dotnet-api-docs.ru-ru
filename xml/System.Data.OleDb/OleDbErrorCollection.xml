@@ -1,13 +1,5 @@
 <Type Name="OleDbErrorCollection" FullName="System.Data.OleDb.OleDbErrorCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2e641372a6965170e2f6e08c43fa03437d988e9c" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51306566" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class OleDbErrorCollection : System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="66bd14405844ed8da6dba1ec4ff594ad3279c422" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57943015" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbErrorCollection : System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OleDbErrorCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbErrorCollection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbErrorCollection&#xA;Implements ICollection" />
@@ -34,12 +26,12 @@
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute>
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Собирает все ошибки, созданные поставщиком данных .NET Framework для OLE DB. Этот класс не наследуется.</summary>
+    <summary>Собирает все ошибки, сгенерированные поставщиком данных .NET Framework для OLE DB. Этот класс не наследуется.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -94,7 +86,7 @@
       </Parameters>
       <Docs>
         <param name="array">Массив <see cref="T:System.Array" />, в который копируются элементы. </param>
-        <param name="index">Начальный индекс массива <c>array</c>.</param>
+        <param name="index">Начальный индекс массива <paramref name="array" />.</param>
         <summary>Копирует элементы <see cref="T:System.Data.OleDb.OleDbErrorCollection" /> в массив <see cref="T:System.Array" />, начиная с заданного индекса в массиве <see cref="T:System.Array" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -130,8 +122,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Data.OleDb.OleDbError[]" />
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="array" Type="System.Data.OleDb.OleDbError[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="array">Коллекция <see cref="T:System.Data.OleDb.OleDbErrorCollection" /> — назначение для элементов, копируемых из текущей коллекции <see cref="T:System.Data.OleDb.OleDbErrorCollection" />.</param>
@@ -286,7 +278,7 @@ public void DisplayOleDbErrorCollection(OleDbException myException)
       </ReturnValue>
       <Docs>
         <summary>Описание этого члена см. в разделе <see cref="M:System.Collections.ICollection.IsSynchronized" />.</summary>
-        <value>Значение <see langword="true" />, если доступ к коллекции является синхронизированным (потокобезопасным); в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если доступ к коллекции синхронизирован (потокобезопасен); в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -323,7 +315,7 @@ public void DisplayOleDbErrorCollection(OleDbException myException)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Data.OleDb.OleDbErrorCollection> приведен к типу интерфейса <xref:System.Collections.ICollection>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Data.OleDb.OleDbErrorCollection> приведен к типу интерфейса <xref:System.Collections.ICollection>.  
   
  ]]></format>
         </remarks>

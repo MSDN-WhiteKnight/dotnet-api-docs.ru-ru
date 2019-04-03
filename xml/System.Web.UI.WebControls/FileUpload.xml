@@ -1,13 +1,5 @@
 <Type Name="FileUpload" FullName="System.Web.UI.WebControls.FileUpload">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b41ee61247e3102e58987221c7afb2ba91697a49" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48658434" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class FileUpload : System.Web.UI.WebControls.WebControl" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="91be15ebeb79f71336ee265fec677e165a521df9" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55382760" /></Metadata><TypeSignature Language="C#" Value="public class FileUpload : System.Web.UI.WebControls.WebControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileUpload extends System.Web.UI.WebControls.WebControl" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FileUpload" />
   <TypeSignature Language="VB.NET" Value="Public Class FileUpload&#xA;Inherits WebControl" />
@@ -26,10 +18,10 @@
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.PreviewControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Web.UI.ControlValueProperty("FileBytes")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Web.UI.ValidationProperty("FileName")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
@@ -37,12 +29,12 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Отображает элемент управления типа текстового поля и кнопку обзора, позволяя пользователю выбрать файл для отправки на сервер.</summary>
+    <summary>Отображает элемент управления типа текстового поля и кнопку обзора, позволяя пользователю выбрать файл для загрузки на сервер.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В этом разделе.  
+ Содержание раздела  
   
 -   [Введение](#introduction)  
   
@@ -57,7 +49,7 @@
 -   [Декларативный синтаксис](#DeclarativeSyntax)  
   
 <a name="introduction"></a>   
-## <a name="introduction"></a>Вступление  
+## <a name="introduction"></a>Введение  
  <xref:System.Web.UI.WebControls.FileUpload> Класс отображает элемент управления текстовым полем и кнопку обзора, позволяя пользователю выбрать файл на стороне клиента и отправьте его на веб-сервер. Пользователь указывает файл для загрузки, введя полный путь к файлу на локальном компьютере (например, **C:\MyFiles\TestFile.txt**) в текстовом поле элемента управления. Кроме того, пользователь может выбрать файл, нажав кнопку **Обзор** кнопку, а затем найдите его в **выбрать файл** диалоговое окно.  
   
  Используйте <xref:System.Web.UI.WebControls.FileUpload.FileName%2A> свойство, чтобы получить имя файла на компьютере клиента для отправки с помощью <xref:System.Web.UI.WebControls.FileUpload> элемента управления. Это свойство возвращает имя файла не включает путь к файлу на клиентском компьютере.  
@@ -76,11 +68,11 @@
 ## <a name="security-considerations"></a>Вопросы безопасности  
  При вызове <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> метода, необходимо указать полный путь к каталогу, в котором следует сохранить отправленный файл. Если путь не указан явно в коде приложения, исключение при попытке загрузить файл. Это помогает защитить файлы на сервере, запретив пользователям возможность записи к произвольным областям в структуре каталогов приложения, а также для предотвращения доступа к конфиденциальным корневые каталоги.  
   
- <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> Метод записывает загруженный файл в указанный каталог. Таким образом в приложении ASP.NET, необходим доступ на запись к каталогу на сервере. Существует два способа, что приложение может получить доступ на запись. Можно явно предоставить доступ на запись в учетную запись, под которой выполняется приложение, в каталоге, в котором будет сохранен переданные файлы. Кроме того можно увеличить уровень доверия, предоставляемый приложению ASP.NET. Чтобы получить доступ на запись в каталог выполнения для приложения, приложения должны быть предоставлены <xref:System.Web.AspNetHostingPermission> объекта с уровнем доверия, равным <xref:System.Web.AspNetHostingPermissionLevel.Medium?displayProperty=nameWithType> значение. При увеличении уровня доверия приложения доступ к ресурсам на сервере. Обратите внимание, что это не безопасный подход, поскольку пользователь-злоумышленник, получивший контроль над приложением, также смогут запускаться повышенный уровень доверия. Это лучший способ запуска приложения ASP.NET в контексте пользователя с минимальными правами доступа, которые требуются для запуска приложения. Дополнительные сведения о безопасности в приложениях ASP.NET, см. в разделе [основные рекомендации по обеспечению безопасности для веб-приложений](http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad) и [уровни доверия в ASP.NET и файлы политики](http://msdn.microsoft.com/library/f897c794-10d3-414c-86b7-59b66564bbf1).  
+ <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> Метод записывает загруженный файл в указанный каталог. Таким образом в приложении ASP.NET, необходим доступ на запись к каталогу на сервере. Существует два способа, что приложение может получить доступ на запись. Можно явно предоставить доступ на запись в учетную запись, под которой выполняется приложение, в каталоге, в котором будет сохранен переданные файлы. Кроме того можно увеличить уровень доверия, предоставляемый приложению ASP.NET. Чтобы получить доступ на запись в каталог выполнения для приложения, приложения должны быть предоставлены <xref:System.Web.AspNetHostingPermission> объекта с уровнем доверия, равным <xref:System.Web.AspNetHostingPermissionLevel.Medium?displayProperty=nameWithType> значение. При увеличении уровня доверия приложения доступ к ресурсам на сервере. Обратите внимание, что это не безопасный подход, поскольку пользователь-злоумышленник, получивший контроль над приложением, также смогут запускаться повышенный уровень доверия. Это лучший способ запуска приложения ASP.NET в контексте пользователя с минимальными правами доступа, которые требуются для запуска приложения. Дополнительные сведения о безопасности в приложениях ASP.NET, см. в разделе [основные рекомендации по обеспечению безопасности для веб-приложений](https://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad) и [уровни доверия в ASP.NET и файлы политики](https://msdn.microsoft.com/library/f897c794-10d3-414c-86b7-59b66564bbf1).  
   
 <a name="memory_limitations"></a>   
 ## <a name="memory-limitations"></a>Ограничения оперативной памяти  
- Один из способов защиты к отказу в обслуживании атак — ограничить размер файлов, которые могут быть загружены с помощью <xref:System.Web.UI.WebControls.FileUpload> элемента управления. Необходимо задать ограничение размера, которое подходит для типов файлов, которые вы планируете отправить. Максимальный размер по умолчанию — 4096 килобайт (КБ) или 4 мегабайта (МБ). Вы можете разрешить большего размера файлов для отправки, задав `maxRequestLength` атрибут элемента. Чтобы увеличить максимальный допустимый размер файла для всего приложения, задайте `maxRequestLength` атрибута в файле Web.config. Чтобы увеличить максимальный допустимый размер файла для указанной страницы, задайте `maxRequestLength` атрибут внутри `location` элемент в файле Web.config. Например, см. в разделе [расположение элемента (схема параметров ASP.NET)](http://msdn.microsoft.com/library/922ef7d5-da38-4661-b1c6-5b9e5ceda1d5).  
+ Один из способов защиты к отказу в обслуживании атак — ограничить размер файлов, которые могут быть загружены с помощью <xref:System.Web.UI.WebControls.FileUpload> элемента управления. Необходимо задать ограничение размера, которое подходит для типов файлов, которые вы планируете отправить. Максимальный размер по умолчанию — 4096 килобайт (КБ) или 4 мегабайта (МБ). Вы можете разрешить большего размера файлов для отправки, задав `maxRequestLength` атрибут элемента. Чтобы увеличить максимальный допустимый размер файла для всего приложения, задайте `maxRequestLength` атрибута в файле Web.config. Чтобы увеличить максимальный допустимый размер файла для указанной страницы, задайте `maxRequestLength` атрибут внутри `location` элемент в файле Web.config. Например, см. в разделе [расположение элемента (схема параметров ASP.NET)](https://msdn.microsoft.com/library/922ef7d5-da38-4661-b1c6-5b9e5ceda1d5).  
   
  При передаче больших файлов, пользователь может также получить следующее сообщение об ошибке:  
   
@@ -92,54 +84,54 @@
   
 <a name="using_the_FileUpload_Control_with_the_UpdatePanel_control"></a>   
 ## <a name="using-the-fileupload-control-with-the-updatepanel-control"></a>С помощью элемента управления FileUpload с элементом управления UpdatePanel  
- <xref:System.Web.UI.WebControls.FileUpload> Элемент управления предназначен для использования только в скриптах обратной передачи, а не в скриптах асинхронной обратной передачи во время частичной отрисовки страницы. При использовании <xref:System.Web.UI.WebControls.FileUpload> управления внутри <xref:System.Web.UI.UpdatePanel> элемента управления, с помощью элемента управления, необходимо отправить файл <xref:System.Web.UI.PostBackTrigger> для панели. <xref:System.Web.UI.UpdatePanel> элементы управления используются для обновления выбранных областей страницы вместо обновления всей страницы с помощью обратной передачи. Дополнительные сведения см. в разделе [Обзор элемента управления UpdatePanel](http://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a) и [Общие сведения об отрисовке частичных страниц](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49).  
+ <xref:System.Web.UI.WebControls.FileUpload> Элемент управления предназначен для использования только в скриптах обратной передачи, а не в скриптах асинхронной обратной передачи во время частичной отрисовки страницы. При использовании <xref:System.Web.UI.WebControls.FileUpload> управления внутри <xref:System.Web.UI.UpdatePanel> элемента управления, с помощью элемента управления, необходимо отправить файл <xref:System.Web.UI.PostBackTrigger> для панели. <xref:System.Web.UI.UpdatePanel> элементы управления используются для обновления выбранных областей страницы вместо обновления всей страницы с помощью обратной передачи. Дополнительные сведения см. в разделе [Обзор элемента управления UpdatePanel](https://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a) и [Общие сведения об отрисовке частичных страниц](https://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49).  
   
 <a name="DeclarativeSyntax"></a>   
 ## <a name="declarative-syntax"></a>Декларативный синтаксис  
   
 ```  
 <asp:FileUpload  
-    AccessKey="string"  
-    BackColor="color name|#dddddd"  
-    BorderColor="color name|#dddddd"  
-    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
         Inset|Outset"  
-    BorderWidth="size"  
-    CssClass="string"  
-    Enabled="True|False"  
-    EnableTheming="True|False"  
-    EnableViewState="True|False"  
-    Font-Bold="True|False"  
-    Font-Italic="True|False"  
-    Font-Names="string"  
-    Font-Overline="True|False"  
-    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
         Large|X-Large|XX-Large"  
-    Font-Strikeout="True|False"  
-    Font-Underline="True|False"  
-    ForeColor="color name|#dddddd"  
-    Height="size"  
-    ID="string"  
-    OnDataBinding="DataBinding event handler"  
-    OnDisposed="Disposed event handler"  
-    OnInit="Init event handler"  
-    OnLoad="Load event handler"  
-    OnPreRender="PreRender event handler"  
-    OnUnload="Unload event handler"  
-    runat="server"  
-    SkinID="string"  
-    Style="string"  
-    TabIndex="integer"  
-    ToolTip="string"  
-    Visible="True|False"  
-    Width="size"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
 />  
 ```  
   
    
   
 ## Examples  
- Проект Visual Studio Web сайта с исходным кодом в этой статье прилагаются: [загрузить](http://go.microsoft.com/fwlink/?LinkId=191897).  
+ Проект Visual Studio Web сайта с исходным кодом доступен на следующей странице в этом разделе: [Скачайте](https://go.microsoft.com/fwlink/?LinkId=191897).  
   
  Этот раздел содержит следующие четыре примера:  
   
@@ -233,7 +225,7 @@
         <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">Объект <see cref="T:System.Web.UI.HtmlTextWriter" />, представляющий выходной поток для отрисовки HTML-содержимого на стороне клиента.</param>
+        <param name="writer">Объект <see cref="T:System.Web.UI.HtmlTextWriter" />, представляющий выходной поток для визуализации HTML-содержимого на стороне клиента.</param>
         <summary>Добавляет атрибуты и стили HTML элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />, которые должны быть отображены в указанном объекте <see cref="T:System.Web.UI.HtmlTextWriter" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -271,7 +263,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение, указывающее, может ли для отправки быть выбрано несколько файлов.</summary>
+        <summary>Получает или задает значение, указывающее, может ли для отправки быть выбрано несколько файлов.</summary>
         <value>Значение <see langword="true" />, если можно выбрать несколько файлов; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -290,16 +282,13 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -307,8 +296,8 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает байтовый массив всего указанного файла, используя элемент управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
-        <value>Массив <see cref="T:System.Byte" />, который включает все содержимое указанного файла.</value>
+        <summary>Возвращает массив байт всего указанного файла, используя элемент управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
+        <value>Массив <see cref="T:System.Byte" />, который все содержимое указанного файла.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -345,13 +334,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -359,8 +345,8 @@
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает объект <see cref="T:System.IO.Stream" />, указывающий на файл для отправки с помощью элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
-        <value>Объект <see cref="T:System.IO.Stream" />, указывающий на файл для отправки с помощью <see cref="T:System.Web.UI.WebControls.FileUpload" />.</value>
+        <summary>Возвращает объект <see cref="T:System.IO.Stream" />, указывающий на файл для загрузки, используя элемент управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
+        <value><see cref="T:System.IO.Stream" />, указывающий на файл для загрузки, используя <see cref="T:System.Web.UI.WebControls.FileUpload" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -395,13 +381,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -409,13 +392,13 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя файла на компьютере клиента для отправки с помощью элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
+        <summary>Возвращает имя файла на компьютере клиента, используя элемент управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
         <value>Строка, содержащая имя файла на компьютере клиента для отправки с помощью <see cref="T:System.Web.UI.WebControls.FileUpload" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Возвращает имя файла на компьютере клиента для отправки с помощью элемента управления <xref:System.Web.UI.WebControls.FileUpload>. Имя файла, <xref:System.Web.UI.WebControls.FileUpload.FileName%2A> свойство возвращает не включает путь к файлу на клиентском компьютере.  
+ Возвращает имя файла на компьютере клиента, используя элемент управления <xref:System.Web.UI.WebControls.FileUpload>. Имя файла, <xref:System.Web.UI.WebControls.FileUpload.FileName%2A> свойство возвращает не включает путь к файлу на клиентском компьютере.  
   
    
   
@@ -444,13 +427,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -458,7 +438,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, определяющее наличие файла в элементе управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
+        <summary>Возвращает значение, определяющее наличие файла у элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
         <value>Значение <see langword="true" />, если <see cref="T:System.Web.UI.WebControls.FileUpload" /> содержит файл; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -496,14 +476,14 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, которое указывает, были ли отправлены файлы.</summary>
+        <summary>Получает значение, которое указывает, были ли загружены файлы.</summary>
         <value>Значение <see langword="true" />, если были отправлены какие-либо файлы; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -561,13 +541,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -575,8 +552,8 @@
         <ReturnType>System.Web.HttpPostedFile</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает базовый объект <see cref="T:System.Web.HttpPostedFile" /> файла для отправки с помощью элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
-        <value>Объект <see cref="T:System.Web.HttpPostedFile" /> для файла, отправляемого с помощью <see cref="T:System.Web.UI.WebControls.FileUpload" />.</value>
+        <summary>Возвращает основной объект <see cref="T:System.Web.HttpPostedFile" /> для загружаемого файла для загрузки, используя элемент управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</summary>
+        <value><see cref="T:System.Web.HttpPostedFile" /> для загружаемого файла, используя <see cref="T:System.Web.UI.WebControls.FileUpload" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -615,14 +592,14 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.Web.HttpPostedFile&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает коллекцию отправленных файлов.</summary>
+        <summary>Получает коллекцию отправленных файлов.</summary>
         <value>Коллекция отправленных файлов.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -648,7 +625,7 @@
       </Parameters>
       <Docs>
         <param name="writer">Объект <see cref="T:System.Web.UI.HtmlTextWriter" />, получающий содержимое элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" />.</param>
-        <summary>Отправляет содержимое элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" /> указанному объекту <see cref="T:System.Web.UI.HtmlTextWriter" />, который записывает содержимое для отрисовки в клиенте.</summary>
+        <summary>Отправляет содержимое элемента управления <see cref="T:System.Web.UI.WebControls.FileUpload" /> указанному объекту <see cref="T:System.Web.UI.HtmlTextWriter" />, который записывает содержимое для отображения клиенту.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -680,8 +657,8 @@
         <Parameter Name="filename" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="filename">Строка, указывающая полный путь к каталогу на сервере, в котором следует сохранить отправленный файл.</param>
-        <summary>Сохраняет содержимое отправленного файла по указанному пути на веб-сервере.</summary>
+        <param name="filename">Строка, указывающая полный путь к каталогу на сервере, в котором следует сохранить загружаемый файл.</param>
+        <summary>Сохраняет содержимое загруженного файла по указанному пути на веб-сервере.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -694,7 +671,7 @@
   
  Перед вызовом <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> метод, следует использовать <xref:System.Web.UI.WebControls.FileUpload.HasFile%2A> свойство, чтобы убедиться, что <xref:System.Web.UI.WebControls.FileUpload> элемент управления содержит файл для передачи. Если <xref:System.Web.UI.WebControls.FileUpload.HasFile%2A> возвращает `true`, вызовите <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> метод. Если он возвращает `false`, выводит сообщение для пользователя, указывая, что элемент управления не содержит файл. Если вы не предоставите код обработки ошибок, чтобы убедиться, что файл существует, при попытке сохранить несуществующего файла создается <xref:System.Web.HttpException> исключение.  
   
- Для вызова <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> для работы в приложении ASP.NET необходим доступ на запись к каталогу на сервере. Существует два способа, что приложение может получить доступ на запись. Можно явно предоставить доступ на запись в учетную запись, под которой выполняется приложение, в каталоге, в котором будет сохранен переданные файлы. Кроме того можно увеличить уровень доверия, предоставляемый приложению ASP.NET. Чтобы получить доступ на запись в каталог выполнения для приложения, приложения должны быть предоставлены <xref:System.Web.AspNetHostingPermission> объекта с уровнем доверия, равным <xref:System.Web.AspNetHostingPermissionLevel.Medium?displayProperty=nameWithType> значение. При увеличении уровня доверия приложения доступ к ресурсам на сервере. Обратите внимание, что это не безопасный подход, поскольку пользователь-злоумышленник, получивший контроль над приложением, также смогут запускаться повышенный уровень доверия. Это лучший способ запуска приложения ASP.NET в контексте пользователя, имеющего минимальные права, необходимые для запуска приложения. Дополнительные сведения о безопасности в приложениях ASP.NET, см. в разделе [основные рекомендации по обеспечению безопасности для веб-приложений](http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad) и [уровни доверия в ASP.NET и файлы политики](http://msdn.microsoft.com/library/f897c794-10d3-414c-86b7-59b66564bbf1).  
+ Для вызова <xref:System.Web.UI.WebControls.FileUpload.SaveAs%2A> для работы в приложении ASP.NET необходим доступ на запись к каталогу на сервере. Существует два способа, что приложение может получить доступ на запись. Можно явно предоставить доступ на запись в учетную запись, под которой выполняется приложение, в каталоге, в котором будет сохранен переданные файлы. Кроме того можно увеличить уровень доверия, предоставляемый приложению ASP.NET. Чтобы получить доступ на запись в каталог выполнения для приложения, приложения должны быть предоставлены <xref:System.Web.AspNetHostingPermission> объекта с уровнем доверия, равным <xref:System.Web.AspNetHostingPermissionLevel.Medium?displayProperty=nameWithType> значение. При увеличении уровня доверия приложения доступ к ресурсам на сервере. Обратите внимание, что это не безопасный подход, поскольку пользователь-злоумышленник, получивший контроль над приложением, также смогут запускаться повышенный уровень доверия. Это лучший способ запуска приложения ASP.NET в контексте пользователя, имеющего минимальные права, необходимые для запуска приложения. Дополнительные сведения о безопасности в приложениях ASP.NET, см. в разделе [основные рекомендации по обеспечению безопасности для веб-приложений](https://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad) и [уровни доверия в ASP.NET и файлы политики](https://msdn.microsoft.com/library/f897c794-10d3-414c-86b7-59b66564bbf1).  
   
    
   
@@ -706,10 +683,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">
-          <paramref name="filename" /> не является полным путем.</exception>
+        <exception cref="T:System.Web.HttpException"><paramref name="filename" /> не является полным путем.</exception>
         <altmember cref="P:System.Web.UI.WebControls.FileUpload.HasFile" />
-        <related type="Article" href="http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad">Базовые методики безопасности для веб-приложений</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad">Базовые методики безопасности для веб-приложений</related>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="WriteOnlyArrayAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="030fa1461aa29c9eebf57a982f7dd4e5d6bce7ab" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48690011" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class WriteOnlyArrayAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="339314bda23fecfc8fd075766661ee08528577ed" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56373941" /></Metadata><TypeSignature Language="C#" Value="public sealed class WriteOnlyArrayAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WriteOnlyArrayAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WriteOnlyArrayAttribute&#xA;Inherits Attribute" />
@@ -28,12 +20,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>При применении к параметру массива в компоненте среды выполнения Windows указывает, что содержимое массива, передаваемое этому параметру, используется только для вывода. Вызывающая сторона не гарантирует, что содержимое инициализируется, и вызванный метод не должен считывать содержимое.</summary>
+    <summary>При применении к параметру массива в компоненте среды выполнения Windows указывает, что содержимое массива, передаваемое этому параметру, используется только для вывода. Вызывающая сторона не гарантирует, что содержимое инициализируются, и вызванный метод не должен считывать содержимое.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -44,21 +36,21 @@
   
 -   Применить <xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute> атрибут, если содержимое массива для использования только для вывода (то есть метод задает содержимое массива, но не считывает их).  
   
- Применение обоих атрибутов для параметра приводит к ошибке. Дополнительные сведения, включая стандартный шаблон для внесения изменений в массив, см. в разделе [Передача массивов в компонент среды выполнения Windows](http://go.microsoft.com/fwlink/?LinkId=251026) в центре разработки для Windows.  
+ Применение обоих атрибутов для параметра приводит к ошибке. Дополнительные сведения, включая стандартный шаблон для внесения изменений в массив, см. в разделе [Передача массивов в компонент среды выполнения Windows](https://go.microsoft.com/fwlink/?LinkId=251026) в центре разработки для Windows.  
   
 > [!IMPORTANT]
 >  Параметры, имеющие <xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute> атрибут ведут себя по-разному в зависимости от того, написана ли вызывающий объект в машинном или управляемом коде. Если вызывающему объекту машинного кода (расширения компонентов Visual C++ или JavaScript), вызванный метод не может вносить никаких предположений о содержимом исходного массива. Например, массив, получаемый методом, может быть не инициализирован или может содержать значения по умолчанию. Предполагается, что метод установит значения всех элементов в массиве.  
 >   
->  Если вызывающий объект является управляемым кодом, вызывающей стороны исходный массив передается вызываемому методу, как было бы при любом вызове метода в .NET Framework. Содержимое массива может изменяться в управляемом коде, чтобы метод выборочно могли просматривать и изменять эти значения. Это важно помнить, так как оно влияет на модульные тесты для [!INCLUDE[wrt](~/includes/wrt-md.md)] компонента. Если тесты написаны в управляемом коде, содержимое массива будут отображаться как изменяемые во время тестирования и результаты могут отличаться, если метод вызывается из машинного кода, более поздней версии.  
+>  Если вызывающий объект является управляемым кодом, вызывающей стороны исходный массив передается вызываемому методу, как было бы при любом вызове метода в .NET Framework. Содержимое массива может изменяться в управляемом коде, чтобы метод выборочно могли просматривать и изменять эти значения. Это важно помнить, поскольку это влияет на модульные тесты, написанные для компонента [!INCLUDE[wrt](~/includes/wrt-md.md)]. Если тесты написаны в управляемом коде, содержимое массива будут отображаться как изменяемые во время тестирования и результаты могут отличаться, если метод вызывается из машинного кода, более поздней версии.  
   
  Применение этого атрибута к `out` параметр или параметр, который имеет <xref:System.Runtime.InteropServices.InAttribute> атрибут приводит к ошибке при экспорте модуля. Применение атрибута к параметру, который имеет <xref:System.Runtime.InteropServices.OutAttribute> атрибут приводит к ошибке, если он также имеет Visual Basic `ByRef` модификатор. В этом случае этот атрибут является избыточным, но разрешенных.  
   
  ]]></format>
     </remarks>
     <altmember cref="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute" />
-    <related type="Article" href="http://msdn.microsoft.com/library/d2ce0683-343d-403e-bb8d-209186f7a19d">Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/p/?LinkId=238313">Создание компонентов среды выполнения Windows в C# и Visual Basic</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=251026">Передача массивов в компонент среды выполнения Windows</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/d2ce0683-343d-403e-bb8d-209186f7a19d">Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/p/?LinkId=238313">Создание компонентов среды выполнения Windows в C# и Visual Basic</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=251026">Передача массивов в компонент среды выполнения Windows</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">

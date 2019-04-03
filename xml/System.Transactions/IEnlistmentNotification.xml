@@ -1,13 +1,5 @@
 <Type Name="IEnlistmentNotification" FullName="System.Transactions.IEnlistmentNotification">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e60dea71d0f2063b56a541d5294ba5ac305362d3" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46642217" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IEnlistmentNotification" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="515c5331c81a97a49b80dee630ada21a4e303897" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58696254" /></Metadata><TypeSignature Language="C#" Value="public interface IEnlistmentNotification" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEnlistmentNotification" />
   <TypeSignature Language="DocId" Value="T:System.Transactions.IEnlistmentNotification" />
   <TypeSignature Language="VB.NET" Value="Public Interface IEnlistmentNotification" />
@@ -22,6 +14,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Transactions.Local</AssemblyName>
@@ -41,10 +34,10 @@
   
  Диспетчер транзакций Уведомляет включенный в список объект на разных этапах протокола двухфазной фиксации следующими методами.  
   
-|Метод|Описание:|  
+|Метод|Описание|  
 |------------|-----------------|  
 |<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>|Этот метод присоединенного объекта используется как обратный вызов диспетчером транзакций во время первой фазы транзакции, когда диспетчер транзакций опрашивает участников, могут ли они зафиксировать транзакцию.|  
-|<xref:System.Transactions.IEnlistmentNotification.Commit%2A>|Этот метод присоединенного объекта используется как обратный вызов диспетчером транзакций на втором этапе транзакции, если транзакция была зафиксирована.|  
+|<xref:System.Transactions.IEnlistmentNotification.Commit%2A>|Этот метод присоединенного объекта используется как обратный вызов диспетчером транзакций на втором этапе транзакции, если транзакция фиксируется.|  
 |<xref:System.Transactions.IEnlistmentNotification.Rollback%2A>|Этот метод присоединенного объекта используется как обратный вызов диспетчером транзакций на втором этапе транзакции, если транзакция прерывается (который откат).|  
 |<xref:System.Transactions.IEnlistmentNotification.InDoubt%2A>|Этот метод присоединенного объекта используется как обратный вызов диспетчером транзакций на втором этапе транзакции, если транзакция сомнительна.|  
   
@@ -62,8 +55,8 @@
  ]]></format>
     </remarks>
     <altmember cref="T:System.Transactions.ISinglePhaseNotification" />
-    <related type="Article" href="http://msdn.microsoft.com/library/786a12c2-d530-49f4-9c59-5c973e15a11d">Зачисление ресурсов в транзакцию в качестве участников</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/694ea153-e4db-41ae-96ac-9ac66dcb69a9">Однофазная и многофазная фиксация транзакции</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/786a12c2-d530-49f4-9c59-5c973e15a11d">Зачисление ресурсов в транзакцию в качестве участников</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/694ea153-e4db-41ae-96ac-9ac66dcb69a9">Однофазная и многофазная фиксация транзакции</related>
   </Docs>
   <Members>
     <Member MemberName="Commit">
@@ -82,6 +75,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Transactions.Local</AssemblyName>
@@ -127,6 +121,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Transactions.Local</AssemblyName>
@@ -175,6 +170,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Transactions.Local</AssemblyName>
@@ -196,7 +192,7 @@
 ## Remarks  
  Диспетчер транзакций вызывает этот метод, включенный в список ресурсов manager во время первой фазы фиксации, когда он опрашивает участников, могут ли они зафиксировать транзакцию.  
   
- При реализации диспетчер долгосрочных ресурсов, следует записывать в журнал вашей подготовки записи во время этого этапа. Запись должна включать всю необходимую информацию для выполнения восстановления. Сюда входят <xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A> свойство, которое передается диспетчеру транзакций в <xref:System.Transactions.TransactionManager.Reenlist%2A> метод во время восстановления. Дополнительные сведения о восстановлении см. в разделе [выполнение восстановления](http://msdn.microsoft.com/library/d342c5c7-da64-4a4c-8e63-b52f4fbf2691).  
+ При реализации диспетчер долгосрочных ресурсов, следует записывать в журнал вашей подготовки записи во время этого этапа. Запись должна включать всю необходимую информацию для выполнения восстановления. Сюда входят <xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A> свойство, которое передается диспетчеру транзакций в <xref:System.Transactions.TransactionManager.Reenlist%2A> метод во время восстановления. Дополнительные сведения о восстановлении см. в разделе [выполнение восстановления](https://msdn.microsoft.com/library/d342c5c7-da64-4a4c-8e63-b52f4fbf2691).  
   
  Диспетчер ресурсов должен завершить всю работу, которая должна быть выполнена перед вызовом <xref:System.Transactions.PreparingEnlistment.Prepared%2A> метод `preparingEnlistment` параметр, чтобы указать свой голос за для сроков действия обязательства. Следует убедиться, что для этого перед получением уведомлений фазы 2 таких фиксации, отката или под сомнением. Это потому, что уведомления фазы 2 могут быть встроены в том же потоке, который вызвал <xref:System.Transactions.PreparingEnlistment.Prepared%2A> метод на этапе 1. Таким образом, после вызова метода <xref:System.Transactions.PreparingEnlistment.Prepared%2A> не нужно выполнять никаких действий (например, снимать блокировки), которые должны были быть выполнены перед получением уведомлений второго этапа.  
   
@@ -224,6 +220,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Transactions.Local</AssemblyName>

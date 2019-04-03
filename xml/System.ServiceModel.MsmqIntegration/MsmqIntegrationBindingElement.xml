@@ -1,13 +1,5 @@
 <Type Name="MsmqIntegrationBindingElement" FullName="System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="141142bac3d72d460e8a9ddf260162836d78bcec" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39810726" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class MsmqIntegrationBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="54d98b5174594f234b167662213c058e680d2c24" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53332446" /></Metadata><TypeSignature Language="C#" Value="public sealed class MsmqIntegrationBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqIntegrationBindingElement extends System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MsmqIntegrationBindingElement&#xA;Inherits MsmqBindingElementBase" />
@@ -83,8 +75,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
         <summary>Выполняет построение фабрики канала с использованием предоставленного контекста.</summary>
         <returns>Фабрику канала интеграции MSMQ можно использовать для создания каналов для отправки сообщений в существующие приложения MSMQ.</returns>
         <remarks>
@@ -97,8 +88,39 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение контекста — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Свойство <paramref name="TChannel" /> не является методом <see langword="IOutputChannel" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «Certificate» или «WindowsDomain», а <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение «None».</exception>
+        <exception cref="T:System.InvalidOperationException">Свойство <paramref name="ExactlyOnce" /> имеет значение <see langword="true" />; свойство <paramref name="Durable" /> имеет значение <see langword="false" />.
+
+- или -
+
+Свойство CustomDeadLetterQueue имеет значение, отличное от нулевого; свойство DeadLetterQueue имеет значение, отличное от «Custom».
+
+-или-
+
+В Windows 2003/XP свойству DeadLetterQueue присваивается значение «Custom».
+
+-или-
+
+Свойство ExactlyOnce имеет значение «false»; свойство DeadLetterQueue имеет значение «Custom».
+
+- или -
+
+Задано свойство CustomDeadLetterQueue, и отсутствует разрешение на запись в очередь, или очередь не существует.
+
+-или-
+
+Если очередь CustomDeadLetterQueue является нетранзакционной.
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> задан как «WindowsDomain», и если MSMQ установлен без интеграции Active Directory.
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «None», и <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение, отличное от «None».
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «Certificate» или «WindowsDomain», а <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение «None».</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
@@ -130,8 +152,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
         <summary>Выполняет построение прослушивателя канала с использованием предоставленного контекста.</summary>
         <returns>Прослушиватель канала интеграции MSMQ можно использовать для создания каналов для отправки сообщений в существующие приложения MSMQ.</returns>
         <remarks>
@@ -144,8 +165,43 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение контекста — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Свойство <paramref name="TChannel" /> не является методом <see langword="IInputChannel" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «Certificate» или «WindowsDomain», а <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение «None».</exception>
+        <exception cref="T:System.InvalidOperationException">Свойство ExactlyOnce имеет значение <see langword="true" />, свойство Durable имеет значение <see langword="false" />.
+
+- или -
+
+Очередь недоступна для чтения.
+
+-или-
+
+Свойство ExactlyOnce имеет значение <see langword="true" />; очередь является нетранзакционной.
+
+- или -
+
+Свойство ExactlyOnce имеет значение <see langword="false" />; очередь является транзакционной.
+
+- или -
+
+В Windows Vista свойству ReceiveErrorHandling присваивается значение «Move», и имя очереди содержит «;».
+
+-или-
+
+В Windows Vista свойство ExactlyOnce получает значение <see langword="true" /> и не может открыть вложенную очередь повторной отправки.
+
+- или -
+
+Свойству ReceiveErrorHandling присваивается значение «Reject» или «Move»; используется платформа Windows Vista.
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> задан как «WindowsDomain», и если MSMQ установлен без интеграции Active Directory.
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «None», и <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение, отличное от «None».
+
+-или-
+
+<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> имеет значение «Certificate» или «WindowsDomain», а <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> имеет значение «None».</exception>
       </Docs>
     </Member>
     <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
@@ -172,11 +228,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
         <summary>Возвращает значение, которое позволяет определить, можно ли выполнить построение фабрики канала с использованием предоставленного контекста.</summary>
-        <returns>
-          <see langword="true" />, если возможно выполнить построение фабрики канала с использованием предоставленного контекста; в противном случае — <see langword="false" />. Этот метод возвращает значение <see langword="true" /> только в том случае, если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IOutputChannel" />.</returns>
+        <returns><see langword="true" />, если возможно выполнить построение фабрики канала с использованием предоставленного контекста; в противном случае — <see langword="false" />. Этот метод возвращает значение <see langword="true" /> только в том случае, если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IOutputChannel" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,11 +263,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
         <summary>Возвращает значение, которое позволяет определить, можно ли выполнить построение прослушивателя канала с использованием предоставленного контекста.</summary>
-        <returns>
-          <see langword="true" />, если возможно выполнить построение прослушивателя канала с использованием предоставленного контекста; в противном случае — <see langword="false" />.  
+        <returns><see langword="true" />, если возможно выполнить построение прослушивателя канала с использованием предоставленного контекста; в противном случае — <see langword="false" />.  
   
 Этот метод возвращает значение <see langword="true" /> только в том случае, если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IInputChannel" />.</returns>
         <remarks>To be added.</remarks>

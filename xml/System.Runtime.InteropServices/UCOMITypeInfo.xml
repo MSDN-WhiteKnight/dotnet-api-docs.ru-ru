@@ -1,13 +1,5 @@
 <Type Name="UCOMITypeInfo" FullName="System.Runtime.InteropServices.UCOMITypeInfo">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f0a4022fb6558b802ea4a60a7a058ad7a3928130" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48661570" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface UCOMITypeInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="33093fcb1b89fb2ead6986f48b6ac4b8ce5431cc" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52226069" /></Metadata><TypeSignature Language="C#" Value="public interface UCOMITypeInfo" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract UCOMITypeInfo" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.UCOMITypeInfo" />
   <TypeSignature Language="VB.NET" Value="Public Interface UCOMITypeInfo" />
@@ -189,8 +181,8 @@
       </Parameters>
       <Docs>
         <param name="memid">Идентификационный номер функции-элемента, для которого возвращается описание входа динамической библиотеки DLL.</param>
-        <param name="invKind">Задает тип элемента, определенного параметром <c>memid</c>.</param>
-        <param name="pBstrDllName">Если значение не равно <see langword="null" />, функция задает для параметра <c>pBstrDllName</c> значение <see langword="BSTR" />, содержащее имя библиотеки DLL.</param>
+        <param name="invKind">Задает тип элемента, определенного параметром <paramref name="memid" />.</param>
+        <param name="pBstrDllName">Если значение не равно <see langword="null" />, функция задает для параметра <paramref name="pBstrDllName" /> значение <see langword="BSTR" />, содержащее имя динамической библиотеки DLL.</param>
         <param name="pBstrName">Если значение не равно <see langword="null" />, функция задает для параметра <c>lpbstrName</c> значение <see langword="BSTR" />, содержащее имя точки входа.</param>
         <param name="pwOrdinal">Если значение не равно <see langword="null" /> и функция определена порядковым номером, то параметр <c>lpwOrdinal</c> должен указывать на порядковый номер.</param>
         <summary>Возвращает описание или спецификацию точки входа для функции в динамической библиотеке DLL.</summary>
@@ -421,8 +413,8 @@
       <Docs>
         <param name="memid">Идентификатор элемента, для которого возвращается имя (или имена).</param>
         <param name="rgBstrNames">При удачном возвращении содержит имя (или имена), связанное с этим элементом.</param>
-        <param name="cMaxNames">Длина массива <c>rgBstrNames</c>.</param>
-        <param name="pcNames">При удачном возвращении — число имен в массиве <c>rgBstrNames</c>.</param>
+        <param name="cMaxNames">Длина массива <paramref name="rgBstrNames" />.</param>
+        <param name="pcNames">При удачном возвращении — число имен в массиве <paramref name="rgBstrNames" />.</param>
         <summary>Извлекает переменную с указанным идентификатором (либо имя свойства или метода и его параметры), соответствующую заданному идентификатору функции.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -646,9 +638,9 @@
         <param name="memid">Определяет элемент интерфейса.</param>
         <param name="wFlags">Флаги, описывающие контекст используемого вызова.</param>
         <param name="pDispParams">Ссылка на структуру, содержащую массив аргументов, массив идентификаторов DISPID именованных аргументов, а также количество элементов в каждом массиве.</param>
-        <param name="pVarResult">Ссылка на место хранения результата. Если <c>wFlags</c> задает <see langword="DISPATCH_PROPERTYPUT" /> или <see langword="DISPATCH_PROPERTYPUTREF" />, то параметр <c>pVarResult</c> не учитывается. Если результат не требуется, можно задать значение <see langword="null" />.</param>
+        <param name="pVarResult">Ссылка на место хранения результата. Если <paramref name="wFlags" /> задает <see langword="DISPATCH_PROPERTYPUT" /> или <see langword="DISPATCH_PROPERTYPUTREF" />, то параметр <paramref name="pVarResult" /> не учитывается. Если результат не требуется, можно задать значение <see langword="null" />.</param>
         <param name="pExcepInfo">Указывает на структуру сведений об исключении, заполняемую только при возвращении <see langword="DISP_E_EXCEPTION" />.</param>
-        <param name="puArgErr">Если <see langword="Invoke" /> возвращает <see langword="DISP_E_TYPEMISMATCH" />, то параметр <c>puArgErr</c> указывает индекс аргумента с неверным типом внутри <c>rgvarg</c>. Если ошибка возвращается для нескольких аргументов, <c>puArgErr</c> показывает только первый из них.</param>
+        <param name="puArgErr">Если <see langword="Invoke" /> возвращает <see langword="DISP_E_TYPEMISMATCH" />, то параметр <paramref name="puArgErr" /> показывает индекс аргумента с неверным типом внутри <c>rgvarg</c>. Если ошибка возвращается для нескольких аргументов, <paramref name="puArgErr" /> показывает только первый из них.</param>
         <summary>Вызывает метод или обращается к свойству объекта, реализующему интерфейс, описанный в описании типа.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

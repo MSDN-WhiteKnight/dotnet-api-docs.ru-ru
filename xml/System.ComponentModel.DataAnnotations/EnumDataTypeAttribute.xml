@@ -1,13 +1,5 @@
 <Type Name="EnumDataTypeAttribute" FullName="System.ComponentModel.DataAnnotations.EnumDataTypeAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="98708ecab85332a52b512d041e0441933770cf7a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48585673" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class EnumDataTypeAttribute : System.ComponentModel.DataAnnotations.DataTypeAttribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4d8c3160aabc7edd34854d2b02e7429df9e83733" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56380350" /></Metadata><TypeSignature Language="C#" Value="public sealed class EnumDataTypeAttribute : System.ComponentModel.DataAnnotations.DataTypeAttribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnumDataTypeAttribute extends System.ComponentModel.DataAnnotations.DataTypeAttribute" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EnumDataTypeAttribute&#xA;Inherits DataTypeAttribute" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type EnumDataTypeAttribute = class&#xA;    inherit DataTypeAttribute" />
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
@@ -28,15 +21,15 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Method | System.AttributeTargets.Parameter | System.AttributeTargets.Property, AllowMultiple=false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Включает перечисление .NET Framework для сопоставления со столбцом данных.</summary>
+    <summary>Позволяет сопоставить перечисление .NET Framework столбцу данных.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -49,22 +42,26 @@
  Приведенный ниже показано, как заменить числовое значение перечисления, соответствующее объявление.  
   
 ```csharp  
-public enum eReorderLvl {  
-        zero = 0,  
-        five = 5,  
-        ten=10,  
-        fifteen=15,  
-        twenty=20,  
-        twenty_five=25,  
-        thirty=30  
+public enum ReorderLevel
+{
+    Zero = 0,
+    Five = 5,
+    Ten = 10,
+    Fifteen = 15,
+    Twenty = 20,
+    TwentyFive = 25,
+    Thirty = 30
+}
+
+[MetadataType(typeof(ProductMD))]  
+public partial class Product
+{  
+    public class ProductMD
+    {  
+        [EnumDataType(typeof(ReorderLevel))]  
+        public object ReorderLevel { get; set; }  
     }  
-    [MetadataType(typeof(Product_MD))]  
-    public partial class Product {  
-        public class Product_MD {  
-            [EnumDataType(typeof(eReorderLvl))]  
-            public object ReorderLevel { get; set; }  
-        }  
-    }  
+}  
 ```  
   
 ```vb  
@@ -101,6 +98,7 @@ End Class
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -128,6 +126,7 @@ End Class
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -160,6 +159,7 @@ End Class
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>

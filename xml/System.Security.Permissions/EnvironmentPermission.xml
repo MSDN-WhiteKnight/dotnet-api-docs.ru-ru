@@ -1,13 +1,5 @@
 <Type Name="EnvironmentPermission" FullName="System.Security.Permissions.EnvironmentPermission">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="637e5630b5c61c7b948cf715f2696cfd039d5287" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49140616" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class EnvironmentPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1a6cb01c7d0ce9f244b9581605a0812523edca5b" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56787082" /></Metadata><TypeSignature Language="C#" Value="public sealed class EnvironmentPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EnvironmentPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.EnvironmentPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EnvironmentPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -24,6 +16,7 @@
     <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
@@ -37,12 +30,12 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Управляет доступом к системным и пользовательским переменным среды. Этот класс не наследуется.</summary>
+    <summary>Управляет доступом к переменным среды системы и пользователя. Этот класс не наследуется.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -50,7 +43,7 @@
  Один или несколько списков имя без учета регистра, разделенных точкой с запятой, с использованием отдельных списков для чтения и записи к именованным переменным, присваиваются имена переменных среды. Запись включает в себя возможность создавать и удалять переменные среды также для изменения существующих значений.  
   
 > [!NOTE]
->  В версиях .NET Framework, выпущенных до [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], можно использовать <xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType> метод, чтобы предотвратить случайный доступ к системным ресурсам доверенным кодом. <xref:System.Security.CodeAccessPermission.Deny%2A> Теперь является устаревшим, и доступ к ресурсам теперь определяется только предоставленный набор разрешений для сборки. Чтобы ограничить доступ к файлам, необходимо запустить частично доверенного кода в изолированной среде и назначьте ей разрешения только на ресурсы, которые код может получить доступ. Сведения о выполнении приложения в "песочнице", см. в разделе [как: выполнение частично доверенного кода в изолированной среде](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  
+>  В версиях .NET Framework, выпущенных до [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], можно использовать <xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType> метод, чтобы предотвратить случайный доступ к системным ресурсам доверенным кодом. <xref:System.Security.CodeAccessPermission.Deny%2A> Теперь является устаревшим, и доступ к ресурсам теперь определяется только предоставленный набор разрешений для сборки. Чтобы ограничить доступ к файлам, необходимо запустить частично доверенного кода в изолированной среде и назначьте ей разрешения только на ресурсы, которые код может получить доступ. Сведения о выполнении приложения в "песочнице", см. в разделе [как: Выполнение не вполне безопасного кода в изолированной среде](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  
   
  ]]></format>
     </remarks>
@@ -87,13 +80,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
       </Parameters>
       <Docs>
-        <param name="state">Одно из значений перечисления <see cref="T:System.Security.Permissions.PermissionState" />.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.Permissions.EnvironmentPermission" /> с указанным состоянием разрешения: ограниченным или неограниченным.</summary>
+        <param name="state">Одно из значений <see cref="T:System.Security.Permissions.PermissionState" />.</param>
+        <summary>Выполняет инициализацию нового экземпляра класса <see cref="T:System.Security.Permissions.EnvironmentPermission" />, используя заданное ограниченное либо неограниченное разрешение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -124,6 +118,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -135,9 +130,9 @@
         <Parameter Name="pathList" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="flag">Одно из значений перечисления <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
-        <param name="pathList">Список переменных среды (разделенных точкой с запятой), к которым предоставляется доступ.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.Permissions.EnvironmentPermission" /> заданным доступом к указанным переменным среды.</summary>
+        <param name="flag">Одно из значений <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
+        <param name="pathList">Список переменных среды (разделенных точкой с запятой), к которым предоставлен доступ.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.Permissions.EnvironmentPermission" /> с указанными доступом к указанным переменным среды.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -169,6 +164,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -183,9 +179,9 @@
         <Parameter Name="pathList" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="flag">Одно из значений перечисления <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
+        <param name="flag">Одно из значений <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
         <param name="pathList">Список переменных среды (разделенных точкой с запятой).</param>
-        <summary>Добавляет доступ для заданных переменных среды в существующее состояние разрешения.</summary>
+        <summary>Добавляет к существующему состоянию разрешения доступ для указанных переменных среды.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -225,6 +221,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -262,6 +259,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -276,13 +274,13 @@
       </Parameters>
       <Docs>
         <param name="esd">Кодировка XML, используемая для восстановления разрешения.</param>
-        <summary>Восстанавливает разрешение с указанным состоянием из кодировки XML.</summary>
+        <summary>Восстанавливает разрешение с определенным состоянием из кодировки XML.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="esd" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="esd" /> не является допустимым элементом разрешения.  
   
-- или - 
-Недопустимый номер версии параметра <paramref name="esd" />.</exception>
+-или- 
+Номер версии параметра <paramref name="esd" /> недопустим.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetPathList">
@@ -304,6 +302,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -312,8 +311,8 @@
         <Parameter Name="flag" Type="System.Security.Permissions.EnvironmentPermissionAccess" />
       </Parameters>
       <Docs>
-        <param name="flag">Одно из значений <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />, представляющее один тип доступа к переменным среды.</param>
-        <summary>Получает все переменные среды с указанным <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</summary>
+        <param name="flag">Одно из значений <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />, которое представляет один тип доступа к переменным среды.</param>
+        <summary>Возвращает все переменные среды с заданным разрешением <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</summary>
         <returns>Список переменных среды (разделенных точкой с запятой) для выбранного флага.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -334,11 +333,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="flag" /> не является допустимым значением <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.  
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="flag" /> не является допустимым значением объекта <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.  
   
-- или - 
- <paramref name="flag" /> имеет значение <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" />, которое представляет несколько типов доступа к переменным среды, или <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.NoAccess" />, которое не представляет ни одного типа доступа к переменным среды.</exception>
+-или- 
+ Значение параметра <paramref name="flag" /> равно полю <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" />, которое представляет несколько типов доступа к переменным среды, или полю <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.NoAccess" />, которое не представляет никакого типа доступа к переменным среды.</exception>
       </Docs>
     </Member>
     <Member MemberName="Intersect">
@@ -360,6 +358,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -373,9 +372,9 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">Разрешение, пересекающееся с текущим разрешением. Его тип должен совпадать с типом текущего разрешения.</param>
-        <summary>Создает и возвращает разрешение, представляющее собой пересечение текущего и указанного разрешений.</summary>
-        <returns>Новое разрешение, представляющее собой пересечение текущего и указанного разрешений. Это новое разрешение равно <see langword="null" />, если пересечение является пустым.</returns>
+        <param name="target">Разрешение, которое должно пересекаться с текущим разрешением. Его тип должен совпадать с типом текущего разрешения.</param>
+        <summary>Создает и возвращает разрешение, представляющее собой пересечение текущего и заданного разрешений.</summary>
+        <returns>Новое разрешение, представляющее собой пересечение текущего и заданного разрешений. Если пересечение пусто, новое разрешение имеет значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -384,7 +383,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsSubsetOf">
@@ -406,6 +405,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -419,9 +419,9 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">Разрешение, для которого требуется проверить отношение подмножества. Его тип должен совпадать с типом текущего разрешения.</param>
-        <summary>Определяет, является ли текущее разрешение подмножеством указанного разрешения.</summary>
-        <returns>Значение <see langword="true" />, если текущее разрешение является подмножеством указанного разрешения. В противном случае — значение <see langword="false" />.</returns>
+        <param name="target">Разрешение, для которого требуется проверить отношение подмножества. Данное разрешение должно относиться к тому же типу, что и текущее разрешение.</param>
+        <summary>Определяет, является ли текущее разрешение подмножеством заданного разрешения.</summary>
+        <returns>Значение <see langword="true" />, если текущее разрешение является подмножеством заданного разрешения; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -430,7 +430,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsUnrestricted">
@@ -455,14 +455,15 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает значение, указывающее, является ли текущее разрешение неограниченным.</summary>
-        <returns>Значение <see langword="true" />, если текущее разрешение является неограниченным. В противном случае — значение <see langword="false" />.</returns>
+        <summary>Возвращает значение, определяющее, является ли текущее разрешение неограниченным.</summary>
+        <returns>Значение <see langword="true" />, если текущее разрешение неограниченно; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -492,6 +493,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -506,9 +508,9 @@
         <Parameter Name="pathList" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="flag">Одно из значений перечисления <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
+        <param name="flag">Одно из значений <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" />.</param>
         <param name="pathList">Список переменных среды (разделенных точкой с запятой).</param>
-        <summary>Задает указанный доступ для указанных переменных среды в существующее состояние разрешения.</summary>
+        <summary>Задает указанный доступ для указанных переменных среды к существующему состоянию разрешения.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -548,6 +550,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.SecurityElement</ReturnType>
@@ -555,7 +558,7 @@
       <Parameters />
       <Docs>
         <summary>Создает кодировку XML для разрешения и его текущего состояния.</summary>
-        <returns>Кодировка XML разрешения, включающая любые сведения о состоянии.</returns>
+        <returns>Кодировка XML разрешения, включающая все сведения о состоянии.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -578,6 +581,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -602,7 +606,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="other" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="other" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
   </Members>

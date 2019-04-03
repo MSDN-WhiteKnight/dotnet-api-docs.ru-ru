@@ -1,13 +1,5 @@
 <Type Name="PrincipalContext" FullName="System.DirectoryServices.AccountManagement.PrincipalContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ee3563fd87cf32eaf29668a4b4636630346f4e55" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51318403" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class PrincipalContext : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="05a24762a978422603358d22eb2e895e9f81fc2f" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58560825" /></Metadata><TypeSignature Language="C#" Value="public class PrincipalContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrincipalContext extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.PrincipalContext" />
   <TypeSignature Language="VB.NET" Value="Public Class PrincipalContext&#xA;Implements IDisposable" />
@@ -42,8 +34,6 @@
   
  ]]></format>
     </remarks>
-    <altmember cref="N:System.DirectoryServices.AccountManagement" />
-    <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -61,12 +51,10 @@
   
  При создании объекта контекста участника без указания контейнера, он может использоваться для представления нескольких различных контейнеров. Один контейнер может использоваться как базовый для операций запроса, хотя дополнительные контейнеры могут содержать только что созданные объекты-участники. Например, при вставке пользователей или групп в доменный тип контекста, API управления учетными записями использует известный пользовательский контейнер по умолчанию, «CN = Users, DC = Fabrikam, DC = com». Если компьютеры вставляются в хранилище, этот API использует значение по умолчанию «CN = Computers, DC = Fabrikam, DC = com» контейнера. Обратите внимание на то, что имена контейнеров по умолчанию можно изменить, администратор домена. Поскольку конструкторы объектов-участников можно указать только один контекст участника, дополнительные контексты представлены как поведение по умолчанию, когда приложение создает контекст домена без указания контейнера. Так как нет известных контейнера для каталога приложения, приложения необходимо указать контейнер в конструкторе или <xref:System.ArgumentException> возникает исключение. Поскольку SAM не имеет контейнеров, <xref:System.ArgumentException> возникает, если приложение пытается определить контейнер в конструкторе.  
   
- В каждой версии конструктора, который принимает имя пользователя в качестве параметра `userName` строка может быть в различных форматах.  Три поддерживаемых NameFormats для являются SamAccountName, UserPrincipalName и Nt4Name.  Дополнительные сведения о форматах имен см. в документации ADS_NAME_TYPE_ENUM [здесь](http://go.microsoft.com/fwlink/?LinkID=99942).  
+ В каждой версии конструктора, который принимает имя пользователя в качестве параметра `userName` строка может быть в различных форматах. Три поддерживаемых NameFormats для являются SamAccountName, UserPrincipalName и Nt4Name. Дополнительные сведения о форматах имен см. в документации ADS_NAME_TYPE_ENUM [здесь](https://go.microsoft.com/fwlink/?LinkID=99942).  
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -91,8 +79,6 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">При использовании контекста каталога приложения должно быть задано имя или контейнер.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -116,13 +102,11 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста и именем.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">Имя должно быть задано, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="F:System.DirectoryServices.AccountManagement.ContextType" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -147,12 +131,12 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
         <param name="container">Контейнер хранилища, используемый в качестве корня контекста. Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер.  
   
 Для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> и <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> данный параметр принимает значение различающегося имени объекта-контейнера.  
   
-Этот параметр не должен иметь значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
+Этот параметр должен иметь значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста, именем и контейнером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -166,8 +150,6 @@
   
 Параметр name или container должен быть задан, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="F:System.DirectoryServices.AccountManagement.ContextType" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -198,13 +180,13 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
         <param name="container">Контейнер хранилища, используемый в качестве корня контекста. Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер.  
   
 Для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> и <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> данный параметр принимает значение различающегося имени объекта-контейнера.  
   
-Этот параметр не должен иметь значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
-        <param name="options">Сочетание одного или нескольких значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающих параметры, которые используются для привязки к серверу. Если этот параметр имеет значение NULL, используются следующие параметры по умолчанию: ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing.</param>
+Этот параметр должен иметь значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
+        <param name="options">Сочетание одного или нескольких значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающих параметры, которые используются для привязки к серверу. Если этот параметр имеет значение <see langword="null" />, используются следующие параметры по умолчанию: ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста, именем, контейнером и параметрами контекста.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -220,8 +202,6 @@
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />.  
   
 Параметр <paramref name="options" /> содержит сочетание недопустимых значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -247,17 +227,15 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
-        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные текущего процесса. В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
-        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные текущего процесса. В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные текущего процесса. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные текущего процесса. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста, именем, именем пользователя и паролем.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными NULL, либо содержать значение.  
+        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными <see langword="null" />, либо содержать значение.  
   
 Имя должно быть задано, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -284,14 +262,14 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
         <param name="container">Контейнер хранилища, используемый в качестве корня контекста. Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер.  
   
 Для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> и <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> данный параметр принимает значение различающегося имени объекта-контейнера.  
   
-Этот параметр не должен иметь значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
-        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные по умолчанию для текущего участника.  В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
-        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные по умолчанию для текущего участника.  В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+Этот параметр должен иметь значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
+        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные по умолчанию для текущего субъекта. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные по умолчанию для текущего субъекта. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста, именем, контейнером, именем пользователя и паролем.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -301,14 +279,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными NULL, либо содержать значение.  
+        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными <see langword="null" />, либо содержать значение.  
   
 Контейнер нельзя задать, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.  
   
 Параметр <paramref name="name" /> или <paramref name="container" /> должен быть задан, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -336,15 +312,15 @@
         <param name="contextType">Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />, указывающее тип хранилища для контекста участника.</param>
         <param name="name">Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя компьютера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> или имя и порт сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.  
   
-Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение NULL, этот контекст является контроллером домена для домена участника-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение NULL, это имя локального компьютера. Этот параметр не может принимать значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
+Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> имеет значение <see langword="null" />, этот контекст является контроллером домена для домена субъекта-пользователя, от имени которого запущен поток. Если имя типа контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> имеет значение <see langword="null" />, это имя локального компьютера. Этот параметр не может принимать значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />.</param>
         <param name="container">Контейнер хранилища, используемый в качестве корня контекста. Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер.  
   
 Для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> и <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> данный параметр принимает значение различающегося имени объекта-контейнера.  
   
-Этот параметр не должен иметь значение NULL для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
-        <param name="options">Сочетание одного или нескольких значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающих параметры, которые используются для привязки к серверу. Если этот параметр имеет значение NULL, используются следующие параметры по умолчанию: ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing.</param>
-        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные по умолчанию для текущего участника. В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
-        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <c>username</c> и <c>password</c> имеют значение NULL, используются учетные данные по умолчанию для текущего участника.  В противном случае оба параметра <c>username</c> и <c>password</c> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+Этот параметр должен иметь значение <see langword="null" /> для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</param>
+        <param name="options">Сочетание одного или нескольких значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающих параметры, которые используются для привязки к серверу. Если этот параметр имеет значение <see langword="null" />, используются следующие параметры по умолчанию: ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing.</param>
+        <param name="userName">Имя пользователя для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные по умолчанию для текущего субъекта. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
+        <param name="password">Пароль для подключения к хранилищу. Если оба параметра <paramref name="userName" /> и <paramref name="password" /> имеют значение <see langword="null" />, используются учетные данные по умолчанию для текущего субъекта. В противном случае оба параметра <paramref name="userName" /> и <paramref name="password" /> должны иметь значения, не равные NULL, а указанные в них учетные данные используются для подключения к хранилищу.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> заданным типом контекста, именем, контейнером, параметрами контекста, именем пользователя и паролем.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -354,7 +330,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными NULL, либо содержать значение.  
+        <exception cref="T:System.ArgumentException">Параметры <paramref name="username" /> и <paramref name="password" /> должны либо быть равными <see langword="null" />, либо содержать значение.  
   
 Контейнер нельзя задать, если в параметре <paramref name="contextType" /> указан тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.  
   
@@ -362,8 +338,6 @@
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Параметр <paramref name="contextType" /> содержит недопустимое значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextType" />.  
   
 Параметр <paramref name="options" /> содержит сочетание недопустимых значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="ConnectedServer">
@@ -385,7 +359,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает имя сервера, к которому подключен контекст участника.</summary>
-        <value>Имя сервера, к которому подключен контекст участника, или значение NULL, если контекст участника не подключен к серверу.</value>
+        <value>Имя сервера, к которому подключен контекст участника или <see langword="null" /> Если контекст участника не подключен к серверу.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -394,8 +368,6 @@
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="Container">
@@ -417,17 +389,15 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, заданное в параметре контейнера в конструкторе.</summary>
-        <value>Контейнер хранилища, используемый в качестве корня контекста, или значение NULL, если контейнер не задан.</value>
+        <value>Контейнер хранилища, используемый в качестве корня контекста или <see langword="null" /> Если контейнер не указан.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер. Для <xref:System.DirectoryServices.AccountManagement.ContextType.Domain> и <xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory> типов контекста, это свойство является различающееся имя объекта-контейнера. Для <xref:System.DirectoryServices.AccountManagement.ContextType.Machine> типов контекста, это свойство должно иметь значение null.  
+ Все запросы выполняются по отношению к этому корню, а все данные добавляются в этот контейнер. Для <xref:System.DirectoryServices.AccountManagement.ContextType.Domain> и <xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory> типов контекста, это свойство является различающееся имя объекта-контейнера. Для <xref:System.DirectoryServices.AccountManagement.ContextType.Machine> типов контекста, это свойство должно быть `null`.  
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="ContextType">
@@ -458,8 +428,6 @@
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -486,8 +454,6 @@
       <Docs>
         <summary>Удаляет текущий экземпляр объекта <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />.</summary>
         <remarks>To be added.</remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -509,10 +475,8 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, заданное в параметре <paramref name="name" /> конструктора.</summary>
-        <value>Имя домена или сервера для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />, имя узла для типов контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />, имя сервера, на котором размещен экземпляр объекта <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> или значение NULL, если имя не задано.</value>
+        <value>Имя домена или сервера для <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> типы контекстов, имя узла для <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> типов контекста, имя сервера, на котором размещается <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> экземпляра, или <see langword="null" /> Если имя не задано.</value>
         <remarks>To be added.</remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="Options">
@@ -536,8 +500,6 @@
         <summary>Возвращает параметры, заданные в параметре <paramref name="contextOptions" /> конструктора.</summary>
         <value>Значение перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающее тип целевого объекта, к которому выполняется подключение.</value>
         <remarks>To be added.</remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <Member MemberName="UserName">
@@ -559,17 +521,15 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, заданное в параметре имени пользователя в конструкторе.</summary>
-        <value>Имя пользователя для подключения к хранилищу или значение NULL, если оно отсутствует.</value>
+        <value>Имя пользователя для подключения к хранилищу или <see langword="null" /> Если имя пользователя не существует.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Это свойство можно задать, передав имя пользователя в любом формате.  Полный список допустимых типы форматов, см. в документации ADS_NAME_TYPE_ENUM [здесь](http://go.microsoft.com/fwlink/?LinkID=99942).  
+ Это свойство можно задать, передав имя пользователя в любом формате. Полный список допустимых типы форматов, см. в документации ADS_NAME_TYPE_ENUM [здесь](https://go.microsoft.com/fwlink/?LinkID=99942).  
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
-        <related type="Article" href="https://msdn.microsoft.com/library/9255c42d-04a6-4727-adf1-bad9e42fa92a">Обзор пространства имен System.DirectoryServices.AccountManagement</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="ValidateCredentials">
@@ -583,11 +543,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-`userName` Аргумента в обеих перегрузок этого метода должны иметь форму *username* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username@domain*.   
+`userName` Аргумента в обеих перегрузок этого метода должны иметь форму *username* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username\@домена*.   
   
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
       </Docs>
     </MemberGroup>
     <Member MemberName="ValidateCredentials">
@@ -615,19 +574,17 @@
         <param name="userName">Имя пользователя, проверенное на сервере. Дополнительные сведения о формате <paramref name="userName" /> см. в разделе "Примечания".</param>
         <param name="password">Пароль, проверенный на сервере.</param>
         <summary>Создает соединения с сервером и возвращает логическое значение, указывающее на действительность заданных имени пользователя и пароля.</summary>
-        <returns>
-          <see langword="true" />, если учетные данные являются действительными, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если учетные данные являются действительными, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A> Метод привязан к серверу, указанному в конструкторе. Если `username` и `password` аргументы являются `null`, этот метод проверяет учетные данные по умолчанию для текущего участника.  
 
-`userName` Аргумент должен быть в формате *userName* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username@domain*.
+`userName` Аргумент должен быть в формате *userName* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username\@домена*.
 
  ]]></format>
         </remarks>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
       </Docs>
     </Member>
     <Member MemberName="ValidateCredentials">
@@ -657,20 +614,18 @@
         <param name="password">Пароль, проверенный на сервере.</param>
         <param name="options">Сочетание одного или нескольких значений перечисления <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />, задающих параметры, которые используются для привязки к серверу. Этот параметр может задавать только простую привязку, а также привязку без использования SSL или согласования.</param>
         <summary>Создает соединения с сервером и возвращает логическое значение, указывающее на действительность заданных имени пользователя и пароля. Этот метод выполняет быструю проверку учетных данных для имени пользователя и пароля.</summary>
-        <returns>
-          <see langword="true" />, если учетные данные являются действительными, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если учетные данные являются действительными, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A> Метод привязан к серверу, указанному в конструкторе. Если `username` и `password` параметра имеют значение null, этот метод проверяет учетные данные по умолчанию для текущего участника.  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A> Метод привязан к серверу, указанному в конструкторе. Если `username` и `password` параметры являются `null`, этот метод проверяет учетные данные по умолчанию для текущего участника.  
 
-`userName` Аргумент должен быть в формате *username* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username@domain*. 
+`userName` Аргумент должен быть в формате *username* (например, *mcampbell*) вместо *"Домен\имя_пользователя"* или *username\@домена*. 
  
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">В параметре <paramref name="options" /> должно быть указано значение <see cref="F:System.DirectoryServices.AccountManagement.ContextOptions.Negotiate" />, если используется тип контекста <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />.</exception>
-        <altmember cref="N:System.DirectoryServices.AccountManagement" />
       </Docs>
     </Member>
   </Members>

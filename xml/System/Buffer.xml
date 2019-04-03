@@ -1,13 +1,5 @@
 <Type Name="Buffer" FullName="System.Buffer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="642a351c89ff51cb2b59343640e7f5e2f13ea28c" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49135281" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Buffer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d749d15128fbf3f9d27134a3a0863f20d665e6a6" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935488" /></Metadata><TypeSignature Language="C#" Value="public static class Buffer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Buffer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Buffer" />
   <TypeSignature Language="VB.NET" Value="Public Class Buffer" />
@@ -112,9 +104,9 @@
       </Parameters>
       <Docs>
         <param name="src">Исходный буфер.</param>
-        <param name="srcOffset">Отсчитываемое от нуля смещение байтов в <c>src</c>.</param>
+        <param name="srcOffset">Смещение байтов (начиная с нуля) в <paramref name="src" />.</param>
         <param name="dst">Буфер назначения.</param>
-        <param name="dstOffset">Отсчитываемое от нуля смещение байтов в <c>dst</c>.</param>
+        <param name="dstOffset">Смещение байтов (начиная с нуля) в <paramref name="dst" />.</param>
         <param name="count">Число байт для копирования.</param>
         <summary>Копирует указанное число байтов из исходного массива, начиная с определенного смещения, в конечный массив, начиная с определенного смещения.</summary>
         <remarks>
@@ -140,7 +132,7 @@
    
   
 ## Examples  
- Следующий пример копирует массивов с помощью <xref:System.Buffer.BlockCopy%2A> метод. Для каждого <xref:System.Buffer.BlockCopy%2A> операции, в ней перечислены источник и целевой массивы, как массив значений и, как последовательность байтов. Пример важности учета порядка следования байтов системы при работе с <xref:System.Buffer.BlockCopy%2A> метод: системы, так как Windows, с прямым порядком байтов, младшие байты значения тип-примитив предшествовать более высокого порядка байтов.  
+ Следующий пример копирует массивов с помощью <xref:System.Buffer.BlockCopy%2A> метод. Для каждого <xref:System.Buffer.BlockCopy%2A> операции, в ней перечислены источник и целевой массивы, как массив значений и, как последовательность байтов. Пример важности учета порядка следования байтов системы при работе с <xref:System.Buffer.BlockCopy%2A> метод: Поскольку системы Windows с прямым порядком байтов, младшие байты значения тип-примитив предшествовать более высокого порядка байтов.  
   
  [!code-cpp[System.Buffer.BlockCopy#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/bcopy.cpp#2)]
  [!code-csharp[System.Buffer.BlockCopy#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/bcopy.cs#2)]
@@ -148,13 +140,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="src" /> или <paramref name="dst" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="src" /> или <paramref name="dst" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="src" /> или <paramref name="dst" /> —не массив примитивов.  
   
-- или - 
+-или- 
 Число байтов в <paramref name="src" /> меньше суммы значений <paramref name="srcOffset" /> и <paramref name="count" />.  
   
-- или - 
+-или- 
 Число байтов в <paramref name="dst" /> меньше суммы значений <paramref name="dstOffset" /> и <paramref name="count" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="srcOffset" />, <paramref name="dstOffset" /> или <paramref name="count" /> меньше 0.</exception>
       </Docs>
@@ -213,11 +205,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="array" /> не является простым.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> не является простым.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
       </Docs>
     </Member>
     <Member MemberName="GetByte">
@@ -263,7 +253,7 @@
         <param name="array">Массив.</param>
         <param name="index">Расположение в массиве.</param>
         <summary>Извлекает байт из указанного места в указанном массиве.</summary>
-        <returns>Возвращает байт <paramref name="index" /> в массиве.</returns>
+        <returns>Байт из указанного места в массиве.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -281,12 +271,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="array" /> не является простым.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> не является простым.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> отрицательно или больше длины массива <paramref name="array" />.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
+        <exception cref="T:System.OverflowException"><paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="MemoryCopy">
@@ -324,10 +312,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -335,10 +323,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.Void*" />
-        <Parameter Name="destination" Type="System.Void*" />
-        <Parameter Name="destinationSizeInBytes" Type="System.Int64" />
-        <Parameter Name="sourceBytesToCopy" Type="System.Int64" />
+        <Parameter Name="source" Type="System.Void*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="destination" Type="System.Void*" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="destinationSizeInBytes" Type="System.Int64" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="sourceBytesToCopy" Type="System.Int64" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="source">Адрес байтов для копирования.</param>
@@ -383,10 +371,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -394,10 +382,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.Void*" />
-        <Parameter Name="destination" Type="System.Void*" />
-        <Parameter Name="destinationSizeInBytes" Type="System.UInt64" />
-        <Parameter Name="sourceBytesToCopy" Type="System.UInt64" />
+        <Parameter Name="source" Type="System.Void*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="destination" Type="System.Void*" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="destinationSizeInBytes" Type="System.UInt64" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="sourceBytesToCopy" Type="System.UInt64" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="source">Адрес байтов для копирования.</param>
@@ -480,12 +468,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="array" /> не является простым.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> не является простым.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> отрицательно или больше длины массива <paramref name="array" />.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
+        <exception cref="T:System.OverflowException"><paramref name="array" /> больше 2 гигабайт (ГБ).</exception>
       </Docs>
     </Member>
   </Members>

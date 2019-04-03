@@ -1,13 +1,5 @@
 <Type Name="XpsDocumentWriter" FullName="System.Windows.Xps.XpsDocumentWriter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cf347b1d172a0b43c603afe7ca58e089c38b5272" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48753165" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class XpsDocumentWriter : System.Windows.Documents.Serialization.SerializerWriter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="04907d6e7f539ef038b48d359e0030f25d60b1e9" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56766282" /></Metadata><TypeSignature Language="C#" Value="public class XpsDocumentWriter : System.Windows.Documents.Serialization.SerializerWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsDocumentWriter extends System.Windows.Documents.Serialization.SerializerWriter" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Xps.XpsDocumentWriter" />
   <TypeSignature Language="VB.NET" Value="Public Class XpsDocumentWriter&#xA;Inherits SerializerWriter" />
@@ -222,7 +214,7 @@
 ## Remarks  
  Несмотря на то что <xref:System.Windows.Xps.Packaging.XpsDocument> класс имеет имя в единственном числе, <xref:System.Windows.Xps.Packaging.XpsDocument> может принимать одно <xref:System.Windows.Documents.FixedDocument> или набора нескольких документов. Этот метод добавляет <xref:System.Windows.Documents.FixedDocument> элементов в исходной коллекции к набору <xref:System.Windows.Documents.FixedDocument> элементов в целевом объекте <xref:System.Windows.Xps.Packaging.XpsDocument> или <xref:System.Printing.PrintQueue>.  
   
- Это <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> метод будет повторной сериализации указанного [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа, это приведет к удалению содержимого <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761).  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
+ Это <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> метод будет повторной сериализации указанного [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа, это приведет к удалению содержимого <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](https://go.microsoft.com/fwlink/?LinkID=65761).  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
   
  Конструкция это <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> не вызывает метод <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> событий.  
   
@@ -254,7 +246,7 @@
         <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
       </Parameters>
       <Docs>
-        <param name="documentPaginator">Объект, который содержит указатель на исходный материал без разбивки на страницы, а также методы для разбивки материала на страницы.</param>
+        <param name="documentPaginator">Объект, который содержит указатель на не разбитый на страницы исходный материал, а также содержит методы для разбивки материала на страницы.</param>
         <summary>Записывает содержимое с синхронной разбивкой на страницы из указанного объекта <see cref="T:System.Windows.Documents.DocumentPaginator" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -293,7 +285,7 @@
         <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
       </Parameters>
       <Docs>
-        <param name="fixedDocument">Документ, записываемый в <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />.</param>
+        <param name="fixedDocument">Документ, который записывается в <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />.</param>
         <summary>Синхронно записывает указанный <see cref="T:System.Windows.Documents.FixedDocument" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -337,7 +329,7 @@
         <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
       </Parameters>
       <Docs>
-        <param name="fixedDocumentSequence">Набор документов, записываемых в <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />.</param>
+        <param name="fixedDocumentSequence">Набор документов, который записывается в <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />.</param>
         <summary>Синхронно записывает указанный <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -467,7 +459,7 @@
   
  Несмотря на то что <xref:System.Windows.Xps.Packaging.XpsDocument> класс имеет имя в единственном числе, <xref:System.Windows.Xps.Packaging.XpsDocument> может принимать одно <xref:System.Windows.Documents.FixedDocument> или набора нескольких документов. Этот метод добавляет <xref:System.Windows.Documents.FixedDocument> элементов в исходной коллекции к последовательности <xref:System.Windows.Documents.FixedDocument> элементов в целевом объекте <xref:System.Windows.Xps.Packaging.XpsDocument> или <xref:System.Printing.PrintQueue>.  
   
- Если `notificationLevel` указываются в виде <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>, уведомления создаются, только в том случае, при сериализации документа не печатаются.  Для получения уведомлений документ должен быть повторно сериализован.  Если документ повторно сериализован все содержимое из <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification (XPS)](http://go.microsoft.com/fwlink/?LinkID=65761) удаляется.  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
+ Если `notificationLevel` указываются в виде <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>, уведомления создаются, только в том случае, при сериализации документа не печатаются.  Для получения уведомлений документ должен быть повторно сериализован.  Если документ повторно сериализован все содержимое из <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification (XPS)](https://go.microsoft.com/fwlink/?LinkID=65761) удаляется.  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
   
  Если `notificationLevel` указывается как <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled> документа не будет быть повторно сериализован и расширенные содержимого будет сохранен, даже при печати.  
   
@@ -502,8 +494,8 @@
         <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
       </Parameters>
       <Docs>
-        <param name="documentPaginator">Объект, который содержит указатель на исходный материал без разбивки на страницы, а также методы для разбивки материала на страницы.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати материала по умолчанию.</param>
+        <param name="documentPaginator">Объект, который содержит указатель на не разбитый на страницы исходный материал, а также содержит методы для разбивки материала на страницы.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для материала.</param>
         <summary>Синхронно записывает разбитое на страницы содержимое из указанного объекта <see cref="T:System.Windows.Documents.DocumentPaginator" /> с <see cref="T:System.Printing.PrintTicket" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -581,7 +573,7 @@
       </Parameters>
       <Docs>
         <param name="fixedDocumentSequence">Записываемый набор документов.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати набора документов по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для набора документов.</param>
         <summary>Синхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -621,7 +613,7 @@
       </Parameters>
       <Docs>
         <param name="fixedPage">Записываемая страница.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати страницы по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для страницы.</param>
         <summary>Синхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedPage" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -715,7 +707,7 @@
 ## Remarks  
  Несмотря на то что <xref:System.Windows.Xps.Packaging.XpsDocument> класс имеет имя в единственном числе, <xref:System.Windows.Xps.Packaging.XpsDocument> может принимать одно <xref:System.Windows.Documents.FixedDocument> или набора нескольких документов. Этот метод добавляет <xref:System.Windows.Documents.FixedDocument> элементов в исходной коллекции к набору <xref:System.Windows.Documents.FixedDocument> элементов в целевом объекте <xref:System.Windows.Xps.Packaging.XpsDocument> или <xref:System.Printing.PrintQueue>.  
   
- Это <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> метод будет повторной сериализации указанного [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа, это приведет к удалению содержимого <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761).  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
+ Это <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> метод будет повторной сериализации указанного [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа, это приведет к удалению содержимого <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](https://go.microsoft.com/fwlink/?LinkID=65761).  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
   
  Конструкция это <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> не вызывает метод <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> событий.  
   
@@ -747,7 +739,7 @@
         <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
       </Parameters>
       <Docs>
-        <param name="documentPaginator">Объект, который содержит указатель на исходный материал без разбивки на страницы, а также методы для разбивки материала на страницы.</param>
+        <param name="documentPaginator">Объект, который содержит указатель на не разбитый на страницы исходный материал, а также содержит методы для разбивки материала на страницы.</param>
         <summary>Асинхронно записывает разбитое на страницы содержимое из указанного объекта <see cref="T:System.Windows.Documents.DocumentPaginator" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -960,7 +952,7 @@
   
  Несмотря на то что <xref:System.Windows.Xps.Packaging.XpsDocument> класс имеет имя в единственном числе, <xref:System.Windows.Xps.Packaging.XpsDocument> может принимать одно <xref:System.Windows.Documents.FixedDocument> или набора нескольких документов. Этот метод добавляет <xref:System.Windows.Documents.FixedDocument> элементов в исходной коллекции к последовательности <xref:System.Windows.Documents.FixedDocument> элементов в целевом объекте <xref:System.Windows.Xps.Packaging.XpsDocument> или <xref:System.Printing.PrintQueue>.  
   
- Если `notificationLevel` указываются в виде <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>, уведомления создаются, только в том случае, при сериализации документа не печатаются.  Для получения уведомлений документ должен быть повторно сериализован.  Если документ повторно сериализован все содержимое из <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761) удаляется.  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
+ Если `notificationLevel` указываются в виде <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>, уведомления создаются, только в том случае, при сериализации документа не печатаются.  Для получения уведомлений документ должен быть повторно сериализован.  Если документ повторно сериализован все содержимое из <xref:System.IO.Packaging.Package> , не требуется сохранять [XML Paper Specification](https://go.microsoft.com/fwlink/?LinkID=65761) удаляется.  Reserialization также удалит все расширения из <xref:System.Windows.Documents.FixedPage> разметки, включая все расширенные [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] содержимого.  
   
  Если `notificationLevel` указывается как <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled> документа не будет быть повторно сериализован и расширенные содержимого будет сохранен, даже при печати.  
   
@@ -1026,8 +1018,8 @@
         <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
       </Parameters>
       <Docs>
-        <param name="documentPaginator">Объект, который содержит указатель на исходный материал без разбивки на страницы, а также методы для разбивки материала на страницы.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати материала по умолчанию.</param>
+        <param name="documentPaginator">Объект, который содержит указатель на не разбитый на страницы исходный материал, а также содержит методы для разбивки материала на страницы.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, который представляет параметры печати по умолчанию для материала.</param>
         <summary>Асинхронно записывает разбитое на страницы содержимое из указанного объекта <see cref="T:System.Windows.Documents.DocumentPaginator" /> с <see cref="T:System.Printing.PrintTicket" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1181,7 +1173,7 @@
       </Parameters>
       <Docs>
         <param name="fixedDocumentSequence">Записываемый набор документов.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати набора документов по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для набора документов.</param>
         <summary>Асинхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1252,7 +1244,7 @@
       </Parameters>
       <Docs>
         <param name="fixedPage">Записываемая страница.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати страницы по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для страницы.</param>
         <summary>Асинхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedPage" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1369,7 +1361,7 @@
       </Parameters>
       <Docs>
         <param name="documentPaginator">Объект, который содержит указатель на не разбитый на страницы исходный материал; также содержит методы для разбивки материала на страницы.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати материала по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, который представляет параметры печати по умолчанию для материала.</param>
         <param name="userSuppliedState">Заданный пользователем объект для идентификации асинхронной операции и связывания с ней.</param>
         <summary>Асинхронно записывает разбитое на страницы содержимое из указанного объекта <see cref="T:System.Windows.Documents.DocumentPaginator" /> с <see cref="T:System.Printing.PrintTicket" /> в целевой объект <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
@@ -1451,7 +1443,7 @@
       </Parameters>
       <Docs>
         <param name="fixedDocumentSequence">Записываемый набор документов.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати набора документов по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для набора документов.</param>
         <param name="userSuppliedState">Заданный пользователем объект для идентификации асинхронной операции и связывания с ней.</param>
         <summary>Асинхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
@@ -1495,7 +1487,7 @@
       </Parameters>
       <Docs>
         <param name="fixedPage">Записываемая страница.</param>
-        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати страницы по умолчанию.</param>
+        <param name="printTicket">Объект <see cref="T:System.Printing.PrintTicket" />, представляющий параметры печати по умолчанию для страницы.</param>
         <param name="userSuppliedState">Заданный пользователем объект для идентификации асинхронной операции и связывания с ней.</param>
         <summary>Асинхронно записывает заданный объект <see cref="T:System.Windows.Documents.FixedPage" /> вместе с <see cref="T:System.Printing.PrintTicket" /> в целевой <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> или <see cref="T:System.Printing.PrintQueue" />.</summary>
         <remarks>
@@ -1608,7 +1600,6 @@
   
  ]]></format>
         </remarks>
-        <altmember cref="M:System.Windows.Xps.XpsDocumentWriter.raise_WritingCompleted(System.Object,System.Windows.Documents.Serialization.WritingCompletedEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="WritingPrintTicketRequired">
@@ -1668,7 +1659,6 @@
   
  ]]></format>
         </remarks>
-        <altmember cref="M:System.Windows.Xps.XpsDocumentWriter.raise_WritingPrintTicketRequired(System.Object,System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="WritingProgressChanged">
@@ -1708,7 +1698,6 @@
   
  ]]></format>
         </remarks>
-        <altmember cref="M:System.Windows.Xps.XpsDocumentWriter.raise_WritingProgressChanged(System.Object,System.Windows.Documents.Serialization.WritingProgressChangedEventArgs)" />
       </Docs>
     </Member>
   </Members>

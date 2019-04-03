@@ -1,13 +1,5 @@
 <Type Name="WaitHandle" FullName="System.Threading.WaitHandle">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7e662ed5dda251c583c6d82a839ce57c9d160f65" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49131112" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WaitHandle : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6ebd81e2bf7d5cd0f3352fe967172936ade87ae8" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57934253" /></Metadata><TypeSignature Language="C#" Value="public abstract class WaitHandle : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract beforefieldinit WaitHandle extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.WaitHandle" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WaitHandle&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -59,7 +51,7 @@
   
 -   класс <xref:System.Threading.Mutex>; См. в разделе [мьютексы](~/docs/standard/threading/mutexes.md).  
   
--   <xref:System.Threading.EventWaitHandle> Класс и его производные классы <xref:System.Threading.AutoResetEvent> и <xref:System.Threading.ManualResetEvent>. См. дополнительные сведения об [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](~/docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).  
+-   <xref:System.Threading.EventWaitHandle> Класс и его производные классы <xref:System.Threading.AutoResetEvent> и <xref:System.Threading.ManualResetEvent>.  
   
 -   класс <xref:System.Threading.Semaphore>; См. в разделе [Semaphore и SemaphoreSlim](~/docs/standard/threading/semaphore-and-semaphoreslim.md).  
   
@@ -82,7 +74,7 @@
 > [!IMPORTANT]
 >  Этот тип реализует <xref:System.IDisposable> интерфейс. Когда вы закончите, используя тип или тип, производный от него, следует освободить его прямо или косвенно. Чтобы удалить тип напрямую, вызовите его <xref:System.Threading.WaitHandle.Close%2A> метод в `try` / `catch` блока. Чтобы избавиться от его косвенно, используйте языковой конструкции, такие как `using` (в C#) или `Using` (в Visual Basic). Дополнительные сведения см. в разделе «С помощью объекта, реализует IDisposable» <xref:System.IDisposable> разделу интерфейса.  
   
- <xref:System.Threading.WaitHandle> реализует <xref:System.IDisposable.Dispose%2A> шаблон. См. в разделе [шаблон удаления](~/docs/standard/design-guidelines/dispose-pattern.md). При наследовании от <xref:System.Threading.WaitHandle>, используйте <xref:System.Threading.WaitHandle.SafeWaitHandle%2A> свойство, чтобы сохранять ваш собственный дескриптор операционной системы. Необходимо переопределить защищенный <xref:System.Threading.WaitHandle.Dispose%2A> метод только при использовании дополнительных неуправляемые ресурсы.  
+ <xref:System.Threading.WaitHandle> реализует <xref:System.IDisposable.Dispose%2A> шаблон. См. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md). При наследовании от <xref:System.Threading.WaitHandle>, используйте <xref:System.Threading.WaitHandle.SafeWaitHandle%2A> свойство, чтобы сохранять ваш собственный дескриптор операционной системы. Необходимо переопределить защищенный <xref:System.Threading.WaitHandle.Dispose%2A> метод только при использовании дополнительных неуправляемые ресурсы.  
   
    
   
@@ -99,7 +91,7 @@
     <related type="Article" href="~/docs/standard/threading/index.md">Потоки</related>
     <related type="Article" href="~/docs/standard/threading/threading-objects-and-features.md">Объекты и функциональные возможности работы с потоками</related>
     <related type="Article" href="~/docs/standard/threading/mutexes.md">Mutexes</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/cd94fc34-ac15-427f-b723-a1240a4fab7d">EventWaitHandle, AutoResetEvent и ManualResetEvent</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/cd94fc34-ac15-427f-b723-a1240a4fab7d">EventWaitHandle, AutoResetEvent и ManualResetEvent</related>
     <related type="Article" href="~/docs/standard/threading/semaphore-and-semaphoreslim.md">Семафоры</related>
   </Docs>
   <Members>
@@ -179,9 +171,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Необходимо переопределить <see langword="Dispose(Boolean)" /> метод для освобождения ресурсов, выделенных в производных классах.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Необходимо переопределить <see langword="Dispose(Boolean)" /> метод для освобождения ресурсов, выделенных в производных классах.</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">Реализация метода Dispose</related>
       </Docs>
     </Member>
@@ -287,7 +277,7 @@
         <Parameter Name="explicitDisposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="explicitDisposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="explicitDisposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>При переопределении в производном классе освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Threading.WaitHandle" />, и при необходимости освобождает управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -297,11 +287,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Необходимо переопределить <see cref="M:System.Threading.WaitHandle.Dispose(System.Boolean)" /> метод для освобождения ресурсов, выделенных в производных классах.  
+        <block subset="none" type="overrides"><para>Необходимо переопределить <see cref="M:System.Threading.WaitHandle.Dispose(System.Boolean)" /> метод для освобождения ресурсов, выделенных в производных классах.  
   
-<see cref="M:System.Threading.WaitHandle.Close" /> Или <see cref="M:System.Threading.WaitHandle.Dispose" /> метод может вызываться несколько раз другими объектами. При переопределении этого метода нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" /> или <see langword="Close" />.</para>
-        </block>
+<see cref="M:System.Threading.WaitHandle.Close" /> Или <see cref="M:System.Threading.WaitHandle.Dispose" /> метод может вызываться несколько раз другими объектами. При переопределении этого метода нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" /> или <see langword="Close" />.</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">Реализация метода Dispose</related>
       </Docs>
     </Member>
@@ -328,8 +316,20 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает ресурсы, удерживаемые текущим экземпляром.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> Этот элемент был удален из .NET Framework версии 2.0 и последующие версии. Этот раздел относится только к версий, перечисленных в «Сведения о версии» далее в этом разделе.
+
+
+Код приложения не вызывает этот метод; он автоматически вызывается во время сборки мусора, если завершение работы сборщика мусора была отключена. Дополнительные сведения см. в разделах <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> и <xref:System.Object.Finalize>. Этот метод переопределяет метод <xref:System.Object.Finalize>.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Handle">
@@ -357,7 +357,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Use the SafeWaitHandle property instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
@@ -428,9 +428,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Это значение можно использовать, чтобы определить, является ли <see cref="P:System.Threading.WaitHandle.Handle" /> свойство содержит допустимый собственный дескриптор операционной системы.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Это значение можно использовать, чтобы определить, является ли <see cref="P:System.Threading.WaitHandle.Handle" /> свойство содержит допустимый собственный дескриптор операционной системы.</para></block>
       </Docs>
     </Member>
     <Member MemberName="SafeWaitHandle">
@@ -482,7 +480,7 @@
 ## Remarks  
  При назначении нового значения для <xref:System.Threading.WaitHandle.SafeWaitHandle%2A> свойство, предыдущих дескриптор закрывается при предыдущем <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> объект собран. Не следует вручную закрывать дескриптор, так как это приводит к <xref:System.ObjectDisposedException> при <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> предпринимается попытка закрыть дескриптор.  
   
- <xref:System.Threading.WaitHandle> реализует <xref:System.IDisposable.Dispose%2A> шаблон. См. в разделе [шаблон удаления](~/docs/standard/design-guidelines/dispose-pattern.md). При наследовании от <xref:System.Threading.WaitHandle>, используйте <xref:System.Threading.WaitHandle.SafeWaitHandle%2A> свойство, чтобы сохранять маркер собственный дескриптор операционной системы. Необходимо переопределить защищенный <xref:System.Threading.WaitHandle.Dispose%2A> метод только при использовании дополнительных неуправляемые ресурсы.  
+ <xref:System.Threading.WaitHandle> реализует <xref:System.IDisposable.Dispose%2A> шаблон. См. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md). При наследовании от <xref:System.Threading.WaitHandle>, используйте <xref:System.Threading.WaitHandle.SafeWaitHandle%2A> свойство, чтобы сохранять маркер собственный дескриптор операционной системы. Необходимо переопределить защищенный <xref:System.Threading.WaitHandle.Dispose%2A> метод только при использовании дополнительных неуправляемые ресурсы.  
   
  ]]></format>
         </remarks>
@@ -527,8 +525,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" />
-        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" />
+        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="toSignal">Объект <see cref="T:System.Threading.WaitHandle" />, который получает сигнал.</param>
@@ -554,10 +552,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="toSignal" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="toWaitOn" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="toWaitOn" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Метод был вызван в потоке с атрибутом <see cref="T:System.STAThreadAttribute" />.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Этот метод не поддерживается в Windows 98 и Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="toSignal" /> является семафором и его счетчик уже достиг максимального значения.</exception>
@@ -596,10 +594,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" />
-        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="toSignal">Объект <see cref="T:System.Threading.WaitHandle" />, который получает сигнал.</param>
@@ -625,10 +623,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="toSignal" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="toWaitOn" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="toWaitOn" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Метод вызывается в потоке с атрибутом <see cref="T:System.STAThreadAttribute" />.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Этот метод не поддерживается в Windows 98 и Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Невозможно передать сигнал объекту <see cref="T:System.Threading.WaitHandle" />, поскольку его счетчик превысит максимальное значение.</exception>
@@ -663,10 +661,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" />
-        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="toSignal" Type="System.Threading.WaitHandle" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="toWaitOn" Type="System.Threading.WaitHandle" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="toSignal">Объект <see cref="T:System.Threading.WaitHandle" />, который получает сигнал.</param>
@@ -694,16 +692,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="toSignal" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="toWaitOn" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="toWaitOn" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Метод был вызван в потоке с атрибутом <see cref="T:System.STAThreadAttribute" />.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Этот метод не поддерживается в Windows 98 и Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="toSignal" /> является семафором и его счетчик уже достиг максимального значения.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="timeout" /> соответствует отрицательному числу, отличному от -1 миллисекунды.  
   
-- или - 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
       </Docs>
@@ -734,8 +732,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает все ресурсы, занятые модулем <see cref="T:System.Threading.WaitHandle" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Вызов `Dispose` позволяет ресурсы, используемые <xref:System.Threading.WaitHandle> перераспределить для других целей. Дополнительные сведения о `Dispose`, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <MemberGroup MemberName="WaitAll">
@@ -793,8 +799,7 @@
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром. Этот массив не может содержать несколько ссылок на один и тот же объект.</param>
         <summary>Ожидает получения сигнала всеми элементами заданного массива.</summary>
-        <returns>
-          <see langword="true" />, когда каждый элемент <paramref name="waitHandles" /> получил сигнал. В противном случае возврат из метода не происходит.</returns>
+        <returns><see langword="true" />, когда каждый элемент <paramref name="waitHandles" /> получил сигнал. В противном случае возврат из метода не происходит.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -819,13 +824,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />. - или - 
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />. -или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.  
   
-- или - 
+-или- 
  Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 2.0 или более поздней.</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  Вместо этого в <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET для приложений Магазина Windows</see> или в <see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">переносимой библиотеке классов</see> перехватите исключение базового класса <see cref="T:System.ArgumentException" />.  
   
@@ -835,7 +839,7 @@
  Массив <paramref name="waitHandles" /> содержит повторяющиеся элементы.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.  
   
-- или - 
+-или- 
 Атрибут <see cref="T:System.STAThreadAttribute" /> применяется к процедуре потока для текущего потока, а массив <paramref name="waitHandles" /> содержит более одного элемента.</exception>
         <exception cref="T:System.ApplicationException">Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 1.0 или 1.1.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание прервано, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
@@ -878,8 +882,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром. Данный массив не может содержать несколько ссылок на один и тот же объект (дубликатов).</param>
@@ -903,13 +907,12 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.  
   
-- или - 
+-или- 
  В массиве <paramref name="waitHandles" /> отсутствуют элементы.</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  Вместо этого в <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET для приложений Магазина Windows</see> или в <see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">переносимой библиотеке классов</see> перехватите исключение базового класса <see cref="T:System.ArgumentException" />.  
   
@@ -919,7 +922,7 @@
  Массив <paramref name="waitHandles" /> содержит повторяющиеся элементы.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.  
   
-- или - 
+-или- 
 Атрибут <see cref="T:System.STAThreadAttribute" /> применяется к процедуре потока для текущего потока, а массив <paramref name="waitHandles" /> содержит более одного элемента.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
@@ -962,8 +965,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром. Этот массив не может содержать несколько ссылок на один и тот же объект.</param>
@@ -989,13 +992,12 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.  
   
-- или - 
+-или- 
  В массиве <paramref name="waitHandles" /> отсутствуют элементы.</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  Вместо этого в <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET для приложений Магазина Windows</see> или в <see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">переносимой библиотеке классов</see> перехватите исключение базового класса <see cref="T:System.ArgumentException" />.  
   
@@ -1005,11 +1007,10 @@
  Массив <paramref name="waitHandles" /> содержит повторяющиеся элементы.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.  
   
-- или - 
+-или- 
 Атрибут <see cref="T:System.STAThreadAttribute" /> применяется к процедуре потока для текущего потока, а массив <paramref name="waitHandles" /> содержит более одного элемента.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание прервано, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Массив <paramref name="waitHandles" /> содержит прозрачный прокси для элемента <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
@@ -1048,9 +1049,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром. Данный массив не может содержать несколько ссылок на один и тот же объект (дубликатов).</param>
@@ -1091,15 +1092,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.  
   
-- или - 
+-или- 
  Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 2.0 или более поздней.</exception>
         <exception cref="T:System.DuplicateWaitObjectException">Массив <paramref name="waitHandles" /> содержит повторяющиеся элементы.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.  
   
-- или - 
+-или- 
 Атрибут <see cref="T:System.STAThreadAttribute" /> применяется к процедуре потока для текущего потока, а массив <paramref name="waitHandles" /> содержит более одного элемента.</exception>
         <exception cref="T:System.ApplicationException">Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 1.0 или 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
@@ -1135,9 +1136,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром. Этот массив не может содержать несколько ссылок на один и тот же объект.</param>
@@ -1180,20 +1181,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.  
   
-- или - 
+-или- 
  Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 2.0 или более поздней.</exception>
         <exception cref="T:System.DuplicateWaitObjectException">Массив <paramref name="waitHandles" /> содержит повторяющиеся элементы.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.  
   
-- или - 
+-или- 
 Атрибут <see cref="T:System.STAThreadAttribute" /> применяется к процедуре потока для текущего потока, а массив <paramref name="waitHandles" /> содержит более одного элемента.</exception>
         <exception cref="T:System.ApplicationException">Массив <paramref name="waitHandles" /> не содержит элементов, и используется платформа .NET Framework версии 1.0 или 1.1.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание прервано, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Массив <paramref name="waitHandles" /> содержит прозрачный прокси для элемента <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
@@ -1283,14 +1283,12 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
         <exception cref="T:System.InvalidOperationException">Массив <paramref name="waitHandles" /> содержит прозрачный прокси для элемента <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
       </Docs>
     </Member>
@@ -1330,8 +1328,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром.</param>
@@ -1354,7 +1352,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
@@ -1399,8 +1397,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром.</param>
@@ -1425,12 +1423,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
         <exception cref="T:System.ArgumentException">В массиве <paramref name="waitHandles" /> отсутствуют элементы.</exception>
@@ -1473,9 +1470,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром.</param>
@@ -1518,15 +1515,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
         <exception cref="T:System.InvalidOperationException">Массив <paramref name="waitHandles" /> содержит прозрачный прокси для элемента <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
       </Docs>
     </Member>
@@ -1563,9 +1558,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="waitHandles" Type="System.Threading.WaitHandle[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="waitHandles">Массив <see langword="WaitHandle" />, содержащий объекты, ожидаемые текущим экземпляром.</param>
@@ -1610,18 +1605,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="waitHandles" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один или несколько объектов массива <paramref name="waitHandles" /> имеют значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Массив <paramref name="waitHandles" /> содержит больше объектов, чем разрешено системой.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 1.0 или 1.1.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> является массивом без элементов, а платформа .NET Framework имеет версию 2.0 или выше.</exception>
         <exception cref="T:System.InvalidOperationException">Массив <paramref name="waitHandles" /> содержит прозрачный прокси для элемента <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
       </Docs>
     </Member>
@@ -1732,7 +1724,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="millisecondsTimeout">Время ожидания в миллисекундах или функция <see cref="F:System.Threading.Timeout.Infinite" /> (-1) в случае неограниченного времени ожидания.</param>
@@ -1798,7 +1790,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">Период <see cref="T:System.TimeSpan" />, представляющий время ожидания в миллисекундах, или период <see cref="T:System.TimeSpan" />, представляющий -1 миллисекунду для неограниченного ожидания.</param>
@@ -1821,9 +1813,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Текущий экземпляр уже удален.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Текущий экземпляр является прозрачным прокси для объекта <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>
@@ -1857,8 +1848,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="millisecondsTimeout">Время ожидания в миллисекундах или функция <see cref="F:System.Threading.Timeout.Infinite" /> (-1) в случае неограниченного времени ожидания.</param>
@@ -1929,8 +1920,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">Период <see cref="T:System.TimeSpan" />, представляющий время ожидания в миллисекундах, или период <see cref="T:System.TimeSpan" />, представляющий -1 миллисекунду для неограниченного ожидания.</param>
@@ -1970,9 +1961,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Текущий экземпляр уже удален.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">Ожидание закончилось, так как поток завершил работу, не освободив мьютекс. Это исключение не вызывается в ОС Windows 98 или Windows Millennium Edition.</exception>
         <exception cref="T:System.InvalidOperationException">Текущий экземпляр является прозрачным прокси для объекта <see cref="T:System.Threading.WaitHandle" /> в другом домене приложения.</exception>

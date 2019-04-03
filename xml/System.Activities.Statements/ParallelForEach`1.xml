@@ -1,13 +1,5 @@
 <Type Name="ParallelForEach&lt;T&gt;" FullName="System.Activities.Statements.ParallelForEach&lt;T&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e9d1e7e3a3d8f669267054e91d64bd7872e25f9a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48674866" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ParallelForEach&lt;T&gt; : System.Activities.NativeActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d5d3e313990957addf83a095615df1e7e4ae942d" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58547358" /></Metadata><TypeSignature Language="C#" Value="public sealed class ParallelForEach&lt;T&gt; : System.Activities.NativeActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ParallelForEach`1&lt;T&gt; extends System.Activities.NativeActivity" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Statements.ParallelForEach`1" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ParallelForEach(Of T)&#xA;Inherits NativeActivity" />
@@ -25,7 +17,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Markup.ContentProperty("Body")</AttributeName>
     </Attribute>
   </Attributes>
@@ -36,7 +28,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Внедренные инструкции планируются совместно и выполняются асинхронно, однако если сами запланированные действия не являются асинхронными (например, действия по обмену сообщениями, <xref:System.Activities.Statements.InvokeMethod> или действия, производные от <xref:System.Activities.AsyncCodeActivity>), то они не выполняются в отдельных потоках и каждое последующее действие выполняется только после того, как предыдущее запланированное действие завершается или переходит в режим бездействия.  Если ни одно из дочерних действий этого действия не является асинхронным и не бездействует, то это действие выполняется так же, как действие <xref:System.Activities.Statements.ForEach%601>.  
+ Внедренные инструкции планируются вместе и выполняются асинхронно, но если сами запланированные действия являются асинхронными (таких как действия обмена сообщениями, <xref:System.Activities.Statements.InvokeMethod>, или действия, производные от <xref:System.Activities.AsyncCodeActivity>), они не выполняются в отдельных потоки, поэтому каждое последовательное действие будет выполняться только в том случае, когда предыдущее Запланированное действие завершается или переходит в состояние бездействия.  Если ни одно из дочерних действий этого действия не является асинхронным и не бездействует, то это действие выполняется так же, как действие <xref:System.Activities.Statements.ForEach%601>.  
   
    
   
@@ -93,7 +85,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -158,7 +150,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -224,8 +216,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" />
-        <Parameter Name="originalActivity" Type="System.Activities.Activity" />
+        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="originalActivity" Type="System.Activities.Activity" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="metadata">To be added.</param>
@@ -247,10 +239,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Activities.RequiredArgument</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">

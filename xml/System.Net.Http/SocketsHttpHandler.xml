@@ -1,13 +1,5 @@
 <Type Name="SocketsHttpHandler" FullName="System.Net.Http.SocketsHttpHandler">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b1cf68dc5e8b3dab890fdf943c2f129745fe72c7" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36551788" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class SocketsHttpHandler : System.Net.Http.HttpMessageHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="da4a191c97d3456e614f648a8a7133518e890229" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55399543" /></Metadata><TypeSignature Language="C#" Value="public sealed class SocketsHttpHandler : System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SocketsHttpHandler extends System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.SocketsHttpHandler" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SocketsHttpHandler&#xA;Inherits HttpMessageHandler" />
@@ -22,8 +14,43 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Предоставляет обработчик сообщений по умолчанию, используемый <see cref="T:System.Net.Http.HttpClient" /> в .NET Core 2.1 и более поздних версиях.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+
+Начиная с .NET Core 2.1 `SocketsHttpHandler` класс предоставляет реализацию, используемые сетевые классы более высокого уровня HTTP, например <xref:System.Net.Http.HttpClient>. Использование `SocketsHttpHandler` предлагает ряд преимуществ:
+
+- Значительное улучшение производительности по сравнению с предыдущей реализацией.
+
+- Устранение зависимости платформы, что упрощает развертывание и обслуживание. Например `libcurl` больше не является зависимость от .NET Core для macOS и .NET Core для Linux.
+
+- Согласованного поведения на всех платформах .NET.
+
+Если это изменение нежелательно, можно настроить приложение на использование более старой версии <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> вместо этого класса в следующих случаях:
+
+- Путем вызова <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> метод следующим образом:
+
+   ```csharp
+   AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
+   ```
+
+   ```vb
+   AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
+   ``` 
+- Определив `System.Net.Http.useSocketsHttpHandler` переключиться в *. netcore.runtimeconfig.json* файла конфигурации:
+
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "System.Net.Http.useSocketsHttpHandler": false
+    }
+  }
+  ```
+  
+- Путем задания переменной среды с именем `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` и установив значение либо `false` или 0.
+
+         ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -314,9 +341,10 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает или задает время неактивности соединения в пуле, после которого оно будет считаться доступным для повторного использования.</summary>
+        <value>Максимальное время простоя для соединения в пуле. Значение по умолчанию для этого свойства — 2 минуты.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">Указанное значение меньше <see cref="F:System.TimeSpan.Zero" /> или равно <see cref="F:System.Threading.Timeout.InfiniteTimeSpan" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="PooledConnectionLifetime">

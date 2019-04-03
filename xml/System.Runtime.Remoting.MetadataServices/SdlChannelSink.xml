@@ -1,17 +1,9 @@
 <Type Name="SdlChannelSink" FullName="System.Runtime.Remoting.MetadataServices.SdlChannelSink">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="9507ef50e2c889472be170fe360bd991bc947221" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46646208" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SdlChannelSink : System.Runtime.Remoting.Channels.IChannelSinkBase, System.Runtime.Remoting.Channels.IServerChannelSink" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f78d1a5dceb0b8274b996defa738f621540d7ef0" /><Meta Name="ms.sourcegitcommit" Value="800d45fb80a298c4bde743e8a40af69755fc850f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/24/2019" /><Meta Name="ms.locfileid" Value="54895295" /></Metadata><TypeSignature Language="C#" Value="public class SdlChannelSink : System.Runtime.Remoting.Channels.IServerChannelSink" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SdlChannelSink extends System.Object implements class System.Runtime.Remoting.Channels.IChannelSinkBase, class System.Runtime.Remoting.Channels.IServerChannelSink" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.MetadataServices.SdlChannelSink" />
-  <TypeSignature Language="VB.NET" Value="Public Class SdlChannelSink&#xA;Implements IChannelSinkBase, IServerChannelSink" />
-  <TypeSignature Language="C++ CLI" Value="public ref class SdlChannelSink : System::Runtime::Remoting::Channels::IChannelSinkBase, System::Runtime::Remoting::Channels::IServerChannelSink" />
+  <TypeSignature Language="VB.NET" Value="Public Class SdlChannelSink&#xA;Implements IServerChannelSink" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SdlChannelSink : System::Runtime::Remoting::Channels::IServerChannelSink" />
   <TypeSignature Language="F#" Value="type SdlChannelSink = class&#xA;    interface IServerChannelSink&#xA;    interface IChannelSinkBase" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Remoting</AssemblyName>
@@ -40,7 +32,7 @@
   
  Следующая таблица показывает канала свойства конфигурации, которые могут быть указаны для этого приемника канала. Первые два свойства объединяются для управления WSDL-публикации объекты, опубликованные доменом приложения. Если `false` указывается для первого свойства, WSDL не возвращается независимо от второго свойства. (По умолчанию используется `true`.) В противном случае второй управляет разрешением на ответ для глобального объекта метаданных URI. (По умолчанию используется `false`.)  
   
-|Свойство.|Описание:|  
+|Свойство.|Описание|  
 |--------------|-----------------|  
 |`metadataEnabled`|Логическое значение, указывающее, нужно ли удовлетворять запросы, которые заканчиваются на «? wsdl» Если этот приемник входит в цепочку приемников канала. Значением по умолчанию является `true`. При значении `false` приемник создает исключение во всех случаях, когда метаданные запрашиваются для любого объекта в домене приложения.<br /><br /> Это свойство поддерживается только в .NET Framework версии 1.1 на следующих платформах: Windows 98, Windows NT 4.0, Windows Millennium Edition, Windows 2000, Windows XP Home Edition, Windows XP Professional и в семействе Windows Server 2003.|  
 |`remoteApplicationMetadataEnabled`|Логическое значение, указывающее, нужно ли удовлетворять запросы для объекта URI «RemoteApplicationMetadata? wsdl», который возвращает WSDL, описывающий все объекты, опубликованные доменом приложения. Если `false`, а затем любой запрос на «RemoteApplicationMetadata.rem» возникло исключение. Все остальные «? wsdl» запросы для конкретного объекта URI обрабатываются. При значении `true` удовлетворяется запрос к глобальным метаданным. Значением по умолчанию является `false`.<br /><br /> Это свойство поддерживается только в .NET Framework версии 1.1 на следующих платформах: Windows 98, Windows NT 4.0, Windows Millennium Edition, Windows 2000, Windows XP Home Edition, Windows XP Professional и в семействе Windows Server 2003.|  
@@ -82,6 +74,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AsyncProcessResponse(System::Runtime::Remoting::Channels::IServerResponseChannelSinkStack ^ sinkStack, System::Object ^ state, System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Channels::ITransportHeaders ^ headers, System::IO::Stream ^ stream);" />
       <MemberSignature Language="F#" Value="abstract member AsyncProcessResponse : System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack * obj * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit&#xA;override this.AsyncProcessResponse : System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack * obj * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit" Usage="sdlChannelSink.AsyncProcessResponse (sinkStack, state, msg, headers, stream)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IServerChannelSink.AsyncProcessResponse(System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -116,6 +111,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IO::Stream ^ GetResponseStream(System::Runtime::Remoting::Channels::IServerResponseChannelSinkStack ^ sinkStack, System::Object ^ state, System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Channels::ITransportHeaders ^ headers);" />
       <MemberSignature Language="F#" Value="abstract member GetResponseStream : System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack * obj * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders -&gt; System.IO.Stream&#xA;override this.GetResponseStream : System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack * obj * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders -&gt; System.IO.Stream" Usage="sdlChannelSink.GetResponseStream (sinkStack, state, msg, headers)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IServerChannelSink.GetResponseStream(System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -137,8 +135,7 @@
         <param name="msg">Сериализуемое ответное сообщение.</param>
         <param name="headers">Заголовки, помещаемые в ответный поток для клиента.</param>
         <summary>Возвращает <see cref="T:System.IO.Stream" />, в который необходимо сериализовать предоставленное ответное сообщение.</summary>
-        <returns>
-          <see cref="T:System.IO.Stream" />, в который необходимо сериализовать предоставленное ответное сообщение.</returns>
+        <returns><see cref="T:System.IO.Stream" />, в который необходимо сериализовать предоставленное ответное сообщение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -158,6 +155,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Remoting::Channels::IServerChannelSink ^ NextChannelSink { System::Runtime::Remoting::Channels::IServerChannelSink ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.NextChannelSink : System.Runtime.Remoting.Channels.IServerChannelSink" Usage="System.Runtime.Remoting.MetadataServices.SdlChannelSink.NextChannelSink" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IServerChannelSink.NextChannelSink</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -181,6 +181,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::Channels::ServerProcessing ProcessMessage(System::Runtime::Remoting::Channels::IServerChannelSinkStack ^ sinkStack, System::Runtime::Remoting::Messaging::IMessage ^ requestMsg, System::Runtime::Remoting::Channels::ITransportHeaders ^ requestHeaders, System::IO::Stream ^ requestStream, [Runtime::InteropServices::Out] System::Runtime::Remoting::Messaging::IMessage ^ % responseMsg, [Runtime::InteropServices::Out] System::Runtime::Remoting::Channels::ITransportHeaders ^ % responseHeaders, [Runtime::InteropServices::Out] System::IO::Stream ^ % responseStream);" />
       <MemberSignature Language="F#" Value="abstract member ProcessMessage : System.Runtime.Remoting.Channels.IServerChannelSinkStack * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream *  *  *  -&gt; System.Runtime.Remoting.Channels.ServerProcessing&#xA;override this.ProcessMessage : System.Runtime.Remoting.Channels.IServerChannelSinkStack * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream *  *  *  -&gt; System.Runtime.Remoting.Channels.ServerProcessing" Usage="sdlChannelSink.ProcessMessage (sinkStack, requestMsg, requestHeaders, requestStream, responseMsg, responseHeaders, responseStream)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream,System.Runtime.Remoting.Messaging.IMessage@,System.Runtime.Remoting.Channels.ITransportHeaders@,System.IO.Stream@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -233,6 +236,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IDictionary ^ Properties { System::Collections::IDictionary ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Properties : System.Collections.IDictionary" Usage="System.Runtime.Remoting.MetadataServices.SdlChannelSink.Properties" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IChannelSinkBase.Properties</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -251,7 +257,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Дополнительные сведения см. в разделе [ &#91; \<topic://cpconchannelformatterconfigurationproperties >&#93;](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).  
+>  Дополнительные сведения см. в разделе [канала и свойства конфигурации модуля форматирования](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).  
   
  ]]></format>
         </remarks>

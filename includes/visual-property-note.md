@@ -1,0 +1,3 @@
+> [!NOTE]
+>  Визуальное свойство будет действовать, только если оно одновременно присутствует в шаблоне элемента управления по умолчанию и задано с использованием [TemplateBinding](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md). Список визуальных свойств доступен в разделе [Настройка визуальной структуры элемента управления](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md#changing-the-visual-structure-of-a-control) статьи [Настройка внешнего вида существующего элемента управления путем создания объекта ControlTemplate](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).
+  

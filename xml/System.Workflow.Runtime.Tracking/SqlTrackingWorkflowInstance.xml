@@ -1,13 +1,5 @@
 <Type Name="SqlTrackingWorkflowInstance" FullName="System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b5045fceadc3c8790e2759c10e0b3b7f0665b823" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48663770" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SqlTrackingWorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d05132d0d7a48b252c16b953b8a17d7a0aa2d171" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53333915" /></Metadata><TypeSignature Language="C#" Value="public class SqlTrackingWorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlTrackingWorkflowInstance extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" />
   <TypeSignature Language="VB.NET" Value="Public Class SqlTrackingWorkflowInstance" />
@@ -37,7 +29,7 @@
 > [!NOTE]
 >  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
   
- Объекты класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> возвращаются при вызове обоих методов: <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A?displayProperty=nameWithType> и <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType>, и предоставляется доступ к данным отслеживания, обслуживаемым в базе данных SQL классом <xref:System.Workflow.Runtime.Tracking.SqlTrackingService>, для конкретного экземпляра рабочего процесса. Класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> оптимизирует этот доступ к базе данных для своих свойств, которые обслуживают коллекции. Дополнительные сведения см. в разделе <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A>.  
+ Объекты класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> возвращаются при вызове обоих методов: <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A?displayProperty=nameWithType> и <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType>, и предоставляется доступ к данным отслеживания, обслуживаемым в базе данных SQL классом <xref:System.Workflow.Runtime.Tracking.SqlTrackingService>, для конкретного экземпляра рабочего процесса. Класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> оптимизирует этот доступ к базе данных для своих свойств, которые обслуживают коллекции. Для получения дополнительной информации см. <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A>.  
   
    
   
@@ -103,8 +95,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение, указывающее, должны ли данный свойства для данного объекта класса <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> автоматически обновляться при попытке получения доступа к ним.</summary>
-        <value>
-          <see langword="true" />, если данные свойства должны автоматически обновляться при попытке доступа к ним; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если данные свойства должны автоматически обновляться при попытке доступа к ним; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -233,7 +224,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Метод <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> в действительности не загружает никаких данных для класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>. Для оптимизации производительности базы данных класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> загружает данные для своих свойств коллекции по требованию. <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> Класс обеспечивает две метки времени для каждого свойства: одну, обозначающую время, данные отслеживания для коллекции был загружен, и вторую, обозначающую время последнего <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> обновлен. При получении одного из свойств коллекции класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> загружает любые данные отслеживания, которые были добавлены в базу данных с момента последней загрузки данных отслеживания для коллекции и с времени последнего обновления класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>, и добавляет эти данные в коллекцию, обслуживаемую этим свойством. Отметка времени, указывающая время последней загрузки данных для свойства, после этого принимает значение отметки времени, обозначающей момент последнего обновления. Если эти две метки времени идентичны, то дополнительные данные отслеживания не загружаются для свойства при осуществлении доступа к нему. <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> задает отметку времени, которая соответствует последнему обновлению <xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType>.  
+ Метод <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> в действительности не загружает никаких данных для класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>. Для оптимизации производительности базы данных класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> загружает данные для своих свойств коллекции по требованию. <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> Класс обеспечивает две метки времени для каждого свойства: одну, обозначающую время, данные отслеживания для коллекции был загружен, и вторую, обозначающую время последнего <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> обновлен. При получении одного из свойств коллекции класс <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> загружает любые данные отслеживания, которые были добавлены в базу данных с момента последней загрузки данных отслеживания для коллекции и с времени последнего обновления класса <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>, и добавляет эти данные в коллекцию, обслуживаемую этим свойством. Отметка времени, указывающая время последней загрузки данных для свойства, после этого принимает значение отметки времени, обозначающей момент последнего обновления. Если эти две метки времени идентичны, то дополнительные данные отслеживания не загружаются для свойства при осуществлении доступа к нему. <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> задает метку времени, которая соответствует последнему обновлению <xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -357,8 +348,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, обновлялся ли рабочий процесс после последней загрузки свойства <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowDefinition" />.</summary>
-        <value>
-          <see langword="true" />, если рабочий процесс обновлялся; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если рабочий процесс обновлялся; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -492,7 +482,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает и задает тип <see cref="T:System.Type" /> рабочего процесса.</summary>
+        <summary>Получает или задает тип <see cref="T:System.Type" /> экземпляра рабочего процесса.</summary>
         <value>Тип <see cref="T:System.Type" /> экземпляра рабочего процесса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

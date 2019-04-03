@@ -1,13 +1,5 @@
 <Type Name="ISymbolBinder" FullName="System.Diagnostics.SymbolStore.ISymbolBinder">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="014c47a66151566fe30953c09f44d09d1f8ba071" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48612479" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface ISymbolBinder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ed40b743b2eac38910d7079c392666f16af1e03a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58692710" /></Metadata><TypeSignature Language="C#" Value="public interface ISymbolBinder" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISymbolBinder" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.SymbolStore.ISymbolBinder" />
   <TypeSignature Language="VB.NET" Value="Public Interface ISymbolBinder" />
@@ -23,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.StackTrace</AssemblyName>
@@ -36,7 +29,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет модуль привязки символов для управляемого кода.</summary>
+    <summary>Представляет привязку символов для управляемого кода.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -67,6 +60,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.StackTrace</AssemblyName>
@@ -77,8 +71,11 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("This interface is not 64-bit clean.  Use ISymbolBinder1 instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("The recommended alternative is ISymbolBinder1.GetReader. ISymbolBinder1.GetReader takes the importer interface pointer as an IntPtr instead of an Int32, and thus works on both 32-bit and 64-bit architectures. http://go.microsoft.com/fwlink/?linkid=14202=14202")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("The recommended alternative is ISymbolBinder1.GetReader. ISymbolBinder1.GetReader takes the importer interface pointer as an IntPtr instead of an Int32, and thus works on both 32-bit and 64-bit architectures. https://go.microsoft.com/fwlink/?linkid=14202=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -93,7 +90,7 @@
         <param name="importer">Интерфейс импорта метаданных.</param>
         <param name="filename">Имя файла, для которого требуется интерфейс средства чтения.</param>
         <param name="searchPath">Путь поиска, используемый для поиска файла символов.</param>
-        <summary>Возвращает интерфейс средства чтения символов для текущего файла.</summary>
+        <summary>Получает интерфейс средства чтения символов для текущего файла.</summary>
         <returns>Интерфейс <see cref="T:System.Diagnostics.SymbolStore.ISymbolReader" /> для чтения символов отладки.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

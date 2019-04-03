@@ -1,13 +1,5 @@
 <Type Name="IDataObject" FullName="System.Runtime.InteropServices.ComTypes.IDataObject">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="facaed63d74bed79f077188354095c7e1e0a91f0" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48654456" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDataObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a4a73272c1a9bb56f2c6da6a945a4cead4e78300" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53487155" /></Metadata><TypeSignature Language="C#" Value="public interface IDataObject" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.IDataObject" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataObject" />
@@ -33,13 +25,10 @@
     <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.Runtime.InteropServices.Guid("0000010e-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>System.Runtime.InteropServices.InterfaceType</AttributeName>
-    </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.Guid("0000010E-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
@@ -51,7 +40,7 @@
 ## Remarks  
  Дополнительные сведения о `IDataObject` интерфейсом, см. в библиотеке MSDN.  
   
- Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Дополнительные сведения см. в разделе [как: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
+ Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Для получения дополнительной информации см. [How to: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
   
  ]]></format>
     </remarks>
@@ -96,7 +85,7 @@
         <summary>Создает соединение между объектом данных и приемником уведомлений. Этот метод вызывается объектом, который поддерживает приемник уведомлений и позволяет уведомлять приемник об изменениях в данных объекта.</summary>
         <returns>Этот метод поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие. 
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> S_OK 
  </term><description> Было создано соединение для получения рекомендаций.  
   
@@ -195,13 +184,13 @@
         <Parameter Name="enumAdvise" Type="System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="enumAdvise">При возвращении данного метода содержит компонент <see cref="T:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />, получающий указатель интерфейса на новый объект перечислителя. Если при реализации для параметра <c>enumAdvise</c> задается значение <see langword="null" />, в это время отсутствуют соединения с приемниками уведомлений. Этот параметр передается неинициализированным.</param>
+        <param name="enumAdvise">При возвращении данного метода содержит компонент <see cref="T:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />, получающий указатель интерфейса на новый объект перечислителя. Если при реализации для параметра <paramref name="enumAdvise" /> задается значение <see langword="null" />, в это время отсутствуют соединения с приемниками уведомлений. Этот параметр передается неинициализированным.</param>
         <summary>Создает объект, который может использоваться для перечисления текущих соединений для рекомендаций.</summary>
         <returns>Этот метод поддерживает стандартное возвращаемое значение E_OUTOFMEMORY, а также следующие.  
   
  <list type="table"><listheader><term> Значение  
   
- </term><description> Описание:  
+ </term><description> Описание  
   
  </description></listheader><item><term> S_OK  
   
@@ -256,7 +245,7 @@
         <summary>Создает объект для перечисления структур <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> для объекта данных. Эти структуры используются в вызовах <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" /> или <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />.</summary>
         <returns>Этот метод поддерживает стандартные возвращаемые значения E_INVALIDARG и E_OUTOFMEMORY, а также следующие. 
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> S_OK 
  </term><description> Объект перечисления был успешно создан.  
   
@@ -309,11 +298,11 @@
       </Parameters>
       <Docs>
         <param name="formatIn">Указатель на структуру <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />, переданную ссылкой, определяющую формат, среду передачи и целевое устройство, которые вызывающий объект хотел бы использовать для извлечения данных в последующем вызове, например <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />. В этом случае элемент <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" /> не важен и должен быть проигнорирован.</param>
-        <param name="formatOut">Возвращаемые этим методом данные содержат указатель на структуру <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />, которая содержит наиболее общие сведения для определенной прорисовки, делая его канонически эквивалентным <c>formatetIn</c>. Вызывающий объект должен выделить эту структуру, а метод <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" /> должен заполнить данные. Для извлечения данных в последующем вызове, например <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />, вызывающий объект использует предоставленное значение параметра <c>formatOut</c>, если предоставленное значение не равно <see langword="null" />. Это значение равняется <see langword="null" />, если метод возвращает <see langword="DATA_S_SAMEFORMATETC" />. В этом случае элемент <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" /> не важен и должен быть проигнорирован. Этот параметр передается неинициализированным.</param>
+        <param name="formatOut">Возвращаемые этим методом данные содержат указатель на структуру <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />, которая содержит наиболее общие сведения для определенной прорисовки, делая его канонически эквивалентным <c>formatetIn</c>. Вызывающий объект должен выделить эту структуру, а метод <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" /> должен заполнить данные. Для извлечения данных в последующем вызове, например <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />, вызывающий объект использует предоставленное значение параметра <paramref name="formatOut" />, если предоставленное значение не равно <see langword="null" />. Это значение равняется <see langword="null" />, если метод возвращает <see langword="DATA_S_SAMEFORMATETC" />. В этом случае элемент <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" /> не важен и должен быть проигнорирован. Этот параметр передается неинициализированным.</param>
         <summary>Предоставляет стандартную структуру <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />, которая логически эквивалентна более сложной структуре. Этот метод применяется, чтобы определить, будут ли две различные структуры <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> возвращать одинаковые данные, что позволяет избежать ненужной повторной отрисовки.</summary>
         <returns>Этот метод поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие. 
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> S_OK 
  </term><description> Возвращенная структура <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> отличается от структуры, которая была передана.  
   
@@ -462,7 +451,7 @@
         <summary>Определяет, способен ли объект данных выполнять отрисовку данных, описанных в структуре <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />. Объекты, пытающиеся выполнять операцию вставки или перетаскивания, могут вызывать этот метод перед вызовом <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />, чтобы получить указание о том, может ли операция быть успешной.</summary>
         <returns>Этот метод поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие. 
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> S_OK 
  </term><description> Последующий вызов <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />, возможно, будет успешным.  
   

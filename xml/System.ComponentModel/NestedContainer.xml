@@ -1,13 +1,5 @@
 <Type Name="NestedContainer" FullName="System.ComponentModel.NestedContainer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="97b4561f694e1f04542ec4400ce0d407538927cb" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51324903" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class NestedContainer : System.ComponentModel.Container, IDisposable, System.ComponentModel.INestedContainer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="46ae68c7474ee27942a592552a60babe8292d753" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53231499" /></Metadata><TypeSignature Language="C#" Value="public class NestedContainer : System.ComponentModel.Container, IDisposable, System.ComponentModel.INestedContainer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NestedContainer extends System.ComponentModel.Container implements class System.ComponentModel.IContainer, class System.ComponentModel.INestedContainer, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.NestedContainer" />
   <TypeSignature Language="VB.NET" Value="Public Class NestedContainer&#xA;Inherits Container&#xA;Implements IDisposable, INestedContainer" />
@@ -58,7 +50,7 @@
   
 -   При удалении компонента-владельца, а также удаляется контейнера.  
   
- Кроме того конструкторы обрабатывают вложенные контейнеры по-разному. Узел конструктора заинтересован только в одном контейнере, связанном с узлом. Таким образом, добавления и удаления события не вызываются, когда компонент добавлен или удален из вложенного контейнера. Тем не менее так как службы доходят до вложенного контейнера, события изменения компонента создаются при изменении компонента в вложенного контейнера.  
+ Кроме того конструкторы обрабатывают вложенные контейнеры по-разному. Узел конструктора заинтересован только в одном контейнере - связан с узлом. Таким образом, добавления и удаления события не вызываются, когда компонент добавлен или удален из вложенного контейнера. Тем не менее так как службы доходят до вложенного контейнера, события изменения компонента создаются при изменении компонента в вложенного контейнера.  
   
  Это несоответствие в отслеживание событий также влияет на функциональные возможности отмены, который тесно связана с сериализацией. Ядро отмены standard использует <xref:System.ComponentModel.Design.IReferenceService> для отслеживания изменений, внесенных в компоненты. Если ядро отмены невозможно определить имя компонента с помощью службы ссылок, он игнорирует любые изменения для этого компонента. Эта служба автоматически распознает изменения содержащихся в нем компонентов только в том случае, если они представляются как открытые свойства только для чтения с тем же именем, в их владельцев. В противном случае разработчик должен передать события изменения компонента до владельца. Например, если вложенного компонента `Text` свойство передается компонента-владельца как `Address` свойство, когда `Text` свойство меняется, необходимо программным образом изменение свойства для соответствующего `Address` свойство, иначе это изменение не будет отслеживаться операцией отмены.  
   
@@ -107,7 +99,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="owner" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="owner" /> — <see langword="null" />.</exception>
         <altmember cref="Overload:System.ComponentModel.NestedContainer.Dispose" />
       </Docs>
     </Member>
@@ -143,9 +135,9 @@
       </Parameters>
       <Docs>
         <param name="component">Компонент <see cref="T:System.ComponentModel.IComponent" />, для которого создается узел.</param>
-        <param name="name">Имя, которое нужно присвоить параметру <c>component</c>, или <see langword="null" />, чтобы не назначать имя.</param>
+        <param name="name">Имя, которое нужно присвоить параметру <paramref name="component" />, или <see langword="null" />, чтобы опустить назначение имени.</param>
         <summary>Создает внутри контейнера узел для компонента.</summary>
-        <returns>Вновь созданный <see cref="T:System.ComponentModel.ISite" />.</returns>
+        <returns>Вновь созданный объект <see cref="T:System.ComponentModel.ISite" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -154,7 +146,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="component" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="component" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.ComponentModel.Container.CreateSite(System.ComponentModel.IComponent,System.String)" />
       </Docs>
     </Member>
@@ -188,7 +180,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает ресурсы, используемые вложенным контейнером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -200,12 +192,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
         <altmember cref="M:System.ComponentModel.NestedContainer.#ctor(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
@@ -239,8 +229,8 @@
         <Parameter Name="service" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="service">Тип <see cref="T:System.Type" /> извлекаемой службы.</param>
-        <summary>Получает объект службы указанного типа, если он доступен.</summary>
+        <param name="service"><see cref="T:System.Type" /> искомой службы.</param>
+        <summary>Возвращает объект службы указанного типа, если он доступен.</summary>
         <returns>Объект <see cref="T:System.Object" />, реализующий запрошенную службу, или значение <see langword="null" />, если служба не может быть разрешена.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

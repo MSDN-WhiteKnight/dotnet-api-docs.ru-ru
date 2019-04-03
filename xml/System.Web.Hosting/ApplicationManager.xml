@@ -1,13 +1,5 @@
 <Type Name="ApplicationManager" FullName="System.Web.Hosting.ApplicationManager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a47f10012d41134ebc2c22c443bcdd89bf7dd1dc" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39929712" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ApplicationManager : MarshalByRefObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b72a4288d88935d936cc6642a67cd5e4803fe19c" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57939895" /></Metadata><TypeSignature Language="C#" Value="public sealed class ApplicationManager : MarshalByRefObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationManager extends System.MarshalByRefObject" />
   <TypeSignature Language="DocId" Value="T:System.Web.Hosting.ApplicationManager" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ApplicationManager&#xA;Inherits MarshalByRefObject" />
@@ -102,8 +94,8 @@
       <Docs>
         <param name="appHost">Объект <see cref="T:System.Web.Hosting.IApplicationHost" />.</param>
         <param name="type">Тип создаваемого объекта.</param>
-        <summary>Создает объект для указанного домена приложения на основе типа.</summary>
-        <returns>Новый объект указанного в <paramref name="type" /> типа.</returns>
+        <summary>Создает объект для заданного домена приложения на основе типа.</summary>
+        <returns>Новый объект типа, заданного в <paramref name="type" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -112,11 +104,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Физический путь к приложению не существует.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appHost" /> — <see langword="null" />.  
+        <exception cref="T:System.ArgumentException">Физический путь для приложения не существует.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="appHost" /> — <see langword="null" />.  
   
-\- или - 
+-или- 
  <paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
@@ -152,8 +143,7 @@
         <param name="type">Тип создаваемого объекта.</param>
         <param name="virtualPath">Виртуальный путь к приложению.</param>
         <param name="physicalPath">Физический путь к приложению.</param>
-        <param name="failIfExists">
-          <see langword="true" /> для порождения исключения, если объект указанного типа уже зарегистрирован; <see langword="false" /> для возврата существующего зарегистрированного объекта указанного типа.</param>
+        <param name="failIfExists"><see langword="true" /> для порождения исключения, если объект указанного типа уже зарегистрирован; <see langword="false" /> для возврата существующего зарегистрированного объекта указанного типа.</param>
         <summary>Создает объект для указанного домена приложения на основе типа, виртуального и физического пути, а также логического значения, указывающего на ошибку, когда объект указанного типа уже существует.</summary>
         <returns>Новый объект указанного <paramref name="type" />.</returns>
         <remarks>
@@ -180,20 +170,18 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="physicalPath" /> содержит значение <see langword="null" />  
+        <exception cref="T:System.ArgumentException"><paramref name="physicalPath" /> равно <see langword="null" />  
   
-\- или - 
+-или- 
  <paramref name="physicalPath" /> — недопустимый путь к приложению.  
   
-\- или - 
- Параметр <paramref name="type" /> не реализует интерфейс <see cref="T:System.Web.Hosting.IRegisteredObject" />.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appID" /> — <see langword="null" />.  
+-или- 
+ <paramref name="type" /> не реализует интерфейс <see cref="T:System.Web.Hosting.IRegisteredObject" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="appID" /> — <see langword="null" />.  
   
-\- или - 
+-или- 
  <paramref name="type" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="failIfExists" /> имеет значение <see langword="true" />, и объект указанного типа уже зарегистрирован.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="failIfExists" /> имеет значение <see langword="true" />, и объект указанного типа уже зарегистрирован.</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateObject">
@@ -224,10 +212,8 @@
         <param name="type">Тип создаваемого объекта.</param>
         <param name="virtualPath">Виртуальный путь к приложению.</param>
         <param name="physicalPath">Физический путь к приложению.</param>
-        <param name="failIfExists">
-          <see langword="true" /> для порождения исключения, если объект указанного типа уже зарегистрирован; <see langword="false" /> для возврата существующего зарегистрированного объекта указанного типа.</param>
-        <param name="throwOnError">
-          <see langword="true" /> порождает исключения ошибок инициализации размещения; <see langword="false" /> не порождает исключения инициализации размещения.</param>
+        <param name="failIfExists"><see langword="true" /> для порождения исключения, если объект указанного типа уже зарегистрирован; <see langword="false" /> для возврата существующего зарегистрированного объекта указанного типа.</param>
+        <param name="throwOnError"><see langword="true" /> порождает исключения ошибок инициализации размещения; <see langword="false" /> не порождает исключения инициализации размещения.</param>
         <summary>Создает объект для указанного домена приложения на основе типа, виртуального и физического пути, логического значения, указывающего на ошибку, когда объект указанного типа уже существует, и логического значения, указывающего, порождаются ли исключения ошибок инициализации размещения.</summary>
         <returns>Новый объект указанного <paramref name="type" />.</returns>
         <remarks>
@@ -238,20 +224,18 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="physicalPath" /> содержит значение <see langword="null" />  
+        <exception cref="T:System.ArgumentException"><paramref name="physicalPath" /> равно <see langword="null" />  
   
-\- или - 
+-или- 
  <paramref name="physicalPath" /> — недопустимый путь к приложению.  
   
-\- или - 
- Параметр <paramref name="type" /> не реализует интерфейс <see cref="T:System.Web.Hosting.IRegisteredObject" />.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appID" /> — <see langword="null" />.  
+-или- 
+ <paramref name="type" /> не реализует интерфейс <see cref="T:System.Web.Hosting.IRegisteredObject" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="appID" /> — <see langword="null" />.  
   
-\- или - 
+-или- 
  <paramref name="type" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="failIfExists" /> имеет значение <see langword="true" />, и объект указанного типа уже зарегистрирован.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="failIfExists" /> имеет значение <see langword="true" />, и объект указанного типа уже зарегистрирован.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="GetAppDomain">
@@ -279,7 +263,7 @@
         <ReturnType>System.AppDomain</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="appId" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="appId">Уникальный идентификатор приложения.</param>
@@ -304,7 +288,7 @@
         <ReturnType>System.AppDomain</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="appHost" Type="System.Web.Hosting.IApplicationHost" />
+        <Parameter Name="appHost" Type="System.Web.Hosting.IApplicationHost" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="appHost">Узел, для которого необходимо получить домен приложения.</param>
@@ -376,10 +360,9 @@
         <summary>Возвращает зарегистрированный объект указанного типа из указанного приложения.</summary>
         <returns>Зарегистрированный объект указанного типа, или <see langword="null" />, если тип не был зарегистрирован через вызов метода <see cref="M:System.Web.Hosting.ApplicationManager.CreateObject(System.String,System.Type,System.String,System.String,System.Boolean)" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appId" /> — <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="appId" /> — <see langword="null" />.  
   
-—или— 
+-или- 
  <paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
@@ -435,7 +418,7 @@
       <Parameters />
       <Docs>
         <summary>Предоставляет домену приложения бесконечное время существования, предотвращая создание аренды.</summary>
-        <returns>Всегда имеет значение <see langword="null" />.</returns>
+        <returns>Всегда <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -465,8 +448,7 @@
       <Parameters />
       <Docs>
         <summary>Возвращает значение, указывающее, находятся ли все размещенные в процессе приложения в состоянии бездействия и не обрабатывают запросы.</summary>
-        <returns>
-          <see langword="true" />, если все приложения в процессе находятся в состоянии бездействия; в противном случае <see langword="false" />.</returns>
+        <returns><see langword="true" />, если все приложения в процессе находятся в состоянии бездействия; в противном случае <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -558,8 +540,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appId" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="appId" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="StopObject">
@@ -586,10 +567,9 @@
         <param name="type">Тип выгружаемого объекта.</param>
         <summary>Удаляет указанный объект из списка зарегистрированных в приложении объектов. Если удаляемый объект является последним оставшимся в списке объектов, зарегистрированных в приложении, то приложение выгружается.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="appId" /> — <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="appId" /> — <see langword="null" />.  
   
-\- или - 
+-или- 
  <paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>

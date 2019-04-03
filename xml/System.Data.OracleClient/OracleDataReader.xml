@@ -1,13 +1,5 @@
 <Type Name="OracleDataReader" FullName="System.Data.OracleClient.OracleDataReader">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="aa0c270d6d2fc1b612aaa68b5d2ee09240d435ed" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46619806" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class OracleDataReader : System.Data.Common.DbDataReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cac6a6e9701328f6724cd65493587f2ec4858d27" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916755" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleDataReader : System.Data.Common.DbDataReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleDataReader extends System.Data.Common.DbDataReader" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleDataReader" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleDataReader&#xA;Inherits DbDataReader" />
@@ -266,7 +258,7 @@ public void ReadOracleTypesExample(string connectionString)
  Более одного <xref:System.Data.OracleClient.OracleDataReader> можно открыть в любой момент времени.  
   
 > [!CAUTION]
->  Не вызывайте `Close` или `Dispose` соединения, `DataReader`, или любого другого управляемого объекта в `Finalize` метод класса. Метод завершения освобождать только неуправляемые ресурсы, которые ваш класс непосредственно владеет. Если класс не владеет какими-либо неуправляемыми ресурсами, не включайте в его определение метод `Finalize`. Дополнительные сведения см. в разделе [мусора](~/docs/standard/garbage-collection/index.md).  
+>  Не вызывайте `Close` или `Dispose` соединения, `DataReader`, или любого другого управляемого объекта в `Finalize` метод класса. Метод завершения освобождать только неуправляемые ресурсы, которые ваш класс непосредственно владеет. Если класс не владеет какими-либо неуправляемыми ресурсами, не включайте в его определение метод `Finalize`. Дополнительные сведения см. в разделе [Сборка мусора](~/docs/standard/garbage-collection/index.md).  
   
  ]]></format>
         </remarks>
@@ -322,7 +314,7 @@ public void ReadOracleTypesExample(string connectionString)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Освобождает ресурсы, используемые данным объектом.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -457,7 +449,7 @@ public void ReadOracleTypesExample(string connectionString)
         <param name="i">Порядковый номер столбца (от нуля).</param>
         <param name="fieldOffset">Индекс в поле, с которого необходимо начать операцию чтения.</param>
         <param name="buffer2">Буфер, в который считывается поток байтов.</param>
-        <param name="bufferoffset">Индекс, с которого <c>buffer</c> начнет операцию записи.</param>
+        <param name="bufferoffset">Индекс, с которого <paramref name="buffer2" /> начнет операцию записи.</param>
         <param name="length">Количество байтов, чтение которых необходимо выполнить.</param>
         <summary>Считывает поток байтов из указанного смещения столбца в буфер в виде массива, начиная с заданного смещения буфера.</summary>
         <returns>Число фактически считанных байтов.</returns>
@@ -536,7 +528,7 @@ public void ReadOracleTypesExample(string connectionString)
         <param name="i">Порядковый номер столбца (от нуля).</param>
         <param name="fieldOffset">Индекс в строке, с которого начнется операция чтения.</param>
         <param name="buffer2">Буфер, в который копируются данные.</param>
-        <param name="bufferoffset">Индекс, с которого <c>buffer</c> начнет операцию записи.</param>
+        <param name="bufferoffset">Индекс, с которого <paramref name="buffer2" /> начнет операцию записи.</param>
         <param name="length">Число символов для чтения.</param>
         <summary>Считывает поток символов из указанного смещения столбца в буфер как массив, начиная с заданного смещения буфера.</summary>
         <returns>Число фактически считанных символов.</returns>
@@ -571,12 +563,12 @@ public void ReadOracleTypesExample(string connectionString)
         <ReturnType>System.Data.IDataReader</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="i" Type="System.Int32" Index="0" FrameworkAlternate="netframework-1.1" />
       </Parameters>
       <Docs>
-        <param name="i">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="i">Порядковый номер столбца.</param>
+        <summary>Возвращает <see cref="T:System.Data.IDataReader" /> для указанного порядкового номера столбца.</summary>
+        <returns>Экземпляр IdataReader для заданного порядкового номера столбца.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1426,7 +1418,7 @@ public void ReadOracleData(string connectionString)
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="i" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="i">Объект <see cref="T:System.Int32" />.</param>
@@ -1452,7 +1444,7 @@ public void ReadOracleData(string connectionString)
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="i" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="i">Объект <see cref="T:System.Int32" />.</param>
@@ -1478,10 +1470,10 @@ public void ReadOracleData(string connectionString)
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="values" Type="System.Object[]" />
+        <Parameter Name="values" Type="System.Object[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="values">Массив <see cref="T:System.Object" />.</param>
+        <param name="values">Массив дескрипторов вывода <see cref="T:System.Object" />.</param>
         <summary>Возвращает массив объектов, которые представляют собой значения типа, специфического для базового поставщика.</summary>
         <returns>Число экземпляров <see cref="T:System.Object" /> в массиве.</returns>
         <remarks>
@@ -1525,7 +1517,7 @@ public void ReadOracleData(string connectionString)
 ## Remarks  
  <xref:System.Data.OracleClient.OracleDataReader.GetSchemaTable%2A> Метод возвращает метаданные о каждом столбце в следующем порядке:  
   
-|Столбец DataReader|Описание:|  
+|Столбец DataReader|Описание|  
 |-----------------------|-----------------|  
 |ColumnName|Имя столбца; оно не может быть уникальным. Если имя столбца не может быть определено, возвращается значение null. Это имя всегда отражает последнее именование столбца в текущий текст представления или команды.|  
 |ColumnOrdinal|Отсчитываемый от нуля порядковый номер столбца. Этот столбец не может содержать значение null.|  
@@ -1970,8 +1962,8 @@ public void ReadOracleData(string connectionString)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Возвращает перечислитель, который осуществляет итерацию по коллекции.</summary>
+        <returns>Перечислитель, который осуществляет перебор коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

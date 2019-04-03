@@ -1,13 +1,5 @@
 <Type Name="XmlTextWriter" FullName="System.Xml.XmlTextWriter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fda932d8ded1d91a06f6ca7b146d93c88df64ce8" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48729349" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class XmlTextWriter : System.Xml.XmlWriter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6c6eed94eb2de56e71a184aae25c11d5b60ce0b1" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56393298" /></Metadata><TypeSignature Language="C#" Value="public class XmlTextWriter : System.Xml.XmlWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextWriter extends System.Xml.XmlWriter" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlTextWriter" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlTextWriter&#xA;Inherits XmlWriter" />
@@ -34,10 +26,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-    </Attribute>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;netcore-2.2;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
     </Attribute>
   </Attributes>
@@ -154,7 +143,7 @@ writer.WriteElementString("price", XmlConvert.ToString(price));
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/e695047f-3c0f-4045-8708-5baea91cc380">XML-документы и данные</related>
+    <related type="Article" href="~/docs/standard/data/xml/index.md">XML-документы и данные</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -261,7 +250,7 @@ writer.WriteElementString("price", XmlConvert.ToString(price));
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Кодировка не поддерживается или не может быть записано в поток.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="w" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="w" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -499,7 +488,7 @@ writer.WriteElementString("price", XmlConvert.ToString(price));
       </ReturnValue>
       <Docs>
         <summary>Определяет способ форматирования выходных данных.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Xml.Formatting" />. По умолчанию используется значение <see langword="Formatting.None" /> (без форматирования).</value>
+        <value>Одно из значений <see cref="T:System.Xml.Formatting" />. По умолчанию используется значение <see langword="Formatting.None" /> (без форматирования).</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -534,9 +523,7 @@ XmlTextWriter w = new XmlTextWriter(Console.Out);
  При просмотре в формате HTML пробелы между элементами полужирного шрифта и курсива. На самом деле в этом примере если отступов был добавлен между этими элементами слово «Слон» бы неверно.  
   
 > [!NOTE]
->  Запись любого содержимого, за исключением текста `String.Empty` помещает элемент в режиме смешанного содержимого. Дочерние элементы не наследуют это состояние «смешанный». Дочерний элемент элемента «mixed» применено форматирование, если он не содержит содержимое «mixed». Содержимое элемента (http://www.w3.org/TR/1998/REC-xml-19980210#sec-element-content) и смешанное содержимое (http://www.w3.org/TR/1998/REC-xml-19980210#sec-mixed-content) определяются в соответствии с XML 1.0 определения этих терминов.  
-  
-   
+> Запись любого содержимого, за исключением текста `String.Empty` помещает элемент в режиме смешанного содержимого. Дочерние элементы не наследуют это состояние «смешанный». Дочерний элемент элемента «mixed» применено форматирование, если он не содержит содержимое «mixed». [Содержимое элемента](https://www.w3.org/TR/1998/REC-xml-19980210#sec-element-content) и [смешанное содержимое](https://www.w3.org/TR/1998/REC-xml-19980210#sec-mixed-content) определяются в соответствии с XML 1.0 определения этих терминов.  
   
 ## Examples  
  Следующий пример записывает фрагмент XML.  
@@ -604,7 +591,22 @@ String subset =
     <!ELEMENT Employees (Employee)+>  
     <!ELEMENT Employee EMPTY>  
     <!ATTLIST Employee firstname CDATA #REQUIRED>  
-    <!ENTITY Company 'Microsoft']]></format>
+    <!ENTITY Company 'Microsoft'>]>  
+";  
+XmlTextWriter tw = new XmlTextWriter(Console.Out);  
+tw.WriteDocType(name, pubid, sysid, subset);  
+```  
+  
+   
+  
+## Examples  
+ Следующий пример записывает фрагмент XML.  
+  
+ [!code-cpp[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/VB/source.vb#1)]  
+  
+ ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Свойству присвоено отрицательное значение.</exception>
         <altmember cref="P:System.Xml.XmlTextWriter.IndentChar" />
@@ -650,7 +652,8 @@ String subset =
         <summary>Возвращает или задает знак для отступа, если свойство <see cref="P:System.Xml.XmlTextWriter.Formatting" /> имеет значение <see langword="Formatting.Indented" />.</summary>
         <value>Символ, используемый для отступа. По умолчанию используется пробел.  
   
- <block subset="none" type="note"><para><see langword="XmlTextWriter" /> позволяет задать это свойство для любого знака. Для обеспечения корректности XML-кода необходимо использовать только допустимые символы-разделители: 0x9, 0x10, 0x13 или 0x20.  
+ <block subset="none" type="note"><para>  
+ <see langword="XmlTextWriter" /> позволяет задать это свойство для любого знака. Для обеспечения корректности XML-кода необходимо использовать только допустимые символы-разделители: 0x9, 0x10, 0x13 или 0x20.  
   
 </para></block></value>
         <remarks>
@@ -720,8 +723,7 @@ String subset =
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="ns" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="ns" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Namespaces">
@@ -760,7 +762,7 @@ String subset =
         <summary>Возвращает или задает значение, указывающее, поддерживаются ли пространства имен.</summary>
         <value>Значение <see langword="true" /> — пространства имен поддерживаются; в противном случае — <see langword="false" />.  
   
-Значение по умолчанию: <see langword="true" />.</value>
+Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -880,7 +882,7 @@ String subset =
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Длина буфера минус <paramref name="index" /> меньше <paramref name="count" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.</exception>
         <exception cref="T:System.InvalidOperationException">Значение параметра <see cref="P:System.Xml.XmlTextWriter.WriteState" /> — <see langword="Closed" />.</exception>
@@ -933,7 +935,7 @@ String subset =
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Длина буфера минус <paramref name="index" /> меньше <paramref name="count" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.</exception>
         <exception cref="T:System.InvalidOperationException">Объект <see cref="P:System.Xml.XmlTextWriter.WriteState" /> закрыт.</exception>
@@ -1102,10 +1104,10 @@ String subset =
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
 Длина буфера за вычетом <paramref name="index" /> меньше <paramref name="count" />; вызов приводит к разделению пар символов-заместителей или к записи недопустимой пары символов-заместителей.</exception>
         <exception cref="T:System.InvalidOperationException">Объект <see cref="P:System.Xml.XmlTextWriter.WriteState" /> закрыт.</exception>
       </Docs>
@@ -1203,8 +1205,8 @@ String subset =
       </Parameters>
       <Docs>
         <param name="name">Имя DOCTYPE. Не должно быть пустым.</param>
-        <param name="pubid">Если значение не равно NULL, записывается также PUBLIC "pubid" "sysid", где <c>pubid</c> и <c>sysid</c> заменяются значениями заданных аргументов.</param>
-        <param name="sysid">Если параметр <c>pubid</c> имеет значение NULL, а параметр <c>sysid</c> не равен NULL, записывается SYSTEM "sysid", где <c>sysid</c> замещается значением данного аргумента.</param>
+        <param name="pubid">Если значение не равно нулю, записывается также PUBLIC "pubid" "sysid", где <paramref name="pubid" /> и <paramref name="sysid" /> заменяются значениями заданных аргументов.</param>
+        <param name="sysid">Если параметр <paramref name="pubid" /> имеет значение null, а параметр <paramref name="sysid" /> не равен нулю, записывается SYSTEM "sysid", где <paramref name="sysid" /> замещается значением данного аргумента.</param>
         <param name="subset">Если не равно нулю, записывает [subset], где subset замещается значением данного аргумента.</param>
         <summary>Записывает объявление DOCTYPE с указанным именем и дополнительными атрибутами.</summary>
         <remarks>
@@ -1234,7 +1236,7 @@ String subset =
         <exception cref="T:System.InvalidOperationException">Этот метод был вызван вне пролога (после корневого элемента).</exception>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="name" /> равно <see langword="null" /> или <see langword="String.Empty" />.  
   
-- или - 
+-или- 
 Значение <paramref name="name" /> приведет к недопустимый XML.</exception>
       </Docs>
     </Member>
@@ -1455,10 +1457,7 @@ String subset =
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="name" />
-          <see langword="null" />
-          <see langword="String.Empty" />; или текст приведет к плохому формированию документа XML.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /><see langword="null" /><see langword="String.Empty" />; или текст приведет к плохому формированию документа XML.</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteFullEndElement">
@@ -1551,7 +1550,7 @@ String subset =
       </Parameters>
       <Docs>
         <param name="name">Имя для записи.</param>
-        <summary>Записывает указанное имя, гарантируя его допустимость согласно рекомендации W3C по языку XML версии 1.0 (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name).</summary>
+        <summary>Записывает указанное имя, гарантируя его допустимость согласно рекомендации W3C по языку XML версии 1.0 (https://www.w3.org/TR/1998/REC-xml-19980210#NT-Name).</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1599,7 +1598,7 @@ String subset =
       </Parameters>
       <Docs>
         <param name="name">Имя для записи.</param>
-        <summary>Записывает указанное имя, гарантируя, что это допустимый <see langword="NmToken" />, согласно рекомендации W3C по языку XML версии 1.0 (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name).</summary>
+        <summary>Записывает указанное имя, гарантируя, что это допустимый <see langword="NmToken" />, согласно рекомендации W3C по языку XML версии 1.0 (https://www.w3.org/TR/1998/REC-xml-19980210#NT-Name).</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1747,7 +1746,7 @@ writer.WriteStartElement("root");
   
  При записи значений атрибута, если этот метод создает префикс `ns` не найден. При записи содержимого элемента, создается исключение, если `ns` не найден.  
   
- Если этот модуль записи поддерживает пространства имен (<xref:System.Xml.XmlTextWriter.Namespaces%2A> присваивается `true`), этот метод также проверяет, что имя является допустимым в соответствии с W3C по пространствам имен в XML (http://www.w3.org/TR/REC-xml-names).  
+ Если этот модуль записи поддерживает пространства имен (<xref:System.Xml.XmlTextWriter.Namespaces%2A> присваивается `true`), этот метод также проверяет, что имя является допустимым в соответствии с [W3C по пространствам имен в XML](https://www.w3.org/TR/REC-xml-names).  
   
    
   
@@ -1760,8 +1759,7 @@ writer.WriteStartElement("root");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="localName" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.  
+        <exception cref="T:System.ArgumentException"><paramref name="localName" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.  
   
  <paramref name="localName" /> не является допустимым именем в соответствии со спецификацией пространств имен W3C.</exception>
       </Docs>
@@ -1897,10 +1895,10 @@ writer.WriteStartElement("root");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
 Длина буфера минус <paramref name="index" /> меньше <paramref name="count" />.</exception>
       </Docs>
     </Member>
@@ -1938,10 +1936,8 @@ writer.WriteStartElement("root");
       </Parameters>
       <Docs>
         <param name="prefix">Префикс <see langword="Namespace" /> атрибута.</param>
-        <param name="localName">
-          <see langword="LocalName" /> атрибута.</param>
-        <param name="ns">
-          <see langword="NamespaceURI" /> атрибута.</param>
+        <param name="localName"><see langword="LocalName" /> атрибута.</param>
+        <param name="ns"><see langword="NamespaceURI" /> атрибута.</param>
         <summary>Записывает начало атрибута.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1964,8 +1960,7 @@ writer.WriteStartElement("root");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="localName" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="localName" /> имеет значение <see langword="null" /> или <see langword="String.Empty" />.</exception>
         <altmember cref="M:System.Xml.XmlTextWriter.WriteEndAttribute" />
       </Docs>
     </Member>
@@ -2194,7 +2189,7 @@ writer.WriteStartElement("root");
       </ReturnValue>
       <Docs>
         <summary>Возвращает состояние средства записи.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Xml.WriteState" />.</value>
+        <value>Одно из значений <see cref="T:System.Xml.WriteState" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2327,7 +2322,7 @@ test&lt;item&gt;test
   
  Для HTML и XML кодировку документа (и, следовательно, нотации ссылок на числовые символы) основана на UCS [ISO-10646]. Ссылка одного числового символа в исходном документе может поэтому в некоторых случаях соответствовать два 16-разрядные единицы в строке (старший символ-заместитель и младшим символом-заместителем). Эти единицы 16-разрядное называются суррогатную пару.  
   
- Дополнительные сведения о суррогаты или символы, обратитесь к 3.7 Юникода 3.0/Юникод 2.0 стандартная расположенный http://www.unicode.org, или разделу 2.2 рекомендаций консорциума W3C XML 1.0, расположенный http://www.w3.org/TR/REC-xml#charsets.  
+ Дополнительные сведения о суррогаты или символы, обратитесь к 3.7 Юникода 3.0/Юникод 2.0 стандартная расположенный <https://www.unicode.org>, или [разделе 2.2 рекомендации W3C XML 1.0](https://www.w3.org/TR/REC-xml#charsets).
   
  ]]></format>
         </remarks>
@@ -2469,7 +2464,7 @@ test&lt;item&gt;test
   
  <list type="table"><listheader><term> Значение 
  </term><description> Значение 
- </description></listheader><item><term> Нет 
+ </description></listheader><item><term> None 
  </term><description> Значение, задаваемое по умолчанию, если область <see langword="xml:space" /> отсутствует.  
   
  </description></item><item><term> Значение по умолчанию 

@@ -1,13 +1,5 @@
 <Type Name="CustomValidator" FullName="System.Web.UI.WebControls.CustomValidator">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e6f2049f811347e8b56ccc8541afaa357876c5de" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48621994" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class CustomValidator : System.Web.UI.WebControls.BaseValidator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="22f5a8301ce92262b54115d44538de5ce8ee235f" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55309648" /></Metadata><TypeSignature Language="C#" Value="public class CustomValidator : System.Web.UI.WebControls.BaseValidator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomValidator extends System.Web.UI.WebControls.BaseValidator" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CustomValidator" />
   <TypeSignature Language="VB.NET" Value="Public Class CustomValidator&#xA;Inherits BaseValidator" />
@@ -24,7 +16,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.DefaultEvent("ServerValidate")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -60,12 +52,12 @@ Sub ValidationFunctionName(source, arguments)
 function ValidationFunctionName(source, arguments)  
 ```  
   
- `source` Параметр является ссылкой на \<span > для элемента отображен <xref:System.Web.UI.WebControls.CustomValidator> элемента управления. Это позволяет программно управлять \<span > тега, например изменение <xref:System.Windows.Forms.HtmlElement.InnerHtml%2A> атрибута. `arguments` Параметр является объектом с двумя свойствами: значение и IsValid. Этот параметр позволяет получить значение элемента управления для проверки и указать, является ли допустимым значение в зависимости от вашей пользовательской процедуры проверки.  
+ `source` Параметр является ссылкой на \<span > для элемента отображен <xref:System.Web.UI.WebControls.CustomValidator> элемента управления. Это позволяет программно управлять \<span > тега, например изменение <xref:System.Windows.Forms.HtmlElement.InnerHtml%2A> атрибута. `arguments` Параметр является объектом с двумя свойствами: Значение и IsValid. Этот параметр позволяет получить значение элемента управления для проверки и указать, является ли допустимым значение в зависимости от вашей пользовательской процедуры проверки.  
   
  Используйте <xref:System.Web.UI.WebControls.CustomValidator.ClientValidationFunction%2A> свойство для указания имени функции скрипта проверки на стороне клиента, связанные с <xref:System.Web.UI.WebControls.CustomValidator> элемента управления. Поскольку функция скрипта выполняется на клиенте, она должна быть на языке, который поддерживает целевой браузер, например VBScript или JScript.  
   
 > [!NOTE]
->  При использовании <xref:System.Web.UI.WebControls.CustomValidator> управления внутри <xref:System.Web.UI.UpdatePanel> управления, убедитесь, что проверяющий элемент управления и элемент управления, связанного с ним находятся в той же панели. Дополнительные сведения об использовании <xref:System.Web.UI.UpdatePanel> управления для частичных обновлений, см. в разделе [Общие сведения об отрисовке частичных страниц](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49).  
+>  При использовании <xref:System.Web.UI.WebControls.CustomValidator> управления внутри <xref:System.Web.UI.UpdatePanel> управления, убедитесь, что проверяющий элемент управления и элемент управления, связанного с ним находятся в той же панели. Дополнительные сведения об использовании <xref:System.Web.UI.UpdatePanel> управления для частичных обновлений, см. в разделе [Общие сведения об отрисовке частичных страниц](https://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49).  
   
  Например проверки на стороне сервера, строка, из проверяемого элемента управления ввода осуществляется с помощью <xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A> свойство `arguments` параметр. Возвращает результат проверки, задав <xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A> свойство `arguments` параметр.  
   
@@ -95,7 +87,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  Дополнительные сведения о проверочных элементов управления, см. в разделе <xref:System.Web.UI.WebControls.BaseValidator>.  
   
 ## <a name="accessibility"></a>Специальные возможности  
- Сведения о том, как настроить этот элемент управления, таким образом, чтобы он создает разметку, которая соответствует стандартам специальных возможностей см. в разделе [специальные возможности в Visual Studio и ASP.NET](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13) и [элементов управления ASP.NET и специальные возможности](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0).  
+ Сведения о том, как настроить этот элемент управления, таким образом, чтобы он создает разметку, которая соответствует стандартам специальных возможностей см. в разделе [специальные возможности в Visual Studio и ASP.NET](https://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13) и [элементов управления ASP.NET и специальные возможности](https://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0).  
   
    
   
@@ -103,7 +95,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода демонстрируется создание серверного <xref:System.Web.UI.WebControls.CustomValidator> элемента управления.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
  [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
@@ -187,7 +179,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода показано, как переопределить <xref:System.Web.UI.WebControls.CustomValidator.AddAttributesToRender%2A> метод в серверного элемента управления, чтобы <xref:System.Web.UI.WebControls.CustomValidator> сообщение об ошибке всегда отображается полужирным шрифтом.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomCustomValidatorAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomCustomValidatorAddAttributesToRender/CS/custom_customvalidator_addattributestorendercs.aspx#1)]
  [!code-aspx-vb[CustomCustomValidatorAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomCustomValidatorAddAttributesToRender/VB/custom_customvalidator_addattributestorendervb.aspx#1)]  
@@ -213,7 +205,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -239,7 +231,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
   
  Поскольку функция проверки клиента выполняется в целевой браузер, функция должна быть написана с помощью языка сценариев, поддерживаемый браузером, таких как JScript или VBScript.  
   
- Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
+ Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
   
    
   
@@ -247,7 +239,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода демонстрируется использование <xref:System.Web.UI.WebControls.CustomValidator.ClientValidationFunction%2A> свойство, чтобы указать имя функции, который выполняет проверку на стороне клиента. Функция проверки проверяет четные числа. Описание параметров функции, см. в разделе "Примечания" <xref:System.Web.UI.WebControls.CustomValidator>.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomValidatorClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorClient/CS/customvalidatorclientcs.aspx#1)]
  [!code-aspx-vb[CustomValidatorClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorClient/VB/customvalidatorclientvb.aspx#1)]  
@@ -313,8 +305,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
       <Parameters />
       <Docs>
         <summary>Переопределяет метод <see cref="M:System.Web.UI.MobileControls.BaseValidator.EvaluateIsValid" />.</summary>
-        <returns>
-          <see langword="true" />, если значение во входном элементе управления является допустимым; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение во входном элементе управления является допустимым; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -322,7 +313,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода показано, как переопределить <xref:System.Web.UI.WebControls.CustomValidator.EvaluateIsValid%2A> метод в серверного элемента управления.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomCustomValidatorEvaluateIsValid#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomCustomValidatorEvaluateIsValid/CS/custom_customvalidator_evaluateisvalidcs.aspx#1)]
  [!code-aspx-vb[CustomCustomValidatorEvaluateIsValid#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomCustomValidatorEvaluateIsValid/VB/custom_customvalidator_evaluateisvalidvb.aspx#1)]  
@@ -356,8 +347,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
       <Docs>
         <param name="value">Значение для проверки.</param>
         <summary>Создает событие <see cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" /> элемента управления <see cref="T:System.Web.UI.WebControls.CustomValidator" />.</summary>
-        <returns>
-          <see langword="true" />, если значение, указанное в параметре <paramref name="value" />, проходит проверку; в противном случае — <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если значение, заданное параметром <paramref name="value" />, проходит проверку; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -374,16 +364,14 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода показано, как указать и написать код обработчика на стороне сервера <xref:System.Web.UI.WebControls.CustomValidator> элемента управления.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
  [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Web.UI.WebControls.CustomValidator.OnServerValidate(System.String)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Web.UI.WebControls.CustomValidator.OnServerValidate(System.String)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Web.UI.WebControls.CustomValidator.OnServerValidate(System.String)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Web.UI.WebControls.CustomValidator.OnServerValidate(System.String)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para></block>
         <altmember cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" />
       </Docs>
     </Member>
@@ -420,7 +408,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
  В следующем примере кода показано, как указать и написать код обработчика на стороне сервера <xref:System.Web.UI.WebControls.CustomValidator> элемента управления. Она создает пользовательской процедуры проверки, проверяет значение <xref:System.Web.UI.WebControls.TextBox> элемента управления четное и отображает результат проверки.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
  [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
@@ -457,8 +445,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение Boolean, указывающее, следует ли проверять пустой текст.</summary>
-        <value>
-          <see langword="true" />, если пустой текст следует проверять; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если пустой текст следует проверять; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -467,7 +454,7 @@ void ServerValidation (object source, ServerValidateEventArgs args)
   
  <xref:System.Web.UI.WebControls.CustomValidator.ValidateEmptyText%2A> Свойство впервые появилось для платформы .NET Framework версии 2.0.  Если <xref:System.Web.UI.WebControls.CustomValidator.ValidateEmptyText%2A> присваивается `true`, проверяющий элемент управления принимает значение элемента управления (с помощью критериев, заданных для <xref:System.Web.UI.WebControls.CustomValidator> управления) и возвращает результаты проверки. Это свойство позволяет разработчикам оценить результаты <xref:System.Web.UI.WebControls.CustomValidator> управления независимо от значения целевого элемента управления.  
   
- Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
+ Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
   
  ]]></format>
         </remarks>

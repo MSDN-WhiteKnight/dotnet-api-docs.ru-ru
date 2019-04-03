@@ -1,13 +1,5 @@
 <Type Name="AnimationTimeline" FullName="System.Windows.Media.Animation.AnimationTimeline">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ea02d33cb5302ba4e9a3924980976c9d9790607f" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46605869" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class AnimationTimeline : System.Windows.Media.Animation.Timeline" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2fc5418e687028342bce0d83ee862157084fadd1" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53226130" /></Metadata><TypeSignature Language="C#" Value="public abstract class AnimationTimeline : System.Windows.Media.Animation.Timeline" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AnimationTimeline extends System.Windows.Media.Animation.Timeline" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.AnimationTimeline" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AnimationTimeline&#xA;Inherits Timeline" />
@@ -30,25 +22,23 @@
 ## Remarks  
  <xref:System.Windows.Media.Animation.AnimationTimeline> — Это разновидность <xref:System.Windows.Media.Animation.Timeline> объект, который формирует выходные значения на основании ход времени. Все типы анимации наследуют от <xref:System.Windows.Media.Animation.AnimationTimeline>.  
   
- **Возможности объектов Freezable:** , так как он наследует от <xref:System.Windows.Freezable> класс, <xref:System.Windows.Media.Animation.AnimationTimeline> класс предоставляет ряд специальных возможностей: <xref:System.Windows.Media.Animation.AnimationTimeline> объекты можно объявлять как совместно использоваться несколькими объектами, делать доступными только для чтения с целью повышения производительности, клонировать и делать потокобезопасными. Дополнительные сведения о различных возможностях, предоставляемых <xref:System.Windows.Freezable> объектов, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ **Возможности объектов Freezable:** Так как он наследует от <xref:System.Windows.Freezable> класс, <xref:System.Windows.Media.Animation.AnimationTimeline> класс предоставляет ряд специальных возможностей: <xref:System.Windows.Media.Animation.AnimationTimeline> объектов может быть объявлен как совместно использоваться несколькими объектами, делать доступными только для чтения с целью повышения производительности, клонировать и делать потокобезопасными. Дополнительные сведения о различных возможностях, предоставляемых <xref:System.Windows.Freezable> объектов, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Чтобы создать пользовательскую анимацию, переопределить или реализовать следующие члены: 
+    <block subset="none" type="overrides"><para>Чтобы создать пользовательскую анимацию, переопределить или реализовать следующие члены: 
 -   <see cref="M:System.Windows.Freezable.CreateInstanceCore" /> — Если новый класс является конкретным, необходимо переопределить <see cref="M:System.Windows.Freezable.CreateInstanceCore" /> для возврата нового экземпляра класса.  
   
--   <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> — Переопределите этот метод для возврата текущего значения анимации. Он принимает три параметра: начальное значение, конечное значение по умолчанию и <see cref="T:System.Windows.Media.Animation.AnimationClock" />. Используйте <see cref="T:System.Windows.Media.Animation.AnimationClock" /> для получения текущего времени или ход выполнения анимации. Можно выбрать, какие значения будут использоваться: начальное значение по умолчанию или конечное значение по умолчанию.  
+-   <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> -Переопределите этот метод для возврата текущего значения анимации. Он принимает три параметра: начальное значение, конечное значение по умолчанию и <see cref="T:System.Windows.Media.Animation.AnimationClock" />. Используйте <see cref="T:System.Windows.Media.Animation.AnimationClock" /> для получения текущего времени или ход выполнения анимации. Можно выбрать, какие значения будут использоваться: начальное значение по умолчанию или конечное значение по умолчанию.  
   
--   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault" /> — Нужно переопределить это свойство позволяет указать, использует ли анимация конечное значение по умолчанию, определяемое <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> метод.  
+-   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault" /> — Это свойство позволяет указать, использует ли анимация конечное значение по умолчанию, определяемое переопределение <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> метод.  
   
--   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType" /> — Нужно переопределить это свойство позволяет указать <see cref="T:System.Type" /> выходных данных анимации.  
+-   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType" /> — Это свойство позволяет указать переопределение <see cref="T:System.Type" /> выходных данных анимации.  
   
 Если класс не использует свойства зависимостей для хранения своих данных или требует дополнительной инициализации после создания, может потребоваться переопределить дополнительные методы. Дополнительные сведения см. в разделе [Общие сведения об объектах класса Freezable](~/docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
-Дополнительные сведения о создании пользовательской анимации см. в разделе [пользовательские сведения об анимации](~/docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).</para>
-    </block>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=159981">Пример пользовательской анимации</related>
+Дополнительные сведения о создании пользовательской анимации см. в разделе [пользовательские сведения об анимации](~/docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).</para></block>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=159981">Пример пользовательской анимации</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -102,9 +92,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Объекты, реализующие <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> должны переопределять этот метод, при наличии соответствующих пользовательских формате, в котором следует использовать с классом. Переопределенный метод должен создать и вернуть новый экземпляр класса, наследующего <see cref="T:System.Windows.Media.Animation.Clock" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Объекты, реализующие <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> должны переопределять этот метод, при наличии соответствующих пользовательских формате, в котором следует использовать с классом. Переопределенный метод должен создать и вернуть новый экземпляр класса, наследующего <see cref="T:System.Windows.Media.Animation.Clock" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Clone">
@@ -125,8 +113,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает изменяемый клон данного объекта <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей этот метод копирует ссылки на ресурсы и привязки данных (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
-        <returns>Изменяемая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта будет содержать значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта содержало значение <see langword="true." />.</returns>
+        <summary>Создает модифицируемую копию данного объекта <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей этот метод копирует ссылки на ресурсы и привязки данных (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
+        <returns>Изменяемая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта будет содержать значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта содержало значение <see langword="true." /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -191,11 +179,11 @@
         <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="defaultOriginValue">Начальное значение, используемое для анимации, если анимация не имеет собственного начального значения. Если данная анимация является первой в цепочке композиции, она будет базовым значением анимируемого свойства; в обратном случае оно будет значением, возвращаемым предыдущей анимацией в цепочке.</param>
-        <param name="defaultDestinationValue">Конечное значение, используемое для анимации, если анимация не имеет собственного конечного значения.</param>
+        <param name="defaultOriginValue">Исходное значение, предоставленное для анимации, если анимация не имеет собственного начального значения. Если данная анимация является первой в цепочке композиции, она будет базовым значением анимируемого свойства; в обратном случае оно будет значением, возвращаемым предыдущей анимацией в цепочке.</param>
+        <param name="defaultDestinationValue">Конечное значение, предоставленное для анимации, если анимация не имеет собственного конечного значения.</param>
         <param name="animationClock">Объект <see cref="T:System.Windows.Media.Animation.AnimationClock" />, который может генерировать значение <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемое анимацией для генерации выходного значения.</param>
-        <summary>Получает текущее значении анимации.</summary>
-        <returns>Значение, которое считается в данной анимации текущим значением свойства.</returns>
+        <summary>Возвращает текущее значение анимации.</summary>
+        <returns>Значение, которое предположительно должно быть текущим значением свойства в анимации.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -229,9 +217,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод должен быть реализован классами, которые необходимо предоставить настраиваемый естественный <see cref="T:System.Windows.Duration" /> при <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> свойству <see cref="P:System.Windows.Duration.Automatic" />. Если невозможно определить естественную длительность, этот метод должен возвращать <see cref="P:System.Windows.Duration.Automatic" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод должен быть реализован классами, которые необходимо предоставить настраиваемый естественный <see cref="T:System.Windows.Duration" /> при <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> свойству <see cref="P:System.Windows.Duration.Automatic" />. Если невозможно определить естественную длительность, этот метод должен возвращать <see cref="P:System.Windows.Duration.Automatic" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="IsAdditiveProperty">
@@ -294,7 +280,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающие, используется ли в этой анимации параметр *defaultDestinationValue* метода <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> как ее конечное значение.</summary>
-        <value>**значение true,** Если *defaultDesintationValue* параметр <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> метод является значений этой анимации при достижении конца простой длительности (ее часов имеет <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" /> 1); в противном случае — значение **false**. Реализация по умолчанию всегда возвращает **false**.</value>
+        <value><see langword="true" /> Если *defaultDesintationValue* параметр <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> метод является значением анимации при достижении конца простой длительности (ее часов имеет <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" /> 1); в противном случае — значение <see langword="false" />. Реализация по умолчанию всегда возвращает значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />
       </Docs>

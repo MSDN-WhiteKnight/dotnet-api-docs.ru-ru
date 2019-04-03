@@ -1,13 +1,5 @@
 <Type Name="IXmlSerializable" FullName="System.Xml.Serialization.IXmlSerializable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6b7fc94bb14f6a03040ba51e51b69ae4a5a92699" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50177682" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IXmlSerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4cf7afe0712d7f7f6b2a9c9fadcd8bd19a613637" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58708902" /></Metadata><TypeSignature Language="C#" Value="public interface IXmlSerializable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXmlSerializable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="VB.NET" Value="Public Interface IXmlSerializable" />
@@ -30,6 +22,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -44,7 +37,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Есть две причины для реализации этого интерфейса. Первый — для управления как объекта сериализации или десериализации <xref:System.Xml.Serialization.XmlSerializer>. Например можно разбить данные на байты вместо буферизации больших наборов данных, а также избежать роста, которое происходит, когда данные кодируются с использованием кодировки Base64. Для управления сериализацией, реализовать <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> и <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> методы для управления <xref:System.Xml.XmlReader> и <xref:System.Xml.XmlWriter> классы, используемые для чтения и записи XML. Пример этого см. в разделе [как: соответствующий](~/docs/standard/serialization/how-to-chunk-serialized-data.md).  
+ Есть две причины для реализации этого интерфейса. Первый — для управления как объекта сериализации или десериализации <xref:System.Xml.Serialization.XmlSerializer>. Например можно разбить данные на байты вместо буферизации больших наборов данных, а также избежать роста, которое происходит, когда данные кодируются с использованием кодировки Base64. Для управления сериализацией, реализовать <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> и <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> методы для управления <xref:System.Xml.XmlReader> и <xref:System.Xml.XmlWriter> классы, используемые для чтения и записи XML. Пример этого см. в разделе [как: Фрагментация сериализованных данных](~/docs/standard/serialization/how-to-chunk-serialized-data.md).  
   
  Вторая причина состоит в том, чтобы иметь возможность управления схемой. Чтобы включить эту функцию, необходимо применить <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> для сериализуемого типа, и укажите имя статического члена, который возвращает схему. Пример см. в разделе <xref:System.Xml.Serialization.XmlSchemaProviderAttribute>.  
   
@@ -88,6 +81,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -96,8 +90,11 @@
         <AssemblyName>System.Xml.Serialization</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.3;netstandard-1.4;netstandard-1.6;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;dotnet-uwp-10.0;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.3;netstandard-1.4;netstandard-1.6">
+          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -105,7 +102,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Данный метод зарезервирован и не используется. При реализации интерфейса <see langword="IXmlSerializable" /> вы должны возвращать <see langword="null" /> (<see langword="Nothing" /> в Visual Basic) из этого метода, и если требуется указание пользовательской схемы, применить к классу <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" />.</summary>
+        <summary>Данный метод зарезервирован и не используется. При реализации интерфейса <see langword="IXmlSerializable" /> этот метод должен возвращать значение <see langword="null" /> (<see langword="Nothing" /> в Visual Basic), а если необходимо указать пользовательскую схему, то вместо использования метода следует применить <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" /> к классу.</summary>
         <returns>Схема <see cref="T:System.Xml.Schema.XmlSchema" />, описывающая представление XML объекта, полученного методом <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" /> и используемого методом <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -146,6 +143,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -214,6 +212,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>

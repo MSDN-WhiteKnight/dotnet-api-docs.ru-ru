@@ -1,13 +1,5 @@
 <Type Name="XamlReader" FullName="System.Windows.Markup.XamlReader">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="eb09b92c85f6899f8f0386e85d5fda59b541d871" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39361145" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class XamlReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b22c826a543d05a1a2fac984e24ff64c3bfb8c40" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57939414" /></Metadata><TypeSignature Language="C#" Value="public class XamlReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlReader extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlReader" />
   <TypeSignature Language="VB.NET" Value="Public Class XamlReader" />
@@ -34,13 +26,13 @@
   
  <xref:System.Windows.Markup.XamlReader> поддерживает следующие основные сценарии:  
   
--   **Клонирование/объект фабрики**: без дополнительных механизмов ссылочного типа не может быть включен в более чем одной позиции в дерева объекта WPF. (Дополнительных механизмов, которые обеспечивают поддержку для совместного использования или повторно использовать в WPF примеры объектов, основанных на <xref:System.Windows.Freezable>, или поддержка часто совместного использования объектов, таких как <xref:System.Windows.Media.Brush> на которые имеются ссылки в качестве элементов из <xref:System.Windows.ResourceDictionary>.) Один из способов копируемый объект, который уже находится в дереве объектов — для сериализации объекта с помощью <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>. Затем можно сериализованной строки как входные данные для вызова <xref:System.Windows.Markup.XamlReader.Load%2A>, с потоком или <xref:System.Xml.XmlReader> как посредник.  
+-   **Клонирование/объект фабрики**: Без дополнительных механизмов ссылочного типа не может быть включен в более чем одной позиции в дерева объекта WPF. (Дополнительных механизмов, которые обеспечивают поддержку для совместного использования или повторно использовать в WPF примеры объектов, основанных на <xref:System.Windows.Freezable>, или поддержка часто совместного использования объектов, таких как <xref:System.Windows.Media.Brush> на которые имеются ссылки в качестве элементов из <xref:System.Windows.ResourceDictionary>.) Один из способов копируемый объект, который уже находится в дереве объектов — для сериализации объекта с помощью <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>. Затем можно сериализованной строки как входные данные для вызова <xref:System.Windows.Markup.XamlReader.Load%2A>, с потоком или <xref:System.Xml.XmlReader> как посредник.  
   
--   **Построение объектов на основе just-in-time информации**: часто возникают другие способы изменения состояния существующих объектов позднего связывания или пользовательские входные данные. Например можно использовать то же значение, чтобы задать несколько свойств, или использовать привязку данных. Но если у вас есть сценарии, когда даже тип создаваемого объекта является только определимый во время выполнения или взаимодействия с пользователем, затем создать такой объект, создав строку, для <xref:System.Windows.Markup.XamlReader.Load%2A> входных данных часто является полезным приемом.  
+-   **Построение объектов на основе just-in-time информации**: Часто существуют другие способы изменения состояния существующих объектов позднего связывания или пользовательские входные данные. Например можно использовать то же значение, чтобы задать несколько свойств, или использовать привязку данных. Но если у вас есть сценарии, когда даже тип создаваемого объекта является только определимый во время выполнения или взаимодействия с пользователем, затем создать такой объект, создав строку, для <xref:System.Windows.Markup.XamlReader.Load%2A> входных данных часто является полезным приемом.  
   
--   **С помощью существующих методов ресурсов**: <xref:System.IO.Stream> типа часто используются в других платформах и технологиях для передачи данных или объекты через границы приложения или подобных ситуаций в сети. Затем можно использовать <xref:System.IO.Stream> способы хранения и получения данных в формате XAML, который вы впоследствии будете использовать для создания объекта как часть приложения.  
+-   **С помощью существующих методов ресурсов**: <xref:System.IO.Stream> Типа часто используются в других платформах и технологиях для передачи данных или объекты через границы приложения или подобных ситуаций в сети. Затем можно использовать <xref:System.IO.Stream> способы хранения и получения данных в формате XAML, который вы впоследствии будете использовать для создания объекта как часть приложения.  
   
--   **Исправлены документы:** приложение может загрузить локальный или загруженные документы XPS для включения в дерево объектов приложения WPF и пользовательский Интерфейс.  
+-   **Документы фиксированного формата:** Приложение может загрузить локальный или загруженные документы XPS для включения в дерево объектов приложения WPF и пользовательский Интерфейс.  
   
 > [!NOTE]
 >  Иногда для настоящей документации описывается граф объектов, в отличие от дерева объектов. Отношение strict родители потомки не всегда существует в отношения между объектами время выполнения время выполнения приложения WPF, поэтому граф объекта более широкой областью применения терминология. Тем не менее так как платформа WPF также предоставляет два разных дерева концептуальное представление API-интерфейсы (<xref:System.Windows.LogicalTreeHelper>, <xref:System.Windows.Media.VisualTreeHelper>) метафора дерева по-прежнему адекватно применяется в большинстве случаев реального мира в WPF. С точки зрения языка XAML тем не менее, граф объекта часто является лучшим способом подумать о способов создания объектов из XAML, так как сам язык XAML не обязательно указывает методологии вспомогательного класса, которые приносят отношения больше в еще раз древовидной структуры.  
@@ -190,7 +182,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="stream" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
@@ -210,7 +202,7 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="reader" Type="System.Xaml.XamlReader" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="reader">Объект <see cref="T:System.Xaml.XamlReader" />. Ожидается, что он инициализируется входными данными XAML.</param>
@@ -224,7 +216,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Load">
@@ -261,7 +253,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
@@ -290,10 +282,10 @@
         <summary>Считывает входные данные XAML в указанном классе <see cref="T:System.IO.Stream" /> и возвращает корневой объект соответствующего дерева объектов.</summary>
         <returns>Корневой объект созданного дерева объектов.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="stream" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="parserContext" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="parserContext" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
@@ -342,7 +334,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="stream" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Несколько операций загрузки с одним <see cref="T:System.Windows.Markup.XamlReader" /> параллельно поставлены в режим ожидания.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
@@ -384,7 +376,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Несколько операций загрузки параллельно выполняется с одним <see cref="T:System.Windows.Markup.XamlReader" />.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
@@ -427,7 +419,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="stream" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Несколько операций загрузки параллельно выполняется с одним <see cref="T:System.Windows.Markup.XamlReader" />.</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
@@ -449,7 +441,7 @@
         <ReturnType>System.ComponentModel.AsyncCompletedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Происходит по завершении асинхронной операции загрузки.</summary>
+        <summary>Происходит по завершении операции асинхронной загрузки.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

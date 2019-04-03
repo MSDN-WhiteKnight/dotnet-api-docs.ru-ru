@@ -1,13 +1,5 @@
 <Type Name="ConformanceLevel" FullName="System.Xml.ConformanceLevel">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cef3ec861d8641fd1e4a22df491062a453270cf8" />
-    <Meta Name="ms.sourcegitcommit" Value="840fd2a3bbdce4224fcbae5a3cea9a7a89e685f5" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/24/2018" />
-    <Meta Name="ms.locfileid" Value="49961155" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum ConformanceLevel" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4051bb9e9887717d69ed1c06add44293a88bbab2" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56366549" /></Metadata><TypeSignature Language="C#" Value="public enum ConformanceLevel" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConformanceLevel extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Xml.ConformanceLevel" />
   <TypeSignature Language="VB.NET" Value="Public Enum ConformanceLevel" />
@@ -43,6 +35,13 @@
  При создании экземпляра средства чтения или записи XML, можно использовать <xref:System.Xml.XmlReaderSettings> или <xref:System.Xml.XmlWriterSettings> укажите компоненты, необходимые для поддержки нового экземпляра класса. Одна из функций, которые вы можете настроить является уровень соответствия, которые вы хотите применить XML-данные.  
   
  Создание совместимого средства чтения или записи гарантирует, что XML-данные обрабатываются соответствует указанному уровню совместимости. Если поток чтения или записи не соответствует уровню соответствия, выдается исключение.  
+
+ С проверкой на уровне документа `ConformanceLevel.Document` член перечисления применяют проверки уровня фрагмента ( `ConfomanceLevel.Fragment` член) и также обеспечивают следующее:  
+  
+-   Элемент верхнего уровня, не все узлы, отличные от XML объявление DTD, элемент, комментарий, пустое пространство и инструкции по обработке.  
+  
+-   Данные XML имеют один и только один элемент верхнего уровня узла.  
+ 
   
  ]]></format>
     </remarks>
@@ -119,21 +118,7 @@
       </ReturnValue>
       <MemberValue>2</MemberValue>
       <Docs>
-        <summary>Данные XML соответствуют правилам для <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed">XML-документов версии 1.0</see> с правильным форматом в соответствии с определением консорциума W3C.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Этот уровень проверки гарантирует, что поток чтения или записи могут использоваться любым процессором как [XML-документа 1.0](https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed).  
-  
- Проверки уровня документа применяют проверки уровня фрагмента и соблюдение следующих.  
-  
--   Элемент верхнего уровня, не все узлы, отличные от XML объявление DTD, элемент, комментарий, пустое пространство и инструкции по обработке.  
-  
--   Данные XML имеют один и только один элемент верхнего уровня узла.  
-  
- ]]></format>
-        </remarks>
+        <summary>Данные XML соответствуют правилам для <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed">XML-документов версии 1.0</see> с правильным форматом в соответствии с определением консорциума W3C. Этот уровень проверки гарантирует, что любое средство обработки сможет обработать считываемый поток как <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed">XML-документ версии 1.0</see>.</summary>
       </Docs>
     </Member>
     <Member MemberName="Fragment">
@@ -167,15 +152,7 @@
       </ReturnValue>
       <MemberValue>1</MemberValue>
       <Docs>
-        <summary>Данные XML являются <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities">XML-фрагментом правильного формата</see> в соответствии с определением консорциума W3C.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Этот уровень соответствия представляет документ XML, который не может иметь корневой элемент, но имеет правильный формат. Этот уровень проверки гарантирует, что поток чтения или записи могут использоваться любым процессором как [внешние XML 1.0 проанализированная сущность](https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities).  
-  
- ]]></format>
-        </remarks>
+        <summary>Данные XML являются <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities">XML-фрагментом правильного формата</see> в соответствии с определением консорциума W3C.  Этот уровень соответствия предполагает, что документ XML может не иметь корневого элемента, но должен иметь правильный формат. Этот уровень проверки гарантирует, что любое средство обработки сможет обработать считываемый поток как <see href="https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities">сущность XML 1.0 с внешним синтаксическим анализом</see>.</summary>
       </Docs>
     </Member>
   </Members>

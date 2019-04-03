@@ -1,13 +1,5 @@
 <Type Name="StateMachineWorkflowInstance" FullName="System.Workflow.Activities.StateMachineWorkflowInstance">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2d01518cdfc0cbe2799591858e53fe71ea3e0404" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48701815" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class StateMachineWorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ffc76b906d2a7bb2dc01bb2d3ff6cbb5dc7bc652" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51874932" /></Metadata><TypeSignature Language="C#" Value="public sealed class StateMachineWorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StateMachineWorkflowInstance extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.StateMachineWorkflowInstance" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class StateMachineWorkflowInstance" />
@@ -78,14 +70,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- В следующем примере показано создание нового экземпляра объекта <xref:System.Workflow.Activities.StateMachineWorkflowInstance>. Это пример из примера SDK "Ordering State Machine". Дополнительные сведения см. в разделе [упорядочение пример конечного автомата](http://msdn.microsoft.com/library/59272cf4-bc98-439c-bcfa-b66999ebce5c).  
+ В следующем примере показано создание нового экземпляра объекта <xref:System.Workflow.Activities.StateMachineWorkflowInstance>. Это пример из примера SDK "Ordering State Machine". Дополнительные сведения см. в разделе [упорядочение пример конечного автомата](https://msdn.microsoft.com/library/59272cf4-bc98-439c-bcfa-b66999ebce5c).  
   
  [!code-csharp[wf_samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="runtime" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).  
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="runtime" /> является неопределенной ссылкой (<see langword="Nothing" /> в Visual Basic).  
   
 или 
  <paramref name="instanceId" /> является пустым <see cref="T:System.Guid" />.</exception>
@@ -109,7 +100,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает выполняющееся в данный момент действие <see cref="T:System.Workflow.Activities.StateActivity" />.</summary>
-        <value>Текущий объект <see cref="T:System.Workflow.Activities.StateActivity" />.</value>
+        <value>Текущий контекст <see cref="T:System.Workflow.Activities.StateActivity" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,7 +188,7 @@
         <param name="queueName">Имя очереди рабочего процесса.</param>
         <param name="item">Объект для постановки в очередь.</param>
         <param name="pendingWork">Объект <see cref="T:System.Workflow.Runtime.IPendingWork" />, позволяющий отправителю получить уведомление при доставке элемента.</param>
-        <param name="workItem">Объект, подлежащий передаче в методы <see cref="T:System.Workflow.Runtime.IPendingWork" />.</param>
+        <param name="workItem">Объект, передаваемый в методы <see cref="T:System.Workflow.Runtime.IPendingWork" />.</param>
         <summary>Отправляет сообщение в экземпляр <see cref="T:System.Workflow.Activities.StateMachineWorkflowInstance" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -275,11 +266,10 @@
         <Parameter Name="targetStateName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetStateName">Имя визуального состояния <see cref="T:System.Workflow.Activities.StateActivity" />, в которое переходит элемент управления.</param>
+        <param name="targetStateName">Имя действия <see cref="T:System.Workflow.Activities.StateActivity" />, к которому должен быть осуществлен переход.</param>
         <summary>Обеспечивает переход к заданному действию <see cref="T:System.Workflow.Activities.StateActivity" />, используя имя действия <see cref="T:System.Workflow.Activities.StateActivity" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="targetStateName" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="targetStateName" /> является неопределенной ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Действие <see cref="T:System.Workflow.Activities.StateActivity" />, заданное параметром <paramref name="targetStateName" />, является пустой ссылкой (<see langword="Nothing" />).</exception>
       </Docs>
     </Member>
@@ -306,8 +296,7 @@
         <param name="targetState">Действие <see cref="T:System.Workflow.Activities.StateActivity" />, к которому должен быть осуществлен переход.</param>
         <summary>Обеспечивает переход к заданному действию <see cref="T:System.Workflow.Activities.StateActivity" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="targetState" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="targetState" /> является неопределенной ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
       </Docs>
     </Member>
     <Member MemberName="StateHistory">
@@ -386,11 +375,10 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Activities.StateActivity&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает список классов <see cref="T:System.Workflow.Activities.StateActivity" /> в наборе правил <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" />.</summary>
-        <value>Список классов <see cref="T:System.Workflow.Activities.StateActivity" /> в наборе правил <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" />.</value>
+        <summary>Возвращает список классов <see cref="T:System.Workflow.Activities.StateActivity" /> в рабочем процессе <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" />.</summary>
+        <value>Список классов <see cref="T:System.Workflow.Activities.StateActivity" /> в рабочем процессе <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" />.</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Workflow.Activities.StateMachineWorkflowInstance.StateMachineWorkflow" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
       </Docs>
     </Member>
     <Member MemberName="WorkflowInstance">
@@ -410,7 +398,7 @@
         <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает выделенный в настоящее время фрагмент документа <see cref="T:System.Workflow.Runtime.WorkflowInstance" />.</summary>
+        <summary>Возвращает текущий <see cref="T:System.Workflow.Runtime.WorkflowInstance" />.</summary>
         <value>Текущий контекст <see cref="T:System.Workflow.Runtime.WorkflowInstance" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

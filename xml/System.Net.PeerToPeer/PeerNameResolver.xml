@@ -1,13 +1,5 @@
 <Type Name="PeerNameResolver" FullName="System.Net.PeerToPeer.PeerNameResolver">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="716f004155c4cf69a79273a19ac1629cb7bf93d0" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48724942" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class PeerNameResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="47cf2e8bec2c1e07b4b3b59d1cc464f97075f394" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55327042" /></Metadata><TypeSignature Language="C#" Value="public class PeerNameResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi PeerNameResolver extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PeerNameResolver" />
   <TypeSignature Language="VB.NET" Value="Public Class PeerNameResolver" />
@@ -126,9 +118,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении этого метода в производном типе, не забудьте вызвать базовый тип <see cref="M:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged(System.Net.PeerToPeer.ResolveProgressChangedEventArgs)" /> метод, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении этого метода в производном типе, не забудьте вызвать базовый тип <see cref="M:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged(System.Net.PeerToPeer.ResolveProgressChangedEventArgs)" /> метод, чтобы зарегистрированные делегаты получили событие.</para></block>
       </Docs>
     </Member>
     <MemberGroup MemberName="Resolve">
@@ -228,7 +218,7 @@
       </Parameters>
       <Docs>
         <param name="peerName">Имя <see cref="T:System.Net.PeerToPeer.PeerName" /> для разрешения.</param>
-        <param name="maxRecords">Максимальное количество объектов <see cref="T:System.Net.PeerToPeer.PeerNameRecord" /> для получения из всех объектов <see cref="T:System.Net.PeerToPeer.Cloud" /> для предоставленного <c>peerName</c>.</param>
+        <param name="maxRecords">Максимальное количество объектов <see cref="T:System.Net.PeerToPeer.PeerNameRecord" /> для получения из всех объектов <see cref="T:System.Net.PeerToPeer.Cloud" /> для предоставленного имени однорангового узла <paramref name="peerName" />.</param>
         <summary>Разрешает указанное имя однорангового узла во всех облаках, известных вызывающему узлу, возвращая не больше заданного количества объектов <see cref="T:System.Net.PeerToPeer.PeerNameRecord" />.</summary>
         <returns>Объект <see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />, содержащий не более <paramref name="maxRecords" /> записей. Эта коллекция содержит записи имен одноранговых узелов, связанные с объектом <see cref="T:System.Net.PeerToPeer.PeerName" />, для которого выполнялось разрешение имени узла.</returns>
         <remarks>
@@ -276,7 +266,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Если <xref:System.Net.PeerToPeer.PeerName> не может быть разрешен (т. е. имя однорангового узла не публикуется) <xref:System.Net.PeerToPeer.PeerToPeerException> возникает исключение.  
+ Если <xref:System.Net.PeerToPeer.PeerName> не может быть разрешен (то есть имя однорангового узла не публикуется) <xref:System.Net.PeerToPeer.PeerToPeerException> возникает исключение.  
   
  Для незащищенных имен одноранговых узлов, то же имя может быть зарегистрирован (и связанные с разными конечными точками) разными узлами в том же облаке.  
   
@@ -305,7 +295,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -319,8 +309,8 @@
       </Parameters>
       <Docs>
         <param name="peerName">Имя <see cref="T:System.Net.PeerToPeer.PeerName" /> для разрешения.</param>
-        <param name="cloud">Объект <see cref="T:System.Net.PeerToPeer.Cloud" />, в котором требуется выполнить разрешение <c>peerName</c>.</param>
-        <param name="maxRecords">Максимальное количество объектов записей имен одноранговых узлов, получаемых из указанного облака для заданного <c>peerName</c>.</param>
+        <param name="cloud">В <see cref="T:System.Net.PeerToPeer.Cloud" /> необходимо разрешить <paramref name="peerName" />.</param>
+        <param name="maxRecords">Максимальное количество объектов записей имен одноранговых узелов, получаемых из указанного облака для заданного имени узла <paramref name="peerName" />.</param>
         <summary>Выполняет разрешение для указанного объекта <see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" /> в указанном облаке <see cref="T:System.Net.PeerToPeer.Cloud" />, возвращая не более заданного количества объектов <see cref="T:System.Net.PeerToPeer.PeerNameRecord" />.</summary>
         <returns>Объект <see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />, содержащий не более <paramref name="maxRecords" /> записей. Эта коллекция содержит записи имен одноранговых узелов, связанные с объектом <see cref="T:System.Net.PeerToPeer.PeerName" />, для которого выполнялось разрешение имени узла.</returns>
         <remarks>
@@ -479,7 +469,7 @@
       </Parameters>
       <Docs>
         <param name="peerName">Имя <see cref="T:System.Net.PeerToPeer.PeerName" /> для разрешения.</param>
-        <param name="cloud">Объект <see cref="T:System.Net.PeerToPeer.Cloud" />, в котором требуется выполнить разрешение <c>peerName</c>.</param>
+        <param name="cloud">В <see cref="T:System.Net.PeerToPeer.Cloud" /> необходимо разрешить <paramref name="peerName" />.</param>
         <param name="userState">Определяемый пользователем объект <see cref="T:System.Object" />, который содержит сведения об операции разрешения имени однорангового узла.</param>
         <summary>Начинает операцию асинхронного разрешения имени однорангового узла для заданного значения <see cref="T:System.Net.PeerToPeer.PeerName" /> в указанном классе <see cref="T:System.Net.PeerToPeer.Cloud" />.</summary>
         <remarks>
@@ -516,7 +506,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -530,11 +520,9 @@
         <Parameter Name="userState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="peerName">
-          <c>peerName</c> для разрешения.</param>
-        <param name="cloud">
-          <c>cloud</c>, в котором требуется выполнить разрешение <c>peerName</c>.</param>
-        <param name="maxRecords">Максимальное число записей для получения из параметра <c>cloud</c> для <c>peerName</c>.</param>
+        <param name="peerName">Имя <paramref name="peerName" /> для разрешения.</param>
+        <param name="cloud">Объект <paramref name="cloud" />, в котором необходимо разрешить <paramref name="peerName" />.</param>
+        <param name="maxRecords">Максимальное число записей для получения из параметра <paramref name="cloud" /> для <paramref name="peerName" />.</param>
         <param name="userState">Определяемый пользователем объект, содержащий сведения об операции разрешения имени однорангового узла.</param>
         <summary>Начинает операцию асинхронного разрешения имени однорангового узла для заданного значения <see cref="T:System.Net.PeerToPeer.PeerName" /> в указанном классе <see cref="T:System.Net.PeerToPeer.Cloud" />.  Для указанного имени однорангового узла соответствующая операция разрешит не более такого количества записей: <paramref name="maxRecords" />.</summary>
         <remarks>
@@ -575,7 +563,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>

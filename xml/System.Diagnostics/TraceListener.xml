@@ -1,13 +1,5 @@
 <Type Name="TraceListener" FullName="System.Diagnostics.TraceListener">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="9714c95c1e8952ffa1ec97245e513a5fe91b2866" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48753542" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class TraceListener : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6d5555967c668352fcd473a77ec11f1fd66ec0bb" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57929833" /></Metadata><TypeSignature Language="C#" Value="public abstract class TraceListener : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TraceListener extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceListener" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class TraceListener&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -73,16 +65,14 @@
  ]]></format>
     </remarks>
     <threadsafe>Данный тип потокобезопасен.</threadsafe>
-    <block subset="none" type="overrides">
-      <para>Наследовать от этого класса, чтобы реализовать пользовательский прослушиватель для <see cref="T:System.Diagnostics.Debug" /> и <see cref="T:System.Diagnostics.Trace" /> классы. Как минимум, необходимо реализовать <see cref="M:System.Diagnostics.TraceListener.Write(System.String)" /> и <see cref="M:System.Diagnostics.TraceListener.WriteLine(System.String)" /> методы. Кроме того, вы можете реализовать <see cref="M:System.Diagnostics.TraceListener.Fail(System.String)" />, <see cref="M:System.Diagnostics.TraceListener.Close" /> и <see cref="M:System.Diagnostics.TraceListener.Flush" /> методы.</para>
-    </block>
+    <block subset="none" type="overrides"><para>Наследовать от этого класса, чтобы реализовать пользовательский прослушиватель для <see cref="T:System.Diagnostics.Debug" /> и <see cref="T:System.Diagnostics.Trace" /> классы. Как минимум, необходимо реализовать <see cref="M:System.Diagnostics.TraceListener.Write(System.String)" /> и <see cref="M:System.Diagnostics.TraceListener.WriteLine(System.String)" /> методы. Кроме того, вы можете реализовать <see cref="M:System.Diagnostics.TraceListener.Fail(System.String)" />, <see cref="M:System.Diagnostics.TraceListener.Close" /> и <see cref="M:System.Diagnostics.TraceListener.Flush" /> методы.</para></block>
     <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
     <altmember cref="T:System.Diagnostics.ConsoleTraceListener" />
     <altmember cref="T:System.Diagnostics.EventLogTraceListener" />
     <altmember cref="T:System.Diagnostics.TextWriterTraceListener" />
     <altmember cref="T:System.Diagnostics.Debug" />
     <altmember cref="T:System.Diagnostics.Trace" />
-    <related type="Article" href="http://msdn.microsoft.com/library/3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2">&lt;System.Diagnostics&gt; элемент</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2">&lt;System.Diagnostics&gt; элемент</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -130,7 +120,7 @@
   
 |Свойство.|Значение по умолчанию|  
 |--------------|-------------------|  
-|Имя|Пустая строка (»»).|  
+|name|Пустая строка (»»).|  
 |Отступ|Ноль.|  
 |IndentSize|Четыре пробела.|  
   
@@ -174,7 +164,7 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">Имя объекта <see cref="T:System.Diagnostics.TraceListener" />.</param>
+        <param name="name">Имя <see cref="T:System.Diagnostics.TraceListener" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Diagnostics.TraceListener" /> с использованием заданного имени в качестве прослушивателя.</summary>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Diagnostics.TraceListener" />
@@ -214,8 +204,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает настраиваемые атрибуты прослушивателя трассировки, определенные в файле конфигурации приложения.</summary>
-        <value>
-          <see cref="T:System.Collections.Specialized.StringDictionary" />, содержащий настраиваемые атрибуты для прослушивателя трассировки.</value>
+        <value><see cref="T:System.Collections.Specialized.StringDictionary" />, содержащий настраиваемые атрибуты для прослушивателя трассировки.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -268,7 +257,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>После переопределения в производном классе закрывает выходной поток, который, таким образом, больше не принимает выходные данные трассировки и отладки.</summary>
+        <summary>Если переопределено в производном классе, закрывает выходной поток, который, таким образом, больше не принимает выходные данные трассировки и отладки.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -329,7 +318,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Освобождает все ресурсы, используемые объектом <see cref="T:System.Diagnostics.TraceListener" />.</summary>
+        <summary>Освобождает все ресурсы, занятые модулем <see cref="T:System.Diagnostics.TraceListener" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -385,12 +374,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении этого метода следует избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">Реализация метода Dispose</related>
         <related type="Article" href="~/docs/standard/garbage-collection/unmanaged.md">Очистка неуправляемых ресурсов</related>
       </Docs>
@@ -553,7 +540,7 @@
         <ReturnType>System.Diagnostics.TraceFilter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает и задает фильтр трассировки для прослушивателя трассировки.</summary>
+        <summary>Получает или задает фильтр трассировки для прослушивателя трассировки.</summary>
         <value>Объект наследуется из базового класса <see cref="T:System.Diagnostics.TraceFilter" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -667,9 +654,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Diagnostics.TraceListener" /> класса или производного класса, можно переопределить <see cref="M:System.Diagnostics.TraceListener.GetSupportedAttributes" /> метод, чтобы предоставить настраиваемые атрибуты для класса.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Diagnostics.TraceListener" /> класса или производного класса, можно переопределить <see cref="M:System.Diagnostics.TraceListener.GetSupportedAttributes" /> метод, чтобы предоставить настраиваемые атрибуты для класса.</para></block>
       </Docs>
     </Member>
     <Member MemberName="IndentLevel">
@@ -760,7 +745,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает число пробелов в отступе.</summary>
-        <value>Число пробелов в отступе. По умолчанию это четыре пробела.</value>
+        <value>Число пробелов в отступе. По умолчанию — четыре пробела.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -808,7 +793,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, является ли прослушиватель трассировки потокобезопасным.</summary>
-        <value>Значение <see langword="true" />, если прослушиватель трассировки потокобезопасен; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" /> если прослушиватель трассировки потокобезопасен; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -854,7 +839,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает имя данного <see cref="T:System.Diagnostics.TraceListener" />.</summary>
-        <value>Имя для данного <see cref="T:System.Diagnostics.TraceListener" />. Значение по умолчанию — пустая строка ("").</value>
+        <value>Имя для данного <see cref="T:System.Diagnostics.TraceListener" />. Значение по умолчанию — пустая строка ("").</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -910,8 +895,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, показывающее, нужен ли отступ в выходных данных.</summary>
-        <value>
-          <see langword="true" />, если требуется отступ; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если требуется отступ; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -972,16 +956,16 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="data" Type="System.Object" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
         <param name="source">Имя, используемое для идентификации выходных данных, обычно имя приложения, создавшего событие трассировки.</param>
-        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, задающее тип события, ставшего причиной трассировки.</param>
+        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, с помощью которого можно определить тип события, ставшего причиной трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
         <param name="data">Выдаваемые данные трассировки.</param>
         <summary>Записывает сведения трассировки, объект данных и сведения о событиях в специфические выходные данные слушателя.</summary>
@@ -1039,13 +1023,13 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="data" Type="System.Object[]">
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="data" Type="System.Object[]" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-1.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1054,7 +1038,7 @@
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
         <param name="source">Имя, используемое для идентификации выходных данных, обычно имя приложения, создавшего событие трассировки.</param>
-        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, задающее тип события, ставшего причиной трассировки.</param>
+        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, с помощью которого можно определить тип события, ставшего причиной трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
         <param name="data">Выдаваемые данные массива объектов.</param>
         <summary>Записывает сведения трассировки, массив объектов данных и сведения о событии в специфические выходные данные прослушивателя.</summary>
@@ -1122,15 +1106,15 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
-        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
         <param name="source">Имя, используемое для идентификации выходных данных, обычно имя приложения, создавшего событие трассировки.</param>
-        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, задающее тип события, ставшего причиной трассировки.</param>
+        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, с помощью которого можно определить тип события, ставшего причиной трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
         <summary>Записывает сведения трассировки и сведения о событиях в специфические выходные данные прослушивателя.</summary>
         <remarks>
@@ -1187,16 +1171,16 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
         <param name="source">Имя, используемое для идентификации выходных данных, обычно имя приложения, создавшего событие трассировки.</param>
-        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, задающее тип события, ставшего причиной трассировки.</param>
+        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, с помощью которого можно определить тип события, ставшего причиной трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
         <param name="message">Записываемое сообщение.</param>
         <summary>Записывает сведения трассировки, сообщение и сведения о событиях в специфические выходные данные прослушивателя.</summary>
@@ -1254,14 +1238,14 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="args" Type="System.Object[]">
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="format" Type="System.String" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="args" Type="System.Object[]" Index="5" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-1.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1270,9 +1254,9 @@
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
         <param name="source">Имя, используемое для идентификации выходных данных, обычно имя приложения, создавшего событие трассировки.</param>
-        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, задающее тип события, ставшего причиной трассировки.</param>
+        <param name="eventType">Одно из значений <see cref="T:System.Diagnostics.TraceEventType" />, с помощью которого можно определить тип события, ставшего причиной трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
-        <param name="format">Строка формата, не содержащая элементов формата или содержащая один либо несколько элементов формата, соответствующих объектам в массиве <c>args</c>.</param>
+        <param name="format">Строка формата, не содержащая элементов формата или содержащая один либо несколько элементов формата, связанных с объектами в массиве <paramref name="args" />.</param>
         <param name="args">Массив <see langword="object" />, содержащий несколько (или ни одного) объектов, которые необходимо форматировать.</param>
         <summary>Записывает сведения трассировки, форматированный массив объектов данных и сведения о событиях в специфические выходные данные прослушивателя.</summary>
         <remarks>
@@ -1333,7 +1317,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает параметры выхода трассировки.</summary>
-        <value>Побитовое сочетание значений перечисления. Значение по умолчанию: <see cref="F:System.Diagnostics.TraceOptions.None" />.</value>
+        <value>Побитовое сочетание значений перечисления. Значение по умолчанию — <see cref="F:System.Diagnostics.TraceOptions.None" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1393,11 +1377,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
-        <Parameter Name="source" Type="System.String" />
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="relatedActivityId" Type="System.Guid" />
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="source" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="id" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="relatedActivityId" Type="System.Guid" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="eventCache">Объект <see cref="T:System.Diagnostics.TraceEventCache" />, содержащий текущие идентификаторы процесса, идентификаторы потока и сведения о трассировке стека.</param>
@@ -1469,8 +1453,7 @@
         <Parameter Name="o" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="o">
-          <see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
+        <param name="o"><see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
         <summary>Записывает значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватель, создаваемый при реализации класса <see cref="T:System.Diagnostics.TraceListener" />.</summary>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Diagnostics.TraceListener" />
@@ -1517,9 +1500,7 @@
         <param name="message">Записываемое сообщение.</param>
         <summary>При переопределении в производном классе записывает заданное сообщение в прослушиватель, создаваемый в производном классе.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от этого класса, необходимо реализовать этот метод. Для поддержки отступов, следует вызывать <see cref="M:System.Diagnostics.TraceListener.WriteIndent" /> Если <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> является <see langword="true" />. Если требуется отступ следующую строку, необходимо сбросить <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> для <see langword="true" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от этого класса, необходимо реализовать этот метод. Для поддержки отступов, следует вызывать <see cref="M:System.Diagnostics.TraceListener.WriteIndent" /> Если <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> является <see langword="true" />. Если требуется отступ следующую строку, необходимо сбросить <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> для <see langword="true" />.</para></block>
         <altmember cref="T:System.Diagnostics.TraceListener" />
         <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
         <altmember cref="T:System.Diagnostics.ConsoleTraceListener" />
@@ -1562,8 +1543,7 @@
         <Parameter Name="category" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="o">
-          <see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
+        <param name="o"><see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
         <param name="category">Имя категории, используемое для систематизации выходных данных.</param>
         <summary>Записывает имя категории и значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватель, создаваемый при реализации класса <see cref="T:System.Diagnostics.TraceListener" />.</summary>
         <remarks>To be added.</remarks>
@@ -1712,8 +1692,7 @@
         <Parameter Name="o" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="o">
-          <see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
+        <param name="o"><see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
         <summary>Записывает значение метода <see cref="M:System.Object.ToString" /> объекта, заканчивающееся знаком ограничителя строки, в прослушиватель, создаваемый при реализации класса <see cref="T:System.Diagnostics.TraceListener" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1774,9 +1753,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от этого класса, необходимо реализовать этот метод. Для поддержки отступов, вызовите <see cref="M:System.Diagnostics.TraceListener.WriteIndent" /> Если <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> является <see langword="true" />. Чтобы создать отступ следующую строку, необходимо сбросить <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> для <see langword="true" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от этого класса, необходимо реализовать этот метод. Для поддержки отступов, вызовите <see cref="M:System.Diagnostics.TraceListener.WriteIndent" /> Если <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> является <see langword="true" />. Чтобы создать отступ следующую строку, необходимо сбросить <see cref="P:System.Diagnostics.TraceListener.NeedIndent" /> для <see langword="true" />.</para></block>
         <altmember cref="T:System.Diagnostics.TraceListener" />
         <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
         <altmember cref="T:System.Diagnostics.ConsoleTraceListener" />
@@ -1819,8 +1796,7 @@
         <Parameter Name="category" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="o">
-          <see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
+        <param name="o"><see cref="T:System.Object" />, для которого нужно записать полное имя класса.</param>
         <param name="category">Имя категории, используемое для систематизации выходных данных.</param>
         <summary>Записывает имя категории и значение метода <see cref="M:System.Object.ToString" /> объекта, заканчивающееся знаком ограничителя строки, в прослушиватель, создаваемый при реализации класса <see cref="T:System.Diagnostics.TraceListener" />.</summary>
         <remarks>

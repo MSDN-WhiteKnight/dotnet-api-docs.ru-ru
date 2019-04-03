@@ -1,13 +1,5 @@
 <Type Name="IVsaItems" FullName="Microsoft.Vsa.IVsaItems">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4c7fbd4870a2674767c500ef4e2cc6d392a3925b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971137" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IVsaItems : System.Collections.IEnumerable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="29b3f7fdaa9b4c8e6cf5ac96b89ccb17867e2f23" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55348288" /></Metadata><TypeSignature Language="C#" Value="public interface IVsaItems : System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaItems implements class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Vsa.IVsaItems" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVsaItems&#xA;Implements IEnumerable" />
@@ -27,15 +19,15 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
       <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("0AB1EB6A-12BD-44d0-B941-0580ADFC73DE")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Определяет интерфейс для коллекции объектов <see cref="T:Microsoft.Vsa.IVsaItem" />, к которым можно обращаться по имени или по индексу.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -56,8 +48,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Возвращает число элементов в указанной коллекции.</summary>
+        <value>Количество элементов в коллекции.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +75,11 @@
         <Parameter Name="itemFlag" Type="Microsoft.Vsa.VsaItemFlag" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="itemType">To be added.</param>
-        <param name="itemFlag">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">Имя, связываемое с новым элементом. В тех случаях, когда элемент имеет ссылочный тип, необходимо, чтобы параметр name строго совпадал с именем сборки, на которую делается ссылка, в соответствии со значением свойства <see cref="P:Microsoft.Vsa.IVsaReferenceItem.AssemblyName" />. Однако если свойство AssemblyName не задано, JScript будет использовать ItemName в качестве имени сборки.</param>
+        <param name="itemType">Тип создаваемого элемента в соответствии с определением в перечислении <see cref="T:Microsoft.Vsa.VsaItemType" />.</param>
+        <param name="itemFlag">Необязательный флаг для задания первоначального содержимого элемента кода.</param>
+        <summary>Создает экземпляр одного из типов <see cref="T:Microsoft.Vsa.IVsaItem" />, определенных в перечислении <see cref="T:Microsoft.Vsa.VsaItemType" />.</summary>
+        <returns>Созданный объект.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +103,9 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="index">Отсчитываемый от нуля индекс извлекаемых элементов.</param>
+        <summary>Возвращает элемент из коллекции по значению индекса.</summary>
+        <value>Элемент по заданному индексу.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +129,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="name">Имя извлекаемого из коллекции элемента.</param>
+        <summary>Возвращает элемент из коллекции по имени.</summary>
+        <value>Элемент, заданный по имени.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,8 +155,8 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">Значение индекса удаляемого элемента.</param>
+        <summary>Удаляет элемент из коллекции по значению индекса.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -188,8 +180,8 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">Имя удаляемого из коллекции элемента.</param>
+        <summary>Удаляет элемент из коллекции по имени.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

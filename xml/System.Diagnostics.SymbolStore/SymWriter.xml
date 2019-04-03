@@ -1,13 +1,5 @@
 <Type Name="SymWriter" FullName="System.Diagnostics.SymbolStore.SymWriter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="66d848835241de60e6da5fd5a1914a8374999c8e" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50179268" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SymWriter : System.Diagnostics.SymbolStore.SymWriterBase, IDisposable, System.Diagnostics.SymbolStore.ISymbolWriter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="469204290860d7cc0b92098abe1fc5abf41395ba" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57920863" /></Metadata><TypeSignature Language="C#" Value="public class SymWriter : System.Diagnostics.SymbolStore.SymWriterBase, IDisposable, System.Diagnostics.SymbolStore.ISymbolWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SymWriter extends System.Diagnostics.SymbolStore.SymWriterBase implements class System.Diagnostics.SymbolStore.ISymbolWriter, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.SymbolStore.SymWriter" />
   <TypeSignature Language="VB.NET" Value="Public Class SymWriter&#xA;Inherits SymWriterBase&#xA;Implements IDisposable, ISymbolWriter" />
@@ -37,7 +29,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет модуль записи символов для управляемого кода.</summary>
+    <summary>Представляет интерфейс записи символов для управляемого кода.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -87,7 +79,7 @@
       </Parameters>
       <Docs>
         <param name="noUnderlyingWriter">Значение <see langword="true" />, если основное средство записи символов будет получено с помощью вызова метода <see cref="M:System.Diagnostics.SymbolStore.SymWriter.SetUnderlyingWriter(System.IntPtr)" />; значение <see langword="false" />, если следует создать средство записи символов по умолчанию.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Diagnostics.SymbolStore.SymWriter" /> с указанием, следует ли создавать базовый модуль записи символов.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Diagnostics.SymbolStore.SymWriter" /> с указанием, следует ли создавать основное средство записи символов.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,8 +100,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает ресурсы, удерживаемые текущим экземпляром объекта <see cref="T:System.Diagnostics.SymbolStore.SymWriter" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Используйте <xref:System.Diagnostics.SymbolStore.SymWriter.Finalize> метод для освобождения ресурсов.
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="{dtor}">
@@ -151,6 +151,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Close();" />
       <MemberSignature Language="F#" Value="abstract member Close : unit -&gt; unit&#xA;override this.Close : unit -&gt; unit" Usage="symWriter.Close " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.Close</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -181,6 +184,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CloseMethod();" />
       <MemberSignature Language="F#" Value="abstract member CloseMethod : unit -&gt; unit&#xA;override this.CloseMethod : unit -&gt; unit" Usage="symWriter.CloseMethod " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.CloseMethod</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -211,6 +217,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CloseNamespace();" />
       <MemberSignature Language="F#" Value="abstract member CloseNamespace : unit -&gt; unit&#xA;override this.CloseNamespace : unit -&gt; unit" Usage="symWriter.CloseNamespace " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.CloseNamespace</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -234,6 +243,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CloseScope(int endOffset);" />
       <MemberSignature Language="F#" Value="abstract member CloseScope : int -&gt; unit&#xA;override this.CloseScope : int -&gt; unit" Usage="symWriter.CloseScope endOffset" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.CloseScope(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -247,7 +259,7 @@
         <Parameter Name="endOffset" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="endOffset">Смещение на промежуточном языке после последней инструкции в области видимости.</param>
+        <param name="endOffset">Смещение на промежуточном языке после последней инструкции в области.</param>
         <summary>Закрывает текущую лексическую область видимости.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -267,6 +279,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Diagnostics::SymbolStore::ISymbolDocumentWriter ^ DefineDocument(System::String ^ url, Guid language, Guid languageVendor, Guid documentType);" />
       <MemberSignature Language="F#" Value="abstract member DefineDocument : string * Guid * Guid * Guid -&gt; System.Diagnostics.SymbolStore.ISymbolDocumentWriter&#xA;override this.DefineDocument : string * Guid * Guid * Guid -&gt; System.Diagnostics.SymbolStore.ISymbolDocumentWriter" Usage="symWriter.DefineDocument (url, language, languageVendor, documentType)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineDocument(System.String,System.Guid,System.Guid,System.Guid)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -285,7 +300,7 @@
       <Docs>
         <param name="url">URL-адрес, предназначенный для идентификации документа.</param>
         <param name="language">Язык документа. Этот параметр может иметь значение <see cref="F:System.Guid.Empty" />.</param>
-        <param name="languageVendor">Удостоверение поставщика языка документа. Этот параметр может иметь значение <see cref="F:System.Guid.Empty" />.</param>
+        <param name="languageVendor">Идентификатор поставщика языка документа. Этот параметр может иметь значение <see cref="F:System.Guid.Empty" />.</param>
         <param name="documentType">Тип документа. Этот параметр может иметь значение <see cref="F:System.Guid.Empty" />.</param>
         <summary>Определяет исходный документ.</summary>
         <returns>Объект <see cref="T:System.Diagnostics.SymbolStore.ISymbolDocumentWriter" />, представляющий документ.</returns>
@@ -300,6 +315,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DefineField(System::Diagnostics::SymbolStore::SymbolToken parent, System::String ^ name, System::Reflection::FieldAttributes attributes, cli::array &lt;System::Byte&gt; ^ signature, System::Diagnostics::SymbolStore::SymAddressKind addrKind, int addr1, int addr2, int addr3);" />
       <MemberSignature Language="F#" Value="abstract member DefineField : System.Diagnostics.SymbolStore.SymbolToken * string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit&#xA;override this.DefineField : System.Diagnostics.SymbolStore.SymbolToken * string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit" Usage="symWriter.DefineField (parent, name, attributes, signature, addrKind, addr1, addr2, addr3)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineField(System.Diagnostics.SymbolStore.SymbolToken,System.String,System.Reflection.FieldAttributes,System.Byte[],System.Diagnostics.SymbolStore.SymAddressKind,System.Int32,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -341,6 +359,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DefineGlobalVariable(System::String ^ name, System::Reflection::FieldAttributes attributes, cli::array &lt;System::Byte&gt; ^ signature, System::Diagnostics::SymbolStore::SymAddressKind addrKind, int addr1, int addr2, int addr3);" />
       <MemberSignature Language="F#" Value="abstract member DefineGlobalVariable : string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit&#xA;override this.DefineGlobalVariable : string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit" Usage="symWriter.DefineGlobalVariable (name, attributes, signature, addrKind, addr1, addr2, addr3)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineGlobalVariable(System.String,System.Reflection.FieldAttributes,System.Byte[],System.Diagnostics.SymbolStore.SymAddressKind,System.Int32,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -380,6 +401,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DefineLocalVariable(System::String ^ name, System::Reflection::FieldAttributes attributes, cli::array &lt;System::Byte&gt; ^ signature, System::Diagnostics::SymbolStore::SymAddressKind addrKind, int addr1, int addr2, int addr3, int startOffset, int endOffset);" />
       <MemberSignature Language="F#" Value="abstract member DefineLocalVariable : string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int * int * int -&gt; unit&#xA;override this.DefineLocalVariable : string * System.Reflection.FieldAttributes * byte[] * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int * int * int -&gt; unit" Usage="symWriter.DefineLocalVariable (name, attributes, signature, addrKind, addr1, addr2, addr3, startOffset, endOffset)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineLocalVariable(System.String,System.Reflection.FieldAttributes,System.Byte[],System.Diagnostics.SymbolStore.SymAddressKind,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -404,12 +428,12 @@
         <param name="name">Имя локальной переменной.</param>
         <param name="attributes">Атрибуты локальной переменной, заданные с помощью перечислителя <see cref="T:System.Reflection.FieldAttributes" />.</param>
         <param name="signature">Подпись локальной переменной.</param>
-        <param name="addrKind">Типы адресов <paramref name="addr1" />, <paramref name="addr2" /> и <paramref name="addr3" />, использующие <see cref="T:System.Diagnostics.SymbolStore.SymAddressKind" />.</param>
+        <param name="addrKind">Типы адресов <paramref name="addr1" />, <paramref name="addr2" /> и <paramref name="addr3" /> с использованием <see cref="T:System.Diagnostics.SymbolStore.SymAddressKind" />.</param>
         <param name="addr1">Первый адрес для спецификации локальной переменной.</param>
         <param name="addr2">Второй адрес для спецификации локальной переменной.</param>
         <param name="addr3">Третий адрес для спецификации локальной переменной.</param>
-        <param name="startOffset">Начальное смещение для переменной. Если значение равно нулю, этот параметр пропускается и переменная определяется для всей области видимости. Если этот параметр имеет ненулевое значение, переменная находится в границах смещений текущей области видимости.</param>
-        <param name="endOffset">Конечное смещение для переменной. Если значение равно нулю, этот параметр пропускается и переменная определяется для всей области видимости. Если этот параметр имеет ненулевое значение, переменная находится в границах смещений текущей области видимости.</param>
+        <param name="startOffset">Начальное смещение для переменной. Если значение равно нулю, этот параметр не обрабатывается и переменная определяется для всей области. Если этот параметр имеет ненулевое значение, переменная находится в границах смещений текущей области.</param>
+        <param name="endOffset">Конечное смещение для переменной. Если значение равно нулю, этот параметр не обрабатывается и переменная определяется для всей области. Если этот параметр имеет ненулевое значение, переменная находится в границах смещений текущей области.</param>
         <summary>Определяет одну переменную в текущей лексической области видимости.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -431,6 +455,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DefineParameter(System::String ^ name, System::Reflection::ParameterAttributes attributes, int sequence, System::Diagnostics::SymbolStore::SymAddressKind addrKind, int addr1, int addr2, int addr3);" />
       <MemberSignature Language="F#" Value="abstract member DefineParameter : string * System.Reflection.ParameterAttributes * int * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit&#xA;override this.DefineParameter : string * System.Reflection.ParameterAttributes * int * System.Diagnostics.SymbolStore.SymAddressKind * int * int * int -&gt; unit" Usage="symWriter.DefineParameter (name, attributes, sequence, addrKind, addr1, addr2, addr3)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineParameter(System.String,System.Reflection.ParameterAttributes,System.Int32,System.Diagnostics.SymbolStore.SymAddressKind,System.Int32,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -470,6 +497,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DefineSequencePoints(System::Diagnostics::SymbolStore::ISymbolDocumentWriter ^ document, cli::array &lt;int&gt; ^ offsets, cli::array &lt;int&gt; ^ lines, cli::array &lt;int&gt; ^ columns, cli::array &lt;int&gt; ^ endLines, cli::array &lt;int&gt; ^ endColumns);" />
       <MemberSignature Language="F#" Value="abstract member DefineSequencePoints : System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int[] * int[] * int[] * int[] * int[] -&gt; unit&#xA;override this.DefineSequencePoints : System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int[] * int[] * int[] * int[] * int[] -&gt; unit" Usage="symWriter.DefineSequencePoints (document, offsets, lines, columns, endLines, endColumns)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.DefineSequencePoints(System.Diagnostics.SymbolStore.ISymbolDocumentWriter,System.Int32[],System.Int32[],System.Int32[],System.Int32[],System.Int32[])</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -550,7 +580,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="A_0" Type="System.Boolean" />
+        <Parameter Name="A_0" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="A_0">Значение <see langword="true" />, чтобы освободить все ресурсы (управляемые и неуправляемые); значение <see langword="false" />, чтобы освободить только неуправляемые ресурсы.</param>
@@ -611,8 +641,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Получает основное неуправляемое средство записи символов.</summary>
+        <returns>Исходный указатель на основное неуправляемое средство записи символов.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -624,6 +654,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Initialize(IntPtr emitter, System::String ^ filename, bool fFullBuild);" />
       <MemberSignature Language="F#" Value="abstract member Initialize : nativeint * string * bool -&gt; unit&#xA;override this.Initialize : nativeint * string * bool -&gt; unit" Usage="symWriter.Initialize (emitter, filename, fFullBuild)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.Initialize(System.IntPtr,System.String,System.Boolean)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -639,10 +672,10 @@
         <Parameter Name="fFullBuild" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="emitter">Интерфейс порождения метаданных.</param>
-        <param name="filename">Имя файла, для которого записываются символы отладки. Имя файла требуется не для всех модулей записи. Если имя файла задано для модуля записи, который не использует имена файлов, этот параметр пропускается.</param>
+        <param name="emitter">Интерфейс включения метаданных.</param>
+        <param name="filename">Имя файла, для которого записываются символы отладки. Имя файла требуется не для всех средств записи. Если имя файла задано для модуля записи, который не использует имена файлов, этот параметр пропускается.</param>
         <param name="fFullBuild">Значение <see langword="true" /> указывает, что это полное перестроение; <see langword="false" /> — что это добавочная компиляция.</param>
-        <summary>Задает интерфейс включения метаданных, который требуется связать с данным модулем записи.</summary>
+        <summary>Задает интерфейс включения метаданных, который требуется связать с данным средством записи.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -676,7 +709,7 @@
       </Parameters>
       <Docs>
         <param name="noUnderlyingWriter">Значение <see langword="true" />, если основное средство записи символов будет получено с помощью вызова метода <see cref="M:System.Diagnostics.SymbolStore.SymWriter.SetUnderlyingWriter(System.IntPtr)" />; значение <see langword="false" />, если следует создать средство записи символов по умолчанию.</param>
-        <summary>Инициализирует модуль записи символов. Этот метод не следует вызывать непосредственно в коде, он вызывается конструктором.</summary>
+        <summary>Инициализирует средство записи символов. Этот метод не следует вызывать непосредственно в коде, он вызывается конструктором.</summary>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">для возможности доступа к неуправляемому коду.</permission>
       </Docs>
@@ -689,6 +722,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void OpenMethod(System::Diagnostics::SymbolStore::SymbolToken method);" />
       <MemberSignature Language="F#" Value="abstract member OpenMethod : System.Diagnostics.SymbolStore.SymbolToken -&gt; unit&#xA;override this.OpenMethod : System.Diagnostics.SymbolStore.SymbolToken -&gt; unit" Usage="symWriter.OpenMethod method" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.OpenMethod(System.Diagnostics.SymbolStore.SymbolToken)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -702,7 +738,7 @@
         <Parameter Name="method" Type="System.Diagnostics.SymbolStore.SymbolToken" />
       </Parameters>
       <Docs>
-        <param name="method">Токен метаданных для открываемого метода.</param>
+        <param name="method">маркер метаданных для открываемого метода.</param>
         <summary>Открывает метод для размещения символьной информации.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -722,6 +758,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void OpenNamespace(System::String ^ name);" />
       <MemberSignature Language="F#" Value="abstract member OpenNamespace : string -&gt; unit&#xA;override this.OpenNamespace : string -&gt; unit" Usage="symWriter.OpenNamespace name" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.OpenNamespace(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -755,6 +794,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual int OpenScope(int startOffset);" />
       <MemberSignature Language="F#" Value="abstract member OpenScope : int -&gt; int&#xA;override this.OpenScope : int -&gt; int" Usage="symWriter.OpenScope startOffset" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.OpenScope(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -768,9 +810,9 @@
         <Parameter Name="startOffset" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="startOffset">Смещение на промежуточном языке в байтах от начала метода до первой инструкции в лексической области видимости.</param>
+        <param name="startOffset">Смещение на промежуточном языке в байтах от начала метода до первой инструкции в лексической области.</param>
         <summary>Открывает новую лексическую область видимости в текущем методе.</summary>
-        <returns>Непрозрачный идентификатор области видимости, который можно использовать с методом <see cref="M:System.Diagnostics.SymbolStore.SymWriter.SetScopeRange(System.Int32,System.Int32,System.Int32)" /> для определения начального и конечного смещений области видимости в дальнейшем. В этом случае смещения, переданные методам <see cref="M:System.Diagnostics.SymbolStore.SymWriter.OpenScope(System.Int32)" /> и <see cref="M:System.Diagnostics.SymbolStore.SymWriter.CloseScope(System.Int32)" />, пропускаются. Идентификатор области видимости действителен только в текущем методе.</returns>
+        <returns>Непрозрачный идентификатор области, который можно использовать с методом <see cref="M:System.Diagnostics.SymbolStore.SymWriter.SetScopeRange(System.Int32,System.Int32,System.Int32)" /> для определения начального и конечного смещений области в дальнейшем. В этом случае смещения, переданные методам <see cref="M:System.Diagnostics.SymbolStore.SymWriter.OpenScope(System.Int32)" /> и <see cref="M:System.Diagnostics.SymbolStore.SymWriter.CloseScope(System.Int32)" />, пропускаются. Идентификатор области действителен только в текущем методе.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -791,6 +833,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void SetMethodSourceRange(System::Diagnostics::SymbolStore::ISymbolDocumentWriter ^ startDoc, int startLine, int startColumn, System::Diagnostics::SymbolStore::ISymbolDocumentWriter ^ endDoc, int endLine, int endColumn);" />
       <MemberSignature Language="F#" Value="abstract member SetMethodSourceRange : System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int * int * System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int * int -&gt; unit&#xA;override this.SetMethodSourceRange : System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int * int * System.Diagnostics.SymbolStore.ISymbolDocumentWriter * int * int -&gt; unit" Usage="symWriter.SetMethodSourceRange (startDoc, startLine, startColumn, endDoc, endLine, endColumn)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.SetMethodSourceRange(System.Diagnostics.SymbolStore.ISymbolDocumentWriter,System.Int32,System.Int32,System.Diagnostics.SymbolStore.ISymbolDocumentWriter,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -828,6 +873,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void SetScopeRange(int scopeID, int startOffset, int endOffset);" />
       <MemberSignature Language="F#" Value="abstract member SetScopeRange : int * int * int -&gt; unit&#xA;override this.SetScopeRange : int * int * int -&gt; unit" Usage="symWriter.SetScopeRange (scopeID, startOffset, endOffset)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.SetScopeRange(System.Int32,System.Int32,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -843,9 +891,9 @@
         <Parameter Name="endOffset" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="scopeID">Идентификатор лексической области видимости, возвращаемой методом <see cref="M:System.Diagnostics.SymbolStore.SymWriter.OpenScope(System.Int32)" />.</param>
-        <param name="startOffset">Смещение начала лексической области видимости на промежуточном языке в байтах.</param>
-        <param name="endOffset">Конечное смещение текущей лексической области видимости на промежуточном языке.</param>
+        <param name="scopeID">Идентификатор лексической области, возвращаемой методом <see cref="M:System.Diagnostics.SymbolStore.SymWriter.OpenScope(System.Int32)" />.</param>
+        <param name="startOffset">Смещение начала лексической области на промежуточном языке в байтах.</param>
+        <param name="endOffset">Конечное смещение текущей лексической области на промежуточном языке.</param>
         <summary>Определяет диапазон смещений для заданной лексической области видимости.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -858,6 +906,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void SetSymAttribute(System::Diagnostics::SymbolStore::SymbolToken parent, System::String ^ name, cli::array &lt;System::Byte&gt; ^ data);" />
       <MemberSignature Language="F#" Value="abstract member SetSymAttribute : System.Diagnostics.SymbolStore.SymbolToken * string * byte[] -&gt; unit&#xA;override this.SetSymAttribute : System.Diagnostics.SymbolStore.SymbolToken * string * byte[] -&gt; unit" Usage="symWriter.SetSymAttribute (parent, name, data)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.SetSymAttribute(System.Diagnostics.SymbolStore.SymbolToken,System.String,System.Byte[])</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -873,7 +924,7 @@
         <Parameter Name="data" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="parent">Токен метаданных, для которого определяется атрибут.</param>
+        <param name="parent">маркер метаданных, для которого определяется атрибут.</param>
         <param name="name">Имя атрибута.</param>
         <param name="data">Значение атрибута.</param>
         <summary>Определяет атрибут для заданного имени и значения атрибута.</summary>
@@ -895,6 +946,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void SetUnderlyingWriter(IntPtr underlyingWriter);" />
       <MemberSignature Language="F#" Value="abstract member SetUnderlyingWriter : nativeint -&gt; unit&#xA;override this.SetUnderlyingWriter : nativeint -&gt; unit" Usage="symWriter.SetUnderlyingWriter underlyingWriter" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.SetUnderlyingWriter(System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -929,6 +983,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void SetUserEntryPoint(System::Diagnostics::SymbolStore::SymbolToken entryMethod);" />
       <MemberSignature Language="F#" Value="abstract member SetUserEntryPoint : System.Diagnostics.SymbolStore.SymbolToken -&gt; unit&#xA;override this.SetUserEntryPoint : System.Diagnostics.SymbolStore.SymbolToken -&gt; unit" Usage="symWriter.SetUserEntryPoint entryMethod" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.SetUserEntryPoint(System.Diagnostics.SymbolStore.SymbolToken)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -942,7 +999,7 @@
         <Parameter Name="entryMethod" Type="System.Diagnostics.SymbolStore.SymbolToken" />
       </Parameters>
       <Docs>
-        <param name="entryMethod">Токен метаданных для метода, который является пользовательской точкой входа.</param>
+        <param name="entryMethod">маркер метаданных для метода, который является пользовательской точкой входа.</param>
         <summary>Идентифицирует пользовательский метод в качестве точки входа для текущего модуля.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -962,6 +1019,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void UsingNamespace(System::String ^ fullName);" />
       <MemberSignature Language="F#" Value="abstract member UsingNamespace : string -&gt; unit&#xA;override this.UsingNamespace : string -&gt; unit" Usage="symWriter.UsingNamespace fullName" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolWriter.UsingNamespace(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -976,7 +1036,7 @@
       </Parameters>
       <Docs>
         <param name="fullName">Полное имя пространства имен.</param>
-        <summary>Указывает, что в открытой лексической области видимости используется заданное полное имя пространства имен.</summary>
+        <summary>Указывает, что в открытой лексической области используется заданное полное имя пространства имен.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

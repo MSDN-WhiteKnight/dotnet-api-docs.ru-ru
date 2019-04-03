@@ -1,13 +1,5 @@
 <Type Name="SqlColumnEncryptionCngProvider" FullName="System.Data.SqlClient.SqlColumnEncryptionCngProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f063d9e5a4b8843155d5a9b942604c782a28e94e" />
-    <Meta Name="ms.sourcegitcommit" Value="840fd2a3bbdce4224fcbae5a3cea9a7a89e685f5" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/24/2018" />
-    <Meta Name="ms.locfileid" Value="49961459" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SqlColumnEncryptionCngProvider : System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fb1ab617dd896da0c48f6542da56f86f9f79a0d0" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57919095" /></Metadata><TypeSignature Language="C#" Value="public class SqlColumnEncryptionCngProvider : System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlColumnEncryptionCngProvider extends System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlColumnEncryptionCngProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class SqlColumnEncryptionCngProvider&#xA;Inherits SqlColumnEncryptionKeyStoreProvider" />
@@ -27,11 +19,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Позволяет хранить ключей для главного ключа столбца Always Encrypted в хранилище, например аппаратный модуль безопасности (HSM), который поддерживает Microsoft Cryptography API: Next Generation (CNG).  
+ Позволяет хранить ключей для главного ключа столбца Always Encrypted в хранилище, например аппаратный модуль безопасности (HSM), который поддерживает Microsoft Cryptography API: Следующего поколения (CNG).  
   
  ]]></format>
     </remarks>
-    <related type="ExternalDocumentation" href="http://blogs.msdn.com/b/sqlsecurity/archive/tags/always+encrypted/">Приступая к работе с Always Encrypted</related>
+    <related type="ExternalDocumentation" href="https://blogs.msdn.com/b/sqlsecurity/archive/tags/always+encrypted/">Приступая к работе с Always Encrypted</related>
     <related type="ExternalDocumentation" href="https://msdn.microsoft.com/library/mt147923.aspx">Постоянное шифрование (Разработка клиентских приложений)</related>
   </Docs>
   <Members>
@@ -75,8 +67,8 @@
       <Docs>
         <param name="masterKeyPath">Путь к главному ключу.</param>
         <param name="encryptionAlgorithm">Алгоритм шифрования.</param>
-        <param name="encryptedColumnEncryptionKey">Зашифрованный ключ шифрования столбца.</param>
-        <summary>Расшифровывает данное зашифрованное значение, используя асимметричный ключ, заданный путем к ключу, и указанный алгоритм. Ключ должен иметь путь в формате [имя_поставщика]/KeyIdentifier и быть асимметричным, хранящимся в указанном поставщике хранилища ключей CNG. Допустимым алгоритмом, используемым для шифрования и расшифровки CEK, является "RSA_OAEP".</summary>
+        <param name="encryptedColumnEncryptionKey">Ключ шифрования зашифрованного столбца.</param>
+        <summary>Расшифровывает данное зашифрованное значение, используя асимметричный ключ, заданный с помощью пути ключа, и указанный алгоритм. Путь ключа должен иметь формат [имя_поставщика]/KeyIdentifier. Ключ должен быть асимметричным и храниться в указанном поставщике хранилища ключей CNG. Допустимым алгоритмом, используемым для шифрования и расшифровки CEK, является RSA_OAEP.</summary>
         <returns>Расшифрованный ключ шифрования столбца.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -104,9 +96,9 @@
       <Docs>
         <param name="masterKeyPath">Путь к главному ключу.</param>
         <param name="encryptionAlgorithm">Алгоритм шифрования.</param>
-        <param name="columnEncryptionKey">Зашифрованный ключ шифрования столбца.</param>
-        <summary>Шифрует конкретный ключ шифрования столбца в обычном тексте с помощью указанного алгоритма и асимметричного ключа, указанного в пути к ключу. Ключ должен иметь путь в формате [имя_поставщика]/KeyIdentifier и быть асимметричным, хранящимся в указанном поставщике хранилища ключей CNG. Допустимым алгоритмом, используемым для шифрования и расшифровки CEK, является "RSA_OAEP".</summary>
-        <returns>Зашифрованный ключ шифрования столбца.</returns>
+        <param name="columnEncryptionKey">Ключ шифрования зашифрованного столбца.</param>
+        <summary>Шифрует конкретный ключ шифрования столбца в формате обычного текста с помощью указанного алгоритма и асимметричного ключа, указанного в пути ключа. Путь ключа должен иметь формат [имя_поставщика]/KeyIdentifier. Ключ должен быть асимметричным и храниться в указанном поставщике хранилища ключей CNG. Допустимым алгоритмом, используемым для шифрования и расшифровки CEK, является RSA_OAEP.</summary>
+        <returns>Ключ шифрования зашифрованного столбца.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,13 +138,13 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="masterKeyPath" Type="System.String" />
-        <Parameter Name="allowEnclaveComputations" Type="System.Boolean" />
+        <Parameter Name="masterKeyPath" Type="System.String" Index="0" FrameworkAlternate="netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="allowEnclaveComputations" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="masterKeyPath">Путь к главному ключу столбца. Формат пути зависит от поставщика хранилища ключей.</param>
         <param name="allowEnclaveComputations">Значение <see langword="true" />, если главный ключ столбца поддерживает анклавные вычисления, иначе значение <see langword="false" />.</param>
-        <summary>Вызывает исключение <see cref="T:System.NotSupportedException" /> во всех случаях.</summary>
+        <summary>Во всех случаях создает исключение <see cref="T:System.NotSupportedException" />.</summary>
         <returns>Подпись метаданных главного ключа столбца.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -181,9 +173,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="masterKeyPath" Type="System.String" />
-        <Parameter Name="allowEnclaveComputations" Type="System.Boolean" />
-        <Parameter Name="signature" Type="System.Byte[]" />
+        <Parameter Name="masterKeyPath" Type="System.String" Index="0" FrameworkAlternate="netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="allowEnclaveComputations" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="signature" Type="System.Byte[]" Index="2" FrameworkAlternate="netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="masterKeyPath">Полный путь к асимметричному ключу. Формат пути зависит от поставщика хранилища ключей.</param>

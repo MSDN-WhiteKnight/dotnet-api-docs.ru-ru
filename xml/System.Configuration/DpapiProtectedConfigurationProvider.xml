@@ -1,13 +1,5 @@
 <Type Name="DpapiProtectedConfigurationProvider" FullName="System.Configuration.DpapiProtectedConfigurationProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="de474634413f14fb8f3f0e8ea558dfcb25398d25" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49136104" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class DpapiProtectedConfigurationProvider : System.Configuration.ProtectedConfigurationProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="51a95a21fe9be74c96f6e6acbff8c743f6340077" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56769896" /></Metadata><TypeSignature Language="C#" Value="public sealed class DpapiProtectedConfigurationProvider : System.Configuration.ProtectedConfigurationProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DpapiProtectedConfigurationProvider extends System.Configuration.ProtectedConfigurationProvider" />
   <TypeSignature Language="DocId" Value="T:System.Configuration.DpapiProtectedConfigurationProvider" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DpapiProtectedConfigurationProvider&#xA;Inherits ProtectedConfigurationProvider" />
@@ -22,13 +14,14 @@
     <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Configuration.ProtectedConfigurationProvider</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Предоставляет объект <see cref="T:System.Configuration.ProtectedConfigurationProvider" />, который использует API-интерфейс защиты данных Windows (DPAPI) для шифрования и расшифровки данных конфигурации.</summary>
+    <summary>Предоставляет объект <see cref="T:System.Configuration.ProtectedConfigurationProvider" />, использующий защиту данных Windows API (DPAPI) для шифрования данных конфигурации.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -37,7 +30,7 @@
   
  Использовать стандарт <xref:System.Configuration.DpapiProtectedConfigurationProvider> путем объявления поставщика и соответствующие параметры в файле конфигурации, вместо создания экземпляра этого класса. См. в следующем примере.  
   
- Дополнительные сведения о защищенной конфигурации см. в разделе [шифрование конфигурации сведения с помощью защищенной конфигурации](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1).  
+ Дополнительные сведения о защищенной конфигурации см. в разделе [шифрование конфигурации сведения с помощью защищенной конфигурации](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1).  
   
  <xref:System.Configuration.DpapiProtectedConfigurationProvider> Использует встроенные службы шифрования Windows и может быть настроен для защиты отдельных компьютеров или уровне учетной записи пользователя. Защиту отдельных компьютеров удобно для анонимных служб, но менее надежна. Защита на уровне учетной записи пользователя можно использовать со службами, выполняемыми с определенным удостоверением пользователя.  
   
@@ -84,10 +77,10 @@
   
  ]]></format>
     </remarks>
-    <permission cref="T:System.Security.NamedPermissionSet">для полного доступа к системным ресурсам. Значение запроса: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /> [FullTrust](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)</permission>
+    <permission cref="T:System.Security.NamedPermissionSet">для полного доступа к системным ресурсам. Значение запроса: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />[FullTrust](https://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)</permission>
     <altmember cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
     <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/3a62a79c-b70f-4a9d-8f33-817fb9d1623e">Указание поставщика защищенной конфигурации</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/3a62a79c-b70f-4a9d-8f33-817fb9d1623e">Указание поставщика защищенной конфигурации</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -106,6 +99,7 @@
         <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -121,16 +115,18 @@
       </Docs>
     </Member>
     <Member MemberName="Decrypt">
-      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encryptedNode) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (encryptedNode As XmlNode) As XmlNode" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Decrypt(System::Xml::XmlNode ^ encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1" />
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;netcore-3.0;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encryptedNode) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;netcore-3.0;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (encryptedNode As XmlNode) As XmlNode" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;netcore-3.0;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Decrypt(System::Xml::XmlNode ^ encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;netcore-3.0;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0" />
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (encrypted_node As XmlNode) As XmlNode" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Decrypt(System::Xml::XmlNode ^ encrypted_node);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="override this.Decrypt : System.Xml.XmlNode -&gt; System.Xml.XmlNode" Usage="dpapiProtectedConfigurationProvider.Decrypt encrypted_node" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="override this.Decrypt : System.Xml.XmlNode -&gt; System.Xml.XmlNode" Usage="dpapiProtectedConfigurationProvider.Decrypt encrypted_node" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="override this.Decrypt : System.Xml.XmlNode -&gt; System.Xml.XmlNode" Usage="dpapiProtectedConfigurationProvider.Decrypt encrypted_node" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
@@ -141,27 +137,27 @@
         <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1" />
+        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="encrypted_node" Type="System.Xml.XmlNode" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="encryptedNode">Объект <see cref="T:System.Xml.XmlNode" /> для расшифровки.</param>
-        <param name="encrypted_node">Объект <see cref="T:System.Xml.XmlNode" /> для расшифровки.</param>
+        <param name="encrypted_node">To be added.</param>
         <summary>Расшифровывает переданный объект <see cref="T:System.Xml.XmlNode" />.</summary>
         <returns>Расшифрованный объект <see cref="T:System.Xml.XmlNode" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Configuration.ConfigurationErrorsException">
-          <paramref name="encryptedNode" /> не имеет <see cref="P:System.Xml.XmlNode.Name" />, установленный в "EncryptedData", и <see cref="T:System.Xml.XmlNodeType" />, установленный в <see cref="F:System.Xml.XmlNodeType.Element" />.  
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="encryptedNode" /> не имеет <see cref="P:System.Xml.XmlNode.Name" />, установленный в "EncryptedData", и <see cref="T:System.Xml.XmlNodeType" />, установленный в <see cref="F:System.Xml.XmlNodeType.Element" />.  
   
-\- или - 
+-или- 
  <paramref name="encryptedNode" /> не имеет дочернего узла с именем "CipherData" с дочерним узелом "CipherValue".  
   
-\- или - 
+-или- 
 Дочерний узел с именем CipherData является пустым узелом.</exception>
       </Docs>
     </Member>
@@ -182,6 +178,7 @@
         <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -213,6 +210,7 @@
         <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -224,10 +222,9 @@
       <Docs>
         <param name="name">Имя используемого поставщика для объекта.</param>
         <param name="configurationValues">Коллекция значений <see cref="T:System.Collections.Specialized.NameValueCollection" />, используемая при инициализации объекта.</param>
-        <summary>Выполняет инициализацию поставщика параметрами по умолчанию.</summary>
+        <summary>Выполняет инициализацию поставщика параметров по умолчанию.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Configuration.ConfigurationErrorsException">
-          <paramref name="configurationValues" /> содержит неопознанные установки конфигурации.</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="configurationValues" /> содержит неопознанные установки конфигурации.</exception>
       </Docs>
     </Member>
     <Member MemberName="UseMachineProtection">
@@ -247,14 +244,14 @@
         <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, использует ли объект <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" /> защиту на уровне машины или учетной записи пользователя.</summary>
-        <value>
-          <see langword="true" />, если <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" /> использует защиту на уровне машины; <see langword="false" />, если используется защита на уровне учетной записи пользователя.</value>
+        <value><see langword="true" />, если <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" /> использует защиту на уровне машины; <see langword="false" />, если используется защита на уровне учетной записи пользователя.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

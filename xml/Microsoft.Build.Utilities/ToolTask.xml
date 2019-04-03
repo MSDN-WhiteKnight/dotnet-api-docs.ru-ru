@@ -1,13 +1,5 @@
 <Type Name="ToolTask" FullName="Microsoft.Build.Utilities.ToolTask">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="57c54120a16bf1466b84eaa1dd29666f08c6c05e" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51312462" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ToolTask : Microsoft.Build.Utilities.Task, Microsoft.Build.Framework.ICancelableTask" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f5ec29399f16b5795acd11cdc25e7862919a9699" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460114" /></Metadata><TypeSignature Language="C#" Value="public abstract class ToolTask : Microsoft.Build.Utilities.Task, Microsoft.Build.Framework.ICancelableTask" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolTask extends Microsoft.Build.Utilities.Task implements class Microsoft.Build.Framework.ICancelableTask, class Microsoft.Build.Framework.ITask" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.ToolTask" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ToolTask&#xA;Inherits Task&#xA;Implements ICancelableTask" />
@@ -114,8 +106,7 @@
         <Parameter Name="taskResources" Type="System.Resources.ResourceManager" />
       </Parameters>
       <Docs>
-        <param name="taskResources">
-          <see cref="T:System.Resources.ResourceManager" /> для ресурсов задач.</param>
+        <param name="taskResources">Объект <see cref="T:System.Resources.ResourceManager" /> для ресурсов задачи.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.ToolTask" /> указанным значением <see cref="T:System.Resources.ResourceManager" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -145,10 +136,9 @@
         <Parameter Name="helpKeywordPrefix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="taskResources">
-          <see cref="T:System.Resources.ResourceManager" /> для ресурсов задач.</param>
-        <param name="helpKeywordPrefix">Префикс ключевого слова справки для использования в сообщениях, отправленных задачей.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.ToolTask" /> заданным экземпляром <see cref="T:System.Resources.ResourceManager" /> и префиксом ключевого слова справки.</summary>
+        <param name="taskResources">Объект <see cref="T:System.Resources.ResourceManager" /> для ресурсов задачи.</param>
+        <param name="helpKeywordPrefix">Ключевое слово справки, используемое для сообщений, которые создаются задачей.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.ToolTask" /> с заданным объектом <see cref="T:System.Resources.ResourceManager" /> и префиксом ключевого слова справки.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -269,8 +259,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Указывает, что вывод командной строки на экран отключен.</summary>
-        <value>Значение true, если вывод командной строки на экран отключен.</value>
+        <summary>Получает или задает значение, указывающее, отключено ли отображение командной строки.</summary>
+        <value><see langword="true" /> Если выключено echo командной строки; в противном случае <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -310,8 +300,8 @@
         <ReturnType>System.Collections.Specialized.StringDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает набор пар "имя-значение" переменных среды. Предназначено для переопределения в пользовательском классе задач (производном от ToolTask), чтобы возвращать набор новых или измененных переменных среды в целях создания контекста выполнения соответствующего средства.</summary>
-        <value>Возвращает набор переменных среды. Каждый ключ словаря представляет собой имя переменной среды для переопределения, а значение словаря — это значение, задаваемое для этой переменной среды. Реализация по умолчанию EnvironmentOverride возвращает значение null.</value>
+        <summary>Получает набор пар "имя-значение" для переменных среды. Предназначено для переопределения в пользовательском классе задач (производном от ToolTask) с целью возвращения новых или измененных переменных среды для создания контекста выполнения соответствующего средства.</summary>
+        <value>Набор переменных среды. Каждый ключ словаря представляет собой имя переменной среды для переопределения, а значение словаря является значение, задаваемое для этой переменной среды. Реализация по умолчанию environmentoverride возвращает <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -415,8 +405,8 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Запускает исполняемый файл с указанными параметрами задач.</summary>
-        <returns>Значение <see langword="true" /> при успешном выполнении задачи; в противном случае — значение <see langword="false" />.</returns>
+        <summary>Запускает исполняемый файл с заданными параметрами задачи.</summary>
+        <returns>Значение <see langword="true" />, если задача запущена успешно. В противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -451,9 +441,9 @@ abstract class CustomToolTask : ToolTask
       <Docs>
         <param name="pathToTool">Путь к исполняемому файлу.</param>
         <param name="responseFileCommands">Аргументы командной строки, помещаемые в RSP-файл.</param>
-        <param name="commandLineCommands">Аргументы командной строки для передачи непосредственно в исполняемый файл.</param>
-        <summary>Создает временный файл ответов (RSP-файл) и запускает исполняемый файл.</summary>
-        <returns>Возвращенный код выхода исполняемого файла. Если задача зафиксировала ошибки, но исполняемый файл вернул код выхода 0, этот метод возвращает значение -1.</returns>
+        <param name="commandLineCommands">Аргументы командной строки, передаваемые непосредственно исполняемому файлу.</param>
+        <summary>Создает временный RSP-файл ответа и запускает исполняемый файл.</summary>
+        <returns>Код выхода, возвращаемый исполняемым файлом. Если задача занесла в журнал ошибки, но исполняемый файл вернул код выхода 0, этот метод возвращает значение -1.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -478,7 +468,7 @@ abstract class CustomToolTask : ToolTask
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -489,8 +479,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает возвращенный код выхода исполняемого файла.</summary>
-        <value>Возвращенный код выхода исполняемого файла. Если задача зафиксировала ошибки, но исполняемый файл вернул код выхода 0, этот метод возвращает значение -1.</value>
+        <summary>Получает код выхода, возвращаемый исполняемым файлом.</summary>
+        <value>Код выхода, возвращаемый исполняемым файлом. Если задача занесла в журнал ошибки, но исполняемый файл вернул код выхода 0, этот метод возвращает значение -1.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -519,8 +509,8 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает строковое значение, содержащее аргументы командной строки для передачи непосредственно в исполняемый файл.</summary>
-        <returns>Строковое значение, содержащее аргументы командной строки для передачи непосредственно в исполняемый файл.</returns>
+        <summary>Возвращает строковое значение, содержащее аргументы командной строки, передаваемые непосредственно исполняемому файлу.</summary>
+        <returns>Строковое значение, содержащее аргументы командной строки, передаваемые непосредственно исполняемому файлу.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -609,8 +599,8 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает строковое значение, содержащее аргументы командной строки для добавления в файл ответов (RSP) перед запуском исполняемого файла.</summary>
-        <returns>Строковое значение, содержащее аргументы командной строки для добавления в файл ответов (RSP) перед запуском исполняемого файла.</returns>
+        <summary>Возвращает строковое значение, содержащее аргументы командной строки, добавляемые в RSP-файл ответа перед запуском исполняемого файла.</summary>
+        <returns>Строковое значение, содержащее аргументы командной строки, добавляемые в RSP-файл ответа перед запуском исполняемого файла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -637,9 +627,9 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Diagnostics.ProcessStartInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="pathToTool" Type="System.String" />
-        <Parameter Name="commandLineCommands" Type="System.String" />
-        <Parameter Name="responseFileSwitch" Type="System.String" />
+        <Parameter Name="pathToTool" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="commandLineCommands" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="responseFileSwitch" Type="System.String" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="pathToTool">Путь к инструменту.</param>
@@ -677,9 +667,9 @@ abstract class CustomToolTask : ToolTask
         <Parameter Name="responseFilePath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="responseFilePath">Полный путь к временному файлу RSP.</param>
-        <summary>Возвращает параметр командной строки, используемый исполняемым файлом для задания файла ответов (RSP).</summary>
-        <returns>Параметр командной строки, используемый исполняемым файлом для задания файла ответов (RSP).</returns>
+        <param name="responseFilePath">Полный путь к временному RSP-файлу.</param>
+        <summary>Возвращает параметр командной строки, используемый исполняемым файлом для указания RSP-файла ответа.</summary>
+        <returns>Параметр командной строки, используемый исполняемым файлом для указания RSP-файла ответа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -755,7 +745,7 @@ abstract class CustomToolTask : ToolTask
       <Parameters />
       <Docs>
         <summary>Обрабатывает ошибки выполнения, вызванные исполняемым файлом.</summary>
-        <returns>Значение <see langword="true" /> при успешном выполнении метода; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если метод запущен успешно. В противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -788,7 +778,7 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Указывает, записал ли этот объект ToolTask какие-либо ошибки в журнал.</summary>
+        <summary>Указывает, зарегистрированы ли задачей ToolTask какие-либо ошибки</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -818,8 +808,8 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Инициализирует объект базовой среды задачи.</summary>
-        <returns>Состояние <see cref="T:Microsoft.Build.Utilities.HostObjectInitializationStatus" /> объекта базовой среды.</returns>
+        <summary>Инициализирует объект узла задачи.</summary>
+        <returns>Состояние <see cref="T:Microsoft.Build.Utilities.HostObjectInitializationStatus" /> объекта узла.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -850,9 +840,9 @@ abstract class CustomToolTask : ToolTask
         <Parameter Name="messageImportance" Type="Microsoft.Build.Framework.MessageImportance" />
       </Parameters>
       <Docs>
-        <param name="singleLine">Одна строка текста для метода для синтаксического анализа.</param>
-        <param name="messageImportance">Значение <see cref="T:Microsoft.Build.Framework.MessageImportance" />, указывающее уровень важности, с которым следует заносить событие в журнал.</param>
-        <summary>Выполняет синтаксический анализ одной строки текста, чтобы определить наличие ошибок и предупреждений в каноническом формате.</summary>
+        <param name="singleLine">Строка текста, передаваемая в метод для синтаксического анализа.</param>
+        <param name="messageImportance">Значение <see cref="T:Microsoft.Build.Framework.MessageImportance" />, указывающее уровень важности, с которым сообщение заносится в журнал.</param>
+        <summary>Выполняет синтаксический анализ строки текста, чтобы определить наличие ошибок и предупреждений в каноническом формате.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -886,7 +876,7 @@ abstract class CustomToolTask : ToolTask
       <Docs>
         <param name="toolName">Имя исполняемого файла.</param>
         <param name="pathToTool">Путь к исполняемому файлу.</param>
-        <summary>Записывает в журнал имена всех зарегистрированных средств ведения журнала и пути к ним.</summary>
+        <summary>Заносит в журнал имя программы и путь для всех зарегистрированных средствах ведения журнала.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -946,8 +936,8 @@ abstract class CustomToolTask : ToolTask
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="message">Описательное сообщение для средств ведения журнала, обычно включающее строку и параметры командной строки.</param>
-        <summary>Записывает в журнал начальную точку выполнения для всех зарегистрированных средств ведения журнала.</summary>
+        <param name="message">Описательное сообщение, передаваемое в средства ведения журнала, обычно это командная строка с параметрами.</param>
+        <summary>Заносит в журнал начальную точку выполнения для всех зарегистрированных средствах ведения журнала.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -975,9 +965,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Text.Encoding</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает <see cref="T:System.Text.Encoding" /> файла ответа.</summary>
-        <value>
-          <see cref="T:System.Text.Encoding" /> файла ответа.</value>
+        <summary>Получает кодировку <see cref="T:System.Text.Encoding" /> файла ответа.</summary>
+        <value>Кодировка <see cref="T:System.Text.Encoding" /> файла ответа.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1004,12 +993,12 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="responseString" Type="System.String" />
+        <Parameter Name="responseString" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="responseString">Строка отклика.</param>
         <summary>Переопределяемый метод создания escape-последовательности с использованием содержимого файла ответа.</summary>
-        <returns>Возвращает строку отклика.</returns>
+        <returns>Строка отклика.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1039,7 +1028,7 @@ abstract class CustomToolTask : ToolTask
       <Parameters />
       <Docs>
         <summary>Указывает, следует ли пропустить выполнение задачи.</summary>
-        <returns>Значение <see langword="true" />, чтобы пропустить выполнение задачи; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, чтобы пропустить выполнение задачи, и значение <see langword="false" /> в противном случае.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1074,9 +1063,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Text.Encoding</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает <see cref="T:System.Text.Encoding" /> стандартного потока ошибок задачи.</summary>
-        <value>
-          <see cref="T:System.Text.Encoding" /> файла ответа.</value>
+        <summary>Задает кодировку <see cref="T:System.Text.Encoding" /> стандартного потока ошибок задачи.</summary>
+        <value>Кодировка <see cref="T:System.Text.Encoding" /> файла ответа.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1115,7 +1103,7 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Параметр задачи: степень важности регистрации текста из стандартного потока сообщений об ошибках.</summary>
+        <summary>Параметр задачи: степень важности, с которой текст из стандартного потока ошибок следует регистрировать в журнале.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1142,7 +1130,7 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Docs>
         <summary>Получает значение фактической важности, при котором стандартные сообщения об ошибках записываются в журнал.</summary>
-        <value>Возвращает значение фактической важности, при котором стандартные сообщения об ошибках записываются в журнал.</value>
+        <value>Значение фактической важности, при какие стандартную ошибку записываются сообщения.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1170,9 +1158,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>Microsoft.Build.Framework.MessageImportance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает <see cref="T:Microsoft.Build.Framework.MessageImportance" /> для записи ошибок в журнал.</summary>
-        <value>
-          <see cref="T:Microsoft.Build.Framework.MessageImportance" /> для записи ошибок в журнал.</value>
+        <summary>Получает уровень важности <see cref="T:Microsoft.Build.Framework.MessageImportance" />, с которым ошибки заносятся в журнал.</summary>
+        <value>Уровень важности <see cref="T:Microsoft.Build.Framework.MessageImportance" />, с которым ошибки заносятся в журнал.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1200,9 +1187,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Text.Encoding</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает <see cref="T:System.Text.Encoding" /> стандартного выходного потока задачи.</summary>
-        <value>
-          <see cref="T:System.Text.Encoding" /> файла ответа.</value>
+        <summary>Получает кодировку <see cref="T:System.Text.Encoding" /> стандартного выходного потока задачи.</summary>
+        <value>Кодировка <see cref="T:System.Text.Encoding" /> файла ответа.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1241,7 +1227,7 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Параметр задачи: степень важности регистрации текста из стандартного выходного потока.</summary>
+        <summary>Параметр задачи: Степень важности, с которой текст из стандартного выходного потока следует регистрировать в журнале.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1268,7 +1254,7 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Docs>
         <summary>Получает значение фактической важности, при котором стандартные выходные сообщения записываются в журнал.</summary>
-        <value>Возвращает значение фактической важности, при котором стандартные выходные сообщения записываются в журнал.</value>
+        <value>Фактической важности, при котором стандартные выходные сообщения записываются в журнал.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1296,9 +1282,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>Microsoft.Build.Framework.MessageImportance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает <see cref="T:Microsoft.Build.Framework.MessageImportance" /> для записи ошибок в журнал.</summary>
-        <value>
-          <see cref="T:Microsoft.Build.Framework.MessageImportance" /> для записи ошибок в журнал.</value>
+        <summary>Получает уровень важности <see cref="T:Microsoft.Build.Framework.MessageImportance" />, с которым ошибки заносятся в журнал.</summary>
+        <value>Уровень важности <see cref="T:Microsoft.Build.Framework.MessageImportance" />, с которым ошибки заносятся в журнал.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1363,8 +1348,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает промежуток времени, после которого исполняемый файл задачи прекращается.</summary>
-        <value>Время ожидания в миллисекундах.</value>
+        <summary>Получает или задает интервал времени, по истечении которого прекращается работа исполняемого модуля задачи.</summary>
+        <value>Интервал времени ожидания, в миллисекундах.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1419,7 +1404,7 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Может задаваться проектами для переопределения свойства ToolName задачи. Может задаваться проектами для сохранения свойства ToolName.</summary>
+        <summary>Этот свойство может задаваться проектами для переопределения свойства ToolName задачи. Для запрещения этого действия свойство может переопределяться задачами.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1448,8 +1433,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя запускаемого исполняемого файла.</summary>
-        <value>Имя запускаемого исполняемого файла.</value>
+        <summary>Получает имя исполняемого файла для запуска.</summary>
+        <value>Имя исполняемого файла для запуска.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1496,7 +1481,7 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Docs>
         <summary>Получает или задает путь к исполняемому файлу для запуска.</summary>
-        <value>Путь к запускаемому файлу.</value>
+        <value>Путь к файлу для запуска.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1524,8 +1509,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает параметр, определяющий, будет ли ToolTask создавать пакетный файл для командной строки и выполнять его с использованием процессора команд вместо того, чтобы выполнять команду напрямую.</summary>
-        <value>Если значение true, ToolTask создаст пакетный файл для командной строки и выполнит его с использованием процессора команд. Если значение false, ToolTask выполнит команду напрямую.</value>
+        <summary>Получает или задает значение, указывающее, будет ли ToolTask создавать пакетный файл для командной строки и выполнять его с использованием процессора команд вместо того, чтобы выполнять команду напрямую.</summary>
+        <value><see langword="true" /> Если задача средство создайте пакетный файл для командной строки и выполнит его с использованием процессора команд; <see langword="false" /> Если ToolTask выполнит команду напрямую.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1554,8 +1539,8 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Указывает, все ли параметры задачи являются допустимыми.</summary>
-        <returns>Значение <see langword="true" />, если все параметры задачи являются допустимыми; в противном случае — значение <see langword="false" />.</returns>
+        <summary>Показывает, все ли параметры задачи являются допустимыми.</summary>
+        <returns>Значение <see langword="true" />, если все параметры задачи являются допустимыми. В противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1583,8 +1568,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Указывает, отдает ли задача узел во время выполнения средства.</summary>
-        <value>Значение true, если задача отдает узел во время выполнения средства.</value>
+        <summary>Получает или задает значение, указывающее, будет ли задача приостанавливать узел во время выполнения средства.</summary>
+        <value><see langword="true" /> Если задача отдает узел во время выполнения средства; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

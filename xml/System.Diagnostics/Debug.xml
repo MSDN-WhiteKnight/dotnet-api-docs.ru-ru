@@ -1,13 +1,5 @@
 <Type Name="Debug" FullName="System.Diagnostics.Debug">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ea790e23f68dfea704fc50a0ede56e42391b5cca" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48653871" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Debug" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="475d152dcc4af2f55a47e233dbe62167a559eda7" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57934240" /></Metadata><TypeSignature Language="C#" Value="public static class Debug" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Debug extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Debug" />
   <TypeSignature Language="VB.NET" Value="Public Class Debug" />
@@ -133,7 +125,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -144,20 +136,20 @@
         <Parameter Name="condition" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, сообщение о сбое не отправляется и окно сообщения не отображается.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, сообщение о сбое не отправляется и окно сообщения не отображается.</param>
         <summary>Проверяет условие; если условие имеет значение <see langword="false" />, выводит сообщение, отображающее стек вызовов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
+ По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [Утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
   
 > [!IMPORTANT]
 >  `Assert` Методы недоступны для [!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)] приложений.  
   
  Как правило <xref:System.Diagnostics.Debug.Assert%28System.Boolean%29> метод используется для выявления ошибок логики во время разработки программ. <xref:System.Diagnostics.Debug.Assert%2A> оценивает условие. Если результат равен `false`, он отправляет сообщение о сбое для <xref:System.Diagnostics.Debug.Listeners%2A> коллекции. Это поведение можно настроить, добавив <xref:System.Diagnostics.TraceListener> , или удалить одну из, <xref:System.Diagnostics.Debug.Listeners%2A> коллекции.  
   
- При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **прервать**, **повторите**, и **пропустить**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
+ При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **Прервать**, **повторите**, и **игнорировать**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
   
 > [!NOTE]
 >  [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения не поддерживают модальные диалоговые окна, поэтому они работают так же, в режиме пользовательского интерфейса и в режиме без пользовательского интерфейса. Сообщение записывается в прослушиватели трассировки в режиме отладки, или сообщение не записывается в режиме выпуска.  
@@ -223,7 +215,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -235,18 +227,18 @@
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, указанное сообщение не отправляется и окно сообщения не отображается.</param>
-        <param name="message">Сообщение, которое следует отправить в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
-        <summary>Проверяет условие; если условие имеет значение <see langword="false" />, выводит указанное сообщения и отображает окно сообщения со стеком вызовов.</summary>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, указанное сообщение не отправляется и окно сообщения не отображается.</param>
+        <param name="message">Сообщение для отправки в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
+        <summary>Проверяет условие. Если условие имеет значение <see langword="false" />, выдается указанное сообщение и отображается окно сообщения со стеком вызовов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
+ По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [Утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
   
  Как правило <xref:System.Diagnostics.Debug.Assert%2A> метод используется для выявления ошибок логики во время разработки программ. <xref:System.Diagnostics.Debug.Assert%2A> оценивает условие. Если результат равен `false`, он отправляет указанное сообщение диагностики для <xref:System.Diagnostics.Debug.Listeners%2A> коллекции. Это поведение можно настроить, добавив <xref:System.Diagnostics.TraceListener> , или удалить одну из, <xref:System.Diagnostics.Debug.Listeners%2A> коллекции.  
   
- При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **прервать**, **повторите**, и **пропустить**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
+ При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **Прервать**, **повторите**, и **игнорировать**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
   
 > [!NOTE]
 >  Отображение окна сообщения зависит от наличия <xref:System.Diagnostics.DefaultTraceListener>. Если <xref:System.Diagnostics.DefaultTraceListener> не находится в <xref:System.Diagnostics.Trace.Listeners%2A> коллекция, окно сообщения не отображается. <xref:System.Diagnostics.DefaultTraceListener> Можно удалить с [ &lt;снимите&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), [ &lt;удалить&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), или путем вызова <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> метод <xref:System.Diagnostics.Trace.Listeners%2A> свойство (`System.Diagnostics.Trace.Listeners.Clear()`).  
@@ -308,7 +300,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -316,24 +308,24 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="detailMessage" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="detailMessage" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, указанное сообщение не отправляется и окно сообщения не отображается.</param>
-        <param name="message">Сообщение, которое следует отправить в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, указанные сообщения не отправляются и окно сообщения не отображается.</param>
+        <param name="message">Сообщение для отправки в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
         <param name="detailMessage">Подробное сообщение, которое следует отправить в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
         <summary>Проверяет условие; если условие имеет значение <see langword="false" />, выводит два указанных сообщения и отображает окно сообщения со стеком вызовов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
+ По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [Утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
   
  Как правило <xref:System.Diagnostics.Debug.Assert%28System.Boolean%2CSystem.String%2CSystem.String%29> метод используется для выявления ошибок логики во время разработки программ. <xref:System.Diagnostics.Debug.Assert%2A> оценивает условие. Если результат равен `false`, он отправляет указанный диагностическое сообщение и подробное сообщение <xref:System.Diagnostics.Debug.Listeners%2A> коллекции. Это поведение можно настроить, добавив <xref:System.Diagnostics.TraceListener> , или удалить одну из, <xref:System.Diagnostics.Debug.Listeners%2A> коллекции.  
   
- При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **прервать**, **повторите**, и **пропустить**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
+ При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **Прервать**, **повторите**, и **игнорировать**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
   
 > [!NOTE]
 >  Отображение окна сообщения зависит от наличия <xref:System.Diagnostics.DefaultTraceListener>. Если <xref:System.Diagnostics.DefaultTraceListener> не находится в <xref:System.Diagnostics.Trace.Listeners%2A> коллекция, окно сообщения не отображается. <xref:System.Diagnostics.DefaultTraceListener> Можно удалить с [ &lt;снимите&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), [ &lt;удалить&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), или путем вызова <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> метод <xref:System.Diagnostics.Trace.Listeners%2A> свойство (`System.Diagnostics.Trace.Listeners.Clear()`).  
@@ -393,7 +385,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -401,21 +393,21 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="detailMessageFormat" Type="System.String" />
-        <Parameter Name="args" Type="System.Object[]">
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="detailMessageFormat" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="args" Type="System.Object[]" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, указанное сообщение не отправляется и окно сообщения не отображается.</param>
-        <param name="message">Сообщение, которое следует отправить в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
-        <param name="detailMessageFormat">Строка составного формата для отправки в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />. Это сообщение содержит текст, перемежаемый нулем или несколькими элементами форматирования, которые соответствуют объектам массива <c>args</c>.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, указанные сообщения не отправляются и окно сообщения не отображается.</param>
+        <param name="message">Сообщение для отправки в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />.</param>
+        <param name="detailMessageFormat">Строка составного формата для отправки в коллекцию <see cref="P:System.Diagnostics.Trace.Listeners" />. Это сообщение содержит текст, перемежаемый нулем или несколькими элементами форматирования, которые соответствуют объектам массива <paramref name="args" />.</param>
         <param name="args">Массив объектов, содержащий нуль или более форматируемых объектов.</param>
         <summary>Проверяет условие; если условие имеет значение <see langword="false" />, выводит два сообщения (простое и отформатированное) и отображает окно сообщения со стеком вызовов.</summary>
         <remarks>
@@ -424,11 +416,11 @@
 ## Remarks  
  Этот метод использует платформы .NET Framework для преобразования значения объекта в текстовое представление и встроить это представление в строку. Результирующая строка отправляется <xref:System.Diagnostics.Trace.Listeners%2A> коллекции.  
   
- По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
+ По умолчанию <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> метод работает только в отладочных сборках. Используйте <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> создает метод, если вы хотите сделать утверждения в выпуске. Дополнительные сведения см. в разделе [Утверждения в управляемом коде](/visualstudio/debugger/assertions-in-managed-code).  
   
  Как правило <xref:System.Diagnostics.Debug.Assert%28System.Boolean%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29> метод используется для выявления ошибок логики во время разработки программ. <xref:System.Diagnostics.Debug.Assert%2A> оценивает условие. Если результат равен `false`, <xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> вызывается метод и `detailMessageFormat` строку и `args` массива, передаются в качестве параметров. <xref:System.Diagnostics.Debug.Assert%28System.Boolean%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29> Отправляет указанный текст сообщения, сообщение форматированного текста <xref:System.Diagnostics.Debug.Listeners%2A> коллекции. Это поведение можно настроить, добавив <xref:System.Diagnostics.TraceListener> , или удалить одну из, <xref:System.Diagnostics.Debug.Listeners%2A> коллекции.  
   
- При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **прервать**, **повторите**, и **пропустить**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
+ При выполнении приложения в режиме пользовательского интерфейса отображается окно сообщения, в котором показан стек вызовов с номерами файла и строки. Окно сообщения содержит три кнопки: **Прервать**, **повторите**, и **игнорировать**. Щелкнув **прервать** кнопка завершает работу приложения. Щелкнув **повторите** отправляет вам к коду в отладчике, если приложение выполняется в отладчике, или предлагает открыть отладчик, если это не. Щелкнув **пропустить** продолжает выполняться с использованием следующей инструкции в коде.  
   
 > [!NOTE]
 >  Отображение окна сообщения зависит от наличия <xref:System.Diagnostics.DefaultTraceListener>. Если <xref:System.Diagnostics.DefaultTraceListener> не находится в <xref:System.Diagnostics.Trace.Listeners%2A> коллекция, окно сообщения не отображается. <xref:System.Diagnostics.DefaultTraceListener> Можно удалить с [ &lt;снимите&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), [ &lt;удалить&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), или путем вызова <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> метод <xref:System.Diagnostics.Trace.Listeners%2A> свойство (`System.Diagnostics.Trace.Listeners.Clear()`).  
@@ -476,12 +468,12 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение, определяющее необходимость вызова метода <see cref="M:System.Diagnostics.Debug.Flush" /> для свойства <see cref="P:System.Diagnostics.Debug.Listeners" /> после каждой записи.</summary>
-        <value>Значение <see langword="true" />, если метод <see cref="M:System.Diagnostics.Debug.Flush" /> вызывается для свойства <see cref="P:System.Diagnostics.Debug.Listeners" />; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="M:System.Diagnostics.Debug.Flush" /> вызывается в <see cref="P:System.Diagnostics.Debug.Listeners" /> после каждой операции записи; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение по умолчанию: `false`.  
+ Значение по умолчанию — `false`.  
   
  Сброс потока его основной кодировщик не очищается только явным образом при вызове <xref:System.Diagnostics.Debug.Flush%2A> или <xref:System.Diagnostics.Debug.Close%2A>. Установка <xref:System.Diagnostics.Debug.AutoFlush%2A> для `true` означает, что данные будут сброшены из буфера в поток, но состояние кодировщика не сбрасывается. Это позволяет кодировщику сохранить свое состояние (частичные символы), чтобы правильно выполнить кодировку следующего блока символов. Этот сценарий влияет на UTF8 и UTF7, в которых определенные символы кодируются только после того как кодировщик получает смежные символ или символы.  
   
@@ -533,7 +525,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -609,7 +601,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -617,7 +609,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Выдаваемое сообщение.</param>
@@ -686,7 +678,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -694,8 +686,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="detailMessage" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="detailMessage" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Выдаваемое сообщение.</param>
@@ -764,7 +756,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -826,7 +818,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -846,7 +838,7 @@
  [!code-csharp[Classic Debug.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/CS/source.cs#1)]
  [!code-vb[Classic Debug.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/VB/source.vb#1)]  
   
- В этом примере получается следующий результат:  
+ В этом примере выводятся следующие данные:  
   
 ```  
   
@@ -909,7 +901,7 @@ End of list of errors
  [!code-csharp[Classic Debug.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/CS/source.cs#1)]
  [!code-vb[Classic Debug.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/VB/source.vb#1)]  
   
- В этом примере получается следующий результат:  
+ В этом примере выводятся следующие данные:  
   
 ```  
   
@@ -962,7 +954,7 @@ End of list of errors
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает число пробелов в отступе.</summary>
-        <value>Число пробелов в отступе. По умолчанию используется значение 4.</value>
+        <value>Число пробелов в отступе. Значение по умолчанию — четыре.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1018,7 +1010,7 @@ End of list of errors
       </ReturnValue>
       <Docs>
         <summary>Получает коллекцию слушателей, отслеживающих данные отладки.</summary>
-        <value>Класс <see cref="T:System.Diagnostics.TraceListenerCollection" />, представляющий коллекцию типа <see cref="T:System.Diagnostics.TraceListener" />, которая позволяет отслеживать данные отладки.</value>
+        <value>Объект <see cref="T:System.Diagnostics.TraceListenerCollection" /> представляющий коллекцию типа <see cref="T:System.Diagnostics.TraceListener" /> , отслеживает вывод отладки.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1084,7 +1076,7 @@ End of list of errors
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1092,7 +1084,7 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Сообщение для записи.</param>
@@ -1131,7 +1123,7 @@ End of list of errors
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1139,8 +1131,8 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="args" Type="System.Object[]">
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="args" Type="System.Object[]" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1149,7 +1141,7 @@ End of list of errors
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <c>args</c>.</param>
+        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <paramref name="args" />.</param>
         <param name="args">Массив объектов, содержащий один или несколько (либо ни одного) объектов, которые необходимо отформатировать.</param>
         <summary>Записывает форматированную строку, заканчивающееся ограничителем строки, в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />.</summary>
         <remarks>
@@ -1160,11 +1152,10 @@ End of list of errors
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="format" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">Значение параметра <paramref name="format" /> недопустимо.  
+        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="format" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" /> недопустим.  
   
--или- 
+- или - 
 Число, указывающее аргумент для форматирования, меньше нуля или больше или равно числу указанных объектов для форматирования.</exception>
         <related type="Article" href="~/docs/standard/base-types/composite-formatting.md">Составное форматирование</related>
         <related type="Article" href="~/docs/standard/base-types/standard-numeric-format-strings.md">Строки стандартных числовых форматов</related>
@@ -1200,7 +1191,7 @@ End of list of errors
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1220,7 +1211,7 @@ End of list of errors
  [!code-csharp[Classic Debug.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/CS/source.cs#1)]
  [!code-vb[Classic Debug.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Debug.IndentLevel Example/VB/source.vb#1)]  
   
- В этом примере получается следующий результат:  
+ В этом примере выводятся следующие данные:  
   
 ```  
   
@@ -1274,7 +1265,7 @@ End of list of errors
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1282,7 +1273,7 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
@@ -1346,7 +1337,7 @@ End of list of errors
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1354,7 +1345,7 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Записываемое сообщение.</param>
@@ -1418,7 +1409,7 @@ End of list of errors
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1426,8 +1417,8 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
@@ -1494,7 +1485,7 @@ End of list of errors
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1502,8 +1493,8 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Записываемое сообщение.</param>
@@ -1580,7 +1571,7 @@ End of list of errors
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1588,11 +1579,11 @@ End of list of errors
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, значение записывается в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, значение записывается в прослушиватели трассировки в коллекции.</param>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
         <summary>Записывает значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
         <remarks>
@@ -1618,8 +1609,7 @@ End of list of errors
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -1630,8 +1620,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -1668,7 +1657,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1676,11 +1665,11 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, сообщение записывается в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, сообщение записывается в прослушиватели трассировки в коллекции.</param>
         <param name="message">Записываемое сообщение.</param>
         <summary>Записывает сообщение в слушатели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
         <remarks>
@@ -1706,8 +1695,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -1718,8 +1706,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -1756,7 +1743,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1764,12 +1751,12 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, имя категории и значение записываются в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, имя категории и значение записываются в прослушиватели трассировки в коллекции.</param>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
         <param name="category">Имя категории, используемое для систематизации выходных данных.</param>
         <summary>Записывает имя категории и значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
@@ -1798,8 +1785,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -1810,8 +1796,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -1848,7 +1833,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1856,12 +1841,12 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, имя категории и сообщение записываются в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, имя категории и сообщение записываются в прослушиватели трассировки в коллекции.</param>
         <param name="message">Записываемое сообщение.</param>
         <param name="category">Имя категории, используемое для систематизации выходных данных.</param>
         <summary>Записывает имя категории и сообщение в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
@@ -1890,8 +1875,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.Write(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -1902,8 +1886,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -1952,7 +1935,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2025,7 +2008,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2097,7 +2080,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2105,8 +2088,8 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
@@ -2172,7 +2155,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2180,17 +2163,17 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="args" Type="System.Object[]">
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="args" Type="System.Object[]" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <c>args</c>.</param>
+        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <paramref name="args" />.</param>
         <param name="args">Массив объектов, содержащий нуль или более форматируемых объектов.</param>
         <summary>Записывает форматированное сообщение, заканчивающееся ограничителем строки, в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />.</summary>
         <remarks>
@@ -2235,7 +2218,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2243,8 +2226,8 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Записываемое сообщение.</param>
@@ -2321,7 +2304,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2329,11 +2312,11 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, значение записывается в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, значение записывается в прослушиватели трассировки в коллекции.</param>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
         <summary>Записывает значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
         <remarks>
@@ -2359,8 +2342,7 @@ Debug.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -2371,8 +2353,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -2410,7 +2391,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2422,7 +2403,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, сообщение записывается в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, сообщение записывается в прослушиватели трассировки в коллекции.</param>
         <param name="message">Записываемое сообщение.</param>
         <summary>Записывает сообщение в слушатели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
         <remarks>
@@ -2448,8 +2429,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -2460,8 +2440,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -2498,7 +2477,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2506,12 +2485,12 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="condition">Условное выражение, которое требуется оценить. Если условие имеет значение <see langword="true" />, имя категории и значение записываются в прослушиватели трассировки в коллекции.</param>
+        <param name="condition">Условное выражение для вычисления. Если условие имеет значение <see langword="true" />, имя категории и значение записываются в прослушиватели трассировки в коллекции.</param>
         <param name="value">Объект, имя которого отправляется в <see cref="P:System.Diagnostics.Debug.Listeners" />.</param>
         <param name="category">Имя категории, используемое для систематизации выходных данных.</param>
         <summary>Записывает имя категории и значение метода <see cref="M:System.Object.ToString" /> объекта в прослушиватели трассировки в коллекции <see cref="P:System.Diagnostics.Debug.Listeners" />, если условие имеет значение <see langword="true" />.</summary>
@@ -2540,8 +2519,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -2552,8 +2530,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />
@@ -2590,7 +2567,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2598,9 +2575,9 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="condition" Type="System.Boolean" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="condition" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="category" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="condition">Значение <see langword="true" /> — запись сообщения; в противном случае — <see langword="false" />.</param>
@@ -2632,8 +2609,7 @@ Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
+        <block subset="none" type="overrides"><para>Можно свести к минимуму снижение производительности приложения с помощью <see langword="If...Then" /> инструкции вместо использования <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" /> инструкций. В следующих двух примерах кода отправить то же сообщение отладки. Однако первый пример выполняется значительно быстрее при трассировке, поскольку если <c>mySwitch.TraceError</c> принимает значение <see langword="false" />, не следует вызывать <see cref="M:System.Diagnostics.Debug.WriteLine(System.String)" />. Во втором примере всегда вызывает <see cref="M:System.Diagnostics.Debug.WriteLineIf(System.Boolean,System.String)" />, даже в том случае, когда <c>mySwitch.TraceError</c> является <see langword="false" /> и выходные данные трассировки не выводятся. Это может привести к ненужному выполнению сложности кода.  
   
 Первый пример. 
 ```csharp  
@@ -2644,8 +2620,7 @@ if(mySwitch.TraceError)
 Во втором примере: 
 ```csharp  
 Debug.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
-```</para>
-        </block>
+```</para></block>
         <altmember cref="T:System.Diagnostics.Debug" />
         <altmember cref="T:System.Diagnostics.Trace" />
         <altmember cref="T:System.Diagnostics.BooleanSwitch" />

@@ -1,13 +1,5 @@
 <Type Name="Compiler" FullName="Microsoft.CSharp.Compiler">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6ce05ee44ac65d4c530556eb4f9a715ed7fb72f9" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39858521" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Compiler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7b7f79572aac638b945fea6761568e66249d10a9" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52364858" /></Metadata><TypeSignature Language="C#" Value="public class Compiler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Compiler extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.CSharp.Compiler" />
   <TypeSignature Language="VB.NET" Value="Public Class Compiler" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type Compiler = class" />
   <AssemblyInfo>
     <AssemblyName>cscompmgd</AssemblyName>
+    <AssemblyVersion>7.0.5000.0</AssemblyVersion>
     <AssemblyVersion>8.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -27,8 +20,17 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>**Примечание. Данный API устарел.** Альтернативой устаревшим функциям служит метод <see cref="T:Microsoft.CSharp.CSharpCodeProvider" />.
+
+Управляемая программа-оболочка для компилятора C#.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Чтобы скомпилировать C\# вызов кода в процессе, <xref:Microsoft.CSharp.Compiler.Compile(System.String[],System.String[],System.String,System.String[],System.Collections.IDictionary)>.
+
+]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Compile">
@@ -41,6 +43,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>cscompmgd</AssemblyName>
+        <AssemblyVersion>7.0.5000.0</AssemblyVersion>
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -54,14 +57,71 @@
         <Parameter Name="options" Type="System.Collections.IDictionary" />
       </Parameters>
       <Docs>
-        <param name="sourceTexts">To be added.</param>
-        <param name="sourceTextNames">To be added.</param>
-        <param name="target">To be added.</param>
-        <param name="imports">To be added.</param>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="sourceTexts">Массив строкового типа, каждый с кодом C\#.</param>
+        <param name="sourceTextNames">Массив строкового типа, содержащий имена файлов для каждого sourceTexts.</param>
+        <param name="target">Имя выходного файла. Этот аргумент обязателен.</param>
+        <param name="imports">Массив строкового типа с файлами для ссылки.</param>
+        <param name="options">Объект <see cref="T:System.Collections.IDictionary" /> параметров компилятора.</param>
+        <summary>Компилирует данные источники C# в указанный файл назначения.</summary>
+        <returns>Возвращает диагностические сообщения в виде массива типа <see cref="T:Microsoft.CSharp.CompilerError" />. Если массив пуст или все элементы являются предупреждениями, компиляция прошла успешно.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Каждая строка в параметре sourceTexts является эквивалентом одного исходного файла. Должно существовать хотя бы один элемент sourceTexts.
+
+Имена файлов в параметре sourceTextNames используются для диагностики компилятора и сведений об отладке. Массив является обязательным, но может быть локально переопределен с помощью \#line-директива. Массив должен иметь одинаковое количество элементов в качестве параметра sourceTexts.
+
+Параметр импорта совпадает со значением параметра компилятора/Reference. Этот параметр может иметь значение <see langword="null" />.
+
+Для параметра options ключ является краткой формой параметра компилятора. Значение является предпочтительным для параметра. Параметр options может быть <see langword="null" />. Для некоторых параметров компилятора не распознаются. Распознаваемые параметры и значения:
+
+| Имя ключа | Использование |
+| --- | --- |
+| addmodule | Список модулей для включения в эту сборку. Имена модулей должны быть разделены вертикальной чертой или знака вертикальной черты. Значение должно быть типа <xref:System.String>. См. в разделе [- addmodule (C# параметры компилятора)](https://msdn.microsoft.com/library/1s46f83c). |
+| baseaddress | Базовый адрес библиотеки. Значение должно быть типа <xref:System.UInt32>. См. в разделе [- baseaddress (C# параметры компилятора)](~/docs/csharp/language-reference/compiler-options/baseaddress-compiler-option.md). |
+| bugreport | Создает файл отчета об ошибках. Значение должно быть типа <xref:System.String>. См. в разделе [- bugreport (C# параметры компилятора)](https://msdn.microsoft.com/library/kaky3xy9). |
+| checked | Задайте вычисления выражений по умолчанию, чтобы выбранном (или нет). Значение должно быть типа <xref:System.Boolean>. См. в разделе [— флажок установлен (C# параметры компилятора)](https://msdn.microsoft.com/library/h25wtyxf). |
+| d | Список разделенных точкой с запятой запятыми символы для определения. Значение должно быть типа <xref:System.String>. См. в разделе [-определить (C# параметры компилятора)](https://msdn.microsoft.com/library/0feaad6z). |
+| отладка | Выдавать отладочную информацию с выходными данными. Значение должно быть типа <xref:System.Boolean>. Нельзя указывать полные или только для PDB-файла. См. в разделе [-Отладка (C# параметры компилятора)](https://msdn.microsoft.com/library/8cw0bt21). |
+| doc | Имя файла, чтобы поместить в комментарии XML. Значение должно быть типа <xref:System.String>. См. в разделе [-doc (C# параметры компилятора)](https://msdn.microsoft.com/library/3260k4x7). |
+| filealign | Размер выравнивания раздела PE. Значение должно быть типа <xref:System.UInt32>. См. в разделе [- filealign (C# параметры компилятора)](https://msdn.microsoft.com/library/0s4tzdf2). |
+| INCR | Включите инкрементную перестройку. Значение должно быть типа <xref:System.Boolean>. |
+| lib | Дополнительные пути поиска при поиске модули и связанные сборки. Значение должно быть типа <xref:System.String>. См. в разделе [-lib (C# параметры компилятора)](https://msdn.microsoft.com/library/s5bac5fx). |
+| linkres | Свяжите управляемый ресурс в сборку. Значение должно быть типа <xref:System.String>. См. в разделе [- linkresource (C# параметры компилятора)](https://msdn.microsoft.com/library/xawyf94k). |
+| m | Введите для поиска в метод Main. Значение должно быть типа <xref:System.String>. См. в разделе [-основной (C# параметры компилятора)](https://msdn.microsoft.com/library/x3eht538). |
+| nostdlib | Сделать не mscorlib.dll ссылки автоматически. Значение должно быть типа <xref:System.Boolean>. См. в разделе [- nostdlib (C# параметры компилятора)](https://msdn.microsoft.com/library/fa13yay7). |
+| nowarn | Список разделенных точкой с запятой запятыми номеров предупреждений, которые не включаются в отчет. Значение должно быть типа <xref:System.String>. См. в разделе [- nowarn (C# параметры компилятора)](https://msdn.microsoft.com/library/7f28x9z3). |
+| o | Включите оптимизацию компилятора. Значение должно быть типа <xref:System.Boolean>. См. в разделе [-оптимизация (C# параметры компилятора)](https://msdn.microsoft.com/library/t0hfscdc). |
+| r | Связанные сборки. Значение должно быть типа String. Если указано более одной сборки, имя файла должны быть разделены вертикальной чертой или знака вертикальной черты. См. в разделе [-ссылки (C# параметры компилятора)](https://msdn.microsoft.com/library/yabyz3h4). |
+| res | Внедрение управляемого ресурса. Значение должно быть типа <xref:System.String>. См. в разделе [-ресурсов (C# параметры компилятора)](~/docs/csharp/language-reference/compiler-options/resource-compiler-option.md). |
+| целевой объект | Тип целевого файла, одно из следующих выходных данных: «библиотека», «exe», «winexe» или «module». Значение должно быть типа <xref:System.String>. См. в разделе [-target (C# параметры компилятора)](https://msdn.microsoft.com/library/6h25dztx). |
+| unsafe | Разрешить небезопасные конструкции. Значение должно быть типа <xref:System.Boolean>. См. в разделе [-unsafe (C# параметры компилятора)](https://msdn.microsoft.com/library/ct597kb0). |
+| w | Уровень предупреждений (0-4). Значение должно быть типа <xref:System.String>. См. в разделе [-warn (C# параметры компилятора)](https://msdn.microsoft.com/library/13b90fz7). |
+| warnaserror | Диагностика выводится предупреждения как ошибки. Значение должно быть типа <xref:System.Boolean>. См. в разделе [- warnaserror (C# параметры компилятора)](https://msdn.microsoft.com/library/406xhdz3). |
+| win32icon | Значок Win32 для автоматически созданного ресурса Win32. Значение должно быть типа <xref:System.String>. См. в разделе [-win32icon (C# параметры компилятора)](https://msdn.microsoft.com/library/2aaxe43f). |
+| win32res | Файл ресурсов Win32. Значение должно быть типа <xref:System.String>. См. в разделе [-win32res (C# параметры компилятора)](https://msdn.microsoft.com/library/8f2f5x2e). |
+
+]]></format>
+        </remarks>
+        <altmember cref="T:Microsoft.CSharp.Compiler" />
+        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="sourceTexts" /> имеет значение <see langword="null" />.
+          
+- или -
+
+Свойство <paramref name="sourceTextNames" /> имеет значение <see langword="null" />.
+
+- или -
+
+Свойство <paramref name="target" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="sourceTexts" /> является пустым массивом.
+
+- или -
+
+<paramref name="sourceTextNames" /> отличается по размеру от <paramref name="sourceTexts" />.</exception>
+        <related type="Article" href="~/docs/csharp/language-reference/preprocessor-directives/preprocessor-line.md">#line (Справочник по C#)</related>
+        <related type="Article" href="~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md">-reference (параметры компилятора C#)</related>
+        <related type="Article" href="~/docs/csharp/language-reference/compiler-options/index.md">Параметры компилятора C#</related>
       </Docs>
     </Member>
   </Members>

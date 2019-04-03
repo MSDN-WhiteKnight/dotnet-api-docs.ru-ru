@@ -1,13 +1,5 @@
 <Type Name="VirtualPathProvider" FullName="System.Web.Hosting.VirtualPathProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="27e266af779c9e51c80127f68edf282203c88fdc" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39787733" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class VirtualPathProvider : MarshalByRefObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="be6c402049d377b680d7bbe7ee3ed7974d42238b" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52905634" /></Metadata><TypeSignature Language="C#" Value="public abstract class VirtualPathProvider : MarshalByRefObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VirtualPathProvider extends System.MarshalByRefObject" />
   <TypeSignature Language="DocId" Value="T:System.Web.Hosting.VirtualPathProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class VirtualPathProvider&#xA;Inherits MarshalByRefObject" />
@@ -155,13 +147,20 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При наследовании от <see cref="T:System.Web.Hosting.VirtualPathProvider" />, необходимо переопределить следующие члены:- <see cref="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />   
+    <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.Hosting.VirtualPathProvider" />, необходимо переопределить следующие члены: 
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />  
   
--    <see cref="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" /> если пользовательских <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс поддерживает каталоги в виртуальной файловой системе, необходимо переопределить следующие члены.  - <see cref="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />   
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" />  
   
--    <see cref="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" /><block subset="none" type="note"><para> Если виртуальная файловая система будет содержать темы для веб-сайта (путем создания виртуального <c>App_Themes</c> directory), пользовательский <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс должен поддерживать каталоги.  </para></block>  Пользовательский <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс работает с классами, производными <see cref="T:System.Web.Hosting.VirtualFile" /> и <see cref="T:System.Web.Hosting.VirtualDirectory" /> классы. Необходимо реализовать производные классы от этих типов файлов и каталогов информацию из виртуальной файловой системы. Пример настраиваемого <see cref="T:System.Web.Hosting.VirtualFile" /> реализации, см. в разделе "Пример" <see cref="T:System.Web.Hosting.VirtualFile" /> класс обзорной статье. Пример настраиваемого <see cref="T:System.Web.Hosting.VirtualDirectory" /> реализации, см. в разделе "Пример" <see cref="T:System.Web.Hosting.VirtualDirectory" /> класс обзорной статье.</para>
-    </block>
+Если пользовательский <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс поддерживает каталоги в виртуальной файловой системе, необходимо переопределить следующие члены.  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" /><block subset="none" type="note"><para>  
+      Если виртуальная файловая система будет содержать темы для веб-сайта (путем создания виртуального <c>App_Themes</c> directory), пользовательских <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс должен поддерживать каталоги.
+    </para></block>  
+  
+    Пользовательский <see cref="T:System.Web.Hosting.VirtualPathProvider" /> класс работает с классами, производными <see cref="T:System.Web.Hosting.VirtualFile" /> и <see cref="T:System.Web.Hosting.VirtualDirectory" /> классы. Необходимо реализовать производные классы от этих типов файлов и каталогов информацию из виртуальной файловой системы. Пример настраиваемого <see cref="T:System.Web.Hosting.VirtualFile" /> реализации, см. в разделе "Пример" <see cref="T:System.Web.Hosting.VirtualFile" /> класс обзорной статье. Пример настраиваемого <see cref="T:System.Web.Hosting.VirtualDirectory" /> реализации, см. в разделе "Пример" <see cref="T:System.Web.Hosting.VirtualDirectory" /> класс обзорной статье.</para></block>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -237,9 +236,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если переопределить реализацию по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> метод, вы должны преобразовать с помощью специального синтаксиса <paramref name="relativePath" /> параметр является допустимым виртуальным путем. Вы несете ответственность за синтаксис проверку, утверждение пути и обработка некорректные входные данные, а также крайних случаев для правильного ввода.  В большинстве случаев его не потребуется переопределить значение по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> метод. Тем не менее, если необходимо изменить путь, мы рекомендуем ограничить вашей <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> реализации изменения для конкретного виртуального пути поставщика в токены <paramref name="relativeUrl" /> параметра, а затем вызывать базовую реализацию для выполнения обычных Путь обработки ASP.NET</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если переопределить реализацию по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> метод, вы должны преобразовать с помощью специального синтаксиса <paramref name="relativePath" /> параметр является допустимым виртуальным путем. Вы несете ответственность за синтаксис проверку, утверждение пути и обработка некорректные входные данные, а также крайних случаев для правильного ввода.  
+  
+В большинстве случаев его не потребуется переопределить значение по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> метод. Тем не менее, если необходимо изменить путь, мы рекомендуем ограничить вашей <see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" /> реализации изменения для конкретного виртуального пути поставщика в токены <paramref name="relativeUrl" /> параметра, а затем вызывать базовую реализацию для выполнения обычных Путь обработки ASP.NET</para></block>
       </Docs>
     </Member>
     <Member MemberName="DirectoryExists">
@@ -264,8 +263,7 @@
       <Docs>
         <param name="virtualDir">Путь к виртуальному каталогу.</param>
         <summary>Получает значение, указывающее, существует ли каталог в виртуальной файловой системе.</summary>
-        <returns>
-          <see langword="true" />, если каталог существует в виртуальной файловой системе; в противном случае <see langword="false" />.</returns>
+        <returns><see langword="true" />, если каталог существует в виртуальной файловой системе; в противном случае <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -311,8 +309,7 @@
       <Docs>
         <param name="virtualPath">Путь виртуального файла.</param>
         <summary>Получает значение, указывающее, существует ли файл в виртуальной файловой системе.</summary>
-        <returns>
-          <see langword="true" />, если файл существует в виртуальной файловой системе; в противном случае <see langword="false" />.</returns>
+        <returns><see langword="true" />, если файл существует в виртуальной файловой системе; в противном случае <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -407,9 +404,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Только переопределить значение по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)" /> метод, если создание ключа кэша на основе виртуального пути, не будет работать для вашего приложения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Только переопределить значение по умолчанию <see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)" /> метод, если создание ключа кэша на основе виртуального пути, не будет работать для вашего приложения.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetDirectory">

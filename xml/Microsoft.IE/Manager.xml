@@ -1,13 +1,5 @@
 <Type Name="Manager" FullName="Microsoft.IE.Manager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="feae9df12127b18f1c2385f34e7b0cce0219f801" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39831962" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Manager : Microsoft.IE.IHostEx" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dd2f641f8fde7ea566d9e8e3a771951a0534cea0" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55413674" /></Metadata><TypeSignature Language="C#" Value="public class Manager : Microsoft.IE.IHostEx" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Manager extends System.Object implements class Microsoft.IE.IHostEx" />
   <TypeSignature Language="DocId" Value="T:Microsoft.IE.Manager" />
   <TypeSignature Language="VB.NET" Value="Public Class Manager&#xA;Implements IHostEx" />
@@ -27,13 +19,21 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("CA35CB3D-0357-11D3-8729-00C04F79ED0D")</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Предоставляет методы для включения управляемого кода для выполнения как элемент управления ActiveX.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Класс Manager инициализирует параметры, позволяющие управляемого кода для выполнения как элемент управления ActiveX в изолированном домене приложения.
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,8 +50,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.IE.Manager" />.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="AreOnTheSameSite">
@@ -75,11 +76,12 @@
         <Parameter Name="pURL2" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL1">To be added.</param>
-        <param name="pURL2">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL1">Первый URL-адрес для сравнения.</param>
+        <param name="pURL2">Второй URL-адрес для сравнения.</param>
+        <summary>Получает значение, указывающее, имеет ли часть сайта в двух URL-адресах одинаковые канонические значения.</summary>
+        <returns>Значение <see langword="true" />, если два URL-адреса находятся на одном сайте; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="AreTheSame">
@@ -103,11 +105,12 @@
         <Parameter Name="pURL2" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL1">To be added.</param>
-        <param name="pURL2">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL1">Первый URL-адрес для сравнения.</param>
+        <param name="pURL2">Второй URL-адрес для сравнения.</param>
+        <summary>Получает значение, указывающее, являются ли два URL-адреса одинаковыми по каноническим формам.</summary>
+        <returns>Значение <see langword="true" />, если два URL-адреса совпадают; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CanonizeURL">
@@ -131,11 +134,26 @@
         <Parameter Name="flags" Type="Microsoft.IE.Manager+URL_CANONFLAGS" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="flags">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">Строка, заканчивающаяся на NULL, максимальной длины (<see cref="F:Microsoft.IE.Manager.INTERNET_MAX_URL_LENGTH" />), содержащая строку URL-адреса. Если строка не ссылается на файл, она должна содержать допустимую схему, например http://.</param>
+        <param name="flags">Флаги, определяющие, как URL-адрес будет преобразовываться в каноническую форму. Следующие флаги можно сочетать:
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: обрабатывают "/./" и "/../" в строке URL-адреса как символы-литералы, а не сокращение для навигации.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: преобразуют все вхождения "%" в escape-последовательность.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: заменяют только пробелы на escape-последовательности. Этот флаг имеет приоритет над <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />, но не применяется к непрозрачным URL-адресам.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: заменяют небезопасные символы на escape-последовательности. Небезопасные символы — это символы, которые могут быть изменены во время передачи через Интернет. Это символы &lt;, &gt;, ", #, {, }, |, \\, ^, [, ] и '. Этот флаг применяется ко всем URL-адресам, включая непрозрачные URL-адреса.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: определяются так же, как <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: объединяют URL-адреса с определяемыми клиентом подключаемыми протоколами в соответствии со спецификацией консорциума W3C. Этот флаг не применяется к стандартным протоколам, таким как FTP, HTTP и Gopher. Если этот флаг установлен, не нужно также устанавливать <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />.
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />: отменяют все escape-последовательности, которые содержат URL-адреса, с двумя исключениями. Escape-последовательности для "?" и "#" не отменяются. Если также установлен один из флагов URL_ESCAPE, сначала у двух URL-адресов отменяется escape-последовательность, потом они объединяются, а затем escape-последовательность снова применяется.</param>
+        <summary>Преобразует строку URL-адреса в каноническую форму.</summary>
+        <returns>Канонический URL-адрес.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="DecodeDomainId">
@@ -158,10 +176,11 @@
         <Parameter Name="hexString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="hexString">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="hexString">Шестнадцатеричная строка, представляющая идентификатор домена.</param>
+        <summary>Возвращает массив байтов, содержащий представление целого числа указанной шестнадцатеричной строки.</summary>
+        <returns>Массив, содержащий представление целого числа строки hexString.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetClassFactory">
@@ -193,11 +212,14 @@
         <Parameter Name="className" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="assemblyName">To be added.</param>
-        <param name="className">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assemblyName">Имя сборки.</param>
+        <param name="className">Имя класса.</param>
+        <summary>Не реализовано. 
+        
+Этот интерфейс API CLS-несовместим.</summary>
+        <returns>Всегда NULL (Nothing в Visual Basic).</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetCodeBase">
@@ -222,12 +244,13 @@
         <Parameter Name="application" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="codeBase">To be added.</param>
-        <param name="application">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">URL-адрес базы кода.</param>
+        <param name="codeBase">Этот метод возвращает путь к базе кода.</param>
+        <param name="application">Этот метод возвращает имя приложения.</param>
+        <summary>Возвращает базу кода и имя приложения из переданной строки URL-адреса.</summary>
+        <returns>Значение <see langword="true" />, если база кода обнаружена; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetConfigurationFile">
@@ -252,12 +275,13 @@
         <Parameter Name="file" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="path">To be added.</param>
-        <param name="file">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">URL-адрес для файла конфигурации.</param>
+        <param name="path">Этот метод возвращает путь к файлу конфигурации.</param>
+        <param name="file">Этот метод возвращает имя файла конфигурации.</param>
+        <summary>Возвращает путь и имя файла конфигурации из переданной строки URL-адреса.</summary>
+        <returns>Значение <see langword="true" />, если файл конфигурации найден; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetSecuredClassFactory">
@@ -294,16 +318,40 @@
         <Parameter Name="typeName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="flags">To be added.</param>
-        <param name="zone">To be added.</param>
-        <param name="site">To be added.</param>
-        <param name="uniqueIdString">To be added.</param>
-        <param name="fileHashString">To be added.</param>
-        <param name="assemblyName">To be added.</param>
-        <param name="typeName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="flags">Одно из следующих значений CORIESECURITY:
+
+— CORIESECURITY_ZONE: 0x01
+
+— CORIESECURITY_SITE: 0x02</param>
+        <param name="zone">Одно из следующих значений URLZONE:
+
+— URLZONE_LOCAL_MACHINE: 0x00
+
+— URLZONE_INTRANET: 0x01
+
+— URLZONE_TRUSTED: 0x02
+
+— URLZONE_INTERNET: 0x03
+
+— URLZONE_UNTRUSTED: 0x04</param>
+        <param name="site">Адрес сайта.</param>
+        <param name="uniqueIdString">Уникальный идентификатор сайта.</param>
+        <param name="fileHashString">Хэш-значение загружаемой сборки в шестнадцатеричной кодировке.</param>
+        <param name="assemblyName">Имя сборки.</param>
+        <param name="typeName">Имя типа.</param>
+        <summary>Создает фабрику класса, которая предоставляет сведения о безопасности для сборки.
+
+Этот интерфейс API CLS-несовместим.</summary>
+        <returns>Объект, представляющий фабрику защищенного класса.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Как правило большинство значений параметров можно получить из диспетчера безопасности Интернета.
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetSiteName">
@@ -326,10 +374,11 @@
         <Parameter Name="pURL" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">URL-адрес назначения.</param>
+        <summary>Возвращает имя сайта для указанного URL-адреса.</summary>
+        <returns>Имя сайта для указанного URL-адреса.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_PATH_LENGTH">
@@ -349,8 +398,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Возвращает максимальную длину строки, представляющей интернет-путь.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_SCHEME_LENGTH">
@@ -370,8 +420,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Возвращает максимальную длину строки, представляющей схему Интернет.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_URL_LENGTH">
@@ -391,8 +442,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Возвращает максимальную длину строки, представляющей URL-адрес.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="IsValidURL">
@@ -415,10 +467,11 @@
         <Parameter Name="pURL" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">Проверяемый URL-адрес.</param>
+        <summary>Определяет, является ли заданный URL-адрес допустимым.</summary>
+        <returns>Значение <see langword="true" />, если значение URL-адрес является допустимым; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="MakeFullLink">
@@ -443,12 +496,13 @@
         <Parameter Name="Application" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="link">To be added.</param>
-        <param name="CodeBase">To be added.</param>
-        <param name="Application">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="link">Часть ссылки в адресе, которая может быть относительной.</param>
+        <param name="CodeBase">Часть базы кода в адресе.</param>
+        <param name="Application">Часть приложения в адресе.</param>
+        <summary>Возвращает полный URL-адрес для переданной ссылки, базы кода и приложения.</summary>
+        <returns>Полная ссылка на указанное приложение.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

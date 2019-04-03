@@ -1,13 +1,5 @@
 <Type Name="ProxyWebPart" FullName="System.Web.UI.WebControls.WebParts.ProxyWebPart">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="922f69e87751c7054c9792a2ef8c7b4be06dbe35" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48647878" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ProxyWebPart : System.Web.UI.WebControls.WebParts.WebPart" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2d0208fccaae6218596e348198ff4c53659e8f1c" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55317916" /></Metadata><TypeSignature Language="C#" Value="public abstract class ProxyWebPart : System.Web.UI.WebControls.WebParts.WebPart" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProxyWebPart extends System.Web.UI.WebControls.WebParts.WebPart" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ProxyWebPart" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ProxyWebPart&#xA;Inherits WebPart" />
@@ -23,12 +15,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет базовый класс для элементов управления веб-частей, которые при определенных условиях должны замещать другие элементы управления веб-частей на странице.</summary>
+    <summary>Представляет базовый класс для элементов управления веб-частей, которые при определенных условиях должны заменить другие элементы управления веб-частей на странице.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -84,13 +76,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="webPart" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="webPart" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="webPart" /> имеет пустое свойство <see cref="P:System.Web.UI.Control.ID" /> 
-\- или - 
+-или- 
  Параметр <paramref name="webPart" /> является пустым объектом <see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />  
   
-\- или - 
+-или- 
  Параметр <paramref name="webPart" /> имеет тип <see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />, а его дочерний элемент управления имеет пустое свойство <see cref="P:System.Web.UI.Control.ID" />.</exception>
       </Docs>
     </Member>
@@ -127,7 +118,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Указан параметр <paramref name="originalPath" />, но параметр <paramref name="genericWebPartID" /> имеет значение <see langword="null" /> или является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="originalID" /> имеет значение <see langword="null" /> или является пустой строкой.
+
+-или-
+
+Параметр <paramref name="originalTypeName" /> имеет значение <see langword="null" /> или является пустой строкой.
+
+-или-
+
+Указан параметр <paramref name="originalPath" />, но параметр <paramref name="genericWebPartID" /> имеет значение <see langword="null" /> или является пустой строкой.</exception>
       </Docs>
     </Member>
     <Member MemberName="GenericWebPartID">
@@ -350,8 +349,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Сохраняет изменения состояния элемента управления, произошедшие с момента отправки обратной передачи на сервер.</summary>
-        <returns>Возвращает текущее состояние серверного элемента управления. Если с элементом управления не связано состояние, метод возвращает значение <see langword="null" />.</returns>
+        <summary>Сохраняет любые изменения состояния серверного элемента управления, произошедшие после отправки страницы обратно на сервер.</summary>
+        <returns>Возвращает текущее состояние серверного элемента управления. Если нет состояния, связанного с этим элементом управления, этот метод возвращает <see langword="null" />.</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Web.UI.Control.SaveControlState" />
       </Docs>
@@ -374,7 +373,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Сохраняет все состояния, претерпевшие изменения после вызова метода <see cref="M:System.Web.UI.WebControls.Style.TrackViewState" />.</summary>
+        <summary>Сохраняет любое состояние, которое было изменено после вызова метода <see cref="M:System.Web.UI.WebControls.Style.TrackViewState" />.</summary>
         <returns>Объект, содержащий текущее состояние представления элемента управления; если с элементом управления не связано ни одно состояние представления, то значение <see langword="null" />.</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Web.UI.WebControls.WebControl.SaveViewState" />

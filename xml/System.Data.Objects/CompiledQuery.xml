@@ -1,13 +1,5 @@
 <Type Name="CompiledQuery" FullName="System.Data.Objects.CompiledQuery">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fa0710fec40403040968f3aa103e88cfcbb974ad" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46660986" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class CompiledQuery" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="16f08bfbbc2c0fde954a007626c09489da57bec4" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57918497" /></Metadata><TypeSignature Language="C#" Value="public sealed class CompiledQuery" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CompiledQuery extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.CompiledQuery" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class CompiledQuery" />
@@ -28,7 +20,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Предусматривает компиляцию и кэширование запросов для повторного использования. Концептуально этот класс содержит единственный метод `Compile`, имеющий несколько перегружаемых реализаций. Метод `Compile` вызывается для создания нового делегата, представляющего скомпилированный запрос. Этот делегат, будучи вызванным с входным параметром <xref:System.Data.Objects.ObjectContext> и другими значениями параметров, формирует некоторый результат (такой как экземпляр <xref:System.Linq.IQueryable%601>). Запрос преобразуется и кэшируется при первом вызове делегата.  
+ Обеспечивает компиляцию и кэширование запросов для повторного использования. Концептуально этот класс содержит единственный метод `Compile`, имеющий несколько перегружаемых реализаций. Метод `Compile` вызывается для создания нового делегата, представляющего скомпилированный запрос. Этот делегат, будучи вызванным с входным параметром <xref:System.Data.Objects.ObjectContext> и другими значениями параметров, формирует некоторый результат (такой как экземпляр <xref:System.Linq.IQueryable%601>). Запрос преобразуется и кэшируется при первом вызове делегата.  
   
    
   
@@ -40,7 +32,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/8025ba1d-29c7-4407-841b-d5a3bed40b7a">Компилированные запросы (LINQ to Entities)</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/8025ba1d-29c7-4407-841b-d5a3bed40b7a">Компилированные запросы (LINQ to Entities)</related>
   </Docs>
   <Members>
     <Member MemberName="Compile&lt;TArg0,TResult&gt;">
@@ -72,11 +64,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})" /> метод.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`2" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`2" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -125,12 +116,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``3(System.Linq.Expressions.Expression{System.Func{``0,``1,``2}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``3(System.Linq.Expressions.Expression{System.Func{``0,``1,``2}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`3" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`3" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -180,13 +170,12 @@
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`4" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`4" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -237,14 +226,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`5" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`5" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -283,19 +271,18 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`6" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`6" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -335,20 +322,19 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`7" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`7" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -389,21 +375,20 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`8" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`8" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -445,22 +430,21 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`9" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`9" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -503,23 +487,22 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`10" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`10" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -563,24 +546,23 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``11(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``11(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`11" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`11" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -625,25 +607,24 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``12(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``12(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`12" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`12" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -689,26 +670,25 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg11</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``13(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg11" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``13(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`13" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`13" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -755,27 +735,26 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg11</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg12</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``14(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg11" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg12" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``14(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`14" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`14" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -823,28 +802,27 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg11</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg12</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg13</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``15(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg11" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg12" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg13" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``15(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`15" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`15" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -893,29 +871,28 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TArg14,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TArg14,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg11</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg12</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg13</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg14">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg14</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``16(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg11" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg12" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg13" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg14">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg14" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``16(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`16" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`16" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -965,30 +942,29 @@
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TArg14,TArg15,TResult&gt;&gt;" />
+        <Parameter Name="query" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TArg0,TArg1,TArg2,TArg3,TArg4,TArg5,TArg6,TArg7,TArg8,TArg9,TArg10,TArg11,TArg12,TArg13,TArg14,TArg15,TResult&gt;&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TArg0">Тип, производный от <see cref="T:System.Data.Objects.ObjectContext" />.</typeparam>
-        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg1</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg2</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg3</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg4</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg5</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg6</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg7</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg8</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg9</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg10</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg11</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg12</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg13</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg14">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg14</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TArg15">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <c>TArg15</c> должен быть типом-примитивом.</typeparam>
-        <typeparam name="TResult">Тип <c>T</c> из результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``17(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16}})" /> метод.</typeparam>
+        <typeparam name="TArg1">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg1" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg2">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg2" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg3">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg3" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg4">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg4" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg5">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg5" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg6">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg6" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg7">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg7" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg8">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg8" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg9">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg9" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg10">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg10" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg11">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg11" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg12">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg12" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg13">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg13" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg14">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg14" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TArg15">Представляет тип параметра, который передается при выполнении делегата, возвращенного этим методом. <typeparamref name="TArg15" /> должен быть типом-примитивом.</typeparam>
+        <typeparam name="TResult">Тип результатов запроса, возвращаемых путем выполнения делегата, возвращаемого <see cref="M:System.Data.Objects.CompiledQuery.Compile``17(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16}})" /> метод.</typeparam>
         <param name="query">Лямбда-выражение, предназначенное для компиляции.</param>
         <summary>Создает новый делегат, представляющий скомпилированный запрос LINQ to Entities.</summary>
-        <returns>
-          <see cref="T:System.Func`17" />, универсальный делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
+        <returns><see cref="T:System.Func`17" />, универсальный метод-делегат, представляющий скомпилированный запрос LINQ to Entities.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

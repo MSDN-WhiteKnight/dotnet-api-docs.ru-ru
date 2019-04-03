@@ -1,13 +1,5 @@
 <Type Name="ControlBindingsCollection" FullName="System.Windows.Forms.ControlBindingsCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3ccff08d6315b9d8f1f2c0a1f9b3d0f23e1e2f5d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48600495" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ControlBindingsCollection : System.Windows.Forms.BindingsCollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="47802a39ea45f4e6a52218770e5fe2669de89e88" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57924295" /></Metadata><TypeSignature Language="C#" Value="public class ControlBindingsCollection : System.Windows.Forms.BindingsCollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlBindingsCollection extends System.Windows.Forms.BindingsCollection" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ControlBindingsCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class ControlBindingsCollection&#xA;Inherits BindingsCollection" />
@@ -24,13 +16,13 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.ControlBindingsConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1">
@@ -90,7 +82,7 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="control" Type="System.Windows.Forms.IBindableComponent" />
+        <Parameter Name="control" Type="System.Windows.Forms.IBindableComponent" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="control">Элемент управления <see cref="T:System.Windows.Forms.IBindableComponent" />, которому принадлежит данная коллекция привязок.</param>
@@ -149,7 +141,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значением параметра <paramref name="binding" /> является null.</exception>
-        <exception cref="T:System.ArgumentException">Привязка <see cref="T:System.Windows.Forms.Binding" /> не задает допустимый столбец источника данных <see cref="P:System.Windows.Forms.Binding.DataSource" />.</exception>
+        <exception cref="T:System.ArgumentException">Свойство элемента управления уже привязано к данным.
+
+-или-
+
+Привязка <see cref="T:System.Windows.Forms.Binding" /> не задает допустимый столбец источника данных <see cref="P:System.Windows.Forms.Binding.DataSource" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -200,7 +196,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="binding" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.Exception">Значение параметра <paramref name="dataMember" /> не задает допустимый член для параметра <paramref name="dataSource" />.</exception>
+        <exception cref="T:System.Exception">Свойство <paramref name="propertyName" /> уже привязано к данным.
+
+-или-
+
+Значение параметра <paramref name="dataMember" /> не задает допустимый член для параметра <paramref name="dataSource" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -220,10 +220,10 @@
         <ReturnType>System.Windows.Forms.Binding</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="propertyName" Type="System.String" />
-        <Parameter Name="dataSource" Type="System.Object" />
-        <Parameter Name="dataMember" Type="System.String" />
-        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="propertyName" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataSource" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataMember" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="propertyName">Имя привязываемого свойства элемента управления.</param>
@@ -235,7 +235,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">Свойство, заданное параметром <paramref name="propertyName" />, отсутствует у элемента управления.  
   
-- или - 
+-или- 
 Свойство доступно только для чтения.</exception>
         <exception cref="T:System.Exception">Если форматирование отключено и значение <paramref name="propertyName" /> не является ни допустимым свойством элемента управления, ни пустой строкой ("").</exception>
       </Docs>
@@ -257,18 +257,18 @@
         <ReturnType>System.Windows.Forms.Binding</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="propertyName" Type="System.String" />
-        <Parameter Name="dataSource" Type="System.Object" />
-        <Parameter Name="dataMember" Type="System.String" />
-        <Parameter Name="formattingEnabled" Type="System.Boolean" />
-        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="propertyName" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataSource" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataMember" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" Index="4" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="propertyName">Имя привязываемого свойства элемента управления.</param>
         <param name="dataSource">Объект <see cref="T:System.Object" />, представляющий источник данных.</param>
         <param name="dataMember">Привязываемое свойство или список.</param>
         <param name="formattingEnabled">Значение <see langword="true" /> для форматирования отображаемых данных, в противном случае — значение <see langword="false" />.</param>
-        <param name="updateMode">Одно из значений перечисления <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
+        <param name="updateMode">Одно из значений <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
         <summary>Создает привязку, связывающую указанное свойство элемента управления с заданными элементом данных указанного источника данных, при необходимости включая форматирование, распространение значений в источник данных в зависимости от заданных параметров обновления и добавление привязки в коллекцию.</summary>
         <returns>Вновь созданный <see cref="T:System.Windows.Forms.Binding" />.</returns>
         <remarks>
@@ -281,10 +281,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Свойство, заданное параметром <paramref name="propertyName" />, не существует для элемента управления или доступно только для чтения.  
   
-- или - 
+-или- 
 Заданный член данных не существует для источника данных.  
   
-- или - 
+-или- 
 Заданные источник данных, член данных или свойство элемента управления связаны с другой привязкой в коллекции.</exception>
       </Docs>
     </Member>
@@ -305,19 +305,19 @@
         <ReturnType>System.Windows.Forms.Binding</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="propertyName" Type="System.String" />
-        <Parameter Name="dataSource" Type="System.Object" />
-        <Parameter Name="dataMember" Type="System.String" />
-        <Parameter Name="formattingEnabled" Type="System.Boolean" />
-        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
-        <Parameter Name="nullValue" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataSource" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataMember" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" Index="4" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="nullValue" Type="System.Object" Index="5" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="propertyName">Имя привязываемого свойства элемента управления.</param>
         <param name="dataSource">Объект <see cref="T:System.Object" />, представляющий источник данных.</param>
         <param name="dataMember">Привязываемое свойство или список.</param>
         <param name="formattingEnabled">Значение <see langword="true" /> для форматирования отображаемых данных, в противном случае — значение <see langword="false" />.</param>
-        <param name="updateMode">Одно из значений перечисления <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
+        <param name="updateMode">Одно из значений <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
         <param name="nullValue">Если источник данных имеет это значение, для свойства привязки задается значение <see cref="T:System.DBNull" />.</param>
         <summary>Создает привязку, связывающую указанное свойство элемента управления с заданными элементом данных указанного источника данных, при необходимости включая форматирование, распространение значений в источник данных в зависимости от заданных настроек обновления, установку для свойства заданного значения при возвращении <see cref="T:System.DBNull" /> из источника данных и добавление привязки в коллекцию.</summary>
         <returns>Вновь созданный <see cref="T:System.Windows.Forms.Binding" />.</returns>
@@ -331,10 +331,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Свойство, заданное параметром <paramref name="propertyName" />, не существует для элемента управления или доступно только для чтения.  
   
-- или - 
+-или- 
 Заданный член данных не существует для источника данных.  
   
-- или - 
+-или- 
 Заданные источник данных, член данных или свойство элемента управления связаны с другой привязкой в коллекции.</exception>
       </Docs>
     </Member>
@@ -360,20 +360,20 @@
         <ReturnType>System.Windows.Forms.Binding</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="propertyName" Type="System.String" />
-        <Parameter Name="dataSource" Type="System.Object" />
-        <Parameter Name="dataMember" Type="System.String" />
-        <Parameter Name="formattingEnabled" Type="System.Boolean" />
-        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
-        <Parameter Name="nullValue" Type="System.Object" />
-        <Parameter Name="formatString" Type="System.String" />
+        <Parameter Name="propertyName" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataSource" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataMember" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" Index="4" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="nullValue" Type="System.Object" Index="5" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formatString" Type="System.String" Index="6" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="propertyName">Имя привязываемого свойства элемента управления.</param>
         <param name="dataSource">Объект <see cref="T:System.Object" />, представляющий источник данных.</param>
         <param name="dataMember">Привязываемое свойство или список.</param>
         <param name="formattingEnabled">Значение <see langword="true" /> для форматирования отображаемых данных, в противном случае — значение <see langword="false" />.</param>
-        <param name="updateMode">Одно из значений перечисления <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
+        <param name="updateMode">Одно из значений <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
         <param name="nullValue">Если источник данных имеет это значение, для свойства привязки задается значение <see cref="T:System.DBNull" />.</param>
         <param name="formatString">Один или несколько знаков описателя формата, определяющих способ отображения значения.</param>
         <summary>Создает привязку, связывающую указанное свойство элемента управления с заданными элементом данных указанного источника данных, при необходимости включая форматирование с заданной строкой формата, распространение значений в источник данных в зависимости от заданных настроек обновления, установку для свойства заданного значения при возвращении <see cref="T:System.DBNull" /> из источника данных и добавление привязки в коллекцию.</summary>
@@ -388,10 +388,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Свойство, заданное параметром <paramref name="propertyName" />, не существует для элемента управления или доступно только для чтения.  
   
-- или - 
+-или- 
 Заданный член данных не существует для источника данных.  
   
-- или - 
+-или- 
 Заданные источник данных, член данных или свойство элемента управления связаны с другой привязкой в коллекции.</exception>
       </Docs>
     </Member>
@@ -412,21 +412,21 @@
         <ReturnType>System.Windows.Forms.Binding</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="propertyName" Type="System.String" />
-        <Parameter Name="dataSource" Type="System.Object" />
-        <Parameter Name="dataMember" Type="System.String" />
-        <Parameter Name="formattingEnabled" Type="System.Boolean" />
-        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
-        <Parameter Name="nullValue" Type="System.Object" />
-        <Parameter Name="formatString" Type="System.String" />
-        <Parameter Name="formatInfo" Type="System.IFormatProvider" />
+        <Parameter Name="propertyName" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataSource" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="dataMember" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMode" Type="System.Windows.Forms.DataSourceUpdateMode" Index="4" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="nullValue" Type="System.Object" Index="5" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formatString" Type="System.String" Index="6" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="formatInfo" Type="System.IFormatProvider" Index="7" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="propertyName">Имя привязываемого свойства элемента управления.</param>
         <param name="dataSource">Объект <see cref="T:System.Object" />, представляющий источник данных.</param>
         <param name="dataMember">Привязываемое свойство или список.</param>
         <param name="formattingEnabled">Значение <see langword="true" /> для форматирования отображаемых данных, в противном случае — значение <see langword="false" />.</param>
-        <param name="updateMode">Одно из значений перечисления <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
+        <param name="updateMode">Одно из значений <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</param>
         <param name="nullValue">Если источник данных имеет это значение, для свойства привязки задается значение <see cref="T:System.DBNull" />.</param>
         <param name="formatString">Один или несколько символов указателя формата, определяющих способ отображения значения.</param>
         <param name="formatInfo">Реализация <see cref="T:System.IFormatProvider" /> для переопределения стандартного поведения форматирования.</param>
@@ -442,10 +442,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Свойство, заданное параметром <paramref name="propertyName" />, не существует для элемента управления или доступно только для чтения.  
   
-- или - 
+-или- 
 Заданный член данных не существует для источника данных.  
   
-- или - 
+-или- 
 Заданные источник данных, член данных или свойство элемента управления связаны с другой привязкой в коллекции.</exception>
       </Docs>
     </Member>
@@ -631,7 +631,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает свойство <see cref="P:System.Windows.Forms.Binding.DataSourceUpdateMode" /> по умолчанию для привязки <see cref="T:System.Windows.Forms.Binding" /> в коллекции.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</value>
+        <value>Одно из значений <see cref="T:System.Windows.Forms.DataSourceUpdateMode" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

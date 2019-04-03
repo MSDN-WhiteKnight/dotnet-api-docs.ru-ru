@@ -1,13 +1,5 @@
 <Type Name="Path" FullName="System.IO.Path">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e7f98e229f2ed46a78883823bc5f092eef4a4a04" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48645069" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Path" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4e8893043c2c4b47f803b56f96b316d8bab660c4" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57914883" /></Metadata><TypeSignature Language="C#" Value="public static class Path" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed Path extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Path" />
   <TypeSignature Language="VB.NET" Value="Public Class Path" />
@@ -77,12 +69,10 @@
   
  Так как все эти операции выполняются для строк, вы не сможете проверить, что результаты являются допустимыми во всех сценариях. Например <xref:System.IO.Path.GetExtension%2A> метод выполняет синтаксический анализ строки, который можно передать и возвращает модуль из этой строки. Тем не менее это не означает, что файл с таким расширением существует на диске.  
   
- Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
-  
-   
+ Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).   
   
 ## Examples  
- В следующем примере кода показаны некоторые из основных членов `Path` класса.  
+ В следующем примере показано, некоторые из основных членов `Path` класса.  
   
  [!code-cpp[path class#1](~/samples/snippets/cpp/VS_Snippets_CLR/Path Class/CPP/path class.cpp#1)]
  [!code-csharp[path class#1](~/samples/snippets/csharp/VS_Snippets_CLR/Path Class/CS/path class.cs#1)]
@@ -94,6 +84,7 @@
     <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
     <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
     <related type="Article" href="~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md">Практическое руководство. Считывание из нового файла данных и запись в этот файл</related>
+    <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
   </Docs>
   <Members>
     <Member MemberName="AltDirectorySeparatorChar">
@@ -131,18 +122,17 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Символу, хранящемуся в это поле не может быть в <xref:System.IO.Path.InvalidPathChars>. Это поле может быть присвоено то же значение, что <xref:System.IO.Path.DirectorySeparatorChar>. `AltDirectorySeparatorChar` и <xref:System.IO.Path.DirectorySeparatorChar> оба являются допустимыми для разделения уровней каталогов в строке пути.  
+ 
+Это поле может иметь то же значение, что <xref:System.IO.Path.DirectorySeparatorChar>. `AltDirectorySeparatorChar` и <xref:System.IO.Path.DirectorySeparatorChar> оба являются допустимыми для разделения уровней каталогов в строке пути.  
   
- Значение этого поля является косая черта (/) в операционных системах Windows, UNIX и Macintosh.  
-  
-   
+Значение этого поля является косая черта (/) в Windows и операционных систем на базе Unix.  
   
 ## Examples  
- В следующем примере кода показано использование `AltDirectorySeparatorChar` поля.  
-  
- [!code-cpp[System.IO.Path Members#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#13)]
- [!code-csharp[System.IO.Path Members#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#13)]
- [!code-vb[System.IO.Path Members#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Path Members/VB/pathmembers.vb#13)]  
+
+В следующем примере отображается <xref:System.IO.Path> поле значения в Windows и в системах на основе Unix. Обратите внимание, что Windows поддерживает косую черту (возвращаемая <xref:System.IO.Path.AltDirectorySeparatorChar> поля) или обратную косую черту (возвращаемая <xref:System.IO.Path.DirectorySeparatorChar> поля) в пути символы-разделители, хотя в системах UNIX поддерживает только косую черту.
+
+[!code-csharp[DirectorySeparatorChar](~/samples/snippets/csharp/api/system.io/path/directoryseparatorchar/program.cs)]
+[!code-vb[DirectorySeparatorChar](~/samples/snippets/visualbasic/api/system.io/path/directoryseparatorchar/program.vb)]
   
  ]]></format>
         </remarks>
@@ -187,7 +177,7 @@
       </Parameters>
       <Docs>
         <param name="path">Сведения о пути, которые нужно изменить. Путь не может содержать символы, определенные в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</param>
-        <param name="extension">Новое расширение (начинающееся с точки или без нее). Задает <see langword="null" /> для удаления существующего расширения из параметра <c>path</c>.</param>
+        <param name="extension">Новое расширение (начинающееся с точки или без нее). Задает <see langword="null" /> для удаления существующего расширения из параметра <paramref name="path" />.</param>
         <summary>Изменяет расширение строки пути.</summary>
         <returns>Измененные сведения о пути.  
   
@@ -215,7 +205,7 @@
    
   
 ## Examples  
- В следующем примере кода показано использование `ChangeExtension` метод.  
+ В следующем примере показано использование `ChangeExtension` метод.  
   
  [!code-cpp[System.IO.Path Members#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#1)]
  [!code-csharp[System.IO.Path Members#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#1)]
@@ -224,6 +214,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -239,6 +230,18 @@
       </AssemblyInfo>
       <Docs>
         <summary>Объединяет строки в путь.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+ 
+## Remarks  
+
+Этот метод предназначен для объединения отдельных строк в одну строку, которая представляет путь к файлу. Тем не менее если первый аргумент содержит корневой путь, любой предыдущими компонентами пути учитываются, а Возвращенная строка начинается с этим компонентом корневой путь. Как альтернативу `Combine` метод, рассмотрите возможность использования <xref:System.IO.Path.Join%2A> или <xref:System.IO.Path.TryJoin%2A> методы.
+
+> [!IMPORTANT]
+> Этот способ предполагает, что первый аргумент является абсолютным, и что следующий аргумент или аргументы являются относительными. Если это не так, и особенно в том случае, если все последующие аргументы имеют строк, вводимых пользователем, вызовите <xref:System.IO.Path.Join%2A> или <xref:System.IO.Path.TryJoin%2A> метод вместо этого.
+
+ ]]></format>
+        </remarks>
       </Docs>
     </MemberGroup>
     <Member MemberName="Combine">
@@ -270,9 +273,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="paths" Type="System.String[]">
+        <Parameter Name="paths" Type="System.String[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -285,16 +288,20 @@
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- `paths` должны быть массивом из частей пути для объединения. Если одно из последующих путей является абсолютным, операция объединения сбрасывает, начиная с этого абсолютного пути, отменяя все предыдущие объединенные пути.  
-  
+## Remarks
+
+`paths` должны быть массивом из частей пути для объединения. Если одно из последующих путей является абсолютным, операция объединения сбрасывает, начиная с этого абсолютного пути, отменяя все предыдущие объединенные пути.  
+
+Если любой элемент в `paths` , но не является последней и не заканчивается либо <xref:System.IO.Path.DirectorySeparatorChar> или <xref:System.IO.Path.AltDirectorySeparatorChar> символ, `Combine` добавляет метод <xref:System.IO.Path.DirectorySeparatorChar> между этого элемента и еще один символ. Обратите внимание, что, если элемент заканчивается символа разделителя пути, который не подходит для целевой платформы, `Combine` метод сохраняет исходного символа разделителя пути и добавляет поддерживаемый. В следующем примере сравниваются результаты на системами Unix и Windows, если обратная косая черта используется в качестве символа разделителя пути.
+
+[!code-csharp[Combine and path separator characters](~/samples/snippets/csharp/api/system.io/path/combine/program.cs#1)]
+[!code-vb[Combine and path separator characters](~/samples/snippets/visualbasic/api/system.io/path/combine/program.vb#1)]  
+
  Пустые строки исключаются из объединенный путь.  
   
  Параметры не анализируются, если у них есть пробелы.  
   
  Не все символы, недопустимые для имен каталогов и файлов, которые интерпретируются как недопустимые `Combine` метод, поскольку эти символы можно использовать для поиска подстановочные знаки. Например, хотя `Path.Combine("c:\\", "*.txt")` могут быть недопустимыми Если было необходимо создать файл из него, он подходит как строку поиска. Поэтому он успешно интерпретируется по `Combine` метод.  
-  
-   
   
 ## Examples  
  Следующий пример объединяет массив строк в путь.  
@@ -306,6 +313,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Одна из строк в массиве содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
         <exception cref="T:System.ArgumentNullException">Одна из строк в массиве имеет значение <see langword="null" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="Combine">
@@ -338,8 +346,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.String" />
-        <Parameter Name="path2" Type="System.String" />
+        <Parameter Name="path1" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path2" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path1">Первый путь для объединения.</param>
@@ -350,8 +358,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Если `path1` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавляется к `path1` перед объединением.  
+ Если `path1` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавляется к `path1` перед объединением. Обратите внимание, что если `path1` заканчивается на символа разделителя пути, который не подходит для целевой платформы, `Combine` метод сохраняет исходного символа разделителя пути и добавляет поддерживаемый. В следующем примере сравниваются результаты на системами Unix и Windows, если обратная косая черта используется в качестве символа разделителя пути.  
   
+[!code-csharp[Combine and path separator characters](~/samples/snippets/csharp/api/system.io/path/combine/program.cs#2)]
+[!code-vb[Combine and path separator characters](~/samples/snippets/visualbasic/api/system.io/path/combine/program.vb#2)]  
+
  Если `path2` содержит корень (например, в том случае, если `path2` не начинается с разделителя или имени диска), результат представляет собой объединение двух путей с промежуточным разделителем. Если `path2` содержит корень, `path2` возвращается.  
   
  Параметры не анализируются, если у них есть пробелы. Таким образом Если `path2` включает пробел (например, «\file.txt»), <xref:System.IO.Path.Combine%2A> метод добавляет `path2` для `path1` вместо возвращения только `path2`.  
@@ -363,7 +374,7 @@
    
   
 ## Examples  
- В следующем примере кода показано использование `Combine` метод для настольных систем на базе Windows.  
+ В следующем примере показано использование `Combine` метод для настольных систем на базе Windows.  
   
  [!code-cpp[pathcombine#1](~/samples/snippets/cpp/VS_Snippets_CLR/pathcombine/CPP/pathcombine.cpp#1)]
  [!code-csharp[pathcombine#1](~/samples/snippets/csharp/VS_Snippets_CLR/pathcombine/CS/pathcombine.cs#1)]
@@ -372,7 +383,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path1" /> или <paramref name="path2" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="path1" /> или <paramref name="path2" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="path1" /> или <paramref name="path2" /> — <see langword="null" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -406,9 +418,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.String" />
-        <Parameter Name="path2" Type="System.String" />
-        <Parameter Name="path3" Type="System.String" />
+        <Parameter Name="path1" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path2" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path3" Type="System.String" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path1">Первый путь для объединения.</param>
@@ -424,8 +436,11 @@
   
  Пустые строки исключаются из объединенный путь.  
   
- Если `path1` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавляется к `path1` перед объединением.  
-  
+ Если `path1` или `path2` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавляется к `path1` или `path2` перед объединением. Обратите внимание, что если `path1` или `path2` заканчивается на символа разделителя пути, который не подходит для целевой платформы, `Combine` метод сохраняет исходного символа разделителя пути и добавляет поддерживаемый. В следующем примере сравниваются результаты на системами Unix и Windows, если обратная косая черта используется в качестве символа разделителя пути. 
+
+[!code-csharp[Combine and path separator characters](~/samples/snippets/csharp/api/system.io/path/combine/program.cs#3)]
+[!code-vb[Combine and path separator characters](~/samples/snippets/visualbasic/api/system.io/path/combine/program.vb#3)]  
+
  Если `path2` содержит корень (например, в том случае, если `path2` не начинается с разделителя или имени диска), результат представляет собой объединение двух путей с промежуточным разделителем. Если `path2` содержит корень, `path2` возвращается.  
   
  Параметры не анализируются, если у них есть пробелы. Таким образом Если `path2` включает пробел (например, «\file.txt»), <xref:System.IO.Path.Combine%2A> метод добавляет `path2` для `path1`.  
@@ -442,9 +457,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path1" />, <paramref name="path2" /> или <paramref name="path3" /> содержит по крайней мере один из недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path1" />, <paramref name="path2" /> или <paramref name="path3" /> содержит по крайней мере один из недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="path1" />, <paramref name="path2" /> или <paramref name="path3" /> равно <see langword="null" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="Combine">
@@ -473,10 +488,10 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.String" />
-        <Parameter Name="path2" Type="System.String" />
-        <Parameter Name="path3" Type="System.String" />
-        <Parameter Name="path4" Type="System.String" />
+        <Parameter Name="path1" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path2" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path3" Type="System.String" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="path4" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path1">Первый путь для объединения.</param>
@@ -493,7 +508,10 @@
   
  Пустые строки исключаются из объединенный путь.  
   
- Если `path1` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавляется к `path1` перед объединением.  
+ Если `path1`, `path2`, или `path3` не является ссылкой на диск (то есть «C:» или «D:») и не заканчивается символом разделителя допустимым, как определено в <xref:System.IO.Path.DirectorySeparatorChar>, <xref:System.IO.Path.AltDirectorySeparatorChar>, или <xref:System.IO.Path.VolumeSeparatorChar>, <xref:System.IO.Path.DirectorySeparatorChar> добавленным к нему перед объединением. Обратите внимание, что если `path1`, `path2`, или `path3` заканчивается на символа разделителя пути, который не подходит для целевой платформы, `Combine` метод сохраняет исходного символа разделителя пути и добавляет поддерживаемый. В следующем примере сравниваются результаты на системами Unix и Windows, если обратная косая черта используется в качестве символа разделителя пути. 
+
+[!code-csharp[Combine and path separator characters](~/samples/snippets/csharp/api/system.io/path/combine/program.cs#4)]
+[!code-vb[Combine and path separator characters](~/samples/snippets/visualbasic/api/system.io/path/combine/program.vb#4)]   
   
  Если `path2` содержит корень (например, в том случае, если `path2` не начинается с разделителя или имени диска), результат представляет собой объединение двух путей с промежуточным разделителем. Если `path2` содержит корень, `path2` возвращается.  
   
@@ -511,9 +529,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path1" />, <paramref name="path2" />, <paramref name="path3" /> или <paramref name="path4" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path1" />, <paramref name="path2" />, <paramref name="path3" /> или <paramref name="path4" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="path1" />, <paramref name="path2" />, <paramref name="path3" /> или <paramref name="path4" /> имеет значение <see langword="null" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="DirectorySeparatorChar">
@@ -550,21 +568,41 @@
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- Символу, хранящемуся в это поле не может быть в <xref:System.IO.Path.InvalidPathChars>. <xref:System.IO.Path.AltDirectorySeparatorChar> и `DirectorySeparatorChar` оба являются допустимыми для разделения уровней каталогов в строке пути.  
+## Remarks
+
+<xref:System.IO.Path.AltDirectorySeparatorChar> и `DirectorySeparatorChar` оба являются допустимыми для разделения уровней каталогов в строке пути.  
   
-   
-  
+При использовании .NET Core для разработки приложений, работающих на нескольких платформах:
+
+- Если вы предпочитаете жестко символом разделителя каталогов, следует использовать косую черту (`/`) символов. Это символом разделителя каталогов только распознанных в системах Unix, как видно в результатах показано в примере, который <xref:System.IO.Path.AltDirectorySeparatorChar> на Windows.
+
+- Используйте объединение строк для динамического получения символа разделителя пути во время выполнения и включить ее в пути файловой системы. Например, примененная к объекту директива 
+
+   ```csharp
+   separator = Path.DirectorySeparatorChar;
+   path = $"{separator}users{separator}user1{separator}";
+   ```
+   ```vb
+   separator = Path.DirectorySeparatorChar;
+   path = $"{separator}users{separator}user1{separator}";
+   ``` 
+   Также можно получить значение из <xref:System.IO.Path.AltDirectorySeparatorChar> свойство, так как это так же, как Windows, так и Unx-системы.
+
+- Получить <xref:System.IO.Path.AltDirectorySeparatorChar> свойство
+
+Если приложение не работает на разных платформах, можно использовать разделитель, соответствующий вашей системе.
+
 ## Examples  
- В следующем примере кода демонстрируется использование `DirectorySeparatorChar` поля.  
-  
- [!code-cpp[System.IO.Path Members#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#13)]
- [!code-csharp[System.IO.Path Members#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#13)]
- [!code-vb[System.IO.Path Members#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Path Members/VB/pathmembers.vb#13)]  
+
+В следующем примере отображается <xref:System.IO.Path> поле значения в Windows и в системах на основе Unix. Обратите внимание, что Windows поддерживает косую черту (возвращаемая <xref:System.IO.Path.AltDirectorySeparatorChar> поля) или обратную косую черту (возвращаемая <xref:System.IO.Path.DirectorySeparatorChar> поля) в пути символы-разделители, хотя в системах UNIX поддерживает только косую черту.  
+
+[!code-csharp[DirectorySeparatorChar](~/samples/snippets/csharp/api/system.io/path/directoryseparatorchar/program.cs)]
+[!code-vb[DirectorySeparatorChar](~/samples/snippets/visualbasic/api/system.io/path/directoryseparatorchar/program.vb)]
   
  ]]></format>
         </remarks>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
       </Docs>
@@ -591,13 +629,14 @@
         <ReturnType>System.ReadOnlySpan&lt;System.Char&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Возвращает сведения о каталоге для указанного пути, представленного диапазоном символов.</summary>
+        <returns>Сведения о каталоге для <paramref name="path" /> либо пустой диапазон, если значение <paramref name="path" /> — <see langword="null" />, пустой диапазон или корневая папка, например \, C: или \\server\share.</returns>
         <remarks>To be added.</remarks>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="GetDirectoryName">
@@ -653,7 +692,7 @@
    
   
 ## Examples  
- В следующем примере кода показано использование `GetDirectoryName` метод для настольных систем на базе Windows.  
+ В следующем примере показано использование `GetDirectoryName` метод для настольных систем на базе Windows.  
   
  [!code-cpp[System.IO.Path Members#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#3)]
  [!code-csharp[System.IO.Path Members#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#3)]
@@ -662,15 +701,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> пустой или содержит недопустимые символы либо только пробелы.</exception>
-        <exception cref="T:System.IO.PathTooLongException">
-          <block subset="none" type="note">
+        <exception cref="T:System.IO.PathTooLongException"><block subset="none" type="note">
             <para>  
  Вместо этого в <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET для приложений Магазина Windows</see> или в <see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">переносимой библиотеке классов</see> перехватите исключение базового класса <see cref="T:System.IO.IOException" />.  
   
 </para>
           </block>  
   
-Имя параметра <paramref name="path" /> превышает максимально допустимую в системе длину.</exception>
+ Имя параметра <paramref name="path" /> превышает максимально допустимую в системе длину.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -698,13 +737,20 @@
         <ReturnType>System.ReadOnlySpan&lt;System.Char&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path">Путь к файлу, из которого необходимо получить расширение.</param>
+        <summary>Возвращает расширение из пути к файлу, представленного диапазоном символов только для чтения.</summary>
+        <returns>Расширение указанного пути (включая точку — ".") или <see cref="P:System.ReadOnlySpan`1.Empty" />, если в <paramref name="path" /> отсутствуют сведения о расширении.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Этот метод получает расширение `path` , выполняя поиск `path` в течение («.»), начиная с последнего символа в диапазоне только для чтения и двигаясь по направлению к его первого символа. Если точка найдена перед <xref:System.IO.Path.DirectorySeparatorChar> или <xref:System.IO.Path.AltDirectorySeparatorChar> символ, возвращаемый диапазон только для чтения содержит период и символы после него; в противном случае <xref:System.ReadOnlySpan%601.Empty?displayProperty=nameWithType> возвращается.  
+
+         ]]></format>
+        </remarks>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="GetExtension">
@@ -748,14 +794,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Расширение `path` можно получить путем поиска `path` в течение (.), начиная с последнего символа пути и двигаясь к началу пути. Если точка найдена перед <xref:System.IO.Path.DirectorySeparatorChar> или <xref:System.IO.Path.AltDirectorySeparatorChar> символ, возвращаемая строка содержит точку и знаки после него; в противном случае <xref:System.String.Empty> возвращается.  
+
+Этот метод получает расширение `path` , выполняя поиск `path` в течение (.), начиная с последнего символа в `path` и продолжая в сторону первого символа. Если точка найдена перед <xref:System.IO.Path.DirectorySeparatorChar> или <xref:System.IO.Path.AltDirectorySeparatorChar> символ, возвращаемая строка содержит точку и знаки после него; в противном случае <xref:System.String.Empty?displayProperty=nameWithType> возвращается.  
   
- Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
-  
-   
-  
+ Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).
+ 
 ## Examples  
- В следующем примере кода показано использование `GetExtension` метод для настольных систем на базе Windows.  
+ В следующем примере показано использование `GetExtension` метод для настольных систем на базе Windows.  
   
  [!code-cpp[System.IO.Path Members#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#4)]
  [!code-csharp[System.IO.Path Members#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#4)]
@@ -764,6 +809,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -791,13 +837,20 @@
         <ReturnType>System.ReadOnlySpan&lt;System.Char&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path">Диапазон только для чтения, содержащий путь, из которого нужно получить имя и расширение файла.</param>
+        <summary>Возвращает имя и расширение файла из пути к файлу, представленного диапазоном символов только для чтения.</summary>
+        <returns>Символы, следующие за последним символом разделителя каталогов в пути <paramref name="path" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Возвращаемый диапазон только для чтения содержит символы, следующие за последним разделителем в пути `path`. Если последним символом в `path` является символ разделения тома или каталога, метод возвращает <xref:System.ReadOnlySpan%601.Empty?displayProperty=nameWithtype>. Если `path` содержит знак отсутствует разделитель, метод возвращает `path`.
+
+         ]]></format>
+        </remarks>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="GetFileName">
@@ -836,21 +889,24 @@
       <Docs>
         <param name="path">Строка пути, из которой нужно получить имя файла и расширение.</param>
         <summary>Возвращает имя файла и расширение указанной строки пути.</summary>
-        <returns>Символы, следующие за последним символом каталога в пути <paramref name="path" />. Если последним символом параметра <paramref name="path" /> является символ разделения тома или каталога, этот метод возвращает <see cref="F:System.String.Empty" />. Если значением параметра <paramref name="path" /> является <see langword="null" />, метод возвращает <see langword="null" />.</returns>
+        <returns>Символы, следующие за последним символом разделителя каталогов в пути <paramref name="path" />. Если последним символом параметра <paramref name="path" /> является символ разделения тома или каталога, этот метод возвращает <see cref="F:System.String.Empty" />. Если значением параметра <paramref name="path" /> является <see langword="null" />, метод возвращает <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Возвращаемое значение — `null` Если пути к файлу `null`.  
+
+Возвращаемое значение — `null` Если пути к файлу `null`.  
   
- Разделитель для определения начала имени файла являются <xref:System.IO.Path.DirectorySeparatorChar> и <xref:System.IO.Path.AltDirectorySeparatorChar>.  
-  
- Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
+Разделитель для определения начала имени файла являются <xref:System.IO.Path.DirectorySeparatorChar> и <xref:System.IO.Path.AltDirectorySeparatorChar>.  
+
+Так как *\\* имеет допустимое имя файла в Unix, `GetFileName` под управлением платформ на базе Unix не правильно возвращает имя файла из Windows на основе пути, например = *C:\\mydir\\myfile.ext*, но `GetFileName` под управлением платформ на базе Windows можно правильно возвращает имя файла из пути на основе Unix как */tmp/myfile.ext*, поэтому поведение `GetFileName` метод не является одинаковой на платформах на базе Unix и на основе Windows.
+
+Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
   
    
   
 ## Examples  
- В следующем примере кода демонстрируется поведение `GetFileName` метод для настольных систем на базе Windows.  
+ В следующем примере показано поведение `GetFileName` метод для настольных систем на базе Windows.  
   
  [!code-cpp[System.IO.Path Members#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#5)]
  [!code-csharp[System.IO.Path Members#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#5)]
@@ -859,6 +915,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -886,13 +943,14 @@
         <ReturnType>System.ReadOnlySpan&lt;System.Char&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="path">Диапазон только для чтения, содержащий путь, из которого нужно получить имя файла без расширения.</param>
+        <summary>Возвращает имя файла без расширения из пути к файлу, представленного диапазоном символов только для чтения.</summary>
+        <returns>Символы в диапазоне только для чтения, возвращенные методом <see cref="M:System.IO.Path.GetFileName(System.ReadOnlySpan{System.Char})" />, кроме последней точки (.) и всех следующих за ней символов.</returns>
         <remarks>To be added.</remarks>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="GetFileNameWithoutExtension">
@@ -931,7 +989,7 @@
       <Docs>
         <param name="path">Путь к файлу.</param>
         <summary>Возвращает имя файла указанной строки пути без расширения.</summary>
-        <returns>Строка, возвращенная методом <see cref="M:System.IO.Path.GetFileName(System.String)" />, кроме последней точки (.) и всех следующих за ней символов.</returns>
+        <returns>Строка, возвращенная методом <see cref="M:System.IO.Path.GetFileName(System.ReadOnlySpan{System.Char})" />, кроме последней точки (.) и всех следующих за ней символов.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -943,7 +1001,7 @@
    
   
 ## Examples  
- В следующем примере кода показано использование `GetFileNameWithoutExtension` метод.  
+ В следующем примере показано использование `GetFileNameWithoutExtension` метод.  
   
  [!code-cpp[System.IO.Path Members#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#6)]
  [!code-csharp[System.IO.Path Members#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#6)]
@@ -952,6 +1010,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -992,7 +1051,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">Файл или каталог, для которых нужно получить сведения об абсолютном пути.</param>
@@ -1005,17 +1064,20 @@
   
  Абсолютный путь включает все сведения, необходимые для поиска файла или каталога в системе.  
   
- Файл или каталог, заданный параметром `path` не обязательно должны существовать. Например, если c:\temp\newdir является текущий каталог, при вызове метода `GetFullPath` для файла имя, например test.txt возвращает c:\temp\newdir\test.txt. Файл не должны существовать.  
-  
+ Файл или каталог, заданный параметром `path` не обязательно должны существовать. Например если *c:\temp\newdir* является текущий каталог, вызвав `GetFullPath` на имя файла, такие как *test.txt* возвращает *c:\temp\newdir\test.txt*. Файл не должны существовать.  
+
+> [!IMPORTANT]
+> Если `path` является относительным путем, эта перегрузка возвращает полный URL-адрес, могут быть основаны на текущий диск и текущий каталог. Текущий диск и текущий каталог можно изменить в любое время при выполнении приложения. Таким образом путь, возвращаемый этой перегрузки не может определить заранее. Чтобы вернуть детерминированным пути, вызовите <xref:System.IO.Path.GetFullPath(System.String,System.String)> перегрузки. Можно также вызвать <xref:System.IO.Path.IsPathFullyQualified%2A> метод, чтобы определить, является ли полное имя пути или путь относительно и, следовательно, вызов `GetFullPath` необходим.
+
  Тем не менее если `path` существует, вызывающий должен иметь разрешение на получение сведения о пути к `path`. Обратите внимание, что в отличие от большинства членов <xref:System.IO.Path> класс, этот метод осуществляет доступ к файловой системе.  
   
  Этот метод использует текущий каталог и текущие сведения о том, для полного определения `path`. Если указать файл только в имя `path`, `GetFullPath` возвращает полный путь текущего каталога.  
   
  Если передать короткое имя файла, оно расширяется на длинное имя файла.  
   
- Если путь не содержит значащие символы он недействителен, если он содержит один или несколько «. «символов, за следует любое количество пробелов, то он будет проанализирован либо как». «или»..».  
+ Если путь не содержит значащие символы, он является недопустимым, если оно содержит один или несколько «.» символов, за которыми следует любое количество пробелов; Затем он будет проанализирован либо как «. «или»..».  
 
-  .NET core 1.1 и более поздних версий и .NET Framework 4.6.2 и более поздние версии также поддерживают путей, содержащих имена устройств, таких как "\\? \C:\".
+.NET core 1.1 и более поздних версий и .NET Framework 4.6.2 и более поздние версии также поддерживают путей, содержащих имена устройств, таких как "\\? \C:\".
 
 Дополнительные сведения о форматах файлов, путь на Windows, см. в разделе [путь форматы файлов в системах Windows](~/docs/standard/io/file-path-formats.md). Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).
   
@@ -1028,17 +1090,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой строку нулевой длины, содержащую только пробелы или один или несколько недопустимых символов, как указано в <see cref="M:System.IO.Path.GetInvalidPathChars" />.  
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой строку нулевой длины, содержащую только пробелы или один или несколько недопустимых символов, как указано в <see cref="M:System.IO.Path.GetInvalidPathChars" />.  
   
-- или - 
+-или- 
 Система не может извлечь абсолютный путь.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствуют необходимые разрешения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> содержит двоеточие (:), которое не является частью идентификатора тома (например, "c:\\").</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> содержит двоеточие (:), которое не является частью идентификатора тома (например, "c:\\").</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для доступа к пути.</permission>
+        <related type="Article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -1066,15 +1127,35 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="basePath" Type="System.String" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="basePath" Type="System.String" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <param name="basePath">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path">Относительный путь для сцепления с <see paramref="basePath" />.</param>
+        <param name="basePath">Начало полного пути.</param>
+        <summary>Возвращает абсолютный путь из базового полного пути и относительного пути.</summary>
+        <returns>Абсолютный путь.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Если `path` равен пустой путь, метод возвращает `basePath`. Если `path` — это полный путь к передает метод `path` для <xref:System.IO.Path.GetFullPath(System.String)> метод и возвращает результат.
+
+Используйте этот метод для возврата детерминированным путь на основании указанного тома и к корневому каталогу directory при использовании относительных путей. С помощью предопределенного `basePath` вместо его в соответствии с текущей условия directory диска от нежелательных путей, из-за непредвиденных изменений в текущий диск и каталог. 
+
+## <a name="example"></a>Пример
+
+В следующем примере определяется переменная, `basePath`, чтобы представить текущего каталога приложения. Затем передает его `GetFullPath` метод, чтобы получить полный путь к каталогу данных приложения.
+
+[!code-csharp[Path.GetFullPath(String,String)](~/samples/snippets/csharp/api/system.io/path/getfullpath/program.cs)] 
+[!code-vb[Path.GetFullPath(String,String)](~/samples/snippets/visualbasic/api/system.io/path/getfullpath/program.vb)] 
+
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="path" /> или <paramref name="basePath" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="basePath" /> — это не полный путь.
+Либо же <paramref name="path" /> или <paramref name="basePath" /> содержит недопустимые символы, такие как U+0000.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetInvalidFileNameChars">
@@ -1119,7 +1200,7 @@
    
   
 ## Examples  
- В следующем примере кода показано <xref:System.IO.Path.GetInvalidFileNameChars%2A> метод и <xref:System.IO.Path.GetInvalidPathChars%2A> метод для извлечения недопустимые символы.  
+ В следующем примере демонстрируется <xref:System.IO.Path.GetInvalidFileNameChars%2A> метод и <xref:System.IO.Path.GetInvalidPathChars%2A> метод для извлечения недопустимые символы.  
   
  [!code-cpp[IO.Path.GetInvalidFile-PathChars#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.Path.GetInvalidFile-PathChars/cpp/example.cpp#1)]
  [!code-csharp[IO.Path.GetInvalidFile-PathChars#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.Path.GetInvalidFile-PathChars/CS/example.cs#1)]
@@ -1171,7 +1252,7 @@
    
   
 ## Examples  
- В следующем примере кода показано <xref:System.IO.Path.GetInvalidFileNameChars%2A> метод и <xref:System.IO.Path.GetInvalidPathChars%2A> метод для извлечения недопустимые символы.  
+ В следующем примере демонстрируется <xref:System.IO.Path.GetInvalidFileNameChars%2A> метод и <xref:System.IO.Path.GetInvalidPathChars%2A> метод для извлечения недопустимые символы.  
   
  [!code-cpp[IO.Path.GetInvalidFile-PathChars#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.Path.GetInvalidFile-PathChars/cpp/example.cpp#1)]
  [!code-csharp[IO.Path.GetInvalidFile-PathChars#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.Path.GetInvalidFile-PathChars/CS/example.cs#1)]
@@ -1203,7 +1284,7 @@
         <ReturnType>System.ReadOnlySpan&lt;System.Char&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="path">Путь, из которого нужно получить сведения о корневом каталоге.</param>
@@ -1278,7 +1359,7 @@
  Дополнительные сведения о пути к файлам в Windows, см. в разделе [путь форматы файлов в системах Windows](~/docs/standard/io/file-path-formats.md). Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
   
 ## Examples  
- В следующем примере кода показано использование `GetPathRoot` метод.  
+ В следующем примере показано использование `GetPathRoot` метод.  
   
  [!code-cpp[System.IO.Path Members#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#8)]
  [!code-csharp[System.IO.Path Members#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#8)]
@@ -1288,7 +1369,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.  
   
-- или - 
+-или- 
  Компонент <see cref="F:System.String.Empty" /> был передан в <paramref name="path" />.</exception>
         <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
@@ -1370,15 +1451,23 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="relativeTo" Type="System.String" />
-        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="relativeTo" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="relativeTo">To be added.</param>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="relativeTo">Исходный путь, относительно которого должен указываться результат. Этот путь всегда считается каталогом.</param>
+        <param name="path">Целевой путь.</param>
+        <summary>Возвращает относительный путь от одного пути к другому.</summary>
+        <returns>Относительный путь или <paramref name="path" />, если в нескольких путях используются разные корневые папки.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Разрешение путей реализуется путем вызова <xref:System.IO.Path.GetFullPath%2A> метод до Вычисление разности. Данный метод использует сравнение путь файла по умолчанию для текущей платформы (<xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> для Windows и MacOs, <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> для Linux. 
+
+         ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="relativeTo" /> или <paramref name="path" /> — <see langword="null" />.</exception>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="GetTempFileName">
@@ -1435,7 +1524,7 @@
         </remarks>
         <exception cref="T:System.IO.IOException">Возникает ошибка ввода-вывода, например, отсутствует уникальное имя временного файла.  
   
-\- или - 
+-или- 
 Этот метод не смог создать временный файл.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для записи во временный каталог. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
@@ -1547,13 +1636,20 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path">Путь для поиска расширения.</param>
+        <summary>Определяет, включает ли путь, представленный указанным диапазоном символов, расширение имени файла.</summary>
+        <returns>Значение <see langword="true" />, если символы, следующие за последним символом разделителя каталогов или за разделителем томов (:) в пути, включают точку (.), за которой следует один или несколько символов. В противном случае — значение <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Точку в `path` не следует рассматривать как дополнение.
+
+         ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="HasExtension">
@@ -1604,7 +1700,7 @@ C:\Users\UserName\AppData\Local\Temp\
    
   
 ## Examples  
- В следующем примере кода демонстрируется использование `HasExtension` метод.  
+ В следующем примере иллюстрируется использование метода `HasExtension`.  
   
  [!code-cpp[System.IO.Path Members#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#11)]
  [!code-csharp[System.IO.Path Members#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#11)]
@@ -1613,6 +1709,7 @@ C:\Users\UserName\AppData\Local\Temp\
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -1646,7 +1743,7 @@ C:\Users\UserName\AppData\Local\Temp\
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("see GetInvalidPathChars and GetInvalidFileNameChars methods.")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use GetInvalidPathChars or GetInvalidFileNameChars instead.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1667,7 +1764,7 @@ C:\Users\UserName\AppData\Local\Temp\
    
   
 ## Examples  
- В следующем примере кода демонстрируется использование `InvalidPathChars` свойство.  
+ В следующем примере показано использование `InvalidPathChars` свойство.  
   
  [!code-cpp[System.IO.Path Members#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#13)]
  [!code-csharp[System.IO.Path Members#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#13)]
@@ -1680,6 +1777,25 @@ C:\Users\UserName\AppData\Local\Temp\
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsPathFullyQualified">
+      <Docs>
+        <summary>Возвращает значение, которое показывает, является ли путь к файлу полным.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+ 
+## Remarks  
+
+Перегрузки `IsPathFullyQualified` пути дескриптор метода, которые используются оба <xref:System.IO.Path.DirectorySeparatorChar> и <xref:System.IO.Path.AltDirectorySeparatorChar> символов. Он не выполняет никакой проверки по пути, который передается в него в качестве аргумента. Таким образом, интерпретируются как относительные пути URI и возвращать `false`. 
+
+Есть разница между полный URL-адрес (как указано в `IsPathFullyQualified` метод) и корневой путь (как указано в <xref:System.IO.Path.IsPathRooted%2A> метод). Объект *полный путь* или *абсолютный путь* всегда определяет точный путь из определенного диска или устройства, для целевого файла или каталога, а не зависит от текущего диска или текущего каталога. Например, в системах Windows *C:/users/user1/documents/reports/2019/january/highlights.pdf* определяет абсолютный путь из корневого каталога диска C: в целевой файл *highlights.pdf*. Объект *корневой путь* указывает начальный диск или корневой каталог, но зависит текущий каталог (если он является корнем которого является указанный диск) или текущего диска (если он является корнем которого является корневой каталог). В следующем примере показано различие между полные пути и пути с административным доступом.
+
+[!code-csharp[IsPathRooted](~/samples/snippets/csharp/api/system.IO/Path/IsPathRooted/program.cs)]
+[!code-vb[IsPathRooted](~/samples/snippets/visualbasic/api/system.IO/Path/IsPathRooted/program.vb)]
+
+         ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsPathFullyQualified">
       <MemberSignature Language="C#" Value="public static bool IsPathFullyQualified (ReadOnlySpan&lt;char&gt; path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPathFullyQualified(valuetype System.ReadOnlySpan`1&lt;char&gt; path) cil managed" />
@@ -1702,13 +1818,19 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path">Путь к файлу.</param>
+        <summary>Возвращает значение, которое показывает, является ли путь к файлу, представленный указанным диапазоном символов, фиксированным для определенного диска или UNC-пути.</summary>
+        <returns>Значение <see langword="true" />, если путь привязан к определенному диску или UNC-пути; <see langword="false" /> — если путь задается относительно текущего диска или рабочей папки.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+
+         ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="IsPathFullyQualified">
@@ -1733,15 +1855,36 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="path">Путь к файлу.</param>
+        <summary>Возвращает значение, которое показывает, является ли указанный путь к файлу фиксированным для определенного диска или UNC-пути.</summary>
+        <returns>Значение <see langword="true" />, если путь привязан к определенному диску или UNC-пути; <see langword="false" /> — если путь задается относительно текущего диска или рабочей папки.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsPathRooted">
+      <Docs>
+        <summary>Возвращает значение, показывающее, содержит ли путь к файлу корневую папку.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+ 
+## Remarks  
+
+Объект **корневой путь** — путь к файлу, является фиксированным для конкретного диска или пути UNIC; они отличаются от пути относительно текущего диска или рабочий каталог. Например в системах Windows, корневой путь начинается с обратной косой чертой (например, «\Documents») или букву диска и двоеточия (например, «C:Documents»). 
+
+Обратите внимание, что с административным доступом пути может быть абсолютное (который полное имя) или относительный. Абсолютный путь относительно корня представляет полный путь от корня диска в определенный каталог. Относительный путь с административным доступом определяет диск, но его полный путь разрешается относительно текущего каталога. В следующем примере демонстрируется это различие.
+
+[!code-csharp[IsPathRooted](~/samples/snippets/csharp/api/system.IO/Path/IsPathRooted/program.cs)]
+[!code-vb[IsPathRooted](~/samples/snippets/visualbasic/api/system.IO/Path/IsPathRooted/program.vb)]
+
+         ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsPathRooted">
       <MemberSignature Language="C#" Value="public static bool IsPathRooted (ReadOnlySpan&lt;char&gt; path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPathRooted(valuetype System.ReadOnlySpan`1&lt;char&gt; path) cil managed" />
@@ -1764,13 +1907,14 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="path">Проверяемый путь.</param>
+        <summary>Возвращает значение, которое показывает, содержит ли указанный диапазон символов, являющийся путем к файлу, корневую папку.</summary>
+        <returns>Значение <see langword="true" />, если параметр <paramref name="path" /> содержит корневую папку; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="IsPathRooted">
@@ -1808,7 +1952,7 @@ C:\Users\UserName\AppData\Local\Temp\
       </Parameters>
       <Docs>
         <param name="path">Проверяемый путь.</param>
-        <summary>Возвращает значение, указывающее, содержит ли заданный путь корневую папку.</summary>
+        <summary>Возвращает значение, показывающее, содержит ли указанная строка пути корневую папку.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="path" /> содержит корневую папку; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1819,11 +1963,9 @@ C:\Users\UserName\AppData\Local\Temp\
  Этот метод проверяет существование путь или имя файла.  
   
  Список задач ввода-вывода, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).  
-  
-   
-  
+
 ## Examples  
- В следующем примере кода показано, как `IsPathRooted` метод может использоваться для тестирования три строки.  
+ В следующем примере показано, как `IsPathRooted` метод может использоваться для тестирования три строки.  
   
  [!code-cpp[System.IO.Path Members#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#12)]
  [!code-csharp[System.IO.Path Members#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#12)]
@@ -1832,6 +1974,7 @@ C:\Users\UserName\AppData\Local\Temp\
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="path" /> содержит один или несколько недопустимых символов, определенных в <see cref="M:System.IO.Path.GetInvalidPathChars" />.</exception>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -1859,8 +2002,68 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="path1">Диапазон символов, содержащий первый путь для объединения.</param>
+        <param name="path2">Диапазон символов, содержащий второй путь для объединения.</param>
+        <summary>Сцепляет два компонента пути в один путь.</summary>
+        <returns>Объединенные пути.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 
+Этот метод просто объединяет `path` и `path2` и добавляет символом разделителя каталогов между компонентами два пути, если он еще не присутствует в конце `path1` или в начале `path2`. Если <xref:System.ReadOnlySpan%601.Length> либо `path1` или `path2` равно нулю, метод возвращает другой путь. Если <xref:System.ReadOnlySpan%601.Length> обоих `path1` и `path2` равен нулю, метод возвращает <xref:System.String.Empty?displayProperty=nameWithType>. 
+
+Если `path1` заканчивается на символа разделителя пути, который не подходит для целевой платформы, `Join` метод сохраняет исходного символа разделителя пути и добавляет поддерживается. Эта проблема возникает в жестко закодированные пути, использующие Windows обратную косую черту (»\") символ, который не распознается в качестве разделителя пути в системах на основе Unix. Чтобы обойти эту проблему, вы можете:
+
+- Извлечение значений <xref:System.IO.Path.DirectorySeparatorChar?displayProperty=nameWithType> свойства, а не жестко заданный символом разделителя каталогов.
+
+- Используйте косой черты («/») в качестве символом разделителя каталогов. Этот символ возвращается <xref:System.IO.Path.DirectorySeparatorChar?displayProperty=nameWithType> свойство на системе UNIX и <xref:System.IO.Path.AltDirectorySeparatorChar?displayProperty=nameWithType> свойство в системах Windows. 
+
+В отличие от <xref:System.IO.Path.Combine%2A> метода <xref:System.IO.Path.Join%2A> methhod не пытается корневой возвращенный путь. (То есть, в том случае, если `path2` является абсолютным, `Join` метод не удаляет `path1` и вернуть `path2` как <xref:System.IO.Path.Combine%2A> делает метод.) В следующем примере показано различие в путях, возвращаемые методами два. Если источник `path2` являются входными данными пользователя, <xref:System.IO.Path.Combine%2A> метод позволяет пользователю получить доступ к ресурса файловой системы (такие как *C: ипользователей/User1/документы/финансовыми/* в случае примера), были приложения не требуется сделать доступным.  
+
+Не все символы, недопустимые для имен каталогов и файлов, которые интерпретируются как недопустимые `Join` метод, поскольку эти символы можно использовать для поиска подстановочные знаки. Например, хотя `Path.Join("c:\\", "*.txt")` может быть недопустимым when создается файл, он может использоваться как строку поиска. `Join` Метод таким образом успешно интерпретирует его. 
+
+## <a name="example"></a>Пример
+
+В следующем примере показано различие в путях, возвращенный <xref:System.IO.Path.Join(System.ReadOnlySpan%7BSystem.Char%7D,System.ReadOnlySpan%7BSystem.Char%7D)?displayProperty=nameWithType> и <xref:System.IO.Path.Combine(System.String,System.String)?displayProperty=nameWithType> методы. Если первая строка — полный путь, который включает диск и корневой каталог, а второй — относительный путь из первого пути, два метода давать одинаковые результаты. Во второй и третий вызовах `ShowPathInformation` метод, расходятся строк, возвращаемых два метода. Во втором вызове метода, первая строка аргумента — это диск, второй — корневой каталог. `Join` Метод объединяет две строки и сохраняет повторяющиеся разделители путей. `Combine` Метод отказывается от диска и возвращает корневой каталог на текущем диске. Если текущее приложение диск — C:\ и строка используется для доступа к файла или файлов в каталоге, он может получить доступ к C: вместо D:. Наконец так как оба аргумента в третьем вызове для `ShowPathInformation` являются корневыми, `Join` метод просто добавляет их для создания пути к файлу бессмысленные, тогда как `Combine` метод отбрасывает первая строка anmd возвращает второй. С помощью этой строки, для доступа к файлам может предоставить приложение непредусмотренного доступа к конфиденциальным файлам.  
+
+[!code-csharp[Path.Join(String,String)](~/samples/snippets/csharp/api/system.io/path/combine2/program.cs)]
+[!code-csharp[Path.Join(String,String)](~/samples/snippets/visualbasic/api/system.io/path/combine2/program.vb)]
+
+
+       ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
+      </Docs>
+    </Member>
+    <Member MemberName="Join">
+      <MemberSignature Language="C#" Value="public static string Join (string path1, string path2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Join(string path1, string path2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Path.Join(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Join (path1 As String, path2 As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ Join(System::String ^ path1, System::String ^ path2);" />
+      <MemberSignature Language="F#" Value="static member Join : string * string -&gt; string" Usage="System.IO.Path.Join (path1, path2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path1" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="path2" Type="System.String" Index="1" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="path1">To be added.</param>
@@ -1892,9 +2095,70 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path3" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
+        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path3" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="path1">Диапазон символов, содержащий первый путь для объединения.</param>
+        <param name="path2">Диапазон символов, содержащий второй путь для объединения.</param>
+        <param name="path3">Диапазон символов, содержащий третий путь для объединения.</param>
+        <summary>Сцепляет три компонента пути в один путь.</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 
+Этот метод просто объединяет `path`, `path2`, и `path3` и добавляет символом разделителя каталогов между всеми компоненты пути, если он еще не существует. Если <xref:System.ReadOnlySpan%601.Length> любого из `path1`, `path2`, или `path3` равно нулю, метод contatenates остальные аргументы. Если <xref:System.ReadOnlySpan%601.Length?displayProperty=nameWithType> всех компонентов равно нулю, метод возвращает <xref:System.String.Empty?displayProperty=nameWithType>.    
+
+Если `path1` или `path2` заканчивается на символа разделителя пути, который не подходит для целевой платформы, `Join` метод сохраняет исходного символа разделителя пути и добавляет поддерживается. Эта проблема возникает в жестко закодированные пути, использующие Windows обратную косую черту (»\") символ, который не распознается в качестве разделителя пути в системах на основе Unix. Чтобы обойти эту проблему, вы можете:
+
+- Извлечение значений <xref:System.IO.Path.DirectorySeparatorChar?displayProperty=nameWithType> свойства, а не жестко заданный символом разделителя каталогов.
+
+- Используйте косой черты («/») в качестве символом разделителя каталогов. Этот символ возвращается <xref:System.IO.Path.DirectorySeparatorChar?displayProperty=nameWithType> свойство на системе UNIX и <xref:System.IO.Path.AltDirectorySeparatorChar?displayProperty=nameWithType> свойство в системах Windows. 
+
+В отличие от <xref:System.IO.Path.Combine%2A> метода <xref:System.IO.Path.Join%2A> methhod не пытается корневой возвращенный путь. (То есть, в том случае, если `path2` или `path2` является абсолютным, `Join` метод не приводит к потере предыдущего пути как <xref:System.IO.Path.Combine%2A> делает метод.  
+  
+Не все символы, недопустимые для имен каталогов и файлов, которые интерпретируются как недопустимые `Join` метод, поскольку эти символы можно использовать для поиска подстановочные знаки. Например, хотя `Path.Join("c:\\", "temp", "*.txt")` может быть недопустимым when создается файл, он может использоваться как строку поиска. `Join` Метод таким образом успешно интерпретирует его. 
+
+## <a name="example"></a>Пример
+
+В следующем примере показано различие в путях, возвращенный <xref:System.IO.Path.Join(System.ReadOnlySpan%7BSystem.Char%7D,System.ReadOnlySpan%7BSystem.Char%7D,System.ReadOnlySpan%7BSystem.Char%7D)?displayProperty=nameWithType> и <xref:System.IO.Path.Combine(System.String,System.String,System.String)?displayProperty=nameWithType> методы. Если первая строка — полный путь, который включает диск и корневой каталог, а второй — относительный путь из первого пути, два метода давать одинаковые результаты. Во второй и третий вызовах `ShowPathInformation` метод, расходятся строк, возвращаемых два метода. Во втором вызове метода, первая строка аргумента — это диск, второй — корневой каталог. `Join` Метод объединяет две строки и сохраняет повторяющиеся разделители путей. Вызов <xref:System.IO.Path.GetFullPath%2A> метод бы исключения дублирования. `Combine` Метод отказывается от диска и возвращает корневой каталог на текущем диске. Если текущее приложение диск — C:\ и строка используется для доступа к файла или файлов в каталоге, он может получить доступ к C: вместо D:. И, наконец так как последний аргумент в третьем вызове `ShowPathInformation` являются корневыми, `Join` метод просто добавляет его к первые два аргумента для создания пути к файлу бессмысленные, хотя `Combine` метод отбрасывающий первые две строки, возвращает anmd Третий. С помощью этой строки, для доступа к файлам может предоставить приложение непредусмотренного доступа к конфиденциальным файлам.  
+
+[!code-csharp[Path.Join(String,String,String)](~/samples/snippets/csharp/api/system.io/path/combine3/program.cs)] 
+[!code-csharp[Path.Join(String,String,String)](~/samples/snippets/visualbasic/api/system.io/path/combine3/program.vb)] 
+
+       ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
+      </Docs>
+    </Member>
+    <Member MemberName="Join">
+      <MemberSignature Language="C#" Value="public static string Join (string path1, string path2, string path3);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Join(string path1, string path2, string path3) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Path.Join(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Join (path1 As String, path2 As String, path3 As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ Join(System::String ^ path1, System::String ^ path2, System::String ^ path3);" />
+      <MemberSignature Language="F#" Value="static member Join : string * string * string -&gt; string" Usage="System.IO.Path.Join (path1, path2, path3)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path1" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="path2" Type="System.String" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="path3" Type="System.String" Index="2" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="path1">To be added.</param>
@@ -1945,7 +2209,7 @@ C:\Users\UserName\AppData\Local\Temp\
    
   
 ## Examples  
- В следующем примере кода демонстрируется использование `PathSeparator` поля.  
+ В следующем примере показано использование `PathSeparator` поля.  
   
  [!code-cpp[System.IO.Path Members#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#13)]
  [!code-csharp[System.IO.Path Members#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#13)]
@@ -1958,6 +2222,22 @@ C:\Users\UserName\AppData\Local\Temp\
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TryJoin">
+      <Docs>
+        <summary>Пытается сцепить отдельные компоненты пути в предварительно выделенный диапазон символов и возвращает значение, показывающее, успешно ли выполнена эта операция.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+ 
+## Remarks  
+
+Целевой диапазон символов должно быть достаточно большим для хранения concatentated пути. Объединенный путь можно получить, вызвав <xref:System.Span%601.Slice%2A?displayProperty=nameWithType> метод, как показано следующем примере.
+
+[!code-csharp[IsPathRooted](~/samples/snippets/csharp/api/system.IO/Path/TryJoin/program.cs)]
+
+         ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TryJoin">
       <MemberSignature Language="C#" Value="public static bool TryJoin (ReadOnlySpan&lt;char&gt; path1, ReadOnlySpan&lt;char&gt; path2, Span&lt;char&gt; destination, out int charsWritten);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryJoin(valuetype System.ReadOnlySpan`1&lt;char&gt; path1, valuetype System.ReadOnlySpan`1&lt;char&gt; path2, valuetype System.Span`1&lt;char&gt; destination, [out] int32&amp; charsWritten) cil managed" />
@@ -1980,19 +2260,28 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" />
-        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" />
+        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path1">To be added.</param>
-        <param name="path2">To be added.</param>
-        <param name="destination">To be added.</param>
-        <param name="charsWritten">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path1">Диапазон символов, содержащий первый путь для объединения.</param>
+        <param name="path2">Диапазон символов, содержащий второй путь для объединения.</param>
+        <param name="destination">Диапазон символов для указания объединенного пути.</param>
+        <param name="charsWritten">При возврате метода это значение показывает количество символов, записанных в <paramref name="destination" />.</param>
+        <summary>Пытается сцепить два компонента пути в один предварительно выделенный диапазон символов и возвращает значение, показывающее, успешно ли выполнена эта операция.</summary>
+        <returns><see langword="true" /> — если операция сцепления выполнена успешно; в противном случае — <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+`destination` должен быть достаточным для хранения пути concatentated. Объединенный путь можно получить, вызвав <xref:System.Span%601.Slice%2A?displayProperty=nameWithType> метод, как показано в примере.
+
+         ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="TryJoin">
@@ -2017,21 +2306,30 @@ C:\Users\UserName\AppData\Local\Temp\
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="path3" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" />
-        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" />
+        <Parameter Name="path1" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path2" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="path3" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" Index="4" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="path1">To be added.</param>
-        <param name="path2">To be added.</param>
-        <param name="path3">To be added.</param>
-        <param name="destination">To be added.</param>
-        <param name="charsWritten">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="path1">Диапазон символов, содержащий первый путь для объединения.</param>
+        <param name="path2">Диапазон символов, содержащий второй путь для объединения.</param>
+        <param name="path3">Диапазон символов, содержащий третий путь для объединения.</param>
+        <param name="destination">Диапазон символов для указания объединенного пути.</param>
+        <param name="charsWritten">При возврате метода это значение показывает количество символов, записанных в <paramref name="destination" />.</param>
+        <summary>Пытается сцепить два компонента пути в один предварительно выделенный диапазон символов и возвращает значение, показывающее, успешно ли выполнена эта операция.</summary>
+        <returns><see langword="true" /> — если операция сцепления выполнена успешно; в противном случае — <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+`destination` должен быть достаточным для хранения пути concatentated. Объединенный путь можно получить, вызвав <xref:System.Span%601.Slice%2A?displayProperty=nameWithType> метод, как показано в примере.
+
+         ]]></format>
+        </remarks>
+        <related type="article" href="~/docs/standard/io/file-path-formats.md">Форматы путей к файлам в системах Windows</related>
       </Docs>
     </Member>
     <Member MemberName="VolumeSeparatorChar">
@@ -2074,7 +2372,7 @@ C:\Users\UserName\AppData\Local\Temp\
    
   
 ## Examples  
- В следующем примере кода демонстрируется использование `VolumeSeparatorChar` поля.  
+ В следующем примере показано использование `VolumeSeparatorChar` поля.  
   
  [!code-cpp[System.IO.Path Members#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Path Members/CPP/pathmembers.cpp#13)]
  [!code-csharp[System.IO.Path Members#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Path Members/CS/pathmembers.cs#13)]

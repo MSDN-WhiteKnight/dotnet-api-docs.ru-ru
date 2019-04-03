@@ -1,13 +1,5 @@
 <Type Name="Hyperlink" FullName="System.Windows.Documents.Hyperlink">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3a35d242c2359d3e9e9122f2548e33d3ffa3781d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48765437" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Hyperlink : System.Windows.Documents.Span, System.Windows.Input.ICommandSource, System.Windows.Markup.IUriContext" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="73f948bd0e7df340a69c91ac08d148819cc2e9ab" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56388930" /></Metadata><TypeSignature Language="C#" Value="public class Hyperlink : System.Windows.Documents.Span, System.Windows.Input.ICommandSource, System.Windows.Markup.IUriContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Hyperlink extends System.Windows.Documents.Span implements class System.Windows.Input.ICommandSource, class System.Windows.Markup.IUriContext" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Hyperlink" />
   <TypeSignature Language="VB.NET" Value="Public Class Hyperlink&#xA;Inherits Span&#xA;Implements ICommandSource, IUriContext" />
@@ -30,12 +22,12 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Documents.TextElementEditingBehavior(IsMergeable=false, IsTypographicOnly=false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Элемент содержимого нефиксированного формата встроенного уровня, обеспечивающий функции размещения гиперссылок в содержимом нефиксированного формата.</summary>
+    <summary>Элемент содержимого потока встроенного уровня, обеспечивающий функции размещения гиперссылок в фреймах содержимого потока.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -44,7 +36,7 @@
   
  <xref:System.Windows.Documents.Hyperlink> обеспечивает надежный модель содержимого для дочернего содержимого. См. в разделе [сведения о модели содержимого TextElement](~/docs/framework/wpf/advanced/textelement-content-model-overview.md) Дополнительные сведения о <xref:System.Windows.Documents.Hyperlink> модель содержимого.  
   
- Свойства зависимостей для данного элемента управления могут быть заданы посредством стиля элемента управления по умолчанию.  Если свойство имеет значение стилем по умолчанию, может измениться со значения по умолчанию, когда элемент управления отображается в приложении. Стиль по умолчанию определяется, какая тема рабочего стола используется, когда приложение выполняется.  Дополнительные сведения см. в разделе [темы WPF по умолчанию](http://go.microsoft.com/fwlink/?LinkID=158252).  
+ Свойства зависимостей для данного элемента управления могут быть заданы посредством стиля элемента управления по умолчанию.  Если свойство имеет значение стилем по умолчанию, может измениться со значения по умолчанию, когда элемент управления отображается в приложении. Стиль по умолчанию определяется, какая тема рабочего стола используется, когда приложение выполняется.  Дополнительные сведения см. в разделе [темы WPF по умолчанию](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
    
   
@@ -173,10 +165,8 @@
         <Parameter Name="end" Type="System.Windows.Documents.TextPointer" />
       </Parameters>
       <Docs>
-        <param name="start">
-          <see cref="T:System.Windows.Documents.TextPointer" />, показывающий начало выделения содержимого для нового <see cref="T:System.Windows.Documents.Hyperlink" />.</param>
-        <param name="end">
-          <see cref="T:System.Windows.Documents.TextPointer" />, указывающий на конец выборки содержимого, которое будет включено в новый <see cref="T:System.Windows.Documents.Hyperlink" />.</param>
+        <param name="start"><see cref="T:System.Windows.Documents.TextPointer" />, показывающий начало выделения содержимого для нового <see cref="T:System.Windows.Documents.Hyperlink" />.</param>
+        <param name="end"><see cref="T:System.Windows.Documents.TextPointer" />, указывающий на конец выборки содержимого, которое будет включено в новый <see cref="T:System.Windows.Documents.Hyperlink" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Windows.Documents.Hyperlink" />, принимая два объекта <see cref="T:System.Windows.Documents.TextPointer" />, определяющих начало и завершение выделения содержимого для нового <see cref="T:System.Windows.Documents.Hyperlink" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -194,9 +184,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="start" /> или <paramref name="end" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="start" /> и <paramref name="end" /> не разрешаются в диапазоне содержимого, подходящем для вложения в элемент <see cref="T:System.Windows.Documents.Span" />, например, если <paramref name="start" /> и <paramref name="end" /> указывают позиции в различных абзацах.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="start" /> или <paramref name="end" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="start" /> и <paramref name="end" /> не разрешаются в диапазоне содержимого, подходящем для вложения в элемент <see cref="T:System.Windows.Documents.Span" />, например, если <paramref name="start" /> и <paramref name="end" /> указывают позиции в различных абзацах.</exception>
       </Docs>
     </Member>
     <Member MemberName="BaseUri">
@@ -238,7 +227,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
         </Attribute>
       </Attributes>
@@ -302,13 +291,13 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
         </Attribute>
       </Attributes>
@@ -317,7 +306,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает команду для связи с объектом <see cref="T:System.Windows.Documents.Hyperlink" />.</summary>
-        <value>Команда для связи с объектом <see cref="T:System.Windows.Documents.Hyperlink" />. Значение по умолчанию: <see langword="null" />.</value>
+        <value>Команда для связи с объектом <see cref="T:System.Windows.Documents.Hyperlink" />. Значение по умолчанию — <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -329,7 +318,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.Documents.Hyperlink.CommandProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -349,13 +338,13 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
         </Attribute>
       </Attributes>
@@ -364,7 +353,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает параметры команды, связанные с командой, которая задана свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />.</summary>
-        <value>Объект, который задает параметры команды, указанной свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />. Значение по умолчанию: <see langword="null" />.</value>
+        <value>Объект, который задает параметры команды, указанной свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />. Значение по умолчанию — <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -376,7 +365,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.Documents.Hyperlink.CommandParameterProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -399,7 +388,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.CommandParameter" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.CommandParameter" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -420,7 +409,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.Command" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.Command" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,10 +427,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
         </Attribute>
       </Attributes>
@@ -450,7 +439,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает конечного элемента, в отношении которого выполняется команда, заданная свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />.</summary>
-        <value>Конечный элемент, в отношении которого выполняется команда, заданная свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />. Значение по умолчанию: <see langword="null" />.</value>
+        <value>Конечный элемент, в отношении которого выполняется команда, заданная свойством <see cref="P:System.Windows.Documents.Hyperlink.Command" />. Значение по умолчанию — <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -462,7 +451,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.Documents.Hyperlink.CommandTargetProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -485,7 +474,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.CommandTarget" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.CommandTarget" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -566,10 +555,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Hyperlink)</AttributeName>
         </Attribute>
       </Attributes>
@@ -578,8 +567,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] для перехода после активации <see cref="T:System.Windows.Documents.Hyperlink" />.</summary>
-        <value>
-          <see cref="T:System.Uri" /> для перехода после активации <see cref="T:System.Windows.Documents.Hyperlink" />. Значение по умолчанию: <see langword="null" />.  
+        <value><see cref="T:System.Uri" /> для перехода после активации <see cref="T:System.Windows.Documents.Hyperlink" />. Значение по умолчанию — <see langword="null" />.  
   
  <block subset="none" type="note"><para>Объект <see cref="T:System.Windows.Documents.Hyperlink" /> может перейти к значению свойства <see cref="P:System.Windows.Documents.Hyperlink.NavigateUri" />, только если прямой или непрямой родитель объекта <see cref="T:System.Windows.Documents.Hyperlink" /> является узлом перехода, в том числе <see cref="T:System.Windows.Navigation.NavigationWindow" />, <see cref="T:System.Windows.Controls.Frame" /> или любым браузером, который может использоваться для размещения [!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)] (к которым относятся [!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)], [!INCLUDE[TLA2#tla_ie6](~/includes/tla2sharptla-ie6-md.md)] и Firefox 2.0+). Дополнительные сведения см. в разделе **узлы переходов** статьи [Общие сведения о переходах](~/docs/framework/wpf/app-development/navigation-overview.md).  
   
@@ -601,7 +589,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.Documents.Hyperlink.NavigateUriProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -640,7 +628,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.NavigateUri" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.NavigateUri" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -916,10 +904,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable)</AttributeName>
         </Attribute>
       </Attributes>
@@ -941,7 +929,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.Documents.Hyperlink.TargetNameProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -964,7 +952,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.TargetName" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Documents.Hyperlink.TargetName" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

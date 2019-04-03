@@ -1,13 +1,5 @@
 <Type Name="HttpFileCollectionBase" FullName="System.Web.HttpFileCollectionBase">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="22c83c9fdaeb64c6940db83555cf13893e598cce" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51310733" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class HttpFileCollectionBase : System.Collections.Specialized.NameObjectCollectionBase, System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb951d2868c3059d9119afa4270bd5a152ba1505" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57934149" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpFileCollectionBase : System.Collections.Specialized.NameObjectCollectionBase, System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpFileCollectionBase extends System.Collections.Specialized.NameObjectCollectionBase implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpFileCollectionBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HttpFileCollectionBase&#xA;Inherits NameObjectCollectionBase&#xA;Implements ICollection" />
@@ -45,7 +37,7 @@
 ## Remarks  
  <xref:System.Web.HttpFileCollectionBase> Класс является абстрактным классом, который содержит те же члены, что <xref:System.Web.HttpFileCollection> класса. <xref:System.Web.HttpFileCollectionBase> Класс позволяет создавать производные классы, которые похожи на <xref:System.Web.HttpFileCollection> класса, но это можно настроить, и работающие за пределами конвейера ASP.NET. При выполнении модульного тестирования производный класс обычно используется для реализации элементов с настраиваемым поведением, тестируемый сценарий, который вы тестируете.  
   
- Класс <xref:System.Web.HttpFileCollectionWrapper> является производным от класса <xref:System.Web.HttpFileCollectionBase>. <xref:System.Web.HttpFileCollectionWrapper> Класс служит оболочкой для <xref:System.Web.HttpFileCollection> класса. Во время выполнения, обычно используется экземпляр <xref:System.Web.HttpFileCollectionWrapper> класс мог вызывать члены <xref:System.Web.HttpFileCollection> объекта.  
+ Класс <xref:System.Web.HttpFileCollectionWrapper> является производным от класса <xref:System.Web.HttpFileCollectionBase> . <xref:System.Web.HttpFileCollectionWrapper> Класс служит оболочкой для <xref:System.Web.HttpFileCollection> класса. Во время выполнения, обычно используется экземпляр <xref:System.Web.HttpFileCollectionWrapper> класс мог вызывать члены <xref:System.Web.HttpFileCollection> объекта.  
   
  ]]></format>
     </remarks>
@@ -97,7 +89,7 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает массив, содержащий ключи (имена) всех отправленных файловых объектов в коллекции.</summary>
+        <summary>При переопределении в производном классе получает массив ключей (имен) всех переданных объектов файлов в коллекции.</summary>
         <value>Массив имен файлов.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -126,12 +118,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dest" Type="System.Array" />
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="dest" Type="System.Array" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="dest">Одномерный массив, куда копируются элементы из данной коллекции. Индекс в массиве должен начинаться с нуля.</param>
-        <param name="index">Отсчитываемый от нуля индекс в массиве <c>array</c>, с которого начинается копирование.</param>
+        <param name="index">Отсчитываемый от нуля индекс в массиве <paramref name="dest" />, с которого начинается копирование.</param>
         <summary>При переопределении в производном классе копирует элементы коллекции в массив начиная с указанного индекса в массиве.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -195,12 +187,12 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс возвращаемого объекта.</param>
-        <summary>При переопределении в производном классе возвращает отправленный файловый объект по указанному индексу.</summary>
-        <returns>Отправленный файловый объект, заданный <paramref name="index" />.</returns>
+        <summary>При переопределении в производном классе возвращает переданный объект файла с указанным индексом.</summary>
+        <returns>Переданный объект файла, указанный в параметре <paramref name="index" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -225,12 +217,12 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя возвращаемого объекта.</param>
-        <summary>При переопределении в производном классе возвращает переданный файловый объект с указанным именем из коллекции.</summary>
-        <returns>Переданный файловый объект, заданный <paramref name="name" />.</returns>
+        <summary>При переопределении в производном классе возвращает переданный объект файла с указанным именем из коллекции.</summary>
+        <returns>Переданный объект файла, указанный в параметре <paramref name="name" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -241,7 +233,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.HttpFileCollectionBase.GetEnumerator" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEnumerator () As IEnumerator" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Collections::IEnumerator ^ GetEnumerator();" />
-      <MemberSignature Language="F#" Value="abstract member GetEnumerator : unit -&gt; System.Collections.IEnumerator&#xA;override this.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="httpFileCollectionBase.GetEnumerator " />
+      <MemberSignature Language="F#" Value="override this.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="httpFileCollectionBase.GetEnumerator " />
       <MemberType>Method</MemberType>
       <Implements>
         <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
@@ -259,7 +251,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе возвращает перечислитель, используемый для прохода по коллекции.</summary>
+        <summary>При переопределении в производном классе возвращает перечислитель, который может использоваться для выполнения итерации по коллекции.</summary>
         <returns>Объект, который можно использовать для перечисления элементов коллекции.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -285,12 +277,12 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс возвращаемого имени объекта.</param>
-        <summary>При переопределении в производном классе возвращает имя переданного файлового объекта по указанному индексу.</summary>
-        <returns>Имя переданного файлового объекта, заданное по <paramref name="index" />.</returns>
+        <summary>При переопределении в производном классе возвращает имя переданного объекта файла с указанным индексом.</summary>
+        <returns>Имя переданного объекта файла, указанного в параметре <paramref name="index" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -314,7 +306,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;System.Web.HttpPostedFileBase&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Сопоставляемое имя.</param>
@@ -346,8 +338,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли доступ к коллекции потокобезопасным.</summary>
-        <value>Значение <see langword="true" />, если доступ является потокобезопасным; в противном случае — значение <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, является ли доступ к коллекции потокобезопасным.</summary>
+        <value><see langword="true" />, если доступ является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -381,12 +373,12 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс возвращаемого объекта.</param>
-        <summary>При переопределении в производном классе возвращает объект переданного файла по указанному индексу.</summary>
-        <value>Отправленный файловый объект, заданный <paramref name="index" />.</value>
+        <param name="index">Индекс получаемого объекта.</param>
+        <summary>При переопределении в производном классе получает переданный объект файла с указанным индексом.</summary>
+        <value>Переданный объект файла, указанный в параметре <paramref name="index" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -411,12 +403,12 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя возвращаемого объекта.</param>
-        <summary>При переопределении в производном классе получает переданный файловый объект с указанным именем из коллекции.</summary>
-        <value>Переданный файловый объект, заданный <paramref name="name" />.</value>
+        <summary>При переопределении в производном классе получает переданный объект файла с указанным именем из коллекции.</summary>
+        <value>Переданный объект файла, указанный в параметре <paramref name="name" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -444,7 +436,7 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает объект, который можно использовать для синхронизации доступа к коллекции.</summary>
+        <summary>При переопределении в производном классе получает объект, который может использоваться для синхронизации доступа к коллекции.</summary>
         <value>Объект, который можно использовать для синхронизации доступа к коллекции.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>

@@ -1,13 +1,5 @@
 <Namespace Name="System.Diagnostics.PerformanceData">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8813c8ce03149b4c97305ad0ee10d1cdd88ce604" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="34173741" />
-  </Metadata>
-  <Docs>
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b1c5ad58fc8cb70eeab256e01ab98bfc4478c7cb" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58559352" /></Metadata><Docs>
     <summary>Классы в этом пространстве имен используются для предоставления данных счетчиков. Счетчики позволяют отображать для пользователей такие метрики производительности, как системный монитор. Пространство имен содержит классы для использования данных счетчиков. Полное описание архитектуры счетчиков производительности см. в разделе <see href="https://msdn.microsoft.com/library/windows/desktop/aa373083\(v=vs.85\">Счетчики производительности</see>.aspx).</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
@@ -45,13 +37,13 @@
   
     4.  Используйте <xref:System.Diagnostics.PerformanceData.CounterSetInstance.Counters%2A?displayProperty=nameWithType> свойство для доступа и набора данных счетчика для счетчика.  
   
-4.  После завершения вашего поставщика, с помощью средства LodCtr для регистрации счетчиков на компьютере. Например, примененная к объекту директива  
+4.  После завершения вашего поставщика, с помощью [LodCtr](https://docs.microsoft.com/windows/desktop/perfctrs/adding-counter-names-and-descriptions-to-the-registry#running-the-lodctr-tool) средства для регистрации счетчиков на компьютере. Например, примененная к объекту директива  
   
     ```console  
     lodctr /m:provider.man  
     ```  
   
-     В примере предполагается, манифест и исполняемый файл, в текущем каталоге. Дополнительные сведения об использовании LodCtr см. в разделе [Microsoft Technet](Http://Go.Microsoft.Com/FWLink/?LinkId=84000).  
+     В примере предполагается, манифест и исполняемый файл, в текущем каталоге.  
   
  Можно использовать классы в этом пространстве имен, на компьютерах под управлением Windows Vista и более поздних операционных системах.  
   
@@ -183,7 +175,7 @@ using System.Diagnostics.PerformanceData;
             typingCounterSet.AddCounter(2, CounterType.Delta32, "Words Typed In Interval");  
             typingCounterSet.AddCounter(3, CounterType.RawData32, "A Key Pressed");  
             typingCounterSet.AddCounter(4, CounterType.RawData32, "Words Containing A");  
-            typingCounterSet.AddCounter(5, CounterType.SampleFraction, "Percent of Words Containg A");  
+            typingCounterSet.AddCounter(5, CounterType.SampleFraction, "Percent of Words Containing A");  
             typingCounterSet.AddCounter(6, CounterType.SampleBase, "Percent Base");  
   
             // Create an instance of the counter set (contains the counter data).  
@@ -232,7 +224,7 @@ using System.Diagnostics.PerformanceData;
                         // is safe to use in a multi-threaded   
                         // application.  
                         typingCsInstance.Counters["Words Containing A"].Increment();  
-                        typingCsInstance.Counters["Percent of Words Containg A"].Increment();  
+                        typingCsInstance.Counters["Percent of Words Containing A"].Increment();  
                         numberOfLetterAInWord = 0;  
                     }  
   

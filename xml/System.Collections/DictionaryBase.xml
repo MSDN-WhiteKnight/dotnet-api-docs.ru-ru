@@ -1,13 +1,5 @@
 <Type Name="DictionaryBase" FullName="System.Collections.DictionaryBase">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cc4d1ad81f2b10abf1e63deef8518ffbb3e654b5" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51306703" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class DictionaryBase : System.Collections.IDictionary" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7f888e9d41d7bb66ae0f7dc45aafe93f27b8ad92" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58685583" /></Metadata><TypeSignature Language="C#" Value="public abstract class DictionaryBase : System.Collections.IDictionary" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit DictionaryBase extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Collections.DictionaryBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DictionaryBase&#xA;Implements IDictionary" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type DictionaryBase = class&#xA;    interface IDictionary&#xA;    interface ICollection&#xA;    interface IEnumerable" />
   <AssemblyInfo>
     <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -29,6 +22,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -48,18 +42,18 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Предоставляет базовый класс <see langword="abstract" /> для строго типизированной коллекции пар "ключ-значение".</summary>
+    <summary>Предоставляет базовый класс<see langword="abstract" /> для строго типизированной коллекции ключ/значение.  </summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks
 
->  [!IMPORTANT]
+> [!IMPORTANT]
 >  Мы не рекомендуем использовать `DictionaryBase` класса для разработки новых приложений. Вместо этого мы рекомендуем использовать универсальный <xref:System.Collections.Generic.Dictionary%602> или <xref:System.Collections.ObjectModel.KeyedCollection%602> класса. Дополнительные сведения см. в разделе [неуниверсальные коллекции не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md) на сайте GitHub.
 
 C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и оператор Visual Basic [для каждого](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) инструкции возвращают объект типа элементов в коллекции. Так как каждый элемент из <xref:System.Collections.DictionaryBase> — это пара ключ/значение, тип элемента не является типом ключа или тип значения. Вместо этого тип элемента — это <xref:System.Collections.DictionaryEntry>.  
@@ -85,11 +79,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
 Эта реализация не поддерживает создание синхронизированной оболочки (потокобезопасен), для <see cref="T:System.Collections.DictionaryBase" />, но производные классы могут создавать свои собственные синхронизованные версии <see cref="T:System.Collections.DictionaryBase" /> с помощью <see cref="P:System.Collections.ICollection.SyncRoot" /> свойство.  
   
 Перечисление коллекции не является потокобезопасной процедурой. Даже если коллекция синхронизирована, другие потоки могут ее изменить, что приведет к тому, что перечислитель создаст исключение. Для обеспечения потокобезопасности при перечислении можно либо заблокировать коллекцию на все время перечисления, либо перехватывать исключения, возникающие в результате изменений, внесенных другими потоками.</threadsafe>
-    <block subset="none" type="overrides">
-      <para>Этот базовый класс предоставляется для упрощения реализации пользовательского строго типизированной коллекции. Разработчики, рекомендуется расширить этот базовый класс, вместо того чтобы создавать свои собственные.  
+    <block subset="none" type="overrides"><para>Этот базовый класс предоставляется для упрощения реализации пользовательского строго типизированной коллекции. Разработчики, рекомендуется расширить этот базовый класс, вместо того чтобы создавать свои собственные.  
   
-Члены этого базового класса защищены и предназначены для использования через только производный класс.</para>
-    </block>
+Члены этого базового класса защищены и предназначены для использования через только производный класс.</para></block>
     <altmember cref="T:System.Collections.Hashtable" />
     <altmember cref="T:System.Collections.IDictionary" />
     <altmember cref="N:System.Collections.Generic" />
@@ -105,6 +97,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -119,6 +112,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -146,6 +140,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -160,6 +155,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -191,6 +187,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -205,6 +202,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -215,7 +213,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Parameters>
       <Docs>
         <param name="array">Одномерный массив класса <see cref="T:System.Array" />, который является назначением для объектов <see cref="T:System.Collections.DictionaryEntry" />, копируемых из экземпляра класса <see cref="T:System.Collections.DictionaryBase" />. Массив <see cref="T:System.Array" /> должен иметь индексацию, начинающуюся с нуля.</param>
-        <param name="index">Отсчитываемый от нуля индекс в <c>массиве</c> с которого начинается копирование.</param>
+        <param name="index">Отсчитываемый от нуля индекс в массиве <paramref name="array" />, указывающий начало копирования.</param>
         <summary>Копирует элементы класса <see cref="T:System.Collections.DictionaryBase" /> в одномерный массив класса <see cref="T:System.Array" /> с указанного индекса.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -227,12 +225,12 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Массив <paramref name="array" /> является многомерным.  
   
-- или - 
-Число элементов в исходном массиве <see cref="T:System.Collections.DictionaryBase" /> больше возможного для размещения числа элементов от положения, заданного значением параметра <paramref name="index" />, до конца массива назначения <paramref name="array" />.</exception>
+-или- 
+Число элементов в исходной коллекции <see cref="T:System.Collections.DictionaryBase" /> больше доступного места от положения, заданного значением параметра <paramref name="index" />, до конца массива назначения <paramref name="array" />.</exception>
         <exception cref="T:System.InvalidCastException">Тип исходного массива <see cref="T:System.Collections.DictionaryBase" /> не может быть автоматически приведен к типу массива назначения <paramref name="array" />.</exception>
         <altmember cref="T:System.Array" />
         <altmember cref="T:System.Collections.DictionaryEntry" />
@@ -252,6 +250,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -266,6 +265,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -293,6 +293,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -307,12 +308,13 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает список элементов, содержащихся в экземпляре <see cref="T:System.Collections.DictionaryBase" />.</summary>
+        <summary>Получает список элементов, содержащихся в экземпляре класса <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <value>Класс <see cref="T:System.Collections.IDictionary" />, предоставляющий экземпляр класса <see cref="T:System.Collections.DictionaryBase" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -348,6 +350,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -362,6 +365,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
@@ -415,6 +419,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -429,12 +434,13 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Hashtable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает список элементов, содержащихся в экземпляре <see cref="T:System.Collections.DictionaryBase" />.</summary>
+        <summary>Получает список элементов, содержащихся в экземпляре класса <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <value>Объект <see cref="T:System.Collections.Hashtable" />, предоставляющий экземпляр класса <see cref="T:System.Collections.DictionaryBase" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -458,6 +464,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -472,6 +479,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -491,13 +499,11 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед удалением всех элементов из базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед удалением всех элементов из базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
  <see cref="M:System.Collections.DictionaryBase.OnClear" /> Вызывается перед стандартной операцией очистки, тогда как <see cref="M:System.Collections.DictionaryBase.OnClearComplete" /> вызывается после стандартной операцией очистки.  
   
-Например разработчики могут предотвращать удаление по глобальной четкий определенных элементов.</para>
-        </block>
+Например разработчики могут предотвращать удаление по глобальной четкий определенных элементов.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnClearComplete" />
         <altmember cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" />
       </Docs>
@@ -512,6 +518,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -526,6 +533,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -545,11 +553,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после удаления всех элементов из базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после удаления всех элементов из базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnClear" /> Вызывается перед стандартной операцией очистки, тогда как <see cref="M:System.Collections.DictionaryBase.OnClearComplete" /> вызывается после стандартной операцией очистки.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnClear" /> Вызывается перед стандартной операцией очистки, тогда как <see cref="M:System.Collections.DictionaryBase.OnClearComplete" /> вызывается после стандартной операцией очистки.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnClear" />
         <altmember cref="M:System.Collections.DictionaryBase.OnRemoveComplete(System.Object,System.Object)" />
       </Docs>
@@ -564,6 +570,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -578,6 +585,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -588,7 +596,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется получить.</param>
-        <param name="currentValue">Текущее значение элемента, связанного с параметром <c>key</c>.</param>
+        <param name="currentValue">Текущее значение элемента, связанного с параметром <paramref name="key" />.</param>
         <summary>Получает элемент с указанными ключом и значением из экземпляра класса <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <returns>Объект <see cref="T:System.Object" />, содержащий элемент с указанными ключом и значением.</returns>
         <remarks>
@@ -603,11 +611,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены при выполнении стандартное поведение Get базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены при выполнении стандартное поведение Get базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnGet(System.Object,System.Object)" /> можно использовать для указания процессы для выполнения перед возвратом значения, полученного из базового <see cref="T:System.Collections.Hashtable" />. Например разработчики могут привести значение в другой тип перед возвращением.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnGet(System.Object,System.Object)" /> можно использовать для указания процессы для выполнения перед возвратом значения, полученного из базового <see cref="T:System.Collections.Hashtable" />. Например разработчики могут привести значение в другой тип перед возвращением.</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnInsert">
@@ -620,6 +626,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -634,6 +641,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -667,13 +675,11 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед вставкой элемента в основной <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед вставкой элемента в основной <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
  <see cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" /> Вызывается перед стандартной операцией вставки, тогда как <see cref="M:System.Collections.DictionaryBase.OnInsertComplete(System.Object,System.Object)" /> вызывается после стандартной операцией вставки.  
   
-Например, разработчики могут ограничить типы объектов, которые могут быть вставлены в <see cref="T:System.Collections.Hashtable" />.</para>
-        </block>
+Например, разработчики могут ограничить типы объектов, которые могут быть вставлены в <see cref="T:System.Collections.Hashtable" />.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnInsertComplete(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnValidate(System.Object,System.Object)" />
@@ -689,6 +695,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -703,6 +710,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -727,11 +735,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после вставки элемента в основной <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после вставки элемента в основной <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" /> Вызывается перед стандартной операцией вставки, тогда как <see cref="M:System.Collections.DictionaryBase.OnInsertComplete(System.Object,System.Object)" /> вызывается после стандартной операцией вставки.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" /> Вызывается перед стандартной операцией вставки, тогда как <see cref="M:System.Collections.DictionaryBase.OnInsertComplete(System.Object,System.Object)" /> вызывается после стандартной операцией вставки.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnSetComplete(System.Object,System.Object,System.Object)" />
       </Docs>
@@ -746,6 +752,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -760,6 +767,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -793,13 +801,11 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед удалением элемента из основного <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед удалением элемента из основного <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
  <see cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" /> Вызывается перед стандартной операцией удаления, тогда как <see cref="M:System.Collections.DictionaryBase.OnRemoveComplete(System.Object,System.Object)" /> вызывается после стандартной операцией удаления.  
   
-Например, разработчики могут предотвратить удаление элементов, всегда создается исключение <see cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" />.</para>
-        </block>
+Например, разработчики могут предотвратить удаление элементов, всегда создается исключение <see cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" />.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnRemoveComplete(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnClear" />
       </Docs>
@@ -814,6 +820,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -828,6 +835,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -852,11 +860,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после удаления элемента из основного <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после удаления элемента из основного <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" /> Вызывается перед стандартной операцией удаления, тогда как <see cref="M:System.Collections.DictionaryBase.OnRemoveComplete(System.Object,System.Object)" /> вызывается после стандартной операцией удаления.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" /> Вызывается перед стандартной операцией удаления, тогда как <see cref="M:System.Collections.DictionaryBase.OnRemoveComplete(System.Object,System.Object)" /> вызывается после стандартной операцией удаления.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnRemove(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnClearComplete" />
       </Docs>
@@ -871,6 +877,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -885,6 +892,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -896,8 +904,8 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется найти.</param>
-        <param name="oldValue">Прежнее значение элемента, связанного с параметром <c>key</c>.</param>
-        <param name="newValue">Новое значение элемента, связанного с параметром <c>key</c>.</param>
+        <param name="oldValue">Прежнее значение элемента, связанного с параметром <paramref name="key" />.</param>
+        <param name="newValue">Новое значение элемента, связанного с параметром <paramref name="key" />.</param>
         <summary>Выполняет дополнительные пользовательские действия перед заданием значения в экземпляре класса <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -920,13 +928,11 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед заданием указанного элемента в базовом <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены перед заданием указанного элемента в базовом <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
  <see cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" /> Вызывается перед стандартное поведение набора, тогда как <see cref="M:System.Collections.DictionaryBase.OnSetComplete(System.Object,System.Object,System.Object)" /> вызывается после стандартное поведение набора.  
   
-Например, разработчики могут ограничить значения, которые может быть перезаписана при выполнении проверки внутри <see cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" />.</para>
-        </block>
+Например, разработчики могут ограничить значения, которые может быть перезаписана при выполнении проверки внутри <see cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" />.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnSetComplete(System.Object,System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnValidate(System.Object,System.Object)" />
@@ -942,6 +948,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -956,6 +963,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -967,8 +975,8 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется найти.</param>
-        <param name="oldValue">Прежнее значение элемента, связанного с параметром <c>key</c>.</param>
-        <param name="newValue">Новое значение элемента, связанного с параметром <c>key</c>.</param>
+        <param name="oldValue">Прежнее значение элемента, связанного с параметром <paramref name="key" />.</param>
+        <param name="newValue">Новое значение элемента, связанного с параметром <paramref name="key" />.</param>
         <summary>Выполняет дополнительные пользовательские действия после задания значения в экземпляре класса <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -982,11 +990,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после задания указанного элемента в базовом <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены после задания указанного элемента в базовом <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" /> Вызывается перед стандартное поведение набора, тогда как <see cref="M:System.Collections.DictionaryBase.OnSetComplete(System.Object,System.Object,System.Object)" /> вызывается после стандартное поведение набора.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" /> Вызывается перед стандартное поведение набора, тогда как <see cref="M:System.Collections.DictionaryBase.OnSetComplete(System.Object,System.Object,System.Object)" /> вызывается после стандартное поведение набора.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnInsertComplete(System.Object,System.Object)" />
       </Docs>
@@ -1001,6 +1007,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1015,6 +1022,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1048,11 +1056,9 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены при выполнении стандартное поведение базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
+        <block subset="none" type="overrides"><para>Этот метод позволяет разработчику определить действия, которые должны быть выполнены при выполнении стандартное поведение базового <see cref="T:System.Collections.Hashtable" />. Определив этот метод, разработчики могут добавить функциональные возможности для унаследованных методов без необходимости переопределения всех других методов.  
   
- <see cref="M:System.Collections.DictionaryBase.OnValidate(System.Object,System.Object)" /> можно использовать для наложения ограничений на тип объектов, которые принимаются в коллекцию. Реализация по умолчанию предотвращает <see langword="null" /> препятствия добавляемые или удаляемые из основного <see cref="T:System.Collections.Hashtable" />.</para>
-        </block>
+ <see cref="M:System.Collections.DictionaryBase.OnValidate(System.Object,System.Object)" /> можно использовать для наложения ограничений на тип объектов, которые принимаются в коллекцию. Реализация по умолчанию предотвращает <see langword="null" /> препятствия добавляемые или удаляемые из основного <see cref="T:System.Collections.Hashtable" />.</para></block>
         <altmember cref="M:System.Collections.DictionaryBase.OnSet(System.Object,System.Object,System.Object)" />
         <altmember cref="M:System.Collections.DictionaryBase.OnInsert(System.Object,System.Object)" />
       </Docs>
@@ -1070,6 +1076,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1084,13 +1091,14 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее на то, является ли доступ к объекту <see cref="T:System.Collections.DictionaryBase" /> синхронизированным (потокобезопасным).</summary>
-        <value>Значение <see langword="true" />, если доступ к объекту <see cref="T:System.Collections.DictionaryBase" /> является синхронизированным (потокобезопасным); в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если доступ к объекту <see cref="T:System.Collections.DictionaryBase" /> является синхронизированным (потокобезопасным); в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1129,6 +1137,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1143,6 +1152,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1187,6 +1197,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1201,6 +1212,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1234,11 +1246,11 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Элемент с таким ключом уже существует в <see cref="T:System.Collections.DictionaryBase" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.DictionaryBase" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.DictionaryBase" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.IDictionary.Remove(System.Object)" />
         <altmember cref="P:System.Collections.IDictionary.Item(System.Object)" />
@@ -1257,6 +1269,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1271,6 +1284,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1281,8 +1295,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <Docs>
         <param name="key">Ключ, который требуется найти в <see cref="T:System.Collections.DictionaryBase" />.</param>
         <summary>Определяет, содержит ли объект <see cref="T:System.Collections.DictionaryBase" /> указанный ключ.</summary>
-        <returns>
-          <see langword="true" />, если <see cref="T:System.Collections.DictionaryBase" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <see cref="T:System.Collections.DictionaryBase" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1302,7 +1315,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md">Выполнение строковых операций, не зависящих от языка и региональных параметров</related>
       </Docs>
     </Member>
@@ -1319,6 +1332,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1333,14 +1347,14 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Получает значение, показывающее, имеет ли объект <see cref="T:System.Collections.DictionaryBase" /> фиксированный размер.</summary>
-        <value>
-          <see langword="true" />, если объект <see cref="T:System.Collections.DictionaryBase" /> имеет фиксированный размер, в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если объект <see cref="T:System.Collections.DictionaryBase" /> имеет фиксированный размер, в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1368,6 +1382,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1382,13 +1397,14 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, является ли объект <see cref="T:System.Collections.DictionaryBase" /> доступным только для чтения.</summary>
-        <value>Значение <see langword="true" />, если объект <see cref="T:System.Collections.DictionaryBase" /> доступен только для чтения; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если объект <see cref="T:System.Collections.DictionaryBase" /> доступен только для чтения; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1416,6 +1432,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1430,6 +1447,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1462,10 +1480,10 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Свойство задано, и список <see cref="T:System.Collections.DictionaryBase" /> доступен только для чтения.  
   
-- или - 
+-или- 
 Свойство задано, <paramref name="key" /> не существует в коллекции, а <see cref="T:System.Collections.DictionaryBase" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />
       </Docs>
@@ -1483,6 +1501,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1497,6 +1516,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ICollection</ReturnType>
@@ -1541,6 +1561,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1555,6 +1576,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1564,7 +1586,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется удалить.</param>
-        <summary>Удаляет элемент с указанным ключом из <see cref="T:System.Collections.DictionaryBase" />.</summary>
+        <summary>Удаляет элемент с указанным ключом из объекта <see cref="T:System.Collections.DictionaryBase" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1584,10 +1606,10 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.DictionaryBase" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.DictionaryBase" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.IDictionary.Remove(System.Object)" />
@@ -1607,6 +1629,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1621,6 +1644,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ICollection</ReturnType>
@@ -1665,6 +1689,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
@@ -1679,6 +1704,7 @@ C# [Foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) и опе�
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>

@@ -1,13 +1,5 @@
 <Type Name="BindingOperations" FullName="System.Windows.Data.BindingOperations">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="51eef6572002081a616a5d4355aca43a61a9c451" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37579259" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class BindingOperations" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bd6c8d921090628de948182b18107a0340ae04db" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935046" /></Metadata><TypeSignature Language="C#" Value="public static class BindingOperations" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit BindingOperations extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.BindingOperations" />
   <TypeSignature Language="VB.NET" Value="Public Class BindingOperations" />
@@ -50,14 +42,14 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
-        <Parameter Name="accessMethod" Type="System.Action" />
-        <Parameter Name="writeAccess" Type="System.Boolean" />
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="accessMethod" Type="System.Action" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="writeAccess" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="collection">Коллекция для доступа.</param>
         <param name="accessMethod">Действие, выполняемое для коллекции.</param>
-        <param name="writeAccess">Значение <see langword="true" />, если метод <c>accessMethod</c> будет производить запись в коллекцию; в противном случае значение <see langword="false" />.</param>
+        <param name="writeAccess">Значение <see langword="true" />, если метод <paramref name="accessMethod" /> будет производить запись в коллекцию; в противном случае — значение <see langword="false" />.</param>
         <summary>Предоставляет доступ к коллекции с помощью механизма синхронизации, заданного приложением при вызове EnableCollectionSynchronization.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -82,7 +74,7 @@
         <Parameter Name="target" Type="System.Windows.DependencyObject" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, из которого нужно удалить привязки.</param>
+        <param name="target">Объект, из которого следует удалить привязки.</param>
         <summary>Удаляет все привязки, в том числе привязки типа <see cref="T:System.Windows.Data.Binding" />, <see cref="T:System.Windows.Data.MultiBinding" /> и <see cref="T:System.Windows.Data.PriorityBinding" />, из указанного <see cref="T:System.Windows.DependencyObject" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -188,7 +180,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="collection">Коллекция, у которой требуется удалить синхронизируемый доступ.</param>
@@ -236,12 +228,10 @@
   
 ## Remarks  
 
-WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
- 
-Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизированного доступа («потокобезопасен») в коллекцию.   Обычно это делается семафоры, такие как с помощью механизма простой блокировкой или более сложных механизмов синхронизации, сброс события и т. д. 
- 
-Хотя необходимо синхронизировать доступ приложения к коллекции, также необходимо обеспечить доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации.  Это можно сделать, вызвав метод <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>.
- 
+WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
+ 
+Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизированного доступа («потокобезопасен») в коллекцию.   Обычно это делается семафоры, такие как с помощью механизма простой блокировкой или более сложных механизмов синхронизации, сброс события и т. д.   Хотя необходимо синхронизировать доступ приложения к коллекции, также необходимо обеспечить доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации.  Это можно сделать, вызвав метод <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>.
+ 
 Чтобы использовать коллекцию в нескольких потоках, одним из которых является поток пользовательского интерфейса, который владеет <xref:System.Windows.Controls.ItemsControl>, приложение имеет следующие обязанности:
 
 1. Выберите механизм синхронизации.
@@ -256,13 +246,13 @@ WPF-приложение может отображать коллекцию да
 
    - Вызовите <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)> перегрузку, если с помощью механизма простой блокировки; вызов <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)> перегружать, если используется более сложный механизм.
 
-1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
+1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
 
-1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
+1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
 
 1. Если вы хотите использовать ту же коллекцию в нескольких потоках пользовательского интерфейса, необходимо вызвать <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A> (и <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, при необходимости) отдельно для каждого потока пользовательского интерфейса.
 
-1. Избегайте взаимоблокировки.  Это уже работы приложения после его выбирает для использования синхронизации, но также должен учитывать учетной записи WPF участия в синхронизации, как описано в следующем абзаце.
+1. Избегайте взаимоблокировки.  Это уже работы приложения после его выбирает для использования синхронизации, но также должен учитывать учетной записи WPF участия в синхронизации, как описано в следующем абзаце.
 
 Взамен WPF обеспечивает следующее поведение:
 
@@ -274,9 +264,9 @@ WPF-приложение может отображать коллекцию да
 
 - Отложенные события, применяются к теневой копии асинхронно в потоке пользовательского интерфейса при его имеет возможность сделать это.
 
-- <xref:System.Windows.Data.CollectionView> Не будет напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
+- <xref:System.Windows.Data.CollectionView> Не будет напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
 
-В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
+В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
 
  ]]></format>
         </remarks>
@@ -298,8 +288,8 @@ WPF-приложение может отображать коллекцию да
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
-        <Parameter Name="lockObject" Type="System.Object" />
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="lockObject" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="collection">Коллекция, которой требуется синхронизированный доступ.</param>
@@ -310,10 +300,10 @@ WPF-приложение может отображать коллекцию да
 
 ## Remarks
 
-WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
- 
-Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизации («потокобезопасен») доступ к коллекции и гарантируя, что доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации. Путем вызова <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)> метода, это можно сделать с помощью механизма простой блокировки. 
- 
+WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
+ 
+Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизации («потокобезопасен») доступ к коллекции и гарантируя, что доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации. Путем вызова <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)> метода, это можно сделать с помощью механизма простой блокировки. 
+ 
 Чтобы использовать коллекцию в нескольких потоках, одним из которых является поток пользовательского интерфейса, который владеет <xref:System.Windows.Controls.ItemsControl>, необходимо выполнить следующие действия:
 
 1. Создайте экземпляр объекта для блокировки при доступе к коллекции.
@@ -326,13 +316,13 @@ WPF-приложение может отображать коллекцию да
 
    - Вызов должен производиться до с помощью коллекции в другом потоке или перед присоединением коллекции <xref:System.Windows.Controls.ItemsControl>, какое значение более поздней версии.
 
-1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
+1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
 
-1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
+1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
 
 1. Если вы хотите использовать ту же коллекцию в нескольких потоках пользовательского интерфейса, необходимо вызвать <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A> (и <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, при необходимости) отдельно для каждого потока пользовательского интерфейса.
 
-1. Избегайте взаимоблокировки.  Это уже работы приложения, когда он выбирает для использования синхронизации, но его следует также принять во внимание WPF участия в синхронизации. (См. сведения, ниже.)
+1. Избегайте взаимоблокировки.  Это уже работы приложения, когда он выбирает для использования синхронизации, но его следует также принять во внимание WPF участия в синхронизации. (См. сведения, ниже.)
 
 Взамен WPF обеспечивает следующее поведение:
 
@@ -344,9 +334,9 @@ WPF-приложение может отображать коллекцию да
 
 - Отложенные события, применяются к теневой копии асинхронно в потоке пользовательского интерфейса при его имеет возможность сделать это.
 
-- <xref:System.Windows.Data.CollectionView> Будут не напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
+- <xref:System.Windows.Data.CollectionView> Будут не напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
 
-В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
+В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
   
  ]]></format>
         </remarks>
@@ -368,9 +358,9 @@ WPF-приложение может отображать коллекцию да
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
-        <Parameter Name="context" Type="System.Object" />
-        <Parameter Name="synchronizationCallback" Type="System.Windows.Data.CollectionSynchronizationCallback" />
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="context" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="synchronizationCallback" Type="System.Windows.Data.CollectionSynchronizationCallback" Index="2" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="collection">Коллекция, которой требуется синхронизированный доступ.</param>
@@ -382,11 +372,9 @@ WPF-приложение может отображать коллекцию да
   
 ## Remarks  
 
-WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
- 
-Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизации («потокобезопасен») доступ к коллекции и гарантируя, что доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации. Путем вызова <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)> метода, это можно сделать с помощью механизма синхронизации, например, семафоры, события сброса и т. д. 
- 
-Чтобы использовать коллекцию в нескольких потоках, одним из которых является поток пользовательского интерфейса, который владеет <xref:System.Windows.Controls.ItemsControl>, необходимо выполнить следующие действия:
+WPF-приложение может отображать коллекцию данных с помощью <xref:System.Windows.Controls.ItemsControl> или одного из его подклассов (<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.DataGrid>, <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.ListView>и т. д.). WPF каналы всех его к коллекции с помощью подкласс <xref:System.Windows.Data.CollectionView>. Как <xref:System.Windows.Controls.ItemsControl> и <xref:System.Windows.Data.CollectionView> сходство в поток, на котором <xref:System.Windows.Controls.ItemsControl> был создан, это означает, что их использование в другом потоке запрещен и создает исключение. По сути это ограничение применяется также в коллекцию.
+ 
+Можно использовать коллекцию в нескольких потоках.   Например, вы хотите обновить коллекции (Добавление или удаление элементов) в потоке «сбором данных», при отображении результатов в потоке «интерфейс пользователя», таким образом, чтобы пользовательский Интерфейс продолжает отвечать во время сбора данных происходит. В таком случае вы несете ответственность за обеспечение синхронизации («потокобезопасен») доступ к коллекции и гарантируя, что доступ из WPF (в частности из <xref:System.Windows.Data.CollectionView>) участвует в один и тот же механизм синхронизации. Путем вызова <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)> метода, это можно сделать с помощью механизма синхронизации, например, семафоры, события сброса и т. д.   Чтобы использовать коллекцию в нескольких потоках, одним из которых является поток пользовательского интерфейса, который владеет <xref:System.Windows.Controls.ItemsControl>, необходимо выполнить следующие действия:
 
 1. Выберите механизм синхронизации.
 
@@ -398,13 +386,13 @@ WPF-приложение может отображать коллекцию да
 
    - Вызов должен производиться до с помощью коллекции в другом потоке или перед присоединением коллекции <xref:System.Windows.Controls.ItemsControl>, какое значение более поздней версии.
 
-1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
+1. Убедитесь, что изменение коллекции и уведомлений об изменениях (через <xref:System.Collections.Specialized.INotifyCollectionChanged>) неделимы; может вмешаться отсутствие доступа из других потоков.  (Это обычно предоставляется бесплатно. For Instance <xref:System.Collections.ObjectModel.ObservableCollection%601> гарантирует, при условии, что все изменения защищены с помощью синхронизации.)
 
-1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
+1. При вызове метода <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, что вызов также должно находиться в потоке пользовательского интерфейса.
 
 1. Если вы хотите использовать ту же коллекцию в нескольких потоках пользовательского интерфейса, необходимо вызвать <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A> (и <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>, при необходимости) отдельно для каждого потока пользовательского интерфейса.
 
-1. Избегайте взаимоблокировки.  Это уже работы приложения, когда он выбирает для использования синхронизации, но его следует также принять во внимание WPF участия в синхронизации. (См. сведения, ниже.)
+1. Избегайте взаимоблокировки.  Это уже работы приложения, когда он выбирает для использования синхронизации, но его следует также принять во внимание WPF участия в синхронизации. (См. сведения, ниже.)
 
 Взамен WPF обеспечивает следующее поведение:
 
@@ -423,9 +411,9 @@ WPF-приложение может отображать коллекцию да
 
 - Отложенные события, применяются к теневой копии асинхронно в потоке пользовательского интерфейса при его имеет возможность сделать это.
 
-- <xref:System.Windows.Data.CollectionView> Будут не напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
+- <xref:System.Windows.Data.CollectionView> Будут не напрямую использовать любой другой механизм синхронизации видимым для приложения. Это помогает избежать WPF способ принимать участие во взаимоблокировке (см. предыдущий элемент 7).   
 
-В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
+В итоге получается, указать другую коллекцию в любом потоке, и эти изменения будут отражены в конечном счете <xref:System.Windows.Controls.ItemsControl> когда поток пользовательского интерфейса не выполнит «Догнать».  Реализация была настроена для регулирования, скорость, чтобы изменения переносились в поток пользовательского интерфейса для обеспечения фона потоков от перегрузки в потоке пользовательского интерфейса и замедляют выполнение реагировать на действия обычного пользователя.
 
  `context` Параметр — это произвольный объект, который передается `callback`. Его можно использовать, чтобы определить механизм синхронизации, используемый для управления доступом к `collection`. `Context` может быть `null`.  
  
@@ -454,7 +442,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается привязка.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.Binding" />, установленный на указанное свойство.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.Binding" />, установленный для заданного свойства, или <see langword="null" />, если объект <see cref="T:System.Windows.Data.Binding" /> не установлен.</returns>
@@ -487,7 +475,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается объект <see cref="T:System.Windows.Data.BindingBase" />.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.BindingBase" />, установленный на указанное свойство.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.BindingBase" />, установленный для заданного свойства, или <see langword="null" />, если объект привязки не установлен.</returns>
@@ -524,7 +512,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Целевой объект привязки, где находится <c>dp</c>.</param>
+        <param name="target">Целевой объект привязки, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается объект <see cref="T:System.Windows.Data.BindingExpression" />.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.BindingExpression" />, связанный с указанным свойством целевого объекта привязки заданного объекта.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.BindingExpression" />, связанный с заданным свойством, или <see langword="null" />, если он отсутствует. Если объект <see cref="T:System.Windows.Data.PriorityBindingExpression" /> установлен для свойства, возвращается <see cref="P:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression" />.</returns>
@@ -573,7 +561,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается объект <see cref="T:System.Windows.Data.BindingExpressionBase" />.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.BindingExpressionBase" />, установленный на указанное свойство.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.BindingExpressionBase" />, установленный для заданного свойства, или <see langword="null" />, если объект привязки не установлен.</returns>
@@ -610,7 +598,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается привязка.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.MultiBinding" />, установленный на указанное свойство.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.MultiBinding" />, установленный для заданного свойства, или <see langword="null" />, если объект <see cref="T:System.Windows.Data.MultiBinding" /> не установлен.</returns>
@@ -641,7 +629,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Целевой объект привязки, где находится <c>dp</c>.</param>
+        <param name="target">Целевой объект привязки, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается объект <see cref="T:System.Windows.Data.MultiBindingExpression" />.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.MultiBindingExpression" />, связанный с указанным свойством целевого объекта привязки заданного объекта.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.MultiBindingExpression" />, связанный с заданным свойством, или <see langword="null" />, если он отсутствует.</returns>
@@ -680,7 +668,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается привязка.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.PriorityBinding" />, установленный на указанное свойство.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.PriorityBinding" />, установленный для заданного свойства, или <see langword="null" />, если объект <see cref="T:System.Windows.Data.PriorityBinding" /> не установлен.</returns>
@@ -711,7 +699,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Целевой объект привязки, где находится <c>dp</c>.</param>
+        <param name="target">Целевой объект привязки, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Свойство цели привязки, из которого извлекается объект <see cref="T:System.Windows.Data.PriorityBindingExpression" />.</param>
         <summary>Возвращает объект <see cref="T:System.Windows.Data.PriorityBindingExpression" />, связанный с указанным свойством целевого объекта привязки заданного объекта.</summary>
         <returns>Объект <see cref="T:System.Windows.Data.PriorityBindingExpression" />, связанный с заданным свойством, или <see langword="null" />, если он отсутствует.</returns>
@@ -738,7 +726,7 @@ WPF-приложение может отображать коллекцию да
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingGroup&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="root" Type="System.Windows.DependencyObject" />
+        <Parameter Name="root" Type="System.Windows.DependencyObject" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="root">Корневой элемент <see cref="T:System.Windows.UIElement" />, для которого требуется получить группы привязки.  Этот метод возвращает объекты <see cref="T:System.Windows.Data.BindingGroup" />, связанные с данным элементом или его элементами-потомками.</param>
@@ -770,7 +758,7 @@ WPF-приложение может отображать коллекцию да
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="root" Type="System.Windows.DependencyObject" />
+        <Parameter Name="root" Type="System.Windows.DependencyObject" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="root">Корневой элемент <see cref="T:System.Windows.UIElement" />, для которого требуется получить группы привязки.  Этот метод возвращает объекты <see cref="T:System.Windows.Data.BindingExpressionBase" />, связанные с данным элементом или его элементами-потомками.</param>
@@ -807,11 +795,10 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="target">Объект, в котором находится <c>dp</c>.</param>
+        <param name="target">Объект, в котором находится <paramref name="dp" />.</param>
         <param name="dp">Проверяемое свойство зависимости.</param>
         <summary>Возвращает значение, указывающее, является ли заданное свойство на текущий момент привязанным к данным.</summary>
-        <returns>
-          <see langword="true" />, если указанное свойство является привязанным к данным, иначе <see langword="false" />.</returns>
+        <returns><see langword="true" />, если указанное свойство является привязанным к данным, иначе <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Если <paramref name="target" /> имеет значение <see langword="null" />.</exception>
       </Docs>
@@ -838,7 +825,7 @@ WPF-приложение может отображать коллекцию да
         <Parameter Name="binding" Type="System.Windows.Data.BindingBase" />
       </Parameters>
       <Docs>
-        <param name="target">Цель привязки.</param>
+        <param name="target">цель привязки отношения привязки.</param>
         <param name="dp">Целевое свойство привязки.</param>
         <param name="binding">Объект <see cref="T:System.Windows.Data.BindingBase" />, описывающий привязку.</param>
         <summary>Создает экземпляр <see cref="T:System.Windows.Data.BindingExpressionBase" /> и связывает его с заданным свойством целевого объекта привязки.</summary>

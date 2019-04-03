@@ -1,13 +1,5 @@
 <Type Name="WebPartDisplayModeCollection" FullName="System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c580edf95c6a712c5075646df56d6cac6a821642" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46660157" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class WebPartDisplayModeCollection : System.Collections.CollectionBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9dd12ef6de8a07a8c402ea8c40cd753cd2070adb" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53489739" /></Metadata><TypeSignature Language="C#" Value="public sealed class WebPartDisplayModeCollection : System.Collections.CollectionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartDisplayModeCollection extends System.Collections.CollectionBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WebPartDisplayModeCollection&#xA;Inherits CollectionBase" />
@@ -59,7 +51,7 @@
   
 -   Пояснения к работе примера.  
   
- Исходный код для первой части примера кода, пользовательский элемент управления, позволяющий изменять режимы отображения, взят из другого раздела. Для работы этого примера кода необходимо получить ASCX-файле для пользовательского элемента управления с [Пошаговое руководство: изменение режимов отображения веб-частей страницы](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0) разделе и поместите файл в той же папке, в этом примере кода ASPX-страница.  
+ Исходный код для первой части примера кода, пользовательский элемент управления, позволяющий изменять режимы отображения, взят из другого раздела. Для работы этого примера кода необходимо получить ASCX-файле для пользовательского элемента управления с [Пошаговое руководство: Изменения режима отображения веб-частей страницы](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0) разделе и поместите файл в той же папке, в этом примере кода ASPX-страница.  
   
  Вторая часть примера — веб-страницы. Он содержит два <xref:System.Web.UI.WebControls.WebParts.WebPartZone> элементы управления, как пользовательские элементы управления, так и пользовательского <xref:System.Web.UI.WebControls.WebParts.WebPartManager> элемента управления. Обратите внимание, что `Register` директивы в верхней части страницы для ссылки на пользовательские элементы управления и пространство имен для скомпилированных элементов управления.  
   
@@ -69,14 +61,14 @@
  Третья часть примера является пользовательский элемент управления для ввода и отображения текста. Обратите внимание, что он использует <xref:System.Web.UI.WebControls.MultiView> управления для создания нескольких представлений пользовательского интерфейса (UI). Одно представление отображается без кнопки. Обратите внимание, что в переопределенном `OnPreRender` метод, код проверяет ли страница в данный момент находится в пользовательском режиме отображения, и если так, отображается первое представление пользовательского элемента управления, который включает кнопки. Если страница не находится в пользовательском режиме отображения (например, если страница находится в режиме просмотра или конструктора), кнопка скрыта.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[Webparts_WebPartManager_CreateDisplayModes#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartManager_CreateDisplayModes/CS/TextDisplaycs.ascx#2)]
  [!code-aspx-vb[Webparts_WebPartManager_CreateDisplayModes#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartManager_CreateDisplayModes/VB/TextDisplayvb.ascx#2)]  
   
  В четвертой части примера является исходный файл для двух пользовательских классов. Обратите внимание, что пользовательский <xref:System.Web.UI.WebControls.WebParts.WebPartManager> класса переопределения <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDisplayModes%2A> метода вызывает базовый метод для добавления всех режимов отображения по умолчанию, а затем добавляет пользовательском режиме отображения. Класс режиме пользовательское отображаемое `InLineEditDisplayMode`, просто наследует от <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode>, задает имя режима отображения в конструкторе и переопределяется некоторое количество базовых свойств для установления характеристики настройки отображения.  
   
- Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Пошаговое руководство по компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления Custom](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
+ Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Пошаговое руководство по компиляции, см. в разделе [Пошаговое руководство: Разработка и использование пользовательского веб-серверного элемента управления](https://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
   
  [!code-csharp[Webparts_WebPartManager_CreateDisplayModes#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartManager_CreateDisplayModes/CS/CustomDisplayMode.cs#3)]
  [!code-vb[Webparts_WebPartManager_CreateDisplayModes#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartManager_CreateDisplayModes/VB/CustomDisplayMode.vb#3)]  
@@ -89,7 +81,7 @@
     <altmember cref="P:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes" />
     <altmember cref="P:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes" />
     <altmember cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDisplayModes" />
-    <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
   </Docs>
   <Members>
     <Member MemberName="Add">
@@ -137,7 +129,7 @@
         </remarks>
         <altmember cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDisplayModes" />
         <altmember cref="M:System.Collections.IList.Add(System.Object)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="Contains">
@@ -172,7 +164,7 @@
  ]]></format>
         </remarks>
         <altmember cref="M:System.Collections.IList.Contains(System.Object)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
@@ -208,7 +200,7 @@
  ]]></format>
         </remarks>
         <altmember cref="M:System.Array.CopyTo(System.Array,System.Int32)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="IndexOf">
@@ -243,7 +235,7 @@
  ]]></format>
         </remarks>
         <altmember cref="M:System.Collections.IList.IndexOf(System.Object)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="Insert">
@@ -279,7 +271,7 @@
  ]]></format>
         </remarks>
         <altmember cref="M:System.Collections.IList.Insert(System.Int32,System.Object)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
@@ -304,7 +296,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, является ли коллекция доступной только для чтения.</summary>
+        <summary>Возвращает значение, указывающее, является ли коллекция доступной только для чтения.</summary>
         <value>Логическое значение, показывающее, является ли коллекция доступной только для чтения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -317,7 +309,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="Item">
@@ -351,8 +343,7 @@
       <Docs>
         <param name="index">Целое число, указывающее индекс элемента коллекции.</param>
         <summary>Получает конкретный элемент коллекции по индексу или по уникальному идентификатору.</summary>
-        <value>
-          <see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />, которое содержится в коллекции по указанному индексу.</value>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />, которое содержится в коллекции по указанному индексу.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -362,7 +353,7 @@
  ]]></format>
         </remarks>
         <altmember cref="P:System.Collections.IList.Item(System.Int32)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -397,7 +388,7 @@
  ]]></format>
         </remarks>
         <altmember cref="P:System.ComponentModel.ComponentCollection.Item(System.String)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="OnClear">
@@ -406,7 +397,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.OnClear" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnClear ()" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnClear();" />
-      <MemberSignature Language="F#" Value="abstract member OnClear : unit -&gt; unit&#xA;override this.OnClear : unit -&gt; unit" Usage="webPartDisplayModeCollection.OnClear " />
+      <MemberSignature Language="F#" Value="override this.OnClear : unit -&gt; unit" Usage="webPartDisplayModeCollection.OnClear " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -428,7 +419,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.OnInsert(System.Int32,System.Object)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnInsert (index As Integer, value As Object)" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnInsert(int index, System::Object ^ value);" />
-      <MemberSignature Language="F#" Value="abstract member OnInsert : int * obj -&gt; unit&#xA;override this.OnInsert : int * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnInsert (index, value)" />
+      <MemberSignature Language="F#" Value="override this.OnInsert : int * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnInsert (index, value)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -455,7 +446,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.OnRemove(System.Int32,System.Object)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnRemove (index As Integer, value As Object)" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnRemove(int index, System::Object ^ value);" />
-      <MemberSignature Language="F#" Value="abstract member OnRemove : int * obj -&gt; unit&#xA;override this.OnRemove : int * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnRemove (index, value)" />
+      <MemberSignature Language="F#" Value="override this.OnRemove : int * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnRemove (index, value)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -482,7 +473,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.OnSet(System.Int32,System.Object,System.Object)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnSet (index As Integer, oldValue As Object, newValue As Object)" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnSet(int index, System::Object ^ oldValue, System::Object ^ newValue);" />
-      <MemberSignature Language="F#" Value="abstract member OnSet : int * obj * obj -&gt; unit&#xA;override this.OnSet : int * obj * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnSet (index, oldValue, newValue)" />
+      <MemberSignature Language="F#" Value="override this.OnSet : int * obj * obj -&gt; unit" Usage="webPartDisplayModeCollection.OnSet (index, oldValue, newValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -511,7 +502,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.OnValidate(System.Object)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnValidate (value As Object)" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnValidate(System::Object ^ value);" />
-      <MemberSignature Language="F#" Value="abstract member OnValidate : obj -&gt; unit&#xA;override this.OnValidate : obj -&gt; unit" Usage="webPartDisplayModeCollection.OnValidate value" />
+      <MemberSignature Language="F#" Value="override this.OnValidate : obj -&gt; unit" Usage="webPartDisplayModeCollection.OnValidate value" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

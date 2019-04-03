@@ -1,13 +1,5 @@
 <Type Name="COMException" FullName="System.Runtime.InteropServices.COMException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8dcd62052d7c9c499251ba1ecf67f78b3ed8ca7d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48670159" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class COMException : System.Runtime.InteropServices.ExternalException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="77ae3e47177f0b1702850e17c12dd482a10b56b1" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58695911" /></Metadata><TypeSignature Language="C#" Value="public class COMException : System.Runtime.InteropServices.ExternalException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit COMException extends System.Runtime.InteropServices.ExternalException" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.COMException" />
   <TypeSignature Language="VB.NET" Value="Public Class COMException&#xA;Inherits ExternalException" />
@@ -33,6 +25,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Exception</BaseTypeName>
@@ -43,8 +36,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -53,7 +46,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Среда CLR преобразует известные значения HRESULT в исключения .NET Framework, что позволяет объектам COM возвращать управляемым клиентам полноценные сведения об ошибке. Сопоставление значения HRESULT и исключения также работает в обратном направлении, возвращая неуправляемым клиентам значения HRESULT. Сведения о сопоставлении см. в разделе [как: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
+ Среда CLR преобразует известные значения HRESULT в исключения .NET Framework, что позволяет объектам COM возвращать управляемым клиентам полноценные сведения об ошибке. Сопоставление значения HRESULT и исключения также работает в обратном направлении, возвращая неуправляемым клиентам значения HRESULT. Сведения о сопоставлении см. в разделе [как: Сопоставление значений HRESULT и исключений](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
   
  Когда среда выполнения обнаруживает Неизвестный HRESULT (HRESULT, который не имеет указанное соответствующее исключение), он создает экземпляр <xref:System.Runtime.InteropServices.COMException> класса. Это многоцелевое исключение предоставляет те же члены, что любое исключение и наследует открытый <xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A> свойство, содержащее значение HRESULT, возвращаемое вызываемым объектом. Если сообщение об ошибке для среды выполнения (полученный из [IErrorInfo](https://msdn.microsoft.com/library/windows/desktop/ms723041\(v=vs.85\).aspx) интерфейс или `Err` объект в Visual Basic или в некоторых случаях от операционной системы), сообщение возвращается вызывающему объекту. Однако если сообщение об ошибке не включено разработчиком в компонент COM, среда выполнения возвращает восьмиразрядное значение HRESULT вместо строки ошибки. Наличие HRESULT позволяет вызывающему объекту определить причину универсального исключения.  
   
@@ -66,7 +59,7 @@
  Список значений HRESULT, см. в разделе [часто встречающихся значений HRESULT](https://msdn.microsoft.com/library/windows/desktop/aa378137\(v=vs.85\).aspx).  
   
  Аргументы с поздним связыванием и объектов Microsoft Office  
- При передаче аргументов с поздним связыванием в методы объектов Microsoft Office, <xref:System.Runtime.InteropServices.COMException> может быть вызвано исключение, если объекты имеют COM-объектов. Поздняя привязка предполагает, что такие вызовы методов включают параметр `ByRef` и что передаваемое свойство имеет метод доступа `set`. Если свойство не произошло, .NET Framework генерирует <xref:System.MissingMethodException> исключения (с `CORE_E_MISSINGMETHOD` HRESULT). Для временного решения этой проблемы, используйте объекты с ранней привязкой или передавайте переменную вместо свойства объекта.  
+ При передаче аргументов с поздним связыванием в методы объектов Microsoft Office, <xref:System.Runtime.InteropServices.COMException> может быть вызвано исключение, если объекты имеют COM-объектов. Поздняя привязка предполагает, что такие вызовы методов включают параметр `ByRef` и что передаваемое свойство имеет метод доступа `set` . Если свойство не произошло, .NET Framework генерирует <xref:System.MissingMethodException> исключения (с `CORE_E_MISSINGMETHOD` HRESULT). Для временного решения этой проблемы, используйте объекты с ранней привязкой или передавайте переменную вместо свойства объекта.  
   
  Visual Studio и процесс размещения  
  COM используется для обмена данными между Visual Studio и [ведущий процесс](https://msdn.microsoft.com/library/ms185331.aspx). Поскольку COM используется ещё перед запуском кода, вызов [CoInitializeSecurity](https://msdn.microsoft.com/library/windows/desktop/ms693736\(v=vs.85\).aspx) приводит к возникновению этого исключения.  
@@ -123,6 +116,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -131,7 +125,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Тип <xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
+ Тип<xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
   
 |Свойство.|Значение|  
 |--------------|-----------|  
@@ -170,6 +164,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -181,7 +176,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Тип <xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
+ Тип<xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
   
 |Свойство.|Значение|  
 |--------------|-----------|  
@@ -210,6 +205,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -222,8 +218,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo" />, содержащий сериализованные данные объекта.</param>
@@ -235,11 +231,11 @@
 ## Remarks  
  Данный конструктор вызывается в процессе десериализации для воссоздания объекта исключения, переданного в потоке. Дополнительные сведения см. в разделе [сериализация XML и SOAP](~/docs/standard/serialization/xml-and-soap-serialization.md).  
   
- Тип <xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>.  
+ Тип<xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>.  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="info" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Runtime.InteropServices.ExternalException" />
       </Docs>
     </Member>
@@ -271,6 +267,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -278,7 +275,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="inner">Исключение, которое является причиной текущего исключения. Если значение параметра <c>inner</c> не равно <see langword="null" />, текущее исключение возникает в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="inner">Исключение, которое является причиной текущего исключения. Если значение параметра <paramref name="inner" /> не равно <see langword="null" />, текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Runtime.InteropServices.COMException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -327,6 +324,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -342,7 +340,7 @@
 ## Remarks  
  Это <xref:System.Runtime.InteropServices.COMException> конструктор задает основное сообщение с кодом ошибки.  
   
- Тип <xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
+ Тип<xref:System.Runtime.InteropServices.COMException> наследуется от типа <xref:System.Runtime.InteropServices.ExternalException>. В следующей таблице показано, как этот конструктор задает свойства <xref:System.Exception> объекта.  
   
 |Свойство.|Значение|  
 |--------------|-----------|  
@@ -371,6 +369,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>

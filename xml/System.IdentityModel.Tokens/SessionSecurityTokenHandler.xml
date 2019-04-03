@@ -1,13 +1,5 @@
 <Type Name="SessionSecurityTokenHandler" FullName="System.IdentityModel.Tokens.SessionSecurityTokenHandler">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2372ab648b3f4174fc0d2bb8b513e61cc8147200" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46646688" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SessionSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb46d17c5de71b55a21efc4f9d285842b34f8c1a" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54313899" /></Metadata><TypeSignature Language="C#" Value="public class SessionSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />
   <TypeSignature Language="VB.NET" Value="Public Class SessionSecurityTokenHandler&#xA;Inherits SecurityTokenHandler" />
@@ -22,8 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-      <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />, который обрабатывает токены безопасности типа <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</summary>
+    <summary><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />, который обрабатывает токены безопасности типа <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -33,7 +24,7 @@
  В пассивных сценариях <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> вызывает <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) из конвейера проверки подлинности для создания токена сеанса из <xref:System.Security.Claims.ClaimsPrincipal> , представляющий пользователя, прошедшего проверку подлинности. SAM использует настроенными <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> для создания токена и выполнить его сериализацию в файл cookie (и нужно десериализовать токен из файла cookie при последующих запросах). SAM используется экземпляр с настроенными <xref:System.IdentityModel.Services.CookieHandler> класс для записи файла cookie обратно в HTTP-ответа. Затем этот файл cookie возвращается клиенту, и при последующих запросах клиент может предоставить файл cookie, а не вносить круговом пути поставщика удостоверения, чтобы повторно получить маркер безопасности. Дополнительные сведения о сеансах работы с применением WIF, см. в разделе [управление сеансами WIF](~/docs/framework/security/wif-session-management.md).  
   
 > [!NOTE]
->  \<SecurityTokenHandlers > элемент конфигурации можно использовать для указания <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> , несет ответственность за обеспечение безопасности сеансов приложения. Разработчикам следует проявлять осторожность при изменении этого параметра конфигурации, как неправильно настроенные системы может привести к компрометации приложения. Например, указание производном ГИПЕРССЫЛКУ "http://msdn.microsoft.com/library/hh193426%28v=vs.110%29.aspx" \t «_blank» <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> и передается пустая коллекция преобразований (CookieTransform) в базовый приведет удостоверений пользователей, сериализуемого в файле cookie, который не был защищен. Это может позволить злоумышленнику изменить идентификацию и таким образом изменить права доступа.  
+>  \<SecurityTokenHandlers > элемент конфигурации можно использовать для указания <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> , несет ответственность за обеспечение безопасности сеансов приложения. Разработчикам следует проявлять осторожность при изменении этого параметра конфигурации, как неправильно настроенные системы может привести к компрометации приложения. Например, если указать производный <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> и передается пустая коллекция преобразований (CookieTransform) в базовый приведет удостоверений пользователей, сериализуемого в файле cookie, который не был защищен. Это может позволить злоумышленнику изменить идентификацию и таким образом изменить права доступа.  
   
  Если токен сеанса в режиме ссылки, то есть его <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType> свойство `true`, сеанс, обработчик маркеров выполняется сериализация только свойств маркера сеанса, которые необходимы для повторного создания его ключу в <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>. В случае по умолчанию <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey> класс используется для представления ключей кэша, а обработчик токенов записывает <xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A?displayProperty=nameWithType> и <xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A?displayProperty=nameWithType> свойства токена. Если маркер сеанса не находится в режиме ссылки, то есть <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType> свойство `false`, затем наряду со свойствами, было сказано ранее, обработчик вызывает <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A> метод сериализации из маркера и сохраняет массив байтов результирующее значение в файле cookie, а также. Дополнительные сведения о способ сериализации маркера, см. в разделе <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%28System.Xml.XmlWriter%2CSystem.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType> метод.  
   
@@ -69,9 +60,9 @@
     <altmember cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />
     <altmember cref="T:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler" />
     <altmember cref="T:System.IdentityModel.CookieTransform" />
-    <related type="Article" href="http://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/fc3cd7fa-2b45-4614-a44f-8fa9b9d15284">WIF и веб-фермы</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/98bce126-18a9-401b-b20d-67ee462a5f8a">Управление сеансами WIF</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/fc3cd7fa-2b45-4614-a44f-8fa9b9d15284">WIF и веб-фермы</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/98bce126-18a9-401b-b20d-67ee462a5f8a">Управление сеансами WIF</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -133,7 +124,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="transforms" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="transforms" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -157,7 +148,7 @@
         <param name="tokenLifetime">Время существования токена по умолчанию. Задает свойство <see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />, использующий указанные преобразования файлов cookie и время жизни токена.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="transforms" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="transforms" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Значение параметра <paramref name="tokenLifetime" /> меньше или равно <see cref="F:System.TimeSpan.Zero" />.</exception>
       </Docs>
     </Member>
@@ -221,7 +212,7 @@
         <summary>Возвращает значение, указывающее, расположено ли средство чтения в элементе <see langword="&lt;wsc:SecurityContextToken&gt;" />.</summary>
         <returns>Значение <see langword="true" />, если средство чтения указывает на элемент <see langword="&lt;wsc:SecurityContextToken&gt;" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="CanValidateToken">
@@ -359,7 +350,7 @@
         <summary>Создает <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> на основе указанного субъекта утверждений и диапазона времени, в течение которого токен является допустимым.</summary>
         <returns>Созданный токен безопасности сеанса. Свойства на новом токене сеанса задаются в соответствии с заданным параметрам.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="principal" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="principal" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
@@ -393,7 +384,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="tokenDescriptor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tokenDescriptor" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
@@ -516,9 +507,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="customConfigElements" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="customConfigElements" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Конфигурация, заданная параметром <paramref name="customConfigElements" />, является недопустимой. Например, не содержит элемент <see langword="&lt;sessionTokenRequirement&gt;" />, содержит более одного элемента <see langword="&lt;sessionTokenRequirement&gt;" />, допустимое значение <see cref="T:System.TimeSpan" /> невозможно прочитать из атрибута <see langword="lifetime" /> или атрибут <see langword="lifetime" /> задает значение меньше, чем <see cref="F:System.TimeSpan.Zero" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadToken">
@@ -576,7 +567,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">Средство чтения не находится на объекте <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> или не удается прочитать объект <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
       </Docs>
     </Member>
@@ -638,8 +629,7 @@
       </Parameters>
       <Docs>
         <param name="reader">Объект <see cref="T:System.Xml.XmlReader" /> над входящим объектом <see cref="T:System.IdentityModel.Tokens.SecurityToken" />.</param>
-        <param name="tokenResolver">
-          <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />, который может использоваться для сопоставления <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</param>
+        <param name="tokenResolver"><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />, который может использоваться для сопоставления <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</param>
         <summary>Считывает <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />, используя указанные сопоставитель токена и средства чтения XML.</summary>
         <returns>Считанный токен безопасности сеанса, экземпляр <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</returns>
         <remarks>
@@ -657,10 +647,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="reader" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="tokenResolver" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="tokenResolver" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">Средство чтения не находится на объекте <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> или не удается прочитать объект <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
       </Docs>
     </Member>
@@ -715,7 +705,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает время жизни токена.</summary>
-        <value>Время существования токена. Значение по умолчанию: <see cref="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime" />.</value>
+        <value>Время существования токена. Значение по умолчанию — <see cref="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -725,7 +715,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Предпринята попытка задать диапазон времени меньше либо равное нуля.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/496a1735-cbb7-49d5-a6aa-dd5550462073">&lt;sessionTokenRequirement&gt;</related>
       </Docs>
     </Member>
     <Member MemberName="TokenType">
@@ -808,7 +798,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="securityToken" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="securityToken" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenNotYetValidException">Свойство <see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" /> токена задает более поздний момент времени, чем <see cref="P:System.DateTime.UtcNow" />.</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenExpiredException">Свойство <see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" /> токена задает более ранний момент времени, чем <see cref="P:System.DateTime.UtcNow" />.</exception>
@@ -854,11 +844,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="token" />
+        <exception cref="T:System.ArgumentNullException"><paramref name="token" />
           <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
         <altmember cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanValidateToken" />
       </Docs>
     </Member>
@@ -897,12 +885,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="token" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="token" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="endpointId" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
+-или- 
+ <paramref name="endpointId" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">Свойство <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId" /> заданного токена не является <see langword="null" /> или пустым и его значение отличается от значения, заданного параметром <paramref name="endpointId" />.</exception>
         <altmember cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanValidateToken" />
       </Docs>
@@ -955,7 +942,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="sessiontoken" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sessiontoken" /> — <see langword="null" />.</exception>
         <altmember cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanWriteToken" />
       </Docs>
     </Member>
@@ -990,14 +977,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="writer" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="writer" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="token" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.  
+-или- 
+ <paramref name="token" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="token" /> не может быть назначен из <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />.  
   
-- или - 
+-или- 
 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.SecureConversationVersion" /> токена задает версию WS-Secure Conversation, не поддерживаемую обработчиком.</exception>
         <altmember cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanWriteToken" />
       </Docs>

@@ -1,13 +1,5 @@
 <Type Name="SessionIDManager" FullName="System.Web.SessionState.SessionIDManager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3f90f53764fbb5b7c08afe3a67c6ee0055da5148" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46688770" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SessionIDManager : System.Web.SessionState.ISessionIDManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="edcb6530bc1b985339b3a2483a2bab7acc38abe0" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51935381" /></Metadata><TypeSignature Language="C#" Value="public class SessionIDManager : System.Web.SessionState.ISessionIDManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionIDManager extends System.Object implements class System.Web.SessionState.ISessionIDManager" />
   <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionIDManager" />
   <TypeSignature Language="VB.NET" Value="Public Class SessionIDManager&#xA;Implements ISessionIDManager" />
@@ -34,19 +26,17 @@
 ## Remarks  
  <xref:System.Web.SessionState.SessionIDManager> Класс — это модуль HTTP, который управляет идентификаторами уникальный сеанс для использования с состоянием сеанса ASP.NET. Уникальный идентификатор для сеанса ASP.NET является <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> свойство, которое может быть организован <xref:System.Web.HttpContext.Session%2A> текущего элемента <xref:System.Web.HttpContext> или <xref:System.Web.UI.Page>. Идентификатор сеанса ASP.NET — это случайным образом создаваемое число, закодированного в 24-значной строка, состоящая из символы нижнего регистра от до z и цифры от 0 до 5.  
   
- По умолчанию <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> значение отправляется в файле cookie при каждом запросе к приложению ASP.NET. Имя файла cookie, который содержит <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> ASP.NET_SessionId, значение по умолчанию. Имя файла cookie разных можно настроить, задав `cookieName` атрибут [sessionState (схема параметров ASP.NET)](http://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) на имя нужного файла cookie.  
+ По умолчанию <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> значение отправляется в файле cookie при каждом запросе к приложению ASP.NET. Имя файла cookie, который содержит <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> ASP.NET_SessionId, значение по умолчанию. Имя файла cookie разных можно настроить, задав `cookieName` атрибут [sessionState (схема параметров ASP.NET)](https://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) на имя нужного файла cookie.  
   
  Если вы хотите отключить использование файлов cookie в приложении ASP.NET и все еще используют состояние сеанса, можно настроить приложение для хранения идентификатора сеанса в URL-адрес вместо файла cookie, задав `cookieless` атрибут `sessionState` элемент `true` в файле Web.config для приложения. Дополнительные сведения см. в описании свойства <xref:System.Web.SessionState.HttpSessionStateContainer.IsCookieless%2A>.  
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Идентификатор сеанса ASP.NET можно заменить на собственный идентификатор пользовательского сеанса путем создания класса, который наследует <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с пользовательские реализации. Пример переопределения <see cref="T:System.Web.SessionState.SessionIDManager" /> класса и реализации этих методов см. пример для <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> метод.  
+    <block subset="none" type="overrides"><para>Идентификатор сеанса ASP.NET можно заменить на собственный идентификатор пользовательского сеанса путем создания класса, который наследует <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с пользовательские реализации. Пример переопределения <see cref="T:System.Web.SessionState.SessionIDManager" /> класса и реализации этих методов см. пример для <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> метод.  
   
-Вы можете заменить весь <see cref="T:System.Web.SessionState.SessionIDManager" /> с диспетчером идентификатор пользовательского сеанса путем создания класса, реализующего <see cref="T:System.Web.SessionState.ISessionIDManager" /> интерфейс. Если диспетчер пользовательский идентификатор сеанса поддерживает идентификаторы сеансов без поддержки файлов cookie, необходимо реализовать решение для отправки и получения идентификаторов сеансов в URL-адрес, например фильтр ISAPI. Дополнительные сведения о создании пользовательских идентификатор сеанса manager см. в разделе <see cref="T:System.Web.SessionState.ISessionIDManager" />.</para>
-    </block>
-    <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/f540bdeb-d22e-4e1d-ba8a-fe6c9926283b">Обработчики HTTP-данных и общие сведения о модули HTTP</related>
+Вы можете заменить весь <see cref="T:System.Web.SessionState.SessionIDManager" /> с диспетчером идентификатор пользовательского сеанса путем создания класса, реализующего <see cref="T:System.Web.SessionState.ISessionIDManager" /> интерфейс. Если диспетчер пользовательский идентификатор сеанса поддерживает идентификаторы сеансов без поддержки файлов cookie, необходимо реализовать решение для отправки и получения идентификаторов сеансов в URL-адрес, например фильтр ISAPI. Дополнительные сведения о создании пользовательских идентификатор сеанса manager см. в разделе <see cref="T:System.Web.SessionState.ISessionIDManager" />.</para></block>
+    <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/f540bdeb-d22e-4e1d-ba8a-fe6c9926283b">Обработчики HTTP-данных и общие сведения о модули HTTP</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -79,7 +69,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CreateSessionID">
@@ -124,7 +114,7 @@
  [!code-csharp[System.Web.SessionState.ISessionIDModule#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/GuidSessionIDModule.cs#7)]
  [!code-vb[System.Web.SessionState.ISessionIDModule#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/GuidSessionIDModule.vb#7)]  
   
- Чтобы использовать пользовательский класс, продемонстрированный в данном примере, настроить атрибут sessionIDManagerType [sessionState (схема параметров ASP.NET)](http://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) элемента, как показано в следующем примере.  
+ Чтобы использовать пользовательский класс, продемонстрированный в данном примере, настроить атрибут sessionIDManagerType [sessionState (схема параметров ASP.NET)](https://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) элемента, как показано в следующем примере.  
   
 ```  
 <sessionState  
@@ -144,10 +134,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно указать идентификатор пользовательского сеанса для использования состояния сеанса ASP.NET, создав класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с пользовательские реализации. Если ваш идентификатор пользовательского сеанса не соответствует ограничениям символ, обеспечиваемая реализация по умолчанию <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> метод, необходимо переопределить <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> метод для проверки идентификатора пользовательского сеанса. В этом случае <see cref="T:System.Web.SessionState.SessionIDManager" /> класс будет убедитесь, что ваш идентификатор пользовательского сеанса HTTP-ответов в кодировке URL-адрес и декодированный из запроса HTTP, используя URL-адрес <see cref="M:System.Web.SessionState.SessionIDManager.Encode(System.String)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Decode(System.String)" /> методы, соответственно.</para>
-        </block>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <block subset="none" type="overrides"><para>Можно указать идентификатор пользовательского сеанса для использования состояния сеанса ASP.NET, создав класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с пользовательские реализации. Если ваш идентификатор пользовательского сеанса не соответствует ограничениям символ, обеспечиваемая реализация по умолчанию <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> метод, необходимо переопределить <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> метод для проверки идентификатора пользовательского сеанса. В этом случае <see cref="T:System.Web.SessionState.SessionIDManager" /> класс будет убедитесь, что ваш идентификатор пользовательского сеанса HTTP-ответов в кодировке URL-адрес и декодированный из запроса HTTP, используя URL-адрес <see cref="M:System.Web.SessionState.SessionIDManager.Encode(System.String)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Decode(System.String)" /> методы, соответственно.</para></block>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Decode">
@@ -183,10 +171,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Например, класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> класс и переопределяет <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методов, см. пример для <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> метод.</para>
-        </block>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <block subset="none" type="overrides"><para>Например, класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> класс и переопределяет <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методов, см. пример для <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> метод.</para></block>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Encode">
@@ -224,7 +210,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="GetSessionID">
@@ -264,7 +250,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Web.HttpException">Длина значения идентификатор сеанса, полученного из HTTP-запроса, превышает значение <see cref="P:System.Web.SessionState.SessionIDManager.SessionIDMaxLength" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Initialize">
@@ -293,11 +279,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.SessionState.SessionIDManager.Initialize%2A> Метод считывает данные о конфигурации сеанса из [sessionState (схема параметров ASP.NET)](http://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) элемент конфигурации из файлов конфигурации.  
+ <xref:System.Web.SessionState.SessionIDManager.Initialize%2A> Метод считывает данные о конфигурации сеанса из [sessionState (схема параметров ASP.NET)](https://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) элемент конфигурации из файлов конфигурации.  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="InitializeRequest">
@@ -377,7 +363,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="SaveSessionID">
@@ -429,7 +415,7 @@
   
 - или - 
 ИД сеанса, переданный этому методу, не прошел проверку.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="SessionIDMaxLength">
@@ -461,7 +447,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Validate">
@@ -520,10 +506,8 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно указать идентификатор пользовательского сеанса для использования состояния сеанса ASP.NET, создав класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с собственную реализацию. Даже при создании идентификатора пользовательского сеанса, идентификатор сеанса является более 80 символов, <see cref="T:System.Web.SessionState.SessionIDManager" /> класса.</para>
-        </block>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <block subset="none" type="overrides"><para>Можно указать идентификатор пользовательского сеанса для использования состояния сеанса ASP.NET, создав класс, наследующий <see cref="T:System.Web.SessionState.SessionIDManager" /> и переопределение <see cref="M:System.Web.SessionState.SessionIDManager.CreateSessionID(System.Web.HttpContext)" /> и <see cref="M:System.Web.SessionState.SessionIDManager.Validate(System.String)" /> методы с собственную реализацию. Даже при создании идентификатора пользовательского сеанса, идентификатор сеанса является более 80 символов, <see cref="T:System.Web.SessionState.SessionIDManager" /> класса.</para></block>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
   </Members>

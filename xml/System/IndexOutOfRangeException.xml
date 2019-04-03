@@ -1,13 +1,5 @@
 <Type Name="IndexOutOfRangeException" FullName="System.IndexOutOfRangeException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a15b6866a62b8936bbd1cac98ab5a39a99b1b90f" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48638275" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class IndexOutOfRangeException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6205b488add46d5c9806f21cc9424d49c0455c60" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53230537" /></Metadata><TypeSignature Language="C#" Value="public sealed class IndexOutOfRangeException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit IndexOutOfRangeException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.IndexOutOfRangeException" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class IndexOutOfRangeException&#xA;Inherits SystemException" />
@@ -42,8 +34,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -94,7 +86,7 @@
     -   Следующее уравнение должны выполняться условия для измерения массива, который требуется выполнить итерацию.  
   
         ```  
-        start_index >= lower_bound And start_index + items_to_iterate – 1 <= upper_bound  
+        start_index >= lower_bound And start_index + items_to_iterate - 1 <= upper_bound  
         ```  
   
          Для коллекции должны выполняться следующее уравнение:  
@@ -205,7 +197,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот конструктор инициализирует <xref:System.Exception.Message%2A> свойства нового экземпляра системное сообщение с описанием ошибки, например «индекс массива вне допустимого диапазона.» Это сообщение учитывает текущую культуру системы.  
+ Этот конструктор инициализирует <xref:System.Exception.Message%2A> свойства нового экземпляра системное сообщение с описанием ошибки, например «индекс массива вне допустимого диапазона.» В этом сообщении учитывается текущий язык и региональные параметры системы.  
   
  В следующей таблице представлены исходные значения свойств экземпляра класса <xref:System.IndexOutOfRangeException>.  
   
@@ -256,7 +248,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот конструктор инициализирует <xref:System.Exception.Message%2A?displayProperty=nameWithType> нового исключения, используя свойство `message` параметр. Содержимое `message` должно быть понятно пользователю. Код, вызывающий этот конструктор, должен обеспечить локализацию данной строки в соответствии с текущим языком и региональными параметрами системы.  
+ Этот конструктор инициализирует <xref:System.Exception.Message%2A?displayProperty=nameWithType> нового исключения, используя свойство `message` параметр. Содержимое параметра `message` должно быть понятным пользователю. Вызывающий оператор этого конструктора необходим, чтобы убедиться, локализована ли данная строка для текущего языка и региональных параметров системы.  
   
  В следующей таблице представлены исходные значения свойств экземпляра класса <xref:System.IndexOutOfRangeException>.  
   
@@ -302,9 +294,9 @@
         <Parameter Name="innerException" Type="System.Exception" />
       </Parameters>
       <Docs>
-        <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если параметр <c>innerException</c> не является пустой ссылкой (<see langword="Nothing" /> в Visual Basic), текущее исключение создается в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.IndexOutOfRangeException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
+        <param name="message">Сообщение об ошибке с объяснением причин исключения.</param>
+        <param name="innerException">Исключение, которое вызвало текущее исключение. Если параметр <paramref name="innerException" /> не является указателем null (<see langword="Nothing" /> в Visual Basic), то текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.IndexOutOfRangeException" /> с указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее это исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,13 +1,5 @@
 <Type Name="FilterElement" FullName="System.ServiceModel.Routing.Configuration.FilterElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="71af416a35696d72d9ec324ac4571902242b4e0a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48716076" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class FilterElement : System.Configuration.ConfigurationElement" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b5ce3cd9dd2ee2637f501ef3d60887d1faacc6fd" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55391340" /></Metadata><TypeSignature Language="C#" Value="public class FilterElement : System.Configuration.ConfigurationElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FilterElement extends System.Configuration.ConfigurationElement" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.Configuration.FilterElement" />
   <TypeSignature Language="VB.NET" Value="Public Class FilterElement&#xA;Inherits ConfigurationElement" />
@@ -61,7 +53,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Configuration.ConfigurationProperty("customType", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
         </Attribute>
       </Attributes>
@@ -96,7 +88,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Configuration.ConfigurationProperty("filter1", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
         </Attribute>
       </Attributes>
@@ -129,7 +121,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Configuration.ConfigurationProperty("filter2", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
         </Attribute>
       </Attributes>
@@ -162,7 +154,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Configuration.ConfigurationProperty("filterData", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
         </Attribute>
       </Attributes>
@@ -178,16 +170,16 @@
 ## Remarks  
  В следующий таблице описана функция <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A> в зависимости от значения <xref:System.ServiceModel.Routing.Configuration.FilterType>.  
   
-|Тип фильтра|Описание:|Значение данных фильтра|Пример фильтра|  
+|Тип фильтра|Описание|Значение данных фильтра|Пример фильтра|  
 |------------------|-----------------|-------------------------|--------------------|  
 |Действие|Использует ActionMessageFilter, входящий в состав WCF.|Действие, по которому производится фильтрация.|\<filter name="action1" filterType="Action" filterData="http://ACTION" />|  
-|Адрес|Использует EndpointAddressMessageFilter, входящий в состав WCF, с параметром ignore host name == true.|Адрес, по которому будет выполняться фильтрация (в поле «Кому»).|\<Имя фильтра = filterType «address1» = «Address» filterData =»http://host/vdir/s.svc/b"/ >|  
-|AddressPrefix|Использует PrefixEndpointAddressMessageFilter, входящий в состав WCF, с параметром ignore host name == true.|Адрес, по которому будет выполняться фильтрация с использованием самого длинного совпадающего префикса.|\<Имя фильтра = filterType «prefix1» = «AddressPrefix» filterData =»http://host"/ >|  
-|StrictAnd|Пользовательский AndMessageFilter, который всегда проверяет оба условия перед возвратом значения.|Параметр filterData не используется. Вместо этого filter1 и filter2 содержат имена соответствующих фильтров сообщений (также упомянутых в таблице), к которым применяется логическая операция «И».|\<Имя фильтра = filterType «и» 1 = filter1 «И» = «address1» filter2 = «action1» / >|  
-|Другой|Определяемый пользователем тип, который расширяет класс MessageFilter и содержит конструктор, принимающий строку.|Атрибут customType является полным именем типа для создаваемого класса. Параметр filterData — это строка, передаваемая в конструктор при создании фильтра.|\<Имя фильтра = filterType «custom1» = «Custom» customType="CustomAssembly.CustomMsgFilter, CustomAssembly» filterData = «Пользовательские данные» / >|  
-|EndpointName|Пользовательский фильтр сообщений, который используется исключительно в службе маршрутизации и фильтрует сообщения по имени конечной точки службы.|Имя конечной точки службы, например: «serviceEndpoint1».  Это должна быть одна из конечных точек, представленных в службе Routing Service.|\<Имя фильтра = filterType «stock1» = «Endpoint» filterData = «SvcEndpoint» / >|  
-|MatchAll|Использует MatchAllMessageFilter, входящий в состав WCF.|Н/Д|\<Имя фильтра = filterType «matchAll1» = «MatchAll» / >|  
-|XPath|Использует XPathMessageFilter, входящий в состав WCF.|Запрос XPath, используемый при сопоставлении сообщений.|\<Имя фильтра = filterType «XPath1» = «XPath» filterData = «//ns:element» / >|  
+|Адрес|Использует EndpointAddressMessageFilter, входящий в состав WCF, с параметром ignore host name == true.|Адрес, по которому будет выполняться фильтрация (в поле «Кому»).|\<filter name="address1" filterType="Address" filterData="http://host/vdir/s.svc/b"  />|  
+|AddressPrefix|Использует PrefixEndpointAddressMessageFilter, входящий в состав WCF, с параметром ignore host name == true.|Адрес, по которому будет выполняться фильтрация с использованием самого длинного совпадающего префикса.|\<filter name="prefix1" filterType="AddressPrefix" filterData="http://host" />|  
+|StrictAnd|Пользовательский AndMessageFilter, который всегда проверяет оба условия перед возвратом значения.|Параметр filterData не используется. Вместо этого filter1 и filter2 содержат имена соответствующих фильтров сообщений (также упомянутых в таблице), к которым применяется логическая операция «И».|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
+|Другой|Определяемый пользователем тип, который расширяет класс MessageFilter и содержит конструктор, принимающий строку.|Атрибут customType является полным именем типа для создаваемого класса. Параметр filterData — это строка, передаваемая в конструктор при создании фильтра.|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
+|EndpointName|Пользовательский фильтр сообщений, который используется исключительно в службе маршрутизации и фильтрует сообщения по имени конечной точки службы.|Имя конечной точки службы, например: «serviceEndpoint1».  Это должна быть одна из конечных точек, представленных в службе Routing Service.|\<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />|  
+|MatchAll|Использует MatchAllMessageFilter, входящий в состав WCF.|Н/Д|\<filter name="matchAll1" filterType="MatchAll" />|  
+|XPath|Использует XPathMessageFilter, входящий в состав WCF.|Запрос XPath, используемый при сопоставлении сообщений.|\<filter name="XPath1" filterType="XPath" filterData="//ns:element" />|  
   
  ]]></format>
         </remarks>
@@ -206,7 +198,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Configuration.ConfigurationProperty("filterType", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsRequired)</AttributeName>
         </Attribute>
       </Attributes>
@@ -232,8 +224,8 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsKey | System.Configuration.ConfigurationPropertyOptions.IsRequired)</AttributeName>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsRequired | System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

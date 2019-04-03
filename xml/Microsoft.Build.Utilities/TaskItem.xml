@@ -1,13 +1,5 @@
 <Type Name="TaskItem" FullName="Microsoft.Build.Utilities.TaskItem">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d866fc1c5e8e71cf2991ae8aad1c69359be44ac0" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51304480" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class TaskItem : MarshalByRefObject, Microsoft.Build.Framework.ITaskItem2" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0bee0834424c197062e7ed229164775e8eb10d88" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57957237" /></Metadata><TypeSignature Language="C#" Value="public sealed class TaskItem : MarshalByRefObject, Microsoft.Build.Framework.ITaskItem2" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TaskItem extends System.MarshalByRefObject implements class Microsoft.Build.Framework.ITaskItem, class Microsoft.Build.Framework.ITaskItem2" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.TaskItem" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TaskItem&#xA;Inherits MarshalByRefObject&#xA;Implements ITaskItem2" />
@@ -37,7 +29,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Определяет отдельный элемент проекта при передаче в задачу.</summary>
+    <summary>Определяет отдельный элемент проекта, передаваемый в задачу.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -116,7 +108,7 @@
       </Parameters>
       <Docs>
         <param name="sourceItem">Копируемый элемент.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.TaskItem" /> с использованием указанного источника <see cref="T:Microsoft.Build.Framework.ITaskItem" />.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.TaskItem" />, используя заданный исходный элемент <see cref="T:Microsoft.Build.Framework.ITaskItem" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,7 +168,7 @@
       <Docs>
         <param name="itemSpec">Спецификация элемента.</param>
         <param name="itemMetadata">Пользовательские метаданные для спецификации элемента.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.TaskItem" /> с помощью указанной строки спецификации элемента и метаданных.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.TaskItem" /> с помощью указанной строки спецификации элемента и ее метаданных.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -294,8 +286,8 @@
         <Parameter Name="metadataName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="metadataName">Имя извлекаемых метаданных.</param>
-        <summary>Извлекает указанные метаданные в элементе.</summary>
+        <param name="metadataName">Имя метаданных, которые необходимо извлечь.</param>
+        <summary>Получает заданные метаданные для элемента.</summary>
         <returns>Объект <see cref="T:System.String" />, представляющий значение метаданных.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -330,9 +322,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе предоставляет элементам задач неограниченный срок аренды.</summary>
-        <returns>
-          <see langword="null" /> для указания неограниченного времени жизни.</returns>
+        <summary>При переопределении в производном классе предоставляет элементам задачи неограниченный срок аренды.</summary>
+        <returns>Значение <see langword="null" /> задает неограниченное время жизни.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -415,8 +406,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает количество метаданных, заданных в элементе.</summary>
-        <value>Объект <see cref="T:System.Int32" />, представляющий количество метаданных, заданных в элементе.</value>
+        <summary>Получает количество метаданных, заданных для элемента.</summary>
+        <value>Объект <see cref="T:System.Int32" />, представляющий количество метаданных, заданных для элемента.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -447,7 +438,7 @@
         <ReturnType>System.Collections.ICollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает имена всех метаданных элемента.</summary>
+        <summary>Получает имена всех метаданных для элемента.</summary>
         <value>Коллекция <see cref="T:System.Collections.ICollection" /> имен метаданных.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -472,7 +463,7 @@
       <Parameters />
       <Docs>
         <summary>Реализация <see cref="T:Microsoft.Build.Framework.ITaskItem2" />, возвращающая клон метаданных для данного объекта. Возвращаемые значения имеют исходную экранированную форму.</summary>
-        <returns>Возвращает клон метаданных с сохраненным экранированием значений.</returns>
+        <returns>Клон метаданных с сохраненным экранированием значений.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -496,7 +487,7 @@
       </ReturnValue>
       <Docs>
         <summary>Реализация <see cref="T:Microsoft.Build.Framework.ITaskItem2" />, получающая или задающая значение Include для элемента.  Для элементов на диске это будет путь файла.</summary>
-        <value>Возвращает включаемое значение для элемента.</value>
+        <value>Значение include для элемента.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -518,12 +509,12 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataName" Type="System.String" />
+        <Parameter Name="metadataName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="metadataName">Запрашиваемые метаданные.</param>
         <summary>Реализация <see cref="T:Microsoft.Build.Framework.ITaskItem2" />, позволяющая запрашивать значения метаданных для элемента.</summary>
-        <returns>Возвращает экранированное значение метаданных.</returns>
+        <returns>Экранированное значение метаданных.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -545,13 +536,13 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataName" Type="System.String" />
-        <Parameter Name="metadataValue" Type="System.String" />
+        <Parameter Name="metadataName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="metadataValue" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="metadataName">Имя метаданных.</param>
         <param name="metadataValue">Значение метаданных.</param>
-        <summary>Реализация <see cref="T:Microsoft.Build.Framework.ITaskItem2" />, позволяющая задавать часть пользовательских метаданных для элемента. Предполагает, что передаваемое значение не является экранированным, и при необходимости экранирует значение для его сохранения.</summary>
+        <summary>Реализация <see cref="T:Microsoft.Build.Framework.ITaskItem2" />, позволяющая задавать часть пользовательских метаданных для элемента. Предполагает, что передаваемое значение не является преобразованным, и при необходимости преобразует значение для его сохранения.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -582,10 +573,9 @@
         <Parameter Name="taskItemToCast" Type="Microsoft.Build.Utilities.TaskItem" />
       </Parameters>
       <Docs>
-        <param name="taskItemToCast">Элемент, с которым выполняется операция.</param>
-        <summary>Разрешает явное приведение типа <see cref="T:Microsoft.Build.Utilities.TaskItem" /> к <see cref="T:System.String" /> и возвращает <see cref="P:Microsoft.Build.Utilities.TaskItem.ItemSpec" /> для данного элемента.</summary>
-        <returns>
-          <see cref="P:Microsoft.Build.Utilities.TaskItem.ItemSpec" /> для элемента.</returns>
+        <param name="taskItemToCast">Элемент, с которым выполняется действие.</param>
+        <summary>Разрешает явное приведение элемента от типа <see cref="T:Microsoft.Build.Utilities.TaskItem" /> к <see cref="T:System.String" /> и возвращает объект <see cref="P:Microsoft.Build.Utilities.TaskItem.ItemSpec" /> для этого элемента.</summary>
+        <returns>Тип <see cref="P:Microsoft.Build.Utilities.TaskItem.ItemSpec" /> для элемента.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[Имеет эквивалентный метод для этого оператора <xref:Microsoft.Build.Utilities.TaskItem.ToString?displayProperty=nameWithType>]]></format>
         </remarks>
@@ -622,7 +612,7 @@
       </Parameters>
       <Docs>
         <param name="metadataName">Имя удаляемых метаданных.</param>
-        <summary>Удаляет указанные метаданные в элементе.</summary>
+        <summary>Удаляет заданные метаданные для элемента.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

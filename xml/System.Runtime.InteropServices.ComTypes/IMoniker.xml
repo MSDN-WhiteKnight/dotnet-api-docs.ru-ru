@@ -1,13 +1,5 @@
 <Type Name="IMoniker" FullName="System.Runtime.InteropServices.ComTypes.IMoniker">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a5183b33a16bc7fe404357bb53f9b2add38c446f" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48614481" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IMoniker" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="353317f92a127a47f364c31104d69bb338f05f9c" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56368499" /></Metadata><TypeSignature Language="C#" Value="public interface IMoniker" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMoniker" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.IMoniker" />
   <TypeSignature Language="VB.NET" Value="Public Interface IMoniker" />
@@ -38,11 +30,14 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.Guid("0000000f-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.5;netstandard-1.6;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netstandard-1.2;netstandard-1.3;netstandard-1.4">
+      <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -53,7 +48,7 @@
 ## Remarks  
  Дополнительные сведения о `IMoniker`, `IPersist`, и `IPersistStream` интерфейсов, см. в библиотеке MSDN.  
   
- Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Дополнительные сведения см. в разделе [как: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
+ Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Для получения дополнительной информации см. [How to: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
   
  ]]></format>
     </remarks>
@@ -100,7 +95,7 @@
         <param name="pbc">Ссылка на интерфейс <see langword="IBindCtx" /> объекта контекстной привязки, используемого в данной операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер слева от данного моникера, если моникер является частью составного моникера.</param>
         <param name="riidResult">Идентификатор интерфейса (IID), выбранного клиентом для установки соединения с объектом, который определен моникером.</param>
-        <param name="ppvResult">При возвращении управления этим методом содержит ссылку на интерфейс, запрошенный параметром <c>riidResult</c>. Этот параметр передается неинициализированным.</param>
+        <param name="ppvResult">При возвращении данного метода содержит ссылку на интерфейс, запрошенный <paramref name="riidResult" />. Этот параметр передается неинициализированным.</param>
         <summary>Использует моникер для привязки к определяемому объекту.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -153,7 +148,7 @@
         <param name="pbc">Ссылка на интерфейс <see langword="IBindCtx" /> объекта контекстной привязки, используемого в процессе операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер слева от данного моникера, если моникер является частью составного моникера.</param>
         <param name="riid">Идентификатор IID запрошенного интерфейса хранилища.</param>
-        <param name="ppvObj">При возвращении управления из этого метода содержит ссылку на интерфейс, запрошенный в параметре <c>riid</c>. Этот параметр передается неинициализированным.</param>
+        <param name="ppvObj">При возвращении данного метода содержит ссылку на интерфейс, запрошенный <paramref name="riid" />. Этот параметр передается неинициализированным.</param>
         <summary>Возвращает указатель интерфейса на хранилище, в котором содержится объект, определенный моникером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -202,7 +197,7 @@
       </Parameters>
       <Docs>
         <param name="pmkOther">Ссылка на интерфейс <see langword="IMoniker" /> другого моникера, сравниваемого с данным моникером для выявления общего префикса.</param>
-        <param name="ppmkPrefix">При возвращении из этого метода содержит моникер, который является общим префиксом текущего моникера и <c>pmkOther</c>. Этот параметр передается неинициализированным.</param>
+        <param name="ppmkPrefix">При возвращении данного метода содержит моникер, который является общим префиксом текущего моникера и <paramref name="pmkOther" />. Этот параметр передается неинициализированным.</param>
         <summary>Создает новый моникер на основании общего префикса, который данный моникер использует совместно с другим моникером.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -252,7 +247,7 @@
       </Parameters>
       <Docs>
         <param name="pmkRight">Ссылка на интерфейс <see langword="IMoniker" /> моникера для добавления в конец данного моникера.</param>
-        <param name="fOnlyIfNotGeneric">Значение <see langword="true" /> показывает, что вызывающему объекту требуется неуниверсальное объединение. Операция продолжается только в том случае, если параметр <c>pmkRight</c> является классом моникера, с которым текущий моникер может быть объединен каким-либо способом, кроме образования универсального объединения. Значение <see langword="false" /> показывает, что при необходимости метод может создать универсальное объединение.</param>
+        <param name="fOnlyIfNotGeneric">Значение <see langword="true" /> показывает, что вызывающему объекту требуется неуниверсальное объединение. Операция продолжается только в том случае, если параметр <paramref name="pmkRight" /> является классом моникера, с которым текущий моникер может быть объединен каким-либо способом, кроме образования универсального объединения. Значение <see langword="false" /> показывает, что при необходимости метод может создать универсальное объединение.</param>
         <param name="ppmkComposite">При возвращении данного метода содержит ссылку на итоговый составной моникер. Этот параметр передается неинициализированным.</param>
         <summary>Объединяет текущий моникер с другим, создавая составной моникер.</summary>
         <remarks>
@@ -886,8 +881,8 @@
         <param name="pbc">Ссылка на контекст привязки, используемый при выполнении данной операции привязки.</param>
         <param name="pmkToLeft">Ссылка на моникер, созданный из отображаемого имени до данной точки.</param>
         <param name="pszDisplayName">Ссылка на строку, содержащую оставшуюся часть анализируемого отображаемого имени.</param>
-        <param name="pchEaten">При возвращении управления из этого метода содержит число символов, использованных при анализе <c>pszDisplayName</c>. Этот параметр передается неинициализированным.</param>
-        <param name="ppmkOut">При возвращении управления из этого метода содержит ссылку на моникер, созданный на основе <c>pszDisplayName</c>. Этот параметр передается неинициализированным.</param>
+        <param name="pchEaten">При возвращении данного метода содержит число знаков, использованных при анализе <paramref name="pszDisplayName" />. Этот параметр передается неинициализированным.</param>
+        <param name="ppmkOut">При возвращении данного метода содержит ссылку на моникер, построенный из <paramref name="pszDisplayName" />. Этот параметр передается неинициализированным.</param>
         <summary>Считывает столько знаков указанного отображаемого имени, сколько может воспринять <see cref="M:System.Runtime.InteropServices.ComTypes.IMoniker.ParseDisplayName(System.Runtime.InteropServices.ComTypes.IBindCtx,System.Runtime.InteropServices.ComTypes.IMoniker,System.String,System.Int32@,System.Runtime.InteropServices.ComTypes.IMoniker@)" />, и создает моникер, соответствующий считанной части.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

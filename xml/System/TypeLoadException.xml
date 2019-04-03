@@ -1,13 +1,5 @@
 <Type Name="TypeLoadException" FullName="System.TypeLoadException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a30d76ee299b73bc00d555b4e019949c20191e7f" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51322433" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class TypeLoadException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a338a6712a390bd727ffb68be7537c6052dae600" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57932186" /></Metadata><TypeSignature Language="C#" Value="public class TypeLoadException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TypeLoadException extends System.SystemException implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.TypeLoadException" />
   <TypeSignature Language="VB.NET" Value="Public Class TypeLoadException&#xA;Inherits SystemException" />
@@ -46,12 +38,12 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Исключение, которое выдается в случае сбоя при загрузке типа.</summary>
+    <summary>Исключение, выбрасываемое при сбоях во время загрузки типов.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -218,8 +210,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
@@ -280,7 +272,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="inner">Исключение, которое является причиной текущего исключения. Если значение параметра <c>inner</c> не равно <see langword="null" />, текущее исключение возникает в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="inner">Исключение, которое является причиной текущего исключения. Если значение параметра <paramref name="inner" /> не равно <see langword="null" />, текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.TypeLoadException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -346,13 +338,13 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
         <param name="context">Контекстные сведения об источнике или назначении.</param>
-        <summary>Устанавливает объект <see cref="T:System.Runtime.Serialization.SerializationInfo" /> с именем класса, именем метода, идентификатором ресурса и дополнительными сведениями об исключении.</summary>
+        <summary>Задает имя класса, имя метода, идентификатор ресурса и дополнительные сведения об исключении для объекта <see cref="T:System.Runtime.Serialization.SerializationInfo" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -417,7 +409,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает сообщение об ошибке для данного исключения.</summary>
+        <summary>Возвращает сообщение об ошибке для данного исключения.</summary>
         <value>Строка сообщения об ошибке.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -472,7 +464,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает полное имя типа, вызвавшего исключение.</summary>
+        <summary>Возвращает полное имя типа, вызывающего исключение.</summary>
         <value>Полное имя типа.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -486,11 +478,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="P:System.TypeLoadException.TypeName" /> в производном классе, не забудьте вызвать базовый класс <see cref="P:System.TypeLoadException.TypeName" /> свойство.  
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="P:System.TypeLoadException.TypeName" /> в производном классе, не забудьте вызвать базовый класс <see cref="P:System.TypeLoadException.TypeName" /> свойство.  
   
-Это свойство доступно только для чтения.</para>
-        </block>
+Это свойство доступно только для чтения.</para></block>
       </Docs>
     </Member>
   </Members>

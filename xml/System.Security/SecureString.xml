@@ -1,13 +1,5 @@
 <Type Name="SecureString" FullName="System.Security.SecureString">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b39a3a01136b117ac95789e023990670df7cd10d" />
-    <Meta Name="ms.sourcegitcommit" Value="996ba67625b61917bcf75bfefe6dcb016019c2d8" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/02/2018" />
-    <Meta Name="ms.locfileid" Value="50965296" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class SecureString : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7b148e780cf09e6100de24389ca119039ce3229d" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58713707" /></Metadata><TypeSignature Language="C#" Value="public sealed class SecureString : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecureString extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.SecureString" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SecureString&#xA;Implements IDisposable" />
@@ -26,6 +18,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -47,7 +40,7 @@
   
 ## Remarks  
 
->  [!IMPORTANT]
+> [!IMPORTANT]
 >  Мы не рекомендуем использовать `SecureString` класса для разработки новых приложений. Дополнительные сведения см. в разделе [SecureString не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0001.md) на сайте GitHub.
 
  <xref:System.Security.SecureString> имеет строковый тип, предоставляющий мер безопасности. Предпринимается попытка не хранились конфиденциальные строк в памяти процесса в виде обычного текста.  (Тем не менее, ограничения, см. в разделе [насколько безопасен SecureString?](#HowSecure) разделе.) Значение экземпляра <xref:System.Security.SecureString> автоматически защищены при помощи механизм, который поддерживается используемой платформой при инициализации экземпляра или изменения значения. Приложение может отображать неизменяемый экземпляр и предотвратить его дальнейшее изменение путем вызова <xref:System.Security.SecureString.MakeReadOnly%2A> метод.  
@@ -151,7 +144,7 @@
   
 -   Поскольку Windows не предоставляет реализацию защищенной строки на уровне операционной системы, в .NET Framework по-прежнему имеется для преобразования значения защищенной строки в представление в виде обычного текста для его использования.  
   
--   Каждый раз, когда значение защищенной строки изменяется методами, такие как <xref:System.Security.SecureString.AppendChar%2A> или <xref:System.Security.SecureString.RemoveAt%2A>, он должен быть расшифрован (т. е. преобразованное обратно в обычный текст), изменения и снова зашифровываются.  
+-   Каждый раз, когда значение защищенной строки изменяется методами, такие как <xref:System.Security.SecureString.AppendChar%2A> или <xref:System.Security.SecureString.RemoveAt%2A>, он должен быть расшифрован (которое преобразуется обратно в обычный текст), изменения и снова зашифровываются.  
   
 -   Если защищенная строка используется в вызове взаимодействия, оно должно быть преобразовано в строку ANSI, строки Юникода или двоичную строку (BSTR). Дополнительные сведения см. в разделе [SecureString и взаимодействия](#interop) раздел.  
   
@@ -209,6 +202,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -265,6 +259,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -272,7 +267,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -285,7 +280,7 @@
       </Parameters>
       <Docs>
         <param name="value">Указатель на массив объектов <see cref="T:System.Char" />.</param>
-        <param name="length">Число элементов массива <c>value</c>, включаемых в новый экземпляр.</param>
+        <param name="length">Число элементов массива <paramref name="value" />, включаемых в новый экземпляр.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.SecureString" /> из подмассива объектов <see cref="T:System.Char" />.  
   
 Этот конструктор несовместим с CLS. CLS-совместимая альтернатива — <see cref="M:System.Security.SecureString.#ctor" />.</summary>
@@ -307,9 +302,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="value" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="length" /> меньше нуля или больше 65 536.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="length" /> меньше нуля или больше 65 536.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Произошла ошибка при защите значения этой защищенной строки или снятии с него защиты.</exception>
         <exception cref="T:System.NotSupportedException">Эта операция не поддерживается этой платформой.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Требует полного доверия для непосредственного вызывающего объекта. Этот член не может использоваться частично доверенным или прозрачным кодом.</permission>
@@ -336,6 +330,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -343,7 +338,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netstandard-2.1">
           <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -409,6 +404,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -469,6 +465,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -525,6 +522,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -548,7 +546,7 @@
 ## Remarks  
  <xref:System.Security.SecureString.Dispose%2A> Метод записывает двоичных нулей на выделенную память, содержащий значение данного объекта <xref:System.Security.SecureString> объекта, а затем освобождает выделенную память.  
   
- Дополнительные сведения см. в разделе [мусора](~/docs/standard/garbage-collection/index.md).  
+ Дополнительные сведения см. в разделе [Сборка мусора](~/docs/standard/garbage-collection/index.md).  
   
  ]]></format>
         </remarks>
@@ -575,6 +573,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -582,7 +581,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netstandard-2.1">
           <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -597,7 +596,7 @@
         <Parameter Name="c" Type="System.Char" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс позиции вставки параметра <c>c</c>.</param>
+        <param name="index">Индекс позиции вставки параметра <paramref name="c" />.</param>
         <param name="c">Вставляемый знак.</param>
         <summary>Вставляет знак в заданную индексом позицию защищенной строки.</summary>
         <remarks>
@@ -623,7 +622,7 @@
         <exception cref="T:System.InvalidOperationException">Данная защищенная строка доступна только для чтения.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="index" /> менее нуля или более длины защищенной строки.  
   
-- или - 
+-или- 
 При выполнении этой операции длина защищенной строки превысит 65 536 символов.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Произошла ошибка при защите значения этой защищенной строки или снятии с него защиты.</exception>
       </Docs>
@@ -649,6 +648,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -700,6 +700,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -751,6 +752,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -814,6 +816,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -821,7 +824,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netstandard-2.1">
           <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -889,6 +892,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -896,7 +900,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netstandard-2.1">
           <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">

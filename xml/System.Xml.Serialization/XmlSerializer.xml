@@ -1,13 +1,5 @@
 <Type Name="XmlSerializer" FullName="System.Xml.Serialization.XmlSerializer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1ffc8b240b0bdf4897a75ee1815e85352354016a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48595488" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class XmlSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="58b038fa83cdad65b000a5da037e4866dbbf59fb" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58693431" /></Metadata><TypeSignature Language="C#" Value="public class XmlSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSerializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializer" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlSerializer" />
@@ -29,6 +21,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -50,7 +43,7 @@
  Для передачи данных между объектами и XML требуется сопоставления из конструкций языка программирования, в XML-схему и из схемы XML для конструкций языка программирования. <xref:System.Xml.Serialization.XmlSerializer> И связанные инструменты, такие как Xsd.exe предоставляют мост между этими двумя технологиями, во время разработки так и средой выполнения. Во время разработки используйте Xsd.exe для создания документа схемы XML (XSD-файл) из пользовательских классов или для создания классов из данной схемы. В любом случае классы помечены атрибутом пользовательских атрибутов, чтобы дать указание <xref:System.Xml.Serialization.XmlSerializer> сопоставление между системой схемы XML и среда CLR. Во время выполнения экземпляров классов может быть сериализован в XML-документов, которые следуют из данной схемы. Аналогичным образом эти XML-документы могут быть десериализованы в объекты этапа выполнения. Обратите внимание на то, что схема XML является необязательным и не требуются во время разработки или среды выполнения.  
   
 ## <a name="controlling-generated-xml"></a>Управление сгенерированными XML.  
- Для управления созданным XML, можно применить специальные атрибуты к классам и членам. Например, чтобы указать другое имя элемента XML, применить <xref:System.Xml.Serialization.XmlElementAttribute> открытое поле или свойство, а также набора <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> свойство. Полный список схожих атрибутов, см. в разделе [атрибуты управления сериализацией XML](http://msdn.microsoft.com/library/414b820f-a696-4206-b576-2711d85490c7). Вы также можете реализовать <xref:System.Xml.Serialization.IXmlSerializable> интерфейс для управления выводом XML.  
+ Для управления созданным XML, можно применить специальные атрибуты к классам и членам. Например, чтобы указать другое имя элемента XML, применить <xref:System.Xml.Serialization.XmlElementAttribute> открытое поле или свойство, а также набора <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> свойство. Полный список схожих атрибутов, см. в разделе [атрибуты управления сериализацией XML](https://msdn.microsoft.com/library/414b820f-a696-4206-b576-2711d85490c7). Вы также можете реализовать <xref:System.Xml.Serialization.IXmlSerializable> интерфейс для управления выводом XML.  
   
  Если сгенерированные XML должны удовлетворять требованиям раздела 5 документа широкий консорциума World (www.w3.org), «Simple Object Access Protocol (SOAP) 1.1», то необходимо создать <xref:System.Xml.Serialization.XmlSerializer> с <xref:System.Xml.Serialization.XmlTypeMapping>. Для последующего управления закодированное SOAP XML, используйте атрибуты, указанные в [атрибуты что управления сериализацией с кодировкой SOAP](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
@@ -138,7 +131,7 @@ public class OptionalOrder
 ```  
   
 ## <a name="overriding-default-serialization"></a>Переопределение сериализации по умолчанию  
- Также можно переопределить сериализацию любой набор объектов и их полей и свойств путем создания одного из соответствующих атрибутов и его добавления к экземпляру <xref:System.Xml.Serialization.XmlAttributes> класса. Переопределение сериализации таким способом имеет два применения: во-первых, можно управлять и дополнять сериализацию объектов в библиотеке DLL, даже если у вас нет доступа к источнику; Во-вторых можно создать один набор сериализуемых классов, но сериализации объектов несколькими способами. Дополнительные сведения см. в разделе <xref:System.Xml.Serialization.XmlAttributeOverrides> класс и [как: элемент управления сериализации производные классы](http://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84).  
+ Также можно переопределить сериализацию любой набор объектов и их полей и свойств путем создания одного из соответствующих атрибутов и его добавления к экземпляру <xref:System.Xml.Serialization.XmlAttributes> класса. Переопределение сериализации таким способом имеет два применения: во-первых, можно управлять и дополнять сериализацию объектов в библиотеке DLL, даже если у вас нет доступа к источнику; Во-вторых можно создать один набор сериализуемых классов, но сериализации объектов несколькими способами. Дополнительные сведения см. в разделе <xref:System.Xml.Serialization.XmlAttributeOverrides> класс и [как: Управление сериализацией производных классов](https://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84).  
   
  Чтобы сериализовать объект, вызовите <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> метод. Чтобы десериализовать объект, вызовите <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> метод.  
   
@@ -177,11 +170,9 @@ if (ser == null)
     ser = new XmlSerializer(typeof(MyClass), myRoot);  
     // Cache the serializer.  
     serializers[key] = ser;  
-}  
-else  
-{  
-    // Use the serializer to serialize, or deserialize.  
-}  
+}
+
+// Use the serializer to serialize or deserialize.
 ```  
   
 ```vb  
@@ -203,9 +194,9 @@ If ser Is Nothing Then
     ser = New XmlSerializer(GetType([MyClass]), myRoot)  
     ' Cache the serializer.  
     serializers(key) = ser  
-Else   
-    ' Use the serializer to serialize, or deserialize.  
 End If  
+
+' Use the serializer to serialize or deserialize.
 ```  
   
 ## <a name="serialization-of-arraylist-and-generic-list"></a>Сериализация ArrayList и универсального списка  
@@ -216,7 +207,7 @@ End If
 -   Массивы <xref:System.Collections.Generic.List%601>  
   
 ## <a name="serialization-of-enumerations-of-unsigned-long"></a>Сериализация перечисляемых типов Long без знака  
- <xref:System.Xml.Serialization.XmlSerializer> Не может быть создан для сериализации перечисление, если выполняются следующие условия: перечисление имеет тип unsigned long (`ulong` в C#) и содержит любые члены со значением, размер которых превышает 9223372036854775807. Например, ниже не может быть сериализован.  
+ <xref:System.Xml.Serialization.XmlSerializer> Не может быть создан для сериализации перечисление, если выполняются следующие условия: Перечисление имеет тип unsigned long (`ulong` в C#) и содержит любые члены со значением, размер которых превышает 9223372036854775807. Например, ниже не может быть сериализован.  
   
 ```  
 public enum LargeNumbers: ulong  
@@ -251,9 +242,9 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
     <related type="Article" href="~/docs/standard/serialization/controlling-xml-serialization-using-attributes.md">Управление сериализацией XML с использованием атрибутов</related>
     <related type="Article" href="~/docs/standard/serialization/examples-of-xml-serialization.md">Примеры сериализации XML</related>
     <related type="Article" href="~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md">XML Schema Definition Tool (Xsd.exe)</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84">Практическое руководство. Управление сериализацией производных классов</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/90fda55c-7730-41e9-bc4b-6423a4b920af">&lt;dateTimeSerialization&gt;элемент</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/d129d10c-3eb7-45d9-8098-5fa853825e47">Элемент &lt;xmlSerializer&gt;</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84">Практическое руководство. Управление сериализацией производных классов</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/90fda55c-7730-41e9-bc4b-6423a4b920af">&lt;dateTimeSerialization&gt;элемент</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/d129d10c-3eb7-45d9-8098-5fa853825e47">Элемент &lt;xmlSerializer&gt;</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -289,6 +280,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -322,6 +314,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -332,7 +325,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
@@ -381,6 +374,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -391,11 +385,10 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <AssemblyName>System.Xml.Serialization</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="xmlTypeMapping" Type="System.Xml.Serialization.XmlTypeMapping" />
+        <Parameter Name="xmlTypeMapping" Type="System.Xml.Serialization.XmlTypeMapping" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="xmlTypeMapping">
-          <see cref="T:System.Xml.Serialization.XmlTypeMapping" />, сопоставляющий один тип другому.</param>
+        <param name="xmlTypeMapping"><see cref="T:System.Xml.Serialization.XmlTypeMapping" />, сопоставляющий один тип другому.</param>
         <summary>Инициализирует экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" /> с помощью объекта, сопоставляющего один тип с другим.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -445,13 +438,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="defaultNamespace" Type="System.String" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
@@ -500,6 +494,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -510,8 +505,8 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="extraTypes" Type="System.Type[]" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="extraTypes" Type="System.Type[]" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
@@ -567,13 +562,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип сериализуемого объекта.</param>
@@ -628,18 +624,18 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
-        <param name="root">
-          <see cref="T:System.Xml.Serialization.XmlRootAttribute" />, представляющий свойство корневого XML-элемента.</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" />, представляющий свойство корневого XML-элемента.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" />, который может сериализовать объекты заданного типа в XML-документы, а также десериализовать XML-документ в объект заданного типа. Также указывает класс для использования в качестве корневого XML-элемента.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -689,6 +685,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -699,19 +696,17 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
-        <Parameter Name="extraTypes" Type="System.Type[]" />
-        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
-        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" Index="1" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="extraTypes" Type="System.Type[]" Index="2" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" Index="3" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="defaultNamespace" Type="System.String" Index="4" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
-        <param name="overrides">
-          <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <c>type</c>.</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <paramref name="type" />.</param>
         <param name="extraTypes">Массив <see cref="T:System.Type" /> дополнительных типов объектов для сериализации.</param>
-        <param name="root">
-          <see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
         <param name="defaultNamespace">Пространство имен по умолчанию для всех XML-элементов в XML-документе.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" />, который может сериализовать объекты типа <see cref="T:System.Object" /> в экземпляры XML-документа, а также десериализовать экземпляры XML-документа в объекты типа <see cref="T:System.Object" />. Каждый сериализуемый объект может сам содержать экземпляры классов, которые данная перегрузка переопределяет с другими классами. Данная перегрузка также указывает пространство имен по умолчанию для всех XML-элементов и класс для использования в качестве корневого XML-элемента.</summary>
         <remarks>
@@ -762,6 +757,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -777,20 +773,18 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
-        <Parameter Name="extraTypes" Type="System.Type[]" />
-        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
-        <Parameter Name="defaultNamespace" Type="System.String" />
-        <Parameter Name="location" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="extraTypes" Type="System.Type[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="defaultNamespace" Type="System.String" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="location" Type="System.String" Index="5" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
-        <param name="overrides">
-          <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <c>type</c>.</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <paramref name="type" />.</param>
         <param name="extraTypes">Массив <see cref="T:System.Type" /> дополнительных типов объектов для сериализации.</param>
-        <param name="root">
-          <see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
         <param name="defaultNamespace">Пространство имен по умолчанию для всех XML-элементов в XML-документе.</param>
         <param name="location">Размещение типов.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" />, который может сериализовать объекты типа <see cref="T:System.Object" /> в экземпляры XML-документа, а также десериализовать экземпляры XML-документа в объекты типа <see cref="T:System.Object" />. Каждый сериализуемый объект может сам содержать экземпляры классов, которые данная перегрузка переопределяет с другими классами. Данная перегрузка также указывает пространство имен по умолчанию для всех XML-элементов и класс для использования в качестве корневого XML-элемента.</summary>
@@ -825,21 +819,19 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
-        <Parameter Name="extraTypes" Type="System.Type[]" />
-        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
-        <Parameter Name="defaultNamespace" Type="System.String" />
-        <Parameter Name="location" Type="System.String" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="extraTypes" Type="System.Type[]" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="defaultNamespace" Type="System.String" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="location" Type="System.String" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="6" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип объекта, который может быть сериализован <see cref="T:System.Xml.Serialization.XmlSerializer" />.</param>
-        <param name="overrides">
-          <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <c>type</c>.</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />, расширяющий или переопределяющий поведение класса, задается в параметре <paramref name="type" />.</param>
         <param name="extraTypes">Массив <see cref="T:System.Type" /> дополнительных типов объектов для сериализации.</param>
-        <param name="root">
-          <see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" />, указывающий свойство корневого XML-элемента.</param>
         <param name="defaultNamespace">Пространство имен по умолчанию для всех XML-элементов в XML-документе.</param>
         <param name="location">Размещение типов.</param>
         <param name="evidence">Экземпляр класса <see cref="T:System.Security.Policy.Evidence" />, содержащий учетные данные, требуемые для доступа к типам.</param>
@@ -877,6 +869,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -885,14 +878,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="xmlReader">
-          <see cref="T:System.Xml.XmlReader" />, указывающий на документ для десериализации.</param>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />, указывающий на документ для десериализации.</param>
         <summary>Возвращает значение, указывающее возможность выполнения данным <see cref="T:System.Xml.Serialization.XmlSerializer" /> десериализации XML-документа.</summary>
-        <returns>
-          <see langword="true" />, если <see cref="T:System.Xml.Serialization.XmlSerializer" /> может выполнить десериализацию объекта, на который указывает <see cref="T:System.Xml.XmlReader" />, в противном случае <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <see cref="T:System.Xml.Serialization.XmlSerializer" /> может выполнить десериализацию объекта, на который указывает <see cref="T:System.Xml.XmlReader" />, в противном случае <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -926,6 +917,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -964,6 +956,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1017,6 +1010,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1025,14 +1019,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="stream" Type="System.IO.Stream" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="stream">
-          <see cref="T:System.IO.Stream" />, содержащий XML-документ для десериализации.</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />, содержащий XML-документ для десериализации.</param>
         <summary>Десериализует XML-документ, содержащийся указанным <see cref="T:System.IO.Stream" />.</summary>
-        <returns>
-          <see cref="T:System.Object" /> десериализуется.</returns>
+        <returns><see cref="T:System.Object" /> десериализуется.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1101,6 +1093,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1109,14 +1102,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="textReader" Type="System.IO.TextReader" />
+        <Parameter Name="textReader" Type="System.IO.TextReader" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="textReader">
-          <see cref="T:System.IO.TextReader" />, содержащий XML-документ для десериализации.</param>
+        <param name="textReader"><see cref="T:System.IO.TextReader" />, содержащий XML-документ для десериализации.</param>
         <summary>Десериализует XML-документ, содержащийся указанным <see cref="T:System.IO.TextReader" />.</summary>
-        <returns>
-          <see cref="T:System.Object" /> десериализуется.</returns>
+        <returns><see cref="T:System.Object" /> десериализуется.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1173,6 +1164,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1186,11 +1178,10 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Xml.Serialization.XmlSerializationReader" />
+        <Parameter Name="reader" Type="System.Xml.Serialization.XmlSerializationReader" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="reader">
-          <see cref="T:System.Xml.Serialization.XmlSerializationReader" />, содержащий XML-документ для десериализации.</param>
+        <param name="reader"><see cref="T:System.Xml.Serialization.XmlSerializationReader" />, содержащий XML-документ для десериализации.</param>
         <summary>Десериализует XML-документ, содержащийся указанным <see cref="T:System.Xml.Serialization.XmlSerializationReader" />.</summary>
         <returns>Десериализованный объект.</returns>
         <remarks>To be added.</remarks>
@@ -1220,6 +1211,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1233,14 +1225,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="xmlReader">
-          <see cref="T:System.Xml.XmlReader" />, содержащий XML-документ для десериализации.</param>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />, содержащий XML-документ для десериализации.</param>
         <summary>Десериализует XML-документ, содержащийся указанным <see cref="T:System.Xml.XmlReader" />.</summary>
-        <returns>
-          <see cref="T:System.Object" /> десериализуется.</returns>
+        <returns><see cref="T:System.Object" /> десериализуется.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1293,6 +1283,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1306,12 +1297,11 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
-        <Parameter Name="encodingStyle" Type="System.String" />
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="encodingStyle" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="xmlReader">
-          <see cref="T:System.Xml.XmlReader" />, содержащий XML-документ для десериализации.</param>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />, содержащий XML-документ для десериализации.</param>
         <param name="encodingStyle">Стиль кодирования сериализованного XML.</param>
         <summary>Десериализует XML-документ, содержащийся указанным <see cref="T:System.Xml.XmlReader" />, и стиль кодирования.</summary>
         <returns>Десериализованный объект.</returns>
@@ -1357,6 +1347,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1375,16 +1366,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
-        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" />
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="xmlReader">
-          <see cref="T:System.Xml.XmlReader" />, содержащий документ для десериализации.</param>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />, содержащий документ для десериализации.</param>
         <param name="events">Экземпляр класса <see cref="T:System.Xml.Serialization.XmlDeserializationEvents" />.</param>
         <summary>Десериализует XML-документ, содержащийся в указанном <see cref="T:System.Xml.XmlReader" />, и позволяет переопределять события, происходящие во время десериализации.</summary>
-        <returns>
-          <see cref="T:System.Object" /> десериализуется.</returns>
+        <returns><see cref="T:System.Object" /> десериализуется.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1411,6 +1400,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1424,9 +1414,9 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
-        <Parameter Name="encodingStyle" Type="System.String" />
-        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" />
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="encodingStyle" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="xmlReader">Экземпляр класса <see cref="T:System.Xml.XmlReader" />, используемый для считывания документа.</param>
@@ -1472,6 +1462,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1490,13 +1481,13 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="mappings">Массив <see cref="T:System.Xml.Serialization.XmlTypeMapping" />, сопоставляющий один тип с другим.</param>
         <summary>Возвращает массив объектов <see cref="T:System.Xml.Serialization.XmlSerializer" />, созданный из массива объектов <see cref="T:System.Xml.Serialization.XmlTypeMapping" />.</summary>
         <returns>Массив объектов <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>Рекомендуется для вызывающих объектов для кэширования возвращенный сериализатор, при наличии повторные вызовы этого метода.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromMappings">
@@ -1530,8 +1521,8 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="mappings">Массив объектов <see cref="T:System.Xml.Serialization.XmlMapping" /> для сопоставления одного типа с другим.</param>
@@ -1557,6 +1548,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1570,13 +1562,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="type" Type="System.Type" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="mappings">Массив объектов <see cref="T:System.Xml.Serialization.XmlMapping" />.</param>
-        <param name="type">
-          <see cref="T:System.Type" /> десериализованного объекта.</param>
+        <param name="type"><see cref="T:System.Type" /> десериализованного объекта.</param>
         <summary>Возвращает экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" /> из указанных сопоставлений.</summary>
         <returns>Экземпляр класса <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
         <remarks>To be added.</remarks>
@@ -1606,6 +1597,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1614,7 +1606,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="types" Type="System.Type[]" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="types">Массив объектов <see cref="T:System.Type" />.</param>
@@ -1624,7 +1616,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A> Метод позволяет эффективно создавать массив <xref:System.Xml.Serialization.XmlSerializer> объекты для обработки массива <xref:System.Type> объектов.  
+ <xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A> Метод позволяет эффективно создавать массив <xref:System.Xml.Serialization.XmlSerializer> объекты для обработки массива <xref:System.Type> объектов. Тем не менее рекомендуется для вызывающих объектов для кэширования возвращенного сериализаторов, при наличии повторные вызовы этого метода.
   
    
   
@@ -1690,8 +1682,8 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="types" Type="System.Type[]" />
-        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+        <Parameter Name="types" Type="System.Type[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="types">Коллекция типов.</param>
@@ -1727,17 +1719,16 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="types" Type="System.Type[]" />
-        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
-        <Parameter Name="parameters" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="types" Type="System.Type[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="parameters" Type="System.CodeDom.Compiler.CompilerParameters" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="types">Массив типа <see cref="T:System.Type" />, содержащий объекты для сериализации и десериализации данных.</param>
         <param name="mappings">Массив типа <see cref="T:System.Xml.Serialization.XmlMapping" />, сопоставляющего данные XML с данными типа.</param>
         <param name="parameters">Экземпляр класса <see cref="T:System.CodeDom.Compiler.CompilerParameters" />, представляющий параметры, используемые для вызова компилятора.</param>
         <summary>Возвращает сборку, содержащую клиентские сериализаторы, используемые для сериализации и десериализации заданных типов или типов с помощью указанных сопоставлений, а также настроек и параметров компилятора.</summary>
-        <returns>
-          <see cref="T:System.Reflection.Assembly" />, содержащий специальные версии <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
+        <returns><see cref="T:System.Reflection.Assembly" />, содержащий специальные версии <see cref="T:System.Xml.Serialization.XmlSerializer" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1777,6 +1768,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1795,7 +1787,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="type">Десериализуемый <see cref="T:System.Type" />.</param>
@@ -1829,6 +1821,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -1842,8 +1835,8 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="defaultNamespace" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="type">Интересуемый <see cref="T:System.Type" />.</param>
@@ -1895,6 +1888,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1908,12 +1902,11 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="stream" Type="System.IO.Stream" />
-        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="stream" Type="System.IO.Stream" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="stream">
-          <see cref="T:System.IO.Stream" />, используемый для записи XML-документа.</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
         <summary>Сериализует указанный <see cref="T:System.Object" /> и записывает XML-документ в файл с помощью заданного <see cref="T:System.IO.Stream" />.</summary>
         <remarks>
@@ -1982,6 +1975,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -1995,12 +1989,11 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="textWriter" Type="System.IO.TextWriter" />
-        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="textWriter" Type="System.IO.TextWriter" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="textWriter">
-          <see cref="T:System.IO.TextWriter" />, используемый для записи XML-документа.</param>
+        <param name="textWriter"><see cref="T:System.IO.TextWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
         <summary>Сериализует указанный <see cref="T:System.Object" /> и записывает XML-документ в файл с помощью заданного <see cref="T:System.IO.TextWriter" />.</summary>
         <remarks>
@@ -2058,6 +2051,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2071,13 +2065,12 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="writer" Type="System.Xml.Serialization.XmlSerializationWriter" />
+        <Parameter Name="o" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="writer" Type="System.Xml.Serialization.XmlSerializationWriter" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
-        <param name="writer">
-          <see cref="T:System.Xml.Serialization.XmlSerializationWriter" />, используемый для записи XML-документа.</param>
+        <param name="writer"><see cref="T:System.Xml.Serialization.XmlSerializationWriter" />, используемый для записи XML-документа.</param>
         <summary>Сериализует указанный <see cref="T:System.Object" /> и записывает XML-документ в файл с помощью заданного <see cref="T:System.Xml.Serialization.XmlSerializationWriter" />.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Предпринимаются любые попытки вызова данного метода, когда метод не переопределен в классе-потомке.</exception>
@@ -2106,6 +2099,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -2119,12 +2113,11 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
-        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">
-          <see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
         <summary>Сериализует указанный <see cref="T:System.Object" /> и записывает XML-документ в файл с помощью заданного <see cref="T:System.Xml.XmlWriter" />.</summary>
         <remarks>
@@ -2183,6 +2176,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -2191,16 +2185,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="stream" Type="System.IO.Stream" />
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+        <Parameter Name="stream" Type="System.IO.Stream" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" Index="2" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="stream">
-          <see cref="T:System.IO.Stream" />, используемый для записи XML-документа.</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
-        <param name="namespaces">
-          <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
         <summary>Сериализует указанный <see cref="T:System.Object" /> и записывает XML-документ в файл с помощью заданного <see cref="T:System.IO.Stream" />, ссылающегося на заданные пространства имен.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2267,6 +2259,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -2275,16 +2268,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="textWriter" Type="System.IO.TextWriter" />
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+        <Parameter Name="textWriter" Type="System.IO.TextWriter" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" Index="2" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="textWriter">
-          <see cref="T:System.IO.TextWriter" />, используемый для записи XML-документа.</param>
+        <param name="textWriter"><see cref="T:System.IO.TextWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
-        <param name="namespaces">
-          <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, содержащий пространства имен для сгенерированного XML-документа.</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, содержащий пространства имен для сгенерированного XML-документа.</param>
         <summary>Сериализует указанный объект <see cref="T:System.Object" />, записывает XML-документ в файл с помощью заданного <see cref="T:System.IO.TextWriter" /> и ссылается на заданные пространства имен.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2347,6 +2338,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Serialization</AssemblyName>
@@ -2360,16 +2352,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" Index="2" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">
-          <see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Экземпляр <see cref="T:System.Object" /> для сериализации.</param>
-        <param name="namespaces">
-          <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
         <summary>Сериализует указанный объект <see cref="T:System.Object" />, записывает XML-документ в файл с помощью заданного <see cref="T:System.Xml.XmlWriter" /> и ссылается на заданные пространства имен.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2420,6 +2410,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2438,17 +2429,15 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
-        <Parameter Name="encodingStyle" Type="System.String" />
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="encodingStyle" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">
-          <see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Объект для сериализации.</param>
-        <param name="namespaces">
-          <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />, на который ссылается объект.</param>
         <param name="encodingStyle">Стиль кодирования сериализованного XML.</param>
         <summary>Сериализует указанный объект, записывает XML-документ в файл с помощью заданного <see cref="T:System.Xml.XmlWriter" /> и ссылается на заданные пространства имен и стиль кодирования.</summary>
         <remarks>
@@ -2492,6 +2481,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2505,15 +2495,14 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
-        <Parameter Name="o" Type="System.Object" />
-        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
-        <Parameter Name="encodingStyle" Type="System.String" />
-        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="o" Type="System.Object" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="encodingStyle" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="id" Type="System.String" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">
-          <see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" />, используемый для записи XML-документа.</param>
         <param name="o">Объект для сериализации.</param>
         <param name="namespaces">Экземпляр <see langword="XmlSerializaerNamespaces" />, содержащий пространства имен и префиксы для использования.</param>
         <param name="encodingStyle">Кодировка, используемая в документе.</param>
@@ -2547,6 +2536,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2610,6 +2600,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2683,6 +2674,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -2745,6 +2737,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>

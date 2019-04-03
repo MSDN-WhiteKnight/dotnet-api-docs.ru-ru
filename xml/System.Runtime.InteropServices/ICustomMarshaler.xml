@@ -1,13 +1,5 @@
 <Type Name="ICustomMarshaler" FullName="System.Runtime.InteropServices.ICustomMarshaler">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7b7f092c326960741597c424fa1d78d6a1e6ffcd" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48754972" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface ICustomMarshaler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="03ef26878dc74066eb80a36c6aa1a51c27cec8e3" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58711412" /></Metadata><TypeSignature Language="C#" Value="public interface ICustomMarshaler" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomMarshaler" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ICustomMarshaler" />
   <TypeSignature Language="VB.NET" Value="Public Interface ICustomMarshaler" />
@@ -23,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -93,7 +86,7 @@ const IID IID_IOld = {0x9B2BAADD,0x0705,0x11D3,{0xA0,0xCD,0x00,0xC0,0x4F,0xA3,0x
   
  <xref:System.Runtime.InteropServices.ICustomMarshaler> Интерфейс содержит методы, предоставляющие поддержку преобразования, поддержка очистки и сведения о данных для маршалинга.  
   
-|Тип операции|ICustomMarshaler-метод|Описание:|  
+|Тип операции|ICustomMarshaler-метод|Описание|  
 |-----------------------|-----------------------------|-----------------|  
 |Преобразование (из машинного и управляемого кода)|<xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalNativeToManaged%2A>|Маршалирует указатель на машинные данные в управляемый объект. Этот метод возвращает пользовательские вызываемой оболочки времени выполнения (RCW), можно маршалировать в неуправляемый интерфейс, который передается в качестве аргумента. Маршалер должен вернуть экземпляр пользовательского вызываемая оболочка времени Выполнения для этого типа.|  
 |Преобразование (из управляемого кода в машинный)|<xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalManagedToNative%2A>|Маршалирует управляемого объекта в указатель на собственных данных. Этот метод возвращает пользовательские вызываемой оболочки COM (CCW), можно упаковать управляемый интерфейс, который передается в качестве аргумента. Маршалер должен вернуть экземпляр пользовательской вызываемой оболочки COM для данного типа.|  
@@ -136,12 +129,12 @@ static ICustomMarshaler *GetInstance(String *pstrCookie);
   
  Необходимо также передать <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=nameWithType> значение перечисления для <xref:System.Runtime.InteropServices.MarshalAsAttribute> конструктор. Кроме того, необходимо указать <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> поле с одним из следующих именованные параметры:  
   
--   <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> (обязательно): имя с указанием сборки пользовательского модуля маршалинга. Имя должно содержать пространство имен и класс пользовательского модуля маршалинга. Если пользовательского модуля маршалинга не определен в сборке, которой он используется, необходимо указать имя сборки, в котором он определен.  
+-   <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> (обязательно): Квалифицированное имя пользовательского модуля маршалинга. Имя должно содержать пространство имен и класс пользовательского модуля маршалинга. Если пользовательского модуля маршалинга не определен в сборке, которой он используется, необходимо указать имя сборки, в котором он определен.  
   
     > [!NOTE]
     >  Можно использовать <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalTypeRef> поле вместо <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> поля. <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalTypeRef> принимает значение типа, который проще указать.  
   
--   <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalCookie> (необязательно): файл cookie, который передается пользовательского модуля маршалинга. Файл cookie можно использовать для предоставления дополнительных сведений модулю маршалинга. Например если маршалер используется для указания номера оболочек, файл cookie идентифицирует конкретную оболочку. Файл cookie передается `GetInstance` метод модуля маршалинга.  
+-   <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalCookie> (необязательно): Файл cookie, который передается пользовательского модуля маршалинга. Файл cookie можно использовать для предоставления дополнительных сведений модулю маршалинга. Например если маршалер используется для указания номера оболочек, файл cookie идентифицирует конкретную оболочку. Файл cookie передается `GetInstance` метод модуля маршалинга.  
   
  <xref:System.Runtime.InteropServices.MarshalAsAttribute> Атрибут определяет пользовательского модуля маршалинга, поэтому его можно активировать соответствующую оболочку. Затем служба взаимодействия среды CLR проверяет атрибут и создает время настраиваемых модулей маршалинга первый аргумент (параметра или поля) требуется маршалировать.  
   
@@ -201,6 +194,7 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -237,6 +231,7 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -273,6 +268,7 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -307,6 +303,7 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -344,6 +341,7 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>

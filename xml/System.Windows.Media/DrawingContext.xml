@@ -1,13 +1,5 @@
 <Type Name="DrawingContext" FullName="System.Windows.Media.DrawingContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a5501bf2f8e9b049041293d0b34f2441556dee4a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48628031" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class DrawingContext : System.Windows.Threading.DispatcherObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5c9f3989366e53fc7d89c61501edcc887835bd7b" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56379921" /></Metadata><TypeSignature Language="C#" Value="public abstract class DrawingContext : System.Windows.Threading.DispatcherObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DrawingContext extends System.Windows.Threading.DispatcherObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.DrawingContext" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DrawingContext&#xA;Inherits DispatcherObject&#xA;Implements IDisposable" />
@@ -27,7 +19,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Описывает визуальное содержимое с использованием команд рисования, занесения и извлечения.</summary>
+    <summary>Описывает визуальное содержимое с использованием команд рисования, проталкивания и выталкивания.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -114,7 +106,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект уже закрыт или удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Данный объект уже зарыт или удален.</exception>
         <altmember cref="M:System.Windows.Media.DrawingContext.System#IDisposable#Dispose" />
       </Docs>
     </Member>
@@ -174,8 +166,8 @@
         <Parameter Name="radiusY" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="brush">Кисть для рисования эллипса.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве кисти задано значение <see langword="null" />, заливка не рисуется.</param>
-        <param name="pen">Перо для обводки эллипса.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве пера задано значение <see langword="null" />, штриховка не рисуется.</param>
+        <param name="brush">Кисть для рисования эллипса.  Он не является обязательным и может иметь значение <see langword="null" />. Если кисть имеет значение <see langword="null" />, заполнение не рисуется.</param>
+        <param name="pen">Перо для обводки эллипса.  Он не является обязательным и может иметь значение <see langword="null" />. Если перо имеет значение <see langword="null" />, обводка не рисуется.</param>
         <param name="center">Местоположение центра эллипса.</param>
         <param name="radiusX">Горизонтальный радиус эллипса.</param>
         <param name="radiusY">Вертикальный радиус эллипса.</param>
@@ -216,8 +208,8 @@
         <Parameter Name="radiusYAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="brush">Кисть для рисования эллипса.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве кисти задано значение <see langword="null" />, заливка не рисуется.</param>
-        <param name="pen">Перо для обводки эллипса.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве пера задано значение <see langword="null" />, штриховка не рисуется.</param>
+        <param name="brush">Кисть для рисования эллипса.  Он не является обязательным и может иметь значение <see langword="null" />. Если кисть имеет значение <see langword="null" />, заполнение не рисуется.</param>
+        <param name="pen">Перо для обводки эллипса.  Он не является обязательным и может иметь значение <see langword="null" />. Если перо имеет значение <see langword="null" />, обводка не рисуется.</param>
         <param name="center">Местоположение центра эллипса.</param>
         <param name="centerAnimations">Часы, с использованием которых следует анимировать позицию центра эллипса, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать объекты <see cref="T:System.Windows.Point" />.</param>
         <param name="radiusX">Горизонтальный радиус эллипса.</param>
@@ -256,10 +248,10 @@
         <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
       </Parameters>
       <Docs>
-        <param name="brush">Кисть <see cref="T:System.Windows.Media.Brush" />, с помощью которой выполняется заливка объекта <see cref="T:System.Windows.Media.Geometry" />. Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве кисти задано значение <see langword="null" />, заливка не рисуется.</param>
-        <param name="pen">Перо <see cref="T:System.Windows.Media.Pen" />, с помощью которого заштриховывается объект <see cref="T:System.Windows.Media.Geometry" />. Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве пера задано значение <see langword="null" />, штриховка не рисуется.</param>
-        <param name="geometry">Изображение <see cref="T:System.Windows.Media.Geometry" /> для отрисовки.</param>
-        <summary>Рисует указанный объект <see cref="T:System.Windows.Media.Geometry" />, используя заданные <see cref="T:System.Windows.Media.Brush" /> и <see cref="T:System.Windows.Media.Pen" />.</summary>
+        <param name="brush">Объект <see cref="T:System.Windows.Media.Brush" /> для заполнения <see cref="T:System.Windows.Media.Geometry" />. Он не является обязательным и может иметь значение <see langword="null" />. Если кисть имеет значение <see langword="null" />, заполнение не рисуется.</param>
+        <param name="pen">Объект <see cref="T:System.Windows.Media.Pen" /> для обводки <see cref="T:System.Windows.Media.Geometry" />. Он не является обязательным и может иметь значение <see langword="null" />. Если перо имеет значение <see langword="null" />, обводка не рисуется.</param>
+        <param name="geometry">Изображение <see cref="T:System.Windows.Media.Geometry" /> для прорисовки.</param>
+        <summary>Рисует заданный <see cref="T:System.Windows.Media.Geometry" /> с использованием заданных <see cref="T:System.Windows.Media.Brush" /> и <see cref="T:System.Windows.Media.Pen" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -385,7 +377,7 @@
       </Parameters>
       <Docs>
         <param name="pen">Перо для обводки линии.</param>
-        <param name="point0">Начальная точка строки.</param>
+        <param name="point0">Начальная точка линии.</param>
         <param name="point1">Конечная точка строки.</param>
         <summary>Рисует линию между заданными точками, используя заданный <see cref="T:System.Windows.Media.Pen" />.</summary>
         <remarks>To be added.</remarks>
@@ -415,7 +407,7 @@
       </Parameters>
       <Docs>
         <param name="pen">Перо для обводки линии.</param>
-        <param name="point0">Начальная точка строки.</param>
+        <param name="point0">Начальная точка линии.</param>
         <param name="point0Animations">Часы, с использованием которых следует анимировать начальную точку линии, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать объекты <see cref="T:System.Windows.Point" />.</param>
         <param name="point1">Конечная точка строки.</param>
         <param name="point1Animations">Часы, с использованием которых следует анимировать конечную точку линии, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать объекты <see cref="T:System.Windows.Point" />.</param>
@@ -453,8 +445,8 @@
         <Parameter Name="rectangle" Type="System.Windows.Rect" />
       </Parameters>
       <Docs>
-        <param name="brush">Кисть для рисования прямоугольника.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве кисти задано значение <see langword="null" />, заливка не рисуется.</param>
-        <param name="pen">Перо для обводки прямоугольника.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве пера задано значение <see langword="null" />, штриховка не рисуется.</param>
+        <param name="brush">Кисть для рисования прямоугольника.  Он не является обязательным и может иметь значение <see langword="null" />. Если кисть имеет значение <see langword="null" />, заполнение не рисуется.</param>
+        <param name="pen">Перо для обводки прямоугольника.  Он не является обязательным и может иметь значение <see langword="null" />. Если перо имеет значение <see langword="null" />, обводка не рисуется.</param>
         <param name="rectangle">Рисуемый прямоугольник.</param>
         <summary>Рисует прямоугольник заданными <see cref="T:System.Windows.Media.Brush" /> и <see cref="T:System.Windows.Media.Pen" />. И перо, и кисть могут одновременно иметь значение <see langword="null" />.</summary>
         <remarks>
@@ -489,8 +481,8 @@
         <Parameter Name="rectangleAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="brush">Кисть для рисования прямоугольника.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве кисти задано значение <see langword="null" />, заливка не рисуется.</param>
-        <param name="pen">Перо для обводки прямоугольника.  Этот параметр является необязательным и может иметь значение <see langword="null" />. Если в качестве пера задано значение <see langword="null" />, штриховка не рисуется.</param>
+        <param name="brush">Кисть для рисования прямоугольника.  Он не является обязательным и может иметь значение <see langword="null" />. Если кисть имеет значение <see langword="null" />, заполнение не рисуется.</param>
+        <param name="pen">Перо для обводки прямоугольника.  Он не является обязательным и может иметь значение <see langword="null" />. Если перо имеет значение <see langword="null" />, обводка не рисуется.</param>
         <param name="rectangle">Рисуемый прямоугольник.</param>
         <param name="rectangleAnimations">Часы, с использованием которых следует анимировать размер и измерения прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать объекты <see cref="T:System.Windows.Rect" />.</param>
         <summary>Рисует прямоугольник заданными <see cref="T:System.Windows.Media.Brush" /> и <see cref="T:System.Windows.Media.Pen" /> и применяет заданные часы анимации.</summary>
@@ -583,9 +575,9 @@
         <param name="rectangle">Рисуемый прямоугольник.</param>
         <param name="rectangleAnimations">Часы, с использованием которых следует анимировать размер и измерения прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать объекты <see cref="T:System.Windows.Rect" />.</param>
         <param name="radiusX">Радиус по оси X скругленных углов.  Это значение может находиться в диапазоне от 0 до <see cref="P:System.Windows.Rect.Width" />/2.</param>
-        <param name="radiusXAnimations">Часы, с использованием которых следует анимировать значение <c>radiusX</c> прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать значения <see cref="T:System.Double" />.</param>
+        <param name="radiusXAnimations">Часы, с использованием которых следует анимировать значение <paramref name="radiusX" /> прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать значения <see cref="T:System.Double" />.</param>
         <param name="radiusY">Радиус по оси Y скругленных углов.  Это значение может находиться в диапазоне от 0 до <see cref="P:System.Windows.Rect.Height" />/2.</param>
-        <param name="radiusYAnimations">Часы, с использованием которых следует анимировать значение <c>radiusY</c> прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать значения <see cref="T:System.Double" />.</param>
+        <param name="radiusYAnimations">Часы, с использованием которых следует анимировать значение <paramref name="radiusY" /> прямоугольника, или <see langword="null" />, чтобы анимация не выполнялась. Эти часы должны быть созданы из <see cref="T:System.Windows.Media.Animation.AnimationTimeline" />, способного анимировать значения <see cref="T:System.Double" />.</param>
         <summary>Рисует прямоугольник с закругленными углами заданными <see cref="T:System.Windows.Media.Brush" /> и <see cref="T:System.Windows.Media.Pen" /> и применяет заданные часы анимации.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -617,11 +609,11 @@
         <Parameter Name="origin" Type="System.Windows.Point" />
       </Parameters>
       <Docs>
-        <param name="formattedText">Форматированный текст для отрисовки.</param>
-        <param name="origin">Место, где необходимо отрисовать текст.</param>
-        <summary>Рисует форматированный текст в указанном месте.</summary>
+        <param name="formattedText">Форматированный текст для рисования.</param>
+        <param name="origin">Позиция, в которой будет нарисован текст.</param>
+        <summary>Рисует текст в указанной позиции.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект уже закрыт или удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Данный объект уже зарыт или удален.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="DrawVideo">
@@ -655,7 +647,7 @@
       </Parameters>
       <Docs>
         <param name="player">Мультимедиа для рисования.</param>
-        <param name="rectangle">Область, в которой следует нарисовать <c>player</c>.</param>
+        <param name="rectangle">Область, в которой следует нарисовать <paramref name="player" />.</param>
         <summary>Рисует видео в заданной области.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -792,7 +784,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
         </Attribute>
       </Attributes>

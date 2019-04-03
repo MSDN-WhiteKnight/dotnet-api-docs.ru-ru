@@ -1,13 +1,5 @@
 <Type Name="Stream" FullName="System.IO.Stream">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="baf396802c10170203ac8e6e573ac02d94fc7882" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48646045" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class Stream : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83cd24d96179c691d47126cd463ce331b6d9422e" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58454472" /></Metadata><TypeSignature Language="C#" Value="public abstract class Stream : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Stream extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.IO.Stream" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Stream&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -48,8 +40,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -78,9 +70,9 @@
   
  Удаление <xref:System.IO.Stream> объект очищает запись всех буферизованных данных и по сути вызывает <xref:System.IO.Stream.Flush%2A> метод для вас. <xref:System.IO.Stream.Dispose%2A> также освобождает ресурсы операционной системы, такие как дескрипторы файлов, сетевые подключения или память, используемая для внутренней буферизации. <xref:System.IO.BufferedStream> Класс предоставляет возможность создания вокруг другого потока, чтобы улучшить чтения и записи производительности оболочки в буферизованный поток.  
   
- Начиная с [!INCLUDE[net_v45](~/includes/net-v45-md.md)], <xref:System.IO.Stream> класс включает в себя асинхронные методы для упрощения асинхронных операций. Асинхронный метод содержит `Async` в своем имени, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>. Эти методы позволяют выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ Начиная с [!INCLUDE[net_v45](~/includes/net-v45-md.md)], <xref:System.IO.Stream> класс включает в себя асинхронные методы для упрощения асинхронных операций. Асинхронный метод содержит `Async` в своем имени, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>. Эти методы позволяют выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
- При использовании в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, <xref:System.IO.Stream> включает два метода расширения: <xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A> и <xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A>. Эти методы преобразуют <xref:System.IO.Stream> объекта в поток в [!INCLUDE[wrt](~/includes/wrt-md.md)]. Также можно преобразовать в поток в [!INCLUDE[wrt](~/includes/wrt-md.md)] для <xref:System.IO.Stream> объекта с помощью <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A> и <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite%2A> методы. Дополнительные сведения см. в разделе [как: преобразование между потоками .NET Framework и потоками среды выполнения Windows](~/docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
+ При использовании в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, <xref:System.IO.Stream> включает два метода расширения: <xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A> и <xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A>. Эти методы преобразуют <xref:System.IO.Stream> объекта в поток в [!INCLUDE[wrt](~/includes/wrt-md.md)]. Также можно преобразовать в поток в [!INCLUDE[wrt](~/includes/wrt-md.md)] для <xref:System.IO.Stream> объекта с помощью <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A> и <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite%2A> методы. Дополнительные сведения см. в разделе [Как Преобразование между потоками .NET Framework и потоками среды выполнения Windows](~/docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
   
  Некоторые реализации потоков выполняют локальную буферизацию базовых данных для повышения производительности. Для таких потоков, можно использовать <xref:System.IO.Stream.Flush%2A> или <xref:System.IO.Stream.FlushAsync%2A> метод для удаления внутренних буферов и обеспечения записи всех данных в базовый источник данных или репозиторий.  
   
@@ -89,18 +81,16 @@
    
   
 ## Examples  
- Следующий пример демонстрирует использование двух <xref:System.IO.FileStream> объектов для асинхронного копирования файлов из одного каталога в другой каталог. Класс <xref:System.IO.FileStream> является производным от класса <xref:System.IO.Stream>. Обратите внимание, что обработчик событий <xref:System.Web.UI.WebControls.Button.Click> для элемента управления <xref:System.Windows.Controls.Button> помечается с помощью модификатора `async` , так как вызывает асинхронный метод.  
+ Следующий пример демонстрирует использование двух <xref:System.IO.FileStream> объектов для асинхронного копирования файлов из одного каталога в другой каталог. Класс <xref:System.IO.FileStream> является производным от класса <xref:System.IO.Stream> . Обратите внимание, что обработчик событий <xref:System.Web.UI.WebControls.Button.Click> для элемента управления <xref:System.Windows.Controls.Button> помечается с помощью модификатора `async` , так как вызывает асинхронный метод.  
   
  [!code-csharp[Asynchronous_File_IO_async#1](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example.cs#1)]
  [!code-vb[Asynchronous_File_IO_async#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example.vb#1)]  
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При реализации производным от класса <see cref="T:System.IO.Stream" />, обязаны предоставлять реализацию для <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> методы. Асинхронные методы <see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />, <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />, и <see cref="M:System.IO.Stream.CopyToAsync(System.IO.Stream)" /> используют синхронные методы <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> в их реализации. Таким образом, реализации методов <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> будет правильно работать с асинхронными методами. Реализация по умолчанию <see cref="M:System.IO.Stream.ReadByte" /> и <see cref="M:System.IO.Stream.WriteByte(System.Byte)" /> создать массив одноэлементных байт, а затем вызвать реализации методов <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. При наследовании от <see cref="T:System.IO.Stream" />, рекомендуется переопределять эти методы, чтобы доступ к внутреннему буферу, в том случае, если она есть, значительно повысить производительность. Необходимо также указать реализации <see cref="P:System.IO.Stream.CanRead" />, <see cref="P:System.IO.Stream.CanSeek" />, <see cref="P:System.IO.Stream.CanWrite" />, <see cref="M:System.IO.Stream.Flush" />, <see cref="P:System.IO.Stream.Length" />, <see cref="P:System.IO.Stream.Position" />, <see cref="M:System.IO.Stream.Seek(System.Int64,System.IO.SeekOrigin)" />, и <see cref="M:System.IO.Stream.SetLength(System.Int64)" />.  
+    <block subset="none" type="overrides"><para>При реализации производным от класса <see cref="T:System.IO.Stream" />, обязаны предоставлять реализацию для <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> методы. Асинхронные методы <see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />, <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />, и <see cref="M:System.IO.Stream.CopyToAsync(System.IO.Stream)" /> используют синхронные методы <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> в их реализации. Таким образом, реализации методов <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> будет правильно работать с асинхронными методами. Реализация по умолчанию <see cref="M:System.IO.Stream.ReadByte" /> и <see cref="M:System.IO.Stream.WriteByte(System.Byte)" /> создать массив одноэлементных байт, а затем вызвать реализации методов <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" /> и <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. При наследовании от <see cref="T:System.IO.Stream" />, рекомендуется переопределять эти методы, чтобы доступ к внутреннему буферу, в том случае, если она есть, значительно повысить производительность. Необходимо также указать реализации <see cref="P:System.IO.Stream.CanRead" />, <see cref="P:System.IO.Stream.CanSeek" />, <see cref="P:System.IO.Stream.CanWrite" />, <see cref="M:System.IO.Stream.Flush" />, <see cref="P:System.IO.Stream.Length" />, <see cref="P:System.IO.Stream.Position" />, <see cref="M:System.IO.Stream.Seek(System.Int64,System.IO.SeekOrigin)" />, и <see cref="M:System.IO.Stream.SetLength(System.Int64)" />.  
   
-Не следует переопределять <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите все <see cref="T:System.IO.Stream" /> логика очистки в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод. Дополнительные сведения см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).</para>
-    </block>
+Не следует переопределять <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите все <see cref="T:System.IO.Stream" /> логика очистки в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод. Дополнительные сведения см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).</para></block>
     <altmember cref="T:System.IO.FileStream" />
     <altmember cref="T:System.IO.MemoryStream" />
     <altmember cref="T:System.IO.BufferedStream" />
@@ -183,21 +173,20 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="callback" Type="System.AsyncCallback" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, в который необходимо считать данные.</param>
-        <param name="offset">Смещение байтов в <c>buffer</c>, с которого начинается запись данных, считанных из потока.</param>
+        <param name="offset">Смещение байтов в буфере <paramref name="buffer" />, с которого начинается запись данных, считанных из потока.</param>
         <param name="count">Максимальное число байтов, предназначенных для чтения.</param>
         <param name="callback">Дополнительный асинхронный обратный вызов по завершении чтения.</param>
         <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронное чтение от других запросов.</param>
         <summary>Начинает операцию асинхронного чтения. (Рекомендуется использовать <see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />.)</summary>
-        <returns>
-          <see cref="T:System.IAsyncResult" /> представляет асинхронное чтение, которое все еще может быть отложено.</returns>
+        <returns><see cref="T:System.IAsyncResult" /> представляет асинхронное чтение, которое все еще может быть отложено.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -259,26 +248,25 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="callback" Type="System.AsyncCallback" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, из которого записываются данные.</param>
-        <param name="offset">Смещение байтов в <c>buffer</c>, с которого следует начать запись.</param>
+        <param name="offset">Смещение байтов в буфере <paramref name="buffer" />, с которого начинается запись.</param>
         <param name="count">Максимальное число байтов для записи.</param>
         <param name="callback">Дополнительный асинхронный обратный вызов по завершении записи.</param>
         <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронную запись от других запросов.</param>
         <summary>Начинает операцию асинхронной записи. (Рекомендуется использовать <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />.)</summary>
-        <returns>
-          <see langword="IAsyncResult" /> представляет асинхронную запись, которая все еще может быть отложена.</returns>
+        <returns><see langword="IAsyncResult" /> представляет асинхронную запись, которая все еще может быть отложена.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В платформе .NET Framework 4 и более ранних версий для реализации операций асинхронного ввода-вывода необходимо использовать такие методы, как <xref:System.IO.Stream.BeginWrite%2A> и <xref:System.IO.Stream.EndWrite%2A>. Эти методы по-прежнему доступны в [!INCLUDE[net_v45](~/includes/net-v45-md.md)] для поддержки устаревшего кода; тем не менее, новых асинхронных методов, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>, справки, более легко реализации асинхронных операций ввода-вывода.  
+ В платформе .NET Framework 4 и более ранних версий для реализации операций асинхронного ввода-вывода необходимо использовать такие методы, как <xref:System.IO.Stream.BeginWrite%2A> и <xref:System.IO.Stream.EndWrite%2A> . Эти методы по-прежнему доступны в [!INCLUDE[net_v45](~/includes/net-v45-md.md)] для поддержки устаревшего кода; тем не менее, новых асинхронных методов, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>, справки, более легко реализации асинхронных операций ввода-вывода.  
   
  Реализация по умолчанию `BeginWrite` к потоку, вызовы <xref:System.IO.Stream.Write%2A> метод синхронно, означающее, что `Write` блокируют для некоторых потоков. Однако экземпляры классов, таких как `FileStream` и `NetworkStream` полностью поддерживают асинхронные операции, если экземпляры были открыты асинхронно. Таким образом, вызовы `BeginWrite` не будет блокировать этих потоков. Можно переопределить `BeginWrite` (с помощью асинхронных делегатов) для предоставления асинхронного поведения.  
   
@@ -574,9 +562,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>В производных классах, не переопределяющих <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите все <see langword="Stream" /> логика очистки в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод. Дополнительные сведения см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).</para>
-        </block>
+        <block subset="none" type="overrides"><para>В производных классах, не переопределяющих <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите все <see langword="Stream" /> логика очистки в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод. Дополнительные сведения см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -625,7 +611,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">Поток, в который будет скопировано содержимое текущего потока.</param>
@@ -646,10 +632,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение.  
   
-- или - 
+-или- 
  Параметр <paramref name="destination" /> не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток или параметр <paramref name="destination" /> был закрыт до вызова метода <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" />.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.</exception>
@@ -687,8 +673,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">Поток, в который будет скопировано содержимое текущего потока.</param>
@@ -702,11 +688,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.</exception>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение.  
   
-- или - 
+-или- 
  Параметр <paramref name="destination" /> не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток или параметр <paramref name="destination" /> был закрыт до вызова метода <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" />.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.</exception>
@@ -760,7 +746,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">Поток, в который будет скопировано содержимое текущего потока.</param>
@@ -770,21 +756,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Копирование начинается с текущей позиции в текущем потоке.  
   
    
   
 ## Examples  
- Следующий пример демонстрирует использование двух <xref:System.IO.FileStream> объектов для асинхронного копирования файлов из одного каталога в другой. Класс <xref:System.IO.FileStream> является производным от класса <xref:System.IO.Stream>.  Обратите внимание, что <xref:System.Web.UI.WebControls.Button.Click> обработчик событий для <xref:System.Windows.Controls.Button> управления помечается `async` модификатор, так как он вызывает асинхронный метод  
+ Следующий пример демонстрирует использование двух <xref:System.IO.FileStream> объектов для асинхронного копирования файлов из одного каталога в другой. Класс <xref:System.IO.FileStream> является производным от класса <xref:System.IO.Stream> .  Обратите внимание, что <xref:System.Web.UI.WebControls.Button.Click> обработчик событий для <xref:System.Windows.Controls.Button> управления помечается `async` модификатор, так как он вызывает асинхронный метод  
   
  [!code-csharp[Asynchronous_File_IO_async#1](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example.cs#1)]
  [!code-vb[Asynchronous_File_IO_async#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example.vb#1)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток или поток назначения удаляется.</exception>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение или поток назначения не поддерживает запись.</exception>
       </Docs>
@@ -826,8 +812,8 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">Поток, в который будет скопировано содержимое текущего потока.</param>
@@ -838,7 +824,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Копирование начинается с текущей позиции в текущем потоке.  
   
@@ -846,7 +832,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="buffersize" /> имеет отрицательное значение или равен нулю.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток или поток назначения удаляется.</exception>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение или поток назначения не поддерживает запись.</exception>
@@ -876,8 +862,8 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
@@ -923,9 +909,9 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">Поток, в который будет скопировано содержимое текущего потока.</param>
@@ -937,7 +923,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.CopyToAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Если операция отменена до ее завершения, возвращаемая задача содержит <xref:System.Threading.Tasks.TaskStatus.Canceled> значение <xref:System.Threading.Tasks.Task.Status%2A> свойства.  
   
@@ -947,7 +933,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="buffersize" /> имеет отрицательное значение или равен нулю.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток или поток назначения удаляется.</exception>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение или поток назначения не поддерживает запись.</exception>
@@ -981,7 +967,7 @@
         <AssemblyName>System.IO</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("CreateWaitHandle will be removed eventually.  Please use "new ManualResetEvent(false)" instead.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1066,11 +1052,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Поместить всю логику очистки для объекта stream в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" />. Не следует переопределять <see cref="M:System.IO.Stream.Close" />.  
+        <block subset="none" type="overrides"><para>Поместить всю логику очистки для объекта stream в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" />. Не следует переопределять <see cref="M:System.IO.Stream.Close" />.  
   
-Обратите внимание на то, что из-за требований обратной совместимости, реализацию этого метода отличается от указанных в руководстве для шаблона удаления.  Этот метод вызывает метод <see cref="M:System.IO.Stream.Close" />, который затем вызывает <see cref="M:System.IO.Stream.Dispose(System.Boolean)" />.</para>
-        </block>
+Обратите внимание на то, что из-за требований обратной совместимости, реализацию этого метода отличается от указанных в руководстве для шаблона удаления.  Этот метод вызывает метод <see cref="M:System.IO.Stream.Close" />, который затем вызывает <see cref="M:System.IO.Stream.Dispose(System.Boolean)" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -1106,10 +1090,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.IO.Stream" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1123,13 +1107,45 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>В производных классах, не переопределяющих <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите вся логика очистки Stream в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод.  
+        <block subset="none" type="overrides"><para>В производных классах, не переопределяющих <see cref="M:System.IO.Stream.Close" /> метод, вместо этого поместите вся логика очистки Stream в <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> метод.  
   
  Метод <see cref="M:System.ComponentModel.Component.Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами метода <see cref="M:System.ComponentModel.Component.Dispose" />. Дополнительные сведения о том, как реализовать <see cref="M:System.IO.Stream.Dispose(System.Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see cref="M:System.ComponentModel.Component.Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para>
-        </block>
+Дополнительные сведения о <see cref="M:System.ComponentModel.Component.Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para></block>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="abstract member DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask&#xA;override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="stream.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IAsyncDisposable.DisposeAsync</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndRead">
@@ -1163,7 +1179,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="asyncResult">Ссылка на отложенный асинхронный запрос, который необходимо завершить.</param>
@@ -1183,13 +1199,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asyncResult" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Обработчик отложенной операции считывания не доступен.  
   
-- или - 
+-или- 
 Ожидающая операция не поддерживает чтение.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="asyncResult" /> не происходит из метода <see cref="M:System.IO.Stream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> в текущем потоке.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="asyncResult" /> не происходит из метода <see cref="M:System.IO.Stream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> в текущем потоке.</exception>
         <exception cref="T:System.IO.IOException">Поток закрыт, или произошла внутренняя ошибка.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -1228,7 +1243,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="asyncResult">Ссылка на невыполненный асинхронный запрос ввода-вывода.</param>
@@ -1237,7 +1252,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В платформе .NET Framework 4 и более ранних версий для реализации операций асинхронного ввода-вывода необходимо использовать такие методы, как <xref:System.IO.Stream.BeginWrite%2A> и <xref:System.IO.Stream.EndWrite%2A>. Эти методы по-прежнему доступны в [!INCLUDE[net_v45](~/includes/net-v45-md.md)] для поддержки устаревшего кода; тем не менее, новых асинхронных методов, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>, справки, более легко реализации асинхронных операций ввода-вывода.  
+ В платформе .NET Framework 4 и более ранних версий для реализации операций асинхронного ввода-вывода необходимо использовать такие методы, как <xref:System.IO.Stream.BeginWrite%2A> и <xref:System.IO.Stream.EndWrite%2A> . Эти методы по-прежнему доступны в [!INCLUDE[net_v45](~/includes/net-v45-md.md)] для поддержки устаревшего кода; тем не менее, новых асинхронных методов, таких как <xref:System.IO.Stream.ReadAsync%2A>, <xref:System.IO.Stream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, и <xref:System.IO.Stream.FlushAsync%2A>, справки, более легко реализации асинхронных операций ввода-вывода.  
   
  `EndWrite` должен быть вызван только один раз для каждого <xref:System.IAsyncResult> из <xref:System.IO.Stream.BeginWrite%2A>.  
   
@@ -1245,13 +1260,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asyncResult" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Обработчик отложенной операции записи не доступен.  
   
-- или - 
+-или- 
 Ожидающая операция не поддерживает запись.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="asyncResult" /> не происходит из метода <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> в текущем потоке.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="asyncResult" /> не происходит из метода <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> в текущем потоке.</exception>
         <exception cref="T:System.IO.IOException">Поток закрыт, или произошла внутренняя ошибка.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -1411,7 +1425,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">Токен для отслеживания запросов отмены. Значение по умолчанию — <see cref="P:System.Threading.CancellationToken.None" />.</param>
@@ -1549,7 +1563,7 @@
         <AssemblyName>System.IO</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Do not call or override this method.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1643,7 +1657,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Span&lt;System.Byte&gt;" />
+        <Parameter Name="buffer" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
@@ -1691,8 +1705,8 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">Массив байтов. После завершения выполнения данного метода буфер содержит указанный массив байтов, в котором значения в интервале между <c>offset</c> и величиной "<c>offset</c> + <c>count</c> – 1" заменены байтами, считанными из текущего источника.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>buffer</c>, с которого начинается сохранение данных, считанных из текущего потока.</param>
+        <param name="buffer">Массив байтов. После завершения выполнения данного метода буфер содержит указанный массив байтов, в котором значения в интервале между <paramref name="offset" /> и (<paramref name="offset" /> + <paramref name="count" /> - 1) заменены байтами, считанными из текущего источника.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в <paramref name="buffer" />, с которого начинается сохранение данных, считанных из текущего потока.</param>
         <param name="count">Максимальное количество байтов, которое должно быть считано из текущего потока.</param>
         <summary>При переопределении в производном классе считывает последовательность байтов из текущего потока и перемещает позицию в потоке на число считанных байтов.</summary>
         <returns>Общее количество байтов, считанных в буфер. Это число может быть меньше количества запрошенных байтов, если столько байтов в настоящее время недоступно, а также равняться нулю (0), если был достигнут конец потока.</returns>
@@ -1718,9 +1732,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода-вывода.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Методы были вызваны после закрытия потока.</exception>
@@ -1763,8 +1776,8 @@
         <ReturnType>System.Threading.Tasks.ValueTask&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Memory&lt;System.Byte&gt;" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.Memory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
@@ -1811,13 +1824,13 @@
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, в который записываются данные.</param>
-        <param name="offset">Смещение байтов в <c>buffer</c>, с которого начинается запись данных, считанных из потока.</param>
+        <param name="offset">Смещение байтов в <paramref name="buffer" />, с которого начинается запись данных из потока.</param>
         <param name="count">Максимальное число байтов, предназначенных для чтения.</param>
         <summary>Асинхронно считывает последовательность байтов из текущего потока и перемещает позицию внутри потока на число считанных байтов.</summary>
         <returns>Задача, представляющая асинхронную операцию чтения. Значение параметра <paramref name="TResult" /> содержит общее число байтов, считанных в буфер. Значение результата может быть меньше запрошенного числа байтов, если число доступных в данный момент байтов меньше запрошенного числа, или результат может быть равен 0 (нулю), если был достигнут конец потока.</returns>
@@ -1825,7 +1838,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.ReadAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.ReadAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Используйте <xref:System.IO.Stream.CanRead%2A> свойства, чтобы определить, поддерживает ли текущий экземпляр операции чтения.  
   
@@ -1839,9 +1852,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -1884,14 +1896,14 @@
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, в который записываются данные.</param>
-        <param name="offset">Смещение байтов в <c>buffer</c>, с которого начинается запись данных, считанных из потока.</param>
+        <param name="offset">Смещение байтов в <paramref name="buffer" />, с которого начинается запись данных из потока.</param>
         <param name="count">Максимальное число байтов, предназначенных для чтения.</param>
         <param name="cancellationToken">Токен для отслеживания запросов отмены. Значение по умолчанию — <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Асинхронно считывает последовательность байтов из текущего потока, перемещает позицию в потоке на число считанных байтов и отслеживает запросы отмены.</summary>
@@ -1900,7 +1912,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.ReadAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.ReadAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Используйте <xref:System.IO.Stream.CanRead%2A> свойства, чтобы определить, поддерживает ли текущий экземпляр операции чтения.  
   
@@ -1910,9 +1922,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -1974,9 +1985,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Методы были вызваны после закрытия потока.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -2024,10 +2033,7 @@
         <value>Значение в миллисекундах, определяющее период, в течение которого поток будет пытаться выполнить операцию чтения, прежде чем истечет время ожидания.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Метод <see cref="P:System.IO.Stream.ReadTimeout" /> всегда создает исключение <see cref="T:System.InvalidOperationException" />.</exception>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="P:System.IO.Stream.ReadTimeout" /> Свойство должно переопределяться для предоставления соответствующего расширения функциональности для потока. Если поток поддерживает время ожидания, это свойство следует вызвать <see cref="T:System.InvalidOperationException" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para><see cref="P:System.IO.Stream.ReadTimeout" /> Свойство должно переопределяться для предоставления соответствующего расширения функциональности для потока. Если поток поддерживает время ожидания, это свойство следует вызвать <see cref="T:System.InvalidOperationException" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Seek">
@@ -2068,7 +2074,7 @@
         <Parameter Name="origin" Type="System.IO.SeekOrigin" />
       </Parameters>
       <Docs>
-        <param name="offset">Смещение в байтах относительно параметра <c>origin</c>.</param>
+        <param name="offset">Смещение в байтах относительно параметра <paramref name="origin" />.</param>
         <param name="origin">Значение типа <see cref="T:System.IO.SeekOrigin" />, указывающее точку ссылки, которая используется для получения новой позиции.</param>
         <summary>При переопределении в производном классе задает позицию в текущем потоке.</summary>
         <returns>Новая позиция в текущем потоке.</returns>
@@ -2182,7 +2188,7 @@
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="stream" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="stream">Синхронизируемый объект <see cref="T:System.IO.Stream" />.</param>
@@ -2196,7 +2202,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="stream" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.IDisposable.Dispose">
@@ -2227,8 +2233,15 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает все ресурсы, занятые модулем <see cref="T:System.IO.Stream" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.IO.Stream> приведен к типу интерфейса <xref:System.IDisposable>.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Write">
@@ -2256,7 +2269,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.ReadOnlySpan&lt;System.Byte&gt;" />
+        <Parameter Name="buffer" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
@@ -2303,8 +2316,8 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">Массив байтов. Этот метод копирует <c>count</c> байтов из <c>buffer</c> в текущий поток.</param>
-        <param name="offset">Отсчитываемое от нуля смещение байтов в буфере <c>buffer</c>, с которого начинается копирование байтов в текущий поток.</param>
+        <param name="buffer">Массив байтов. Этот метод копирует байты <paramref name="count" /> из <paramref name="buffer" /> в текущий поток.</param>
+        <param name="offset">Отсчитываемое от нуля смещение байтов в буфере <paramref name="buffer" />, с которого начинается копирование байтов в текущий поток.</param>
         <param name="count">Количество байтов, которое необходимо записать в текущий поток.</param>
         <summary>При переопределении в производном классе записывает последовательность байтов в текущий поток и перемещает текущую позицию в нем вперед на число записанных байтов.</summary>
         <remarks>
@@ -2318,10 +2331,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например, связанная с тем, что не удается найти указанный файл.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например связанная с тем, что не удается найти указанный файл.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> был вызван после закрытия потока.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
@@ -2363,8 +2375,8 @@
         <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.ReadOnlyMemory&lt;System.Byte&gt;" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.ReadOnlyMemory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
@@ -2411,13 +2423,13 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, из которого записываются данные.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>buffer</c>, с которого начинается копирование байтов в поток.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в объекте <paramref name="buffer" />, с которого начинается копирование байтов в поток.</param>
         <param name="count">Максимальное число байтов для записи.</param>
         <summary>Асинхронно записывает последовательность байтов в текущий поток и перемещает текущую позицию внутри потока на число записанных байтов.</summary>
         <returns>Задача, представляющая асинхронную операцию записи.</returns>
@@ -2425,7 +2437,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.WriteAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.WriteAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Используйте <xref:System.IO.Stream.CanWrite%2A> свойства, чтобы определить, поддерживает ли текущий экземпляр операции записи.  
   
@@ -2439,9 +2451,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -2484,14 +2495,14 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, из которого записываются данные.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>buffer</c>, с которого начинается копирование байтов в поток.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в объекте <paramref name="buffer" />, с которого начинается копирование байтов в поток.</param>
         <param name="count">Максимальное число байтов для записи.</param>
         <param name="cancellationToken">Токен для отслеживания запросов отмены. Значение по умолчанию — <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Асинхронно записывает последовательность байтов в текущий поток, перемещает текущую позицию внутри потока на число записанных байтов и отслеживает запросы отмены.</summary>
@@ -2500,7 +2511,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.IO.Stream.WriteAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)], где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
+ <xref:System.IO.Stream.WriteAsync%2A> Метод позволяет выполнять ресурсоемкие операции ввода-вывода без блокировки основного потока. Это соображение, связанное с производительностью, особенно важно в приложениях [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] и [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] , где длительная потоковая операция может блокировать поток пользовательского интерфейса и создавать впечатление, что приложение не работает. Асинхронные методы используются в сочетании с `async` и `await` ключевые слова в Visual Basic и C#.  
   
  Используйте <xref:System.IO.Stream.CanWrite%2A> свойства, чтобы определить, поддерживает ли текущий экземпляр операции записи.  
   
@@ -2510,9 +2521,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -2570,9 +2580,7 @@
         <exception cref="T:System.IO.IOException">Ошибка ввода-вывода.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись или был закрыт до начала операции.</exception>
         <exception cref="T:System.ObjectDisposedException">Методы были вызваны после закрытия потока.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая записывает в буфер напрямую, как избежать дополнительное размещение массива при каждом вызове.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая записывает в буфер напрямую, как избежать дополнительное размещение массива при каждом вызове.</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -2620,10 +2628,7 @@
         <value>Значение в миллисекундах, определяющее период, в течение которого поток будет пытаться выполнить операцию записи, прежде чем истечет время ожидания.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Метод <see cref="P:System.IO.Stream.WriteTimeout" /> всегда создает исключение <see cref="T:System.InvalidOperationException" />.</exception>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="P:System.IO.Stream.WriteTimeout" /> Свойство должно переопределяться для предоставления соответствующего расширения функциональности для потока. Если поток поддерживает время ожидания, это свойство следует вызвать <see cref="T:System.InvalidOperationException" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para><see cref="P:System.IO.Stream.WriteTimeout" /> Свойство должно переопределяться для предоставления соответствующего расширения функциональности для потока. Если поток поддерживает время ожидания, это свойство следует вызвать <see cref="T:System.InvalidOperationException" />.</para></block>
       </Docs>
     </Member>
   </Members>

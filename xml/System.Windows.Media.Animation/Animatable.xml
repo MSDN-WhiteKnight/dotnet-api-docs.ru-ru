@@ -1,13 +1,5 @@
 <Type Name="Animatable" FullName="System.Windows.Media.Animation.Animatable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7faa98eb3177973c6082c9f012db32e1ad9d0968" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48649659" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class Animatable : System.Windows.Freezable, System.Windows.Media.Animation.IAnimatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b2b2b3254eb14935dd9f6d13bba8be82f2f62218" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55349287" /></Metadata><TypeSignature Language="C#" Value="public abstract class Animatable : System.Windows.Freezable, System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Animatable extends System.Windows.Freezable implements class System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Animatable&#xA;Inherits Freezable&#xA;Implements IAnimatable" />
@@ -93,7 +85,7 @@
       </Parameters>
       <Docs>
         <param name="dp">Анимируемое свойство.</param>
-        <param name="clock">Часы, с помощью которых нужно анимировать заданное свойство. Если <c>clock</c> имеет значение <see langword="null" />, все анимации будут удалены из заданного свойства (но не остановлены).</param>
+        <param name="clock">Часы, с помощью которых нужно анимировать заданное свойство. Если <paramref name="clock" /> имеет значение <see langword="null" />, все анимации будут удалены из заданного свойства (но не остановлены).</param>
         <summary>Применяет <see cref="T:System.Windows.Media.Animation.AnimationClock" /> к заданному <see cref="T:System.Windows.DependencyProperty" />. Если свойство уже анимировано, используется эстафетное поведение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -130,7 +122,7 @@
       </Parameters>
       <Docs>
         <param name="dp">Анимируемое свойство.</param>
-        <param name="clock">Часы, с помощью которых нужно анимировать заданное свойство. Если <c>handoffBehavior</c> имеет значение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а <c>clock</c> имеет значение <see langword="null" />, все анимации будут удалены из заданного свойства (но не остановлены). Если параметр <c>handoffBehavior</c> имеет значение <see langword="null" />, а clock имеет значение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />, этот метод не действует.</param>
+        <param name="clock">Часы, с помощью которых нужно анимировать заданное свойство. Если параметр <paramref name="handoffBehavior" /> имеет значение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а параметр <paramref name="clock" /> – значение <see langword="null" />, все анимации будут удалены из указанного свойства (но не остановлены). Если параметр <paramref name="handoffBehavior" /> равен <see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" /> и часы имеют значение <see langword="null" />, этот метод не действует.</param>
         <param name="handoffBehavior">Значение, которое указывает, как новая анимация должна взаимодействовать с любыми текущими анимациями, уже влияющими на значение свойства.</param>
         <summary>Применяет <see cref="T:System.Windows.Media.Animation.AnimationClock" /> к заданному <see cref="T:System.Windows.DependencyProperty" />. Если свойство уже является анимированным, используется указанное поведение <see cref="T:System.Windows.Media.Animation.HandoffBehavior" />.</summary>
         <remarks>
@@ -204,7 +196,7 @@
   
 Если <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> анимации — <see langword="null" />, любые текущие анимации будут удалены, и будет сохранено существующее значение свойства.  
   
-Если <c>animation</c> имеет значение <see langword="null" />, все анимации будут удалены из свойства, а значение свойства вернется к базовому значению.</param>
+Если <paramref name="animation" /> имеет значение <see langword="null" />, все анимации будут удалены из свойства, а значение свойства вернется к базовому значению.</param>
         <summary>Применяет анимацию к указанному <see cref="T:System.Windows.DependencyProperty" />. Анимация начинается при отрисовке следующего кадра. Если указанное свойство уже анимировано, используется поведение перемещения <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -243,11 +235,11 @@
         <param name="dp">Анимируемое свойство.</param>
         <param name="animation">Анимация, которая используется для анимирования указанного свойства.  
   
-Если параметр <c>handoffBehavior</c> имеет значение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а свойство анимации <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> имеет значение <see langword="null" />, любые текущие анимации будут удалены, а текущее значение свойства будет сохранено.  
+Если параметр <paramref name="handoffBehavior" /> равен <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а свойство анимации <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> имеет значение <see langword="null" />, любые текущие анимации будут удалены, а текущее значение свойства будет сохранено.  
   
-Если параметр <c>handoffBehavior</c> имеет значение<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а <c>animation</c> является ссылкой <see langword="null" />, все анимации будут удалены из свойства, а значение свойства будет возвращено к исходному.  
+Если параметр <paramref name="handoffBehavior" /> равен <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, а параметр <paramref name="animation" /> имеет значение <see langword="null" />, все анимации будут удалены из свойства, а значение свойства будет возвращено к исходному.  
   
-Если параметр <c>handoffBehavior</c> имеет значение <see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />, этот метод не будет действовать при условии, что анимация или ее свойство <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> имеют значение <see langword="null" />.</param>
+Если параметр <paramref name="handoffBehavior" /> равен <see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />, этот метод не будет действовать при условии, что анимация или ее свойство <see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" /> имеют значение <see langword="null" />.</param>
         <param name="handoffBehavior">Значение, которое указывает, как новая анимация должна взаимодействовать с любыми текущими анимациями, уже влияющими на значение свойства.</param>
         <summary>Применяет анимацию к указанному <see cref="T:System.Windows.DependencyProperty" />. Анимация начинается при отрисовке следующего кадра. Если указанное свойство уже является анимированным, используется указанное поведение <see cref="T:System.Windows.Media.Animation.HandoffBehavior" />.</summary>
         <remarks>
@@ -288,7 +280,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.Clone" />
       <MemberSignature Language="VB.NET" Value="Public Function Clone () As Animatable" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Media::Animation::Animatable ^ Clone();" />
-      <MemberSignature Language="F#" Value="member this.Clone : unit -&gt; System.Windows.Media.Animation.Animatable" Usage="animatable.Clone " />
+      <MemberSignature Language="F#" Value="override this.Clone : unit -&gt; System.Windows.Media.Animation.Animatable" Usage="animatable.Clone " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -301,7 +293,7 @@
       <Parameters />
       <Docs>
         <summary>Создает изменяемый клон данного объекта <see cref="T:System.Windows.Media.Animation.Animatable" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей объекта этот метод копирует указатели на ресурсы и связи с данными (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
-        <returns>Модифицируемая копия этого экземпляра. Возвращаемая копия является глубокой копией текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> копии имеет значение **false**.</returns>
+        <returns>Модифицируемая копия этого экземпляра. Возвращаемая копия является глубокой копией текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клона имеет значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -319,7 +311,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.FreezeCore(System.Boolean)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Function FreezeCore (isChecking As Boolean) As Boolean" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool FreezeCore(bool isChecking);" />
-      <MemberSignature Language="F#" Value="abstract member FreezeCore : bool -&gt; bool&#xA;override this.FreezeCore : bool -&gt; bool" Usage="animatable.FreezeCore isChecking" />
+      <MemberSignature Language="F#" Value="override this.FreezeCore : bool -&gt; bool" Usage="animatable.FreezeCore isChecking" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -333,7 +325,7 @@
         <Parameter Name="isChecking" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="isChecking">Значение <see langword="true" />, если этот метод должен просто определять, может ли быть заморожен данный экземпляр. Значение <see langword="false" />, если этот экземпляр действительно должен заморозить себя при вызове этого метода.</param>
+        <param name="isChecking">Значение <see langword="true" />, если этот метод должен просто определять возможность фиксации данного экземпляра. <see langword="false" />, если этот экземпляр действительно должен фиксировать себя при вызове этого метода.</param>
         <summary>Делает данный объект <see cref="T:System.Windows.Media.Animation.Animatable" /> неизменяемым или определяет, может ли он быть сделан неизменяемым.</summary>
         <returns>Если параметр <paramref name="isChecking" /> равен <see langword="true" />, этот метод возвращает значение <see langword="true" /> при возможности сделать данный объект <see cref="T:System.Windows.Media.Animation.Animatable" /> неизменяемым или значение <see langword="false" />, если такая возможность отсутствует.  
   
@@ -342,17 +334,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот метод будет возвращать **false** при <xref:System.Windows.Media.Animation.Animatable.HasAnimatedProperties%2A> — **true**.  
+ Этот метод будет возвращать `false` при <xref:System.Windows.Media.Animation.Animatable.HasAnimatedProperties%2A> является `true`.  
   
  Не вызывайте этот метод напрямую (за исключением случаев вызова базового метода в реализации). Этот метод вызывается функцией <xref:System.Windows.Freezable.CanFreeze%2A> (с `isChecking` равным `true`) и <xref:System.Windows.Freezable.Freeze%2A> (с `isChecking` равным `false`).  
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Классы, производные от <see cref="T:System.Windows.Media.Animation.Animatable" /> необходимо переопределить этот метод, если класс содержит данные, которые не хранятся с использованием свойств зависимостей.  
+        <block subset="none" type="overrides"><para>Классы, производные от <see cref="T:System.Windows.Media.Animation.Animatable" /> необходимо переопределить этот метод, если класс содержит данные, которые не хранятся с использованием свойств зависимостей.  
   
-Типичная реализация будет вызывать базовую реализацию, а затем вызовите статический <see cref="M:System.Windows.Freezable.Freeze" /> метод на всех <see cref="T:System.Windows.Freezable" /> типизированные свойства, которые содержит класс, возвращая <see langword="true" /> только в том случае, если все свойства были заморожены (или может заморожен в Case, связанных с передачей через <see langword="false" /> значение <paramref name="isChecking" />).</para>
-        </block>
+Типичная реализация будет вызывать базовую реализацию, а затем вызовите статический <see cref="M:System.Windows.Freezable.Freeze" /> метод на всех <see cref="T:System.Windows.Freezable" /> типизированные свойства, которые содержит класс, возвращая <see langword="true" /> только в том случае, если все свойства были заморожены (или может заморожен в Case, связанных с передачей через <see langword="false" /> значение <paramref name="isChecking" />).</para></block>
         <altmember cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />
       </Docs>
     </Member>
@@ -421,7 +411,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, которое указывает, сопоставлены ли один или несколько объектов <see cref="T:System.Windows.Media.Animation.AnimationClock" /> любому из свойств зависимостей этого объекта.</summary>
-        <value>**значение true,** Если один или несколько <see cref="T:System.Windows.Media.Animation.AnimationClock" /> объектов, связанных с любой из свойств зависимостей этого объекта; в противном случае **false**.</value>
+        <value><see langword="true" /> Если один или несколько <see cref="T:System.Windows.Media.Animation.AnimationClock" /> объектов, связанных с любой из свойств зависимостей этого объекта; в противном случае <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -446,10 +436,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -462,7 +449,7 @@
       <Docs>
         <param name="target">Представляет объект, участвующий в системе свойств зависимостей.</param>
         <summary>Указывает, нужно ли сериализовать объект зависимости.</summary>
-        <returns>Значение <see langword="true" /> для сериализации объекта <paramref name="target" />; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" /> для сериализации объекта <paramref name="target" />; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

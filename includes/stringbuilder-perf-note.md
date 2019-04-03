@@ -12,7 +12,7 @@
 
 - Преобразуйте экземпляр <xref:System.Text.StringBuilder> в <xref:System.String> путем вызова метода <xref:System.Text.StringBuilder.ToString%2A>, а затем получите доступ к символам в строке.
 
-- Скопируйте содержимое существующего объекта <xref:System.Text.StringBuilder> в новый объект <xref:System.Text.StringBuilder> с заданным размером. Производительность повышается, так как новый объект <xref:System.Text.StringBuilder> не содержит блоков. Пример:
+- Скопируйте содержимое существующего объекта <xref:System.Text.StringBuilder> в новый объект <xref:System.Text.StringBuilder> с заданным размером. Производительность повышается, так как новый объект <xref:System.Text.StringBuilder> не содержит блоков. Например:
 
    ```csharp
    // sbOriginal is the existing StringBuilder object

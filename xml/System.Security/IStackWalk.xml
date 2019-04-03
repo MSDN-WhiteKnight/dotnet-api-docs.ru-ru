@@ -1,13 +1,5 @@
 <Type Name="IStackWalk" FullName="System.Security.IStackWalk">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="68bb1d581343b243676d9e52c3b1ec47ab5eed42" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49143202" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IStackWalk" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ffff6974a1ebf871cd84ed3f0b180c1e73b50d37" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56402373" /></Metadata><TypeSignature Language="C#" Value="public interface IStackWalk" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStackWalk" />
   <TypeSignature Language="DocId" Value="T:System.Security.IStackWalk" />
   <TypeSignature Language="VB.NET" Value="Public Interface IStackWalk" />
@@ -25,6 +17,10 @@
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.1.0</AssemblyVersion>
+  </AssemblyInfo>
   <Interfaces />
   <Attributes>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -32,7 +28,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Управляет проверкой стека, которая определяет, имеют ли все вызывающие объекты в стеке вызовов разрешения, необходимые для доступа к защищенному ресурсу.</summary>
+    <summary>Управляет проверкой стека для определения того, все ли вызывающие элементы в стеке обладают необходимыми разрешениями на доступ к защищенному ресурсу.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -65,12 +61,16 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Подтверждает, что вызывающий код может получить доступ к ресурсу, определяемому текущим объектом разрешения, даже если вызывающим объектам выше в стеке вызовов не предоставлено разрешение на доступ к ресурсу.</summary>
+        <summary>Утверждает, что вызывающий код может получить доступ к ресурсу, определяемому текущим объектом разрешений, даже если расположенные выше в стеке вызывающие элементы не имеют разрешения на доступ к этому ресурсу.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -110,12 +110,16 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Определяет во время выполнения, было ли разрешение, указанное текущим объектом разрешений, предоставлено всем вызывающим методам в стеке вызовов.</summary>
+        <summary>Определяет во время выполнения, все ли вызывающие объекты в стеке вызова обладают разрешением, указанным в текущем объекте разрешений.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -126,10 +130,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.SecurityException">Вызывающий метод, расположенный выше в стеке вызовов, не имеет разрешения, указанного текущим объектом разрешений.  
+        <exception cref="T:System.Security.SecurityException">У вызывающего объекта, находящегося выше в стеке вызова, нет разрешения, указанного в текущем объекте разрешений.  
   
-- или - 
-Вызывающий метод в стеке вызовов вызвал <see cref="M:System.Security.IStackWalk.Deny" /> в текущем объекте разрешений.</exception>
+-или- 
+Вызывающий код в стеке вызова вызвал метод <see cref="M:System.Security.IStackWalk.Deny" /> для текущего объекта разрешений.</exception>
       </Docs>
     </Member>
     <Member MemberName="Deny">
@@ -152,12 +156,16 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Вызывает ошибку каждого <see cref="M:System.Security.IStackWalk.Demand" /> для текущего объекта, проходящего через вызывающий код.</summary>
+        <summary>Принудительно блокирует каждый проходящий через вызывающий код вызов метода <see cref="M:System.Security.IStackWalk.Demand" /> для текущего объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -170,9 +178,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод нельзя переопределить.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод нельзя переопределить.</para></block>
       </Docs>
     </Member>
     <Member MemberName="PermitOnly">
@@ -195,12 +201,16 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Вызывает сбой всех <see cref="M:System.Security.IStackWalk.Demand" /> для всех объектов, кроме текущего, проходящих через вызывающий код, даже если коду выше в стеке вызовов было предоставлено разрешение на доступ к другим ресурсам.</summary>
+        <summary>Принудительно блокирует все проходящие через вызывающий код вызовы <see cref="M:System.Security.IStackWalk.Demand" /> для всех объектов, кроме текущего, даже если расположенный выше в стеке вызовов код обладает разрешениями на доступ к другим ресурсам.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,13 +1,5 @@
 <Type Name="DocumentPageView" FullName="System.Windows.Controls.Primitives.DocumentPageView">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6ee0f566032112e6da3106321f9b7f47ca46c937" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39919361" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class DocumentPageView : System.Windows.FrameworkElement, IDisposable, IServiceProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5e941f48d41193e183a307065f7b5def43c4bc24" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57950568" /></Metadata><TypeSignature Language="C#" Value="public class DocumentPageView : System.Windows.FrameworkElement, IDisposable, IServiceProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi DocumentPageView extends System.Windows.FrameworkElement implements class System.IDisposable, class System.IServiceProvider" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.DocumentPageView" />
   <TypeSignature Language="VB.NET" Value="Public Class DocumentPageView&#xA;Inherits FrameworkElement&#xA;Implements IDisposable, IServiceProvider" />
@@ -30,7 +22,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Представляет окно просмотра для разбитого на страницы объекта <see cref="T:System.Windows.Documents.DocumentPage" />.</summary>
+    <summary>Представляет окно просмотра для класса <see cref="T:System.Windows.Documents.DocumentPage" /> с разбиением на страницы.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -180,6 +172,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; System::Object ^ GetService(Type ^ serviceType);" />
       <MemberSignature Language="F#" Value="member this.GetService : Type -&gt; obj" Usage="documentPageView.GetService serviceType" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -192,8 +187,8 @@
         <Parameter Name="serviceType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="serviceType">Тип объекта службы для получения.</param>
-        <summary>Возвращает объект службы указанного типа.</summary>
+        <param name="serviceType">Тип получаемого объекта службы.</param>
+        <summary>Возвращает объект обслуживания указанного типа.</summary>
         <returns>Объект службы типа <paramref name="serviceType" /> или значение <see langword="null" />, если не существует объекта службы типа <paramref name="serviceType" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -236,8 +231,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> меньше нуля либо больше или равен <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.VisualChildrenCount" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> меньше нуля либо больше или равен <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.VisualChildrenCount" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsDisposed">
@@ -263,8 +257,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, вызван ли <see cref="M:System.Windows.Controls.Primitives.DocumentPageView.Dispose" /> для данного экземпляра.</summary>
-        <value>
-          <see langword="true" />, если <see cref="M:System.Windows.Controls.Primitives.DocumentPageView.Dispose" /> вызван для данного <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="M:System.Windows.Controls.Primitives.DocumentPageView.Dispose" /> вызван для данного <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Controls.Primitives.DocumentPageView.Dispose" />
       </Docs>
@@ -332,7 +325,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.DocumentPageView.OnDpiChanged(System.Windows.DpiScale,System.Windows.DpiScale)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnDpiChanged (oldDpiScaleInfo As DpiScale, newDpiScaleInfo As DpiScale)" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnDpiChanged(System::Windows::DpiScale oldDpiScaleInfo, System::Windows::DpiScale newDpiScaleInfo);" />
-      <MemberSignature Language="F#" Value="abstract member OnDpiChanged : System.Windows.DpiScale * System.Windows.DpiScale -&gt; unit&#xA;override this.OnDpiChanged : System.Windows.DpiScale * System.Windows.DpiScale -&gt; unit" Usage="documentPageView.OnDpiChanged (oldDpiScaleInfo, newDpiScaleInfo)" />
+      <MemberSignature Language="F#" Value="override this.OnDpiChanged : System.Windows.DpiScale * System.Windows.DpiScale -&gt; unit" Usage="documentPageView.OnDpiChanged (oldDpiScaleInfo, newDpiScaleInfo)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -342,8 +335,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" />
-        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" />
+        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="oldDpiScaleInfo">Доступный размер, который родительский элемент может предоставить дочернему элементу. Это гибкое ограничение.</param>
@@ -423,7 +416,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Controls.Primitives.DocumentPageView.PageNumber%2A> начинается с нуля: 0 является первой страницей, 1 — второй странице и т. д.  
+ <xref:System.Windows.Controls.Primitives.DocumentPageView.PageNumber%2A> отсчитывается от нуля: 0 — это первая страница, 1 — второй странице и т. д.  
   
  Содержимое не отображается в том случае, если <xref:System.Windows.Controls.Primitives.DocumentPageView.PageNumber%2A> присвоено отрицательное число.  
   
@@ -457,7 +450,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.PageNumber" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.PageNumber" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -479,7 +472,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает перечисление <see cref="T:System.Windows.Media.Stretch" />, определяющее, как должно растягиваться содержимое для заполнения отображаемой страницы.</summary>
-        <value>Значение из перечисления, определяющее, как должно растягиваться содержимое для заполнения отображаемой страницы.  Значение по умолчанию: <see cref="F:System.Windows.Media.Stretch.Uniform" />.</value>
+        <value>Значение из перечисления, определяющее, как должно растягиваться содержимое для заполнения отображаемой страницы.  Значение по умолчанию — <see cref="F:System.Windows.Media.Stretch.Uniform" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -516,7 +509,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает <see cref="T:System.Windows.Controls.StretchDirection" /> перечисление, определяющее, в каких направлениях масштабирования должно применяться <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.Stretch" />.</summary>
-        <value>Значение из перечисления, определяющее, в каких направлениях масштабирования должно применяться <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.Stretch" />.  Значение по умолчанию: <see cref="F:System.Windows.Controls.StretchDirection.DownOnly" />.</value>
+        <value>Значение из перечисления, определяющее, в каких направлениях масштабирования должно применяться <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.Stretch" />.  Значение по умолчанию — <see cref="F:System.Windows.Controls.StretchDirection.DownOnly" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -552,7 +545,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.StretchDirection" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.StretchDirection" />.</summary>
         <remarks>To be added.</remarks>
         <altmember cref="F:System.Windows.Controls.Primitives.DocumentPageView.StretchProperty" />
       </Docs>
@@ -574,7 +567,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.Stretch" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Controls.Primitives.DocumentPageView.Stretch" />.</summary>
         <remarks>To be added.</remarks>
         <altmember cref="F:System.Windows.Controls.Primitives.DocumentPageView.StretchDirectionProperty" />
       </Docs>
@@ -615,6 +608,9 @@
       <MemberSignature Language="VB.NET" Value="Function GetService (serviceType As Type) As Object Implements IServiceProvider.GetService" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::Object ^ System.IServiceProvider.GetService(Type ^ serviceType) = IServiceProvider::GetService;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -632,7 +628,7 @@
         <Parameter Name="serviceType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="serviceType">Объект, определяющий тип объекта службы, который необходимо получить.</param>
+        <param name="serviceType">Объект, определяющий тип объекта обслуживания, который необходимо получить.</param>
         <summary>Этот член поддерживает инфраструктуру [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] и не предназначен для непосредственного использования из кода.  Использовать вместо этого типобезопасный метод <see cref="M:System.Windows.Controls.Primitives.DocumentPageView.GetService(System.Type)" />.</summary>
         <returns>Объект обслуживания типа <paramref name="serviceType" />.</returns>
         <remarks>To be added.</remarks>

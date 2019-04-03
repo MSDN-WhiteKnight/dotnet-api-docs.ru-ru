@@ -1,13 +1,5 @@
 <Type Name="OracleParameterCollection" FullName="System.Data.OracleClient.OracleParameterCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c9f3ead31d4cf00be0b54d3cd779b84b94345d95" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48659936" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class OracleParameterCollection : System.Data.Common.DbParameterCollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3a3b3972b0827adcec458faefc9ebfe3ad21e779" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916154" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleParameterCollection : System.Data.Common.DbParameterCollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleParameterCollection extends System.Data.Common.DbParameterCollection" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleParameterCollection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleParameterCollection&#xA;Inherits DbParameterCollection" />
@@ -28,7 +20,7 @@
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DBParametersEditor, Microsoft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1">
@@ -46,7 +38,7 @@
 ## Remarks  
  При использовании именованных параметров, число параметров в коллекции должно быть равно числу именованных параметров в тексте команды, или поставщик данных .NET Framework для Oracle вызывает ошибку.  
   
- Поставщик данных .NET Framework для Oracle не поддерживает прототип вопросительного знака (?) для передачи параметров в инструкции SQL, которые называются <xref:System.Data.OracleClient.OracleCommand> из `CommandType.Text`. В этом случае необходимо использовать именованные параметры. Примеры.  
+ Поставщик данных .NET Framework для Oracle не поддерживает прототип вопросительного знака (?) для передачи параметров в инструкции SQL, которые называются <xref:System.Data.OracleClient.OracleCommand> из `CommandType.Text`. В этом случае необходимо использовать именованные параметры. Например:  
   
 ```  
 SELECT * FROM Customers WHERE CustomerID = :pCustomerID  
@@ -91,7 +83,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Добавляет <see cref="T:System.Data.OracleClient.OracleParameter" /> к <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
+        <summary>Добавляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Add">
@@ -115,7 +107,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
         <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
       </Parameters>
       <Docs>
-        <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" />, добавляемый в коллекцию.</param>
+        <param name="value">Параметр <see cref="T:System.Data.OracleClient.OracleParameter" /> для добавления в коллекцию.</param>
         <summary>Добавляет заданный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Ссылка на новый объект <see cref="T:System.Data.OracleClient.OracleParameter" />.</returns>
         <remarks>
@@ -129,8 +121,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <see cref="T:System.Data.OracleClient.OracleParameter" />, заданный в параметре <paramref name="value" />, уже добавлен в эту или другую коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.OracleClient.OracleParameter" />, заданный в параметре <paramref name="value" />, уже добавлен в эту или другую коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="value" /> имеет значение null.</exception>
       </Docs>
     </Member>
@@ -149,10 +140,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -164,7 +152,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
       </Parameters>
       <Docs>
         <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" /> для добавления в коллекцию.</param>
-        <summary>Добавляет заданный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
+        <summary>Добавляет указанный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Индекс нового объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,13 +211,10 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Obsolete("Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202", false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -242,7 +227,7 @@ SELECT * FROM Customers WHERE CustomerID = :pCustomerID
       </Parameters>
       <Docs>
         <param name="parameterName">Имя параметра.</param>
-        <param name="value">Параметр <see cref="P:System.Data.OracleClient.OracleParameter.Value" /> объекта <see cref="T:System.Data.OracleClient.OracleParameter" />, добавляемого в коллекцию.</param>
+        <param name="value"><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> из <see cref="T:System.Data.OracleClient.OracleParameter" /> для добавления в коллекцию.</param>
         <summary>Добавляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем параметра и значением в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Ссылка на новый объект <see cref="T:System.Data.OracleClient.OracleParameter" />.</returns>
         <remarks>
@@ -330,7 +315,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <param name="parameterName">Имя параметра.</param>
         <param name="dataType">Одно из значений <see cref="T:System.Data.OracleClient.OracleType" />.</param>
         <param name="size">Длина столбца.</param>
-        <param name="srcColumn">Имя столбца источника.</param>
+        <param name="srcColumn">Имя исходного столбца.</param>
         <summary>Добавляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем параметра, типом данных, длиной столбца и именем столбца источника в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Ссылка на новый объект <see cref="T:System.Data.OracleClient.OracleParameter" />.</returns>
         <remarks>
@@ -352,7 +337,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Добавляет элементы в конец <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
+        <summary>Добавляет элементы в конец коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddRange">
@@ -372,10 +357,10 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="values" Type="System.Array" />
+        <Parameter Name="values" Type="System.Array" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="values">Значения <see cref="T:System.Array" />, которые необходимо добавить.</param>
+        <param name="values">Добавляемые значения <see cref="T:System.Array" />.</param>
         <summary>Добавляет массив значений в конец коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -397,11 +382,11 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="values" Type="System.Data.OracleClient.OracleParameter[]" />
+        <Parameter Name="values" Type="System.Data.OracleClient.OracleParameter[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="values">Значения <see cref="T:System.Data.OracleClient.OracleParameter" />, которые необходимо добавить.</param>
-        <summary>Добавляет массив значений <see cref="T:System.Data.OracleClient.OracleParameter" /> в конец <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
+        <param name="values">Добавляемые значения <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
+        <summary>Добавляет массив значений <see cref="T:System.Data.OracleClient.OracleParameter" /> в конец коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -422,12 +407,12 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="parameterName" Type="System.String" />
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parameterName" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="parameterName">Имя параметра.</param>
-        <param name="value">Значение, которое необходимо добавить.</param>
+        <param name="value">Добавляемое значение.</param>
         <summary>Добавляет значение в конец коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Объект <see cref="T:System.Data.OracleClient.OracleParameter" />.</returns>
         <remarks>To be added.</remarks>
@@ -482,10 +467,10 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="value">Значение типа <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
+        <param name="value">Значение <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
         <summary>Определяет, входит ли указанный <see cref="T:System.Data.OracleClient.OracleParameter" /> в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Значение <see langword="true" />, если <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> содержит значение; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
@@ -512,7 +497,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="value">Значение типа <see cref="T:System.Object" />.</param>
+        <param name="value">Значение <see cref="T:System.Object" />.</param>
         <summary>Определяет, входит ли указанный объект в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
         <returns>Значение <see langword="true" />, если <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> содержит значение; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
@@ -539,7 +524,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="parameterName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="parameterName">Имя объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> для поиска в коллекции.</param>
+        <param name="parameterName">Имя параметра <see cref="T:System.Data.OracleClient.OracleParameter" />, которое следует искать в коллекции.</param>
         <summary>Указывает, содержится ли в коллекции объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем.</summary>
         <returns>Значение <see langword="true" />, если <see cref="T:System.Data.OracleClient.OracleParameter" /> входит в коллекцию; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
@@ -551,7 +536,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в заданный объект.</summary>
+        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в указанный объект.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CopyTo">
@@ -575,9 +560,9 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">Одномерный массив <see cref="T:System.Array" />, который является массивом назначения для элементов, копируемых из текущего массива <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
+        <param name="array">Одномерный массив <see cref="T:System.Array" /> — назначение для элементов, копируемых из текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
         <param name="index">32-разрядное целое число, представляющее индекс в массиве <see cref="T:System.Array" />, с которого начинается копирование.</param>
-        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в заданный одномерный массив <see cref="T:System.Array" /> начиная с указанного индекса целевого массива <see cref="T:System.Array" />.</summary>
+        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в указанный одномерный массив <see cref="T:System.Array" />, начиная с указанного индекса в массиве <see cref="T:System.Array" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -598,14 +583,13 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Data.OracleClient.OracleParameter[]" />
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="array" Type="System.Data.OracleClient.OracleParameter[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="array">
-          <see cref="T:System.Data.OracleClient.OracleParameterCollection" />, куда копируются элементы из текущей <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
+        <param name="array">Коллекция <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> — назначение для элементов, копируемых из текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
         <param name="index">32-разрядное целое число, представляющее индекс в массиве <see cref="T:System.Data.OracleClient.OracleParameterCollection" />, с которого начинается копирование.</param>
-        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в заданную коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> начиная с указанного индекса в целевой коллекции.</summary>
+        <summary>Копирует все элементы текущей коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в указанную коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />, начиная с указанного индекса в коллекции назначения.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -628,7 +612,7 @@ parameters.Add("pname", Convert.ToInt32(0));
       </ReturnValue>
       <Docs>
         <summary>Возвращает целое число, которое содержит количество элементов в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />. Только для чтения.</summary>
-        <value>Количество элементов в <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> в виде целого числа.</value>
+        <value>Число элементов в коллекции <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> является значением типа Integer.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -680,7 +664,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Data.Common.DbParameter</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">To be added.</param>
@@ -706,7 +690,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Data.Common.DbParameter</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="parameterName" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="parameterName">To be added.</param>
@@ -721,7 +705,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Получает местоположение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</summary>
+        <summary>Возвращает положение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IndexOf">
@@ -741,12 +725,12 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Искомый объект <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
-        <summary>Получает местоположение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</summary>
-        <returns>Местоположение (с нуля) указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
+        <summary>Возвращает положение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</summary>
+        <returns>Отсчитываемое от нуля расположение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -772,8 +756,8 @@ parameters.Add("pname", Convert.ToInt32(0));
       </Parameters>
       <Docs>
         <param name="value">Искомый объект <see cref="T:System.Object" />.</param>
-        <summary>Получает местоположение указанного объекта <see cref="T:System.Object" /> в коллекции.</summary>
-        <returns>Местоположение (с нуля) указанного объекта <see cref="T:System.Object" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
+        <summary>Возвращает положение указанного объекта <see cref="T:System.Object" /> в коллекции.</summary>
+        <returns>Отсчитываемое от нуля расположение указанного объекта <see cref="T:System.Object" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -798,9 +782,9 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="parameterName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="parameterName">Имя <see cref="T:System.Data.OracleClient.OracleParameter" />, которое необходимо найти с учетом регистра.</param>
-        <summary>Возвращает местоположение заданного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем.</summary>
-        <returns>Местоположение (с нуля) указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
+        <param name="parameterName">Имя искомого объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> с учетом регистра.</param>
+        <summary>Возвращает положение заданного объекта <see cref="T:System.Data.OracleClient.OracleParameter" /> с указанным именем.</summary>
+        <returns>Отсчитываемое от нуля расположение указанного объекта <see cref="T:System.Data.OracleClient.OracleParameter" />, который является объектом <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -830,13 +814,13 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
-        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="index">Начинающийся с нуля индекс, по которому должно быть вставлено значение.</param>
-        <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" />, который необходимо вставить в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
-        <summary>Вставляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> по указанному индексу.</summary>
+        <param name="index">Индекс (отсчет с нуля), по которому необходимо вставить значение.</param>
+        <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" />, вставляемый в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
+        <summary>Вставляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> по указанному индексу.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -862,9 +846,9 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="index">Начинающийся с нуля индекс, по которому должно быть вставлено значение.</param>
+        <param name="index">Индекс (отсчет с нуля), по которому необходимо вставить значение.</param>
         <param name="value">Объект <see cref="T:System.Object" />, который необходимо вставить в <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</param>
-        <summary>Вставляет объект <see cref="T:System.Object" /> в коллекцию <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> по указанному индексу.</summary>
+        <summary>Вставляет <see cref="T:System.Object" /> в <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> по указанному индексу.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -886,7 +870,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, показывающее, имеет ли объект <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> фиксированный размер.</summary>
+        <summary>Возвращает значение, показывающее, имеет ли объект <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> фиксированный размер.</summary>
         <value>Возвращает значение <see langword="true" />, если коллекция <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> имеет фиксированный размер, в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -909,7 +893,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, доступен ли объект <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> только для чтения.</summary>
+        <summary>Возвращает значение, которое определяет, является ли коллекция <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> доступной только для чтения.</summary>
         <value>Возвращает значение <see langword="true" />, если <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> доступен только для чтения; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -932,7 +916,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, синхронизирован ли объект <see cref="T:System.Data.OracleClient.OracleParameterCollection" />.</summary>
+        <summary>Возвращает значение, которое определяет, является ли коллекция <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> синхронизированной.</summary>
         <value>Возвращает значение <see langword="true" />, если <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> синхронизирован; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -967,9 +951,9 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс (начиная с нуля) извлекаемого параметра.</param>
-        <summary>Получает или задает объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным индексом.</summary>
-        <value>Объект <see cref="T:System.Data.OracleClient.OracleParameter" /> по указанному индексу.</value>
+        <param name="index">Индекс получаемого параметра (отсчет с нуля).</param>
+        <summary>Возвращает или задает объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным индексом.</summary>
+        <value>Параметр <see cref="T:System.Data.OracleClient.OracleParameter" /> по указанному индексу.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1005,9 +989,9 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="parameterName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="parameterName">Имя извлекаемого параметра.</param>
+        <param name="parameterName">Имя получаемого параметра.</param>
         <summary>Возвращает или задает объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем.</summary>
-        <value>Объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с заданным именем.</value>
+        <value>Параметр <see cref="T:System.Data.OracleClient.OracleParameter" /> с указанным именем.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1028,7 +1012,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Удаляет заданный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
+        <summary>Удаляет указанный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Remove">
@@ -1048,11 +1032,11 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" />, который необходимо удалить из коллекции.</param>
-        <summary>Удаляет заданный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
+        <param name="value">Объект <see cref="T:System.Data.OracleClient.OracleParameter" />, который должен быть удален из коллекции.</param>
+        <summary>Удаляет указанный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1077,8 +1061,8 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="value">Объект <see cref="T:System.Object" />, который необходимо удалить из коллекции.</param>
-        <summary>Удаляет заданный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
+        <param name="value">Объект <see cref="T:System.Object" />, который должен быть удален из коллекции.</param>
+        <summary>Удаляет указанный объект <see cref="T:System.Data.OracleClient.OracleParameter" /> из коллекции.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1112,7 +1096,7 @@ parameters.Add("pname", Convert.ToInt32(0));
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс (с нуля) удаляемого объекта <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
+        <param name="index">Индекс (отсчет с нуля) удаляемого объекта <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
         <summary>Удаляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> по указанному индексу из коллекции.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1139,7 +1123,7 @@ parameters.Add("pname", Convert.ToInt32(0));
       </Parameters>
       <Docs>
         <param name="parameterName">Имя удаляемого объекта <see cref="T:System.Data.OracleClient.OracleParameter" />.</param>
-        <summary>Удаляет из коллекции объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с указанным именем.</summary>
+        <summary>Удаляет объект <see cref="T:System.Data.OracleClient.OracleParameter" /> с указанным именем из коллекции.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1160,8 +1144,8 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
-        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">To be added.</param>
@@ -1187,8 +1171,8 @@ parameters.Add("pname", Convert.ToInt32(0));
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="parameterName" Type="System.String" />
-        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="parameterName" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="parameterName">To be added.</param>

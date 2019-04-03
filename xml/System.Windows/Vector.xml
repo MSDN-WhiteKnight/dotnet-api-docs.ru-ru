@@ -1,13 +1,5 @@
 <Type Name="Vector" FullName="System.Windows.Vector">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="21271014da100482e12f6421836be7ac1b5c19c8" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48682653" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct Vector : IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7254e6a76f0494976f0bc7436c4b232a25dc6abc" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55350208" /></Metadata><TypeSignature Language="C#" Value="public struct Vector : IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Vector extends System.ValueType implements class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Vector" />
   <TypeSignature Language="VB.NET" Value="Public Structure Vector&#xA;Implements IFormattable" />
@@ -27,14 +19,14 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.VectorConverter))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Converters.VectorValueSerializer))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute>
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -53,9 +45,9 @@
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
   
 ```  
-<object property="x,y"/>  
+<object property="x,y"/>  
 -or-  
-<object property="x y"/>  
+<object property="x y"/>  
 ```  
   
 <a name="xamlValues_Vector"></a>   
@@ -334,7 +326,7 @@
       </Parameters>
       <Docs>
         <param name="vector">Структура вектора, который необходимо разделить.</param>
-        <param name="scalar">Величина, на которую выполняется деление <c>vector</c>.</param>
+        <param name="scalar">Делитель <paramref name="vector" />.</param>
         <summary>Делит указанный вектор на заданный скаляр и возвращает результат в виде <see cref="T:System.Windows.Vector" />.</summary>
         <returns>Результат деления <paramref name="vector" /> на <paramref name="scalar" />.</returns>
         <remarks>
@@ -702,7 +694,7 @@
       </Parameters>
       <Docs>
         <param name="vector">Преобразуемая векторная структура.</param>
-        <param name="matrix">Преобразование, которое применяется к данному <c>vector</c>.</param>
+        <param name="matrix">Преобразование, которое применяется к <paramref name="vector" />.</param>
         <summary>Преобразует координатное пространство указанного вектора с использованием заданного значения <see cref="T:System.Windows.Media.Matrix" />.</summary>
         <returns>Результат преобразования <paramref name="vector" /> посредством <paramref name="matrix" />.</returns>
         <remarks>
@@ -854,7 +846,7 @@
         <Parameter Name="point" Type="System.Windows.Point" />
       </Parameters>
       <Docs>
-        <param name="vector">Вектор, используемый для преобразования <c>point</c>.</param>
+        <param name="vector">Вектор, используемый для перемещения <paramref name="point" />.</param>
         <param name="point">Точка, которую необходимо переместить.</param>
         <summary>Перемещает точку по заданному вектору и возвращает результат в виде точки.</summary>
         <returns>Результат перемещения <paramref name="point" /> по <paramref name="vector" />.</returns>
@@ -932,7 +924,7 @@
       </Parameters>
       <Docs>
         <param name="vector">Вектор, который необходимо разделить.</param>
-        <param name="scalar">Скаляр, на который будет разделен <c>vector</c>.</param>
+        <param name="scalar">Скаляр, на который делится <paramref name="vector" />.</param>
         <summary>Делит указанный вектор на заданный скаляр и возвращает результирующий вектор.</summary>
         <returns>Результат деления <paramref name="vector" /> на <paramref name="scalar" />.</returns>
         <remarks>
@@ -1221,7 +1213,7 @@
       </Parameters>
       <Docs>
         <param name="vector">Преобразуемый вектор.</param>
-        <param name="matrix">Преобразование, которое применяется к данному <c>vector</c>.</param>
+        <param name="matrix">Преобразование, которое применяется к <paramref name="vector" />.</param>
         <summary>Преобразует координатное пространство указанного вектора с использованием заданного значения <see cref="T:System.Windows.Media.Matrix" />.</summary>
         <returns>Результат преобразования <paramref name="vector" /> посредством <paramref name="matrix" />.</returns>
         <remarks>
@@ -1299,8 +1291,8 @@
         <Parameter Name="vector2" Type="System.Windows.Vector" />
       </Parameters>
       <Docs>
-        <param name="vector1">Вектор, из которого вычитается <c>vector2</c>.</param>
-        <param name="vector2">Вектор, который вычитается из <c>vector1</c>.</param>
+        <param name="vector1">Вектор, из которого вычитается <paramref name="vector2" />.</param>
+        <param name="vector2">Вектор, который вычитается из <paramref name="vector1" />.</param>
         <summary>Вычитает один указанный вектор из другого.</summary>
         <returns>Разность между <paramref name="vector1" /> и <paramref name="vector2" />.</returns>
         <remarks>
@@ -1411,8 +1403,8 @@
         <Parameter Name="vector2" Type="System.Windows.Vector" />
       </Parameters>
       <Docs>
-        <param name="vector1">Вектор, из которого вычитается <c>vector2</c>.</param>
-        <param name="vector2">Вектор, который вычитается из <c>vector1</c>.</param>
+        <param name="vector1">Вектор, из которого вычитается <paramref name="vector2" />.</param>
+        <param name="vector2">Вектор, который вычитается из <paramref name="vector1" />.</param>
         <summary>Вычитает указанный вектор из другого заданного вектора.</summary>
         <returns>Разность между <paramref name="vector1" /> и <paramref name="vector2" />.</returns>
         <remarks>
@@ -1459,11 +1451,11 @@
       <Docs>
         <param name="format">Строка, задающая используемый формат.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования формата по умолчанию, определенного для типа реализации <see cref="T:System.IFormattable" />.</param>
         <param name="provider">Объект <see langword="IFormatProvider" />, используемый для форматирования значения.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для получения сведений о форматировании чисел на основе текущего значения параметра языкового стандарта операционной системы.</param>
         <summary>Этот член поддерживает инфраструктуру [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] и не предназначен для непосредственного использования из кода. Описание этого члена см. в разделе <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />.</summary>
         <returns>Строка, содержащая значение текущего экземпляра в заданном формате.</returns>

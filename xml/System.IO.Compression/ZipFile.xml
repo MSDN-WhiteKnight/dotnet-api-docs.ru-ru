@@ -1,13 +1,5 @@
 <Type Name="ZipFile" FullName="System.IO.Compression.ZipFile">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e8fe0331a8762a0b8307e65e1844a4a2a92ac296" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46633715" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class ZipFile" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="66eaa9eb1a81edd8ce1014d8a06d2c145767a1bc" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57913167" /></Metadata><TypeSignature Language="C#" Value="public static class ZipFile" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ZipFile extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipFile" />
   <TypeSignature Language="VB.NET" Value="Public Class ZipFile" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type ZipFile = class" />
   <AssemblyInfo>
     <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
     <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -40,7 +33,7 @@
 ## Remarks  
   
 > [!IMPORTANT]
->  Для использования <xref:System.IO.Compression.ZipFile> класса, необходимо добавить ссылку на `System.IO.Compression.FileSystem` сборки в проекте; в противном случае вы получите следующее сообщение об ошибке при попытке скомпилировать: **имя «ZipFile» не существует в текущем контексте**. Дополнительные сведения о том, как добавить ссылку на проект в Visual Studio см. в разделе [как: Добавление и удаление ссылок с помощью диспетчера ссылок](http://msdn.microsoft.com/library/1aabb520-99b0-46c6-9368-21b4d84793eb).  
+>  Чтобы использовать <xref:System.IO.Compression.ZipFile> класса, необходимо добавить ссылку на `System.IO.Compression.FileSystem` сборки в проекте; в противном случае вы получите следующее сообщение об ошибке при попытке компиляции: **Имя «ZipFile» не существует в текущем контексте**. Дополнительные сведения о том, как добавить ссылку на проект в Visual Studio см. в разделе [как: Добавление и удаление ссылок с помощью диспетчера ссылок](https://msdn.microsoft.com/library/1aabb520-99b0-46c6-9368-21b4d84793eb).  
   
  Методы для работы с ZIP-архивов и их файлы будут распределены среди трех классов: <xref:System.IO.Compression.ZipFile>, <xref:System.IO.Compression.ZipArchive> и <xref:System.IO.Compression.ZipArchiveEntry>.  
   
@@ -77,7 +70,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/1aabb520-99b0-46c6-9368-21b4d84793eb">Практическое руководство. Добавление и удаление ссылок с помощью диспетчера ссылок</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/1aabb520-99b0-46c6-9368-21b4d84793eb">Практическое руководство. Добавление и удаление ссылок с помощью диспетчера ссылок</related>
   </Docs>
   <Members>
     <MemberGroup MemberName="CreateFromDirectory">
@@ -100,6 +93,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -145,22 +139,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В<paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="sourceDirectoryName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
-        <exception cref="T:System.IO.IOException">
-          <paramref name="destinationArchiveFileName" /> уже существует.  
+        <exception cref="T:System.IO.IOException"><paramref name="destinationArchiveFileName" /> уже существует.  
   
-- или - 
+-или- 
 Не удалось открыть файл в указанном каталоге.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 Вызывающий код не имеет необходимого разрешения на доступ к каталогу, указанному в <paramref name="sourceDirectoryName" />, или к файлу, указанному в <paramref name="destinationArchiveFileName" />.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
+        <exception cref="T:System.NotSupportedException"><paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
   
-- или - 
+-или- 
 ZIP-архив не поддерживает запись.</exception>
       </Docs>
     </Member>
@@ -173,6 +165,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -199,7 +192,7 @@ ZIP-архив не поддерживает запись.</exception>
         <param name="sourceDirectoryName">Путь к архивируемому каталогу, заданный как относительный или абсолютный путь. Относительный путь интерпретируется относительно текущего рабочего каталога.</param>
         <param name="destinationArchiveFileName">Путь создаваемого архива, заданный как относительный или абсолютный путь. Относительный путь интерпретируется относительно текущего рабочего каталога.</param>
         <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при создании записи.</param>
-        <param name="includeBaseDirectory">Значение <see langword="true" />, чтобы включить имя каталога из параметра <c>sourceDirectoryName</c> в корень архива; значение <see langword="false" />, чтобы включить только содержимое этого каталога.</param>
+        <param name="includeBaseDirectory">Значение <see langword="true" />, чтобы включить имя каталога из параметра <paramref name="sourceDirectoryName" /> в корень архива; значение <see langword="false" />, чтобы включать только содержимое этого каталога.</param>
         <summary>Создает ZIP-архив, содержащий файлы и каталоги из указанного каталога, использует указанный уровень сжатия и необязательно включает базовый каталог.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -222,22 +215,20 @@ ZIP-архив не поддерживает запись.</exception>
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В<paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="sourceDirectoryName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
-        <exception cref="T:System.IO.IOException">
-          <paramref name="destinationArchiveFileName" /> уже существует.  
+        <exception cref="T:System.IO.IOException"><paramref name="destinationArchiveFileName" /> уже существует.  
   
-- или - 
+-или- 
 Не удалось открыть файл в указанном каталоге.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 Вызывающий код не имеет необходимого разрешения на доступ к каталогу, указанному в <paramref name="sourceDirectoryName" />, или к файлу, указанному в <paramref name="destinationArchiveFileName" />.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
+        <exception cref="T:System.NotSupportedException"><paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
   
-- или - 
+-или- 
 ZIP-архив не поддерживает запись.</exception>
       </Docs>
     </Member>
@@ -250,6 +241,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -277,7 +269,7 @@ ZIP-архив не поддерживает запись.</exception>
         <param name="sourceDirectoryName">Путь к архивируемому каталогу, заданный как относительный или абсолютный путь. Относительный путь интерпретируется относительно текущего рабочего каталога.</param>
         <param name="destinationArchiveFileName">Путь создаваемого архива, заданный как относительный или абсолютный путь. Относительный путь интерпретируется относительно текущего рабочего каталога.</param>
         <param name="compressionLevel">Одно из значений перечисления, указывающее, акцентировать ли внимание на скорости или эффективности сжатия при создании записи.</param>
-        <param name="includeBaseDirectory">Значение <see langword="true" />, чтобы включить имя каталога из параметра <c>sourceDirectoryName</c> в корень архива; значение <see langword="false" />, чтобы включить только содержимое этого каталога.</param>
+        <param name="includeBaseDirectory">Значение <see langword="true" />, чтобы включить имя каталога из параметра <paramref name="sourceDirectoryName" /> в корень архива; значение <see langword="false" />, чтобы включать только содержимое этого каталога.</param>
         <param name="entryNameEncoding">Кодирование, используемое при чтении или записи имен записей в этом архиве. Задайте значение для этого параметра, только если кодирование требуется для взаимодействия с инструментами и библиотеками ZIP-архива, которые не поддерживают кодирование UTF-8 для имен записей.</param>
         <summary>Создает ZIP-архив, содержащий файлы и каталоги из указанного каталога, использует указанный уровень сжатия и кодировку символов для имен записей и необязательно включает базовый каталог.</summary>
         <remarks>
@@ -302,24 +294,22 @@ ZIP-архив не поддерживает запись.</exception>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="entryNameEncoding" /> установлено на кодировку Юникода, отличное от UTF-8.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В<paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="sourceDirectoryName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
-        <exception cref="T:System.IO.IOException">
-          <paramref name="destinationArchiveFileName" /> уже существует.  
+        <exception cref="T:System.IO.IOException"><paramref name="destinationArchiveFileName" /> уже существует.  
   
-- или - 
+-или- 
 Не удалось открыть файл в указанном каталоге.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="destinationArchiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 Вызывающий код не имеет необходимого разрешения на доступ к каталогу, указанному в <paramref name="sourceDirectoryName" />, или к файлу, указанному в <paramref name="destinationArchiveFileName" />.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
+        <exception cref="T:System.NotSupportedException"><paramref name="sourceDirectoryName" /> или <paramref name="destinationArchiveFileName" /> содержит недопустимый формат.  
   
-- или - 
+-или- 
 ZIP-архив не поддерживает запись.</exception>
       </Docs>
     </Member>
@@ -343,6 +333,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -384,28 +375,27 @@ ZIP-архив не поддерживает запись.</exception>
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанная длина пути в <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> превышает максимальную длину, определенную в системе.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
-        <exception cref="T:System.IO.IOException">Каталог, указанный в параметре <paramref name="destinationDirectoryName" />, уже существует.  
+        <exception cref="T:System.IO.IOException">Каталог, заданный параметром <paramref name="destinationDirectoryName" />, уже существует.  
   
-- или - 
-Имя записи в архиве имеет значение <see cref="F:System.String.Empty" />, содержит только пробел или по крайней мере один недопустимый символ.  
+-или- 
+Имя записи в архиве имеет значение <see cref="F:System.String.Empty" />, содержит только пробелы или содержит по крайней мере один недопустимый символ.  
   
-- или - 
-Извлечение записи архива создаст файл, который находится вне каталога, заданного <paramref name="destinationDirectoryName" />. (Это может произойти, например, если имя записи содержит методы доступа к родительскому каталогу.) 
-- или - 
+-или- 
+Извлечение записи архива создаст файл, который находится вне каталога, заданного <paramref name="destinationDirectoryName" />. (Например, это может произойти, если имя записи содержит методы доступа родительского каталога.) 
+-или- 
 Запись архива, которую требуется извлечь, имеет то же имя, что и запись, которая уже была извлекается из того же архива.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Вызывающий код не имеет необходимого разрешения на доступ к архиву или целевому каталогу.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> содержит недопустимый формат.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> содержит недопустимый формат.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Не удалось найти <paramref name="sourceArchiveFileName" />.</exception>
         <exception cref="T:System.IO.InvalidDataException">Архив, заданный параметром <paramref name="sourceArchiveFileName" />, не является допустимым ZIP-архивом.  
   
-- или - 
+-или- 
 Не удалось найти запись архива или она была повреждена.  
   
-- или - 
+-или- 
 Запись архива была сжата с помощью неподдерживаемого метода сжатия.</exception>
       </Docs>
     </Member>
@@ -432,9 +422,9 @@ ZIP-архив не поддерживает запись.</exception>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sourceArchiveFileName" Type="System.String" />
-        <Parameter Name="destinationDirectoryName" Type="System.String" />
-        <Parameter Name="overwriteFiles" Type="System.Boolean" />
+        <Parameter Name="sourceArchiveFileName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="overwriteFiles" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="sourceArchiveFileName">To be added.</param>
@@ -454,6 +444,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -502,30 +493,29 @@ ZIP-архив не поддерживает запись.</exception>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="entryNameEncoding" /> установлено на кодировку Юникода, отличное от UTF-8.</exception>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанная длина пути в <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> превышает максимальную длину, определенную в системе.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
-        <exception cref="T:System.IO.IOException">Каталог, указанный в параметре <paramref name="destinationDirectoryName" />, уже существует.  
+        <exception cref="T:System.IO.IOException">Каталог, заданный параметром <paramref name="destinationDirectoryName" />, уже существует.  
   
-- или - 
-Имя записи в архиве имеет значение <see cref="F:System.String.Empty" />, содержит только пробел или по крайней мере один недопустимый символ.  
+-или- 
+Имя записи в архиве имеет значение <see cref="F:System.String.Empty" />, содержит только пробелы или содержит по крайней мере один недопустимый символ.  
   
-- или - 
-Извлечение записи архива создаст файл, который находится вне каталога, заданного <paramref name="destinationDirectoryName" />. (Это может произойти, например, если имя записи содержит методы доступа к родительскому каталогу.) 
-- или - 
+-или- 
+Извлечение записи архива создаст файл, который находится вне каталога, заданного <paramref name="destinationDirectoryName" />. (Например, это может произойти, если имя записи содержит методы доступа родительского каталога.) 
+-или- 
 Запись архива, которую требуется извлечь, имеет то же имя, что и запись, которая уже была извлекается из того же архива.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Вызывающий код не имеет необходимого разрешения на доступ к архиву или целевому каталогу.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> содержит недопустимый формат.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="destinationDirectoryName" /> или <paramref name="sourceArchiveFileName" /> содержит недопустимый формат.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Не удалось найти <paramref name="sourceArchiveFileName" />.</exception>
         <exception cref="T:System.IO.InvalidDataException">Архив, заданный параметром <paramref name="sourceArchiveFileName" />, не является допустимым ZIP-архивом.  
   
-- или - 
+-или- 
 Не удалось найти запись архива или она была повреждена.  
   
-- или - 
+-или- 
 Запись архива была сжата с помощью неподдерживаемого метода сжатия.</exception>
       </Docs>
     </Member>
@@ -552,10 +542,10 @@ ZIP-архив не поддерживает запись.</exception>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sourceArchiveFileName" Type="System.String" />
-        <Parameter Name="destinationDirectoryName" Type="System.String" />
-        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" />
-        <Parameter Name="overwriteFiles" Type="System.Boolean" />
+        <Parameter Name="sourceArchiveFileName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="overwriteFiles" Type="System.Boolean" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="sourceArchiveFileName">To be added.</param>
@@ -586,6 +576,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -631,31 +622,27 @@ ZIP-архив не поддерживает запись.</exception>
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="archiveFileName" /> имеет значение <see cref="F:System.String.Empty" />, содержит только пробел или по крайней мере один недопустимый символ.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="archiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="archiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="archiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В <paramref name="archiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="archiveFileName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
         <exception cref="T:System.IO.IOException">Не удалось открыть <paramref name="archiveFileName" />.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Create" />, однако файл, указанный в <paramref name="archiveFileName" />, уже существует.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 У вызывающего оператора отсутствует разрешение на доступ к файлу, указанному в параметре <paramref name="archiveFileName" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">
-          <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Read" />, однако файл, указанный в <paramref name="archiveFileName" />, не найден.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
-        <exception cref="T:System.IO.InvalidDataException">
-          <paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.  
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Read" />, однако файл, указанный в <paramref name="archiveFileName" />, не найден.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
+        <exception cref="T:System.IO.InvalidDataException"><paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />, однако запись отсутствует в архиве или повреждена и не может быть прочитана.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />, однако запись слишком велика, чтобы поместиться в памяти.</exception>
       </Docs>
     </Member>
@@ -669,6 +656,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -728,34 +716,30 @@ ZIP-архив не поддерживает запись.</exception>
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="archiveFileName" /> имеет значение <see cref="F:System.String.Empty" />, содержит только пробел или по крайней мере один недопустимый символ.  
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="archiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="entryNameEncoding" /> установлено на кодировку Юникода, отличное от UTF-8.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="archiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="archiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В <paramref name="archiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="archiveFileName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
         <exception cref="T:System.IO.IOException">Не удалось открыть <paramref name="archiveFileName" />.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Create" />, однако файл, указанный в <paramref name="archiveFileName" />, уже существует.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 У вызывающего оператора отсутствует разрешение на доступ к файлу, указанному в параметре <paramref name="archiveFileName" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">
-          <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Read" />, однако файл, указанный в <paramref name="archiveFileName" />, не найден.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
-        <exception cref="T:System.IO.InvalidDataException">
-          <paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.  
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Read" />, однако файл, указанный в <paramref name="archiveFileName" />, не найден.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
+        <exception cref="T:System.IO.InvalidDataException"><paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />, однако запись отсутствует в архиве или повреждена и не может быть прочитана.  
   
-- или - 
+-или- 
  <paramref name="mode" /> имеет значение <see cref="F:System.IO.Compression.ZipArchiveMode.Update" />, однако запись слишком велика, чтобы поместиться в памяти.</exception>
       </Docs>
     </Member>
@@ -769,6 +753,7 @@ ZIP-архив не поддерживает запись.</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -808,21 +793,18 @@ ZIP-архив не поддерживает запись.</exception>
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="archiveFileName" /> имеет значение <see cref="F:System.String.Empty" />, содержит только пробел или по крайней мере один недопустимый символ.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="archiveFileName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="archiveFileName" /> является <see cref="F:System.String.Empty" />, содержит только пробелы или хотя бы один недопустимый символ.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="archiveFileName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IO.PathTooLongException">В <paramref name="archiveFileName" /> длина указанного пути, имени файла или обоих параметров превышает установленное в системе максимальное значение.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">Параметр <paramref name="archiveFileName" /> недопустим или не существует (например, он соответствует неподключенному диску).</exception>
         <exception cref="T:System.IO.IOException">Не удалось открыть <paramref name="archiveFileName" />.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> задает каталог.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="archiveFileName" /> указывает каталог.  
   
-- или - 
+-или- 
 У вызывающего оператора отсутствует разрешение на доступ к файлу, указанному в параметре <paramref name="archiveFileName" />.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Файл, заданный в <paramref name="archiveFileName" />, не найден.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
-        <exception cref="T:System.IO.InvalidDataException">
-          <paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="archiveFileName" /> содержит недопустимый формат.</exception>
+        <exception cref="T:System.IO.InvalidDataException"><paramref name="archiveFileName" /> не может интерпретироваться как ZIP-архив.</exception>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="FileSecurity" FullName="System.Security.AccessControl.FileSecurity">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="58a5f73be33cb55342d77a40f8c1dac5effe376c" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49150599" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class FileSecurity : System.Security.AccessControl.FileSystemSecurity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cfd3e20070aa573413b01199193071123cb54876" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56766659" /></Metadata><TypeSignature Language="C#" Value="public sealed class FileSecurity : System.Security.AccessControl.FileSystemSecurity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileSecurity extends System.Security.AccessControl.FileSystemSecurity" />
   <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.FileSecurity" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FileSecurity&#xA;Inherits FileSystemSecurity" />
@@ -18,6 +10,7 @@
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.2.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
+    <AssemblyVersion>4.0.4.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -30,7 +23,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1">
       <AttributeName>System.Security.SecurityCritical</AttributeName>
     </Attribute>
   </Attributes>
@@ -85,6 +78,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -93,7 +87,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -128,6 +122,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -136,7 +131,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -160,33 +155,30 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="fileName" /> представляет собой строку нулевой длины, содержащую только пробелы или один или несколько недопустимых символов, заданных методом <see cref="F:System.IO.Path.InvalidPathChars" />.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="fileName" /> представляет собой строку нулевой длины, содержащую только пробелы или один или несколько недопустимых символов, определенных в <see cref="F:System.IO.Path.InvalidPathChars" />.</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указанный путь недопустим (например, он соответствует неподключенному диску).</exception>
         <exception cref="T:System.IO.FileNotFoundException">Файл, указанный в параметре <paramref name="fileName" />, не найден.</exception>
-        <exception cref="T:System.IO.IOException">При открытии файла произошла ошибка ввода-вывода.</exception>
+        <exception cref="T:System.IO.IOException">При открытии файла возникла ошибка ввода-вывода.</exception>
         <exception cref="T:System.NotSupportedException">Параметр <paramref name="path" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.Runtime.InteropServices.SEHException">Параметр <paramref name="fileName" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Текущая операционная система не является системой Microsoft Windows 2000 или более поздней версией Windows.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
-        <exception cref="T:System.Security.AccessControl.PrivilegeNotHeldException">Текущая учетная запись системы не имеет прав администратора.</exception>
+        <exception cref="T:System.Security.AccessControl.PrivilegeNotHeldException">Текущая системная учетная запись не имеет прав администратора.</exception>
         <exception cref="T:System.SystemException">Не удалось найти файл.</exception>
-        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="fileName" /> указывает файл, доступный только для чтения.  
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="fileName" /> определяет файл, доступный только для чтения.  
   
-- или - 
+-или- 
 Эта операция не поддерживается на текущей платформе.  
   
-- или - 
-Параметр <paramref name="fileName" /> указывает каталог.  
+-или- 
+Параметр <paramref name="fileName" /> определяет каталог.  
   
-- или - 
+-или- 
 У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">разрешение на доступ к файл, указанный параметром <paramref name="name" /> параметр. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> , <see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
   
-Действие по обеспечению безопасности: спроса</permission>
-        <block subset="none" type="usage">
-          <para>
-            <see cref="M:System.Security.AccessControl.FileSecurity.#ctor(System.String,System.Security.AccessControl.AccessControlSections)" /> Конструктор требует текущей учетной записи права администратора. Чтобы создать новый экземпляр класса <see cref="T:System.Security.AccessControl.FileSecurity" /> класса определенного файла с помощью учетной записи, которая имеет права администратора, используйте <see cref="M:System.IO.FileStream.GetAccessControl" /> метод.</para>
-        </block>
+Действие по обеспечению безопасности: Запросу</permission>
+        <block subset="none" type="usage"><para><see cref="M:System.Security.AccessControl.FileSecurity.#ctor(System.String,System.Security.AccessControl.AccessControlSections)" /> Конструктор требует текущей учетной записи права администратора. Чтобы создать новый экземпляр класса <see cref="T:System.Security.AccessControl.FileSecurity" /> класса определенного файла с помощью учетной записи, которая имеет права администратора, используйте <see cref="M:System.IO.FileStream.GetAccessControl" /> метод.</para></block>
       </Docs>
     </Member>
   </Members>

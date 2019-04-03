@@ -1,13 +1,5 @@
 <Type Name="WeakEventManager" FullName="System.Windows.WeakEventManager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8241e2ff47b51e906cfa1cf3ca25aac03e6ca974" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37489334" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WeakEventManager : System.Windows.Threading.DispatcherObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0b902a9b8f78c0d8e904a6bd4037d22a00c7fb84" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57941650" /></Metadata><TypeSignature Language="C#" Value="public abstract class WeakEventManager : System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract WeakEventManager extends System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.WeakEventManager" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WeakEventManager&#xA;Inherits DispatcherObject" />
@@ -36,9 +28,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Пример настраиваемого <see cref="T:System.Windows.WeakEventManager" />, см. в разделе [шаблоны слабых событий](~/docs/framework/wpf/advanced/weak-event-patterns.md).</para>
-    </block>
+    <block subset="none" type="overrides"><para>Пример настраиваемого <see cref="T:System.Windows.WeakEventManager" />, см. в разделе [шаблоны слабых событий](~/docs/framework/wpf/advanced/weak-event-patterns.md).</para></block>
     <altmember cref="T:System.Windows.IWeakEventListener" />
   </Docs>
   <Members>
@@ -244,12 +234,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.Object" />
-        <Parameter Name="handler" Type="System.Delegate" />
+        <Parameter Name="source" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="handler" Type="System.Delegate" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="source">Исходный объект, на который подписывается делегат обработчика.</param>
-        <param name="handler">Делегат, обрабатывающий событие, вызванное объектом <c>source</c>.</param>
+        <param name="handler">Делегат, обрабатывающий событие, вызванное объектом <paramref name="source" />.</param>
         <summary>Добавляет указанный делегат в качестве обработчика событий заданного источника.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -310,12 +300,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.Object" />
-        <Parameter Name="handler" Type="System.Delegate" />
+        <Parameter Name="source" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="handler" Type="System.Delegate" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="source">Источник для удаления из обработчика.</param>
-        <param name="handler">Делегат для удаления из <c>source</c>.</param>
+        <param name="handler">Делегат для удаления из <paramref name="source" />.</param>
         <summary>Удаляет ранее добавленный обработчик из заданного источника.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -384,10 +374,9 @@
       <Docs>
         <param name="source">Источник для прослушиваемых событий.</param>
         <param name="data">Данные для проверки. Ожидается, что данный объект будет реализацией <see cref="T:System.Windows.WeakEventManager.ListenerList" />.</param>
-        <param name="purgeAll">Значение <see langword="true" />, чтобы остановить прослушивание <c>source</c> и полностью удалить все записи из списка <c>data</c>.</param>
+        <param name="purgeAll">Значение <see langword="true" />, чтобы остановить прослушивание <paramref name="source" /> и полностью удалить все записи из раздела <paramref name="data" />.</param>
         <summary>Удаляет неактивные записи прослушивателя из списка даты для предоставленного источника. Возвращает значение <see langword="true" />, если некоторые записи были фактически удалены из списка.</summary>
-        <returns>
-          <see langword="true" />, если некоторые записи были фактически удалены;в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если некоторые записи были фактически удалены;в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -396,9 +385,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если базовый тип для <see cref="P:System.Windows.WeakEventManager.Item(System.Object)" /> -то отличное от <see cref="T:System.Windows.WeakEventManager.ListenerList" />, или содержит данные, которые превышают <see cref="T:System.Windows.WeakEventManager.ListenerList" />, необходимо переопределить <see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" /> метод. Переопределение должна обеспечивать поведение очистки для альтернативный тип элементов списка. Как правило переопределение должно обеспечить поведение без вызова базовой реализации. Если определенный <see cref="T:System.Windows.WeakEventManager.ListenerList" /> по-прежнему требуется очистка, вызов <see cref="M:System.Windows.WeakEventManager.ListenerList.Purge" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если базовый тип для <see cref="P:System.Windows.WeakEventManager.Item(System.Object)" /> -то отличное от <see cref="T:System.Windows.WeakEventManager.ListenerList" />, или содержит данные, которые превышают <see cref="T:System.Windows.WeakEventManager.ListenerList" />, необходимо переопределить <see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" /> метод. Переопределение должна обеспечивать поведение очистки для альтернативный тип элементов списка. Как правило переопределение должно обеспечить поведение без вызова базовой реализации. Если определенный <see cref="T:System.Windows.WeakEventManager.ListenerList" /> по-прежнему требуется очистка, вызов <see cref="M:System.Windows.WeakEventManager.ListenerList.Purge" />.</para></block>
         <altmember cref="T:System.Windows.IWeakEventListener" />
         <altmember cref="T:System.Windows.WeakEventManager.ListenerList" />
       </Docs>
@@ -553,10 +540,8 @@
         <param name="source">Источник, прослушивание которого необходимо начать.</param>
         <summary>При переопределении в производном классе начинает прослушивать управляемые события. После первого вызова метода <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" /> диспетчер должен находиться в состоянии вызова метода <see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" /> или <see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" /> при каждой обработке соответствующего события из указанного источника.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" /> переопределения должны добавить обработчик к предоставленному <paramref name="source" />. Обработчик объявляется самим диспетчером. Обработчик класса не должен быть открытым и должен вызываться только в ответ на управляемое событие. Обработчик класса следует вызывать <see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" /> метод или <see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" /> метод соответствующим образом.</para>
-        </block>
+        <block subset="none" type="overrides"><para>
+            <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" /> переопределения должны добавить обработчик к предоставленному <paramref name="source" />. Обработчик объявляется самим диспетчером. Обработчик класса не должен быть открытым и должен вызываться только в ответ на управляемое событие. Обработчик класса следует вызывать <see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" /> метод или <see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" /> метод соответствующим образом.</para></block>
         <altmember cref="T:System.Windows.IWeakEventListener" />
         <altmember cref="M:System.Windows.WeakEventManager.GetCurrentManager(System.Type)" />
       </Docs>
@@ -584,10 +569,8 @@
         <param name="source">Источник, прослушивание которого необходимо прекратить.</param>
         <summary>При переопределении в производном классе прекращает прослушивать указанный источник управляемого события.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="M:System.Windows.WeakEventManager.StopListening(System.Object)" /> реализации следует удалить обработчик класса, как добавленные <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" /> метод. Удаление прослушивателя не сбросит прослушиватель в список. Вместо этого он должен только отключить обработчик класса (возможно, временно). Другие методы будут доступны для очистки всего списка, таких как <see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" /> метод с <paramref name="purgeAll" /> параметру присвоить <see langword="true" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>
+            <see cref="M:System.Windows.WeakEventManager.StopListening(System.Object)" /> реализации следует удалить обработчик класса, как добавленные <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" /> метод. Удаление прослушивателя не сбросит прослушиватель в список. Вместо этого он должен только отключить обработчик класса (возможно, временно). Другие методы будут доступны для очистки всего списка, таких как <see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" /> метод с <paramref name="purgeAll" /> параметру присвоить <see langword="true" />.</para></block>
         <altmember cref="T:System.Windows.IWeakEventListener" />
         <altmember cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" />
         <altmember cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" />

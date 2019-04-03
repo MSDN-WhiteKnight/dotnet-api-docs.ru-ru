@@ -1,13 +1,5 @@
 <Type Name="IRecordSequence" FullName="System.IO.Log.IRecordSequence">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6260e0146911a1dbb9e8df4620ffe2a357e6709f" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37654496" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IRecordSequence : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ffdfe5ac704327420d0d6e8650da73efc0cde964" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57931354" /></Metadata><TypeSignature Language="C#" Value="public interface IRecordSequence : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRecordSequence implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.IO.Log.IRecordSequence" />
   <TypeSignature Language="VB.NET" Value="Public Interface IRecordSequence&#xA;Implements IDisposable" />
@@ -99,8 +91,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="newBaseSequenceNumber" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newBaseSequenceNumber" /> недопустим.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="newBaseSequenceNumber" /> не активен в журнале.</exception>
         <exception cref="T:System.IO.IOException">При изменении последовательности произошла ошибка ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -574,7 +565,7 @@
         <param name="callback">Необязательный асинхронный обратный вызов по завершении операции записи на диск.</param>
         <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на запись на диск от других запросов.</param>
         <summary>При переопределении в производном классе начинает асинхронную операцию записи на диск, используя пространство, которое было ранее зарезервировано в последовательности.</summary>
-        <returns>Объект <see cref="T:System.IAsyncResult" />, представляющий асинхронную операцию очистки, которая может все еще ожидать выполнения.</returns>
+        <returns>Объект <see cref="T:System.IAsyncResult" />, представляющий асинхронную операцию записи на диск, которая может все еще ожидать выполнения.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1102,7 +1093,7 @@
  Данное свойство содержит порядковый номер, который гарантированно больше, чем порядковый номер последней добавленной записи. Допустимые порядковые номера больше или равны <xref:System.IO.Log.IRecordSequence.BaseSequenceNumber%2A> и меньше <xref:System.IO.Log.IRecordSequence.LastSequenceNumber%2A>.  
   
 > [!NOTE]
->  При использовании экземпляра <xref:System.IO.Log.LogRecordSequence> значение <xref:System.IO.Log.LogRecordSequence.LastSequenceNumber%2A> может стать устаревшим, пока записи не помещены в журнал. Дополнительные сведения об очистке записей см. в <xref:System.IO.Log.IRecordSequence.Flush%2A> и <xref:System.IO.Log.RecordAppendOptions>.  
+>  При использовании экземпляра <xref:System.IO.Log.LogRecordSequence> значение <xref:System.IO.Log.LogRecordSequence.LastSequenceNumber%2A> может стать устаревшим, пока записи не помещены в журнал. См. в разделе <xref:System.IO.Log.IRecordSequence.Flush%2A> и <xref:System.IO.Log.RecordAppendOptions> Дополнительные сведения об очистке записей. 
   
  ]]></format>
         </remarks>
@@ -1332,7 +1323,7 @@ using System;
         <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
         <Parameter Name="reservations" Type="System.Int64[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1388,7 +1379,7 @@ using System;
         <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
         <Parameter Name="reservations" Type="System.Int64[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1492,7 +1483,7 @@ using System;
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее, выполняется ли повторная автоматическая попытка добавления в случае заполнения журнала.</summary>
-        <value>Значение <see langword="true" />, если выполняется автоматическая повторная попытка добавления при заполнении журнала; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="true" />.</value>
+        <value>Значение <see langword="true" />, если выполняется автоматическая повторная попытка добавления при заполнении журнала; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

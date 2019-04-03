@@ -1,13 +1,5 @@
 <Type Name="TypeConverter" FullName="System.ComponentModel.TypeConverter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="018548c7b8364981c4e9bde2e07bbc73f2b3c7f3" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48775018" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class TypeConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6512b01a080b09edcfb87c36c82c1f8135951a18" /><Meta Name="ms.sourcegitcommit" Value="8c966994f39ffe6e7c21611e9ec1b91247a68500" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/26/2019" /><Meta Name="ms.locfileid" Value="55084685" /></Metadata><TypeSignature Language="C#" Value="public class TypeConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeConverter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class TypeConverter" />
@@ -48,9 +40,9 @@
  Наиболее распространенный тип преобразователя — это приложения, преобразует в текстовое представление. Преобразователь типов для класса привязан к классу с <xref:System.ComponentModel.TypeConverterAttribute>. Если этот атрибут не переопределен, все классы, наследующие от этого класса используется один и тот же преобразователь типа в качестве базового класса.  
   
 > [!NOTE]
->  В целях общий тип системы не напрямую обращаться к преобразователь типов. Вместо этого доступ к конвертер с помощью <xref:System.ComponentModel.TypeDescriptor>. Дополнительные сведения см. в разделе с примером кода.  
-  
- **Примечание** в целях XAML, обработчик XAML ищет <xref:System.ComponentModel.TypeConverterAttribute> напрямую, не будет выполнено через <xref:System.ComponentModel.TypeDescriptor>. Для случаев, где вы хотите <xref:System.ComponentModel.TypeDescriptor> экземпляра из кода или где создавать общие экземпляры в WPF ресурсы, это допустимо для создания его напрямую, без ссылки на <xref:System.ComponentModel.TypeDescriptor> или другой поддержки отражения и тип системы.  
+>  В целях общий тип системы не напрямую обращаться к преобразователь типов. Вместо этого доступ к конвертер с помощью <xref:System.ComponentModel.TypeDescriptor>. Дополнительные сведения см. в разделе с примером кода. 
+>
+> Тем не менее, при использовании XAML, обработчик XAML ищет <xref:System.ComponentModel.TypeConverterAttribute> напрямую, не будет выполнено через <xref:System.ComponentModel.TypeDescriptor>. Для случаев, где вы хотите <xref:System.ComponentModel.TypeDescriptor> экземпляра из кода или где создавать общие экземпляры в WPF ресурсы, это допустимо для создания его напрямую, без ссылки на <xref:System.ComponentModel.TypeDescriptor> или другой поддержки отражения и тип системы.  
   
  Классы, производные от <xref:System.ComponentModel.TypeConverter> часто ссылаются как часть как обработчик XAML преобразует значение текста инициализации или атрибут из разметки (который по своей природе является строкой) и создает объект для представления времени выполнения. Авторы пользовательский тип, собираетесь поддерживать поведение преобразования типов для XAML, обычно реализуют <xref:System.ComponentModel.TypeConverter> класс, который поддерживает собственные уникальные `ConvertFrom` поведение из строки. Это поведение позволяет преобразования типов из строк, предоставленных в качестве значения атрибута XAML и предоставляет обработчик XAML с поддержкой, необходимые для создания объекта из строки, таким образом, чтобы объект могут быть созданы в графе проанализированного объекта. Пользовательские типы или члены пользовательские типы обозначаются применение <xref:System.ComponentModel.TypeConverterAttribute> на определения, с атрибутом ссылки на пользовательский <xref:System.ComponentModel.TypeConverter> реализации. Дополнительные сведения см. в разделе [преобразователи типов для XAML Обзор](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
   
@@ -89,31 +81,29 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Наследовать от <see cref="T:System.ComponentModel.TypeConverter" /> реализовать свои собственные требования к преобразованию. При наследовании от этого класса можно переопределить следующие методы: 
--Для поддержки преобразования пользовательского типа, переопределите <see cref="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.Type)" />, <see cref="M:System.ComponentModel.TypeConverter.CanConvertTo(System.Type)" />, <see cref="M:System.ComponentModel.TypeConverter.ConvertFrom(System.Object)" />, и <see cref="M:System.ComponentModel.TypeConverter.ConvertTo(System.Object,System.Type)" /> методы.  
+    <block subset="none" type="overrides"><para>Наследовать от <see cref="T:System.ComponentModel.TypeConverter" /> реализовать свои собственные требования к преобразованию. При наследовании от этого класса можно переопределить следующие методы: 
+-Для поддержки преобразования пользовательского типа, переопределите <see cref="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />, <see cref="M:System.ComponentModel.TypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />, <see cref="M:System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />, и <see cref="M:System.ComponentModel.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" /> методы.  
   
--Для преобразования типов, которые необходимо повторно создать объект, чтобы изменить его значение, переопределите <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" /> и <see cref="M:System.ComponentModel.TypeConverter.GetCreateInstanceSupported" /> методы.  
+-Для преобразования типов, которые необходимо повторно создать объект, чтобы изменить его значение, переопределите <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)" /> и <see cref="M:System.ComponentModel.TypeConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)" /> методы.  
   
--Для преобразования типов, которые поддерживают свойства, переопределите <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" /> и <see cref="M:System.ComponentModel.TypeConverter.GetPropertiesSupported" /> методы. Если преобразуемый класс не имеет свойства и вам необходимо реализовать свойства, можно использовать <see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" /> класс как базовый для получения дескрипторов свойств. При наследовании от <see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" />, необходимо переопределить <see cref="M:System.ComponentModel.PropertyDescriptor.GetValue(System.Object)" /> и <see cref="M:System.ComponentModel.PropertyDescriptor.SetValue(System.Object,System.Object)" /> методы.  
+-Для преобразования типов, которые поддерживают свойства, переопределите <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" /> и <see cref="M:System.ComponentModel.TypeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)" /> методы. Если преобразуемый класс не имеет свойства и вам необходимо реализовать свойства, можно использовать <see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" /> класс как базовый для получения дескрипторов свойств. При наследовании от <see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" />, необходимо переопределить <see cref="M:System.ComponentModel.PropertyDescriptor.GetValue(System.Object)" /> и <see cref="M:System.ComponentModel.PropertyDescriptor.SetValue(System.Object,System.Object)" /> методы.  
   
--Для преобразования типов, которые поддерживают стандартные значения, переопределите <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />, <see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesExclusive" />, <see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesSupported" /> и <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" /> методы.  
+-Для преобразования типов, которые поддерживают стандартные значения, переопределите <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />, <see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />, <see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" /> и <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" /> методы.  
   
  <block subset="none" type="note"><para>  
  Ваш производный тип может быть помечен как <see langword="internal" /> или <see langword="private" />, но можно создать экземпляр типа с <see cref="T:System.ComponentModel.TypeDescriptor" /> класса. Не следует создавать небезопасный код, при условии, что вызывающий объект является доверенным. Вместо этого следует считать, что вызывающие объекты могут создавать экземпляры типа с частичным доверием.  
   
 </para></block>  
   
-Дополнительные сведения о преобразователях типов для целей Общие (без XAML), см. в разделе [как: реализация преобразователя типов](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ayybcxe5(v=vs.120)) или [преобразование обобщенного типа](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada).</para>
-    </block>
+ Дополнительные сведения о преобразователях типов для целей Общие (без XAML), см. в разделе [как: Реализация преобразователя типов](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ayybcxe5(v=vs.120)) или [обобщенный тип преобразования](https://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada).</para></block>
     <altmember cref="T:System.ComponentModel.TypeConverterAttribute" />
     <altmember cref="T:System.ComponentModel.PropertyDescriptorCollection" />
     <altmember cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" />
     <altmember cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />
-    <related type="Article" href="http://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/5dfb299a-b6e2-41b8-8694-e6ac987547f1">Атрибуты среды CLR, связанные с XAML для пользовательских типов и библиотек</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/c2667cbd-2f46-4a7f-9dfc-53696e35e8e4">Определение пользовательских типов для использования со службами XAML .NET Framework</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/0e11f386-808c-4eae-9ba6-029ad7ba2211">Концептуальная документация по службам XAML NET</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/5dfb299a-b6e2-41b8-8694-e6ac987547f1">Атрибуты среды CLR, связанные с XAML для пользовательских типов и библиотек</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/c2667cbd-2f46-4a7f-9dfc-53696e35e8e4">Определение пользовательских типов для использования со службами XAML .NET Framework</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/0e11f386-808c-4eae-9ba6-029ad7ba2211">Концептуальная документация по службам XAML NET</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -256,11 +246,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
   
-Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para>
-        </block>
+Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -371,9 +359,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод в соответствии с требованиями к преобразованию.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Переопределите этот метод в соответствии с требованиями к преобразованию.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -421,8 +407,7 @@
       <Docs>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
         <summary>Приводит заданное значение к типу этого преобразователя.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotSupportedException">Преобразование не может быть выполнено.</exception>
       </Docs>
@@ -465,8 +450,7 @@
         <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />, используемый в качестве текущего языка и региональных параметров.</param>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
         <summary>Преобразует заданный объект в тип этого преобразователя, используя указанные сведения о контексте и языке и региональных параметрах.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -478,15 +462,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">Преобразование не может быть выполнено.</exception>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
   
 Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.  
   
-Реализация шаблоны для преобразователей типов, которые используются для поддержки XAML и пользовательские типы, см. в разделе [преобразователи типов для XAML Обзор](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md).</para>
-        </block>
+Реализация шаблоны для преобразователей типов, которые используются для поддержки XAML и пользовательские типы, см. в разделе [преобразователи типов для XAML Обзор](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md).</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
-        <related type="Article" href="http://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="ConvertFromInvariantString">
@@ -821,10 +803,9 @@
       </Parameters>
       <Docs>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
-        <param name="destinationType">Тип <see cref="T:System.Type" />, в который преобразуется параметр <c>value</c>.</param>
+        <param name="destinationType"><see cref="T:System.Type" />, к которому преобразуется параметр <paramref name="value" />.</param>
         <summary>Преобразует данное значение в указанный тип, используя заданные аргументы.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -875,10 +856,9 @@
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
         <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />. Если передано значение <see langword="null" />, используются текущие настройки языка и региональных параметров.</param>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
-        <param name="destinationType">Тип <see cref="T:System.Type" />, в который преобразуется параметр <c>value</c>.</param>
+        <param name="destinationType"><see cref="T:System.Type" />, к которому преобразуется параметр <paramref name="value" />.</param>
         <summary>Преобразует данный объект значения в указанный тип, используя заданные сведения о контексте, а также о языке и региональных параметрах.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -895,13 +875,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="destinationType" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Преобразование не может быть выполнено.</exception>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод в соответствии с требованиями к преобразованию.  
   
-Реализация шаблоны для преобразователей типов, которые используются для поддержки XAML и пользовательские типы, см. в разделе [преобразователи типов для XAML Обзор](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md).</para>
-        </block>
+Реализация шаблоны для преобразователей типов, которые используются для поддержки XAML и пользовательские типы, см. в разделе [преобразователи типов для XAML Обзор](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md).</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
-        <related type="Article" href="http://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/51a65860-efcb-4fe0-95a0-1c679cde66b7">Общие сведения о преобразователях типов для XAML</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="ConvertToInvariantString">
@@ -1058,8 +1036,7 @@
       <Docs>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
         <summary>Преобразует указанное значение в строковое представление.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1112,8 +1089,7 @@
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
         <summary>Преобразует данное значение в строку, используя данный контекст.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1166,8 +1142,7 @@
         <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />. Если передано значение <see langword="null" />, используются текущие настройки языка и региональных параметров.</param>
         <param name="value">Преобразуемый объект <see cref="T:System.Object" />.</param>
         <summary>Преобразует данное значение в заданный тип, используя заданный контекст и сведения о языке и региональных параметрах.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
+        <returns><see cref="T:System.Object" />, представляющий преобразованное значение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1231,8 +1206,7 @@
       <Docs>
         <param name="propertyValues">Интерфейс <see cref="T:System.Collections.IDictionary" />, представляющий словарь новых значений свойства.</param>
         <summary>Повторно создает объект <see cref="T:System.Object" />, задающий набор значений свойств для объекта.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий данный <see cref="T:System.Collections.IDictionary" />, или <see langword="null" />, если объект не может быть создан. Этот метод всегда возвращает значение <see langword="null" />.</returns>
+        <returns><see cref="T:System.Object" />, представляющий данный <see cref="T:System.Collections.IDictionary" />, или <see langword="null" />, если объект не может быть создан. Этот метод всегда возвращает значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1280,11 +1254,9 @@
       </Parameters>
       <Docs>
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
-        <param name="propertyValues">
-          <see cref="T:System.Collections.IDictionary" /> новых значений свойств.</param>
+        <param name="propertyValues"><see cref="T:System.Collections.IDictionary" /> новых значений свойств.</param>
         <summary>Создает экземпляр типа, с которым связан этот <see cref="T:System.ComponentModel.TypeConverter" />, используя заданный контекст с учетом набора значений свойств для объекта.</summary>
-        <returns>
-          <see cref="T:System.Object" />, представляющий данный <see cref="T:System.Collections.IDictionary" />, или <see langword="null" />, если объект не может быть создан. Этот метод всегда возвращает значение <see langword="null" />.</returns>
+        <returns><see cref="T:System.Object" />, представляющий данный <see cref="T:System.Collections.IDictionary" />, или <see langword="null" />, если объект не может быть создан. Этот метод всегда возвращает значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1293,13 +1265,11 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать необходимо повторно создать объект, чтобы изменить его значение.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать необходимо повторно создать объект, чтобы изменить его значение.  
   
 Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.  
   
-Словарь, предоставляемый <paramref name="propertyValues" /> параметр содержит ряд пар имя/значение, по одной для каждого свойства, возвращенного из <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />.</para>
-        </block>
+Словарь, предоставляемый <paramref name="propertyValues" /> параметр содержит ряд пар имя/значение, по одной для каждого свойства, возвращенного из <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
         <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
@@ -1430,7 +1400,7 @@
       <Parameters />
       <Docs>
         <summary>Возвращает значение, показывающее, требуется ли при изменении значения этого объекта вызывать метод <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />, чтобы создать новое значение.</summary>
-        <returns>Значение <see langword="true" />, если при изменении значения этого объекта требуется вызывать метод <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" /> для создания нового значения; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если для изменения свойства в этом объекте требуется вызов <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />, чтобы создать новое значение; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1467,8 +1437,8 @@
       </Parameters>
       <Docs>
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
-        <summary>Возвращает значение, показывающее, требуется ли при изменении значения этого объекта вызывать метод <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />, чтобы создать новое значение, используя заданный контекст.</summary>
-        <returns>Значение <see langword="true" />, если при изменении значения этого объекта требуется вызывать метод <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" /> для создания нового значения; в противном случае — значение <see langword="false" />.</returns>
+        <summary>Возвращает значение, указывающее, требуется ли для изменения значения в этом объекте вызов <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />, чтобы создать новое значение с помощью указанного контекста.</summary>
+        <returns>Значение <see langword="true" />, если для изменения свойства в этом объекте требуется вызов <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />, чтобы создать новое значение; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1477,11 +1447,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать необходимо повторно создать объект, чтобы изменить его значение.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать необходимо повторно создать объект, чтобы изменить его значение.  
   
-Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para>
-        </block>
+Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -1534,7 +1502,7 @@
       <Docs>
         <param name="value">Объект класса <see cref="T:System.Object" />, задающий тип массива, для которого нужно получить свойства.</param>
         <summary>Возвращает коллекцию свойств для типа массива, заданного параметром значения.</summary>
-        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или <see langword="null" />, если свойства отсутствуют.</returns>
+        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или значение <see langword="null" />, если свойства отсутствуют.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1583,7 +1551,7 @@
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
         <param name="value">Объект класса <see cref="T:System.Object" />, задающий тип массива, для которого нужно получить свойства.</param>
         <summary>Возвращает коллекцию свойств для типа массива, заданного параметром, используя заданный контекст.</summary>
-        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или <see langword="null" />, если свойства отсутствуют.</returns>
+        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или значение <see langword="null" />, если свойства отсутствуют.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1637,7 +1605,7 @@
         <param name="value">Объект класса <see cref="T:System.Object" />, задающий тип массива, для которого нужно получить свойства.</param>
         <param name="attributes">Массив типа <see cref="T:System.Attribute" />, используемый в качестве фильтра.</param>
         <summary>Возвращает коллекцию свойств для типа массива, заданного параметром value, используя заданные контекст и атрибуты.</summary>
-        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или <see langword="null" />, если свойства отсутствуют.</returns>
+        <returns>Коллекция <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> со свойствами, доступными для этого типа данных, или значение <see langword="null" />, если свойства отсутствуют.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1646,8 +1614,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает свойства.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает свойства.  
   
 Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.  
   
@@ -1658,8 +1625,7 @@
   
 — Если атрибут является экземпляром класса <see cref="T:System.Attribute" />, свойство должно иметь точное соответствие или он не включен в возвращаемый массив.  
   
-Если <see cref="T:System.Attribute" /> задается экземпляр и это свойство по умолчанию, он включен в возвращаемый массив, даже если ни один экземпляр <see cref="T:System.Attribute" /> в свойстве.</para>
-        </block>
+Если <see cref="T:System.Attribute" /> задается экземпляр и это свойство по умолчанию, он включен в возвращаемый массив, даже если ни один экземпляр <see cref="T:System.Attribute" /> в свойстве.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
         <altmember cref="T:System.Attribute" />
       </Docs>
@@ -1764,11 +1730,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает свойства.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает свойства.  
   
-Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para>
-        </block>
+Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -1861,10 +1825,9 @@
         <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
       </Parameters>
       <Docs>
-        <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, содержащий контекст формата, который может быть использован для получения дополнительных сведений о среде, из которой вызывается этот преобразователь. Этот параметр или свойства этого параметра могут иметь значение <see langword="null" />.</param>
+        <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата, который можно использовать для получения дополнительных сведений о среде, из которой вызывается этот преобразователь. Этот параметр или его свойства могут иметь значение <see langword="null" />.</param>
         <summary>Возвращает коллекцию стандартных значений для типа данных, для которого предназначен этот преобразователь типов при предоставлении с контекстом формата.</summary>
-        <returns>
-          <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />, содержащий стандартный набор допустимых значений, или <see langword="null" />, если этот тип данных не поддерживает стандартный набор значений.</returns>
+        <returns>Класс <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />, содержащий стандартный набор допустимых значений или значение <see langword="null" />, если этот тип данных не поддерживает стандартный набор значений.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1878,9 +1841,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -1988,11 +1949,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.  
   
-Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para>
-        </block>
+Для получения дополнительных сведений о среде, из которой вызывается этот преобразователь, используйте параметр <paramref name="context" />. Этот параметр может быть <see langword="null" />, поэтому его всегда необходимо проверять. Свойства объекта контекста могут также возвращать значение <see langword="null" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -2042,7 +2001,7 @@
       <Parameters />
       <Docs>
         <summary>Возвращает значение, показывающее, поддерживает ли объект стандартный набор значений, которые можно выбрать из списка.</summary>
-        <returns>Значение <see langword="true" />, если метод <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> должен быть вызван для поиска общего набора значений, поддерживаемых объектом; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Имеет значение <see langword="true" />, если метод <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> должен быть вызван для поиска общего набора значений, поддерживаемых объектом, в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2080,7 +2039,7 @@
       <Docs>
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
         <summary>Получает значение, показывающее, поддерживает ли этот объект стандартный набор значений, которые можно выбрать из списка, используя заданную контекстную информацию.</summary>
-        <returns>Значение <see langword="true" />, если метод <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> должен быть вызван для поиска общего набора значений, поддерживаемых объектом; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Имеет значение <see langword="true" />, если метод <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> должен быть вызван для поиска общего набора значений, поддерживаемых объектом, в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2091,9 +2050,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
@@ -2146,7 +2103,7 @@
       <Docs>
         <param name="value">Объект, допустимость которого требуется проверить.</param>
         <summary>Возвращает значение, показывающее, допустим ли для этого типа данный объект значения.</summary>
-        <returns>Значение <see langword="true" />, если заданное значение допустимо для этого объекта; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если указанное значение является допустимым для данного объекта; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2165,13 +2122,11 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения, которые могут быть проверены.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения, которые могут быть проверены.  
   
 <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" /> Метод используется для проверки значения внутри типа, а не на предмет <paramref name="value" /> можно преобразовать в заданный тип. Например <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" /> можно использовать для определения допустимости заданного значения типа перечисления. Пример см. в разделе <see cref="T:System.ComponentModel.EnumConverter" />.  
   
-Можно написать собственный <c>WillConvertSucceed</c> метод путем заключения <see cref="Overload:System.ComponentModel.TypeConverter.ConvertTo" /> и <see cref="Overload:System.ComponentModel.TypeConverter.ConvertFrom" /> методы в блоках исключение.</para>
-        </block>
+Можно написать собственный <c>WillConvertSucceed</c> метод путем заключения <see cref="Overload:System.ComponentModel.TypeConverter.ConvertTo" /> и <see cref="Overload:System.ComponentModel.TypeConverter.ConvertFrom" /> методы в блоках исключение.</para></block>
         <altmember cref="T:System.ComponentModel.EnumConverter" />
       </Docs>
     </Member>
@@ -2209,9 +2164,9 @@
       </Parameters>
       <Docs>
         <param name="context">Объект <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, предоставляющий контекст формата.</param>
-        <param name="value">Объект <see cref="T:System.Object" />, допустимость которого требуется проверить.</param>
+        <param name="value">Объект <see cref="T:System.Object" /> для проверки на допустимость.</param>
         <summary>Возвращает значение, показывающее, допустим ли для этого типа и указанного контекста данный объект значения.</summary>
-        <returns>Значение <see langword="true" />, если заданное значение допустимо для этого объекта; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если указанное значение является допустимым для данного объекта; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2237,11 +2192,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения, которые могут быть проверены.  
+        <block subset="none" type="overrides"><para>Переопределите этот метод, если тип, который вы хотите преобразовать поддерживает стандартные значения, которые могут быть проверены.  
   
-<see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" /> Метод используется для проверки значения внутри типа, а не на предмет <paramref name="value" /> можно преобразовать в заданный тип. Например <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" /> можно использовать для определения допустимости заданного значения типа перечисления. Пример см. в разделе <see cref="T:System.ComponentModel.EnumConverter" />.</para>
-        </block>
+<see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" /> Метод используется для проверки значения внутри типа, а не на предмет <paramref name="value" /> можно преобразовать в заданный тип. Например <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" /> можно использовать для определения допустимости заданного значения типа перечисления. Пример см. в разделе <see cref="T:System.ComponentModel.EnumConverter" />.</para></block>
         <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
         <altmember cref="T:System.ComponentModel.EnumConverter" />
       </Docs>

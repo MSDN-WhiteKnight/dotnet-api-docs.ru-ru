@@ -1,13 +1,5 @@
 <Type Name="WebProxyScriptElement" FullName="System.Net.Configuration.WebProxyScriptElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="27365813ab29cf5398ba8fb258f99aa5e670c50f" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48678142" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class WebProxyScriptElement : System.Configuration.ConfigurationElement" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d0b817c63225d25c739930fe25e4677f52f8003f" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53513454" /></Metadata><TypeSignature Language="C#" Value="public sealed class WebProxyScriptElement : System.Configuration.ConfigurationElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebProxyScriptElement extends System.Configuration.ConfigurationElement" />
   <TypeSignature Language="DocId" Value="T:System.Net.Configuration.WebProxyScriptElement" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WebProxyScriptElement&#xA;Inherits ConfigurationElement" />
@@ -43,6 +35,40 @@
       <Docs>
         <summary>Инициализирует экземпляр класса <see cref="T:System.Net.Configuration.WebProxyScriptElement" />.</summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoConfigUrlRetryInterval">
+      <MemberSignature Language="C#" Value="public int AutoConfigUrlRetryInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AutoConfigUrlRetryInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.WebProxyScriptElement.AutoConfigUrlRetryInterval" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoConfigUrlRetryInterval As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int AutoConfigUrlRetryInterval { int get(); void set(int value); };" />
+      <MemberSignature Language="F#" Value="member this.AutoConfigUrlRetryInterval : int with get, set" Usage="System.Net.Configuration.WebProxyScriptElement.AutoConfigUrlRetryInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="netframework-4.8">
+          <AttributeName>System.Configuration.ConfigurationProperty("autoConfigUrlRetryInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Возвращает или задает значение, определяющее частоту (в секундах), с которой WinHttpAutoProxySvc будет пытаться повторить загрузку сценария AutoConfigUrl.</summary>
+        <value>Частота (в секундах), WinHttpAutoProxySvc попытается повторить загрузку AutoConfigUrl сценария.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Начиная с .NET Framework 4.8, `WinHttpAutoProxySvc` службы пытается загрузить `AutoConfigUrl` скрипта, если начальная попытка завершается неудачей. По умолчанию его значение — 600 минут (10 секунд).
+
+В предыдущих версиях .NET Framework среда выполнения не уведомление об ошибке для загрузки скрипта, а также повторяется загрузки. Можно восстановить прежнее поведение, задав значение этого свойства значение 0.
+
+         ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DownloadTimeout">

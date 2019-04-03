@@ -1,13 +1,5 @@
 <Type Name="SymmetricAlgorithm" FullName="System.Security.Cryptography.SymmetricAlgorithm">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="80b60325f1253f13249f34a30a62ce97fb05ea60" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48725371" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class SymmetricAlgorithm : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a1000ed332aa3c1dfa36fc645b93d07d8111871c" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57926479" /></Metadata><TypeSignature Language="C#" Value="public abstract class SymmetricAlgorithm : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SymmetricAlgorithm extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.SymmetricAlgorithm" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class SymmetricAlgorithm&#xA;Implements IDisposable" />
@@ -44,7 +36,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет абстрактный базовый класс, от которого наследуются все реализации симметричных алгоритмов шифрования.</summary>
+    <summary>Представляет абстрактный базовый класс, от которого наследуются все реализации алгоритмов симметричного шифрования.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -68,9 +60,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При наследовании от <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" /> класса, необходимо переопределить следующие члены: <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor(System.Byte[],System.Byte[])" />, <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.CreateEncryptor(System.Byte[],System.Byte[])" />, <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.GenerateIV" />, и <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.GenerateKey" />.</para>
-    </block>
+    <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" /> класса, необходимо переопределить следующие члены: <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor(System.Byte[],System.Byte[])" />, <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.CreateEncryptor(System.Byte[],System.Byte[])" />, <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.GenerateIV" />, и <see cref="M:System.Security.Cryptography.SymmetricAlgorithm.GenerateKey" />.</para></block>
     <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
   </Docs>
   <Members>
@@ -142,7 +132,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает размер блока криптографической операции (в битах).</summary>
+        <summary>Получает или задает размер блока криптографической операции (в битах).</summary>
         <value>Размер блока в битах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -336,7 +326,7 @@
         <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="algName" Type="System.String" />
+        <Parameter Name="algName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="algName">Имя конкретной реализации класса <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" /> для использования.</param>
@@ -386,8 +376,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает симметричный объект-дешифратор с текущим свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
-        <returns>Симметричный объект-дешифратор.</returns>
+        <summary>Создает объект-дешифратор для алгоритма симметричного шифрования с текущим свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
+        <returns>Объект-дешифратор для алгоритма симметричного шифрования.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -432,10 +422,10 @@
         <Parameter Name="rgbIV" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="rgbKey">Секретный ключ, который должен использоваться для симметричного алгоритма.</param>
-        <param name="rgbIV">Вектор инициализации, который должен использоваться для симметричного алгоритма.</param>
-        <summary>При переопределении в производном классе создает симметричный объект-дешифратор с указанным свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
-        <returns>Симметричный объект-дешифратор.</returns>
+        <param name="rgbKey">Секретный ключ, используемый в алгоритме симметричного шифрования.</param>
+        <param name="rgbIV">Вектор инициализации, используемый в алгоритме симметричного шифрования.</param>
+        <summary>При переопределении в производном классе создает объект-дешифратор для алгоритма симметричного шифрования с заданным свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
+        <returns>Объект-дешифратор для алгоритма симметричного шифрования.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -487,8 +477,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает симметричный объект-шифратор с текущим свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
-        <returns>Симметричный объект-шифратор.</returns>
+        <summary>Создает объект-шифратор для алгоритма симметричного шифрования с текущим свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
+        <returns>Объект-шифратор для алгоритма симметричного шифрования.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -544,10 +534,10 @@
         <Parameter Name="rgbIV" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="rgbKey">Секретный ключ, который должен использоваться для симметричного алгоритма.</param>
-        <param name="rgbIV">Вектор инициализации, который должен использоваться для симметричного алгоритма.</param>
-        <summary>Если переопределено в производном классе, создает симметричный объект-шифратор с заданным свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
-        <returns>Симметричный объект-шифратор.</returns>
+        <param name="rgbKey">Секретный ключ, используемый в алгоритме симметричного шифрования.</param>
+        <param name="rgbIV">Вектор инициализации, используемый в алгоритме симметричного шифрования.</param>
+        <summary>При переопределении в производном классе создает объект-шифратор для алгоритма симметричного шифрования с заданным свойством <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" /> и вектором инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />).</summary>
+        <returns>Объект-шифратор для алгоритма симметричного шифрования.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -653,7 +643,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -665,12 +655,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" />нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para></block>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
       </Docs>
     </Member>
@@ -702,8 +690,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает размер ответа в криптографической операции (в битах).</summary>
-        <value>Размер ответа в битах.</value>
+        <summary>Получает или задает размер порции данных обратной связи для криптографической операции (в битах).</summary>
+        <value>Размер порции данных обратной связи в битах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -744,7 +732,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет размер ответа в криптографической операции (в битах).</summary>
+        <summary>Представляет размер порции данных обратной связи для криптографической операции (в битах).</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -781,7 +769,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Этот член переопределяет <see cref="M:System.Object.Finalize" />; по данной теме может быть доступна более полная документация.
+
+Позволяет объекту <see cref="T:System.Object" /> попытаться освободить ресурсы и выполнить другие операции очистки, перед тем как объект <see cref="T:System.Object" /> будет утилизирован в процессе сборки мусора.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -815,7 +805,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Если переопределено в производном классе, создает произвольный вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />), используемый для алгоритма.</summary>
+        <summary>При переопределении в производном классе генерирует случайный вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />), используемый для алгоритма.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -857,7 +847,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Если переопределено в производном классе, генерирует произвольный ключ (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />), используемый для алгоритма.</summary>
+        <summary>При переопределении в производном классе генерирует случайный ключ (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />), используемый для алгоритма.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -898,7 +888,7 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) для симметричного алгоритма.</summary>
+        <summary>Получает или задает вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) для алгоритма симметричного шифрования.</summary>
         <value>Вектор инициализации.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -946,7 +936,7 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) для симметричного алгоритма.</summary>
+        <summary>Представляет вектор инициализации (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) для алгоритма симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -987,8 +977,8 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает секретный ключ для симметричного алгоритма.</summary>
-        <value>Секретный ключ, который должен использоваться для симметричного алгоритма.</value>
+        <summary>Получает или задает секретный ключ для алгоритма симметричного шифрования.</summary>
+        <value>Секретный ключ, используемый в алгоритме симметричного шифрования.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -999,7 +989,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Предпринята попытка установить для этого ключа значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Предпринята попытка задания для ключа значения <see langword="null" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Недопустимый размер ключа.</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
       </Docs>
@@ -1033,8 +1023,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает размер секретного ключа (в битах), используемого симметричным алгоритмом.</summary>
-        <value>Размер секретного ключа (в битах), используемого симметричным алгоритмом.</value>
+        <summary>Получает или задает размер секретного ключа (в битах), используемого алгоритмом симметричного шифрования.</summary>
+        <value>Размер секретного ключа (в битах), используемого алгоритмом симметричного шифрования.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1076,7 +1066,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет размер секретного ключа (в битах), используемого симметричным алгоритмом.</summary>
+        <summary>Представляет размер секретного ключа (в битах), используемого алгоритмом симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1119,7 +1109,7 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет секретный ключ для симметричного алгоритма.</summary>
+        <summary>Представляет секретный ключ для алгоритма симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1162,7 +1152,7 @@
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает размеры блоков (в битах), которые поддерживаются симметричным алгоритмом.</summary>
+        <summary>Получает размеры блоков (в битах), которые поддерживаются алгоритмом симметричного шифрования.</summary>
         <value>Массив, в котором содержатся размеры блоков, поддерживаемые данным алгоритмом.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1212,7 +1202,7 @@
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Задает размеры блоков (в битах), которые поддерживаются симметричным алгоритмом.</summary>
+        <summary>Задает размеры блоков (в битах), которые поддерживаются алгоритмом симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1255,7 +1245,7 @@
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает размеры ключа (в битах), которые поддерживаются симметричным алгоритмом.</summary>
+        <summary>Получает размеры ключа (в битах), которые поддерживаются алгоритмом симметричного шифрования.</summary>
         <value>Массив, содержащий размеры ключа, поддерживаемые алгоритмом.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1305,7 +1295,7 @@
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Задает размеры ключей в битах, которые поддерживаются симметричным алгоритмом.</summary>
+        <summary>Задает размеры ключа (в битах), которые поддерживаются алгоритмом симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1348,8 +1338,8 @@
         <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает режим функционирования симметричного алгоритма.</summary>
-        <value>Режим функционирования симметричного алгоритма. Значение по умолчанию: <see cref="F:System.Security.Cryptography.CipherMode.CBC" />.</value>
+        <summary>Получает или задает режим работы алгоритма симметричного шифрования.</summary>
+        <value>Режим работы алгоритма симметричного шифрования. Значение по умолчанию — <see cref="F:System.Security.Cryptography.CipherMode.CBC" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1391,7 +1381,7 @@
         <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет режим шифрования, используемый в симметричном алгоритме.</summary>
+        <summary>Представляет режим шифрования, используемый в алгоритме симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1434,8 +1424,8 @@
         <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает режим заполнения, используемый в симметричном алгоритме.</summary>
-        <value>Режим заполнения, используемый в симметричном алгоритме. Значение по умолчанию: <see cref="F:System.Security.Cryptography.PaddingMode.PKCS7" />.</value>
+        <summary>Получает или задает режим заполнения, используемый в алгоритме симметричного шифрования.</summary>
+        <value>Режим заполнения, используемый в алгоритме симметричного шифрования. Значение по умолчанию — <see cref="F:System.Security.Cryptography.PaddingMode.PKCS7" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1477,7 +1467,7 @@
         <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет режим заполнения, используемый в симметричном алгоритме.</summary>
+        <summary>Представляет режим заполнения, используемый в алгоритме симметричного шифрования.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1517,8 +1507,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+        <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
       </Docs>
     </Member>
     <Member MemberName="ValidKeySize">
@@ -1549,11 +1541,11 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bitLength" Type="System.Int32" />
+        <Parameter Name="bitLength" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="bitLength">Длина в битах для проверки допустимости размера ключа.</param>
-        <summary>Определяет допустимость указанного размера ключа для текущего алгоритма.</summary>
+        <param name="bitLength">Длина ключа (в битах), подлежащего проверке на допустимость.</param>
+        <summary>Определяет, является ли заданный размер ключа допустимым для текущего алгоритма.</summary>
         <returns>Значение <see langword="true" />, если заданный размер ключа допустим для текущего алгоритма; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>

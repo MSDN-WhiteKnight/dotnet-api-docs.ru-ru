@@ -1,13 +1,5 @@
 <Type Name="ValueSerializer" FullName="System.Windows.Markup.ValueSerializer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="59030ed027457420aa960fc21555efb478355923" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50171858" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ValueSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7d0bcead4cb9eb4ed8e1e1bf4db32bff7b856e73" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936554" /></Metadata><TypeSignature Language="C#" Value="public abstract class ValueSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract ValueSerializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ValueSerializer" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ValueSerializer" />
@@ -31,7 +23,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Абстрактный класс, который определяет поведение преобразования для сериализации из представления объекта.</summary>
+    <summary>Абстрактный класс, который определяет поведение преобразования сериализации из представления объекта.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -68,7 +60,7 @@
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0">
           <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
         </Attribute>
       </Attributes>
@@ -105,13 +97,13 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Строка, для которой требуется проверить возможность преобразования.</param>
         <param name="context">Контекстная информация, используемая при выполнении преобразования.</param>
-        <summary>При переопределении в производном классе определяет, можно ли преобразовать указанную строку <see cref="T:System.String" /> в экземпляр типа, поддерживаемого реализацией <see cref="T:System.Windows.Markup.ValueSerializer" />.</summary>
+        <summary>При переопределении в производном классе определяет, может ли указанный класс <see cref="T:System.String" /> быть преобразован в экземпляр типа, который поддерживается реализацией класса <see cref="T:System.Windows.Markup.ValueSerializer" />.</summary>
         <returns>Значение <see langword="true" />, если значение можно преобразовать; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -143,8 +135,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Объект, для которого необходимо проверить возможность преобразования.</param>
@@ -181,8 +173,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Преобразуемая строка.</param>
@@ -197,11 +189,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="value" /> невозможно преобразовать.</exception>
-        <block subset="none" type="overrides">
-          <para>Избегайте создания исключений в реализациях. См. раздел <see cref="T:System.Windows.Markup.ValueSerializer" />.</para>
-        </block>
+        <exception cref="T:System.NotSupportedException"><paramref name="value" /> невозможно преобразовать.</exception>
+        <block subset="none" type="overrides"><para>Избегайте создания исключений в реализациях. См. раздел <see cref="T:System.Windows.Markup.ValueSerializer" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="ConvertToString">
@@ -224,8 +213,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Объект, преобразуемый в строку.</param>
@@ -240,11 +229,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="value" /> невозможно преобразовать.</exception>
-        <block subset="none" type="overrides">
-          <para>Избегайте создания исключений в реализациях. См. раздел <see cref="T:System.Windows.Markup.ValueSerializer" />.</para>
-        </block>
+        <exception cref="T:System.NotSupportedException"><paramref name="value" /> невозможно преобразовать.</exception>
+        <block subset="none" type="overrides"><para>Избегайте создания исключений в реализациях. См. раздел <see cref="T:System.Windows.Markup.ValueSerializer" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetConvertFromException">
@@ -267,12 +253,12 @@
         <ReturnType>System.Exception</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Объект, который не удалось преобразовать.</param>
-        <summary>Возвращает исключение, возникающее в случае, если невозможно выполнить преобразование.</summary>
-        <returns>Объект <see cref="T:System.Exception" /> для исключения, возникающего в случае, если не удается выполнить преобразование <see langword="ConvertFrom" />.</returns>
+        <summary>Возвращает исключение, возникающее, если преобразование не может быть выполнено.</summary>
+        <returns>Объект <see cref="T:System.Exception" /> для исключения, которое необходимо создать, если невозможно выполнить преобразование <see langword="ConvertFrom" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -305,14 +291,14 @@
         <ReturnType>System.Exception</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="destinationType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="destinationType" Type="System.Type" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Объект, который не удалось преобразовать.</param>
-        <param name="destinationType">Тип, в который осуществлялось преобразование.</param>
-        <summary>Возвращает исключение, возникающее в случае, если невозможно выполнить преобразование.</summary>
-        <returns>Объект <see cref="T:System.Exception" /> для исключения, возникающего в случае, если не удается выполнить преобразование <see langword="ConvertTo" />.</returns>
+        <param name="destinationType">Тип, представляющий тип, в который осуществлялось преобразование.</param>
+        <summary>Возвращает исключение, возникающее, если преобразование не может быть выполнено.</summary>
+        <returns>Объект <see cref="T:System.Exception" /> для исключения, которое необходимо создать, если невозможно выполнить преобразование <see langword="ConvertTo" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -354,12 +340,12 @@
         <ReturnType>System.Windows.Markup.ValueSerializer</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="descriptor" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="descriptor" Type="System.ComponentModel.PropertyDescriptor" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="descriptor">Дескриптор свойства CLR, которое нужно сериализовать.</param>
-        <summary>Возвращает объект <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для свойства, передавая дескриптор свойства CLR для свойства.</summary>
-        <returns>Сериализатор, связанный с указанным свойством. Может возвращать <see langword="null" />.</returns>
+        <param name="descriptor">Дескриптор свойства CLR сериализуемого свойства.</param>
+        <summary>Получает класс <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для свойства, путем передачи свойству дескриптора свойства среды CLR.</summary>
+        <returns>Сериализатор, связанный с заданным свойством. Может возвращать значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -383,7 +369,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="descriptor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="descriptor" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSerializerFor">
@@ -405,12 +391,12 @@
         <ReturnType>System.Windows.Markup.ValueSerializer</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="type">Тип, для которого возвращается <see cref="T:System.Windows.Markup.ValueSerializer" />.</param>
-        <summary>Получает <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для указанного типа.</summary>
-        <returns>Сериализатор, связанный с указанным типом. Может возвращать <see langword="null" />.</returns>
+        <param name="type">Тип, для которого требуется получить <see cref="T:System.Windows.Markup.ValueSerializer" />.</param>
+        <summary>Получает <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для заданного типа.</summary>
+        <returns>Сериализатор, связанный с заданным типом. Может возвращать значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -434,7 +420,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="type" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSerializerFor">
@@ -457,14 +443,14 @@
         <ReturnType>System.Windows.Markup.ValueSerializer</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="descriptor" Type="System.ComponentModel.PropertyDescriptor" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="descriptor" Type="System.ComponentModel.PropertyDescriptor" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="descriptor">Дескриптор свойства, которое нужно сериализовать.</param>
+        <param name="descriptor">Дескриптор сериализуемого свойства.</param>
         <param name="context">Контекстная информация, используемая при выполнении преобразования.</param>
-        <summary>Получает объявленный <see cref="T:System.Windows.Markup.ValueSerializer" /> для указанного свойства, используя заданный контекст.</summary>
-        <returns>Сериализатор, связанный с указанным свойством.</returns>
+        <summary>Получает <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для заданного свойства с использованием заданного контекста.</summary>
+        <returns>Сериализатор, связанный с заданным свойством.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -477,7 +463,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="descriptor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="descriptor" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSerializerFor">
@@ -499,14 +485,14 @@
         <ReturnType>System.Windows.Markup.ValueSerializer</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="type">Тип, для которого возвращается <see cref="T:System.Windows.Markup.ValueSerializer" />.</param>
+        <param name="type">Тип, для которого требуется получить <see cref="T:System.Windows.Markup.ValueSerializer" />.</param>
         <param name="context">Контекстная информация, используемая при выполнении преобразования.</param>
-        <summary>Получает объект <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для указанного типа, используя заданный контекст.</summary>
-        <returns>Сериализатор, связанный с указанным типом.</returns>
+        <summary>Получает <see cref="T:System.Windows.Markup.ValueSerializer" />, объявленный для заданного типа с использованием заданного контекста.</summary>
+        <returns>Сериализатор, связанный с заданным типом.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -519,7 +505,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="type" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="TypeReferences">
@@ -542,8 +528,8 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Type&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Сериализуемое значение.</param>

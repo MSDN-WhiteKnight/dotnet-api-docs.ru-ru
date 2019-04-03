@@ -1,13 +1,5 @@
 <Type Name="ModelService" FullName="System.Activities.Presentation.Services.ModelService">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="941c23c44e6f4d21f355a51ac3e8878594c65dcb" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39907153" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ModelService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3cbf9ac18f8d1817cfb2336cd171f8d0bc403f93" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57913089" /></Metadata><TypeSignature Language="C#" Value="public abstract class ModelService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ModelService extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Services.ModelService" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ModelService" />
@@ -86,7 +78,7 @@
       <Docs>
         <param name="item">Элемент для клонирования и заключения в элемент-оболочку.</param>
         <summary>На основе существующего экземпляра создает элемент модели, являющийся глубокой копией экземпляра.</summary>
-        <returns>Возвращает только что созданный объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, являющийся клоном существующего элемента.</returns>
+        <returns>Только что созданный объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, являющийся клоном существующего элемента.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -110,7 +102,7 @@
         <Parameter Name="options" Type="System.Activities.Presentation.Model.CreateOptions" />
         <Parameter Name="arguments" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-4.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -121,7 +113,7 @@
         <param name="options">Параметры создания. Можно указать, требуется ли инициализация значений по умолчанию для данного элемента.</param>
         <param name="arguments">Массив аргументов, передаваемых конструктору элемента.</param>
         <summary>Создает объект <see cref="T:System.Activities.Presentation.Model.ModelItem" /> для данного типа. Данный метод вызывается методом<see cref="T:System.Activities.Presentation.Model.ModelFactory" /> при создании пользователем нового элемента.</summary>
-        <returns>Возвращает только что созданный объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />.</returns>
+        <returns>Вновь созданный <see cref="T:System.Activities.Presentation.Model.ModelItem" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,10 +187,10 @@
         <Parameter Name="match" Type="System.Predicate&lt;System.Type&gt;" />
       </Parameters>
       <Docs>
-        <param name="startingItem">Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, с которого следует начать поиск. Элементы выше данного не учитывается. Область поиска включает данный элемент и все элементы, находящиеся ниже его в иерархии. Если данное значение равно <see langword="null" />, используется <see cref="P:System.Activities.Presentation.Services.ModelService.Root" />.</param>
+        <param name="startingItem">Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, с которого следует начать поиск. Элементы выше данного игнорируются. Область поиска включает данный элемент и все элементы, находящиеся ниже его в иерархии. Если данное значение равно <see langword="null" />, используется <see cref="P:System.Activities.Presentation.Services.ModelService.Root" />.</param>
         <param name="match">Предикат, позволяющий проверять соответствие более сложных типов. Данный метод перечисляет все элементы в заданной родительской области, совпадающие с предикатом.</param>
         <summary>Находит совпадающие элементы модели, используя отправную точку для начала поиска.</summary>
-        <returns>Возвращает объект <see cref="T:System.Collections.Generic.IEnumerable`1" />, содержащий все элементы модели, удовлетворяющие запросу.</returns>
+        <returns>Объект <see cref="T:System.Collections.Generic.IEnumerable`1" />, содержащий все элементы модели, удовлетворяющие запросу.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -207,7 +199,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="match" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="match" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Find">
@@ -229,10 +221,10 @@
         <Parameter Name="type" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="startingItem">Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, с которого следует начать поиск. Элементы выше данного не учитывается. Область поиска включает данный элемент и все элементы, находящиеся ниже его в иерархии. Если данное значение равно <see langword="null" />, используется <see cref="P:System.Activities.Presentation.Services.ModelService.Root" />.</param>
-        <param name="type">Тип <see cref="T:System.Type" /> объекта, который нужно искать. Данный метод перечисляет все элементы запрошенного типа в заданной родительской области.</param>
+        <param name="startingItem">Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, с которого следует начать поиск. Элементы выше данного игнорируются. Область поиска включает данный элемент и все элементы, находящиеся ниже его в иерархии. Если данное значение равно <see langword="null" />, используется <see cref="P:System.Activities.Presentation.Services.ModelService.Root" />.</param>
+        <param name="type"><see cref="T:System.Type" /> искомого объекта. Данный метод перечисляет все элементы запрошенного типа в заданной родительской области.</param>
         <summary>Находит совпадающие элементы модели, используя отправную точку для начала поиска.</summary>
-        <returns>Возвращает объект <see cref="T:System.Collections.Generic.IEnumerable`1" />, содержащий все элементы модели, удовлетворяющие запросу.</returns>
+        <returns>Объект <see cref="T:System.Collections.Generic.IEnumerable`1" />, содержащий все элементы модели, удовлетворяющие запросу.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -241,7 +233,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="type" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="FromName">
@@ -289,9 +281,9 @@
         <param name="scope">Дополнительная область для предоставления. Если область не предоставлена, в качестве области будет использоваться <see cref="P:System.Activities.Presentation.Services.ModelService.Root" />. Если область предоставлена, то для определения расположения элемента будет использоваться ближайший в иерархии объект <see cref="T:System.Windows.Markup.INameScope" />.</param>
         <param name="name">Искомое имя.</param>
         <summary>Определяет расположение <see cref="T:System.Activities.Presentation.Model.ModelItem" /> в заданной области с заданным именем.</summary>
-        <returns>Возвращает объекты <see cref="T:System.Activities.Presentation.Model.ModelItem" />, имена которых совпадают с <paramref name="name" /> или <see langword="null" />, если совпадений не найдено.</returns>
+        <returns>Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, имя которого совпадает с <paramref name="name" />, или <see langword="null" />, если совпадение не найдено.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="FromName">
@@ -319,9 +311,9 @@
         <param name="name">Искомое имя.</param>
         <param name="comparison">Определяет метод сравнения имени. Методом по умолчанию является сравнение с порядковым номером.</param>
         <summary>Определяет расположение <see cref="T:System.Activities.Presentation.Model.ModelItem" /> в заданной области с заданным именем.</summary>
-        <returns>Возвращает объекты <see cref="T:System.Activities.Presentation.Model.ModelItem" />, имена которых совпадают с <paramref name="name" /> или <see langword="null" />, если совпадений не найдено.</returns>
+        <returns>Объект <see cref="T:System.Activities.Presentation.Model.ModelItem" />, имя которого совпадает с <paramref name="name" />, или <see langword="null" />, если совпадение не найдено.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ModelChanged">
@@ -368,7 +360,7 @@
       </ReturnValue>
       <Docs>
         <summary>Корень иерархии объектов.</summary>
-        <value>Возвращает корень иерархии модели как <see cref="T:System.Activities.Presentation.Model.ModelItem" />.</value>
+        <value>Корень иерархии модели как <see cref="T:System.Activities.Presentation.Model.ModelItem" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

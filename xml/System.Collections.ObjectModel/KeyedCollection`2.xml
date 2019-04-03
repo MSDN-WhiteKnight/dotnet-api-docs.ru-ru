@@ -1,13 +1,5 @@
 <Type Name="KeyedCollection&lt;TKey,TItem&gt;" FullName="System.Collections.ObjectModel.KeyedCollection&lt;TKey,TItem&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e674b409371e97a871dadb388471fae12ff91719" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48675282" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class KeyedCollection&lt;TKey,TItem&gt; : System.Collections.ObjectModel.Collection&lt;TItem&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3e875a9577a18b1a2e8a1486c326f4e68c6db6c9" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57948176" /></Metadata><TypeSignature Language="C#" Value="public abstract class KeyedCollection&lt;TKey,TItem&gt; : System.Collections.ObjectModel.Collection&lt;TItem&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit KeyedCollection`2&lt;TKey, TItem&gt; extends System.Collections.ObjectModel.Collection`1&lt;!TItem&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Collections.ObjectModel.KeyedCollection`2" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class KeyedCollection(Of TKey, TItem)&#xA;Inherits Collection(Of TItem)" />
@@ -51,8 +43,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -69,7 +61,7 @@
   
  В отличие от словарей, элемент <xref:System.Collections.ObjectModel.KeyedCollection%602> не пару ключ значение; вместо этого весь элемент значение и ключ внедряется в значении.  Например, элемента коллекции, производного от `KeyedCollection\<String,String>` (`KeyedCollection(Of String, String)` в Visual Basic) может быть «John Doe мл.» где значение — «John Doe мл.» а ключ — «Doe»; или коллекцию записей сотрудников, содержащих целочисленные ключи могут быть производными от `KeyedCollection\<int,Employee>`. Абстрактный <xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A> метод извлекает ключ из элемента.  
   
- По умолчанию <xref:System.Collections.ObjectModel.KeyedCollection%602> включает словарь поиска, который можно получить с помощью <xref:System.Collections.ObjectModel.KeyedCollection%602.Dictionary%2A> свойство.  При добавлении элемента <xref:System.Collections.ObjectModel.KeyedCollection%602>, извлекается один раз и сохраняется в словарь поиска для ускорения поиска ключа элемента. Это поведение можно переопределить, указав порог создания словаря, при создании <xref:System.Collections.ObjectModel.KeyedCollection%602>. Словарь поиска создается в первый раз, количество элементов превышает пороговое значение.  Если задать пороговое значение – 1, словарь поиска никогда не создается.  
+ По умолчанию <xref:System.Collections.ObjectModel.KeyedCollection%602> включает словарь поиска, который можно получить с помощью <xref:System.Collections.ObjectModel.KeyedCollection%602.Dictionary%2A> свойство.  При добавлении элемента <xref:System.Collections.ObjectModel.KeyedCollection%602>, извлекается один раз и сохраняется в словарь поиска для ускорения поиска ключа элемента. Это поведение можно переопределить, указав порог создания словаря, при создании <xref:System.Collections.ObjectModel.KeyedCollection%602>. Словарь поиска создается в первый раз, количество элементов превышает пороговое значение.  Если указать значение -1 в качестве порогового значения, словарь поиска никогда не создается.  
   
 > [!NOTE]
 >  Если используется внутренний словарь поиска, он содержит ссылки на все элементы в коллекции, если `TItem` является ссылочным типом, или копирует всех элементов в коллекции, если `TItem` является типом значения. Таким образом, используя словарь поиска может не подойти Если `TItem` является типом значения.  
@@ -255,13 +247,13 @@
       </Parameters>
       <Docs>
         <param name="comparer">Реализация универсального интерфейса <see cref="T:System.Collections.Generic.IEqualityComparer`1" />, которая может использоваться при сравнении ключей, или <see langword="null" />, чтобы использовать компаратор по умолчанию для типа ключа, полученного из <see cref="P:System.Collections.Generic.EqualityComparer`1.Default" />.</param>
-        <param name="dictionaryCreationThreshold">Количество элементов, которое может содержать коллекция без создания словаря поиска (при значении 0 словарь поиска создается при добавлении первого элемента), или –1, чтобы определить, что словарь поиска не будет создаться никогда.</param>
+        <param name="dictionaryCreationThreshold">Количество элементов, которое может содержать коллекция без создания словаря поиска (при значении 0 словарь поиска создается при добавлении первого элемента), или –1, чтобы словарь поиска не создавался никогда.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />, который использует заданный компаратор и создает словарь поиска при превышении заданного порога.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- По умолчанию <xref:System.Collections.ObjectModel.KeyedCollection%602> включает словарь поиска, который создается при добавлении первого элемента. При добавлении элемента <xref:System.Collections.ObjectModel.KeyedCollection%602>, извлекается один раз и сохраняется в словарь поиска для ускорения поиска ключа элемента. Этот конструктор позволяет переопределить это поведение. Укажите 0, чтобы создать словарь при добавлении первого элемента, 1, чтобы создать словарь при добавлении второго элемента и т. д. Если задать пороговое значение – 1, словарь поиска никогда не создается.  
+ По умолчанию <xref:System.Collections.ObjectModel.KeyedCollection%602> включает словарь поиска, который создается при добавлении первого элемента. При добавлении элемента <xref:System.Collections.ObjectModel.KeyedCollection%602>, извлекается один раз и сохраняется в словарь поиска для ускорения поиска ключа элемента. Этот конструктор позволяет переопределить это поведение. Укажите 0, чтобы создать словарь при добавлении первого элемента, 1, чтобы создать словарь при добавлении второго элемента и т. д. Если указать значение -1 в качестве порогового значения, словарь поиска никогда не создается.  
   
  Для очень маленьких коллекций повышение скорости получения данных, предоставляемые словарь поиска может не стоит дополнительную память, необходимую для словаря. Задание порога позволяет определить, когда такой компромисс.  
   
@@ -289,7 +281,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="dictionaryCreationThreshold" /> меньше –1.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="dictionaryCreationThreshold" /> меньше -1.</exception>
         <altmember cref="T:System.Collections.Generic.IEqualityComparer`1" />
       </Docs>
     </Member>
@@ -327,7 +319,7 @@
       </Parameters>
       <Docs>
         <param name="item">Элемент, ключ которого требуется изменить.</param>
-        <param name="newKey">Новый ключ для <c>item</c>.</param>
+        <param name="newKey">Новый ключ для <paramref name="item" />.</param>
         <summary>Изменяет ключ, связанный с указанным элементом в словаре поиска.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -342,9 +334,9 @@
  Этот метод является операцией o(1).  
   
 ## <a name="notes-for-implementers"></a>Примечания для разработчиков  
- Прежде чем изменения ключа, встроенного в элемент, необходимо вызвать этот метод, чтобы обновить ключ в словаре поиска. Если порог создания словаря равен – 1, вызов этого метода не требуется.  
+ Прежде чем изменения ключа, встроенного в элемент, необходимо вызвать этот метод, чтобы обновить ключ в словаре поиска. Если порог создания словаря равно -1, вызов этого метода не требуется.  
   
- Не предоставляйте <xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A> метода в качестве открытого метода производного класса. Неправильное использование этого метода помещает словарь поиска не синхронизировано с ключами элементов. Например, если ключ `null` и задав другое значение добавляет несколько ключей для элемента в словаре поиска. Предоставляйте этот метод, чтобы разрешить изменяемые ключи элементов: при изменении ключа для элемента, этот метод используется для изменения ключа в словаре поиска.  
+ Не предоставляйте <xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A> метода в качестве открытого метода производного класса. Неправильное использование этого метода помещает словарь поиска не синхронизировано с ключами элементов. Например, если ключ `null` и задав другое значение добавляет несколько ключей для элемента в словаре поиска. Предоставляйте этот метод, чтобы разрешить изменяемые ключи элементов: При изменении ключа для элемента, этот метод используется для изменения ключа в словаре поиска.  
   
    
   
@@ -360,14 +352,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="item" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="item" /> не найден.  
+-или- 
+ <paramref name="key" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="item" /> не найден.  
   
-- или - 
+-или- 
  Указанный параметр <paramref name="key" /> уже существует в <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.GetKeyForItem(`1)" />
         <altmember cref="P:System.Collections.ObjectModel.KeyedCollection`2.Item(`0)" />
@@ -530,8 +521,7 @@
       <Docs>
         <param name="key">Ключ, который требуется найти в <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</param>
         <summary>Определяет, содержится ли в коллекции элемент с указанным ключом.</summary>
-        <returns>
-          <see langword="true" />, если <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -553,7 +543,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.GetKeyForItem(`1)" />
       </Docs>
     </Member>
@@ -711,7 +701,7 @@
         <Parameter Name="item" Type="TItem" />
       </Parameters>
       <Docs>
-        <param name="index">Отсчитываемый от нуля индекс, по которому следует вставить <c>элемент</c>.</param>
+        <param name="index">Отсчитываемый от нуля индекс, по которому следует вставить элемент <paramref name="item" />.</param>
         <param name="item">Вставляемый объект.</param>
         <summary>Вставляет элемент в коллекцию <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> по указанному индексу.</summary>
         <remarks>
@@ -763,7 +753,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше 0.  
   
-- или - 
+-или- 
  Значение <paramref name="index" /> больше значения <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.SetItem(System.Int32,`1)" />
       </Docs>
@@ -833,7 +823,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Collections.Generic.KeyNotFoundException">Элемент с указанным ключом отсутствует в коллекции.</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.SetItem(System.Int32,`1)" />
       </Docs>
@@ -871,7 +861,7 @@
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется удалить.</param>
-        <summary>Удаляет элемент с указанным ключом из <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</summary>
+        <summary>Удаляет элемент с указанным ключом из объекта <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</summary>
         <returns>Значение <see langword="true" />, если элемент успешно удален; в противном случае — значение <see langword="false" />.  Этот метод также возвращает <see langword="false" />, если элемент <paramref name="key" /> не найден в коллекции <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -901,7 +891,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.RemoveItem(System.Int32)" />
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.ClearItems" />
       </Docs>
@@ -939,7 +929,7 @@
       </Parameters>
       <Docs>
         <param name="index">Индекс элемента, который должен быть удален.</param>
-        <summary>Удаляет элемент списка <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> с указанным индексом.</summary>
+        <summary>Удаляет элемент по указанному индексу из коллекции <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1102,8 +1092,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="TKey" />
-        <Parameter Name="item" Type="TItem" RefType="out" />
+        <Parameter Name="key" Type="TKey" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="item" Type="TItem" RefType="out" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="key">To be added.</param>

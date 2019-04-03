@@ -1,13 +1,5 @@
 <Type Name="ImportCatalogPart" FullName="System.Web.UI.WebControls.WebParts.ImportCatalogPart">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8e605d7c0059d128671da2ee04aebecd9499cfb5" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48715783" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ImportCatalogPart : System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="20cc92b091abb483a05f0c209db5a5acdd241179" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55395890" /></Metadata><TypeSignature Language="C#" Value="public sealed class ImportCatalogPart : System.Web.UI.WebControls.WebParts.CatalogPart" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImportCatalogPart extends System.Web.UI.WebControls.WebParts.CatalogPart" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ImportCatalogPart" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ImportCatalogPart&#xA;Inherits CatalogPart" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Импортирует файл описания для элемента управления <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> (или другого серверного элемента управления ASP.NET, используемого как элемент управления <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />), чтобы пользователи могли добавлять на веб-страницу элементы управления с предопределенными установками. Этот класс не наследуется.</summary>
+    <summary>Импортирует файл описания для элемента управления <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> (или другого серверного элемента управления ASP.NET, используемого в качестве элемента управления <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />), чтобы пользователи могли добавлять этот элемент управления на веб-страницу с предопределенными параметрами. Этот класс не наследуется.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -32,7 +24,7 @@
   
  После импортирования пользователем файла описания, <xref:System.Web.UI.WebControls.WebParts.WebPart> отображается элемент управления, на которые ссылается файл в <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> управления и пользователь может добавить элемент управления на страницу.  
   
- Описание файла не совпадает с самого элемента управления. Это XML-файл, который заканчивается. Расширение веб-частей и содержит пары "имя значение"--основном значения свойств —, описывающие состояние элемента управления. Файл описания создается в соответствии с указанным форматом XML, как описано в разделе [файлы описания элемента управления веб-частями](http://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8).  
+ Описание файла не совпадает с самого элемента управления. Это XML-файл, который заканчивается. Расширение веб-частей и содержит пары "имя значение"--основном значения свойств —, описывающие состояние элемента управления. Файл описания создается в соответствии с указанным форматом XML, как описано в разделе [файлы описания элемента управления веб-частями](https://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8).  
   
  Для управления, на который ссылается файл описания он может либо быть скомпилирован в сборку, или может быть пользовательский элемент управления, определенные в файле ASCX. В любом случае элемент управления, упоминаемый в импортированном файле описания должен существовать на веб-сервер, на котором размещена страницы, которая пытается импортировать элемент управления. Файл описания ссылается на элемент управления имя и сборку (или файл), содержащий элемент управления, но файл описания, содержащий параметры, влияющие на значения свойств, внешний вид и поведение элемента управления.  
   
@@ -54,9 +46,9 @@
   
  <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> Класс также содержит несколько уникальных методов. <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A> Метод извлекает <xref:System.Web.UI.WebControls.WebParts.WebPartDescription> для каждой <xref:System.Web.UI.WebControls.WebParts.WebPart> элемента управления в каталоге, что позволяет <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> управления для отображения сведений о каждом серверного элемента управления без необходимости создавать его экземпляр. <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A> Метод возвращает экземпляр конкретного <xref:System.Web.UI.WebControls.WebParts.WebPart> элемента управления, на основе описания, передаваемый в метод.  
   
- Существует определенный неотъемлемый риск, связанный с использованием <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Одним из примеров является возможность импорта вредоносных данных в веб-приложения через файлы описания, используемые для импорта. Если некто использует вредоносный код сценария в качестве значения свойства строки в файле описания, затем этот скрипт потенциально может быть выполнен при импортировании файла описания пользователем и добавляет серверного элемента управления на веб-страницу. Чтобы свести к минимуму риск импортирования файлов описания с вредоносных данных, серверные элементы управления со строковыми свойствами всегда следует кодировать данные свойства. Еще один риск связан импорте типов через файлы описания (см. в разделе [файлы описания элемента управления веб-частями](http://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8)). Пользователь-злоумышленник может подавать запросы на загрузку многочисленных сборок в <xref:System.AppDomain>, приводит к слишком много памяти.  
+ Существует определенный неотъемлемый риск, связанный с использованием <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Одним из примеров является возможность импорта вредоносных данных в веб-приложения через файлы описания, используемые для импорта. Если некто использует вредоносный код сценария в качестве значения свойства строки в файле описания, затем этот скрипт потенциально может быть выполнен при импортировании файла описания пользователем и добавляет серверного элемента управления на веб-страницу. Чтобы свести к минимуму риск импортирования файлов описания с вредоносных данных, серверные элементы управления со строковыми свойствами всегда следует кодировать данные свойства. Еще один риск связан импорте типов через файлы описания (см. в разделе [файлы описания элемента управления веб-частями](https://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8)). Пользователь-злоумышленник может подавать запросы на загрузку многочисленных сборок в <xref:System.AppDomain>, приводит к слишком много памяти.  
   
- Чтобы избежать рисков, связанных с импортом, можно отключить функцию полностью, не с помощью функции импорта или <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Или можно ограничить, какие пользователи имеют доступ к элементу управления. Это можно сделать программно, используя управление ролями (см. в разделе [управление ролями с помощью авторизации](http://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)). Например при загрузке страницы, можно выполнить проверку того, находится ли пользователь в определенной ролью, например роль администратора. Если пользователь входит в роль, то можно программно добавить <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> на страницу для этого пользователя. Можно также использовать декларативный подход, чтобы ограничить набор пользователей, которые могут использовать <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления.  На веб-странице, который содержит каталог, можно разместить два <xref:System.Web.UI.WebControls.WebParts.CatalogZone> элементов управления: один для пользователей, которые можно импортировать и один для тех, кто не может. Содержит зоны для пользователей, которые можно импортировать <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Сама зона может быть размещена внутри элемента <xref:System.Web.UI.WebControls.LoginView> элемент управления, который позволил бы ограничить использование элемента управления в зоне, чтобы только те, прошедшим проверку подлинности пользователей или ролей, можно указать.  
+ Чтобы избежать рисков, связанных с импортом, можно отключить функцию полностью, не с помощью функции импорта или <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Или можно ограничить, какие пользователи имеют доступ к элементу управления. Это можно сделать программно, используя управление ролями (см. в разделе [управление ролями с помощью авторизации](https://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)). Например при загрузке страницы, можно выполнить проверку того, находится ли пользователь в определенной ролью, например роль администратора. Если пользователь входит в роль, то можно программно добавить <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> на страницу для этого пользователя. Можно также использовать декларативный подход, чтобы ограничить набор пользователей, которые могут использовать <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления.  На веб-странице, который содержит каталог, можно разместить два <xref:System.Web.UI.WebControls.WebParts.CatalogZone> элементов управления: один для пользователей, которые можно импортировать и один для тех, кто не может. Содержит зоны для пользователей, которые можно импортировать <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> элемента управления. Сама зона может быть размещена внутри элемента <xref:System.Web.UI.WebControls.LoginView> элемент управления, который позволил бы ограничить использование элемента управления в зоне, чтобы только те, прошедшим проверку подлинности пользователей или ролей, можно указать.  
   
    
   
@@ -71,7 +63,7 @@
   
 -   Объясняется, как этот пример работает при загрузке страницы в браузере.  
   
- Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: изменение режима отображения страницы](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
+ Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: Изменение режимов отображения на веб-частей страницы](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/DisplayModeMenuCS.ascx#7)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/DisplayModeMenuVB.ascx#7)]  
@@ -86,7 +78,7 @@
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#1)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#1)]  
   
- В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Обратите внимание, что некоторые свойства этих элементов управления будут отмечены `WebBrowsable` атрибута. Это позволяет <xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart> управления динамически создает пользовательский интерфейс (UI) для пользователя, чтобы изменить эти свойства, когда элементы управления находятся в режиме редактирования. Эти свойства также помечены с `WebDisplayName` атрибут, чтобы указать текст, отображаемый рядом с каждым элементом управления в пользовательский Интерфейс редактирования метки. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления пользовательского](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
+ В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Обратите внимание, что некоторые свойства этих элементов управления будут отмечены `WebBrowsable` атрибута. Это позволяет <xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart> управления динамически создает пользовательский интерфейс (UI) для пользователя, чтобы изменить эти свойства, когда элементы управления находятся в режиме редактирования. Эти свойства также помечены с `WebDisplayName` атрибут, чтобы указать текст, отображаемый рядом с каждым элементом управления в пользовательский Интерфейс редактирования метки. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: Разработка и использование пользовательского веб-серверного элемента управления](https://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
   
  Пользовательский элемент управления с именем `TextDisplayWebPart` ссылается на веб-страницы с `<aspSample:TextDisplayWebPart>` элемент. Другой элемент управления, называется `UserInfoWebPart`, также объявляется на веб-странице изначально, хотя он более поздней версии, чтобы продемонстрировать возможность импорта файл описания для элемента управления будет удален.  
   
@@ -107,8 +99,8 @@
     </remarks>
     <altmember cref="T:System.Web.UI.WebControls.WebParts.PageCatalogPart" />
     <altmember cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />
-    <related type="Article" href="http://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8">Файлы описания элемента управления веб-частями</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8">Файлы описания элемента управления веб-частями</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -141,7 +133,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="BrowseHelpText">
@@ -188,7 +180,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="CreateChildControls">
@@ -227,16 +219,13 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -252,12 +241,12 @@
 ## Remarks  
  Код для этого свойства переопределяет базовое свойство, унаследованные от <xref:System.Web.UI.WebControls.Panel> класса, чтобы скрыть свойство от разработчиков и защитить его от применения тем. На то, что он является открытым, это свойство используется внутренне элементом управления веб-частей для отрисовки данного элемента управления по умолчанию и не предназначен для использования разработчиками страниц.  
   
- Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
+ Значение для данного свойства нельзя задать с помощью тем или тем таблиц стилей. Дополнительные сведения см. в разделе <xref:System.Web.UI.ThemeableAttribute> и [тем и оформлений ASP.NET](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3).  
   
  ]]></format>
         </remarks>
         <altmember cref="P:System.Web.UI.WebControls.Panel.DefaultButton" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="GetAvailableWebPartDescriptions">
@@ -303,7 +292,7 @@
   
 -   Объясняется, как этот пример работает при загрузке страницы в браузере.  
   
- Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: изменение режима отображения страницы](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
+ Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: Изменение режимов отображения на веб-частей страницы](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
@@ -318,7 +307,7 @@
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/ImportCatalogPart_GetCS.aspx#1)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/ImportCatalogPart_GetVB.aspx#1)]  
   
- В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления пользовательского](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
+ В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: Разработка и использование пользовательского веб-серверного элемента управления](https://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
   
  [!code-csharp[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/userinfowebpart.cs#6)]
  [!code-vb[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/userinfowebpart.vb#6)]  
@@ -334,7 +323,7 @@
  ]]></format>
         </remarks>
         <altmember cref="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="GetWebPart">
@@ -379,7 +368,7 @@
   
 -   Объясняется, как этот пример работает при загрузке страницы в браузере.  
   
- Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: изменение режима отображения страницы](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
+ Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Следует поместить следующий исходный код в файл и назовите его Displaymodemenucs.ascx или Displaymodemenuvb.ascx (в зависимости от того, какой язык вы используете). Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: Изменение режимов отображения на веб-частей страницы](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
@@ -394,7 +383,7 @@
  [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/ImportCatalogPart_GetCS.aspx#1)]
  [!code-aspx-vb[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/ImportCatalogPart_GetVB.aspx#1)]  
   
- В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления пользовательского](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
+ В третьей части в примере кода приведен исходный код для двух <xref:System.Web.UI.WebControls.WebParts.WebPart> элементов управления. Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по обоих методов компиляции, см. в разделе [Пошаговое руководство: Разработка и использование пользовательского веб-серверного элемента управления](https://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
   
  [!code-csharp[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/userinfowebpart.cs#6)]
  [!code-vb[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/userinfowebpart.vb#6)]  
@@ -407,10 +396,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="description" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="description" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="description" /> не является доступным значением <see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />.</exception>
         <altmember cref="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="ImportedPartLabelText">
@@ -457,7 +446,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="LoadControlState">
@@ -554,7 +543,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="Render">
@@ -674,7 +663,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="UploadButtonText">
@@ -721,7 +710,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="UploadHelpText">
@@ -768,7 +757,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="BuildProvider" FullName="System.Web.Compilation.BuildProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="22929aab6d049eadd9f76d309bbfb25f59154a50" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46622801" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class BuildProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="18fd409a919bfa277d2ec3c3b1f87cc95bcac525" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57910892" /></Metadata><TypeSignature Language="C#" Value="public abstract class BuildProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BuildProvider extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class BuildProvider" />
@@ -38,14 +30,14 @@
   
  Для определения настраиваемой сборки действий для типа файла в приложении ASP.NET, должен быть производным от класса <xref:System.Web.Compilation.BuildProvider>, реализовывать члены производного класса для создания типа файла и настроить поставщика построения для соответствующего расширения файла в файле конфигурации приложения.  
   
- Указывает расширение файла для файлов, поддерживаемые, и поддерживает ли поставщик построения файлы кода, веб-файлы, файлы ресурсов или все файлы. Используйте `type` атрибут, чтобы указать полное имя типа реализации поставщика построения. Используйте <xref:System.Web.Compilation.BuildProviderAppliesToAttribute> класс, чтобы указать, применяется ли поставщик построения для файлов в каталоге App_Code, к файлам в веб-содержимого каталога, на глобальные или локальные ресурсы или ко всем файлам. Используйте `extension` атрибут, чтобы указать расширение файла, используемое для идентификации файлов, <xref:System.Web.Compilation.BuildProvider> поддерживает класс. Используйте <xref:System.Web.Configuration.BuildProviderCollection> классе, чтобы проверять построения поставщиков в файле конфигурации. Дополнительные сведения о настройке поставщика построения, см. в разделе [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](http://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
+ Указывает расширение файла для файлов, поддерживаемые, и поддерживает ли поставщик построения файлы кода, веб-файлы, файлы ресурсов или все файлы. Используйте `type` атрибут, чтобы указать полное имя типа реализации поставщика построения. Используйте <xref:System.Web.Compilation.BuildProviderAppliesToAttribute> класс, чтобы указать, применяется ли поставщик построения для файлов в каталоге App_Code, к файлам в веб-содержимого каталога, на глобальные или локальные ресурсы или ко всем файлам. Используйте `extension` атрибут, чтобы указать расширение файла, используемое для идентификации файлов, <xref:System.Web.Compilation.BuildProvider> поддерживает класс. Используйте <xref:System.Web.Configuration.BuildProviderCollection> классе, чтобы проверять построения поставщиков в файле конфигурации. Дополнительные сведения о настройке поставщика построения, см. в разделе [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](https://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
   
  Для реализации поставщика построения, который создает исходный код для пользовательского типа файлов, наследуйте класс от <xref:System.Web.Compilation.BuildProvider>и Переопределите <xref:System.Web.Compilation.BuildProvider.GenerateCode%2A> метод для создания исходного кода для поддерживаемый тип файлов. Созданный исходный добавляется <xref:System.Web.Compilation.AssemblyBuilder> объекта в форме графа CodeDOM, или в качестве содержимого, которое представляет файл физического исходного кода. Если поставщик построения требует определенного языка программирования, переопределить <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A> возвращаемое свойство <xref:System.Web.Compilation.CompilerType> объекта для поддерживаемого языка программирования. Если поставщик построения не требует определенного языка программирования, не переопределяющих <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A> свойством; используйте реализацию базового класса, который указывает, что поставщик построения можно использовать любой язык .NET Framework, например Visual Basic или C#.  
   
  Для реализации поставщика построения, который создает исходный код для веб-содержимого, наследуйте класс от <xref:System.Web.Compilation.BuildProvider> и переопределить <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A> метод для возврата <xref:System.Type> для класса, созданного по <xref:System.Web.Compilation.BuildProvider>. Переопределить <xref:System.Web.Compilation.BuildProvider.GenerateCode%2A> метод для создания исходного кода для типа, извлеченные из поддерживаемых файла.  
   
 > [!NOTE]
->  Добавив настраиваемый <xref:System.Web.Compilation.BuildProvider> класс в файл Web.config, работает в веб-сайта ASP.NET, но не работает в проекте приложения ASP.NET Web. В проект веб-приложения, код, который формируется <xref:System.Web.Compilation.BuildProvider> класса не могут быть включены в приложении. Дополнительные сведения см. в разделе [Обзор предварительной компиляции веб-приложения ASP.NET проектов](http://msdn.microsoft.com/library/b940abbd-178d-4570-b441-52914fa7b887).  
+>  Добавив настраиваемый <xref:System.Web.Compilation.BuildProvider> класс в файл Web.config, работает в веб-сайта ASP.NET, но не работает в проекте приложения ASP.NET Web. В проект веб-приложения, код, который формируется <xref:System.Web.Compilation.BuildProvider> класса не могут быть включены в приложении. Дополнительные сведения см. в разделе [Обзор предварительной компиляции веб-приложения ASP.NET проектов](https://msdn.microsoft.com/library/b940abbd-178d-4570-b441-52914fa7b887).  
   
    
   
@@ -112,7 +104,7 @@
         <ReturnType>System.Web.Compilation.CompilerType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет тип компилятора, используемый поставщиком построения для создания исходного кода для пользовательского типа файлов.</summary>
+        <summary>Представляет тип компилятора, используемый поставщиком построения для создания исходного кода пользовательского типа файлов.</summary>
         <value>Доступный только для чтения объект <see cref="T:System.Web.Compilation.CompilerType" />, представляющий генератор кода, компилятор кода и параметры компилятора, с помощью которых осуществляется построение исходного кода для виртуального пути. Базовый класс возвращает значение <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -156,8 +148,8 @@
         <Parameter Name="assemblyBuilder" Type="System.Web.Compilation.AssemblyBuilder" />
       </Parameters>
       <Docs>
-        <param name="assemblyBuilder">Построитель сборок, который ссылается на исходный код, созданный поставщиком компоновки.</param>
-        <summary>Формирует исходный код для виртуального пути поставщика компоновки и добавляет исходный код в заданный построитель сборок.</summary>
+        <param name="assemblyBuilder">Построитель сборок, который ссылается на исходный код, созданный поставщиком построения.</param>
+        <summary>Создает исходный код для виртуального пути к поставщику построения и добавляет исходный код в заданный построитель сборок.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -181,7 +173,7 @@
         <altmember cref="Overload:System.Web.Compilation.BuildProvider.OpenReader" />
         <altmember cref="Overload:System.Web.Compilation.BuildProvider.OpenStream" />
         <altmember cref="T:System.Web.Compilation.AssemblyBuilder" />
-        <related type="Article" href="http://msdn.microsoft.com/library/d077a3e8-bd81-4bdf-b6a3-323857ea30fb">Динамическое создание и компиляция исходного кода</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/d077a3e8-bd81-4bdf-b6a3-323857ea30fb">Динамическое создание и компиляция исходного кода</related>
       </Docs>
     </Member>
     <Member MemberName="GetCodeCompileUnit">
@@ -237,8 +229,8 @@
         <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
       </Parameters>
       <Docs>
-        <param name="results">Результат компиляции для виртуального пути поставщика компоновки.</param>
-        <summary>Создает строку, которая должна быть сохранена в скомпилированной сборке.</summary>
+        <param name="results">Результаты компиляции для виртуального пути поставщика построения.</param>
+        <summary>Создает строку, которую необходимо сохранить в скомпилированной сборке.</summary>
         <returns>Строка, которую необходимо сохранить в среде построения, или значение <see langword="null" />, если в экземпляре <see cref="T:System.Web.Compilation.BuildProvider" /> не реализуется метод <see cref="M:System.Web.Compilation.BuildProvider.GetCustomString(System.CodeDom.Compiler.CompilerResults)" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -327,7 +319,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="language" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="language" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Web.HttpException">Параметр <paramref name="language" /> не соответствует компилятору, настроенному для данного поставщика построения.</exception>
         <altmember cref="T:System.Web.Compilation.CompilerType" />
         <altmember cref="M:System.Web.Compilation.BuildProvider.GetDefaultCompilerType" />
@@ -355,9 +347,9 @@
         <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
       </Parameters>
       <Docs>
-        <param name="results">Результат компиляции для виртуального пути поставщика компоновки.</param>
-        <summary>Возвращает тип, сформированный поставщиком построения на основе виртуального пути.</summary>
-        <returns>Тип, сформированный поставщиком построения для виртуального пути. Базовый класс возвращает значение <see langword="null" />.</returns>
+        <param name="results">Результаты компиляции для виртуального пути поставщика построения.</param>
+        <summary>Возвращает тип, созданный поставщиком построения из виртуального пути.</summary>
+        <returns>Тип, созданный поставщиком построения для виртуального пути. Базовый класс возвращает значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -391,7 +383,7 @@
         <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
       </Parameters>
       <Docs>
-        <param name="results">Результат компиляции для виртуального пути поставщика компоновки.</param>
+        <param name="results">Результаты компиляции для виртуального пути поставщика построения.</param>
         <summary>Возвращает значение, определяющее действия, которые необходимо выполнить после построения виртуального пути.</summary>
         <returns>Значение <see cref="T:System.Web.Compilation.BuildProviderResultFlags" />, указывающее, какие действия необходимо выполнить после построения виртуального пути в среде построения ASP.NET.</returns>
         <remarks>
@@ -584,7 +576,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="results">Результаты компилятора.</param>
@@ -657,8 +649,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="extension" Type="System.String" />
-        <Parameter Name="providerType" Type="System.Type" />
+        <Parameter Name="extension" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="providerType" Type="System.Type" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="extension">Расширение имени файла, для которого предназначен поставщик построения.</param>
@@ -668,7 +660,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот метод можно использовать для регистрации поставщиков построения вместо определения их в файле Web.config. Дополнительные сведения о поставщиках сборки см. в разделе <xref:System.Web.Compilation.BuildProvider> класс и [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](http://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
+ Этот метод можно использовать для регистрации поставщиков построения вместо определения их в файле Web.config. Дополнительные сведения о поставщиках сборки см. в разделе <xref:System.Web.Compilation.BuildProvider> класс и [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](https://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
   
  ]]></format>
         </remarks>
@@ -701,7 +693,7 @@
   
  Расширение файла каждого файла в приложение определяет тип файла и соответствующего поставщика построения для типа файла. Среда построения ASP.NET инициализирует <xref:System.Web.Compilation.BuildProvider> объекта для каждого файла в зависимости от типа файла и использует <xref:System.Web.Compilation.BuildProvider> методы для создания источника для каждого файла.  
   
- Дополнительные сведения о настройке поставщика построения, см. в разделе [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](http://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
+ Дополнительные сведения о настройке поставщика построения, см. в разделе [элемент элемента buildProviders для элемента compilation (схема параметров ASP.NET)](https://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).  
   
  ]]></format>
         </remarks>
@@ -726,7 +718,7 @@
         <ReturnType>System.Collections.ICollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Представляет коллекцию виртуальных путей, которые должны быть построены перед тем, как поставщик построения сможет создать код.</summary>
+        <summary>Представляет коллекцию виртуальных путей, которые необходимо построить до того, как поставщик построения создаст код.</summary>
         <value>Доступная только для чтения коллекция строк, представляющих виртуальные пути, от которых зависит данный экземпляр поставщика построения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

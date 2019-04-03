@@ -1,13 +1,5 @@
 <Type Name="IAspNetManagementUtility" FullName="Microsoft.Aspnet.Snapin.IAspNetManagementUtility">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="168edcf09753477a21a89d1c2ce05f26ff233f19" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39965651" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IAspNetManagementUtility" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1ada024a8b1c48769be9d49a1ea8be9778490974" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55392446" /></Metadata><TypeSignature Language="C#" Value="public interface IAspNetManagementUtility" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAspNetManagementUtility" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Aspnet.Snapin.IAspNetManagementUtility" />
   <TypeSignature Language="VB.NET" Value="Public Interface IAspNetManagementUtility" />
@@ -19,16 +11,24 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("ED068D9D-F021-4B07-A43E-3E0CB470172D")</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Предоставляет вспомогательные методы, используемые оснасткой ASP.NET консоли управления (MMC).</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием интерфейса IAspNetManagementUtility и консоли управления (MMC) см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="AcquireVersionList">
@@ -51,10 +51,18 @@
         <Parameter Name="versionFirst" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="versionList">To be added.</param>
-        <param name="versionFirst">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="versionList">Разделенный запятыми список, содержащий эту версию и путь к Aspnet_isapi.dll для каждой установленной версии ASP.NET.</param>
+        <param name="versionFirst">Значение "0" для отображения версии ASP.NET перед путем для каждой записи; в противном случае — отображение пути перед версией ASP.NET для каждой записи.</param>
+        <summary>Возвращает разделенный запятыми список, содержащий эту версию и путь к Aspnet_isapi.dll для каждой установленной версии ASP.NET.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="ChangeScriptMap">
@@ -78,11 +86,19 @@
         <Parameter Name="flags" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="keyPath">To be added.</param>
-        <param name="dllInstall">To be added.</param>
-        <param name="flags">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="keyPath">Виртуальный путь для регистрации Aspnet_isapi.dll, указанный посредством пути, который передается в параметре dllInstall.</param>
+        <param name="dllInstall">Путь для регистрации Aspnet_isapi.dll с помощью параметра keyPath.</param>
+        <param name="flags">Поведение, которое должно использоваться при регистрации Aspnet_isapi.dll.</param>
+        <summary>Сопоставляет указанный Aspnet_isapi.dll с указанным виртуальным путем IIS.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="DisplayAspNetConfigSettings">
@@ -110,15 +126,23 @@
         <Parameter Name="exception" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="machineName">To be added.</param>
-        <param name="site">To be added.</param>
-        <param name="virtualDirectory">To be added.</param>
-        <param name="siteName">To be added.</param>
-        <param name="location">To be added.</param>
-        <param name="processID">To be added.</param>
-        <param name="exception">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="machineName">Компьютер, с которого должны быть извлечены параметры конфигурации.</param>
+        <param name="site">Веб-узел IIS, с которого должны быть извлечены параметры конфигурации.</param>
+        <param name="virtualDirectory">Виртуальный каталог IIS, с которого должны быть извлечены параметры конфигурации.</param>
+        <param name="siteName">Имя веб-узла IIS, с которого должны быть извлечены параметры конфигурации.</param>
+        <param name="location">Определенный ресурс, к которому применяется конфигурация.</param>
+        <param name="processID">Идентификатор системного процесса отображения диалогового окна "Параметры конфигурации".</param>
+        <param name="exception">Произошедшие исключения.</param>
+        <summary>Возвращает параметры конфигурации ASP.NET для указанного веб-приложения ASP.NET.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="IsRemoteConfigured">
@@ -140,9 +164,17 @@
         <Parameter Name="isRemoteConfigured" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="isRemoteConfigured">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="isRemoteConfigured">Значение "1", если разрешен удаленный доступ к контейнеру конфигурации ASP.NET; в противном случае — значение "0".</param>
+        <summary>Возвращает значение, определяющее, разрешен ли удаленный доступ к контейнеру конфигурации ASP.NET.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="PathIsDirectory">
@@ -165,10 +197,18 @@
         <Parameter Name="result" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="filename">To be added.</param>
-        <param name="result">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="filename">Путь к проверяемому каталогу.</param>
+        <param name="result">Значение "1", если <paramref name="filename" /> является каталогом; в противном случае — "0".</param>
+        <summary>Возвращает значение, указывающее, является ли указанный <paramref name="filename" /> каталогом.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="ReadFileDates">
@@ -193,12 +233,20 @@
         <Parameter Name="lastAccessDate" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="filename">To be added.</param>
-        <param name="creationDate">To be added.</param>
-        <param name="modifiedDate">To be added.</param>
-        <param name="lastAccessDate">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="filename">Имя файла, из которого читаются даты.</param>
+        <param name="creationDate">Дата и время создания файла.</param>
+        <param name="modifiedDate">Дата и время изменения файла.</param>
+        <param name="lastAccessDate">Дата и время последнего доступа к файлу.</param>
+        <summary>Возвращает значения времени и даты создания, изменения и последнего обращения к указанному файлу.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RegisterAsnetMmcAssembly">
@@ -223,12 +271,20 @@
         <Parameter Name="exception" Type="System.IntPtr" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="doReg">To be added.</param>
-        <param name="assemblyName">To be added.</param>
-        <param name="binaryDirectory">To be added.</param>
-        <param name="exception">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="doReg">Значение "1" для регистрации или значение "0" для отмены регистрации в сборке.</param>
+        <param name="assemblyName">Имя регистрируемой сборки.</param>
+        <param name="binaryDirectory">Каталог, содержащий сборку.</param>
+        <param name="exception">Указатель на любое исключение, возникающее в процессе регистрации.</param>
+        <summary>Регистрирует оснастку ASP.NET с помощью консоли управления (MMC).</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

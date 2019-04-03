@@ -1,13 +1,5 @@
 <Type Name="HttpPostedFileWrapper" FullName="System.Web.HttpPostedFileWrapper">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="97ddc84616749bc3aa46ab5187e77fb15edde88c" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48655613" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class HttpPostedFileWrapper : System.Web.HttpPostedFileBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7e7232675217a141eec8a1226eefa9507718c570" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57911945" /></Metadata><TypeSignature Language="C#" Value="public class HttpPostedFileWrapper : System.Web.HttpPostedFileBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpPostedFileWrapper extends System.Web.HttpPostedFileBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpPostedFileWrapper" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpPostedFileWrapper&#xA;Inherits HttpPostedFileBase" />
@@ -31,7 +23,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Инкапсулирует встроенный HTTP-объект, предоставляющий доступ к отдельным файлам, которые были отправлены клиентом.</summary>
+    <summary>Инкапсулирует встроенный HTTP-объект, предоставляющий доступ к отдельным файлам, загруженным на сервер клиентом.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -58,13 +50,13 @@
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="httpPostedFile" Type="System.Web.HttpPostedFile" />
+        <Parameter Name="httpPostedFile" Type="System.Web.HttpPostedFile" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="httpPostedFile">Объект, к которому предоставляет доступ данный класс-оболочка.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.HttpPostedFileWrapper" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="httpApplicationState" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="httpApplicationState" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ContentLength">
@@ -87,7 +79,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает размер отправленного файла в байтах.</summary>
+        <summary>Возвращает размер загруженного файла в байтах.</summary>
         <value>Длина файла в байтах.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -112,7 +104,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает тип содержимого MIME отправленного файла.</summary>
+        <summary>Получает MIME-тип содержимого файла, загруженного на сервер.</summary>
         <value>Тип содержимого MIME файла.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -137,7 +129,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает полное имя файла на стороне клиента.</summary>
+        <summary>Возвращает полностью определенное имя файла клиента.</summary>
         <value>Имя файла на стороне клиента, включающее путь к каталогу.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -163,7 +155,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает объект <see cref="T:System.IO.Stream" />, который указывает на загруженный файл для подготовки прочтения его содержимого.</summary>
-        <value>Объект для чтения файла.</value>
+        <value>Объект для считывания файла.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -187,11 +179,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="filename" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="filename">Имя файла, который будет сохранен.</param>
-        <summary>Сохраняет содержимое отправленного файла.</summary>
+        <param name="filename">Имя сохраняемого файла.</param>
+        <summary>Сохраняет содержимое загруженного файла.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,13 +1,5 @@
 <Type Name="MultipartContent" FullName="System.Net.Http.MultipartContent">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="960938c22efcb0440bb6ce401f33933f4dd17ec6" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51318325" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class MultipartContent : System.Net.Http.HttpContent, System.Collections.Generic.IEnumerable&lt;System.Net.Http.HttpContent&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1721dd926e639c7dd3e5528add4d7d7eaa0aa435" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56371905" /></Metadata><TypeSignature Language="C#" Value="public class MultipartContent : System.Net.Http.HttpContent, System.Collections.Generic.IEnumerable&lt;System.Net.Http.HttpContent&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MultipartContent extends System.Net.Http.HttpContent implements class System.Collections.Generic.IEnumerable`1&lt;class System.Net.Http.HttpContent&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.MultipartContent" />
   <TypeSignature Language="VB.NET" Value="Public Class MultipartContent&#xA;Inherits HttpContent&#xA;Implements IEnumerable(Of HttpContent)" />
@@ -102,10 +94,10 @@
         <Parameter Name="subtype" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="subtype">Подтип многокомпонентного контента.</param>
+        <param name="subtype">Подтип составного содержимого.</param>
         <summary>Создает новый экземпляр класса <see cref="T:System.Net.Http.MultipartContent" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">Объект <paramref name="subtype" /> был <see langword="null" /> или содержит только пробелы.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="subtype" />имел значение <see langword="null" /> или содержит только пробелы.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -133,17 +125,17 @@
         <Parameter Name="boundary" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="subtype">Подтип многокомпонентного контента.</param>
-        <param name="boundary">Строка границ для многокомпонентного контента.</param>
+        <param name="subtype">Подтип составного содержимого.</param>
+        <param name="boundary">Строка, представляющая границу составного содержимого.</param>
         <summary>Создает новый экземпляр класса <see cref="T:System.Net.Http.MultipartContent" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">Объект <paramref name="subtype" /> являлся <see langword="null" /> или пустой строкой.  
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="subtype" /> имеет значение <see langword="null" /> или содержит пустую строку.  
   
-Объект  <paramref name="boundary" /> являлся <see langword="null" /> или содержит только пробелы.  
+Параметр <paramref name="boundary" />имел значение <see langword="null" /> или содержит только пробелы.  
   
-- или - 
-<paramref name="boundary" /> заканчивается пробелом.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Длина <paramref name="boundary" /> больше 70 символов.</exception>
+-или- 
+Параметр <paramref name="boundary" /> заканчивается символом пробела.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Длина параметра <paramref name="boundary" /> больше 70.</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -179,6 +171,31 @@
         <exception cref="T:System.ArgumentNullException">Запрос <paramref name="content" /> имел значение <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <Member MemberName="CreateContentReadStreamAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task&lt;System.IO.Stream&gt; CreateContentReadStreamAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class System.IO.Stream&gt; CreateContentReadStreamAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.MultipartContent.CreateContentReadStreamAsync" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateContentReadStreamAsync () As Task(Of Stream)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Threading::Tasks::Task&lt;System::IO::Stream ^&gt; ^ CreateContentReadStreamAsync();" />
+      <MemberSignature Language="F#" Value="override this.CreateContentReadStreamAsync : unit -&gt; System.Threading.Tasks.Task&lt;System.IO.Stream&gt;" Usage="multipartContent.CreateContentReadStreamAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.IO.Stream&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
@@ -207,7 +224,7 @@
       </Parameters>
       <Docs>
         <param name="disposing">Значение <see langword="true" /> для освобождения управляемых и неуправляемых ресурсов; значение <see langword="false" /> для освобождения только неуправляемых ресурсов.</param>
-        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.MultipartContent" />, и опционально удаляет управляемые ресурсы.</summary>
+        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.MultipartContent" />, и при необходимости удаляет управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

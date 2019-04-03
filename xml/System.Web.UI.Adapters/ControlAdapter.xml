@@ -1,13 +1,5 @@
 <Type Name="ControlAdapter" FullName="System.Web.UI.Adapters.ControlAdapter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="32da3a4f246af136cf0a6d8ef5bbe62b7f5d4aa6" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48616301" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ControlAdapter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d208ab52c1bde494504568095da9ff62fddda974" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55317695" /></Metadata><TypeSignature Language="C#" Value="public abstract class ControlAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ControlAdapter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.Adapters.ControlAdapter" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ControlAdapter" />
@@ -58,19 +50,17 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, элемент управления, который требует функциональных возможностей адаптера общие должен иметь базовый класс, указанный в шаблоне соответствующим адаптером <paramref name="ControlType" /><see langword="Adapter" /> (например, <see langword="TextBoxAdapter" />). Как минимум адаптер должен возвращать строго типизированный экземпляр элемента управления с помощью его <see cref="P:System.Web.UI.Adapters.ControlAdapter.Control" /> свойство.  
+    <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, элемент управления, который требует функциональных возможностей адаптера общие должен иметь базовый класс, указанный в шаблоне соответствующим адаптером <paramref name="ControlType" /> <see langword="Adapter" /> (например, <see langword="TextBoxAdapter" />). Как минимум адаптер должен возвращать строго типизированный экземпляр элемента управления с помощью его <see cref="P:System.Web.UI.Adapters.ControlAdapter.Control" /> свойство.  
   
-1.  Адаптеры элементов управления для заданного элемента управления типа и языка разметки должен быть именован в шаблоне <paramref name="MarkupControlType" /><see langword="Adapter" /> (например, <see langword="XhtmlTextBoxAdapter" />). Адаптеры для элемента управления, следует реализовать <see langword="Adapters" /> subnamespace.  
+1.  Адаптеры элементов управления для заданного элемента управления типа и языка разметки должен быть именован в шаблоне <paramref name="MarkupControlType" /> <see langword="Adapter" /> (например, <see langword="XhtmlTextBoxAdapter" />). Адаптеры для элемента управления, следует реализовать <see langword="Adapters" /> subnamespace.  
   
-Адаптеры элементов управления должны наследовать от соответствующего базового класса и выполните ту же модель наследования, что элемент управления. Например, адаптер для наследования от элемента управления <see cref="T:System.Web.UI.Control" /> базовый класс должен наследовать от любого <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класса или соответствующие <paramref name="ControlType" /><see langword="Adapter" /> класса.  
+Адаптеры элементов управления должны наследовать от соответствующего базового класса и выполните ту же модель наследования, что элемент управления. Например, адаптер для наследования от элемента управления <see cref="T:System.Web.UI.Control" /> базовый класс должен наследовать от любого <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класса или соответствующие <paramref name="ControlType" /> <see langword="Adapter" /> класса.  
   
 Любые специализированные адаптеры должны быть определены для специализированного элемента управления в группе все узлы в файлах конфигурации обозревателя устройств.  
   
 Правильно реализованный элемент управления не следует предполагать, что адаптер подключен, или что присоединенный адаптер реализует определенный интерфейс. Вместо этого оно должно проверить перед вызовом.  
   
-Можно имитировать, переопределения методов защищенное событие в элементе управления, такие как <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> метод <see cref="T:System.Web.UI.WebControls.LinkButton" />. Во-первых, создайте класс адаптера с <c>OnClick</c> метод. Затем создайте новый элемент управления, производный от <see cref="T:System.Web.UI.WebControls.LinkButton" /> и переопределить <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> метод. Переопределенное <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> вызовы методов <c>OnClick</c> метод адаптера. К объекту адаптера доступна через защищенный <see cref="P:System.Web.UI.Control.Adapter" /> свойство <see cref="T:System.Web.UI.Control" /> класса. <see cref="P:System.Web.UI.Control.Adapter" /> Свойство элемента управления является <see langword="null" /> при отсутствии связанного адаптера, поэтому следует проверить код для этого условия перед вызовом методов адаптера.</para>
-    </block>
+Можно имитировать, переопределения методов защищенное событие в элементе управления, такие как <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> метод <see cref="T:System.Web.UI.WebControls.LinkButton" />. Во-первых, создайте класс адаптера с <c>OnClick</c> метод. Затем создайте новый элемент управления, производный от <see cref="T:System.Web.UI.WebControls.LinkButton" /> и переопределить <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> метод. Переопределенное <see cref="M:System.Web.UI.WebControls.LinkButton.OnClick(System.EventArgs)" /> вызовы методов <c>OnClick</c> метод адаптера. К объекту адаптера доступна через защищенный <see cref="P:System.Web.UI.Control.Adapter" /> свойство <see cref="T:System.Web.UI.Control" /> класса. <see cref="P:System.Web.UI.Control.Adapter" /> Свойство элемента управления является <see langword="null" /> при отсутствии связанного адаптера, поэтому следует проверить код для этого условия перед вызовом методов адаптера.</para></block>
     <altmember cref="T:System.Web.UI.Control" />
   </Docs>
   <Members>
@@ -137,9 +127,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.HtmlTextWriter.BeginRender" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.HtmlTextWriter.BeginRender" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.HtmlTextWriter.BeginRender" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.HtmlTextWriter.BeginRender" /> метод.</para></block>
         <altmember cref="M:System.Web.UI.HtmlTextWriter.BeginRender" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" />
@@ -202,13 +190,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -238,9 +223,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класса, как минимум, следует реализовать <see langword="Control" /> свойство для возвращения строго типизированный экземпляр элемента управления, как показано в разделе "Пример".</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класса, как минимум, следует реализовать <see langword="Control" /> свойство для возвращения строго типизированный экземпляр элемента управления, как показано в разделе "Пример".</para></block>
         <altmember cref="T:System.Web.UI.Control" />
       </Docs>
     </Member>
@@ -269,13 +252,11 @@
 ## Remarks  
  Если имеется адаптер производного элемента управления присоединены к <xref:System.Web.UI.Control> объекта и <xref:System.Web.UI.Adapters.ControlAdapter.CreateChildControls%2A> переопределяется метод, переопределенный метод вызывается вместо <xref:System.Web.UI.Control.CreateChildControls%2A?displayProperty=nameWithType> метод. Таким образом <xref:System.Web.UI.Adapters.ControlAdapter.CreateChildControls%2A> может использоваться для создания набора целевые дочерние элемента управления.  
   
- Дополнительные сведения об объединении элементов управления, чтобы создать новый элемент управления, см. в разделе [составных элементов управления](http://msdn.microsoft.com/library/fb174677-d845-467c-8bf3-cc096b2490b0).  
+ Дополнительные сведения об объединении элементов управления, чтобы создать новый элемент управления, см. в разделе [составных элементов управления](https://msdn.microsoft.com/library/fb174677-d845-467c-8bf3-cc096b2490b0).  
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если создание наследуемого класса и переопределить <see cref="M:System.Web.UI.Adapters.ControlAdapter.CreateChildControls" /> метод не вызов базового метода, если вы не хотите добавлять элементы управления тем, созданным с помощью базового метода. В противном случае можно создать два набора дочерних элементов управления.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если создание наследуемого класса и переопределить <see cref="M:System.Web.UI.Adapters.ControlAdapter.CreateChildControls" /> метод не вызов базового метода, если вы не хотите добавлять элементы управления тем, созданным с помощью базового метода. В противном случае можно создать два набора дочерних элементов управления.</para></block>
         <altmember cref="M:System.Web.UI.Control.CreateChildControls" />
         <altmember cref="T:System.Web.UI.Control" />
       </Docs>
@@ -312,9 +293,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.HtmlTextWriter.EndRender" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.HtmlTextWriter.EndRender" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.HtmlTextWriter.EndRender" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.EndRender(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.HtmlTextWriter.EndRender" /> метод.</para></block>
         <altmember cref="M:System.Web.UI.HtmlTextWriter.EndRender" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.BeginRender(System.Web.UI.HtmlTextWriter)" />
@@ -350,7 +329,7 @@
 ## Remarks  
  Состояние управления — важные сведения о состоянии необходимы, даже если состояние просмотра отключено. Когда адаптер должен поддерживать собственную информацию о состоянии элемента управления, его можно переопределить <xref:System.Web.UI.Adapters.ControlAdapter.LoadAdapterControlState%2A> и <xref:System.Web.UI.Adapters.ControlAdapter.SaveAdapterControlState%2A> методы.  
   
- Адаптер может потребоваться поддерживать сведения о состоянии управления, когда нет компонентов, которые должны иметь состояния между запросами, независимо от состояния связанного элемента управления. Например, составной элемент управления состоящий из большого текстового дисплея и группой <xref:System.Web.UI.WebControls.RadioButton> элементы управления могут отображать как отдельное представление браузеры для настольных компьютеров. В других браузерах можно разделять отображение — одно представление для текстового дисплея, а другой — для группы переключателей. Адаптер должен обслуживать собственный целевой информации о текущему активному представлению.  
+ Адаптер может потребоваться поддерживать сведения о состоянии управления, когда нет компонентов, которые должны иметь состояния между запросами, независимо от состояния связанного элемента управления. Например, составной элемент управления состоящий из большого текстового дисплея и группой <xref:System.Web.UI.WebControls.RadioButton> элементы управления могут отображать как отдельное представление браузеры для настольных компьютеров. В других браузерах можно разделять свою отрисовку - одно представление для текстового дисплея, а другой — для группы переключателей. Адаптер должен обслуживать собственный целевой информации о текущему активному представлению.  
   
  <xref:System.Web.UI.Adapters.ControlAdapter.LoadAdapterControlState%2A> Метод вызывается сразу после <xref:System.Web.UI.Control.LoadControlState%2A?displayProperty=nameWithType> метод в `LoadState` этапе жизненного цикла. Состояние адаптера элемента управления, отдельные и состояние элемента управления элемента управления.  
   
@@ -423,7 +402,7 @@
         <Parameter Name="e" Type="System.EventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
+        <param name="e">Объект <see cref="T:System.EventArgs" />, содержащий данные события.</param>
         <summary>Переопределяет метод <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" /> для связанного элемента управления.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -444,9 +423,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnInit(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" /> не вызывается метод, <see cref="E:System.Web.UI.Control.Init" /> событие не возникнет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnInit(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" /> не вызывается метод, <see cref="E:System.Web.UI.Control.Init" /> событие не возникнет.</para></block>
         <altmember cref="E:System.Web.UI.Control.Init" />
         <altmember cref="M:System.Web.UI.Control.OnInit(System.EventArgs)" />
         <altmember cref="T:System.Web.UI.Control" />
@@ -472,7 +449,7 @@
         <Parameter Name="e" Type="System.EventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
+        <param name="e">Объект <see cref="T:System.EventArgs" />, содержащий данные события.</param>
         <summary>Переопределяет метод <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> для связанного элемента управления.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -484,9 +461,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnLoad(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> не вызывается, <see cref="E:System.Web.UI.Control.Load" /> событие не возникнет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnLoad(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> не вызывается, <see cref="E:System.Web.UI.Control.Load" /> событие не возникнет.</para></block>
         <altmember cref="E:System.Web.UI.Control.Load" />
         <altmember cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" />
         <altmember cref="T:System.Web.UI.Control" />
@@ -512,7 +487,7 @@
         <Parameter Name="e" Type="System.EventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
+        <param name="e">Объект <see cref="T:System.EventArgs" />, содержащий данные события.</param>
         <summary>Переопределяет метод <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> для связанного элемента управления.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -524,9 +499,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnPreRender(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> не вызывается метод, <see cref="E:System.Web.UI.Control.PreRender" /> событие не возникнет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnPreRender(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> не вызывается метод, <see cref="E:System.Web.UI.Control.PreRender" /> событие не возникнет.</para></block>
         <altmember cref="E:System.Web.UI.Control.PreRender" />
         <altmember cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" />
         <altmember cref="T:System.Web.UI.Control" />
@@ -552,7 +525,7 @@
         <Parameter Name="e" Type="System.EventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
+        <param name="e">Объект <see cref="T:System.EventArgs" />, содержащий данные события.</param>
         <summary>Переопределяет метод <see cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" /> для связанного элемента управления.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -564,9 +537,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnUnload(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" /> не вызывается, <see cref="E:System.Web.UI.Control.Unload" /> событие не возникнет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс и переопределения адаптера <see cref="M:System.Web.UI.Adapters.ControlAdapter.OnUnload(System.EventArgs)" /> метод, адаптер необходимо вызвать соответствующий метод базового класса, который в свою очередь вызывает <see cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" /> метод. Если <see cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" /> не вызывается, <see cref="E:System.Web.UI.Control.Unload" /> событие не возникнет.</para></block>
         <altmember cref="E:System.Web.UI.Control.Unload" />
         <altmember cref="M:System.Web.UI.Control.OnUnload(System.EventArgs)" />
         <altmember cref="T:System.Web.UI.Control" />
@@ -586,13 +557,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -628,13 +596,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -679,7 +644,7 @@
       </Parameters>
       <Docs>
         <param name="writer">Объект <see cref="T:System.Web.UI.HtmlTextWriter" />, применяющийся для отображения целевого вывода.</param>
-        <summary>Создает целевую разметку для элемента управления, к которому присоединяется адаптер управления.</summary>
+        <summary>Создает для элемента управления, к которому присоединен соответствующий адаптер, особую разметку, характерную для целевого объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -688,11 +653,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метод.  
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс, <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> базового вызовы методов <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метод. Таким образом, переопределяет из <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> базовый метод только в том случае, если его обработка в дополнение к, а не вместо <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метод.  
   
-Для составного элемента управления разработчик адаптера необходимо убедиться, что дочерние элементы управления визуализируются. Если <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метода заставляет дочерние элементы управления для отображения, но не создается разметки, может быть удобно для <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод для вызова базового метода. При необходимости в конкретных целевых объектов отрисовки дочерних элементов управления должны реализовывать адаптер <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод и вызвать <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метода из <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод.</para>
-        </block>
+Для составного элемента управления разработчик адаптера необходимо убедиться, что дочерние элементы управления визуализируются. Если <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метода заставляет дочерние элементы управления для отображения, но не создается разметки, может быть удобно для <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод для вызова базового метода. При необходимости в конкретных целевых объектов отрисовки дочерних элементов управления должны реализовывать адаптер <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод и вызвать <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метода из <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод.</para></block>
         <altmember cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" />
         <altmember cref="T:System.Web.UI.Control" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" />
@@ -730,11 +693,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс для составного элемента управления, разработчик адаптера необходимо убедиться, что дочерние элементы управления визуализируются. Если адаптер переопределяет <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод, он должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод из переопределения <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод.  
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Web.UI.Adapters.ControlAdapter" /> класс для составного элемента управления, разработчик адаптера необходимо убедиться, что дочерние элементы управления визуализируются. Если адаптер переопределяет <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод, он должен вызывать <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод из переопределения <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод.  
   
-Если <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метода заставляет дочерние элементы управления для отображения, но сам не создает разметку, может быть удобно для <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод для вызова его базовый метод, который вызывает <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> вместо реализации переопределение для метода <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод.</para>
-        </block>
+Если <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> метода заставляет дочерние элементы управления для отображения, но сам не создает разметку, может быть удобно для <see cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" /> метод для вызова его базовый метод, который вызывает <see cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" /> вместо реализации переопределение для метода <see cref="M:System.Web.UI.Adapters.ControlAdapter.RenderChildren(System.Web.UI.HtmlTextWriter)" /> метод.</para></block>
         <altmember cref="M:System.Web.UI.Control.RenderChildren(System.Web.UI.HtmlTextWriter)" />
         <altmember cref="T:System.Web.UI.Control" />
         <altmember cref="M:System.Web.UI.Adapters.ControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />
@@ -767,7 +728,7 @@
 ## Remarks  
  Состояние управления — важные сведения о состоянии необходимы, даже если состояние просмотра отключено. Когда адаптер должен поддерживать собственную информацию о состоянии элемента управления, его можно переопределить <xref:System.Web.UI.Adapters.ControlAdapter.SaveAdapterControlState%2A> и <xref:System.Web.UI.Adapters.ControlAdapter.LoadAdapterControlState%2A> методы.  
   
- Адаптер может потребоваться поддерживать сведения о состоянии управления, когда нет компонентов, которые должны иметь состояния между запросами, независимо от состояния связанного элемента управления. Например, составной элемент управления состоящий из большого текстового дисплея и группой <xref:System.Web.UI.WebControls.RadioButton> элементы управления могут отображать как отдельное представление браузеры для настольных компьютеров. В других браузерах можно разделять отображение — одно представление для текстового дисплея, а другой — для группы переключателей. Адаптер должен обслуживать собственный целевой информации о текущему активному представлению.  
+ Адаптер может потребоваться поддерживать сведения о состоянии управления, когда нет компонентов, которые должны иметь состояния между запросами, независимо от состояния связанного элемента управления. Например, составной элемент управления состоящий из большого текстового дисплея и группой <xref:System.Web.UI.WebControls.RadioButton> элементы управления могут отображать как отдельное представление браузеры для настольных компьютеров. В других браузерах можно разделять свою отрисовку - одно представление для текстового дисплея, а другой — для группы переключателей. Адаптер должен обслуживать собственный целевой информации о текущему активному представлению.  
   
  <xref:System.Web.UI.Adapters.ControlAdapter.SaveAdapterControlState%2A> Метод вызывается сразу после <xref:System.Web.UI.Control.SaveControlState%2A?displayProperty=nameWithType> метод в `SaveState` этапе жизненного цикла. Состояние адаптера элемента управления, отдельные и состояние элемента управления элемента управления.  
   

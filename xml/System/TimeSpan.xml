@@ -1,13 +1,5 @@
 <Type Name="TimeSpan" FullName="System.TimeSpan">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="90a076d03307ceac618c45b2b9f5a52db113fadd" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48649765" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct TimeSpan : IComparable, IComparable&lt;TimeSpan&gt;, IEquatable&lt;TimeSpan&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="423591f62a4d1204a06f0867e0fda93f56f16df4" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935410" /></Metadata><TypeSignature Language="C#" Value="public struct TimeSpan : IComparable, IComparable&lt;TimeSpan&gt;, IEquatable&lt;TimeSpan&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit TimeSpan extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.TimeSpan&gt;, class System.IEquatable`1&lt;valuetype System.TimeSpan&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.TimeSpan" />
   <TypeSignature Language="VB.NET" Value="Public Structure TimeSpan&#xA;Implements IComparable, IComparable(Of TimeSpan), IEquatable(Of TimeSpan), IFormattable" />
@@ -54,8 +46,11 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -111,7 +106,7 @@
  Диапазон <xref:System.TimeSpan> значения — <xref:System.TimeSpan.MinValue> для <xref:System.TimeSpan.MaxValue>.  
   
 ## <a name="formatting-a-timespan-value"></a>Форматирование значения TimeSpan  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. То есть интервал времени состоит из положительное или отрицательное число дней без указания времени суток или число дней с временем дня, или только время суток.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. То есть интервал времени состоит из положительное или отрицательное число дней без указания времени суток или число дней с временем дня, или только время суток.  
   
  Начиная с версии [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], <xref:System.TimeSpan> структура поддерживает форматирование, зависящее от языка и региональных параметров через перегрузок его <xref:System.TimeSpan.ToString%2A> метод, который преобразует <xref:System.TimeSpan> значение в строковое представление. Значение по умолчанию <xref:System.TimeSpan.ToString?displayProperty=nameWithType> метод возвращает интервал времени с использованием инвариантного формата, идентичный его возвращаемое значение в предыдущих версиях платформы .NET Framework. <xref:System.TimeSpan.ToString%28System.String%29?displayProperty=nameWithType> Перегрузка позволяет указать строку формата, который определяет строковое представление интервала времени. <xref:System.TimeSpan.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> Перегрузка позволяет указать строку формата и языка и региональных параметров, соглашения о форматировании которых используются для создания строковое представление интервала времени. <xref:System.TimeSpan> поддерживаются оба стандартные и собственные форматирующие строки. (Дополнительные сведения см. в разделе [строки стандартного формата TimeSpan](~/docs/standard/base-types/standard-timespan-format-strings.md) и [строки пользовательского формата TimeSpan](~/docs/standard/base-types/custom-timespan-format-strings.md).) Тем не менее только строки стандартного формата учитывают язык и региональные параметры.  
   
@@ -278,7 +273,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Данные параметры определяют значение <see cref="T:System.TimeSpan" />, меньшее <see cref="F:System.TimeSpan.MinValue" /> или большее <see cref="F:System.TimeSpan.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Параметры указывают значение <see cref="T:System.TimeSpan" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -339,7 +334,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Данные параметры определяют значение <see cref="T:System.TimeSpan" />, меньшее <see cref="F:System.TimeSpan.MinValue" /> или большее <see cref="F:System.TimeSpan.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Параметры указывают значение <see cref="T:System.TimeSpan" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -402,7 +397,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Данные параметры определяют значение <see cref="T:System.TimeSpan" />, меньшее <see cref="F:System.TimeSpan.MinValue" /> или большее <see cref="F:System.TimeSpan.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Параметры указывают значение <see cref="T:System.TimeSpan" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -508,7 +503,7 @@
         <returns>Одно из следующих значений.  
   
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> -1 
  </term><description>Значение параметра <paramref name="t1" /> короче значения параметра <paramref name="t2" />.  
   
@@ -548,7 +543,7 @@
 ## Remarks  
  Две перегруженные версии <xref:System.TimeSpan.CompareTo%2A> метод возвращать число со знаком, определяющее относительное значение данного экземпляра и `value` аргумент, как показано в следующей таблице.  
   
-|Значение|Описание:|  
+|Значение|Описание|  
 |-----------|-----------------|  
 |Меньше нуля|Этот экземпляр короче параметра `value`.|  
 |Нуль|Данный экземпляр равен `value`.|  
@@ -589,7 +584,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект для сравнения или значение <see langword="null" />.</param>
@@ -597,7 +592,7 @@
         <returns>Одно из следующих значений.  
   
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> -1 
  </term><description> Этот экземпляр короче параметра <paramref name="value" />.  
   
@@ -607,8 +602,8 @@
  </description></item><item><term> 1 
  </term><description> Этот экземпляр длиннее параметра <paramref name="value" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see langword="null" />.  
+-или- 
+ <paramref name="value" /> — <see langword="null" />.  
   
  </description></item></list></returns>
         <remarks>
@@ -630,8 +625,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> не является объектом <see cref="T:System.TimeSpan" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> не является объектом <see cref="T:System.TimeSpan" />.</exception>
         <altmember cref="T:System.Object" />
         <altmember cref="M:System.TimeSpan.Compare(System.TimeSpan,System.TimeSpan)" />
         <altmember cref="M:System.TimeSpan.Equals(System.Object)" />
@@ -671,7 +665,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.TimeSpan" />
+        <Parameter Name="value" Type="System.TimeSpan" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект, сравниваемый с этим экземпляром.</param>
@@ -679,7 +673,7 @@
         <returns>Знаковое число, представляющее относительные значения этого экземпляра и параметра <paramref name="value" />.  
   
  <list type="table"><listheader><term> Значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> Отрицательное целое число 
  </term><description> Этот экземпляр короче параметра <paramref name="value" />.  
   
@@ -747,7 +741,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Days%2A> свойство — это компонент дня *d*.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Days%2A> свойство — это компонент дня *d*.  
   
  <xref:System.TimeSpan.Days%2A> Свойство представляет целых дней, а <xref:System.TimeSpan.TotalDays%2A> свойство представляет целое и дробное количество дней.  
   
@@ -793,7 +787,7 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="divisor" Type="System.Double" />
+        <Parameter Name="divisor" Type="System.Double" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="divisor">To be added.</param>
@@ -825,7 +819,7 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="ts" Type="System.TimeSpan" />
+        <Parameter Name="ts" Type="System.TimeSpan" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="ts">To be added.</param>
@@ -935,8 +929,7 @@
       <Docs>
         <param name="value">Объект для сравнения с данным экземпляром.</param>
         <summary>Возвращает значение, показывающее, равен ли данный экземпляр заданному объекту.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="value" /> является объектом <see cref="T:System.TimeSpan" /> и представляет тот же интервал времени, что и текущий объект <see cref="T:System.TimeSpan" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="value" /> является объектом <see cref="T:System.TimeSpan" /> и представляет тот же интервал времени, что и текущий объект <see cref="T:System.TimeSpan" />; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -988,13 +981,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.TimeSpan" />
+        <Parameter Name="obj" Type="System.TimeSpan" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект для сравнения с данным экземпляром.</param>
         <summary>Возвращает значение, указывающее, равен ли данный экземпляр заданному объекту <see cref="T:System.TimeSpan" />.</summary>
-        <returns>
-          <see langword="true" />, если <paramref name="obj" /> представляет то т же интервал времени, что и данный экземпляр; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <paramref name="obj" /> представляет то т же интервал времени, что и данный экземпляр; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1133,13 +1125,12 @@
         </remarks>
         <exception cref="T:System.OverflowException">Значение <paramref name="value" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.PositiveInfinity" />.  
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.PositiveInfinity" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.NegativeInfinity" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.NegativeInfinity" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
         <altmember cref="T:System.Double" />
         <altmember cref="M:System.TimeSpan.FromTicks(System.Int64)" />
         <altmember cref="M:System.TimeSpan.FromMilliseconds(System.Double)" />
@@ -1208,13 +1199,12 @@
         </remarks>
         <exception cref="T:System.OverflowException">Значение <paramref name="value" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.PositiveInfinity" />.  
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.PositiveInfinity" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.NegativeInfinity" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.NegativeInfinity" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
         <altmember cref="T:System.Double" />
         <altmember cref="M:System.TimeSpan.FromTicks(System.Int64)" />
         <altmember cref="M:System.TimeSpan.FromMilliseconds(System.Double)" />
@@ -1283,13 +1273,12 @@
         </remarks>
         <exception cref="T:System.OverflowException">Значение <paramref name="value" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.PositiveInfinity" />.  
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.PositiveInfinity" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.NegativeInfinity" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.NegativeInfinity" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
         <altmember cref="T:System.Double" />
         <altmember cref="M:System.TimeSpan.FromTicks(System.Int64)" />
         <altmember cref="M:System.TimeSpan.FromSeconds(System.Double)" />
@@ -1358,13 +1347,12 @@
         </remarks>
         <exception cref="T:System.OverflowException">Значение <paramref name="value" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.PositiveInfinity" />.  
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.PositiveInfinity" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.NegativeInfinity" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.NegativeInfinity" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
         <altmember cref="T:System.Double" />
         <altmember cref="M:System.TimeSpan.FromTicks(System.Int64)" />
         <altmember cref="M:System.TimeSpan.FromMilliseconds(System.Double)" />
@@ -1433,13 +1421,12 @@
         </remarks>
         <exception cref="T:System.OverflowException">Значение <paramref name="value" /> меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.PositiveInfinity" />.  
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.PositiveInfinity" />.  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see cref="F:System.Double.NegativeInfinity" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
+-или- 
+ <paramref name="value" /> — <see cref="F:System.Double.NegativeInfinity" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> равно <see cref="F:System.Double.NaN" />.</exception>
         <altmember cref="T:System.Double" />
         <altmember cref="M:System.TimeSpan.FromTicks(System.Int64)" />
         <altmember cref="M:System.TimeSpan.FromMilliseconds(System.Double)" />
@@ -1608,7 +1595,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Hours%2A> свойство — это компонент часов, *hh*.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Hours%2A> свойство — это компонент часов, *hh*.  
   
  <xref:System.TimeSpan.Hours%2A> Свойство представляет совершенно часов, тогда как <xref:System.TimeSpan.TotalHours%2A> свойство представляет полных и неполных часов.  
   
@@ -1723,7 +1710,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Milliseconds%2A> свойство — это компонент долей секунд *ff*.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Milliseconds%2A> свойство — это компонент долей секунд *ff*.  
   
  <xref:System.TimeSpan.Milliseconds%2A> Свойство представляет полных миллисекунд, в то время как <xref:System.TimeSpan.TotalMilliseconds%2A> свойство представляет целое и дробное количество миллисекунд.  
   
@@ -1784,7 +1771,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Minutes%2A> свойство — это компонент минут *мм*.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Minutes%2A> свойство — это компонент минут *мм*.  
   
  <xref:System.TimeSpan.Minutes%2A> Свойство представляет целых минут, тогда как <xref:System.TimeSpan.TotalMinutes%2A> свойство представляет целое и дробное количество минут.  
   
@@ -1884,7 +1871,7 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="factor" Type="System.Double" />
+        <Parameter Name="factor" Type="System.Double" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="factor">To be added.</param>
@@ -1940,7 +1927,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">Значение данного экземпляра с противоположным знаком не может быть представлено объектом <see cref="T:System.TimeSpan" />, то есть, значение данного экземпляра равно <see cref="F:System.TimeSpan.MinValue" />.</exception>
+        <exception cref="T:System.OverflowException">Инвертированное значение этого экземпляра не может быть представлено <see cref="T:System.TimeSpan" />, т. е. этот экземпляр имеет значение <see cref="F:System.TimeSpan.MinValue" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="op_Addition">
@@ -2022,8 +2009,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeSpan" Type="System.TimeSpan" />
-        <Parameter Name="divisor" Type="System.Double" />
+        <Parameter Name="timeSpan" Type="System.TimeSpan" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="divisor" Type="System.Double" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="timeSpan">To be added.</param>
@@ -2056,8 +2043,8 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="t1" Type="System.TimeSpan" />
-        <Parameter Name="t2" Type="System.TimeSpan" />
+        <Parameter Name="t1" Type="System.TimeSpan" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="t2" Type="System.TimeSpan" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="t1">To be added.</param>
@@ -2234,7 +2221,7 @@
         <param name="t1">Первый из сравниваемых интервалов времени.</param>
         <param name="t2">Второй из сравниваемых интервалов времени.</param>
         <summary>Показывает, является ли заданное значение <see cref="T:System.TimeSpan" /> большим или равным другому заданному значению <see cref="T:System.TimeSpan" />.</summary>
-        <returns>Значение <see langword="true" />, если значение <paramref name="t1" /> больше или равно <paramref name="t2" />; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если значение <paramref name="t1" /> больше или равно значению <paramref name="t2" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[Имеет эквивалентный метод для этого оператора <xref:System.TimeSpan.Compare%28System.TimeSpan%2CSystem.TimeSpan%29?displayProperty=nameWithType>  
   
@@ -2356,7 +2343,7 @@
         <param name="t1">Первый из сравниваемых интервалов времени.</param>
         <param name="t2">Второй из сравниваемых интервалов времени.</param>
         <summary>Показывает, является ли заданное значение <see cref="T:System.TimeSpan" /> меньшим, чем другое заданное значение <see cref="T:System.TimeSpan" />.</summary>
-        <returns>Значение <see langword="true" />, если значение <paramref name="t1" /> меньше <paramref name="t2" />; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если значение <paramref name="t1" /> меньше значения <paramref name="t2" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[Имеет эквивалентный метод для этого оператора <xref:System.TimeSpan.Compare%28System.TimeSpan%2CSystem.TimeSpan%29?displayProperty=nameWithType>  
   
@@ -2456,8 +2443,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="factor" Type="System.Double" />
-        <Parameter Name="timeSpan" Type="System.TimeSpan" />
+        <Parameter Name="factor" Type="System.Double" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="timeSpan" Type="System.TimeSpan" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="factor">To be added.</param>
@@ -2489,8 +2476,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeSpan" Type="System.TimeSpan" />
-        <Parameter Name="factor" Type="System.Double" />
+        <Parameter Name="timeSpan" Type="System.TimeSpan" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="factor" Type="System.Double" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="timeSpan">To be added.</param>
@@ -2609,7 +2596,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">Значение данного экземпляра с противоположным знаком не может быть представлено объектом <see cref="T:System.TimeSpan" />, то есть, значение данного экземпляра равно <see cref="F:System.TimeSpan.MinValue" />.</exception>
+        <exception cref="T:System.OverflowException">Инвертированное значение этого экземпляра не может быть представлено <see cref="T:System.TimeSpan" />, т. е. этот экземпляр имеет значение <see cref="F:System.TimeSpan.MinValue" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="op_UnaryPlus">
@@ -2722,11 +2709,11 @@
 ## Remarks  
  `s` Параметр содержит спецификацию временного интервала в виде:  
   
- [*ws*] [-] { *d* &#124; [*d*.] *hh*:*мм*[:*ss*[.* FF*]]} [*ws*]  
+ [*ws*] [-] { *d* &#124; [*d*.] *hh*:*мм*[:*ss*[. *FF*]]} [*ws*]  
   
  Элементы в квадратных скобках ([и]) являются необязательными. Выбор одного из списка альтернатив, заключенных в фигурные скобки ({и}) и разделяются вертикальной чертой (&#124;) является обязательным. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Необязательный пробел.|  
 |-|Необязательный знак минуса, который указывает на отрицательный <xref:System.TimeSpan>.|  
@@ -2744,9 +2731,14 @@
  Компоненты `s` задают временной интервал, который больше или равно <xref:System.TimeSpan.MinValue?displayProperty=nameWithType> и меньше или равно <xref:System.TimeSpan.MaxValue?displayProperty=nameWithType>.  
   
  <xref:System.TimeSpan.Parse%28System.String%29> Метод пытается проанализировать `s` с помощью каждого из форматов, зависящих от языка и региональных параметров для текущего языка и региональных параметров.  
-  
+
+## <a name="notes-to-callers"></a>Заметки к вызывающим объектам  
    
+Если компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, синтаксический анализ операций в .NET Framework 3.5 и более ранних версий также может отличаться от операции анализа в .NET Framework 4 и более поздних версий. В некоторых случаях синтаксический анализ операций, которые завершились успешно, в .NET Framework 3.5 и более ранних версий могут давать сбой и создавать <xref:System.OverflowException> в .NET Framework 4 и более поздних версий. В других случаях синтаксический анализ операций, которые выдают <xref:System.FormatException> в .NET Framework 3.5 и более ранних версий могут давать сбой и исключение <xref:System.OverflowException> в .NET Framework 4 и более поздних версий. В следующем примере оба сценария.  
   
+[!code-csharp[System.TimeSpan.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timespan.parse/cs/parsefailure1.cs#3)]
+[!code-vb[System.TimeSpan.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timespan.parse/vb/parsefailure1.vb#3)]
+ 
 ## Examples  
  В следующем примере используется <xref:System.TimeSpan.Parse%2A> метод для преобразования каждого элемента в массиве строк для <xref:System.TimeSpan> значение. Хорватский — Хорватия («hr-HR») и английский — США («en US»), чтобы проиллюстрировать, как текущий язык и региональные параметры системы влияет на операцию синтаксического анализа сменит текущий язык и региональные параметры.  
   
@@ -2755,18 +2747,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="s" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="s" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="s" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
+-или- 
 Как минимум один из компонентов дней, часов, минут или секунд выходит за пределы допустимого диапазона.</exception>
-        <block subset="none" type="usage">
-          <para>Если компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, синтаксический анализ операций в [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий могут вести себя по-разному из операций в анализа [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В некоторых случаях синтаксического анализа операции, завершившиеся [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой и создавать <see cref="T:System.OverflowException" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В других случаях синтаксический анализ операций, которые выдают <see cref="T:System.FormatException" /> в [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой и создавать <see cref="T:System.OverflowException" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В следующем примере оба сценария.  
-  
-[! code-csharp[System.TimeSpan.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timespan.parse/cs/parsefailure1.cs#3)] [! код vb[System.TimeSpan.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timespan.parse/vb/parsefailure1.vb#3)]</para>
-        </block>
       </Docs>
     </Member>
     <Member MemberName="Parse">
@@ -2790,8 +2776,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -2831,8 +2817,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
@@ -2845,11 +2831,11 @@
 ## Remarks  
  `input` Параметр содержит спецификацию временного интервала в виде:  
   
- [*ws*] [-] { *d* &#124; [*d*.] *hh*:*мм*[:*ss*[.* FF*]]} [*ws*]  
+ [*ws*] [-] { *d* &#124; [*d*.] *hh*:*мм*[:*ss*[. *FF*]]} [*ws*]  
   
  Элементы в квадратных скобках ([и]) являются необязательными. Выбор одного из списка альтернатив, заключенных в фигурные скобки ({и}) и разделяются вертикальной чертой (&#124;) является обязательным. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Необязательный пробел.|  
 |-|Необязательный знак минуса, который указывает на отрицательный <xref:System.TimeSpan>.|  
@@ -2878,8 +2864,13 @@
   
  Если `formatProvider` — `null`, <xref:System.Globalization.DateTimeFormatInfo> используется объект, связанный с текущей культурой.  
   
+## <a name="notes-to-callers"></a>Заметки к вызывающим объектам  
    
-  
+Если компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, синтаксический анализ операций в .NET Framework 3.5 и более ранних версий также может отличаться от операции анализа в .NET Framework 4 и более поздних версий. В некоторых случаях синтаксический анализ операций, которые завершились успешно, в .NET Framework 3.5 и более ранних версий могут давать сбой и создавать <xref:System.OverflowException> в .NET Framework 4 и более поздних версий. В других случаях синтаксический анализ операций, которые выдают <xref:System.FormatException> в .NET Framework 3.5 и более ранних версий могут давать сбой и исключение <xref:System.OverflowException> в .NET Framework 4 и более поздних версий. В следующем примере оба сценария.  
+   
+[!code-csharp[System.TimeSpan.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timespan.parse/cs/parsefailure1.cs#3)]
+[!code-vb[System.TimeSpan.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timespan.parse/vb/parsefailure1.vb#3)]
+
 ## Examples  
  В следующем примере определяется массив <xref:System.Globalization.CultureInfo> и использует каждый объект в вызовах <xref:System.TimeSpan.Parse%28System.String%2CSystem.IFormatProvider%29> метода для синтаксического анализа элементов в массиве строк. В примере показано, как правила конкретного языка и региональных параметров влияют на операции форматирования.  
   
@@ -2888,18 +2879,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="input" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="input" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
-По крайней мере одно из значений дней, часов, минут или секунд, указанных в параметре <paramref name="input" />, находится вне допустимого диапазона.</exception>
-        <block subset="none" type="usage">
-          <para>Если компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, синтаксический анализ операций в [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий могут вести себя по-разному из операций в анализа [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В некоторых случаях синтаксического анализа операции, завершившиеся [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой и создавать <see cref="T:System.OverflowException" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В других случаях синтаксический анализ операций, которые выдают <see cref="T:System.FormatException" /> в [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой и создавать <see cref="T:System.OverflowException" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. В следующем примере оба сценария.  
-  
-[! code-csharp[System.TimeSpan.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timespan.parse/cs/parsefailure1.cs#3)] [! код vb[System.TimeSpan.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timespan.parse/vb/parsefailure1.vb#3)]</para>
-        </block>
+-или- 
+Хотя бы один из компонентов дней, часов, минут или секунд в <paramref name="input" /> выходит за пределы допустимого диапазона.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ParseExact">
@@ -2946,13 +2931,13 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="format" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <c>input</c>.</param>
+        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
         <summary>Преобразует строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанные формат и сведения о форматировании, связанные с языком и региональными параметрами. Формат строкового представления должен полностью соответствовать заданному формату.</summary>
         <returns>Интервал времени, соответствующий параметру <paramref name="input" />, в виде, заданном параметрами <paramref name="format" /> и <paramref name="formatProvider" />.</returns>
@@ -2987,13 +2972,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="input" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="input" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
-По крайней мере одно из значений дней, часов, минут или секунд, указанных в параметре <paramref name="input" />, находится вне допустимого диапазона.</exception>
+-или- 
+Хотя бы один из компонентов дней, часов, минут или секунд в <paramref name="input" /> выходит за пределы допустимого диапазона.</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">Строки стандартного формата TimeSpan</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">Строки пользовательского формата TimeSpan</related>
       </Docs>
@@ -3028,13 +3012,13 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют требуемый формат параметра <c>input</c>.</param>
+        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
         <summary>Преобразует строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанный массив строк форматирования и сведения о форматировании, связанные с языком и региональными параметрами. Формат строкового представления должен полностью соответствовать одному из заданных форматов.</summary>
         <returns>Интервал времени, соответствующий параметру <paramref name="input" />, в виде, заданном параметрами <paramref name="formats" /> и <paramref name="formatProvider" />.</returns>
@@ -3071,13 +3055,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="input" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="input" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
-По крайней мере одно из значений дней, часов, минут или секунд, указанных в параметре <paramref name="input" />, находится вне допустимого диапазона.</exception>
+-или- 
+Хотя бы один из компонентов дней, часов, минут или секунд в <paramref name="input" /> выходит за пределы допустимого диапазона.</exception>
         <altmember cref="M:System.TimeSpan.TryParseExact(System.String,System.String[],System.IFormatProvider,System.TimeSpan@)" />
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">Строки стандартного формата TimeSpan</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">Строки пользовательского формата TimeSpan</related>
@@ -3104,10 +3087,10 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -3140,10 +3123,10 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -3185,16 +3168,16 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="format" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <c>input</c>.</param>
+        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
-        <param name="styles">Побитовое сочетание значений перечисления, определяющее элементы стиля, которые могут присутствовать в параметре <c>input</c>.</param>
+        <param name="styles">Побитовое сочетание значений перечисления, определяющее элементы стиля, которые могут присутствовать в параметре <paramref name="input" />.</param>
         <summary>Преобразует строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанные формат, сведения о форматировании, связанные с языком и региональными параметрами, и стили. Формат строкового представления должен полностью соответствовать заданному формату.</summary>
         <returns>Интервал времени, соответствующий параметру <paramref name="input" />, в виде, заданном параметрами <paramref name="format" />, <paramref name="formatProvider" /> и <paramref name="styles" />.</returns>
         <remarks>
@@ -3230,15 +3213,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="styles" /> — недопустимое значение <see cref="T:System.Globalization.TimeSpanStyles" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="styles" /> имеет недопустимое значение <see cref="T:System.Globalization.TimeSpanStyles" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="input" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="input" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
-По крайней мере одно из значений дней, часов, минут или секунд, указанных в параметре <paramref name="input" />, находится вне допустимого диапазона.</exception>
+-или- 
+Хотя бы один из компонентов дней, часов, минут или секунд в <paramref name="input" /> выходит за пределы допустимого диапазона.</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">Строки стандартного формата TimeSpan</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">Строки пользовательского формата TimeSpan</related>
       </Docs>
@@ -3273,14 +3254,14 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют требуемый формат параметра <c>input</c>.</param>
+        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
         <param name="styles">Побитовое сочетание значений перечисления, определяющее элементы стиля, которые могут присутствовать в параметре input.</param>
         <summary>Преобразует строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанные форматы, сведения о форматировании, связанные с языком и региональными параметрами, и стили. Формат строкового представления должен полностью соответствовать одному из заданных форматов.</summary>
@@ -3320,15 +3301,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="styles" /> — недопустимое значение <see cref="T:System.Globalization.TimeSpanStyles" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> имеет недопустимый формат.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="styles" /> имеет недопустимое значение <see cref="T:System.Globalization.TimeSpanStyles" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="input" /> задан в недопустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="input" /> представляет число меньше <see cref="F:System.TimeSpan.MinValue" /> или больше <see cref="F:System.TimeSpan.MaxValue" />.  
   
-- или - 
-По крайней мере одно из значений дней, часов, минут или секунд, указанных в параметре <paramref name="input" />, находится вне допустимого диапазона.</exception>
+-или- 
+Хотя бы один из компонентов дней, часов, минут или секунд в <paramref name="input" /> выходит за пределы допустимого диапазона.</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">Строки стандартного формата TimeSpan</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">Строки пользовательского формата TimeSpan</related>
       </Docs>
@@ -3371,7 +3350,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*.* hh*:*мм*:*ss*.* FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Seconds%2A> свойство — это компонент секунд, *ss*.  
+ Объект <xref:System.TimeSpan> значение можно представить в виде [*-*]*d*. *hh*:*мм*:*ss*. *FF*, где необязательный знак минус указывает отрицательный интервал времени, *d* компонент — дни, *hh* часов в 24-часовом формате, — *мм* — минуты, *ss* секунд, и *ff* — доли секунды. Значение <xref:System.TimeSpan.Seconds%2A> свойство — это компонент секунд, *ss*.  
   
  <xref:System.TimeSpan.Seconds%2A> Свойство представляет целых секунд, тогда как <xref:System.TimeSpan.TotalSeconds%2A> свойство представляет целое и дробное количество секунд.  
   
@@ -3480,7 +3459,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
@@ -3896,7 +3875,7 @@
   
  Элементы в квадратных скобках ([и]) не могут быть включены в возвращаемую строку. Двоеточия и точки (: "и") являются литеральными символами. В следующей таблице перечислены элементы не являющиеся литералами. Обратите внимание, что строка, возвращаемая <xref:System.TimeSpan.ToString> метод несовместим с учетом языка и региональных параметров.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |----------|-----------------|  
 |"-"|Знак «минус», который указывает отрицательный интервал времени. Не включен для положительный период времени.|  
 |"*d*"|Число дней в интервале времени. Этот элемент указан, если интервал времени меньше одного дня.|  
@@ -3906,7 +3885,7 @@
 |"*fffffff*"|Доли секунды в интервале времени. Этот элемент указан, если интервал времени не включает доли секунды. При его наличии, доли секунды всегда выражаются с помощью семь десятичных цифр.|  
   
 > [!NOTE]
->  Дополнительные сведения о сравнении строковым представлением <xref:System.TimeSpan> и типы данных Oracle, см. в статье базы знаний [324577: день ИНТЕРВАЛ System.TimeSpan Does не совпадение Oracle 9i для ДРУГОГО типа данных](http://go.microsoft.com/fwlink/?LinkId=161146).  
+>  Дополнительные сведения о сравнении строковым представлением <xref:System.TimeSpan> и типы данных Oracle, см. в статье базы знаний [324577: Значение System.TimeSpan не совпадает с Oracle 9i ИНТЕРВАЛ день для ДРУГОГО типа данных](https://go.microsoft.com/fwlink/?LinkId=161146).  
   
    
   
@@ -3918,9 +3897,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Поддержка форматирования <see cref="T:System.TimeSpan" /> значения была добавлена в [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]. Тем не менее <see cref="M:System.TimeSpan.ToString" /> перегруженный метод остается без учета языка и региональных параметров. Его поведение не меняется с предыдущих версий платформы .NET Framework. Чтобы управлять форматированием <see cref="T:System.TimeSpan" /> значение, вызвать <see cref="M:System.TimeSpan.ToString(System.String)" /> или <see cref="M:System.TimeSpan.ToString(System.String,System.IFormatProvider)" /> перегрузки.</para>
-        </block>
+        <block subset="none" type="usage"><para>Поддержка форматирования <see cref="T:System.TimeSpan" /> значения была добавлена в [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]. Тем не менее <see cref="M:System.TimeSpan.ToString" /> перегруженный метод остается без учета языка и региональных параметров. Его поведение не меняется с предыдущих версий платформы .NET Framework. Чтобы управлять форматированием <see cref="T:System.TimeSpan" /> значение, вызвать <see cref="M:System.TimeSpan.ToString(System.String)" /> или <see cref="M:System.TimeSpan.ToString(System.String,System.IFormatProvider)" /> перегрузки.</para></block>
         <altmember cref="T:System.String" />
         <altmember cref="M:System.TimeSpan.Parse(System.String)" />
         <altmember cref="M:System.TimeSpan.TryParse(System.String,System.TimeSpan@)" />
@@ -3956,7 +3933,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="format">Стандартная или пользовательская строка формата <see cref="T:System.TimeSpan" />.</param>
@@ -4027,8 +4004,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="format">Стандартная или пользовательская строка формата <see cref="T:System.TimeSpan" />.</param>
@@ -4396,10 +4373,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" />
-        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" />
-        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
@@ -4447,8 +4424,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="s">To be added.</param>
@@ -4489,12 +4466,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.String" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="s" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="s">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>s</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="s" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" /> и возвращает значение, позволяющее определить успешность преобразования.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="s" /> успешно преобразован; в противном случае — значение <see langword="false" />. Эта операция возвращает значение <see langword="false" />, если параметр <paramref name="s" /> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />, либо его формат недопустим, либо он представляет интервал времени, меньший <see cref="F:System.TimeSpan.MinValue" /> или больший <see cref="F:System.TimeSpan.MaxValue" />, либо минимум один из его компонентов — количество дней, часов, минут или секунд — находится вне допустимого диапазона.</returns>
         <remarks>
@@ -4505,11 +4482,11 @@
   
  `s` Параметр содержит спецификацию временного интервала в виде:  
   
- [*ws*] [-] { *d* &#124; *d*.* hh*:*мм*[:*ss*[.* FF*]] &#124; *hh*:*мм*[:*ss*[.* FF*]]} [*ws*]  
+ [*ws*] [-] { *d* &#124; *d*. *hh*:*мм*[:*ss*[. *FF*]] &#124; *hh*:*мм*[:*ss*[. *FF*]]} [*ws*]  
   
  Элементы в квадратных скобках ([и]) являются необязательными. Выбор одного из списка альтернатив, заключенных в фигурные скобки ({и}) и разделяются вертикальной чертой (&#124;) является обязательным. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Необязательный пробел.|  
 |-|Необязательный знак минуса, который указывает на отрицательный <xref:System.TimeSpan>.|  
@@ -4525,8 +4502,12 @@
  Компоненты `s` задают временной интервал, который больше или равно <xref:System.TimeSpan.MinValue?displayProperty=nameWithType> и меньше или равно <xref:System.TimeSpan.MaxValue?displayProperty=nameWithType>.  
   
  <xref:System.TimeSpan.Parse%28System.String%29> Метод пытается проанализировать `s` с помощью каждого из форматов, зависящих от языка и региональных параметров для текущего языка и региональных параметров.  
-  
-   
+
+## <a name="notes-to-callers"></a>Заметки к вызывающим объектам
+
+В некоторых случаях, когда компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, синтаксический анализ операций, которые завершились успешно, в .NET Framework 3.5 и более ранних версий могут давать сбой и создавать <xref:System.OverflowException> в .NET Framework 4 и более поздних версий. Следующий пример иллюстрирует этот сценарий.  
+[!code-csharp[System.TimeSpan.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeSpan.TryParse/cs/tryparsefailure1.cs#3)]
+[!code-vb[System.TimeSpan.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeSpan.TryParse/vb/tryparsefailure1.vb#3)]
   
 ## Examples  
  В следующем примере используется <xref:System.TimeSpan.TryParse%2A> метод для создания <xref:System.TimeSpan> объектов из допустимых <xref:System.TimeSpan> строки и указать, когда операция синтаксического анализа не выполнено, поскольку строка диапазона времени является недопустимым.  
@@ -4536,11 +4517,6 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>В некоторых случаях, когда компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, операциях синтаксического анализа, завершившиеся [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой и создавать <see cref="T:System.OverflowException" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], приведенный ниже показан этот сценарий.  
-  
-[! code-csharp[System.TimeSpan.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeSpan.TryParse/cs/tryparsefailure1.cs#3)] [! код vb[System.TimeSpan.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeSpan.TryParse/vb/tryparsefailure1.vb#3)]</para>
-        </block>
       </Docs>
     </Member>
     <Member MemberName="TryParse">
@@ -4565,9 +4541,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -4608,14 +4584,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>input</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="input" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает заданное строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанную информацию о форматировании, связанную с языком и региональными параметрами, и возвращает значение, которое показывает успешность преобразования.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> успешно преобразован; в противном случае — значение <see langword="false" />. Эта операция возвращает значение <see langword="false" />, если параметр <paramref name="input" /> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />, либо его формат недопустим, либо он представляет интервал времени, меньший <see cref="F:System.TimeSpan.MinValue" /> или больший <see cref="F:System.TimeSpan.MaxValue" />, либо минимум один из его компонентов — количество дней, часов, минут или секунд — находится вне допустимого диапазона.</returns>
         <remarks>
@@ -4626,11 +4602,11 @@
   
  `input` Параметр содержит спецификацию временного интервала в виде:  
   
- [*ws*] [-] { *d* &#124; *d*.* hh*:*мм*[:*ss*[.* FF*]] &#124; *hh*:*мм*[:*ss*[.* FF*]]} [*ws*]  
+ [*ws*] [-] { *d* &#124; *d*. *hh*:*мм*[:*ss*[. *FF*]] &#124; *hh*:*мм*[:*ss*[. *FF*]]} [*ws*]  
   
  Элементы в квадратных скобках ([и]) являются необязательными. Выбор одного из списка альтернатив, заключенных в фигурные скобки ({и}) и разделяются вертикальной чертой (&#124;) является обязательным. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Необязательный пробел.|  
 |-|Необязательный знак минуса, который указывает на отрицательный <xref:System.TimeSpan>.|  
@@ -4657,7 +4633,12 @@
   
  Если `formatProvider` — `null`, <xref:System.Globalization.DateTimeFormatInfo> используется объект, связанный с текущей культурой.  
   
-   
+## <a name="notes-to-callers"></a>Заметки к вызывающим объектам
+ 
+В некоторых случаях, когда компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, операциях синтаксического анализа, завершиться успешно и вернуть <see langword="true" /> в .NET Framework 3.5 и более ранней версии может завершиться ошибкой и возвращают <see langword="false" /> в.NET Framework 4 и более поздних версий, в следующем примере этот сценарий.  
+  
+ [!code-csharp[System.TimeSpan.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeSpan.TryParse/cs/tryparsefailure1.cs#3)]
+ [!code-vb[System.TimeSpan.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeSpan.TryParse/vb/tryparsefailure1.vb#3)]
   
 ## Examples  
  В следующем примере определяется массив <xref:System.Globalization.CultureInfo> и использует каждый объект в вызовах <xref:System.TimeSpan.TryParse%28System.String%2CSystem.IFormatProvider%2CSystem.TimeSpan%40%29> метода для синтаксического анализа элементов в массиве строк. В примере показано, как правила конкретного языка и региональных параметров влияют на операции форматирования.  
@@ -4667,11 +4648,6 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>В некоторых случаях, когда компонент интервала времени в строке для синтаксического анализа, содержит более семи цифр, операциях синтаксического анализа, завершиться успешно и вернуть <see langword="true" /> в [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] и более ранних версий может завершиться ошибкой, а затем возвращают <see langword="false" /> в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], Следующий пример иллюстрирует этот сценарий.  
-  
-[! code-csharp[System.TimeSpan.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeSpan.TryParse/cs/tryparsefailure1.cs#3)] [! код vb[System.TimeSpan.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeSpan.TryParse/vb/tryparsefailure1.vb#3)]</para>
-        </block>
       </Docs>
     </Member>
     <MemberGroup MemberName="TryParseExact">
@@ -4710,10 +4686,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -4747,10 +4723,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -4792,16 +4768,16 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="format" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <c>input</c>.</param>
+        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>input</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="input" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает заданное строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанный формат и информацию о форматировании, связанную с языком и региональными параметрами, и возвращает значение, которое показывает успешность преобразования. Формат строкового представления должен полностью соответствовать заданному формату.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -4869,16 +4845,16 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют допустимые форматы параметра <c>input</c>.</param>
+        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют допустимые форматы параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>input</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="input" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает заданное строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанные форматы и информацию о форматировании, связанную с языком и региональными параметрами, и возвращает значение, которое показывает успешность преобразования. Формат строкового представления должен полностью соответствовать одному из заданных форматов.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -4940,11 +4916,11 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="4" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -4979,11 +4955,11 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="4" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="input">To be added.</param>
@@ -5026,18 +5002,18 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="format" Type="System.String" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <c>input</c>.</param>
+        <param name="format">Стандартная или пользовательская строка формата, которая определяет требуемый формат параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании, связанные с языком и региональными параметрами.</param>
-        <param name="styles">Одно или несколько значений перечисления, определяющих стиль параметра <c>input</c>.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>input</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="styles">Одно или несколько перечислимых значений, указывающих стиль параметра <paramref name="input" />.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="input" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает заданное строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанный формат, информацию о форматировании, связанную с языком и региональными параметрами, и стили, и возвращает значение, которое показывает успешность преобразования. Формат строкового представления должен полностью соответствовать заданному формату.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -5104,18 +5080,18 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="formats" Type="System.String[]" />
-        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
-        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" />
-        <Parameter Name="result" Type="System.TimeSpan" RefType="out" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formats" Type="System.String[]" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="styles" Type="System.Globalization.TimeSpanStyles" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.TimeSpan" RefType="out" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="input">Строка, которая указывает преобразуемый интервал времени.</param>
-        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют допустимые форматы параметра <c>input</c>.</param>
+        <param name="formats">Массив стандартных или пользовательских строк формата, которые определяют допустимые форматы параметра <paramref name="input" />.</param>
         <param name="formatProvider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
-        <param name="styles">Одно или несколько значений перечисления, определяющих стиль параметра <c>input</c>.</param>
-        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <c>input</c>, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование выполнить не удалось. Этот параметр передается неинициализированным.</param>
+        <param name="styles">Одно или несколько перечислимых значений, указывающих стиль параметра <paramref name="input" />.</param>
+        <param name="result">После возврата из этого метода содержит объект, представляющий интервал времени, заданный в параметре <paramref name="input" />, или значение <see cref="F:System.TimeSpan.Zero" />, если преобразование завершилось неудачей. Этот параметр передается неинициализированным.</param>
         <summary>Преобразовывает заданное строковое представление интервала времени в его эквивалент <see cref="T:System.TimeSpan" />, используя указанные форматы, информацию о форматировании, связанную с языком и региональными параметрами, и стили, и возвращает значение, которое показывает успешность преобразования. Формат строкового представления должен полностью соответствовать одному из заданных форматов.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>

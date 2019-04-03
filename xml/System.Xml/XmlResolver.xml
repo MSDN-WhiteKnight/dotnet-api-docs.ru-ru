@@ -1,13 +1,5 @@
 <Type Name="XmlResolver" FullName="System.Xml.XmlResolver">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="93da7aafcc8d9d0ee75dd1e2c0b8768e9c831e10" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46617713" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class XmlResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9bc9f07ba8600589d1548a32db893c1cd93aca47" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58413856" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlResolver extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlResolver" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlResolver" />
@@ -34,7 +26,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Разрешает внешние ресурсы XML, имена которых заданы с помощью универсального кода ресурса (URI).</summary>
+    <summary>Разрешает внешние ресурсы XML, имена которых заданы с помощью URI.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -47,7 +39,7 @@
   
 -   <xref:System.Xml.XmlUrlResolver> является арбитром по умолчанию для всех классов в <xref:System.Xml> пространства имен. Поддерживаются протоколы `file://` и `http://` и запросы из класса <xref:System.Net.WebRequest?displayProperty=nameWithType>. Примеры расширения класса для повышения производительности, см. в разделе <xref:System.Xml.XmlUrlResolver> справочной странице.  
   
--   <xref:System.Xml.XmlSecureResolver> помогает защитить другой <xref:System.Xml.XmlResolver> объект упаковки объект object и ограничивая ресурсы, которые он может обращаться к. Например <xref:System.Xml.XmlSecureResolver> может запрещать доступ к определенной узлам или зонам Интернета.  
+-   <xref:System.Xml.XmlSecureResolver> помогает защитить другой <xref:System.Xml.XmlResolver> объект упаковки объекта и ограничивая ресурсы, которые он может обращаться к. Например <xref:System.Xml.XmlSecureResolver> может запрещать доступ к определенной узлам или зонам Интернета.  
   
  Можно создать и указать собственный Сопоставитель. Если не указать Сопоставитель, средство чтения использует значение по умолчанию <xref:System.Xml.XmlUrlResolver> без пользовательских учетных данных.  
   
@@ -90,7 +82,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/e695047f-3c0f-4045-8708-5baea91cc380">XML-документы и данные</related>
+    <related type="Article" href="~/docs/standard/data/xml/index.md">XML-документы и данные</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -162,7 +154,7 @@
         <ReturnType>System.Net.ICredentials</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе задает учетные данные для проверки подлинности веб-запросов.</summary>
+        <summary>При переопределении в производном классе задает учетные данные для аутентификации веб-запросов.</summary>
         <value>Учетные данные, используемые для аутентификации веб-запросов. Если свойство не задано, значением по умолчанию становится <see langword="null" /> — <see langword="XmlResolver" /> не имеет учетных данных пользователя.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -234,10 +226,10 @@ resolver.Credentials = myCache;
       </Parameters>
       <Docs>
         <param name="absoluteUri">URI, возвращаемый методом <see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" />.</param>
-        <param name="role">В настоящий момент не используется.</param>
+        <param name="role">В настоящее время не используется.</param>
         <param name="ofObjectToReturn">Тип возвращаемого объекта. В текущей версии возвращаются только объекты System.IO.Stream.</param>
-        <summary>При переопределении в производном классе отображает URI в объект, содержащий текущий ресурс.</summary>
-        <returns>Объект потока или значение <see langword="null" />, если в качестве типа не указан поток.</returns>
+        <summary>При переопределении в производном классе сопоставляет URI с объектом, содержащим текущий ресурс.</summary>
+        <returns>Объект потока или значение <see langword="null" />, если указан тип, отличающийся от потока.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -258,7 +250,7 @@ resolver.Credentials = myCache;
         </remarks>
         <exception cref="T:System.Xml.XmlException">Параметр <paramref name="ofObjectToReturn" /> не относится к типу <see langword="Stream" />.</exception>
         <exception cref="T:System.UriFormatException">Заданный URI не является абсолютным.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="absoluteUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="absoluteUri" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Exception">Есть ошибка среды выполнения (например, разрыв подключения к серверу).</exception>
       </Docs>
     </Member>
@@ -288,16 +280,16 @@ resolver.Credentials = myCache;
         <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="absoluteUri" Type="System.Uri" />
-        <Parameter Name="role" Type="System.String" />
-        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+        <Parameter Name="absoluteUri" Type="System.Uri" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="role" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="absoluteUri">URI, возвращаемый методом <see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" />.</param>
-        <param name="role">В настоящий момент не используется.</param>
+        <param name="role">В настоящее время не используется.</param>
         <param name="ofObjectToReturn">Тип возвращаемого объекта. В текущей версии возвращаются только объекты <see cref="T:System.IO.Stream" />.</param>
-        <summary>Асинхронно сопоставляет URI с объектом, содержащим фактический ресурс.</summary>
-        <returns>Объект потока или значение <see langword="null" />, если в качестве типа не указан поток.</returns>
+        <summary>Асинхронно сопоставляет универсальный код ресурса (URI) с объектом, содержащим фактический ресурс.</summary>
+        <returns>Объект потока или значение <see langword="null" />, если указан тип, отличающийся от потока.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -306,7 +298,7 @@ resolver.Credentials = myCache;
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">Асинхронное программирование с использованием ключевых слов Async и Await (C# и Visual Basic)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">Асинхронное программирование с использованием ключевых слов Async и Await (C# и Visual Basic)</related>
       </Docs>
     </Member>
     <Member MemberName="ResolveUri">
@@ -342,8 +334,8 @@ resolver.Credentials = myCache;
       </Parameters>
       <Docs>
         <param name="baseUri">Базовый URI, используемый для разрешения относительного URI.</param>
-        <param name="relativeUri">URI, которые нужно разрешить. URI может быть как абсолютным, так и относительным. Если код URI является абсолютным, это значение замещает значение <c>baseUri</c>. Если относительным, то абсолютный код URI является сочетанием этого значения и <c>baseUri</c>.</param>
-        <summary>Когда переопределено в производном классе, разрешает абсолютный URI из базового и относительного URI.</summary>
+        <param name="relativeUri">URI, которые нужно разрешить. URI может быть как абсолютным, так и относительным. Если URI является абсолютным, данное значение замещает значение <paramref name="baseUri" />. Если относительным, то абсолютный URI является сочетанием относительного и <paramref name="baseUri" />.</param>
+        <summary>При переопределении в производном классе разрешает абсолютный URI из базовых и относительных URI.</summary>
         <returns>Абсолютный код URI или значение <see langword="null" />, если невозможно разрешить относительный URI.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -358,7 +350,7 @@ resolver.Credentials = myCache;
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Свойство <paramref name="relativeUri" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="relativeUri" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SupportsType">
@@ -386,11 +378,11 @@ resolver.Credentials = myCache;
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="absoluteUri" Type="System.Uri" />
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="absoluteUri" Type="System.Uri" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="type" Type="System.Type" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="absoluteUri">Универсальный код ресурса.</param>
+        <param name="absoluteUri">URI-адрес.</param>
         <param name="type">Возвращаемый тип.</param>
         <summary>Позволяет сопоставителю возвращать типы, отличные от <see cref="T:System.IO.Stream" />.</summary>
         <returns>Значение <see langword="true" />, если <paramref name="type" /> поддерживается; в противном случае — значение <see langword="false" />.</returns>

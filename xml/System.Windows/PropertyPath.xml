@@ -1,13 +1,5 @@
 <Type Name="PropertyPath" FullName="System.Windows.PropertyPath">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cbc7db2e99d5b9a8a10543b7c7f9813e8671c021" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48589275" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class PropertyPath" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0ea78cb7b03c94b3d66ae42736ef1796f433d34a" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57926791" /></Metadata><TypeSignature Language="C#" Value="public sealed class PropertyPath" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyPath extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.PropertyPath" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PropertyPath" />
@@ -23,12 +15,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.PropertyPathConverter))</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Реализует структуру данных для описания свойства как пути под другим свойством или под типом-владельцем. Пути свойств используются в привязках данных к объектам, а также в раскадровках и временных шкалах для анимации.</summary>
+    <summary>Предоставляет структуру данных для описания свойства как подпути иного свойства или типа владельца. Пути свойств используются в объектах для привязки данных, в раскадровках и графиках для анимации.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -47,7 +39,7 @@
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
   
 ```  
-<object property="propertyPath" .../>  
+<object property="propertyPath" .../>  
 ```  
   
 <a name="xamlValues_PropertyPath"></a>   
@@ -57,7 +49,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/056aee79-7cdd-434f-8174-dfc856cad343">Расширение разметки x:Static</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/056aee79-7cdd-434f-8174-dfc856cad343">Расширение разметки x:Static</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -96,7 +88,7 @@
   
  При ее использовании <xref:System.Windows.PropertyPath> в режиме исходного кода для привязки, `parameter` строка, представляющая имя свойства, можно выбрать или строку, описывающую «промежуточный» путь к свойству в [!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)] объектной модели объекта, который используется в качестве источника для привязки. Для пути к свойству привязки символ, который определяет «step» — точка (.). Также поддерживаются ссылки индексаторов (включая несколько индексаторов и разграничение типа). Дополнительные сведения о синтаксисе строки, используемые особо <xref:System.Windows.Data.Binding> объекта, см. в разделе <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>. Свойство, используемое в качестве источника привязки не обязательно свойства зависимостей. Если привязка, ссылочное свойство необходимо чтения и записи. Обратите внимание на то, что целевой объект привязки должен быть свойством зависимостей. Дополнительные сведения см. в разделе [Общие сведения о привязке данных](~/docs/framework/wpf/data/data-binding-overview.md).  
   
- При ее использовании <xref:System.Windows.PropertyPath> в целевом режиме пути один шаг для цели раскадровки, `parameter` обычно предоставляется в качестве типа <xref:System.Windows.DependencyProperty>. Можно также указать строку, являющуюся <xref:System.Windows.DependencyProperty.Name%2A>. Любой из этих иметь один и тот же результат, так как он хранится внутренним образом как строка. Предоставленный <xref:System.Windows.DependencyProperty> преобразуется в строку с помощью <xref:System.Windows.Markup.DependencyPropertyConverter>. <xref:System.Windows.Markup.DependencyPropertyConverter> Поддерживает формат полного имени для свойств зависимостей, поэтому можно указать *typeName*.* propertyName* указанием строку имени свойства зависимостей для <xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType> конструктор в коде. Полный путь к идентификатор свойства зависимостей представляет собой другой понятие, чем сложной траектории. Комплексное path <xref:System.Windows.PropertyPath> вместо этого должен будет создан с помощью <xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType> конструктор.  
+ При ее использовании <xref:System.Windows.PropertyPath> в целевом режиме пути один шаг для цели раскадровки, `parameter` обычно предоставляется в качестве типа <xref:System.Windows.DependencyProperty>. Можно также указать строку, являющуюся <xref:System.Windows.DependencyProperty.Name%2A>. Любой из этих иметь один и тот же результат, так как он хранится внутренним образом как строка. Предоставленный <xref:System.Windows.DependencyProperty> преобразуется в строку с помощью <xref:System.Windows.Markup.DependencyPropertyConverter>. <xref:System.Windows.Markup.DependencyPropertyConverter> Поддерживает формат полного имени для свойств зависимостей, поэтому можно указать *typeName*. *propertyName* указанием строку имени свойства зависимостей для <xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType> конструктор в коде. Полный путь к идентификатор свойства зависимостей представляет собой другой понятие, чем сложной траектории. Комплексное path <xref:System.Windows.PropertyPath> вместо этого должен будет создан с помощью <xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType> конструктор.  
   
  ]]></format>
         </remarks>
@@ -120,7 +112,7 @@
         <Parameter Name="path" Type="System.String" />
         <Parameter Name="pathParameters" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-3.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -176,7 +168,7 @@
   
  При ее использовании <xref:System.Windows.PropertyPath> в режиме исходного кода для привязки, <xref:System.Windows.PropertyPath.Path%2A> строка, представляющая имя свойства, можно выбрать или строку, описывающую «промежуточный» путь к свойству в [!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)] объектной модели объекта, который используется в качестве источника для привязки. Для пути к свойству привязки символ, который определяет «step» — точка (.). Также поддерживаются ссылки индексаторов (включая несколько индексаторов и разграничение типа). Дополнительные сведения о синтаксисе строки, используемые особо <xref:System.Windows.Data.Binding> объекта, см. в разделе <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>. Свойство, используемое в качестве источника привязки не обязательно свойства зависимостей. Если двойной привязке, источник свойства должны быть чтения и записи. Обратите внимание на то, что целевой объект привязки должен быть свойством зависимостей. Дополнительные сведения см. в разделе [Общие сведения о привязке данных](~/docs/framework/wpf/data/data-binding-overview.md).  
   
- При ее использовании <xref:System.Windows.PropertyPath> в целевом режиме пути один шаг для цели раскадровки, <xref:System.Windows.PropertyPath> является строка, являющаяся *typeName*.* propertyName* указанием строку имени свойства зависимостей.  
+ При ее использовании <xref:System.Windows.PropertyPath> в целевом режиме пути один шаг для цели раскадровки, <xref:System.Windows.PropertyPath> является строка, являющаяся *typeName*. *propertyName* указанием строку имени свойства зависимостей.  
   
  При ее использовании <xref:System.Windows.PropertyPath> сложного пути для раскадровки цели, <xref:System.Windows.PropertyPath.Path%2A> является токеном строковом формате, описывающему отношения для различных объектов, приведенные в <xref:System.Windows.PropertyPath.PathParameters%2A>.  
   
@@ -188,7 +180,7 @@
   
  Строка пути для <xref:System.Windows.PropertyPath> обычно устанавливается посредством конструкторов: <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> подпись для привязки или целевые объекты раскадровки один шаг, <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> подпись для целей многоэтапный раскадровки.  
   
- **XAML:** при использовании <xref:System.Windows.PropertyPath> для описания ссылку на свойство в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], как значение атрибута, строка, которая указывается сначала обрабатывается преобразователь типов (<xref:System.Windows.PropertyPathConverter>). Этот преобразователь типов, затем обрабатывает строку и на основе ее синтаксиса вызывается один из <xref:System.Windows.PropertyPath> сигнатур конструкторов. Такое обращение через преобразователь типов, обработки значения атрибута обычно является использование <xref:System.Windows.PropertyPath> в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], вместо того чтобы объявление <xref:System.Windows.PropertyPath> элемент и затем применить конкретные значения таких как атрибуты объектов <xref:System.Windows.PropertyPath.Path%2A> и <xref:System.Windows.PropertyPath.PathParameters%2A>. Дополнительные сведения см. в разделе [синтаксис PropertyPath XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md).  
+ **XAML:** При использовании <xref:System.Windows.PropertyPath> для описания ссылку на свойство в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], как значение атрибута, строка, которая указывается сначала обрабатывается преобразователь типов (<xref:System.Windows.PropertyPathConverter>). Этот преобразователь типов, затем обрабатывает строку и на основе ее синтаксиса вызывается один из <xref:System.Windows.PropertyPath> сигнатур конструкторов. Такое обращение через преобразователь типов, обработки значения атрибута обычно является использование <xref:System.Windows.PropertyPath> в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], вместо того чтобы объявление <xref:System.Windows.PropertyPath> элемент и затем применить конкретные значения таких как атрибуты объектов <xref:System.Windows.PropertyPath.Path%2A> и <xref:System.Windows.PropertyPath.PathParameters%2A>. Дополнительные сведения см. в разделе [синтаксис PropertyPath XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md).  
   
 <a name="xamlTextUsage_Path"></a>   
 ## <a name="xaml-text-usage"></a>Использование текста XAML  
@@ -227,7 +219,7 @@
   
  Фактические вычисления цепочку свойств осуществляется раскадровки анимации. В <xref:System.Windows.PropertyPath> уровня, не будет выполнена проверка убедитесь, что действия пути подключения вообще. Например, можно создать путь к свойству, которое имеет <xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType> на первом этапе и <xref:System.Windows.FrameworkElement.FlowDirectionProperty?displayProperty=nameWithType> на втором этапе. Но такой путь к свойству завершается ошибкой, если фактически применяется в качестве целевого объекта, так как тип кисти, заполняет <xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType> имеет <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType> свойства. Недопустимое свойство пути сбоем без уведомления. Дополнительные сведения см. в разделе [Общие сведения о Storyboard](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
   
- **XAML:** при использовании <xref:System.Windows.PropertyPath> для описания ссылку на свойство в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], как значение атрибута, строка, которая указывается сначала обрабатывается преобразователь типов (<xref:System.Windows.PropertyPathConverter>). Этот преобразователь типов, затем обрабатывает строку и на основе ее синтаксиса вызывается один из <xref:System.Windows.PropertyPath> сигнатур конструкторов. Такое обращение через преобразователь типов, обработки значения атрибута обычно является использование <xref:System.Windows.PropertyPath> в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], вместо того чтобы объявление <xref:System.Windows.PropertyPath> элемент и затем применить конкретные значения таких как атрибуты объектов <xref:System.Windows.PropertyPath.Path%2A> и <xref:System.Windows.PropertyPath.PathParameters%2A>. Дополнительные сведения см. в разделе [синтаксис PropertyPath XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md).  
+ **XAML:** При использовании <xref:System.Windows.PropertyPath> для описания ссылку на свойство в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], как значение атрибута, строка, которая указывается сначала обрабатывается преобразователь типов (<xref:System.Windows.PropertyPathConverter>). Этот преобразователь типов, затем обрабатывает строку и на основе ее синтаксиса вызывается один из <xref:System.Windows.PropertyPath> сигнатур конструкторов. Такое обращение через преобразователь типов, обработки значения атрибута обычно является использование <xref:System.Windows.PropertyPath> в [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], вместо того чтобы объявление <xref:System.Windows.PropertyPath> элемент и затем применить конкретные значения таких как атрибуты объектов <xref:System.Windows.PropertyPath.Path%2A> и <xref:System.Windows.PropertyPath.PathParameters%2A>. Дополнительные сведения см. в разделе [синтаксис PropertyPath XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md).  
   
 <a name="xamlTextUsage_PathParameters"></a>   
 ## <a name="xaml-text-usage"></a>Использование текста XAML  

@@ -1,13 +1,5 @@
 <Type Name="Roles" FullName="System.Web.Security.Roles">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="574cbc2c554c7436c4276361f85a337ed7ead7a2" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46642139" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Roles" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="be393b173b7c171717b78ac844a616c9c8b4ee70" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54234960" /></Metadata><TypeSignature Language="C#" Value="public static class Roles" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Roles extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.Roles" />
   <TypeSignature Language="VB.NET" Value="Public Class Roles" />
@@ -32,7 +24,7 @@
   
  Пользователи могут принадлежать к нескольким ролям. Например если узел является дискуссионный форум, некоторые пользователи возможно роль членов и модераторов. Можно определить каждой роли, чтобы иметь различные полномочия на сайте, и пользователь, являющийся обе роли будет иметь оба набора привилегий.  
   
- Чтобы включить управление ролями для приложения ASP.NET, используйте элемент `system.web` раздела в файле Web.config для приложения, как показано в следующем примере.  
+ Чтобы включить управление ролями для приложения ASP.NET, используйте [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздела в файле Web.config для приложения, как показано в следующем примере.  
   
 ```  
 <configuration>  
@@ -92,7 +84,7 @@
   
 -   Сведения о роли можно хранить в базе данных SQL Server с помощью <xref:System.Web.Security.SqlRoleProvider> класса.  
   
--   Если у вас существующих сведений о роли, или хотите сохранить сведения о роли, получения сведений о ролях из источника данных, отличных от Windows, Store авторизации или SQL Server, можно реализовать, создав класс, наследующий настраиваемогопоставщикаролей<xref:System.Web.Security.RoleProvider> абстрактного класса. Дополнительные сведения см. в разделе [реализация поставщика ролей](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d).  
+-   Если у вас существующих сведений о роли, или хотите сохранить сведения о роли, получения сведений о ролях из источника данных, отличных от Windows, Store авторизации или SQL Server, можно реализовать, создав класс, наследующий настраиваемогопоставщикаролей<xref:System.Web.Security.RoleProvider> абстрактного класса. Дополнительные сведения см. в разделе [реализация поставщика ролей](https://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d).  
   
  Если браузер пользователя поддерживает файлы cookie, можно сохранить сведения о роли для этого пользователя в файле cookie на компьютере пользователя. При каждом запросе страницы ASP.NET считывает сведения о роли для этого пользователя из файла cookie. Это может повысить производительность приложения за счет сокращения связи с источником данных, необходимый для получения сведений о роли. Если сведения о роли для пользователя слишком длинное для хранения в файле cookie, ASP.NET хранит только недавно использовавшиеся сведения о роли в файле cookie и затем ищет сведения о ролях в источнике данных при необходимости. Если файлы cookie отключены в браузере пользователя не поддерживает файлы cookie, сведения о роли в файле cookie не кэшируется.  
   
@@ -154,7 +146,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
   </Docs>
   <Members>
     <Member MemberName="AddUsersToRole">
@@ -202,19 +194,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Один из элементов в <paramref name="usernames" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
 Один из элементов массива <paramref name="usernames" /> — пустая строка или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="usernames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="AddUsersToRoles">
@@ -264,20 +256,20 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Одна из ролей в массиве <paramref name="roleNames" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один из пользователей в массиве <paramref name="usernames" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Одна из ролей в массиве <paramref name="roleNames" /> — пустая строка или содержит запятую (,).  
   
-- или - 
+-или- 
 Один из пользователей в массиве <paramref name="usernames" /> — пустая строка или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="roleNames" /> содержит повторяющийся элемент.  
   
-- или - 
+-или- 
  Параметр <paramref name="usernames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="AddUserToRole">
@@ -323,19 +315,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="username" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="username" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.  
   
-- или - 
+-или- 
 Пользователь уже присвоен указанной роли.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="AddUserToRoles">
@@ -385,17 +377,17 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Одна из ролей в массиве <paramref name="roleNames" /> имеет значение <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="username" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Одна из ролей в массиве <paramref name="roleNames" /> — пустая строка или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="username" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="roleNames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="ApplicationName">
@@ -431,7 +423,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `applicationName` атрибут `MyApplication`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `applicationName` атрибут `MyApplication`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -455,7 +447,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CacheRolesInCookie">
@@ -476,8 +468,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее кэшированы ли текущие роли пользователей в файл cookie.</summary>
-        <value>
-          <see langword="true" />, если роли текущего пользователя кэшируются с использованием файла cookie, иначе <see langword="false" />. Значение по умолчанию: <see langword="true" />.</value>
+        <value><see langword="true" />, если роли текущего пользователя кэшируются с использованием файла cookie, иначе <see langword="false" />. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -492,7 +483,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cacheRolesInCookie` атрибут `true`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cacheRolesInCookie` атрибут `true`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -516,7 +507,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookieName">
@@ -547,7 +538,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieName` для атрибута. ASPROLES.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieName` для атрибута. ASPROLES.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -571,7 +562,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookiePath">
@@ -602,7 +593,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookiePath` атрибут/MyApplication.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookiePath` атрибут/MyApplication.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -626,7 +617,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookieProtectionValue">
@@ -647,7 +638,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, каким образом защищены имена ролей, кэшированные в файле cookie.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Web.Security.CookieProtection" /> указывает, каким образом защищены имена ролей, кэшированные в файле Cookie. Значение по умолчанию: <see langword="All" />.</value>
+        <value>Одно из значений перечисления <see cref="T:System.Web.Security.CookieProtection" /> указывает, каким образом защищены имена ролей, кэшированные в файле Cookie. Значение по умолчанию — <see langword="All" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -657,7 +648,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieProtection` атрибут `Encrypted`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieProtection` атрибут `Encrypted`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -681,7 +672,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookieRequireSSL">
@@ -702,8 +693,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, показывающее требуется ли файлам cookie с именами ролей протокол SSL для возвращения на сервер.</summary>
-        <value>
-          <see langword="true" />, если протокол SSL необходим для возвращения на сервер файлов Cookie с именами ролей; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если протокол SSL необходим для возвращения на сервер файлов Cookie с именами ролей; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -713,7 +703,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieRequireSSL` для `true`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `cookieRequireSSL` для `true`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -737,7 +727,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookieSlidingExpiration">
@@ -758,8 +748,7 @@
       </ReturnValue>
       <Docs>
         <summary>Указывает, будет ли выполняться периодический сброс даты и времени истечения срока действия файла cookie c именами ролей.</summary>
-        <value>
-          <see langword="true" />, если выполняется периодический сброс срока действия такого файла cookie, иначе <see langword="false" />. Значение по умолчанию: <see langword="true" />.</value>
+        <value><see langword="true" />, если выполняется периодический сброс срока действия такого файла cookie, иначе <see langword="false" />. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -769,7 +758,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы <xref:System.Web.Security.Roles.CookieSlidingExpiration%2A> свойства `false`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы <xref:System.Web.Security.Roles.CookieSlidingExpiration%2A> свойства `false`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -793,7 +782,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CookieTimeout">
@@ -819,14 +808,14 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Security.Roles.CookieTimeout%2A> Свойство используется при <xref:System.Web.Security.Roles.CookieSlidingExpiration%2A> свойство `true` и указывает время существования в минутах для файла cookie ролей. Чтобы задать <xref:System.Web.Security.Roles.CookieTimeout%2A> значение, добавьте `cookieTimeout` атрибут к элементу в файле Web.config для приложения ASP.NET и укажите целое значение.  
+ <xref:System.Web.Security.Roles.CookieTimeout%2A> Свойство используется при <xref:System.Web.Security.Roles.CookieSlidingExpiration%2A> свойство `true` и указывает время существования в минутах для файла cookie ролей. Чтобы задать <xref:System.Web.Security.Roles.CookieTimeout%2A> значение, добавьте `cookieTimeout` атрибут [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент в файле Web.config файла для приложения ASP.NET и укажите целочисленное значение.  
   
  Если <xref:System.Web.Security.Roles.CookieSlidingExpiration%2A> является `false`, это свойство учитывается.  
   
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы <xref:System.Web.Security.Roles.CookieTimeout%2A> свойство до 30 минут.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы <xref:System.Web.Security.Roles.CookieTimeout%2A> свойство до 30 минут.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -850,7 +839,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CreatePersistentCookie">
@@ -871,19 +860,18 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, создаются ли файлы cookie с именами ролей для определенного сеанса или являются постоянными.</summary>
-        <value>
-          <see langword="true" />, если файлы Cookie с именами ролей являются постоянными; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если файлы Cookie с именами ролей являются постоянными; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Security.Roles.CreatePersistentCookie%2A> Значение свойства задается в конфигурации для приложения ASP.NET с помощью `createPersistentCookie` атрибут элемента конфигурации.  
+ <xref:System.Web.Security.Roles.CreatePersistentCookie%2A> Значение свойства задается в конфигурации для приложения ASP.NET с помощью `createPersistentCookie` атрибут [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемента конфигурации.  
   
  Когда `false`, файлы cookie с именами ролей являются сеанса, то есть файл cookie теряется при закрытии браузера. Когда `true`, файлы cookie с именами ролей являются постоянными, доступный в нескольких сеансах обозревателя. Постоянный файл cookie дату окончания срока действия и время задаются текущей даты и времени, а также <xref:System.Web.Security.Roles.CookieTimeout%2A> значение в минутах.  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="CreateRole">
@@ -923,20 +911,20 @@
  В следующем примере кода создает новую роль в источнике данных. Например, файл Web.config, который включает управление ролями, см. в разделе <xref:System.Web.Security.Roles>.  
   
 > [!IMPORTANT]
->  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
  [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке.  
   
-- или - 
+-или- 
  Параметр <paramref name="roleName" /> содержит запятую.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="DeleteCookie">
@@ -970,7 +958,7 @@
  В следующем примере кода вызывается <xref:System.Web.Security.Roles.DeleteCookie%2A> метода приводит к удалению кэширования имен ролей, при входе пользователя. Например, файл Web.config, который включает управление ролями, см. в разделе <xref:System.Web.Security.Roles>.  
   
 > [!IMPORTANT]
->  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.Security.Roles#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Roles/CS/logincs.aspx#5)]
  [!code-aspx-vb[System.Web.Security.Roles#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Roles/VB/loginvb.aspx#5)]  
@@ -978,7 +966,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="DeleteRole">
@@ -988,7 +976,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>Удаляет роль из источника данных.</summary>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="DeleteRole">
@@ -1018,8 +1006,7 @@
       <Docs>
         <param name="roleName">Имя удаляемой роли.</param>
         <summary>Удаляет роль из источника данных.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="roleName" /> был удален из источника данных; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="roleName" /> был удален из источника данных; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1038,13 +1025,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Параметр <paramref name="roleName" /> имеет один или несколько элементов.  
   
-- или - 
+-или- 
 Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="DeleteRole">
@@ -1069,10 +1056,9 @@
       </Parameters>
       <Docs>
         <param name="roleName">Имя удаляемой роли.</param>
-        <param name="throwOnPopulatedRole">При значении <see langword="true" /> вызывается исключение, если <c>roleName</c> имеет один или несколько членов.</param>
+        <param name="throwOnPopulatedRole">Если <see langword="true" />, вызывается исключение, если <paramref name="roleName" /> имеет один или несколько членов.</param>
         <summary>Удаляет роль из источника данных.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="roleName" /> был удален из источника данных; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="roleName" /> был удален из источника данных; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1091,13 +1077,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Параметр <paramref name="roleName" /> имеет один или несколько членов, и параметр <paramref name="throwOnPopulatedRole" /> имеет значение <see langword="true" />.  
   
-- или - 
+-или- 
 Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Domain">
@@ -1123,13 +1109,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Security.Roles.Domain%2A> Значение свойства задается в конфигурации для приложения ASP.NET с помощью `domain` атрибут элемента конфигурации.  
+ <xref:System.Web.Security.Roles.Domain%2A> Значение свойства задается в конфигурации для приложения ASP.NET с помощью `domain` атрибут [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемента конфигурации.  
   
  Если значение не указано в конфигурации для атрибута домена <xref:System.Web.Security.Roles.Domain%2A> возвращает `null` и домен cookie имен ролей по умолчанию поведение <xref:System.Web.HttpCookie> <xref:System.Web.HttpCookie.Domain%2A> свойство.  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Enabled">
@@ -1150,13 +1136,12 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, показывающее, включено ли управление ролями для текущего веб-приложения.</summary>
-        <value>
-          <see langword="true" />, если управление ролями включено; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если управление ролями включено; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `enabled` атрибут `true`.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `enabled` атрибут `true`.  
   
 ```  
 <roleManager defaultProvider="SqlProvider"   
@@ -1180,7 +1165,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="FindUsersInRole">
@@ -1222,7 +1207,7 @@
  В следующем примере кода используется <xref:System.Web.Security.Roles.FindUsersInRole%2A> метод для отображения членство в роли на основе ввода пользователя. Например, файл Web.config, который включает управление ролями, см. в разделе <xref:System.Web.Security.Roles>.  
   
 > [!IMPORTANT]
->  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.Security.Roles#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Roles/CS/FindUsersInRolecs.aspx#11)]
  [!code-aspx-vb[System.Web.Security.Roles#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Roles/VB/FindUsersInRolevb.aspx#11)]  
@@ -1231,11 +1216,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="roleName" /> — <see langword="null" /> (<see langword="Nothing" /> в Visual Basic).  
   
-- или - 
- Свойство <paramref name="usernameToMatch" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="usernameToMatch" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="usernameToMatch" /> равен пустой строке.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
       </Docs>
@@ -1272,7 +1257,7 @@
  В следующем примере кода используется <xref:System.Web.Security.Roles.GetAllRoles%2A> метод, чтобы получить список ролей для приложения и привязка результатов к <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> элемента управления. Например, файл Web.config, который включает управление ролями, см. в разделе <xref:System.Web.Security.Roles>.  
   
 > [!IMPORTANT]
->  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
  [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
@@ -1280,7 +1265,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="GetRolesForUser">
@@ -1290,7 +1275,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>Возвращает список ролей, в которых состоит пользователь.</summary>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetRolesForUser">
@@ -1333,7 +1318,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">В данный момент нет вошедших в систему пользователей.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="GetRolesForUser">
@@ -1377,11 +1362,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="username" /> содержит запятую (,).</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="username" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="username" /> содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="GetUsersInRole">
@@ -1423,10 +1407,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="IsUserInRole">
@@ -1436,7 +1420,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>Возвращает значение, позволяющее определить, находится ли пользователь в указанной роли.</summary>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsUserInRole">
@@ -1461,8 +1445,7 @@
       <Docs>
         <param name="roleName">Имя роли, в которой следует выполнить поиск.</param>
         <summary>Возвращает значение, позволяющее определить, находится ли текущий пользователь, вошедший в систему, в указанной роли. Интерфейс API предназначен для вызова только в контексте потока запросов ASP.NET. При таком санкционированном использовании он является потокобезопасным.</summary>
-        <returns>
-          <see langword="true" />, если текущему пользователю, вошедшему в систему, присвоена указанная роль, в противном случае — значение <see langword="false" />.</returns>
+        <returns><see langword="true" />, если текущему пользователю, вошедшему в систему, присвоена указанная роль, в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1481,13 +1464,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 В данный момент нет вошедших в систему пользователей.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="IsUserInRole">
@@ -1514,8 +1497,7 @@
         <param name="username">Имя пользователя для поиска.</param>
         <param name="roleName">Имя роли, в которой следует выполнить поиск.</param>
         <summary>Возвращает значение, позволяющее определить, может ли заданный пользователь выполнять указанную роль. Интерфейс API предназначен для вызова только в контексте потока запросов ASP.NET. При таком санкционированном использовании он является потокобезопасным.</summary>
-        <returns>
-          <see langword="true" />, если указанный пользователь находится в указанной роли, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если указанный пользователь находится в указанной роли, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1534,16 +1516,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="username" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  <paramref name="username" /> содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="MaxCachedResults">
@@ -1574,7 +1556,7 @@
    
   
 ## Examples  
- В следующем примере элемент в `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `maxCachedResults` равным 10.  
+ В следующем примере показан [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) элемент `system.web` раздел файла Web.config для приложения ASP.NET. Указывает, что приложение использует <xref:System.Web.Security.SqlRoleProvider> экземпляра и наборы `maxCachedResults` равным 10.  
   
 ```  
 <roleManager  
@@ -1591,7 +1573,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Provider">
@@ -1634,7 +1616,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Providers">
@@ -1660,7 +1642,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Security.Roles.Providers%2A> Свойство ссылается на все поставщики роли, доступные для приложения, включая любые поставщики, добавленные в файле Web.config. Можно управлять поставщиками ролей, доступных для приложения с помощью `providers` элемент раздела в файле Web.config для приложения.  
+ <xref:System.Web.Security.Roles.Providers%2A> Свойство ссылается на все поставщики роли, доступные для приложения, включая любые поставщики, добавленные в файле Web.config. Можно управлять поставщиками ролей, доступных для приложения с помощью `providers` элемент [roleManager](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms164660(v%3dvs.100)) раздел в файле Web.config для приложения.  
   
  В следующем примере показан раздел, который удаляет любые существующие поставщики (например, указанный в файле Machine.config) и добавляет <xref:System.Web.Security.SqlRoleProvider> экземпляр в качестве поставщика ролей для приложения.  
   
@@ -1710,7 +1692,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveUserFromRole">
@@ -1753,14 +1735,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="username" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,). 
  Параметр <paramref name="username" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveUserFromRoles">
@@ -1807,17 +1789,17 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Одна из ролей в массиве <paramref name="roleNames" /> имеет значение <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="username" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="username" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Одна из ролей в массиве <paramref name="roleNames" /> — пустая строка или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="username" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="roleNames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveUsersFromRole">
@@ -1862,19 +1844,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="roleName" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="roleName" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Одно из имен пользователей в массиве <paramref name="usernames" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
 Одно из имен пользователей в массиве <paramref name="usernames" /> равно пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="usernames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveUsersFromRoles">
@@ -1921,20 +1903,20 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Одна из ролей, указанных в массиве <paramref name="roleNames" />, имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Один из пользователей, указанных в массиве <paramref name="usernames" />, имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Одна из ролей, указанных в массиве <paramref name="roleNames" />, равна пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
 Один из пользователей, указанных в массиве <paramref name="usernames" />, равен пустой строке или содержит запятую (,).  
   
-- или - 
+-или- 
  Параметр <paramref name="roleNames" /> содержит повторяющийся элемент.  
   
-- или - 
+-или- 
  Параметр <paramref name="usernames" /> содержит повторяющийся элемент.</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="RoleExists">
@@ -1959,8 +1941,7 @@
       <Docs>
         <param name="roleName">Имя роли, которое необходимо найти в источнике данных.</param>
         <summary>Возвращает значение, позволяющее определить, существует ли указанная роль в источнике данных роли.</summary>
-        <returns>
-          <see langword="true" />, если имя роли уже существует в источнике данных; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если имя роли уже существует в источнике данных; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1973,7 +1954,7 @@
  В следующем примере кода используется <xref:System.Web.Security.Roles.RoleExists%2A> метод, чтобы определить, существует ли уже имя роли, прежде чем создавать роли. Например, файл Web.config, который включает управление ролями, см. в разделе <xref:System.Web.Security.Roles>.  
   
 > [!IMPORTANT]
->  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере содержит текстовое поле ввода данных пользователя, который является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
  [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
@@ -1983,7 +1964,7 @@
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="roleName" /> — <see langword="null" /> (<see langword="Nothing" /> в Visual Basic).</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="roleName" /> равен пустой строке или содержит запятую (,).</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Управление ролями не включено.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6">Знакомство с управлением ролями ASP.NET</related>
       </Docs>
     </Member>
   </Members>

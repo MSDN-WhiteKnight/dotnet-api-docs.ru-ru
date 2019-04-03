@@ -1,13 +1,5 @@
 <Type Name="Parallel" FullName="System.Threading.Tasks.Parallel">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="dd9293fa176d2a244959809dc1e6d56a21fc299c" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46616220" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Parallel" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="53ac17ab6443b9650b8e9acf8ee50cc6bf4113af" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58683071" /></Metadata><TypeSignature Language="C#" Value="public static class Parallel" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Parallel extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Parallel" />
   <TypeSignature Language="VB.NET" Value="Public Class Parallel" />
@@ -26,6 +18,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -61,7 +54,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций.</summary>
+        <summary>Выполняет цикл <see langword="for" />, в котором итерации могут выполняться параллельно.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="For">
@@ -85,6 +78,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -95,10 +89,10 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int32,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -112,7 +106,7 @@
   
  Вызов <xref:System.Threading.Tasks.ParallelLoopState.Break%2A> метод сообщает `for` операции, что не требуется выполнение итераций после текущей. Тем не менее всех итераций до текущего один по-прежнему будет выполняться, если он еще.  
   
- Таким образом, вызов <xref:System.Threading.Tasks.ParallelLoopState.Break%2A> похоже на использование операцию приостановки выполнения с помощью обычного `for` цикла на языке вроде C#, но это не идеальное замены: например, нет никакой гарантии, что итераций после текущего определенно не будет выполнение.  
+ Таким образом, вызов <xref:System.Threading.Tasks.ParallelLoopState.Break%2A> похоже на использование операцию приостановки выполнения с помощью обычного `for` цикл в языке вроде C#, но это не идеальное замены: Например нет никакой гарантии, итераций после текущей определенно не будут выполнены.  
   
  Если для выполнения всех итераций до текущего не требуется, используйте <xref:System.Threading.Tasks.ParallelLoopState.Stop%2A> метода вместо использования <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>. Вызов <xref:System.Threading.Tasks.ParallelLoopState.Stop%2A> информирует `for` цикла, можно пропустить всех оставшихся итераций, независимо от того, находятся ли они до или после текущей итерации, так как все необходимые работы может быть уже заполнена. Однако, как с помощью <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>, нет никаких гарантий, в соответствии с которыми не будет выполняться другими итерациями.  
   
@@ -159,6 +153,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -169,10 +164,10 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций.</summary>
+        <summary>Выполняет цикл <see langword="for" />, в котором итерации могут выполняться параллельно.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -218,6 +213,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -228,10 +224,10 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int64,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура <see cref="T:System.Threading.Tasks.ParallelLoopResult" />, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -241,7 +237,7 @@
   
  Вызов <xref:System.Threading.Tasks.ParallelLoopState.Break%2A> метод сообщает `for` операцию, которая итераций после текущего не должны быть выполнены, но у всех итераций до текущего.  
   
- Таким образом, вызвав Break похоже на использование операцию приостановки выполнения с помощью обычного `for` цикла на языке вроде C#, но это не идеальное замены: например, нет никакой гарантии, итераций после текущей определенно не будут выполнены.  
+ Таким образом, вызвав Break похоже на использование операцию приостановки выполнения с помощью обычного `for` цикл в языке вроде C#, но это не идеальное замены: Например нет никакой гарантии, итераций после текущей определенно не будут выполнены.  
   
  Если для выполнения всех итераций до текущего не требуется, используйте <xref:System.Threading.Tasks.ParallelLoopState.Stop%2A> метода вместо использования <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>. Вызов <xref:System.Threading.Tasks.ParallelLoopState.Stop%2A> информирует `for` цикла, можно пропустить всех оставшихся итераций, независимо от того, находятся ли они до или после текущей итерации, так как все необходимые работы может быть уже заполнена. Однако, как с помощью <xref:System.Threading.Tasks.ParallelLoopState.Break%2A>, нет никаких гарантий, в соответствии с которыми не будет выполняться другими итерациями.  
   
@@ -277,6 +273,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -287,10 +284,10 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int64&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами, в котором итерации могут выполняться параллельно.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами, в котором итерации могут выполняться параллельно.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -327,6 +324,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -338,11 +336,11 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int32,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -357,11 +355,10 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -385,6 +382,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -396,11 +394,11 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+        <summary>Выполняет цикл <see langword="for" />, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -423,11 +421,10 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -451,6 +448,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -462,11 +460,11 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int64,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -489,11 +487,10 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -517,6 +514,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -528,11 +526,11 @@
         <Parameter Name="body" Type="System.Action&lt;System.Int64&gt;" />
       </Parameters>
       <Docs>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -555,11 +553,10 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -584,6 +581,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -600,12 +598,12 @@
       </Parameters>
       <Docs>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -619,16 +617,16 @@
   
  Если `fromInclusive` больше или равно `toExclusive`, то метод немедленно возвращает без выполнения итерации.  
   
- Пример использования этого метода, см. в разделе [как: написание цикла Parallel.For с локальные переменные потока](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
+ Пример использования этого метода, см. в разделе [как: Написание цикла Parallel.For и локальными переменными потока](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -655,6 +653,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -671,12 +670,12 @@
       </Parameters>
       <Docs>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -690,16 +689,16 @@
   
  Если `fromInclusive` больше или равно `toExclusive`, то метод немедленно возвращает без выполнения итерации.  
   
- Пример использования этого метода, см. в разделе [как: написание цикла Parallel.For с локальные переменные потока](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
+ Пример использования этого метода, см. в разделе [как: Написание цикла Parallel.For и локальными переменными потока](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -725,6 +724,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -742,13 +742,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -774,17 +774,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -809,6 +808,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -826,13 +826,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
-        <param name="fromInclusive">Начальный индекс, включительно.</param>
+        <param name="fromInclusive">Начальный индекс (включительно).</param>
         <param name="toExclusive">Конечный индекс, не включительно.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждого потока.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждого потока.</param>
-        <summary>Выполняет цикл <see langword="for" /> (<see langword="For" /> в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет цикл <see langword="for" /> с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -850,17 +850,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -872,7 +871,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each " /> в Visual Basic), обеспечивая возможность параллельного выполнения итераций.</summary>
+        <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each " /> в Visual Basic), в которой итерации могут выполняться параллельно.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ForEach&lt;TSource&gt;">
@@ -896,6 +895,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -908,7 +908,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,System.Int64&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each" /> в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.OrderablePartitioner`1" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
@@ -917,20 +917,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение <see langword="false" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> в упорядочиваемом разделителе источника возвращает значение <see langword="false" />.  
   
-- или - 
+-или- 
 Все методы в упорядочиваемом модуле разделения источника возвращают <see langword="null" />.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -956,6 +956,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -968,7 +969,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each" /> в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.</summary>
@@ -977,20 +978,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает <see langword="false" />.  
   
-- или - 
+-или- 
 Метод в разделителе <paramref name="source" /> возвращает <see langword="null" />.  
   
-- или - 
+-или- 
 Метод <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> в разделителе <paramref name="source" /> не возвращает правильное число разделов.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -1016,6 +1017,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1028,7 +1030,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each" /> в Visual Basic) для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций.</summary>
@@ -1037,7 +1039,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
    
   
@@ -1051,14 +1053,14 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает <see langword="false" />.  
   
-- или - 
+-или- 
 Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение <see langword="null" />.  
   
-- или - 
+-или- 
 Метод <see cref="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" /> в разделителе <paramref name="source" /> не возвращает правильное число разделов.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -1084,6 +1086,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1111,7 +1114,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -1138,6 +1141,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1165,7 +1169,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -1192,6 +1196,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1227,7 +1232,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -1253,6 +1258,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1266,7 +1272,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,System.Int64&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
@@ -1276,26 +1282,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение <see langword="false" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> в упорядочиваемом разделителе <paramref name="source" /> возвращает значение <see langword="false" />.  
   
-- или - 
+-или- 
 Исключение, которое возникает, когда методы в упорядочиваемом разделителе <paramref name="source" /> возвращают значение <see langword="null" />.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -1320,6 +1325,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1333,7 +1339,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
@@ -1343,23 +1349,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает <see langword="false" />.  
   
-- или - 
+-или- 
 Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение <see langword="null" />.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -1384,6 +1389,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1397,7 +1403,7 @@
         <Parameter Name="body" Type="System.Action&lt;TSource&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
@@ -1407,23 +1413,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /> возвращает <see langword="false" />.  
   
-- или - 
+-или- 
 Исключение, которое возникает, когда какие-либо методы в разделителе <paramref name="source" /> возвращают значение <see langword="null" />.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -1448,6 +1453,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1478,14 +1484,13 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -1509,6 +1514,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1539,14 +1545,13 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -1570,6 +1575,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1600,14 +1606,13 @@
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -1632,6 +1637,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1647,7 +1653,7 @@
         <Parameter Name="localFinally" Type="System.Action&lt;TLocal&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
         <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
@@ -1659,7 +1665,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  `localInit` Делегат вызывается один раз для каждой задачи, которая участвует в выполнении цикла и возвращает начальное локальное состояние для каждой из этих задач. Эти начальные состояния передаются первому `body` вызовов по каждой задаче. Затем вызов каждого последующего тела возвращает потенциально измененное значение состояния, передается следующему вызову тела. Наконец, последний вызов текст на каждой задачи возвращает значение состояния, который передается `localFinally` делегировать. `localFinally` Делегат вызывается один раз на задачу для выполнения финальное действие с локальным состоянием каждой задачи. Этот делегат может быть вызван одновременно несколько задач; Таким образом необходимо синхронизировать доступ ко всем общим переменным.  
   
@@ -1669,13 +1675,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение <see langword="false" /> или разделитель возвращает части со значением <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
@@ -1703,6 +1709,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1718,7 +1725,7 @@
         <Parameter Name="localFinally" Type="System.Action&lt;TLocal&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
@@ -1730,7 +1737,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  `localInit` Делегат вызывается один раз для каждого потока, который участвует в выполнении цикла и возвращает начальное локальное состояние для каждой из этих задач. Эти начальные состояния передаются первому `body` вызовов по каждой задаче. Затем вызов каждого последующего тела возвращает потенциально измененное значение состояния, передается следующему вызову тела. Наконец, последний вызов текст на каждой задачи возвращает значение состояния, который передается `localFinally` делегировать. `localFinally` Делегат вызывается один раз на задачу для выполнения финальное действие с локальным состоянием каждой задачи. Этот делегат может быть вызван одновременно несколько задач; Таким образом необходимо синхронизировать доступ ко всем общим переменным.  
   
@@ -1740,13 +1747,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение <see langword="false" /> или разделитель возвращает части со значением <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
@@ -1774,6 +1781,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1811,13 +1819,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -1844,6 +1852,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1889,13 +1898,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
@@ -1921,6 +1930,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -1937,7 +1947,7 @@
         <Parameter Name="localFinally" Type="System.Action&lt;TLocal&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
         <param name="source">Упорядочиваемый разделитель, содержащий исходный источник данных.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
@@ -1950,7 +1960,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  `localInit` Делегат вызывается один раз для каждой задачи, которая участвует в выполнении цикла и возвращает начальное локальное состояние для каждой из этих задач. Эти начальные состояния передаются первому `body` вызовов по каждой задаче. Затем вызов каждого последующего тела возвращает потенциально измененное значение состояния, передается следующему вызову тела. Наконец, последний вызов тела в каждом потоке возвращает значение состояния, который передается `localFinally` делегировать. `localFinally` Делегат вызывается один раз на задачу для выполнения финальное действие с локальным состоянием каждой задачи. Этот делегат может быть вызван одновременно несколько задач; Таким образом необходимо синхронизировать доступ ко всем общим переменным.  
   
@@ -1960,19 +1970,18 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> или аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение <see langword="false" /> или разделитель возвращает части со значением <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -1996,6 +2005,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -2012,20 +2022,20 @@
         <Parameter Name="localFinally" Type="System.Action&lt;TLocal&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TSource">Тип элементов в <c>источника</c>.</typeparam>
+        <typeparam name="TSource">Тип элементов в объекте <paramref name="source" />.</typeparam>
         <typeparam name="TLocal">Тип данных, локальных для потока.</typeparam>
         <param name="source">Разделитель, содержащий исходный источник данных.</param>
         <param name="parallelOptions">Объект, используемый для настройки поведения этой операции.</param>
         <param name="localInit">Делегат функции, который возвращает начальное состояние локальных данных для каждой задачи.</param>
         <param name="body">Делегат, который вызывается один раз за итерацию.</param>
         <param name="localFinally">Делегат, который выполняет финальное действие с локальным состоянием каждой задачи.</param>
-        <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each" /> в Visual Basic) с локальными данными потока для объекта <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
+        <summary>Выполняет операцию <see langword="foreach" /> (<see langword="For Each" /> в Visual Basic) с локальными данными потока для класса <see cref="T:System.Collections.Concurrent.Partitioner" />, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.</summary>
         <returns>Структура, в которой содержатся сведения о выполненной части цикла.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Эта перегрузка предоставляется для сценариев с помощью небольших тел циклов, которые могут использовать преимущества статического диапазона секционирования. Разделители должны поддерживать динамические секции.  Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: реализация динамических разделов](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Эта перегрузка предоставляется для сценариев, где вы хотите переопределить схему разбиения по умолчанию. Например небольших тел циклов может использовать разделение диапазона. <xref:System.Threading.Tasks.Parallel.ForEach%2A> Метод ожидает, что пользовательские разделители для поддержки динамического секционирования. Эта перегрузка предоставляется для сценариев с помощью небольших тел циклов, которые могут использовать преимущества статического диапазона секционирования. Разделители должны поддерживать динамические секции.  Дополнительные сведения см. в разделе [пользовательские разделители для PLINQ и TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) и [как: Реализация динамических секций](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  `localInit` Делегат вызывается один раз для каждой задачи, которая участвует в выполнении цикла и возвращает начальное локальное состояние для каждой из этих задач. Эти начальные состояния передаются первому `body` вызовов по каждой задаче. Затем вызов каждого последующего тела возвращает потенциально измененное значение состояния, передается следующему вызову тела. Наконец, последний вызов текст на каждой задачи возвращает значение состояния, который передается `localFinally` делегировать. `localFinally` Делегат вызывается один раз на задачу для выполнения финальное действие с локальным состоянием каждой задачи. Этот делегат может быть вызван одновременно несколько задач; Таким образом необходимо синхронизировать доступ ко всем общим переменным.  
   
@@ -2035,22 +2045,21 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> в разделителе <paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> возвращает значение <see langword="false" /> или разделитель возвращает части со значением <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
     </Member>
@@ -2074,6 +2083,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -2113,20 +2123,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -2151,6 +2160,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ParallelLoopResult</ReturnType>
@@ -2190,20 +2200,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="source" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="body" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localInit" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="localFinally" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.OperationCanceledException">Токен <see cref="T:System.Threading.CancellationToken" /> в аргументе <paramref name="parallelOptions" /> отменен.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое содержит все отдельные исключения, создаваемые во всех потоках.</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">Параллельные циклы</related>
       </Docs>
@@ -2215,7 +2224,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Выполняет все предоставленные действия, по возможности в параллельном режиме.</summary>
+        <summary>Выполняет все предоставленные действия, в том числе параллельно.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Invoke">
@@ -2239,6 +2248,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2246,7 +2256,7 @@
       <Parameters>
         <Parameter Name="actions" Type="System.Action[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2254,7 +2264,7 @@
       </Parameters>
       <Docs>
         <param name="actions">Массив действий <see cref="T:System.Action" /> для выполнения.</param>
-        <summary>Выполняет все предоставленные действия, по возможности в параллельном режиме.</summary>
+        <summary>Выполняет все предоставленные действия, в том числе параллельно.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2300,6 +2310,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2308,7 +2319,7 @@
         <Parameter Name="parallelOptions" Type="System.Threading.Tasks.ParallelOptions" />
         <Parameter Name="actions" Type="System.Action[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2330,16 +2341,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OperationCanceledException">
-          <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" /> задан.</exception>
+        <exception cref="T:System.OperationCanceledException"><see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" /> задан.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="actions" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="parallelOptions" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">Исключение, которое возникает, когда любое действие в массиве <paramref name="actions" /> создает исключение.</exception>
         <exception cref="T:System.ArgumentException">Массив <paramref name="actions" /> содержит элемент <see langword="null" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, связанный с <see cref="T:System.Threading.CancellationToken" /> в <paramref name="parallelOptions" />, удален.</exception>
       </Docs>
     </Member>
   </Members>

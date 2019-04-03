@@ -1,13 +1,5 @@
 <Type Name="CacheControlHeaderValue" FullName="System.Net.Http.Headers.CacheControlHeaderValue">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="adf7fc4f51625a65e9a92d8e9dea832e022c82b6" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39987507" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class CacheControlHeaderValue : ICloneable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9196469821eb4f7df3ffc547dcf1dbfe175fac51" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58455828" /></Metadata><TypeSignature Language="C#" Value="public class CacheControlHeaderValue : ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheControlHeaderValue extends System.Object implements class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.Headers.CacheControlHeaderValue" />
   <TypeSignature Language="VB.NET" Value="Public Class CacheControlHeaderValue&#xA;Implements ICloneable" />
@@ -92,7 +84,7 @@
       <Docs>
         <param name="obj">Объект, который требуется сравнить с текущим объектом.</param>
         <summary>Определяет, равен ли заданный объект <see cref="T:System.Object" /> текущему объекту <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</summary>
-        <returns>Значение <see langword="true" />, если заданный объект <see cref="T:System.Object" /> равен текущему объекту; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если указанный объект <see cref="T:System.Object" /> равен текущему объекту. В противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,8 +112,8 @@
         <ReturnType>System.Collections.Generic.ICollection&lt;System.Net.Http.Headers.NameValueHeaderValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Токены Кэш-расширения, каждый с необязательным присвоенным значения.</summary>
-        <value>Коллекция токенов кэш-расширений, каждый с необязательным присвоенным значением.</value>
+        <summary>Маркеры расширения кэша, каждому из которых присвоено необязательное значение.</summary>
+        <value>Коллекция маркеров расширения кэша, каждому из которых присвоено необязательное значение.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -195,7 +187,7 @@
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Максимальная длительность, указанная в секундах, в течение которой клиент HTTP готов принять отклик.</summary>
+        <summary>Максимальное время существования (в секундах), на протяжении которого HTTP-клиент будет принимать ответ.</summary>
         <value>Время в секундах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -233,8 +225,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Готов ли клиент HTTP принять отклик, срок действия которого истек.</summary>
-        <value>Значение <see langword="true" />, если клиент HTTP готов принять отклик, срок действия которого истек; в противном случае — значение <see langword="false" />.</value>
+        <summary>Определяет, будет ли HTTP-клиент принимать ответ с превышенным значением времени истечения срока действия.</summary>
+        <value>Значение <see langword="true" />, если HTTP-клиент будет принимать ответ с превышенным значением времени истечения срока действия. В противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -269,7 +261,7 @@
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Максимальное время (в секундах), в течение которого клиент HTTP готов принять отклик, срок действия которого истек.</summary>
+        <summary>Максимальное время (в секундах), в течение которого HTTP-клиент будет принимать ответ с превышенным значением времени истечения срока действия.</summary>
         <value>Время в секундах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -307,7 +299,7 @@
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Длительность существования, указанная в секундах, в течение которой клиент HTTP готов принять отклик.</summary>
+        <summary>Время актуальности (в секундах), на протяжении которого HTTP-клиент будет принимать ответ.</summary>
         <value>Время в секундах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -345,8 +337,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Требует ли сервер-источник выполнения повторной проверки записи кэша при любом последующем использовании, когда запись кэша устаревает.</summary>
-        <value>Значение <see langword="true" />, если сервер-источник требует выполнения повторной проверки записи кэша при любом последующем использовании, когда запись кэша устаревает; в противном случае — значение <see langword="false" />.</value>
+        <summary>Определение, требуется ли на сервере-источнике повторная проверка записей кэша о любом последующем использовании, после того как они устарели.</summary>
+        <value>Значение <see langword="true" />, если на сервере-источнике требуется повторная проверка записей кэша о любом последующем использовании, после того как они устарели. В противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -381,8 +373,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Готов ли клиент HTTP принять кэшированный отклик.</summary>
-        <value>Значение <see langword="true" />, если клиент HTTP готов принять кэшированный отклик; в противном случае — значение <see langword="false" />.</value>
+        <summary>Определяет, будет ли HTTP-клиент принимать кэшированный ответ.</summary>
+        <value><see langword="true" /> Если в HTTP-клиент не желает принимать кэшированный ответ; в противном случае <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -419,7 +411,7 @@
         <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Коллекция имен полей в некэшированной директиве в поле заголовка кэш-элемента управления в HTTP-отклике.</summary>
+        <summary>Коллекция имен полей в директиве без кэша в поле заголовка управления кэшем HTTP-ответа.</summary>
         <value>Коллекция имен полей.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -455,8 +447,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Не должна ли храниться в кэше какая-либо часть сообщения HTTP-запроса или любого отклика.</summary>
-        <value>Значение <see langword="true" />, если в кэше не должна храниться какая-либо часть сообщения HTTP-запроса или любого отклика; в противном случае — значение <see langword="false" />.</value>
+        <summary>Определяет, должен ли кэш хранить какую-либо часть сообщения HTTP-запроса или какой-либо ответ.</summary>
+        <value>Значение <see langword="true" />, если кэш не должен хранить какую-либо часть сообщения HTTP-запроса или какой-либо ответ. В противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -493,8 +485,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Не должен ли кэш или прокси изменять какой-либо аспект тела сущности.</summary>
-        <value>Значение <see langword="true" />, если кэш или прокси не должны изменять какой-либо аспект тела сущности; в противном случае — значение <see langword="false" />.</value>
+        <summary>Определяет, должен ли кэш или прокси-сервер оставлять неизменным любой аспект тела объекта.</summary>
+        <value>Значение <see langword="true" />, если кэш или прокси-сервер должен оставлять неизменным любой аспект тела объекта. В противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -531,8 +523,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Должен ли кэш отвечать, используя согласованную с другими ограничениями HTTP-запроса кэшированную запись или состояние 504 (время ожидания шлюза).</summary>
-        <value>Значение <see langword="true" />, если в отклике кэш должен либо использовать кэшированную запись, согласованную с другими ограничениями HTTP-запроса, либо состояние 504 (истекло время ожидания шлюза); в противном случае — значение <see langword="false" />.</value>
+        <summary>Будет ли кэш отвечать с использованием кэшированной записи, которая согласуется с другими ограничениями HTTP-запроса, или ответа со статусом 504 (превышено время ожидания шлюза).</summary>
+        <value><see langword="true" />, если кэш будет отвечать с использованием кэшированной записи, которая согласуется с другими ограничениями HTTP-запроса, или ответа со статусом 504 (превышено время ожидания шлюза). В противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -570,13 +562,12 @@
         <Parameter Name="input" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="input">Строка, представляющая сведения о значении заголовка элемента управления кэшем.</param>
+        <param name="input">Строка, представляющая сведения о значениях заголовка управления кэшем.</param>
         <summary>Преобразует строку в экземпляр <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</summary>
         <returns>Экземпляр <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> имеет ссылку <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="input" /> не является допустимыми сведениями о значении заголовка управления кэшем.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — это пустая ссылка (<see langword="null" />).</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> не представляет допустимые сведения о значениях заголовка управления кэшем.</exception>
       </Docs>
     </Member>
     <Member MemberName="Private">
@@ -603,8 +594,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Предназначено ли все сообщение отклика HTTP или его часть для одного пользователя и не должно ли это сообщение или его часть кэшироваться в общем кэше.</summary>
-        <value>Значение <see langword="true" />, если сообщение HTTP-отклика предназначено для одного пользователя и не должно кэшироваться в общем кэше; в противном случае — значение <see langword="false" />.</value>
+        <summary>Предназначено ли для одного пользователя все ответное сообщение HTTP, которое не должно сохраняться в общий кэш, или его часть.</summary>
+        <value><see langword="true" />, если для одного пользователя предназначено ответное сообщение HTTP, которое не должно сохраняться в общий кэш. В противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -639,7 +630,7 @@
         <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Имена полей коллекции в закрытой директиве в поле заголовка кэш-элемента управления в HTTP-отклике.</summary>
+        <summary>Коллекция имен полей в закрытой директиве в поле заголовка управления кэшем HTTP-ответа.</summary>
         <value>Коллекция имен полей.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -675,8 +666,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Требует ли сервер-источник выполнения повторной проверки записи кэша при любом последующем использовании, когда запись кэша устаревает для общих кэшей агентов пользователей.</summary>
-        <value>Значение <see langword="true" />, если сервер-источник требует выполнения повторной проверки записи кэша при любом последующем использовании, когда запись кэша устаревает для общих кэшей агентов пользователей; в противном случае — значение <see langword="false" />.</value>
+        <summary>Независимо от того, требуется ли на сервере-источнике повторная проверка записи кэша о любом последующем использовании, когда запись кэша устаревает для общих кэшей пользовательского агента.</summary>
+        <value><see langword="true" />, если на сервере-источнике требуется повторная проверка записи кэша о любом последующем использовании, когда запись кэша устаревает для общих кэшей пользовательского агента. В противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -713,8 +704,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Может ли отклик HTTP кэшироваться любым кэшем, даже если он обычно не кэшируется или кэшируется только в необщем кэше.</summary>
-        <value>Значение <see langword="true" />, если HTTP-отклик может кэшироваться любым кэшем, даже если он обычно не кэшируется или кэшируется только в кэше без общего доступа; в противном случае — значение <see langword="false" />.</value>
+        <summary>Может ли сохраняться HTTP-ответ в любой кэш, даже если обычно такой ответ не предназначен для кэширования вообще или кэширования в общем кэше.</summary>
+        <value><see langword="true" />, если HTTP-ответ может сохраняться в любой кэш, даже если обычно такой ответ не предназначен для кэширования вообще или кэширования в общем кэше. В противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -749,7 +740,7 @@
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Общая максимальная длительность (в секундах) в отклике HTTP, которая переопределяет директиву "max-age" в заголовке управления кэшем или в заголовке Expires для общего кэша.</summary>
+        <summary>Общий максимальный возраст (в секундах) в HTTP-ответе, переопределяющий директиву о максимальном возрасте в заголовке элемента управления кэшем или в заголовке "Срок действия" общего кэша.</summary>
         <value>Время в секундах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -786,7 +777,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает новый объект, являющийся копией текущего экземпляра <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</summary>
+        <summary>Создает новый объект <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />, являющийся копией текущего экземпляра.</summary>
         <returns>Копия текущего экземпляра.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -849,10 +840,10 @@
         <Parameter Name="parsedValue" Type="System.Net.Http.Headers.CacheControlHeaderValue" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="input">Строка, которую следует проверить.</param>
-        <param name="parsedValue">Возвращает версию строки <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</param>
-        <summary>Определяет, является ли строка допустимой информацией <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</summary>
-        <returns>Значение <see langword="true" />, если параметр <paramref name="input" /> является допустимой информацией <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />; в противном случае — значение <see langword="false" />.</returns>
+        <param name="input">Проверяемая строка.</param>
+        <param name="parsedValue">Версия <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" /> строки.</param>
+        <summary>Определяет, является ли строка допустимыми сведениями <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />.</summary>
+        <returns><see langword="true" />, если <paramref name="input" /> представляет допустимые сведения <see cref="T:System.Net.Http.Headers.CacheControlHeaderValue" />. В противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,13 +1,5 @@
 <Type Name="AsyncCompletedEventArgs" FullName="System.ComponentModel.AsyncCompletedEventArgs">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f5d98364ecad64310eca015ed9295e7c0e96728e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48685201" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class AsyncCompletedEventArgs : EventArgs" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ad4696b4fe7e0c6498149e7f68fd403a5a414b7f" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51924134" /></Metadata><TypeSignature Language="C#" Value="public class AsyncCompletedEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsyncCompletedEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.AsyncCompletedEventArgs" />
   <TypeSignature Language="VB.NET" Value="Public Class AsyncCompletedEventArgs&#xA;Inherits EventArgs" />
@@ -59,15 +51,13 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Классы, которые следуют асинхронной модели на основе событий могут вызывать события для оповещения клиентов о состоянии ожидающих асинхронных операций. Если этот класс предоставляет *имя_метода* <see langword="Completed" /> событий, можно использовать <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> сообщить клиентам о результате асинхронных операций.  
+    <block subset="none" type="overrides"><para>Классы, которые следуют асинхронной модели на основе событий могут вызывать события для оповещения клиентов о состоянии ожидающих асинхронных операций. Если этот класс предоставляет *имя_метода* <see langword="Completed" /> событий, можно использовать <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> сообщить клиентам о результате асинхронных операций.  
   
-Вы можете обмениваться данными с клиентами Дополнительные сведения о результате асинхронной операции чем <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> полосой. В этом случае можно создать собственный класс из <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> класса и предоставить дополнительные закрытые переменные экземпляра и соответствующие открытые свойства только для чтения. Вызовите <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод перед возвратом значения свойства, если операция была отменена или произошла ошибка.</para>
-    </block>
+Вы можете обмениваться данными с клиентами Дополнительные сведения о результате асинхронной операции чем <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> полосой. В этом случае можно создать собственный класс из <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> класса и предоставить дополнительные закрытые переменные экземпляра и соответствующие открытые свойства только для чтения. Вызовите <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод перед возвратом значения свойства, если операция была отменена или произошла ошибка.</para></block>
     <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
     <altmember cref="T:System.ComponentModel.AsyncOperationManager" />
     <altmember cref="T:System.ComponentModel.AsyncOperation" />
-    <related type="Article" href="http://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -188,7 +178,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, показывающее, была ли отменена асинхронная операция.</summary>
-        <value>Значение <see langword="true" />, если фоновая операция была отменена; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если фоновая операция была отменена; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -209,13 +199,11 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если указать только для чтения свойства в производном классе, не забудьте вызвать <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если указать только для чтения свойства в производном классе, не забудьте вызвать <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para></block>
         <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
         <altmember cref="T:System.ComponentModel.AsyncOperationManager" />
         <altmember cref="T:System.ComponentModel.AsyncOperation" />
-        <related type="Article" href="http://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
       </Docs>
     </Member>
     <Member MemberName="Error">
@@ -273,13 +261,11 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если указать только для чтения свойства в производном классе, не забудьте вызвать <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод в реализации свойства. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если указать только для чтения свойства в производном классе, не забудьте вызвать <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод в реализации свойства. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para></block>
         <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
         <altmember cref="T:System.ComponentModel.AsyncOperationManager" />
         <altmember cref="T:System.ComponentModel.AsyncOperation" />
-        <related type="Article" href="http://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
       </Docs>
     </Member>
     <Member MemberName="RaiseExceptionIfNecessary">
@@ -326,12 +312,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> — <see langword="true" />.</exception>
         <exception cref="T:System.Reflection.TargetInvocationException">Свойство <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> было установлено асинхронной операцией. Свойство <see cref="P:System.Exception.InnerException" /> содержит ссылку на ошибку <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />.</exception>
-        <block subset="none" type="overrides">
-          <para>Производного класса из <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> класса, следует вызывать только для чтения свойства <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод перед возвратом значения свойства. Если компонент асинхронного рабочий код назначает исключение <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> свойство или наборы <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> свойства <see langword="true" />, свойство будет выдано исключение, если клиент пытается прочитать его значение. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Производного класса из <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> класса, следует вызывать только для чтения свойства <see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" /> метод перед возвратом значения свойства. Если компонент асинхронного рабочий код назначает исключение <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /> свойство или наборы <see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> свойства <see langword="true" />, свойство будет выдано исключение, если клиент пытается прочитать его значение. Это не позволяет клиентам доступ к свойствам, которые могут быть недействительными из-за ошибки в асинхронной операции.</para></block>
         <altmember cref="T:System.ComponentModel.AsyncOperationManager" />
         <altmember cref="T:System.ComponentModel.AsyncOperation" />
-        <related type="Article" href="http://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
       </Docs>
     </Member>
     <Member MemberName="UserState">
@@ -392,7 +376,7 @@
         <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
         <altmember cref="T:System.ComponentModel.AsyncOperationManager" />
         <altmember cref="T:System.ComponentModel.AsyncOperation" />
-        <related type="Article" href="http://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/43402d19-8d30-426d-8785-1a4478233bfa">Реализация асинхронной модели, основанной на событиях</related>
       </Docs>
     </Member>
   </Members>

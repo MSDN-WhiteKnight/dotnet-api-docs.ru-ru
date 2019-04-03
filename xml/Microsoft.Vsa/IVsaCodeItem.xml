@@ -1,13 +1,5 @@
 <Type Name="IVsaCodeItem" FullName="Microsoft.Vsa.IVsaCodeItem">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3d52b4e13d62d9a7363590361d0bd20b652f28e6" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39791005" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IVsaCodeItem : Microsoft.Vsa.IVsaItem" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="74ba0baff0b9d3068b698095aeed607c2dada128" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55393446" /></Metadata><TypeSignature Language="C#" Value="public interface IVsaCodeItem : Microsoft.Vsa.IVsaItem" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaCodeItem implements class Microsoft.Vsa.IVsaItem" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Vsa.IVsaCodeItem" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVsaCodeItem&#xA;Implements IVsaItem" />
@@ -27,16 +19,27 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
       <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("E0C0FFE7-7eea-4ee5-b7e4-0080c7eb0b74")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Представляет элемент кода, компилируемого обработчиком сценариев.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Заданный элемент кода может содержать классы, модули или другие исходного текста.
+
+Разрешения не требуются для вызова любых элементов интерфейса IVsaCodeItem не требуется разрешений.
+
+Обработчик сценариев реализует этот интерфейс для добавления элементов кода.
+
+]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="AddEventSource">
@@ -60,10 +63,27 @@
         <Parameter Name="eventSourceType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventSourceName">To be added.</param>
-        <param name="eventSourceType">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="eventSourceName">Программное имя источника события.</param>
+        <param name="eventSourceType">Имя типа источника события.</param>
+        <summary>Добавляет источник события в элемент кода. Элемент кода использует источник события для подключения события к именованному источнику события посредством вызова метода IVsaSite.GetEventSourceInstance, реализуемого ведущим приложением.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Обработчик скриптов использует сведения, предоставленные методом AddEventSource для подключения события к именованному источнику события. Источники событий получаются путем вызова метода IVsaSite.GetEventSourceInstance, реализуемого ведущим. Метод AddEventSource создает класс, который обрабатывает события, вызванные предоставленым узлом объектом.
+
+> [!NOTE]
+> Обработчик сценариев JScript .NET не поддерживает этот метод. В случаях, когда обработчик JScript .NET необходимо подключить событие это необходимо сделать с помощью глобального элемента. Вместо источников событий, обработчик JScript .NET использует AppGlobal типов элементов. Дополнительные сведения см.
+
+
+В элементе кода можно получить доступ к объект источника события по имени, и после обращения можно написать обработчики событий для объекта. Тип источника событий передается в виде строки, а не как объект типа для облегчения реализации источников событий по неуправляемым основным приложениям.
+
+Компилятор использует параметр eventSourceType для привязки к методам, предоставляемым типом. Позже он также используется, когда обработчик скриптов вызывает метод IVsaSite.GetEventSourceInstance, чтобы запросить экземпляр типа объекта.
+
+Дополнительные сведения о механизмах подключения событий для обработчика сценариев см. в разделе метода IVsaSite.GetEventSourceInstance.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="AppendSourceText">
@@ -86,9 +106,18 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="text">Текст, который необходимо добавить к элементу кода.</param>
+        <summary>Добавляет заданный текст в конец элемента кода.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Добавленный исходный текст не проходит проверку. По этой причине ошибки, если таковые имеются, обнаружатся при следующем вызове метода IVsaEngine.Compile.
+
+Добавленный исходный текст предоставляется в виде одной строки. Следует необходимости форматирования строки, необходимо указать это самостоятельно.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CodeDOM">
@@ -108,9 +137,16 @@
         <ReturnType>System.CodeDom.CodeObject</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Возвращает модель DOM кода (CodeDOM), представленную в элементе кода.</summary>
+        <value>CodeDOM для элемента кода.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Свойство CodeDOM обычно создается как часть шага компиляции обработчика сценариев, поэтому он не действует только до после вызова метода IVsaEngine.Compile. Возможно, некоторые реализации VSA может предоставить CodeDOM динамически, без необходимости явного шага компиляции, но узлы нельзя полагаться на это поведение. Некоторые обработчики сценариев, например, обработчик сценариев JScript .NET, не поддерживают это поведение.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RemoveEventSource">
@@ -133,9 +169,16 @@
         <Parameter Name="eventSourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventSourceName">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="eventSourceName">Программное имя удаляемого источника события.</param>
+        <summary>Удаляет заданный источник события из элемента кода.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Удаление источника события не приводит к удалению базовых обработчик событий из исходного текста. Вместо этого события больше не вызывают уведомления для обработчика событий. Таким образом вы получите ошибку компилятора, если удалить источник событий, но основная функция остается в исходном коде.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SourceText">
@@ -155,9 +198,20 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Задает или возвращает текст указанного элемента кода, включая автоматически созданный код (если он имеется).</summary>
+        <value>Исходный текст элемента кода.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Когда это свойство задано, текст не проходит проверку. По этой причине ошибки, если таковые имеются, обнаружатся при следующем вызове метода IVsaEngine.Compile.
+
+Возвращает исходный текст в одной большой строки, включая символы форматирования, например каретки возвращает свойство SourceText.
+
+Чтобы получить это свойство ядро необходимо не был закрыт. Не был закрыт, чтобы задать это свойство в модуле, а ядро не должна быть запущена.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

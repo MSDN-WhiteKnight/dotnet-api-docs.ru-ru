@@ -1,13 +1,5 @@
 <Type Name="Memory&lt;T&gt;" FullName="System.Memory&lt;T&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="acdfc981d37b8a9354e73ed0e9c1c4fc8e87d12e" />
-    <Meta Name="ms.sourcegitcommit" Value="d71cc71109ed3cbcf3406a10a3cd7ac7e30f5e0c" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/10/2018" />
-    <Meta Name="ms.locfileid" Value="51525751" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct Memory&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e3a004609628d454bd5fad74d5e5f225053535e1" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58452317" /></Metadata><TypeSignature Language="C#" Value="public struct Memory&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Memory`1&lt;T&gt; extends System.ValueType" />
   <TypeSignature Language="DocId" Value="T:System.Memory`1" />
   <TypeSignature Language="VB.NET" Value="Public Structure Memory(Of T)" />
@@ -20,6 +12,9 @@
   <AssemblyInfo>
     <AssemblyName>System.Memory</AssemblyName>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+  </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
   </TypeParameters>
@@ -28,7 +23,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.1">
+    <Attribute FrameworkAlternate="netcore-2.2;netcore-2.1;netcore-3.0">
       <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
@@ -40,7 +35,7 @@
   
 ## Remarks  
   
-Как и <xref:System.Span%601>, `Memory<T>` представляет непрерывную область памяти. В отличие от <xref:System.Span%601>, но при этом `Memory<T>` не [структура ссылки](~/docs/csharp/reference-semantics-with-value-types.md?view=netcore-2.1.md#ref-struct-type). Это означает, что `Memory<T>` может размещаться в управляемой куче, тогда как <xref:System.Span%601> невозможно. В результате `Memory<T>` структура не имеет те же ограничения, что <xref:System.Span%601> экземпляра. В частности:
+Как и <xref:System.Span%601>, `Memory<T>` представляет непрерывную область памяти. В отличие от <xref:System.Span%601>, но при этом `Memory<T>` не [структура ссылки](~/docs/csharp/language-reference/keywords/ref.md#ref-struct-types). Это означает, что `Memory<T>` может размещаться в управляемой куче, тогда как <xref:System.Span%601> невозможно. В результате `Memory<T>` структура не имеет те же ограничения, что <xref:System.Span%601> экземпляра. В частности:
 
 - Он может использоваться как поле в классе.
 
@@ -67,8 +62,11 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Parameters>
-        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="array" Type="T[]" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="array">Массив, из которого создается объект <see cref="T:System.Memory`1" />.</param>
@@ -80,10 +78,9 @@
 
       ]]></format>
         </remarks>
-        <exception cref="T:System.ArrayTypeMismatchException">
-          <paramref name="T" /> является ссылочным типом, а <paramref name="array" /> не является массивом типа <paramref name="T" />.
+        <exception cref="T:System.ArrayTypeMismatchException"><paramref name="T" /> является ссылочным типом, а <paramref name="array" /> не является массивом типа <paramref name="T" />.
         
-- или -
+-или-
 
 Массив является <see href="~/docs/csharp/programming-guide/concepts/covariance-contravariance/index.md">ковариантным.</see></exception>
       </Docs>
@@ -103,10 +100,13 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Parameters>
-        <Parameter Name="array" Type="T[]" />
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="array" Type="T[]" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="start" Type="System.Int32" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="length" Type="System.Int32" Index="2" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="array">Исходный массив.</param>
@@ -120,12 +120,17 @@
 
        ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="array" /> имеет значение <see langword="null" />, но <paramref name="start" /> или <paramref name="length" /> не равно нулю.<p />
-— или —<p /><paramref name="start" /> выходит за пределы растрового массива. <p />
-— или —<p /><paramref name="start" /> и <paramref name="length" /> превышает количество элементов в массиве.</exception>
-        <exception cref="T:System.ArrayTypeMismatchException">
-          <paramref name="T" /> является ссылочным типом, а <paramref name="array" /> не является массивом типа <paramref name="T" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="array" /> имеет значение <see langword="null" />, но <paramref name="start" /> или <paramref name="length" /> не равно нулю.
+
+
+-или-
+
+<paramref name="start" /> выходит за пределы растрового массива.
+
+-или-
+
+<paramref name="start" /> и <paramref name="length" /> превышает количество элементов в массиве.</exception>
+        <exception cref="T:System.ArrayTypeMismatchException"><paramref name="T" /> является ссылочным типом, а <paramref name="array" /> не является массивом типа <paramref name="T" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
@@ -143,14 +148,17 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Memory&lt;T&gt;" />
+        <Parameter Name="destination" Type="System.Memory&lt;T&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="destination">Назначение</param>
+        <param name="destination">Целевой объект <see cref="T:System.Memory`1" />.</param>
         <summary>Копирует содержимое объекта <see cref="T:System.Memory`1" /> в целевой объект <see cref="T:System.Memory`1" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -177,6 +185,9 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
@@ -201,11 +212,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="other" Type="System.Memory&lt;T&gt;" />
+        <Parameter Name="other" Type="System.Memory&lt;T&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="other">Объект для сравнения с текущим экземпляром.</param>
@@ -241,8 +255,11 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.2;netcore-2.1;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -250,7 +267,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект для сравнения с текущим экземпляром.</param>
@@ -280,8 +297,11 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.2;netcore-2.1;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -310,14 +330,47 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Определяет, является ли текущий экземпляр пустым.</summary>
-        <value>
-          <see langword="true" /> Если текущий экземпляр является пустым; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" /> Если текущий экземпляр является пустым; в противном случае <see langword="false" />.</value>
         <remarks>Объект <see cref="T:System.Memory`1" /> объект является пустым, если его длина равна 0.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Memory&lt;T&gt; this[Range range] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Memory`1&lt;!T&gt; Item(valuetype System.Range)" />
+      <MemberSignature Language="DocId" Value="P:System.Memory`1.Item(System.Range)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(range As Range) As Memory(Of T)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Memory&lt;T&gt; default[Range] { Memory&lt;T&gt; get(Range range); };" />
+      <MemberSignature Language="F#" Value="member this.Item(Range) : Memory&lt;'T&gt;" Usage="System.Memory&lt;'T&gt;.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Memory&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Range" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="range">To be added.</param>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Length">
@@ -334,6 +387,9 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -359,11 +415,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="segment" Type="System.ArraySegment&lt;T&gt;" />
+        <Parameter Name="segment" Type="System.ArraySegment&lt;T&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="segment">Преобразуемый объект.</param>
@@ -387,11 +446,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ReadOnlyMemory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="memory" Type="System.Memory&lt;T&gt;" />
+        <Parameter Name="memory" Type="System.Memory&lt;T&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="memory">Преобразуемый объект.</param>
@@ -415,11 +477,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="array" Type="T[]" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="array">Преобразуемый массив.</param>
@@ -442,6 +507,9 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Buffers.MemoryHandle</ReturnType>
@@ -467,6 +535,37 @@
       </Docs>
     </Member>
     <Member MemberName="Slice">
+      <MemberSignature Language="C#" Value="public Memory&lt;T&gt; Slice (Index startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Memory`1&lt;!T&gt; Slice(valuetype System.Index startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Memory`1.Slice(System.Index)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Slice (startIndex As Index) As Memory(Of T)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Memory&lt;T&gt; Slice(Index startIndex);" />
+      <MemberSignature Language="F#" Value="member this.Slice : Index -&gt; Memory&lt;'T&gt;" Usage="memory.Slice startIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Memory&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startIndex" Type="System.Index" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="startIndex">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Slice">
       <MemberSignature Language="C#" Value="public Memory&lt;T&gt; Slice (int start);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Memory`1&lt;!T&gt; Slice(int32 start) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Memory`1.Slice(System.Int32)" />
@@ -481,19 +580,51 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="start" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="start">Индекс, с которого нужно начать срез.</param>
         <summary>Формирует срез текущей области памяти, начиная с начинается с указанного индекса.</summary>
         <returns>Объект, содержащий все элементы текущего экземпляра: от <paramref name="start" /> до последнего элемента экземпляра.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeExceptionException">
-          <paramref name="start" /> меньше нуля либо больше или равен <see cref="P:System.Memory`1.Length" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeExceptionException"><paramref name="start" /> меньше нуля либо больше или равен <see cref="P:System.Memory`1.Length" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Slice">
+      <MemberSignature Language="C#" Value="public Memory&lt;T&gt; Slice (Range range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Memory`1&lt;!T&gt; Slice(valuetype System.Range range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Memory`1.Slice(System.Range)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Memory&lt;T&gt; Slice(Range range);" />
+      <MemberSignature Language="F#" Value="member this.Slice : Range -&gt; Memory&lt;'T&gt;" Usage="memory.Slice range" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Memory&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Range" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="range">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Slice">
@@ -511,12 +642,15 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="start" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="length" Type="System.Int32" Index="1" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="start">Индекс, с которого нужно начать срез.</param>
@@ -524,10 +658,9 @@
         <summary>Формирует срез текущей области памяти, начиная с указанного индекса до указанной длины.</summary>
         <returns>Объект, содержащий число элементов, равное <paramref name="length" />, из текущего экземпляра, начиная с <paramref name="start" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeExceptionException">
-          <paramref name="start" /> меньше нуля либо больше или равен <see cref="P:System.Memory`1.Length" />.
+        <exception cref="T:System.ArgumentOutOfRangeExceptionException"><paramref name="start" /> меньше нуля либо больше или равен <see cref="P:System.Memory`1.Length" />.
 
-- или -
+-или-
 
 <paramref name="length" /> больше, чем <see cref="P:System.Memory`1.Length" /> - <paramref name="start" /></exception>
       </Docs>
@@ -546,6 +679,9 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Span&lt;T&gt;</ReturnType>
@@ -570,6 +706,9 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T[]</ReturnType>
@@ -604,6 +743,9 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -635,14 +777,17 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Memory&lt;T&gt;" />
+        <Parameter Name="destination" Type="System.Memory&lt;T&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="destination">To be added.</param>
+        <param name="destination">Целевой объект <see cref="T:System.Memory`1" />.</param>
         <summary>Копирует содержимое из памяти в целевой экземпляр <see cref="T:System.Memory`1" />.</summary>
         <returns>Если копирование выполнено успешно, возвращается значение <see langword="true" />. В противном возвращается <see langword="false" />.</returns>
         <remarks>

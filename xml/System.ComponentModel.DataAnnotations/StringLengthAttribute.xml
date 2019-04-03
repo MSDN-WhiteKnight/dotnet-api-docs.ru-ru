@@ -1,13 +1,5 @@
 <Type Name="StringLengthAttribute" FullName="System.ComponentModel.DataAnnotations.StringLengthAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2c935f18bd6370170b1c32d0a846f1d6fe32a8d7" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48640715" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class StringLengthAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3d9d4f860c74f0164f10adfbe45bebcbbc191d4f" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58454952" /></Metadata><TypeSignature Language="C#" Value="public class StringLengthAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringLengthAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.StringLengthAttribute" />
   <TypeSignature Language="VB.NET" Value="Public Class StringLengthAttribute&#xA;Inherits ValidationAttribute" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type StringLengthAttribute = class&#xA;    inherit ValidationAttribute" />
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
@@ -29,25 +22,26 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property, AllowMultiple=false)</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-3.5">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Указывает минимальную и максимальную длину символов, разрешенных в поле данных.</summary>
+    <summary>Задает минимально и максимально допустимую длину строки знаков в поле данных.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- ASP.NET Dynamic Data позволяет операции CRUD (Create, Read, Update и Delete) в модель данных. Можно указать минимальное и максимальное количество символов для каждого поля данных при вставке или обновлении. Для символьных типов данных <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength%2A> и <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength%2A> свойства определяют наибольшее количество байтов, необходимых для хранения строки.  
-  
-   
+ ASP.NET Dynamic Data позволяет операции CRUD (Create, Read, Update и Delete) в модель данных. Можно указать минимальное и максимальное количество символов для каждого поля данных при вставке или обновлении. Для символьных типов данных <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength%2A> и <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength%2A> свойства определяют наибольшее количество байтов, необходимых для хранения строки.
+ 
+Можно использовать [составное форматирование](~/docs/standard/base-types/composite-formatting.md) заполнители в сообщении об ошибке: {0} — это имя свойства. {1} определяет его максимальную длину; и {2} Минимальная длина.
+Заполнители соответствуют аргументам, которые передаются <xref:System.String.Format%2A?displayProperty=nameWithType> метод во время выполнения.   
   
 ## Examples  
  Приведенный ниже показано, как ограничить число символов в поле. Этот пример работает с полем ThumbnailPhotoFileName в таблице Products в базе данных AdventureWorksLT. Поле имеет ограниченный 4 символа, применяя <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute> атрибут в разделяемый класс, представляющий сущности Product.  
@@ -66,6 +60,10 @@ public class ProductMetadata
     [StringLength(4, ErrorMessage = "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")]  
     public object ThumbnailPhotoFileName;  
   
+    [ScaffoldColumn(true)]  
+    [StringLength(4, ErrorMessage = "The {0} value cannot exceed {1} characters. ")]  
+    public object PhotoFileName;  
+
 }  
 ```  
   
@@ -80,6 +78,10 @@ Public Class ProductMetadata
     <ScaffoldColumn(True)> _   
     <StringLength(4, ErrorMessage := "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")> _   
     Public ThumbnailPhotoFileName As Object   
+  
+    <ScaffoldColumn(True)> _   
+    <StringLength(4, ErrorMessage := "The {0} value cannot exceed {1} characters. ")> _   
+    Public PhotoFileName As Object   
   
 End Class  
 ```  
@@ -98,6 +100,7 @@ End Class
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -126,6 +129,7 @@ End Class
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -146,10 +150,9 @@ End Class
         <summary>Применяет форматирование к заданному сообщению об ошибке.</summary>
         <returns>Форматированное сообщение об ошибке.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="maximumLength" /> является отрицательным значением.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maximumLength" /> является отрицательным значением.  
   
-- или - 
+-или- 
  Значение <paramref name="maximumLength" /> меньше <paramref name="minimumLength" />.</exception>
       </Docs>
     </Member>
@@ -163,6 +166,7 @@ End Class
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -190,10 +194,9 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="maximumLength" /> является отрицательным значением.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maximumLength" /> является отрицательным значением.  
   
-- или - 
+-или- 
  Значение <paramref name="maximumLength" /> меньше <see cref="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength" />.</exception>
       </Docs>
     </Member>
@@ -207,6 +210,7 @@ End Class
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
@@ -240,6 +244,7 @@ End Class
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>

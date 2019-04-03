@@ -1,13 +1,5 @@
 <Type Name="IExtendPropertySheet2" FullName="Microsoft.Aspnet.Snapin.IExtendPropertySheet2">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f5691cb8f4ba4afa8b344279f7943ff180962ee1" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39788662" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IExtendPropertySheet2" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="70e1aafeabf8d7e023b8a7a37b5d826af98bffca" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55351469" /></Metadata><TypeSignature Language="C#" Value="public interface IExtendPropertySheet2" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtendPropertySheet2" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Aspnet.Snapin.IExtendPropertySheet2" />
   <TypeSignature Language="VB.NET" Value="Public Interface IExtendPropertySheet2" />
@@ -19,16 +11,24 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("B7A87232-4A51-11D1-A7EA-00C04FD909DD")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Включает компонент оснастки, чтобы добавить страницы свойств в лист свойств элемента.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием интерфейса IExtendPropertySheet2 и консоли управления (MMC) см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="CreatePropertyPages">
@@ -52,12 +52,20 @@
         <Parameter Name="lpIDataObject" Type="Microsoft.Aspnet.Snapin.IDataObject" />
       </Parameters>
       <Docs>
-        <param name="lpProvider">To be added.</param>
-        <param name="handle">To be added.</param>
-        <param name="lpIDataObject">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="lpProvider">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.IPropertySheetCallback" />.</param>
+        <param name="handle">Дескриптор, который используется для отправки уведомляющего сообщения объекту <see cref="T:Microsoft.CLRAdmin.IComponent" /> или <see cref="T:Microsoft.CLRAdmin.IComponentData" />, соответственно.</param>
+        <param name="lpIDataObject">Указатель <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> на объекте, содержащем контекстные сведения об области или результирующем элементе.</param>
+        <summary>Добавляет страницы в лист свойств.</summary>
+        <returns>| Возвращаемое значение | Описание | | --- | --- | | S\_OK | Метод <see cref="M:Microsoft.Aspnet.Snapin.IExtendPropertySheet.CreatePropertyPages(Microsoft.Aspnet.Snapin.IPropertySheetCallback,System.IntPtr,Microsoft.Aspnet.Snapin.IDataObject)" /> добавил страницы свойств. | | S\_FALSE | Метод <see cref="M:Microsoft.Aspnet.Snapin.IExtendPropertySheet.CreatePropertyPages(Microsoft.Aspnet.Snapin.IPropertySheetCallback,System.IntPtr,Microsoft.Aspnet.Snapin.IDataObject)" /> не добавил страницы в лист свойств. | | E\_UNEXPECTED | Возникла непредвиденная ошибка. | | E\_INVALIDARG | Один или несколько параметров имеют недопустимое значение. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IExtendPropertySheet2> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetWatermarks">
@@ -83,14 +91,22 @@
         <Parameter Name="bStretch" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="lpIDataObject">To be added.</param>
-        <param name="lphWatermark">To be added.</param>
-        <param name="lphHeader">To be added.</param>
-        <param name="lphPalette">To be added.</param>
-        <param name="bStretch">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="lpIDataObject"><see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> на объекте, содержащем контекстные сведения об области или результирующем элементе.</param>
+        <param name="lphWatermark">Дескриптор к растровому изображению, которое служит водяным знаком для страниц Wizard 97.</param>
+        <param name="lphHeader">Дескриптор к растровому изображению, которое служит заголовком для страниц Wizard 97.</param>
+        <param name="lphPalette">Дескриптор к палитре, используемой для растровых изображений, заданных параметрами lphWatermark и lphHeader.</param>
+        <param name="bStretch">Возвращаемое значение GetWatermarks: true, если растровые изображения водяного знака и заголовка необходимо растянуть, а не заполнить мозаичными изображениями; в противном случае — false.</param>
+        <summary>Загружает растровые изображения водяного знака и заголовка для мастера таблиц, который реализуется как мастера стилей Wizard 97.</summary>
+        <returns>| Возвращаемое значение | Описание | | --- | --- | | etch | true, если растровые изображения водяного знака и заголовка необходимо растянуть, а не заполнить мозаичными изображениями; в противном случае — false. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IExtendPropertySheet2> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="QueryPagesFor">
@@ -112,10 +128,18 @@
         <Parameter Name="lpDataObject" Type="Microsoft.Aspnet.Snapin.IDataObject" />
       </Parameters>
       <Docs>
-        <param name="lpDataObject">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="lpDataObject">Указатель <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> на объекте, содержащем контекстные сведения об области или результирующем элементе.</param>
+        <summary>Определяет, требуются ли объекту страницы.</summary>
+        <returns>| Возвращаемое значение | Описание | | --- | --- | | S\_OK | Для этого объекта данных существуют свойства. | | E\_UNEXPECTED | Возникла непредвиденная ошибка. | | E\_INVALID | Параметр является недопустимым. | | Другой код ошибки | Для объекта данных не предоставлено никаких страниц. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IExtendPropertySheet2> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

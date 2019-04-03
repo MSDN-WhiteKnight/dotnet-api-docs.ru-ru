@@ -1,13 +1,5 @@
 <Type Name="ChannelServices" FullName="System.Runtime.Remoting.Channels.ChannelServices">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="51b0ba0a4f8f6bbc6bf2a323c6f8ad47c61a58d6" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48678857" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ChannelServices" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb09d69e1ee626d4fe13d619f33c15f362eedd8b" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57960682" /></Metadata><TypeSignature Language="C#" Value="public sealed class ChannelServices" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChannelServices extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.ChannelServices" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ChannelServices" />
@@ -37,7 +29,7 @@
 ## Remarks  
  Каналы передачи сообщений между приложениями через границы удаленного взаимодействия, таких как домены приложений, компьютеров и процессов. Эти пересечения может быть входящего и исходящего трафика. Канал можно прослушивать входящие сообщения в конечной точке, отправлять в конечную точку для исходящих сообщений, или оба. Это предоставляет точку расширения в среде выполнения для подключения в различных протоколов, несмотря на то, что среда выполнения не может быть на другом конце канала. Объекты времени выполнения можно использовать для широкого диапазона семантики и сущностей. Канал предоставляет точку расширения для преобразования сообщений и от конкретных протоколов.  
   
- Каналы должны предоставлять <xref:System.Runtime.Remoting.Channels.IChannel> интерфейс, который предоставляет информационные свойства, например <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> и <xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>. Каналы регистрируются с помощью <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=nameWithType> метод. Каналы могут загружаться из конфигурации удаленного взаимодействия. (См. в разделе [ \<channel > (шаблон) элемент](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce) сведения.)  
+ Каналы должны предоставлять <xref:System.Runtime.Remoting.Channels.IChannel> интерфейс, который предоставляет информационные свойства, например <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> и <xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>. Каналы регистрируются с помощью <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=nameWithType> метод. Каналы могут загружаться из конфигурации удаленного взаимодействия. (См. в разделе [ \<channel > (шаблон) элемент](https://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce) сведения.)  
   
  На стороне клиента сообщения передаются в цепочку приемников канала клиента после прохода через клиент <xref:System.Runtime.Remoting.Contexts.Context> цепочки. Обычно первым приемником канала является <xref:System.Runtime.Remoting.Channels.IClientFormatterSink>, который сериализует сообщения в поток, который передается по цепочке приемников канала транспортного приемника клиента. Затем транспортный приемник клиента передает этот поток по внешним каналам связи.  
   
@@ -161,7 +153,7 @@
       <Docs>
         <param name="sinkStack">Стек приемников каналов сервера, пройденный сообщением.</param>
         <param name="msg">Отправляемое сообщение.</param>
-        <param name="replyMsg">Когда этот метод возвращается, он содержит сообщение <see cref="T:System.Runtime.Remoting.Messaging.IMessage" />, в котором находится ответ сервера на сообщение, содержащееся в параметре <c>msg</c>. Этот параметр передается неинициализированным.</param>
+        <param name="replyMsg">Когда этот метод возвращается, он содержит сообщение <see cref="T:System.Runtime.Remoting.Messaging.IMessage" />, в котором находится ответ сервера на сообщение, содержащееся в параметре <paramref name="msg" />. Этот параметр передается неинициализированным.</param>
         <summary>Отправляет входящие удаленные вызовы.</summary>
         <returns>Класс <see cref="T:System.Runtime.Remoting.Channels.ServerProcessing" />, который задает статус обработки сообщения сервера.</returns>
         <remarks>
@@ -356,7 +348,7 @@
   
  Не удается зарегистрировать два канала с тем же именем в <xref:System.AppDomain>. По умолчанию имя <xref:System.Runtime.Remoting.Channels.Http.HttpChannel> является «http» и имя <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> является «tcp». Таким образом Если вы хотите зарегистрировать два канала того же типа, необходимо указать другое имя для одного из их с помощью свойства конфигурации.  
   
- Дополнительные сведения о свойствах конфигурации каналов, см. в разделе <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>, и [ \<channel > (шаблон) элемент](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
+ Дополнительные сведения о свойствах конфигурации каналов, см. в разделе <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>, и [ \<channel > (шаблон) элемент](https://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
   
    
   
@@ -396,8 +388,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="chnl" Type="System.Runtime.Remoting.Channels.IChannel" />
-        <Parameter Name="ensureSecurity" Type="System.Boolean" />
+        <Parameter Name="chnl" Type="System.Runtime.Remoting.Channels.IChannel" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ensureSecurity" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="chnl">Канал для регистрации.</param>
@@ -411,7 +403,7 @@
   
  Не удается зарегистрировать два канала с тем же именем в <xref:System.AppDomain>. По умолчанию имя <xref:System.Runtime.Remoting.Channels.Http.HttpChannel> является «http» и имя <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> является «tcp». Таким образом Если вы хотите зарегистрировать два канала того же типа, необходимо указать другое имя для одного из их с помощью свойства конфигурации.  
   
- Дополнительные сведения о свойствах конфигурации каналов, см. в разделе [канала и свойства конфигурации модуля форматирования](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)) и [ \<канала > элемент (шаблона)](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
+ Дополнительные сведения о свойствах конфигурации каналов, см. в разделе [канала и свойства конфигурации модуля форматирования](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)) и [ \<канала > элемент (шаблона)](https://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
   
  Если `ensureSecurity` параметр имеет значение `true`, система удаленного взаимодействия определяет, реализует ли канал <xref:System.Runtime.Remoting.Channels.ISecurableChannel>и если да, обеспечивает шифрование и цифровые подписи. Исключение возникает в том случае, если канал не реализует <xref:System.Runtime.Remoting.Channels.ISecurableChannel>.  
   

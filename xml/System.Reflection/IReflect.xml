@@ -1,13 +1,5 @@
 <Type Name="IReflect" FullName="System.Reflection.IReflect">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0ee28236ed05b5e16c8562811a785e42e58bbe86" />
-    <Meta Name="ms.sourcegitcommit" Value="fbb23bed4669409528ea7027eeaf88a8663d0851" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/11/2018" />
-    <Meta Name="ms.locfileid" Value="49088647" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IReflect" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="219ff8b132ff6093e359a54ef339f48df3ffd3de" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52202331" /></Metadata><TypeSignature Language="C#" Value="public interface IReflect" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReflect" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.IReflect" />
   <TypeSignature Language="VB.NET" Value="Public Interface IReflect" />
@@ -39,12 +31,12 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Взаимодействует с <see href="http://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5">интерфейсом IDispatch</see>.</summary>
+    <summary>Взаимодействует с <see href="https://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5">интерфейсом IDispatch</see>.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Reflection.IReflect> Интерфейс используется для взаимодействия с [интерфейса IDispatch](http://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5). <xref:System.Reflection.IReflect> определяет подмножество <xref:System.Type> методы отражения. Реализация этого интерфейса позволяет настроить поведение при доступе к объекту из модели COM в качестве типа `IDispatch` объекта. <xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler> Класс может использоваться для маршалинга объекта, реализующего <xref:System.Reflection.IReflect> или <xref:System.Runtime.InteropServices.Expando.IExpando> как COM `IDispatch` объекта и наоборот.  
+ <xref:System.Reflection.IReflect> Интерфейс используется для взаимодействия с [интерфейса IDispatch](https://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5). <xref:System.Reflection.IReflect> определяет подмножество <xref:System.Type> методы отражения. Реализация этого интерфейса позволяет настроить поведение при доступе к объекту из модели COM в качестве типа `IDispatch` объекта. <xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler> Класс может использоваться для маршалинга объекта, реализующего <xref:System.Reflection.IReflect> или <xref:System.Runtime.InteropServices.Expando.IExpando> как COM `IDispatch` объекта и наоборот.  
   
  ]]></format>
     </remarks>
@@ -565,12 +557,12 @@
       </Parameters>
       <Docs>
         <param name="name">Имя искомого элемента.</param>
-        <param name="invokeAttr">Один из атрибутов вызова <see cref="T:System.Reflection.BindingFlags" />. Параметр <c>invokeAttr</c> может быть конструктором, методом, свойством или полем. Необходимо указать подходящий атрибут вызова. Чтобы вызвать стандартный элемент класса, передайте в качестве имени элемента пустую строку ("").</param>
+        <param name="invokeAttr">Один из атрибутов вызова <see cref="T:System.Reflection.BindingFlags" />. Параметр <paramref name="invokeAttr" /> может быть конструктором, методом, свойством или полем. Необходимо указать подходящий атрибут вызова. Чтобы вызвать стандартный элемент класса, передайте в качестве имени элемента пустую строку ("").</param>
         <param name="binder">Один из битовых флагов <see cref="T:System.Reflection.BindingFlags" />. Реализует класс <see cref="T:System.Reflection.Binder" />, содержащий свойства, связанные с этим методом.</param>
         <param name="target">Объект, для которого следует вызвать указанный член. Для статических элементов этот параметр не обрабатывается.</param>
         <param name="args">Массив объектов, содержащих число, порядок и тип параметров вызываемого элемента. Если параметров нет, этот массив пуст.</param>
-        <param name="modifiers">Массив объектов <see cref="T:System.Reflection.ParameterModifier" />. Массив такой же длины, что и параметр <c>args</c>, предоставляющий атрибуты аргументов вызываемого члена в виде метаданных. Параметр может иметь следующие атрибуты: <see langword="pdIn" />, <see langword="pdOut" />, <see langword="pdRetval" />, <see langword="pdOptional" /> и <see langword="pdHasDefault" />. Эти значения представляют, соответственно, параметры [In], [Out], [retval], [optional] и стандартный параметр. Эти атрибуты используются различными службами взаимодействия.</param>
-        <param name="culture">Экземпляр объекта <see cref="T:System.Globalization.CultureInfo" />, используемого для управления приведением типов. Например, параметр <c>culture</c> преобразует строку <see langword="String" />, которая представляет число 1000, в значение типа <see langword="Double" />, поскольку в разных культурах число 1000 может быть представлено по-разному. Если этот параметр имеет значение <see langword="null" />, для текущего потока используется объект <see cref="T:System.Globalization.CultureInfo" />.</param>
+        <param name="modifiers">Массив объектов <see cref="T:System.Reflection.ParameterModifier" />. Массив такой же длины, что и параметр <paramref name="args" />, предоставляющий атрибуты аргументов вызываемого члена в виде метаданных. Параметр может иметь следующие атрибуты: <see langword="pdIn" />, <see langword="pdOut" />, <see langword="pdRetval" />, <see langword="pdOptional" /> и <see langword="pdHasDefault" />. Эти значения представляют, соответственно, параметры [In], [Out], [retval], [optional] и стандартный параметр. Эти атрибуты используются различными службами взаимодействия.</param>
+        <param name="culture">Экземпляр объекта <see cref="T:System.Globalization.CultureInfo" />, используемого для управления приведением типов. Например, параметр <paramref name="culture" /> преобразует строку <see langword="String" />, которая представляет число 1000, в значение типа <see langword="Double" />, поскольку в разных культурах 1000 может быть представлено по-разному. Если этот параметр имеет значение <see langword="null" />, для текущего потока используется объект <see cref="T:System.Globalization.CultureInfo" />.</param>
         <param name="namedParameters">Массив параметров типа <see langword="String" />.</param>
         <summary>Вызывает заданный элемент.</summary>
         <returns>Заданный член.</returns>

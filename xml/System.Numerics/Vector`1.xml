@@ -1,13 +1,5 @@
 <Type Name="Vector&lt;T&gt;" FullName="System.Numerics.Vector&lt;T&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="833d49a1bad12722b7a7ef23d95e74a285c5f2e1" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50174653" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct Vector&lt;T&gt; : IEquatable&lt;System.Numerics.Vector&lt;T&gt;&gt;, IFormattable where T : struct" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6d8a20486b3fa13a3c3d7bc7207e1d7a74bfac76" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58461778" /></Metadata><TypeSignature Language="C#" Value="public struct Vector&lt;T&gt; : IEquatable&lt;System.Numerics.Vector&lt;T&gt;&gt;, IFormattable where T : struct" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Vector`1&lt;struct .ctor (class System.ValueType) T&gt; extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Numerics.Vector`1&lt;!T&gt;&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Numerics.Vector`1" />
   <TypeSignature Language="VB.NET" Value="Public Structure Vector(Of T)&#xA;Implements IEquatable(Of Vector(Of T)), IFormattable" />
@@ -17,6 +9,7 @@
     <AssemblyName>System.Numerics.Vectors</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.2.0</AssemblyVersion>
     <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -58,7 +51,8 @@
  <xref:System.Numerics.Vector%601> Структура поддерживает аппаратное ускорение.  
  
  В следующей таблице показаны какой тип-примитив числовые данные и сочетание операция использует встроенных инструкций для ускорения выполнения:
-| | `+` | `-` | `*` | `/` |
+ 
+| Тип-примитив | `+` | `-` | `*` | `/` |
 | --- | :---: | :---: | :---: | :---: |
 |`sbyte` | Да | Да | Нет | Нет |
 |`byte` | Да | Да | Нет | Нет |
@@ -88,8 +82,11 @@
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
         <AssemblyVersion>4.1.4.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Parameters>
-        <Parameter Name="values" Type="System.Span&lt;T&gt;" />
+        <Parameter Name="values" Type="System.Span&lt;T&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="values">To be added.</param>
@@ -109,6 +106,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -146,6 +144,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -169,7 +168,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="values" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="values" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -184,6 +183,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -205,14 +205,14 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот массив должен содержать по крайней мере [конструктор Vector(T) (T\<xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType > элементы из указанного индекса.  
+ Этот массив должен содержать по крайней мере <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> элементов от указанного индекса.  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="values" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="values" /> — <see langword="null" />.</exception>
         <exception cref="T:System.IndexOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.  
   
-- или - 
+-или- 
 Длина массива <paramref name="values" /> минус <paramref name="index" /> меньше <see cref="P:System.Numerics.Vector`1.Count" />.</exception>
       </Docs>
     </Member>
@@ -228,6 +228,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -254,7 +255,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Число элементов в текущем векторе больше числа элементов, доступных в массиве <paramref name="destination" />.</exception>
       </Docs>
     </Member>
@@ -270,6 +271,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -288,7 +290,7 @@
       </Parameters>
       <Docs>
         <param name="destination">Массив, получающий копию значений вектора.</param>
-        <param name="startIndex">Начальный индекс в массиве <c>destination</c>, с которого начинается операция копирования.</param>
+        <param name="startIndex">Начальный индекс в массиве <paramref name="destination" />, с которого начинается операция копирования.</param>
         <summary>Копирует экземпляр вектора в заданный массив назначения, начиная с указанной позиции индекса.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -298,10 +300,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="destination" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Число элементов в текущем экземпляре больше числа элементов, доступных от <paramref name="startIndex" /> до конца массива <paramref name="destination" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> меньше нуля или больше последнего индекса в <paramref name="destination" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> меньше нуля или больше последнего индекса в <paramref name="destination" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -316,6 +317,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -350,6 +352,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -391,6 +394,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -432,6 +436,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -463,6 +468,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -485,7 +491,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.IndexOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.  
   
-- или - 
+-или- 
  Значение <paramref name="index" /> больше или равно <see cref="P:System.Numerics.Vector`1.Count" />.</exception>
       </Docs>
     </Member>
@@ -501,6 +507,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -531,6 +538,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -574,6 +582,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -617,6 +626,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -660,6 +670,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -703,6 +714,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -746,6 +758,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -789,6 +802,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -830,6 +844,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -871,6 +886,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -912,6 +928,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -953,6 +970,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -994,6 +1012,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1004,7 +1023,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1040,6 +1059,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1081,6 +1101,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1091,7 +1112,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1127,6 +1148,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1137,7 +1159,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1173,6 +1195,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1183,7 +1206,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1219,6 +1242,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1255,6 +1279,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1298,6 +1323,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1341,6 +1367,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1384,6 +1411,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1418,6 +1446,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1461,6 +1490,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1502,6 +1532,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1540,6 +1571,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1556,7 +1588,7 @@
         <Parameter Name="format" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="format"> или  , который задает формат отдельных элементов.</param>
+        <param name="format">или  , который задает формат отдельных элементов.</param>
         <summary>Возвращает строковое представление данного вектора, используя заданную строку форматирования для форматирования отдельных элементов.</summary>
         <returns>Строковое представление текущего экземпляра.</returns>
         <remarks>
@@ -1584,6 +1616,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1601,7 +1634,7 @@
         <Parameter Name="formatProvider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="format"> или  , который задает формат отдельных элементов.</param>
+        <param name="format">или  , который задает формат отдельных элементов.</param>
         <param name="formatProvider">Поставщик формата, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
         <summary>Возвращает строковое представление данного вектора, используя заданную строку форматирования для форматирования отдельных элементов и заданный поставщик формата для указания форматирования, определяемого языком и региональными параметрами.</summary>
         <returns>Строковое представление текущего экземпляра.</returns>
@@ -1627,6 +1660,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>

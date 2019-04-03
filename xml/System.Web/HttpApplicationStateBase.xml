@@ -1,13 +1,5 @@
 <Type Name="HttpApplicationStateBase" FullName="System.Web.HttpApplicationStateBase">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ab0db5f7feefd25609eabce0fce9618d14469a7c" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51318715" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class HttpApplicationStateBase : System.Collections.Specialized.NameObjectCollectionBase, System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1e3af9584981181dc24a3ba5a61eb48607aa0704" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57915026" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpApplicationStateBase : System.Collections.Specialized.NameObjectCollectionBase, System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpApplicationStateBase extends System.Collections.Specialized.NameObjectCollectionBase implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpApplicationStateBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HttpApplicationStateBase&#xA;Inherits NameObjectCollectionBase&#xA;Implements ICollection" />
@@ -38,7 +30,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Служит базовым классом для классов, включающих обмен информацией среди нескольких сеансов и запросов в приложении ASP.NET.</summary>
+    <summary>Служит базовым классом для классов, обеспечивающих совместное использование данных несколькими запросами и сеансами в приложении ASP.NET.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -97,11 +89,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="name">Имя добавляемого в коллекцию объекта.</param>
+        <param name="name">Имя объекта, добавляемого в коллекцию.</param>
         <param name="value">Значение объекта.</param>
         <summary>При переопределении в производном классе добавляет новый объект в коллекцию.</summary>
         <remarks>To be added.</remarks>
@@ -128,8 +120,8 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает клавиши доступа для объектов в коллекции.</summary>
-        <value>Массив клавиш для объектов состояния.</value>
+        <summary>При переопределении в производном классе получает ключи доступа для объектов коллекции.</summary>
+        <value>Массив ключей объектов состояния.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -215,12 +207,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Array" />
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="array" Type="System.Array" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="array">Одномерный массив, куда копируются элементы из коллекции. Индекс в массиве должен начинаться с нуля.</param>
-        <param name="index">Отсчитываемый от нуля индекс в массиве <c>array</c>, с которого должно начинаться копирование.</param>
+        <param name="index">Отсчитываемый от нуля индекс <paramref name="array" />, с которого должно начинаться копирование.</param>
         <summary>При переопределении в производном классе копирует элементы коллекции в массив начиная с указанного индекса в массиве.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -284,12 +276,12 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс получаемого объекта состояния приложения.</param>
         <summary>При переопределении в производном классе получает объект состояния по индексу.</summary>
-        <returns>Объект, на который ссылается <paramref name="index" />.</returns>
+        <returns>Ссылка на объект, заданная с помощью параметра <paramref name="index" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -314,12 +306,12 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя получаемого объекта.</param>
-        <summary>При переопределении в производном классе возвращает объект состояния по индексу.</summary>
-        <returns>Объект, на который ссылается <paramref name="name" />.</returns>
+        <summary>При переопределении в производном классе получает объект состояния по имени.</summary>
+        <returns>Ссылка на объект, заданная с помощью параметра <paramref name="name" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -330,7 +322,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationStateBase.GetEnumerator" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEnumerator () As IEnumerator" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Collections::IEnumerator ^ GetEnumerator();" />
-      <MemberSignature Language="F#" Value="abstract member GetEnumerator : unit -&gt; System.Collections.IEnumerator&#xA;override this.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="httpApplicationStateBase.GetEnumerator " />
+      <MemberSignature Language="F#" Value="override this.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="httpApplicationStateBase.GetEnumerator " />
       <MemberType>Method</MemberType>
       <Implements>
         <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
@@ -348,7 +340,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе возвращает перечислитель, используемый для прохода по коллекции.</summary>
+        <summary>При переопределении в производном классе возвращает перечислитель, который может использоваться для выполнения итерации по коллекции.</summary>
         <returns>Объект, который можно использовать для перечисления элементов коллекции.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -374,11 +366,11 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс получаемого объекта состояния приложения.</param>
-        <summary>При переопределении в производном классе возвращает имя объекта состояния по индексу.</summary>
+        <summary>При переопределении в производном классе получает имя объекта состояния по индексу.</summary>
         <returns>Имя объекта состояния приложения.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -407,8 +399,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли доступ к коллекции потокобезопасным.</summary>
-        <value>Значение <see langword="true" />, если доступ является потокобезопасным; в противном случае — значение <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, является ли доступ к коллекции потокобезопасным.</summary>
+        <value><see langword="true" />, если доступ является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -442,12 +434,12 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс объекта в коллекции.</param>
         <summary>При переопределении в производном классе получает объект состояния по индексу.</summary>
-        <value>Объект, на который ссылается <paramref name="index" />.</value>
+        <value>Ссылка на объект, заданная с помощью параметра <paramref name="index" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -472,12 +464,12 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя объекта в коллекции.</param>
-        <summary>При переопределении в производном классе возвращает объект состояния по индексу.</summary>
-        <value>Объект, на который ссылается <paramref name="name" />.</value>
+        <summary>При переопределении в производном классе получает объект состояния по имени.</summary>
+        <value>Ссылка на объект, заданная с помощью параметра <paramref name="name" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -503,7 +495,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе блокирует доступ к объектам в коллекции для обеспечения синхронизированного доступа.</summary>
+        <summary>При переопределении в производном классе блокирует доступ к объектам коллекции для обеспечения синхронизированного доступа.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -528,11 +520,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="name">Имя объекта, который должен быть удален из коллекции.</param>
-        <summary>При переопределении в производном классе удаляет этот указанный объект из коллекции.</summary>
+        <param name="name">Имя объекта, удаляемого из коллекции.</param>
+        <summary>При переопределении в производном классе удаляет именованный объект из коллекции.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -583,11 +575,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="index">Положение удаляемого элемента в коллекции.</param>
-        <summary>При переопределении в производном классе удаляет объект состояния, заданный с помощью индекса, из коллекции.</summary>
+        <param name="index">Положение элемента, который нужно удалить из коллекции.</param>
+        <summary>При переопределении в производном классе удаляет из коллекции объект состояния по указанному индексу.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -612,8 +604,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="value" Type="System.Object" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя обновляемого объекта.</param>
@@ -643,8 +635,8 @@
         <ReturnType>System.Web.HttpStaticObjectsCollectionBase</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает все объекты, объявленные элементом <see langword="object" />, где в качестве области установлено значение "Application" в приложении ASP.NET.</summary>
-        <value>Коллекция объектов в этом приложении.</value>
+        <summary>При переопределении в производном классе получает все объекты, заданные с помощью элемента <see langword="object" />, если установленной областью действия приложения ASP.NET является приложение ("Application").</summary>
+        <value>Коллекция объектов приложения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -681,7 +673,7 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает объект, который можно использовать для синхронизации доступа к коллекции.</summary>
+        <summary>При переопределении в производном классе получает объект, который может использоваться для синхронизации доступа к коллекции.</summary>
         <value>Объект, который можно использовать для синхронизации доступа к коллекции.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -708,7 +700,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе разблокирует доступ к объектам в коллекции для обеспечения синхронизированного доступа.</summary>
+        <summary>При переопределении в производном классе разблокирует доступ к объектам коллекции для обеспечения синхронизированного доступа.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>

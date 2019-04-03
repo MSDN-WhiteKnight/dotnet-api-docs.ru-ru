@@ -1,13 +1,5 @@
 <Type Name="IDataObject" FullName="Microsoft.Aspnet.Snapin.IDataObject">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b7a7835a5122971b2ca3dce88127af58142ddf41" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39788500" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDataObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ba327326a538fc6ff4c79ab98dd637466cc6c209" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55347790" /></Metadata><TypeSignature Language="C#" Value="public interface IDataObject" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Aspnet.Snapin.IDataObject" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataObject" />
@@ -19,16 +11,23 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("0000010e-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Создает соединение между вызывающим объектом и объектом данных, реализующим интерфейс IDataObject. Это соединение включает уведомления об изменениях для вызывающего объекта в данных для объекта данных.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием интерфейса IDataObject и консоли управления (MMC) см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="DAdvise">
@@ -53,13 +52,24 @@
         <Parameter Name="d" Type="System.Int32" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <param name="b">To be added.</param>
-        <param name="c">To be added.</param>
-        <param name="d">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат, среду и целевое устройство для уведомлений.</param>
+        <param name="b">Значение <see cref="T:System.Runtime.InteropServices.ComTypes.ADVF" />, задающее запрошенное поведение для соединения.</param>
+        <param name="c">Указатель на объект <see cref="T:System.Runtime.InteropServices.ComTypes.IAdviseSink" /> в вызывающем объекте.</param>
+        <param name="d">Указатель на соединение, заданное этим вызовом метода DAdvise.</param>
+        <summary>Создает подключение для уведомления между объектом данных, реализующим интерфейс <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />, и вызывающим объектом, чтобы вызывающий объект мог получать уведомления об изменениях данных для объекта данных.</summary>
+        <returns>Метод DAdvise поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Метод DAdvise успешно создал соединение. | | E\_NOTIMPL | Объект данных не реализует метод DAdvise. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | Недопустимое значение указателя данных. | | OLE\_E\_ADVISENOTSUPPORTED | Объект данных не поддерживает уведомление об изменении. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DUnadvise">
@@ -81,10 +91,17 @@
         <Parameter Name="a" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Удаляемое соединение.</param>
+        <summary>Удаляет соединения для уведомления, которое было создано предыдущим вызовом метода <see cref="M:Microsoft.Aspnet.Snapin.IDataObject.DAdvise(System.IntPtr,System.Int32,System.IntPtr,System.Int32@)" />.</summary>
+        <returns>| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Метод DUnadvise успешно удалил указанное соединение. | | OLE\_E\_NOCONNECTION | Заданное соединение не является допустимым соединением. | | OLE\_E\_ADVISENOTSUPPORTED | Объект данных не поддерживает уведомление об изменении. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EnumDAdvise">
@@ -106,10 +123,21 @@
         <Parameter Name="a" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Адрес объекта <see cref="T:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />, получающего указатель интерфейса на новый объект перечислителя. Соединения отсутствуют, если вызов метода EnumDAdvise задает для параметра <paramref name="a" /> значение <see langword="null" />.</param>
+        <summary>Извлекает указатель на объект, который может перечислить соединения для уведомления, поддерживаемые в текущий момент этим интерфейсом <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />.</summary>
+        <returns>Метод EnumDAdvise поддерживает стандартное возвращаемое значение E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Этот вызов метода EnumDAdvise успешно создал экземпляр объекта перечислителя. -или- Соединения отсутствуют. | | OLE\_E\_ADVISENOTSUPPORTED | Объект данных не поддерживает уведомление об изменении. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EnumFormatEtc">
@@ -132,11 +160,22 @@
         <Parameter Name="b" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <param name="b">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Значение из объекта <see cref="T:System.Runtime.InteropServices.ComTypes.DATADIR" />, указывающее направление данных.</param>
+        <param name="b">Адрес выходной переменной, получающий объект <see cref="T:Microsoft.Aspnet.Snapin.IEnumFORMATETC" />.</param>
+        <summary>Извлекает указатель на объект, который может перечислить типы перечислителя <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, которые поддерживаются этой реализацией.</summary>
+        <returns>Метод EnumFormatEtc поддерживает стандартные возвращаемые значения E_INVALIDARG и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Этот вызов метода EnumFormatEtc успешно создал объект перечислителя. | | E\_NOTIMPL | Заданное направление не поддерживается. | | OLE\_S\_USEREG | Запрос к OLE на перечисление форматов из реестра. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetCanonicalFormatEtc">
@@ -159,11 +198,24 @@
         <Parameter Name="b" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <param name="b">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат, среду и целевое устройство для вызовов, с помощью которых извлекаются данные.</param>
+        <param name="b">Выходной указатель на FORMATETC, содержащий наиболее общие сведения для определенной отрисовки, или <langword name="null" />, если метод GetCanonicalFormatEtc возвращает DATA_S_SAMEFORMATETC.</param>
+        <summary>Извлекает указатель на стандартную структуру <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, которая логически эквивалентна, но необязательно равна структуре <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, на которую ссылается параметр <paramref name="a" />.</summary>
+        <returns>Метод GetCanonicalFormatEtc поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Возвращенный объект FORMATETC отличается от структуры, переданной в параметрах. | | DATA\_S\_SAMEFORMATETC | Возвращенный объект FORMATETC совпадает со структурой, переданной в параметрах, и значение <see langword="null" /> возвращается в <paramref name="b" />. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | <paramref name="a" /> является недопустимым. | | OLE\_E\_NOTRUNNING | Приложение объекта не выполняется. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Метод GetCanonicalFormatEtc позволяет разработчику <xref:Microsoft.Aspnet.Snapin.IDataObject> возвращаемого каноническое интерфейса <xref:Microsoft.Aspnet.Snapin.FORMATETC> структуры без дублирования логики отрисовки для <xref:Microsoft.Aspnet.Snapin.FORMATETC> структуры.
+
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetData">
@@ -186,11 +238,22 @@
         <Parameter Name="b" Type="Microsoft.Aspnet.Snapin.STGMEDIUM" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="pFormatEtc">To be added.</param>
-        <param name="b">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="pFormatEtc">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат, среду и целевое устройство для вызовов, с помощью которых извлекаются данные.</param>
+        <param name="b">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.STGMEDIUM" />, указывающий среду хранения, содержащую возвращенные данные.</param>
+        <summary>Выполняет визуализацию данных, описанных в заданной структуре pFormatEtc, и передает их в параметр <paramref name="b" />.</summary>
+        <returns>Метод GetData поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание | | --- | --- | | S\_OK | Этот вызов метода GetData успешно извлек и поместил данные в предоставленную среду хранения. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | <paramref name="pFormatEtc" /> является недопустимым. | | DV\_E\_TYMED | tymed является недопустимым. | | DV\_E\_DVASPECT | dwAspect является недопустимым. | | OLE\_E\_NOTRUNNING | Приложение объекта не выполняется. | | STG\_E\_MEDIUMFULL | Возникла ошибка при распределении среды. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetDataHere">
@@ -213,11 +276,24 @@
         <Parameter Name="b" Type="Microsoft.Aspnet.Snapin.STGMEDIUM" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="pFormatEtc">To be added.</param>
-        <param name="b">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="pFormatEtc">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат, среду и целевое устройство для вызовов, с помощью которых извлекаются данные.</param>
+        <param name="b">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.STGMEDIUM" />, указывающий среду хранения, содержащую возвращенные данные.</param>
+        <summary>Выполняет визуализацию данных, описанных в заданной структуре pFormatEtc, и передает их в параметр <paramref name="b" />.</summary>
+        <returns>Метод GetDataHere поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание | | --- | --- | | S\_OK | Этот вызов метода GetDataHere успешно извлек и поместил данные в предоставленную среду хранения. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | pFormatEtc является недопустимым. | | DV\_E\_TYMED | tymed является недопустимым. | | DV\_E\_DVASPECT | dwAspect является недопустимым. | | OLE\_E\_NOTRUNNING | Приложение объекта не выполняется. | | STG\_E\_MEDIUMFULL | Возникла ошибка при распределении среды. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Getdatahere-метод отличается от <xref:Microsoft.Aspnet.Snapin.IDataObject.GetData(Microsoft.Aspnet.Snapin.FORMATETC@,Microsoft.Aspnet.Snapin.STGMEDIUM@)> метод тем, что вызывающий объект должен выделить и освободить заданную среду хранения.
+
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="QueryGetData">
@@ -239,10 +315,23 @@
         <Parameter Name="a" Type="Microsoft.Aspnet.Snapin.FORMATETC" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат, среду и целевое устройство для вызовов, с помощью которых извлекаются данные.</param>
+        <summary>Извлекает значение, указывающее, может ли средство реализации выполнять визуализацию данных, которые содержатся в параметре <paramref name="a" />.</summary>
+        <returns>Метод QueryGetData поддерживает стандартные возвращаемые значения E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Последующий вызов метода <see cref="M:Microsoft.Aspnet.Snapin.IDataObject.GetData(Microsoft.Aspnet.Snapin.FORMATETC@,Microsoft.Aspnet.Snapin.STGMEDIUM@)" />, вероятно, будет успешным. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | pFormatEtc является недопустимым. | | DV\_E\_TYMED | tymed является недопустимым. | | DV\_E\_DVASPECT | Значение dwAspect. | | OLE\_E\_NOTRUNNING | Приложение объекта не выполняется. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Клиент объекта данных, который реализует <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейс вызывает метод QueryGetData для определения вероятности успеха последующий вызов <xref:Microsoft.Aspnet.Snapin.IDataObject.GetData(Microsoft.Aspnet.Snapin.FORMATETC@,Microsoft.Aspnet.Snapin.STGMEDIUM@)> метод. Результат, указывающий, что этот экземпляр <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейс выполнять визуализацию данных, содержащийся в `a` параметр не гарантирует успешное в последующем вызове <xref:Microsoft.Aspnet.Snapin.IDataObject.GetData(Microsoft.Aspnet.Snapin.FORMATETC@,Microsoft.Aspnet.Snapin.STGMEDIUM@)> метод.
+
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SetData">
@@ -266,12 +355,23 @@
         <Parameter Name="c" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="a">To be added.</param>
-        <param name="b">To be added.</param>
-        <param name="c">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="a">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.FORMATETC" />, определяющий формат объекта данных, реализующего объект <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> для использования при интерпретации данных, содержащихся в среде хранения.</param>
+        <param name="b">Указатель на объект <see cref="T:Microsoft.Aspnet.Snapin.STGMEDIUM" />, определяющий среду хранения для метода SetData, который следует использовать для передачи данных.</param>
+        <param name="c">Значение true, чтобы указать, что вызванный объект данных, реализующий объект <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />, является владельцем среды хранения после вызова и должен освободить среду после ее использования; в противном случае — значение false, чтобы указать, что вызывающий объект остается владельцем среды хранения и объект данных использует эту среду только во время вызова.</param>
+        <summary>Передает данные, которые содержатся в структуре <see cref="T:Microsoft.Aspnet.Snapin.STGMEDIUM" />, на которую ссылается параметр <paramref name="a" />, в этот экземпляр интерфейса <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />.</summary>
+        <returns>Метод SetData поддерживает стандартные возвращаемые значения E_FAIL, E_INVALIDARG, E_UNEXPECTED и E_OUTOFMEMORY, а также следующие возвращаемые значения:
+
+
+
+| Возвращаемое значение | Описание || --- | --- | | S\_ОК | Этот вызов метода SetData успешно передал данные. | | E\_NOTIMPL | Метод SetData не реализуется для объекта данных, реализующего <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />. | | DV\_E\_LINDEX | Недопустимый индекс. | | DV\_E\_FORMATETC | pFormatEtc является недопустимым. | | DV\_E\_TYMED | tymed является недопустимым. | | DV\_E\_DVASPECT | dwAspect является недопустимым. | | OLE\_E\_NOTRUNNING | Приложение объекта не выполняется. |</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IDataObject> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

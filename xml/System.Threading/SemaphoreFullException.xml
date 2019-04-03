@@ -1,13 +1,5 @@
 <Type Name="SemaphoreFullException" FullName="System.Threading.SemaphoreFullException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bcd84859d042f32de90c65e1904057530773238a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48666026" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SemaphoreFullException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7911a6e69665eb977577a79ae51cbff6b20c98e9" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936523" /></Metadata><TypeSignature Language="C#" Value="public class SemaphoreFullException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SemaphoreFullException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.Threading.SemaphoreFullException" />
   <TypeSignature Language="VB.NET" Value="Public Class SemaphoreFullException&#xA;Inherits SystemException" />
@@ -45,8 +37,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -60,14 +52,14 @@
 > [!NOTE]
 >  <xref:System.Threading.Semaphore> Класс не обеспечивают идентификацию потоков при вызовах метода <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> и <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> методы. Это необязательно для тот же поток, который вызвал <xref:System.Threading.WaitHandle.WaitOne%2A> для вызова <xref:System.Threading.Semaphore.Release%2A>.  
   
- <xref:System.Threading.SemaphoreFullException> не обязательно указывать на проблему с кодом, где произошло исключение. Рассмотрим следующий сценарий: потока A и B входят в семафор, который имеет максимальное значение счетчика из двух. Программная ошибка в потоке B заставляет его вызывать метод <xref:System.Threading.Semaphore.Release%2A> дважды, чтобы счетчик на семафоре переполнен. Таким образом, если поток A вызывает <xref:System.Threading.Semaphore.Release%2A>, <xref:System.Threading.SemaphoreFullException> возникает исключение.  
+ <xref:System.Threading.SemaphoreFullException> не обязательно указывать на проблему с кодом, где произошло исключение. Рассмотрим следующий сценарий. Потока A и B входят в семафор, который имеет максимальное значение счетчика из двух. Программная ошибка в потоке B заставляет его вызывать метод <xref:System.Threading.Semaphore.Release%2A> дважды, чтобы счетчик на семафоре переполнен. Таким образом, если поток A вызывает <xref:System.Threading.Semaphore.Release%2A>, <xref:System.Threading.SemaphoreFullException> возникает исключение.  
   
  Список начальных значений свойств для экземпляра класса <xref:System.Threading.SemaphoreFullException> см. в описании конструктора <xref:System.Threading.SemaphoreFullException.%23ctor>.  
   
    
   
 ## Examples  
- В следующем примере кода показано, как Программная ошибка в одном потоке может привести к <xref:System.Threading.SemaphoreFullException> в другом потоке: два потока входят в семафор. Второй поток выходит из семафора дважды, пока первый поток по-прежнему выполняет свою задачу. Когда первый поток закончится и освободит семафора, счетчик семафора уже заполнен, и возникает исключение.  
+ В следующем примере кода показано, как Программная ошибка в одном потоке может привести к <xref:System.Threading.SemaphoreFullException> в другом потоке: Два потока входят в семафор. Второй поток выходит из семафора дважды, пока первый поток по-прежнему выполняет свою задачу. Когда первый поток закончится и освободит семафора, счетчик семафора уже заполнен, и возникает исключение.  
   
  [!code-cpp[System.Threading.SemaphoreFullException#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.SemaphoreFullException/CPP/source.cpp#1)]
  [!code-csharp[System.Threading.SemaphoreFullException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.SemaphoreFullException/CS/source.cs#1)]
@@ -219,8 +211,8 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo" />, содержащий сериализованные данные объекта по возникающему исключению.</param>
@@ -272,7 +264,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <c>innerException</c> не равно <see langword="null" />, текущее исключение возникает в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <paramref name="innerException" /> не равно <see langword="null" />, текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Threading.SemaphoreFullException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

@@ -1,13 +1,5 @@
 <Type Name="ITypeLib" FullName="System.Runtime.InteropServices.ComTypes.ITypeLib">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4d6fc95765b266dc7365b85738ca3976a822936d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48654313" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface ITypeLib" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e16f056180739faa6df6ba77cd8837177f862e74" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56357854" /></Metadata><TypeSignature Language="C#" Value="public interface ITypeLib" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeLib" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.ITypeLib" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITypeLib" />
@@ -38,11 +30,14 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.Guid("00020402-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.5;netstandard-1.6;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netstandard-1.2;netstandard-1.3;netstandard-1.4">
+      <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -53,7 +48,7 @@
 ## Remarks  
  Дополнительные сведения о `ITypeLib` интерфейсом, см. в библиотеке MSDN.  
   
- Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Дополнительные сведения см. в разделе [как: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
+ Среда CLR создает исключение, когда метод COM в машинный код возвращает значение HRESULT. Для получения дополнительной информации см. [How to: Map HRESULTs and Exceptions](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md).  
   
  ]]></format>
     </remarks>
@@ -99,12 +94,12 @@
       </Parameters>
       <Docs>
         <param name="szNameBuf">Имя, которое требуется найти. Это параметр In или Out.</param>
-        <param name="lHashVal">Хэш-значение для ускорения поиска, вычисленное при помощи функции <see langword="LHashValOfNameSys" />. Если значение <c>lHashVal</c> равно 0, то значение вычисляется.</param>
-        <param name="ppTInfo">При возвращении управления из этого метода содержит массив указателей на описания типов, которые содержат имя, заданное в <c>szNameBuf</c>. Этот параметр передается неинициализированным.</param>
-        <param name="rgMemId">Массив значений <see langword="MEMBERID" /> найденных элементов. <c>rgMemId</c> [i] является значением <see langword="MEMBERID" />, выполняющим индексацию в описании типа, заданном параметром <c>ppTInfo</c> [i]. Не может иметь значение <see langword="null" />.</param>
-        <param name="pcFound">При входе показывает количество разыскиваемых экземпляров. Например, <c>pcFound</c> = 1 можно вызвать для поиска первого вхождения. Поиск прекращается после обнаружения первого экземпляра.  
+        <param name="lHashVal">Хэш-значение для ускорения поиска, вычисленное при помощи функции <see langword="LHashValOfNameSys" />. Если значение <paramref name="lHashVal" /> равно 0, то значение рассчитывается.</param>
+        <param name="ppTInfo">При возвращении данного метода содержит массив указателей на описания типов, которые содержат имя, заданное в <paramref name="szNameBuf" />. Этот параметр передается неинициализированным.</param>
+        <param name="rgMemId">Массив значений <see langword="MEMBERID" /> найденных элементов. <paramref name="rgMemId" />[i] является значением <see langword="MEMBERID" />, выполняющим индексацию в описании типа, заданном параметром <paramref name="ppTInfo" />[i]. Не может иметь значение <see langword="null" />.</param>
+        <param name="pcFound">При входе показывает количество разыскиваемых экземпляров. Например, если <paramref name="pcFound" /> = 1 можно использовать для поиска первого экземпляра. Поиск прекращается после обнаружения первого экземпляра.  
   
-При выходе показывает число обнаруженных экземпляров. Если значения <see langword="in" /> и <see langword="out" /> параметра <c>pcFound</c> идентичны, возможно, найдены не все описания типов, содержащие нужное имя.</param>
+При выходе показывает число обнаруженных экземпляров. Если значения <see langword="in" /> и <see langword="out" /> параметра <paramref name="pcFound" /> идентичны, возможно найдены не все описания типа, содержащие нужное имя.</param>
         <summary>Обнаруживает экземпляры описания типа в библиотеке типов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -308,7 +303,7 @@
       </Parameters>
       <Docs>
         <param name="index">Индекс возвращаемого интерфейса <see langword="ITypeInfo" />.</param>
-        <param name="ppTI">При возвращении управления из этого метода содержит объект <see langword="ITypeInfo" /> с описанием типа, на который ссылается параметр <c>index</c>. Этот параметр передается неинициализированным.</param>
+        <param name="ppTI">При возвращении данного метода содержит <see langword="ITypeInfo" /> с описанием типа, на который ссылается <paramref name="index" />. Этот параметр передается неинициализированным.</param>
         <summary>Возвращает описание заданного типа из библиотеки.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -500,7 +495,7 @@
       </Parameters>
       <Docs>
         <param name="szNameBuf">Строка для проверки. Это параметр In или Out.</param>
-        <param name="lHashVal">Хэш-значение <c>szNameBuf</c>.</param>
+        <param name="lHashVal">Хэш-значение для <paramref name="szNameBuf" />.</param>
         <summary>Показывает, содержит ли переданная строка имя типа или члена, описанного в библиотеке.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="szNameBuf" /> обнаружен в библиотеке типов; в противном случае — значение <see langword="false" />.</returns>
         <remarks>

@@ -1,13 +1,5 @@
 <Type Name="HttpRequest" FullName="System.Web.HttpRequest">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="17d7f3d9c0f51a88eae8bae3a434f105d4e4edde" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46657263" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class HttpRequest" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="58879141d0b088ca4dee06b7cf8aee51870ccda5" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57943298" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpRequest extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpRequest" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpRequest" />
@@ -24,7 +16,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Позволяет ASP.NET считывать значения HTTP, отправляемые клиентом во время веб-запроса.</summary>
+    <summary>Разрешает ASP.NET считывать HTTP-значения, отправленные клиентом во время веб-запроса.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -117,12 +109,12 @@ Public Class RestrictedPage
 End Class  
 ```  
   
- Проект Visual Studio Web сайта с исходным кодом в этой статье прилагаются: [загрузить](http://go.microsoft.com/fwlink/?LinkID=191455).  
+ Проект Visual Studio Web сайта с исходным кодом доступен на следующей странице в этом разделе: [Скачайте](https://go.microsoft.com/fwlink/?LinkID=191455).  
   
  В этом примере используется <xref:System.IO.StreamWriter> класс для записи значения нескольких <xref:System.Web.HttpRequest> свойств в файл класса. Для свойств, которые являются типом string значения, так как они записаны в файл в кодировке HTML. Зацикливаются свойства, которые представляют собой наборы, и каждая пара ключ/значение, содержащимися в них записываются в файл.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[System.Web.HttpRequest_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/CS/requestdetailscs.aspx#1)]
  [!code-aspx-vb[System.Web.HttpRequest_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/VB/requestdetailsvb.aspx#1)]  
@@ -213,8 +205,8 @@ End Class
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает строковый массив поддерживаемых клиентом типов MIME, указанных в заголовке Accept.</summary>
-        <value>Строковый массив поддерживаемых клиентом типов MIME, указанных в заголовке Accept.</value>
+        <summary>Получает строковый массив типов приема MIME, поддерживаемых клиентом.</summary>
+        <value>Строковый массив типов, поддерживаемых клиентами и использующих MIME.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -251,7 +243,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>Получает анонимный идентификатор для пользователя, если представлен.</summary>
-        <value>Строка, представляющая идентификатор текущего анонимного пользователя.</value>
+        <value>Строка представляет идентификатор текущего анонимного пользователя.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -348,7 +340,7 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает виртуальный путь корня приложения и делает его относительным, используя тильду (~) для корня приложения (как в "~/page.aspx").</summary>
+        <summary>Получает виртуальный путь корня приложения и делает его относительным, используя тильду (\~) для корня приложения (как в "\~/page.aspx").</summary>
         <value>Виртуальный путь корня приложения для текущего запроса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -405,10 +397,9 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="count" /> имеет значение 0.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> имеет значение 0.  
   
-\- или - 
+-или- 
  <paramref name="count" /> больше, чем доступное число байтов.</exception>
       </Docs>
     </Member>
@@ -451,7 +442,7 @@ End Class
         <altmember cref="P:System.Web.UI.Page.ClientTarget" />
         <altmember cref="T:System.Web.HttpBrowserCapabilities" />
         <altmember cref="P:System.Web.HttpRequest.UserAgent" />
-        <related type="Article" href="http://msdn.microsoft.com/library/143d14d6-9d12-4d4b-ae60-f00e0eb6938f">Серверные элементы управления ASP.NET и возможностей браузера</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/143d14d6-9d12-4d4b-ae60-f00e0eb6938f">Серверные элементы управления ASP.NET и возможностей браузера</related>
       </Docs>
     </Member>
     <Member MemberName="ClientCertificate">
@@ -505,13 +496,13 @@ End Class
         <ReturnType>System.Text.Encoding</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает кодировку объекта.</summary>
-        <value>Объект <see cref="T:System.Text.Encoding" />, представляющий кодировку клиента.</value>
+        <summary>Получает или задает набор знаков объекта.</summary>
+        <value>Объект <see cref="T:System.Text.Encoding" />, представляющий набор знаков клиента.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Кодировка содержимого по умолчанию можно указать в [глобализации элемент (схема параметров ASP.NET)](http://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7) файла конфигурации. Если кодировка содержимого задается на клиент, переопределяются параметры конфигурации по умолчанию.  
+ Кодировка содержимого по умолчанию можно указать в [глобализации элемент (схема параметров ASP.NET)](https://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7) файла конфигурации. Если кодировка содержимого задается на клиент, переопределяются параметры конфигурации по умолчанию.  
   
    
   
@@ -624,8 +615,8 @@ End Class
         <ReturnType>System.Web.HttpCookieCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает коллекцию файлов cookie, отправленных клиентом.</summary>
-        <value>Объект <see cref="T:System.Web.HttpCookieCollection" />, представляющий переменные файлов cookie клиента.</value>
+        <summary>Получает коллекцию файлов Cookie, отправленных клиентом.</summary>
+        <value>Объект <see cref="T:System.Web.HttpCookieCollection" />, представляющий переменные cookie клиента.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -773,7 +764,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>Получает коллекцию загруженных с клиента файлов (составной формат MIME).</summary>
-        <value>Объект <see cref="T:System.Web.HttpFileCollection" />, представляющий коллекцию файлов, отправленных клиентом. Элементы объекта <see cref="T:System.Web.HttpFileCollection" /> имеют тип <see cref="T:System.Web.HttpPostedFile" />.</value>
+        <value>Объект <see cref="T:System.Web.HttpFileCollection" />, представляющий коллекцию файлов, загруженных с клиента. Элементы объекта <see cref="T:System.Web.HttpFileCollection" /> типа <see cref="T:System.Web.HttpPostedFile" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -845,7 +836,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>Получает коллекцию переменных формы.</summary>
-        <value>Объект <see cref="T:System.Collections.Specialized.NameValueCollection" />, представляющий коллекцию переменных формы.</value>
+        <value><see cref="T:System.Collections.Specialized.NameValueCollection" /> представляющий коллекцию переменных формы.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -884,13 +875,13 @@ End Class
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего HTTP-запроса.</summary>
-        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего НТТР-запроса.</returns>
+        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</summary>
+        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот метод идентичен методу <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A> за исключением того, что он также копирует байты, которые считываются внутреннего хранилища, используемого ASP.NET для заполнения <xref:System.Web.HttpRequest.Form%2A>, <xref:System.Web.HttpRequest.Files%2A>, и <xref:System.Web.HttpRequest.InputStream%2A> свойства. Так как эти сведения хранятся, нижеследующий код, такой как страницы веб-форм ASP.NET (ASPX-файлы), запускается успешно. В случае с методом <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A> это не так.  
+ Этот метод идентичен методу <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A> за исключением того, что он также копирует байты, которые считываются внутреннего хранилища, используемого ASP.NET для заполнения <xref:System.Web.HttpRequest.Form%2A>, <xref:System.Web.HttpRequest.Files%2A>, и <xref:System.Web.HttpRequest.InputStream%2A> свойства. Поскольку эти сведения хранятся, нижеследующий код, такой как страницы веб-форм ASP.NET (aspx-файлы), запускается успешно. С методом <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A> это не так.  
   
  ]]></format>
         </remarks>
@@ -912,7 +903,7 @@ End Class
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего HTTP-запроса.</summary>
+        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetBufferlessInputStream">
@@ -932,8 +923,8 @@ End Class
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего HTTP-запроса.</summary>
-        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего НТТР-запроса.</returns>
+        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</summary>
+        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -977,12 +968,12 @@ End Class
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disableMaxRequestLength" Type="System.Boolean" />
+        <Parameter Name="disableMaxRequestLength" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="disableMaxRequestLength">Значение <see langword="true" />, чтобы отключить ограничение на длину запроса; в противном случае — значение <see langword="false" />.</param>
-        <summary>Получает объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего HTTP-запроса, дополнительно отменяя задаваемое в свойстве <see cref="P:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength" /> ограничение на длину запроса.</summary>
-        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела сущности входящего НТТР-запроса.</returns>
+        <param name="disableMaxRequestLength">Значение <see langword="true" />, чтобы отключить ограничение длины запроса; в противном случае — значение <see langword="false" />.</param>
+        <summary>Получает объект <see cref="T:System.IO.Stream" />, который может использоваться для чтения входящего тела сущности HTTP, дополнительно отменяя задаваемое в свойстве <see cref="P:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength" /> ограничение на длину запроса.</summary>
+        <returns>Объект <see cref="T:System.IO.Stream" />, который можно использовать для чтения тела входящего объекта HTTP.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1028,7 +1019,7 @@ End Class
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Список всех возможных заголовки, см. в разделе [полей заголовка запроса](http://go.microsoft.com/fwlink/?LinkId=73147) на веб-узле W3C.  
+ Список всех возможных заголовки, см. в разделе [полей заголовка запроса](https://go.microsoft.com/fwlink/?LinkId=73147) на веб-узле W3C.  
   
    
   
@@ -1083,8 +1074,8 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает метод передачи данных по протоколу НТТР (например, <see langword="GET" />, <see langword="POST" /> или <see langword="HEAD" />), используемый клиентом.</summary>
-        <value>Используемый клиентом метод передачи данных HTTP.</value>
+        <summary>Получает метод передачи данных НТТР (например, <see langword="GET" />, <see langword="POST" /> или <see langword="HEAD" />), используемый клиентом.</summary>
+        <value>Метод передачи данных HTTP, используемый клиентом.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1126,8 +1117,8 @@ End Class
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает содержимое тела сущности входящего НТТР-запроса.</summary>
-        <value>Объект <see cref="T:System.IO.Stream" />, представляющий тело содержимого входящего НТТР-запроса.</value>
+        <summary>Получает содержимое входящего объекта НТТР.</summary>
+        <value>Объект <see cref="T:System.IO.Stream" />, представляющий входящее содержимое НТТР.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1147,7 +1138,7 @@ End Class
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Предоставляет управляемую оболочку для метода IIS, которая помещает тело сущности HTTP-запроса в память.</summary>
+        <summary>Предоставляет управляемую оболочку для метода IIS, которая помещает тело HTTP-запроса в память.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1178,7 +1169,7 @@ End Class
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Предоставляет службам IIS копию тела сущности HTTP-запроса.</summary>
+        <summary>Предоставляет службам IIS копию тела HTTP-запроса.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1209,15 +1200,15 @@ End Class
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="buffer">Массив, который содержит данные запроса.</param>
-        <param name="offset">Отсчитываемая от нуля позиция в <c>buffer</c>, с которой начинается сохранение данных объекта запроса.</param>
-        <param name="count">Число байтов, считываемых в массив <c>buffer</c>.</param>
-        <summary>Предоставляет службам IIS копию тела сущности HTTP-запроса и сведения об объекте сущности запроса.</summary>
+        <param name="offset">Отсчитываемая от нуля позиция в параметре <paramref name="buffer" />, с которой начинается хранение данных запроса.</param>
+        <param name="count">Число байтов, читаемых из массива <paramref name="buffer" />.</param>
+        <summary>Предоставляет службам IIS копию тела HTTP-запроса и сведения об объекте запроса.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1229,9 +1220,8 @@ End Class
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Метод был вызван для версии IIS более ранней, чем IIS 7.0.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Число элементов в <paramref name="count" /> превышает доступное пространство в <paramref name="buffer" /> при заданном значении <paramref name="offset" />.</exception>
         <permission cref="T:System.Web.AspNetHostingPermission">для работы в размещенной на сервере среде. Действие по обеспечению безопасности: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />. Связанное перечисление: <see cref="F:System.Web.AspNetHostingPermissionLevel.High" /></permission>
       </Docs>
@@ -1254,7 +1244,7 @@ End Class
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, позволяющее определить, прошел ли запрос аутентификацию.</summary>
+        <summary>Получает значение, позволяющее определить, прошел ли запрос проверку подлинности.</summary>
         <value>Если проверка подлинности для запроса выполнена, значение <see langword="true" />, в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1287,7 +1277,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>Получает значение, которое указывает, был ли запрос отправлен с локального компьютера.</summary>
-        <value>Значение <see langword="true" />, если запрос отправлен с локального компьютера; в противном случае — значение <see langword="false" />.</value>
+        <value><see langword="true" />, если запрос с локального компьютера; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1317,7 +1307,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>Получает значение, определяющее, используются ли сокеты безопасности (т. е. HTTPS) в соединении HTTP.</summary>
-        <value>Значение <see langword="true" />, если соединение является SSL-соединением; в противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если соединение является SSL-соединением, в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1352,9 +1342,9 @@ End Class
         <Parameter Name="key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="key">Имя получаемого элемента коллекции.</param>
+        <param name="key">Имя извлекаемого члена коллекции.</param>
         <summary>Получает указанный объект из коллекций <see cref="P:System.Web.HttpRequest.QueryString" />, <see cref="P:System.Web.HttpRequest.Form" />, <see cref="P:System.Web.HttpRequest.Cookies" /> или <see cref="P:System.Web.HttpRequest.ServerVariables" />.</summary>
-        <value>Элемент коллекции <see cref="P:System.Web.HttpRequest.QueryString" />, <see cref="P:System.Web.HttpRequest.Form" />, <see cref="P:System.Web.HttpRequest.Cookies" /> или <see cref="P:System.Web.HttpRequest.ServerVariables" />, заданный в параметре <paramref name="key" />. Если указанный элемент <paramref name="key" /> не найден, возвращается значение <see langword="null" />.</value>
+        <value>Член коллекции <see cref="P:System.Web.HttpRequest.QueryString" />, <see cref="P:System.Web.HttpRequest.Form" />, <see cref="P:System.Web.HttpRequest.Cookies" /> или <see cref="P:System.Web.HttpRequest.ServerVariables" />, заданный с помощью параметра <paramref name="key" />. Если определенный <paramref name="key" /> не найден, тогда возвращается <see langword="null" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1375,8 +1365,8 @@ End Class
         <ReturnType>System.Security.Principal.WindowsIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает тип <see cref="T:System.Security.Principal.WindowsIdentity" /> для текущего пользователя.</summary>
-        <value>Объект <see cref="T:System.Security.Principal.WindowsIdentity" /> для текущих параметров аутентификации служб Microsoft IIS.</value>
+        <summary>Получает тип <see cref="T:System.Security.Principal.WindowsIdentity" /> для текущего пользователя.</summary>
+        <value>Объект <see cref="T:System.Security.Principal.WindowsIdentity" /> для текущих параметров проверки подлинности Microsoft IIS.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1417,8 +1407,8 @@ End Class
         <Parameter Name="imageFieldName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="imageFieldName">Имя карты изображения формы.</param>
-        <summary>Сопоставляет параметр входящей формы полей рисунков с соответствующими значениями координат X и Y.</summary>
+        <param name="imageFieldName">Имя сопоставления изображения формы.</param>
+        <summary>Сопоставляет параметр входящей формы полей рисунков с соответствующими значениями координат x и y.</summary>
         <returns>Двухмерный массив целочисленных значений.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1513,7 +1503,7 @@ End Class
       <Docs>
         <param name="virtualPath">Виртуальный путь (абсолютный или относительный) для текущего запроса.</param>
         <param name="baseVirtualDir">Виртуальный путь к базовому каталогу, используемый для относительного разрешения.</param>
-        <param name="allowCrossAppMapping">Значение <see langword="true" /> указывает на то, что путь <c>virtualPath</c> может принадлежать другому приложению; в противном случае значение <see langword="false" />.</param>
+        <param name="allowCrossAppMapping"><see langword="true" /> для указания, что <paramref name="virtualPath" /> может принадлежать другому приложению; в противном случае — <see langword="false" />.</param>
         <summary>Сопоставляет указанный виртуальный путь с физическим путем.</summary>
         <returns>Физический путь на сервере.</returns>
         <remarks>
@@ -1526,7 +1516,10 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">Объект <see cref="T:System.Web.HttpContext" /> для текущего запроса не задан.</exception>
+        <exception cref="T:System.Web.HttpException">Параметр <paramref name="allowCrossMapping" /> имеет значение <see langword="false" />, а параметр <paramref name="virtualPath" /> относится к другому приложению.
+
+-или- 
+Объект <see cref="T:System.Web.HttpContext" /> для текущего запроса не задан.</exception>
       </Docs>
     </Member>
     <Member MemberName="MapRawImageCoordinates">
@@ -1545,12 +1538,12 @@ End Class
         <ReturnType>System.Double[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="imageFieldName" Type="System.String" />
+        <Parameter Name="imageFieldName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="imageFieldName">Имя поля изображения.</param>
         <summary>Сопоставляет параметр входящей формы полей изображений с соответствующими значениями координат X и Y.</summary>
-        <returns>Значения координат X и Y.</returns>
+        <returns>Значения координат x и y.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1859,7 +1852,7 @@ Dim fullname2 As String = Request("fullname")
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, прочитано ли тело сущности запроса, и, если да, как оно было прочитано.</summary>
-        <value>Значение, указывающее, как было прочитано тело сущности запроса, или указывающее, что оно не было прочитано.</value>
+        <value>Значение, указывающее, как было прочитано тело запроса сущности, или указывающее, что оно не было прочитано.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1872,9 +1865,9 @@ Dim fullname2 As String = Request("fullname")
   
 -   Свойство <xref:System.Web.HttpRequest.InputStream%2A>.  
   
--   метод <xref:System.Web.HttpRequest.GetBufferedInputStream%2A>;  
+-   метод <xref:System.Web.HttpRequest.GetBufferedInputStream%2A> ;  
   
--   метод <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A>;  
+-   метод <xref:System.Web.HttpRequest.GetBufferlessInputStream%2A> ;  
   
  ]]></format>
         </remarks>
@@ -1907,12 +1900,12 @@ Dim fullname2 As String = Request("fullname")
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Это свойство предоставляет доступ к <xref:System.Web.Routing.RouteData> объект для текущего запроса. Дополнительные сведения о маршрутизации ASP.NET см. в разделе. [Маршрутизация ASP.NET](http://msdn.microsoft.com/library/892441af-8f1d-483e-ab5f-b82c23576f5a).  
+ Это свойство предоставляет доступ к <xref:System.Web.Routing.RouteData> объект для текущего запроса. Дополнительные сведения о маршрутизации ASP.NET см. в разделе. [Маршрутизация ASP.NET](https://msdn.microsoft.com/library/892441af-8f1d-483e-ab5f-b82c23576f5a).  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/b2decba4-2400-491c-8907-89a7b9e0874c">Пошаговое руководство: Использование маршрутизации в приложении веб-форм ASP.NET</related>
-        <related type="Article" href="http://msdn.microsoft.com/library/dc88e6ba-470c-4b20-b644-35874cfd781d">Практическое: доступ к параметрам URL-адреса в маршрутизируемой странице</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/b2decba4-2400-491c-8907-89a7b9e0874c">Пошаговое руководство. С помощью ASP.NET, маршрутизации в приложениях Web Forms</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/dc88e6ba-470c-4b20-b644-35874cfd781d">Практическое руководство. Параметры доступа к URL-адреса в маршрутизируемой странице</related>
       </Docs>
     </Member>
     <Member MemberName="RequestType">
@@ -1938,7 +1931,7 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает метод передачи данных по протоколу НТТР (<see langword="GET" /> или <see langword="POST" />), используемый клиентом.</summary>
+        <summary>Получает или задает метод передачи данных НТТР (<see langword="GET" /> или <see langword="POST" />), используемый клиентом.</summary>
         <value>Строка, представляющая тип вызова HTTP, отправленного клиентом.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2016,12 +2009,12 @@ Dim fullname2 As String = Request("fullname")
       </ReturnValue>
       <Docs>
         <summary>Получает коллекцию переменных веб-сервера.</summary>
-        <value>Коллекция <see cref="T:System.Collections.Specialized.NameValueCollection" /> переменных сервера.</value>
+        <value><see cref="T:System.Collections.Specialized.NameValueCollection" /> переменных сервера.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Список переменных сервера, поддерживаемых службами IIS, см. в разделе [переменные сервера IIS](http://go.microsoft.com/fwlink/?LinkId=52471).  
+ Список переменных сервера, поддерживаемых службами IIS, см. в разделе [переменные сервера IIS](https://go.microsoft.com/fwlink/?LinkId=52471).  
   
    
   
@@ -2085,7 +2078,7 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.Web.ITlsTokenBindingInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает сведения о привязке токена TLS. Свойство позволяет приложениям извлекать сведения о маркерах из входящих запросов HTTP для расширенных возможностей проверки подлинности. </summary>
+        <summary>Получает сведения о привязке токена TLS. Свойство позволяет приложениям извлекать сведения о токенах из входящих HTTP-запросов для расширенных возможностей аутентификации.</summary>
         <value>Маркер привязки для текущего соединения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2180,8 +2173,8 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает сведения о URL-адресе текущего запроса.</summary>
-        <value>Объект <see cref="T:System.Uri" />, содержащий URL-адрес текущего запроса.</value>
+        <summary>Получает сведения об URL-адресе текущего запроса.</summary>
+        <value>Объект <see cref="T:System.Uri" />, содержащий универсальный код ресурса текущего запроса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2215,7 +2208,7 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает сведения о URL-адресе предыдущего запроса клиента, связанного с текущим URL-адресом.</summary>
+        <summary>Получает сведения об URL-адресе предыдущего запроса клиента, связанного с текущим URL-адресом.</summary>
         <value>Объект <see cref="T:System.Uri" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2249,7 +2242,7 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает исходную строку пользовательского агента для клиентского браузера.</summary>
+        <summary>Получает исходную строку пользовательского агента, переданную от клиентского браузера. Обратите внимание, что результат может иметь значение null.</summary>
         <value>Начальная строка пользовательского агента для клиентского браузера.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2265,7 +2258,7 @@ Dim fullname2 As String = Request("fullname")
         <altmember cref="P:System.Web.UI.Page.ClientTarget" />
         <altmember cref="T:System.Web.HttpBrowserCapabilities" />
         <altmember cref="P:System.Web.HttpRequest.Browser" />
-        <related type="Article" href="http://msdn.microsoft.com/library/143d14d6-9d12-4d4b-ae60-f00e0eb6938f">Серверные элементы управления ASP.NET и возможностей браузера</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/143d14d6-9d12-4d4b-ae60-f00e0eb6938f">Серверные элементы управления ASP.NET и возможностей браузера</related>
       </Docs>
     </Member>
     <Member MemberName="UserHostAddress">
@@ -2352,8 +2345,8 @@ Dim fullname2 As String = Request("fullname")
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает отсортированный строковый массив языковых параметров клиента.</summary>
-        <value>Отсортированный строковый массив языковых параметров клиента или значение <see langword="null" />, если массив пуст.</value>
+        <summary>Получает упорядоченный строковый массив языковых настроек клиента.</summary>
+        <value>Упорядоченный строковый массив языковых настроек клиента или <see langword="null" /> если пустой.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2388,7 +2381,7 @@ Dim fullname2 As String = Request("fullname")
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Вызывает проверку коллекций, доступных через свойства <see cref="P:System.Web.HttpRequest.Cookies" />, <see cref="P:System.Web.HttpRequest.Form" /> и <see cref="P:System.Web.HttpRequest.QueryString" />.</summary>
+        <summary>Вызывает проверку для коллекций, доступных через свойства <see cref="P:System.Web.HttpRequest.Cookies" />, <see cref="P:System.Web.HttpRequest.Form" /> и <see cref="P:System.Web.HttpRequest.QueryString" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

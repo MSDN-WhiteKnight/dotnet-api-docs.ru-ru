@@ -1,13 +1,5 @@
 <Type Name="TypeProvider" FullName="System.Workflow.ComponentModel.Compiler.TypeProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="24673bedc94a18e80b4bb2e7b61364b8f4bc4889" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48671278" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class TypeProvider : IDisposable, IServiceProvider, System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a1f1990a9afa222253ceebcad0446ea67d14a219" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57923190" /></Metadata><TypeSignature Language="C#" Value="public sealed class TypeProvider : IDisposable, IServiceProvider, System.Workflow.ComponentModel.Compiler.ITypeProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeProvider extends System.Object implements class System.IDisposable, class System.IServiceProvider, class System.Workflow.ComponentModel.Compiler.ITypeProvider" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.TypeProvider" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TypeProvider&#xA;Implements IDisposable, IServiceProvider, ITypeProvider" />
@@ -134,7 +126,7 @@
       </Parameters>
       <Docs>
         <param name="path">Путь к добавляемой сборке <see cref="P:System.Type.Assembly" />.</param>
-        <summary>Добавляет ссылку на сборку <see cref="P:System.Type.Assembly" /> во внутренний список. Эта сборка используется для поиска типа <see cref="T:System.Type" /> в методе <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" />.</summary>
+        <summary>Добавляет ссылку на объект <see cref="P:System.Type.Assembly" /> во внутренний список. Эта сборка используется для поиска типа <see cref="T:System.Type" /> в методе <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -169,7 +161,7 @@
       </Parameters>
       <Docs>
         <param name="codeCompileUnit">Добавляемый объект <see cref="T:System.CodeDom.CodeCompileUnit" />.</param>
-        <summary>Добавляет ссылку на сборку <see cref="T:System.CodeDom.CodeCompileUnit" /> во внутренний список. Этот объект <see cref="T:System.CodeDom.CodeCompileUnit" /> используется для поиска типа <see cref="T:System.Type" /> в методе <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" />.</summary>
+        <summary>Добавляет ссылку на объект <see cref="T:System.CodeDom.CodeCompileUnit" /> во внутренний список. Этот объект <see cref="T:System.CodeDom.CodeCompileUnit" /> используется для поиска типа <see cref="T:System.Type" /> в методе <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" />.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="codeCompileUnit" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="codeCompileUnit" /> уже имеет ссылку в данном экземпляре.</exception>
@@ -236,7 +228,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="type">Тип, для которого нужно получить имя сборки.</param>
@@ -307,6 +299,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ GetService(Type ^ serviceType);" />
       <MemberSignature Language="F#" Value="abstract member GetService : Type -&gt; obj&#xA;override this.GetService : Type -&gt; obj" Usage="typeProvider.GetService serviceType" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -403,7 +398,7 @@
       </Parameters>
       <Docs>
         <param name="name">Имя типа.</param>
-        <param name="throwOnError">Значение, указывающее, следует ли создавать исключение, если параметр <c>name</c> невозможно разрешить.</param>
+        <param name="throwOnError">Значение, указывающее, вызывается ли исключение, если параметр <paramref name="name" /> нельзя разрешить.</param>
         <summary>Возвращает тип из набора сборок, добавленных в объект <see langword="TypeProvider" /> при помощи <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly(System.Reflection.Assembly)" />, <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference(System.String)" /> или <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddCodeCompileUnit(System.CodeDom.CodeCompileUnit)" />.</summary>
         <returns>Запрошенный <see cref="T:System.Type" />.</returns>
         <remarks>
@@ -522,7 +517,7 @@
       <Docs>
         <param name="subclass">Класс <see cref="T:System.Type" />, который проверяется как производный класс.</param>
         <param name="superClass">Объект <see cref="T:System.Type" />, который проверяется как основной класс.</param>
-        <summary>Указывает, является ли данный класс <see cref="T:System.Type" /> унаследованным от другого класса <see cref="T:System.Type" />.</summary>
+        <summary>Указывает, является ли данный класс <see cref="T:System.Type" /> производным от другого класса <see cref="T:System.Type" />.</summary>
         <returns>Значение <see langword="true" />, если проверяемые отношения существуют, в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -543,8 +538,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="property" Type="System.Reflection.PropertyInfo" />
-        <Parameter Name="declaringInstance" Type="System.Object" />
+        <Parameter Name="property" Type="System.Reflection.PropertyInfo" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="declaringInstance" Type="System.Object" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="property">Свойство, которое нужно разрешить.</param>

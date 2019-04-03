@@ -1,13 +1,5 @@
 <Type Name="SecurityUtilities" FullName="Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8a06be1f43e69730d398dd6e59137ee7c89aebe1" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50176993" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class SecurityUtilities" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0360df4dd2929890d2ea552a8ffb993881862f10" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58459946" /></Metadata><TypeSignature Language="C#" Value="public static class SecurityUtilities" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SecurityUtilities extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities" />
   <TypeSignature Language="VB.NET" Value="Public Class SecurityUtilities" />
@@ -26,12 +18,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Предоставляет набор служебных функций для изменения наборов разрешений безопасности и подписи.</summary>
+    <summary>Предоставляет набор служебных программ для изменения наборов разрешений безопасности и подписи.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -64,7 +56,7 @@
         <param name="includedPermissionSet">Объект <see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.PermissionSet" />, содержащий набор разрешений, явно включаемых в созданный набор разрешений. Разрешения, заданные в этом параметре, будут включены в созданный набор разрешений "как есть" независимо от параметров <paramref name="targetZone" /> или <paramref name="excludedPermissions" />.</param>
         <param name="excludedPermissions">Массив строк удостоверений разрешений, исключаемых из набора разрешений зоны по умолчанию. Строки удостоверений разрешений могут быть рассчитаны с помощью метода <see cref="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.PermissionSetToIdentityList(System.Security.PermissionSet)" />. Этот параметр игнорируется, если <paramref name="targetZone" /> не равен ни <see langword="Internet" />, ни <see langword="LocalIntranet" />.</param>
         <summary>Создает набор разрешений, вычисляя набор разрешений зоны по умолчанию, удаляя все исключенные разрешения и добавляя все включенные разрешения.</summary>
-        <returns>Возвращает созданный набор разрешений.</returns>
+        <returns>Созданный набор разрешений.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,8 +84,8 @@
       </Parameters>
       <Docs>
         <param name="ids">Массив строк удостоверений разрешений.</param>
-        <summary>Преобразует массив строк удостоверений разрешений в объект набора разрешений.</summary>
-        <returns>Возвращает преобразованный набор разрешений.</returns>
+        <summary>Преобразовывает массив строк удостоверений разрешений в объект набора разрешений.</summary>
+        <returns>Преобразованный набор разрешений.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +111,9 @@
         <Parameter Name="permissionSet" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="permissionSet">Входной набор разрешений для преобразования.</param>
-        <summary>Преобразует объект набора разрешений в массив строк удостоверений разрешений.</summary>
-        <returns>Возвращает массив строк удостоверений разрешений.</returns>
+        <param name="permissionSet">Преобразуемый входной набор разрешений.</param>
+        <summary>Преобразовывает объект набора разрешений в массив строк удостоверений разрешений.</summary>
+        <returns>Массив строк удостоверений разрешений.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,9 +151,9 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="cert">Сертификат, используемый для подписи файла.</param>
-        <param name="timestampUrl">Указывает, что сервер меток времени по указанному адресу HTTP применит к файлу метку времени. Этот параметр может иметь значение NULL, если метка времени не требуется.</param>
-        <param name="path">Имя файла, который будет подписан.</param>
+        <param name="cert">Сертификат, используемый для подписания файла.</param>
+        <param name="timestampUrl">Указывает, что файл должен получить отметку времени с помощью соответствующего сервера, располагающегося по заданному HTTP-адресу. Этот параметр может иметь значение NULL, если отметка времени не требуется.</param>
+        <param name="path">Имя подписываемого файла.</param>
         <summary>Подписывает манифест ClickOnce или PE-файл.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -200,9 +192,9 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="certThumbprint">Определяет отпечаток, представляющий собой хэш-значение SHA1 сертификата подписи, сохраняющееся в хранилище личных сертификатов.</param>
-        <param name="timestampUrl">Указывает, что сервер меток времени по указанному адресу HTTP применит к файлу метку времени. Этот параметр может иметь значение NULL, если метка времени не требуется.</param>
-        <param name="path">Имя файла, который будет подписан.</param>
+        <param name="certThumbprint">Определяет отпечаток, представляющий собой хэш-значение SHA1 сертификата для подписи, сохраняющееся в хранилище личных сертификатов пользователя.</param>
+        <param name="timestampUrl">Указывает, что файл должен получить отметку времени с помощью соответствующего сервера, располагающегося по заданному HTTP-адресу. Этот параметр может иметь значение NULL, если отметка времени не требуется.</param>
+        <param name="path">Имя подписываемого файла.</param>
         <summary>Подписывает манифест ClickOnce или PE-файл.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -240,10 +232,10 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="certPath">Сертификат, используемый для подписи файла. Сертификат должен содержать закрытый ключ. Расширение <see langword="KeyUsage" /> является необязательным, но если оно задано, для <see langword="DigitalSignature" /> должно быть задано значение <see langword="True" />. Расширение <see langword="EnhancedKeyUsage" /> также является необязательным, но если оно присутствует, сертификат должен содержать поддержку идентификатора объекта (OID).</param>
+        <param name="certPath">Сертификат, используемый для подписания файла. Этот сертификат должен содержать закрытый ключ. Расширение <see langword="KeyUsage" /> является необязательным, но если оно задано, для <see langword="DigitalSignature" /> должно быть задано значение <see langword="True" />. Расширение <see langword="EnhancedKeyUsage" /> также является необязательным, но если оно присутствует, сертификат должен содержать поддержку идентификатора объекта (OID).</param>
         <param name="certPassword">Пароль сертификата.</param>
-        <param name="timestampUrl">Указывает, что сервер меток времени по указанному адресу HTTP применит к файлу метку времени. Этот параметр может иметь значение NULL, если метка времени не требуется.</param>
-        <param name="path">Имя файла, который будет подписан.</param>
+        <param name="timestampUrl">Указывает, что файл должен получить отметку времени с помощью соответствующего сервера, располагающегося по заданному HTTP-адресу. Этот параметр может иметь значение NULL, если отметка времени не требуется.</param>
+        <param name="path">Имя подписываемого файла.</param>
         <summary>Подписывает манифест ClickOnce.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

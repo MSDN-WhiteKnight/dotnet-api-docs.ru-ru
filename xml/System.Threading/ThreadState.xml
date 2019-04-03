@@ -1,13 +1,5 @@
 <Type Name="ThreadState" FullName="System.Threading.ThreadState">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b0f3e8d9dab97678b690e340db3f71242cb82e32" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51314881" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum ThreadState" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9c44370ba2cd27ba80a27f102d82527538a19f8f" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56386824" /></Metadata><TypeSignature Language="C#" Value="public enum ThreadState" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ThreadState extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ThreadState" />
   <TypeSignature Language="VB.NET" Value="Public Enum ThreadState" />
@@ -34,14 +26,14 @@
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
       <AttributeName>System.Flags</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -50,12 +42,16 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Threading.ThreadState> Перечисление имеет только в некоторых сценариях отладки. Код никогда не следует использовать состояние потока для синхронизации действий потоков.  
+  `ThreadState` Перечисления определяет набор всех состояний возможное выполнение потоков. Он представляет интерес только в некоторых сценариях отладки. Код никогда не следует использовать состояние потока для синхронизации действий потоков.  
   
- <xref:System.Threading.ThreadState> Определяет набор всех состояний возможное выполнение потоков. После создания потока он находится в по крайней мере одно из состояний, до его окончания. Потокам, созданным в общеязыковой изначально находятся в `Unstarted` state, хотя внешние потоки, приходящие в среду выполнения уже находятся в `Running` состояние. `Unstarted` Перешел поток в `Running` состояния путем вызова <xref:System.Threading.Thread.Start%2A>. Не все комбинации `ThreadState` значения являются допустимыми; например, поток не может быть одновременно `Aborted` и `Unstarted` состояний.  
+  После создания потока он находится в по крайней мере одно из состояний, до его окончания. Потокам, созданным в общеязыковой изначально находятся в <xref:System.Threading.ThreadState.Unstarted> состояние при внешнем, или неуправляемыми, потоки, приходящие в среду выполнения уже находятся в <xref:System.Threading.ThreadState.Running> состояние. Поток передается от <xref:System.Threading.ThreadState.Unstarted> состояния в <xref:System.Threading.ThreadState.Running> состояния путем вызова <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>. Если поток был выведен из состояния <xref:System.Threading.ThreadState.Unstarted> в результате вызова метода <xref:System.Threading.Thread.Start%2A>, он не может вернуться в состояние <xref:System.Threading.ThreadState.Unstarted> ни при каких условиях.  
+
+  Поток может быть более одного состояния в определенный момент времени. Например, если поток заблокируется при вызове <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType>и другой поток вызывает <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> для заблокированного потока, заблокированного потока будет находиться в <xref:System.Threading.ThreadState.WaitSleepJoin> и <xref:System.Threading.ThreadState.AbortRequested> состояний, в то же время. В данном случае, как только поток возвращается из вызова <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType> или прерван, он будет получать <xref:System.Threading.ThreadAbortException> для начала аварийного завершения. Не все комбинации `ThreadState` значения являются допустимыми; например, поток не может быть одновременно <xref:System.Threading.ThreadState.Aborted> и <xref:System.Threading.ThreadState.Unstarted> состояний.  
+
+  Поток никогда не может выйти из состояния <xref:System.Threading.ThreadState.Stopped> .  
   
 > [!IMPORTANT]
->  Существует две нумерации состояние потока: <xref:System.Threading.ThreadState?displayProperty=nameWithType> и <xref:System.Diagnostics.ThreadState?displayProperty=nameWithType>.  
+> Существует две нумерации состояние потока: <xref:System.Threading.ThreadState?displayProperty=nameWithType> и <xref:System.Diagnostics.ThreadState?displayProperty=nameWithType>.  
   
  В следующей таблице показаны действия, которые вызывают изменение состояния.  
   
@@ -64,20 +60,18 @@
 |Поток создается среда CLR.|<xref:System.Threading.ThreadState.Unstarted>|  
 |Другой поток вызывает <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> на новый поток, а вызов метода.<br /><br /> <xref:System.Threading.Thread.Start%2A> Метод не возвращает, пока новый поток был запущен. Нет способа узнать, в какой момент новый поток начнет выполнение, во время вызова <xref:System.Threading.Thread.Start%2A>.|<xref:System.Threading.ThreadState.Running>|  
 |Поток вызывает метод <xref:System.Threading.Thread.Sleep%2A>|<xref:System.Threading.ThreadState.WaitSleepJoin>|  
-|Поток вызывает <xref:System.Threading.Monitor.Wait%2A> другого объекта.|<xref:System.Threading.ThreadState.WaitSleepJoin>|  
+|Поток вызывает <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType> другого объекта.|<xref:System.Threading.ThreadState.WaitSleepJoin>|  
 |Поток вызывает <xref:System.Threading.Thread.Join%2A> другого потока.|<xref:System.Threading.ThreadState.WaitSleepJoin>|  
 |Другой поток вызывает метод <xref:System.Threading.Thread.Interrupt%2A>|<xref:System.Threading.ThreadState.Running>|  
 |Другой поток вызывает метод <xref:System.Threading.Thread.Suspend%2A>|<xref:System.Threading.ThreadState.SuspendRequested>|  
 |Поток отвечает на запрос <xref:System.Threading.Thread.Suspend%2A>.|<xref:System.Threading.ThreadState.Suspended>|  
 |Другой поток вызывает метод <xref:System.Threading.Thread.Resume%2A>|<xref:System.Threading.ThreadState.Running>|  
 |Другой поток вызывает метод <xref:System.Threading.Thread.Abort%2A>|<xref:System.Threading.ThreadState.AbortRequested>|  
-|Поток отвечает на запрос <xref:System.Threading.Thread.Abort%2A>.|<xref:System.Threading.ThreadState.Stopped>|  
-|Поток завершается.|Остановлено|  
+|Поток отвечает на <xref:System.Threading.Thread.Abort%2A> запроса.|<xref:System.Threading.ThreadState.Stopped>|  
+|Поток завершается.|<xref:System.Threading.ThreadState.Stopped>|  
   
- В дополнение к состояний, приведенных выше, есть также <xref:System.Threading.ThreadState.Background> состояние, которое указывает, является ли поток выполняется в фоновом режиме или передний план.  
-  
- Поток может быть более одного состояния в определенный момент времени. Например, если поток заблокируется при вызове <xref:System.Threading.Monitor.Wait%2A>и другой поток вызывает <xref:System.Threading.Thread.Abort%2A> для заблокированного потока, заблокированного потока будет находиться в <xref:System.Threading.ThreadState.WaitSleepJoin> и <xref:System.Threading.ThreadState.AbortRequested> состояний, в то же время. В данном случае, как только поток возвращается из вызова <xref:System.Threading.Monitor.Wait%2A> или прерван, он будет получать <xref:System.Threading.ThreadAbortException> для начала аварийного завершения.  
-  
+ В дополнение к состояний, приведенных выше, есть также <xref:System.Threading.ThreadState.Background> состояние, которое указывает, является ли поток выполняется в фоновом режиме или передний план. См. дополнительные сведения об [основных и фоновых потоках](~/docs/standard/threading/foreground-and-background-threads.md).  
+   
  <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithType> Свойство потока предоставляет текущее состояние потока. Приложения должны использовать битовую маску, чтобы определить, выполняется ли поток. Так как значение для <xref:System.Threading.ThreadState.Running> является ноль (0), проверить ли поток выполняется в следующем примере кода:
 
 ```csharp
@@ -91,7 +85,6 @@
  ]]></format>
     </remarks>
     <altmember cref="T:System.Threading.Thread" />
-    <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">Состояния управляемых потоков</related>
   </Docs>
   <Members>
     <Member MemberName="Aborted">

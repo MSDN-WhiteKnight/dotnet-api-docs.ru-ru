@@ -1,1 +1,1 @@
-Запросы из LINQ в SQL
+LINQ to SQL

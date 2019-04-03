@@ -1,13 +1,5 @@
 <Type Name="RelatedEnd" FullName="System.Data.Objects.DataClasses.RelatedEnd">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8431d148bad5db184232ae5849c1ff10ee15c1b8" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48601390" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class RelatedEnd : System.Data.Objects.DataClasses.IRelatedEnd" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c88bf71eae75892964aeb0558e60ca3a8296cb1f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57954744" /></Metadata><TypeSignature Language="C#" Value="public abstract class RelatedEnd : System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit RelatedEnd extends System.Object implements class System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.RelatedEnd" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class RelatedEnd&#xA;Implements IRelatedEnd" />
@@ -27,11 +19,11 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute>
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -67,7 +59,7 @@
         <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Происходит, если изменяется связанный элемент.</summary>
+        <summary>Происходит, если изменяется связанное окончание.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -111,15 +103,24 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
-        <Parameter Name="allowCollection" Type="System.Boolean" />
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="allowCollection" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
-        <param name="entities">To be added.</param>
-        <param name="allowCollection">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <typeparam name="TEntity">Тип <see cref="T:System.Collections.Generic.IEnumerable`1" /> коллекцию объектов сущности для присоединения.</typeparam>
+        <param name="entities">Коллекция <see cref="T:System.Collections.Generic.IEnumerable`1" /> объектов сущностей.</param>
+        <param name="allowCollection">Указывает, является ли присоединяемый объект частью коллекции.</param>
+        <summary>Определяет связь между двумя присоединенными объектами.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Метод `Attach<TEntity>(IEnumerable<TEntity>, Boolean)` предназначен для определения связи между объектом и связанным объектом, если оба объекта уже присоединены к контексту объекта. Задайте связанный объект в свойстве <xref:System.Data.Objects.DataClasses.EntityReference%601.Value> объекта <xref:System.Data.Objects.DataClasses.EntityReference%601> или вызовите метод <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> для коллекции <xref:System.Data.Objects.DataClasses.EntityCollection%601>, если связанный объект еще не присоединен к контексту объекта. Если оба объекта отсоединены, связь также можно определить, если задать связанный объект в свойстве <xref:System.Data.Objects.DataClasses.EntityReference%601.Value> объекта <xref:System.Data.Objects.DataClasses.EntityReference%601> или вызвать метод <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> для коллекции <xref:System.Data.Objects.DataClasses.EntityCollection%601> и затем присоединить корневой объект в графе объектов. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896271(v=vs.100)).
+
+Метод `Attach<TEntity>(IEnumerable<TEntity>, Boolean)` вызывается службами объектов во время операции присоединения к связанному элементу.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
@@ -143,7 +144,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает интерфейс <see cref="T:System.Collections.IEnumerator" />, проходящий по коллекции связанных объектов.</summary>
+        <summary>Возвращает объект <see cref="T:System.Collections.IEnumerator" />, выполняющий перебор коллекции связанных объектов.</summary>
         <returns>Объект <see cref="T:System.Collections.IEnumerator" />, выполняющий итерацию коллекции связанных объектов.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -165,10 +166,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
         </Attribute>
       </Attributes>
@@ -176,7 +177,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, показывающее, все ли связанные объекты загружены.</summary>
+        <summary>Получает значение, показывающее, все ли связанные объекты загружены.</summary>
         <value>Значение <see langword="true" />, если связанное окончание содержит все связанные объекты из базы данных; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -186,7 +187,7 @@
   
  Вызов <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A> метод <xref:System.Data.Objects.DataClasses.EntityCollection%601> задает <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> для `false`.  
   
- Также можно загрузить объект <xref:System.Data.Objects.DataClasses.EntityCollection%601> или <xref:System.Data.Objects.DataClasses.EntityReference%601>, если связанный элемент включен в путь запроса. Дополнительные сведения о диапазоне см. в разделе [загрузка связанных объектов](http://msdn.microsoft.com/library/452347d2-7b3b-44cd-9001-231299a28cb1).  
+ Также можно загрузить объект <xref:System.Data.Objects.DataClasses.EntityCollection%601> или <xref:System.Data.Objects.DataClasses.EntityReference%601>, если связанный элемент включен в путь запроса. Дополнительные сведения о диапазоне см. в разделе [загрузка связанных объектов](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896272(v=vs.100)).  
   
  `Load` Метод <xref:System.Data.Objects.DataClasses.EntityCollection%601> и <xref:System.Data.Objects.DataClasses.EntityReference%601> загружает связанные объекты из источника данных ли <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> является `true`.  
   
@@ -228,7 +229,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>В случае переопределения в производном классе загружает связанный объект или объекты в связанный элемент с параметром слияния по умолчанию.</summary>
+        <summary>В случае переопределения в производном классе загружает связанный объект или объекты в связанное окончание с параметром слияния по умолчанию.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -243,10 +244,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Если исходный объект был получен с помощью запроса <see cref="F:System.Data.Objects.MergeOption.NoTracking" />, а параметр <see cref="T:System.Data.Objects.MergeOption" /> отличен от <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> или связанные объекты уже загружены.  
   
-- или - 
+-или- 
 Если исходный объект не присоединен к <see cref="T:System.Data.Objects.ObjectContext" />.  
   
-- или - 
+-или- 
 Если исходный объект отслеживается, но находится в состоянии <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />, либо параметр <see cref="T:System.Data.Objects.MergeOption" />, используемый для <see cref="M:System.Data.Objects.DataClasses.RelatedEnd.Load" />, имеет значение <see cref="F:System.Data.Objects.MergeOption.NoTracking" />.</exception>
       </Docs>
     </Member>
@@ -272,13 +273,13 @@
         <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
       </Parameters>
       <Docs>
-        <param name="mergeOption">Параметр <see cref="T:System.Data.Objects.MergeOption" />, используемый для слияния объектов в существующую коллекцию <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />.</param>
-        <summary>Этот метод, переопределенный в производном классе, загружает объекты из связанного элемента с заданным параметром слияния.</summary>
+        <param name="mergeOption">Объект <see cref="T:System.Data.Objects.MergeOption" />, используемый при слиянии объектов в существующую коллекцию <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />.</param>
+        <summary>Этот метод, переопределенный в производном классе, загружает объекты из связанного окончания с заданным параметром слияния.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В классах <xref:System.Data.Objects.DataClasses.EntityCollection%601> и <xref:System.Data.Objects.DataClasses.EntityReference%601> этот метод переопределяется, чтобы загружать связанные объекты. `Load` вызывается для явной загрузки связанных объектов из связанного элемента, доступного с помощью свойства навигации. Дополнительные сведения см. в разделе [загрузка связанных объектов](http://msdn.microsoft.com/library/452347d2-7b3b-44cd-9001-231299a28cb1).  
+ В классах <xref:System.Data.Objects.DataClasses.EntityCollection%601> и <xref:System.Data.Objects.DataClasses.EntityReference%601> этот метод переопределяется, чтобы загружать связанные объекты. `Load` вызывается для явной загрузки связанных объектов из связанного элемента, доступного с помощью свойства навигации. Дополнительные сведения см. в разделе [загрузка связанных объектов](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896272(v=vs.100)).  
   
  Вызов <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> метода задает <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> флаг `true`.  
   
@@ -290,10 +291,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Если исходный объект был получен с помощью запроса <see cref="F:System.Data.Objects.MergeOption.NoTracking" />, а параметр <see cref="T:System.Data.Objects.MergeOption" /> отличен от <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> или связанные объекты уже загружены.  
   
-- или - 
+-или- 
 Если исходный объект не присоединен к <see cref="T:System.Data.Objects.ObjectContext" />.  
   
-- или - 
+-или- 
 Если исходный объект отслеживается, но находится в состоянии <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />, либо параметр <see cref="T:System.Data.Objects.MergeOption" />, используемый для <see cref="M:System.Data.Objects.DataClasses.RelatedEnd.Load" />, имеет значение <see cref="F:System.Data.Objects.MergeOption.NoTracking" />.</exception>
       </Docs>
     </Member>
@@ -315,17 +316,24 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="setIsLoaded" Type="System.Boolean" />
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="1" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="setIsLoaded" Type="System.Boolean" Index="2" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
-        <param name="collection">To be added.</param>
-        <param name="mergeOption">To be added.</param>
-        <param name="setIsLoaded">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <typeparam name="TEntity">Тип коллекции <see cref="T:System.Collections.Generic.IEnumerable`1" /> объектов сущностей для слияния.</typeparam>
+        <param name="collection">Коллекция <see cref="T:System.Collections.Generic.IEnumerable`1" /> объектов сущностей для добавления к этому связанному окончанию.</param>
+        <param name="mergeOption">Объект <see cref="T:System.Data.Objects.MergeOption" />, используемый при слиянии объектов в существующую коллекцию <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />.</param>
+        <param name="setIsLoaded">Показывает, является ли набор связанных объектов полным и соответствующим серверу. Операции, подобные <see cref="M:System.Data.Objects.DataClasses.EntityCollection`1.Load(System.Data.Objects.MergeOption)" />, устанавливают флаг setIsLoaded в значение <see langword="true" />, но метод <see cref="Overload:System.Data.Objects.DataClasses.EntityCollection`1.Attach" /> устанавливает его в значение <see langword="false" />.</param>
+        <summary>Выполняет слияние связанных сущностей в локальную коллекцию <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Метод `Merge<TEntity>` вызывается службами объектов при выполнении операций со связями.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDeserialized">
@@ -345,17 +353,17 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.Runtime.Serialization.OnDeserialized</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Runtime.Serialization.OnDeserialized</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">Сериализованный поток.</param>
@@ -380,10 +388,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
         </Attribute>
       </Attributes>
@@ -391,8 +399,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя связи, в которой участвует этот связанный элемент.</summary>
-        <value>Имя связи, в которой участвует этот элемент <see cref="T:System.Data.Objects.DataClasses.RelatedEnd" />. В имени связи не указано пространство имен.</value>
+        <summary>Получает имя отношения, в котором участвует данное связанное окончание.</summary>
+        <value>Имя отношения, в котором участвует этот объект <see cref="T:System.Data.Objects.DataClasses.RelatedEnd" />. Имя отношения не содержит пространства имен.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -413,10 +421,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
         </Attribute>
       </Attributes>
@@ -446,10 +454,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
         </Attribute>
       </Attributes>
@@ -457,18 +465,18 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя роли в исходном элементе связи.</summary>
-        <value>Объект типа <see cref="T:System.String" />, содержащий имя роли.</value>
+        <summary>Получает имя роли в исходном окончании отношения.</summary>
+        <value>Объект <see cref="T:System.String" />, содержащий имя роли.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Имя роли задается `Role` атрибут `End` в ассоциации, которая определяет связь в концептуальной модели. Дополнительные сведения см. в разделе [Элемент Association (CSDL)](http://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
+ Имя роли задается `Role` атрибут `End` в ассоциации, которая определяет связь в концептуальной модели. Дополнительные сведения см. в разделе [Элемент Association (CSDL)](https://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
   
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832), который был создан с [мастер моделей EDM](http://msdn.microsoft.com/library/423ec9a7-5464-43b7-a7ef-9f5f000848b5).  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832), который был создан с [мастер моделей EDM](https://msdn.microsoft.com/library/423ec9a7-5464-43b7-a7ef-9f5f000848b5).  
   
  В следующем примере добавляется новый `SalesOrderHeader` сущности `Contact` сущности. Затем он получает все связанные элементы из `Contact` сущности и выводится имя связи, имя исходной роли и имя целевой роли для каждого связанного элемента.  
   
@@ -511,13 +519,13 @@
         <Parameter Name="entity" Type="System.Data.Objects.DataClasses.IEntityWithRelationships" />
       </Parameters>
       <Docs>
-        <param name="entity">Объект для добавления в коллекцию. В этом объекте должен реализовываться интерфейс <see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />.</param>
+        <param name="entity">Объект, добавляемый в коллекцию. Данный объект должен реализовывать интерфейс <see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />.</param>
         <summary>Добавляет объект в связанный элемент.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
   
  <xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23Add%2A> Метод сохраняется только для совместимости с предыдущими версиями платформы .NET Framework.  
   
@@ -543,7 +551,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">Экземпляр сущности для добавления в связанное окончание.</param>
@@ -564,7 +572,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Присоединяет объект к связанному элементу.</summary>
+        <summary>Присоединяет объект к связанному окончанию.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Attach">
@@ -590,12 +598,12 @@
       </Parameters>
       <Docs>
         <param name="entity">Присоединяемый объект.</param>
-        <summary>Присоединяет объект к связанному элементу.</summary>
+        <summary>Присоединяет объект к связанному окончанию.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
   
  <xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23Attach%2A> Метод сохраняется только для совместимости с предыдущими версиями платформы .NET Framework.  
   
@@ -621,7 +629,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">Экземпляр сущности для присоединения к связанному окончанию.</param>
@@ -658,13 +666,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает интерфейс <see cref="T:System.Collections.IEnumerable" />, который представляет объекты, принадлежащие к связанному элементу.</summary>
-        <returns>Интерфейс <see cref="T:System.Collections.IEnumerable" />, который представляет объекты, принадлежащие связанному элементу.</returns>
+        <summary>Возвращает объект <see cref="T:System.Collections.IEnumerable" />, который представляет объекты, принадлежащие к связанному окончанию.</summary>
+        <returns>Объект <see cref="T:System.Collections.IEnumerable" />, который представляет объекты, принадлежащие связанному окончанию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
   
  В классах <xref:System.Data.Objects.DataClasses.EntityCollection%601> и <xref:System.Data.Objects.DataClasses.EntityReference%601> переопределяется свойство <xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23CreateSourceQuery%2A>, чтобы возвращать запрос <xref:System.Data.Objects.ObjectQuery%601>. В результате выполнения этого запроса возвращается тот же набор объектов, который принадлежит к связанному элементу.  
   
@@ -704,13 +712,13 @@
       </Parameters>
       <Docs>
         <param name="entity">Экземпляр сущности для удаления из коллекции.</param>
-        <summary>Удаляет объект из связанного элемента коллекции.</summary>
+        <summary>Удаляет объект из связанного окончания коллекции.</summary>
         <returns>Значение, указывающее, удален ли объект.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Data.Objects.DataClasses.RelatedEnd> приведен к типу интерфейса <xref:System.Data.Objects.DataClasses.IRelatedEnd>.  
   
  <xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23Remove%2A> Метод сохраняется только для совместимости с предыдущими версиями платформы .NET Framework.  
   
@@ -736,7 +744,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">Экземпляр сущности для удаления из связанного окончания.</param>
@@ -769,10 +777,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
         </Attribute>
       </Attributes>
@@ -780,18 +788,18 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя роли в целевом элементе связи.</summary>
-        <value>Объект типа <see cref="T:System.String" />, содержащий имя роли.</value>
+        <summary>Получает имя роли в целевом окончании отношения.</summary>
+        <value>Объект <see cref="T:System.String" />, содержащий имя роли.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Имя роли задается `Role` атрибут `End` в ассоциации, которая определяет связь в концептуальной модели. Дополнительные сведения см. в разделе [Элемент Association (CSDL)](http://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
+ Имя роли задается `Role` атрибут `End` в ассоциации, которая определяет связь в концептуальной модели. Дополнительные сведения см. в разделе [Элемент Association (CSDL)](https://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
   
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В примере добавляется новый `SalesOrderHeader` сущности `Contact` сущности. Затем он получает все связанные элементы из `Contact` сущности и выводится имя связи, имя исходной роли и имя целевой роли для каждого связанного элемента.  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В примере добавляется новый `SalesOrderHeader` сущности `Contact` сущности. Затем он получает все связанные элементы из `Contact` сущности и выводится имя связи, имя исходной роли и имя целевой роли для каждого связанного элемента.  
   
  [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
  [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
@@ -820,17 +828,33 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entity" Type="TEntity" />
-        <Parameter Name="index" Type="System.Int32" />
-        <Parameter Name="allowCollection" Type="System.Boolean" />
+        <Parameter Name="entity" Type="TEntity" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="allowCollection" Type="System.Boolean" Index="2" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
-        <param name="entity">To be added.</param>
-        <param name="index">To be added.</param>
-        <param name="allowCollection">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <typeparam name="TEntity">Тип проверяемого объекта.</typeparam>
+        <param name="entity">Проверяемый объект.</param>
+        <param name="index">Позиция проверяемого объекта в коллекции.</param>
+        <param name="allowCollection">Указывает, является ли объект элементом коллекции.</param>
+        <summary>Определяет, можно ли присоединить объект к локальной коллекции или ссылке.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Метод `ValidateEntityForAttach<TEntity>` вызывается службами объектов при выполнении операции присоединения.
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Если присоединяемый объект имеет значение <see langword="null" />.
+
+-или-
+
+Объект, присоединяемый к связанному элементу, не существует в том же контексте <see cref="T:System.Data.Objects.ObjectContext" />, что и исходный объект.
+
+-или-
+
+Присоединяемый объект находится в состоянии <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ValidateLoad&lt;TEntity&gt;">
@@ -851,16 +875,34 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="relatedEndName" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="relatedEndName" Type="System.String" Index="1" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
-        <param name="mergeOption">To be added.</param>
-        <param name="relatedEndName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <typeparam name="TEntity">Тип проверяемого объекта.</typeparam>
+        <param name="mergeOption">Объект <see cref="T:System.Data.Objects.MergeOption" />, используемый при слиянии объектов в существующую коллекцию <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />.</param>
+        <param name="relatedEndName">Имя связанного окончания.</param>
+        <summary>Убеждается, что связанный объект или объекты можно успешно загрузить в локальную коллекцию или ссылку.</summary>
+        <returns>Объект <see cref="T:System.Data.Objects.ObjectQuery`1" />, используемый для загрузки объектов в связанное окончание.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Службы объектов получают запрос <xref:System.Data.Objects.ObjectQuery%601> путем вызова [IRelatedEnd.CreateSourceQuery](xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23CreateSourceQuery) метод.
+
+Службы объектов вызывают метод `ValidateLoad<TEntity>` перед выполнением операции загрузки, чтобы обеспечить успешное завершение операции.
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Если исходный объект был получен с помощью запроса <see cref="F:System.Data.Objects.MergeOption.NoTracking" />, а параметр <see cref="T:System.Data.Objects.MergeOption" /> отличен от <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> или связанные объекты уже загружены.
+
+-или-
+
+Если исходный объект не присоединен к <see cref="T:System.Data.Objects.ObjectContext" />.
+
+-или-
+
+Если исходный объект отслеживается, но находится в состоянии <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />, либо параметр <see cref="T:System.Data.Objects.MergeOption" />, используемый для <see cref="Overload:System.Data.Objects.DataClasses.RelatedEnd.Load" />, имеет значение <see cref="F:System.Data.Objects.MergeOption.NoTracking" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ValidateOwnerForAttach">
@@ -880,8 +922,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Подтверждает, что объект, которому принадлежит связанный элемент, поддерживает операцию присоединения.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Службы объектов вызывают метод ValidateOwnerForAttach перед выполнением операции присоединения, чтобы обеспечить успешное завершение операции.
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Если исходный объект не присоединен к контексту <see cref="T:System.Data.Objects.ObjectContext" />, был возвращен запросом <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> либо не находится в состоянии <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Unchanged" />.</exception>
       </Docs>
     </Member>
   </Members>

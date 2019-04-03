@@ -1,13 +1,5 @@
 <Type Name="TaskLoggingHelper" FullName="Microsoft.Build.Utilities.TaskLoggingHelper">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0b2de6aa15a3962b686445d634393647f9e7b549" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="40001638" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class TaskLoggingHelper : MarshalByRefObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3671aa7fd5b74abbc9235a93194b0b990629bd18" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916416" /></Metadata><TypeSignature Language="C#" Value="public class TaskLoggingHelper : MarshalByRefObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskLoggingHelper extends System.MarshalByRefObject" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.TaskLoggingHelper" />
   <TypeSignature Language="VB.NET" Value="Public Class TaskLoggingHelper&#xA;Inherits MarshalByRefObject" />
@@ -94,8 +86,8 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="buildEngine" Type="Microsoft.Build.Framework.IBuildEngine" />
-        <Parameter Name="taskName" Type="System.String" />
+        <Parameter Name="buildEngine" Type="Microsoft.Build.Framework.IBuildEngine" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="taskName" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="buildEngine">Обработчик построения.</param>
@@ -178,8 +170,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="FormatResourceString">
@@ -209,7 +200,7 @@
         <Parameter Name="resourceName" Type="System.String" />
         <Parameter Name="args" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -232,8 +223,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Строковый ресурс, указанный параметром <paramref name="resourceName" />, не существует.</exception>
         <exception cref="T:System.InvalidOperationException">Не задано свойство <see cref="P:Microsoft.Build.Utilities.Task.TaskResources" /> задачи-владельца.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="resourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="resourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="FormatString">
@@ -263,7 +253,7 @@
         <Parameter Name="unformatted" Type="System.String" />
         <Parameter Name="args" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -282,8 +272,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="unformatted" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="unformatted" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetResourceMessage">
@@ -302,12 +291,12 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="resourceName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="resourceName">Имя ресурса.</param>
         <summary>Получает сообщение из ресурса в библиотеке задач.</summary>
-        <returns>Возвращает сообщение из ресурса в библиотеке задач.</returns>
+        <returns>Сообщение из ресурса в библиотеке задач.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -340,8 +329,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, показывающее, заносились ли задачей ошибки в журнал с помощью этого вспомогательного объекта ведения журнала.</summary>
-        <value>Значение <see langword="true" />, если задача внесла в журнал ошибки с помощью этого вспомогательного объекта ведения журнала. В противном случае — значение <see langword="false" />.</value>
+        <summary>Получает значение, указывающее, записала ли задача ошибки с помощью этого вспомогательного объекта ведения журнала.</summary>
+        <value>Значение <see langword="true" />, если задача записала в журнал ошибки с помощью этого вспомогательного объекта ведения журнала; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -534,16 +523,16 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="subcategory" Type="System.String" />
-        <Parameter Name="code" Type="System.String" />
-        <Parameter Name="helpKeyword" Type="System.String" />
-        <Parameter Name="file" Type="System.String" />
-        <Parameter Name="lineNumber" Type="System.Int32" />
-        <Parameter Name="columnNumber" Type="System.Int32" />
-        <Parameter Name="endLineNumber" Type="System.Int32" />
-        <Parameter Name="endColumnNumber" Type="System.Int32" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="messageArgs" Type="System.Object[]">
+        <Parameter Name="subcategory" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="code" Type="System.String" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="helpKeyword" Type="System.String" Index="2" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="file" Type="System.String" Index="3" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="lineNumber" Type="System.Int32" Index="4" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="columnNumber" Type="System.Int32" Index="5" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="endLineNumber" Type="System.Int32" Index="6" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="endColumnNumber" Type="System.Int32" Index="7" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="message" Type="System.String" Index="8" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="messageArgs" Type="System.Object[]" Index="9" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -566,7 +555,7 @@
   
 Потокобезопасный.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Вызывается, когда <c>message</c> имеет значение NULL.</exception>
+        <exception cref="T:System.ArgumentNullException">Создается, когда <paramref name="message" /> имеет значение null.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogError">
@@ -620,7 +609,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -645,8 +634,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogError">
@@ -684,7 +672,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -712,8 +700,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogErrorFromException">
@@ -766,8 +753,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="e" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogErrorFromException">
@@ -813,8 +799,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="e" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogErrorFromException">
@@ -852,8 +837,7 @@
         <param name="file">Имя файла, относящегося к исключению, или значение <see langword="null" />, если следует заносить в журнал файл проекта.</param>
         <summary>Заносит в журнал ошибку, используя сообщение из заданного исключения и всех внутренних исключений, и при необходимости приводит трассировку стека.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="e" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogErrorFromResources">
@@ -897,14 +881,14 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="messageResourceName">Имя строкового ресурса для загрузки.</param>
+        <param name="messageResourceName">Имя загружаемого строкового ресурса.</param>
         <param name="messageArgs">Аргументы для форматирования загружаемой строки.</param>
         <summary>Заносит в журнал ошибку, используя заданную строку ресурса.</summary>
         <remarks>
@@ -915,8 +899,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogErrorFromResources">
@@ -954,7 +937,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -982,8 +965,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogErrorWithCodeFromResources">
@@ -1027,7 +1009,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1047,8 +1029,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogErrorWithCodeFromResources">
@@ -1084,7 +1065,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1114,8 +1095,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogExternalProjectFinished">
@@ -1189,7 +1169,7 @@
         <param name="message">Текстовое сообщение.</param>
         <param name="helpKeyword">Ключевое слово справки.</param>
         <param name="projectFile">Имя проекта.</param>
-        <param name="targetNames">Конечные объекты сборки. Пустая строка указывает целевые объекты по умолчанию.</param>
+        <param name="targetNames">Целевые объекты для построения. Пустая строка указывает целевые объекты по умолчанию.</param>
         <summary>Позволяет занести в журнал пользовательское событие построения <see cref="T:Microsoft.Build.Framework.ExternalProjectStartedEventArgs" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1245,7 +1225,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1270,8 +1250,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogMessage">
@@ -1302,7 +1281,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1321,8 +1300,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogMessage">
@@ -1341,17 +1319,17 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="subcategory" Type="System.String" />
-        <Parameter Name="code" Type="System.String" />
-        <Parameter Name="helpKeyword" Type="System.String" />
-        <Parameter Name="file" Type="System.String" />
-        <Parameter Name="lineNumber" Type="System.Int32" />
-        <Parameter Name="columnNumber" Type="System.Int32" />
-        <Parameter Name="endLineNumber" Type="System.Int32" />
-        <Parameter Name="endColumnNumber" Type="System.Int32" />
-        <Parameter Name="importance" Type="Microsoft.Build.Framework.MessageImportance" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="messageArgs" Type="System.Object[]">
+        <Parameter Name="subcategory" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="code" Type="System.String" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="helpKeyword" Type="System.String" Index="2" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="file" Type="System.String" Index="3" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="lineNumber" Type="System.Int32" Index="4" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="columnNumber" Type="System.Int32" Index="5" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="endLineNumber" Type="System.Int32" Index="6" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="endColumnNumber" Type="System.Int32" Index="7" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="importance" Type="Microsoft.Build.Framework.MessageImportance" Index="8" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="message" Type="System.String" Index="9" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="messageArgs" Type="System.Object[]" Index="10" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1375,7 +1353,7 @@
   
 Потокобезопасный.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Вызывается, когда <c>message</c> имеет значение NULL.</exception>
+        <exception cref="T:System.ArgumentNullException">Создается, когда <paramref name="message" /> имеет значение null.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogMessageFromResources">
@@ -1419,7 +1397,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1437,8 +1415,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogMessageFromResources">
@@ -1469,7 +1446,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1488,8 +1465,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogMessageFromText">
@@ -1531,8 +1507,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="lineOfText" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="lineOfText" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogMessagesFromFile">
@@ -1587,8 +1562,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogMessagesFromFile">
@@ -1672,8 +1646,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="stream" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogWarning">
@@ -1717,7 +1690,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1735,8 +1708,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogWarning">
@@ -1774,7 +1746,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1785,9 +1757,9 @@
         <param name="warningCode">Код предупреждения.</param>
         <param name="helpKeyword">Ключевое слово справки для связи с предупреждением.</param>
         <param name="file">Путь к файлу, содержащему предупреждение.</param>
-        <param name="lineNumber">Строка в файле, где возникло предупреждение.</param>
-        <param name="columnNumber">Столбец в файле, где возникло предупреждение.</param>
-        <param name="endLineNumber">Последняя строка в файле, где возникло предупреждение.</param>
+        <param name="lineNumber">Строка в файле, где было создано предупреждение.</param>
+        <param name="columnNumber">Столбец в файле, где было создано предупреждение.</param>
+        <param name="endLineNumber">Последняя строка в файле, где было создано предупреждение.</param>
         <param name="endColumnNumber">Последний столбец в файле, где было создано предупреждение.</param>
         <param name="message">Сообщение.</param>
         <param name="messageArgs">Необязательные аргументы для форматирования строки сообщения.</param>
@@ -1802,8 +1774,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="message" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogWarningFromException">
@@ -1856,8 +1827,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="e" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogWarningFromException">
@@ -1898,8 +1868,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="e" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogWarningFromResources">
@@ -1943,7 +1912,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1961,8 +1930,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogWarningFromResources">
@@ -2000,7 +1968,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2011,10 +1979,10 @@
         <param name="warningCode">Код предупреждения.</param>
         <param name="helpKeyword">Ключевое слово справки для связи с предупреждением.</param>
         <param name="file">Путь к файлу, содержащему предупреждение.</param>
-        <param name="lineNumber">Строка в файле, где возникло предупреждение.</param>
-        <param name="columnNumber">Столбец в файле, где возникло предупреждение.</param>
-        <param name="endLineNumber">Последняя строка в файле, где возникло предупреждение.</param>
-        <param name="endColumnNumber">Последний столбец в файле, где возникло предупреждение.</param>
+        <param name="lineNumber">Строка в файле, где было создано предупреждение.</param>
+        <param name="columnNumber">Столбец в файле, где было создано предупреждение.</param>
+        <param name="endLineNumber">Последняя строка в файле, где было создано предупреждение.</param>
+        <param name="endColumnNumber">Последний столбец в файле, где было создано предупреждение.</param>
         <param name="messageResourceName">Имя загружаемого строкового ресурса.</param>
         <param name="messageArgs">Аргументы для форматирования загружаемой строки.</param>
         <summary>Заносит в журнал предупреждение, используя заданную строку ресурса и другие сведения о предупреждении.</summary>
@@ -2028,8 +1996,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="LogWarningWithCodeFromResources">
@@ -2073,7 +2040,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2093,8 +2060,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LogWarningWithCodeFromResources">
@@ -2130,7 +2096,7 @@
         <Parameter Name="messageResourceName" Type="System.String" />
         <Parameter Name="messageArgs" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-2.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2139,10 +2105,10 @@
       <Docs>
         <param name="subcategoryResourceName">Имя строкового ресурса, описывающего тип предупреждения.</param>
         <param name="file">Путь к файлу, содержащему предупреждение.</param>
-        <param name="lineNumber">Строка в файле, где возникло предупреждение.</param>
-        <param name="columnNumber">Столбец в файле, где возникло предупреждение.</param>
-        <param name="endLineNumber">Последняя строка в файле, где возникло предупреждение.</param>
-        <param name="endColumnNumber">Последний столбец в файле, где возникло предупреждение.</param>
+        <param name="lineNumber">Строка в файле, где было создано предупреждение.</param>
+        <param name="columnNumber">Столбец в файле, где было создано предупреждение.</param>
+        <param name="endLineNumber">Последняя строка в файле, где было создано предупреждение.</param>
+        <param name="endColumnNumber">Последний столбец в файле, где было создано предупреждение.</param>
         <param name="messageResourceName">Имя загружаемого строкового ресурса.</param>
         <param name="messageArgs">Аргументы для форматирования загружаемой строки.</param>
         <summary>Заносит в журнал предупреждение с кодом предупреждения, используя заданную строку ресурса и другие сведения о предупреждении.</summary>
@@ -2160,8 +2126,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="messageResourceName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="messageResourceName" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="MarkAsInactive">
@@ -2259,7 +2224,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает ресурсы, относящиеся к языку и региональным параметрам и используемые методами ведения журнала.</summary>
-        <value>Объект <see cref="T:System.Resources.ResourceManager" />, который представляет ресурсы, относящиеся к языку и региональным параметрам и используемые методами ведения журнала. Данное значение может быть <see langword="null" />.</value>
+        <value>Объект <see cref="T:System.Resources.ResourceManager" />, который представляет ресурсы, относящиеся к языку и региональным параметрам и используемые методами ведения журнала. Это значение может быть равно <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

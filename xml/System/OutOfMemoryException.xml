@@ -1,13 +1,5 @@
 <Type Name="OutOfMemoryException" FullName="System.OutOfMemoryException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="9e797fed7f8fefcccea19d2137f9ad6994875353" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48626052" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class OutOfMemoryException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="72cb02fe2746be503bf9919aceba71c44b50108a" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58413986" /></Metadata><TypeSignature Language="C#" Value="public class OutOfMemoryException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit OutOfMemoryException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.OutOfMemoryException" />
   <TypeSignature Language="VB.NET" Value="Public Class OutOfMemoryException&#xA;Inherits SystemException" />
@@ -42,8 +34,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -51,12 +43,20 @@
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- <xref:System.OutOfMemoryException> Исключение имеет две основных причины:  
+## Remarks
+
+<xref:System.OutOfMemoryException> использует значение HRESULT `COR_E_OUTOFMEMORY`, которая имеет значение 0x8007000E.  
+  
+Список начальных значений свойств для экземпляра <xref:System.OutOfMemoryException>, см. в разделе <xref:System.OutOfMemoryException.%23ctor%2A> конструкторы.  
+  
+> [!NOTE]
+>  Значение наследуемого <xref:System.Exception.Data%2A> свойство всегда имеет `null`.  
+  
+<xref:System.OutOfMemoryException> Исключение имеет две основных причины:  
   
 -   Вы пытаетесь развернуть <xref:System.Text.StringBuilder> объекта за пределы длины, определяется его <xref:System.Text.StringBuilder.MaxCapacity%2A?displayProperty=nameWithType> свойство.  
   
--   Среда CLR не удалось выделить достаточно непрерывной памяти, для успешного выполнения операции. Это исключение может генерироваться любого свойства назначения или вызов метода, требует выделения памяти. Дополнительные сведения о причине появления <xref:System.OutOfMemoryException> исключения, см. в разделе [«Out of Memory» не ссылается на физическую память](http://blogs.msdn.com/b/ericlippert/archive/2009/06/08/out-of-memory-does-not-refer-to-physical-memory.aspx).  
+-   Среда CLR не удалось выделить достаточно непрерывной памяти, для успешного выполнения операции. Это исключение может генерироваться любого свойства назначения или вызов метода, требует выделения памяти. Дополнительные сведения о причине появления <xref:System.OutOfMemoryException> исключения, см. в разделе [«Out of Memory» не ссылается на физическую память](https://blogs.msdn.com/b/ericlippert/archive/2009/06/08/out-of-memory-does-not-refer-to-physical-memory.aspx).  
   
      Этот тип <xref:System.OutOfMemoryException> исключение представляет катастрофического сбоя. Если вы решили обработки исключения, следует включить `catch` блок, который вызывает <xref:System.Environment.FailFast%2A?displayProperty=nameWithType> метод, чтобы завершить работу приложения и добавьте запись в журнал событий системы, как показано в следующем примере.  
   
@@ -65,81 +65,81 @@
   
  Некоторые условия, при которых исключения и действия, которые можно предпринять для ее устранения включают следующее:  
   
- При вызове <xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType> метод.  
- Вы пытаетесь увеличить длину <xref:System.Text.StringBuilder> объектов без учета размера, указанного по его <xref:System.Text.StringBuilder.MaxCapacity%2A?displayProperty=nameWithType> свойство. В следующем примере показано <xref:System.OutOfMemoryException> исключение, возникающее при вызове <xref:System.Text.StringBuilder.Insert%28System.Int32%2CSystem.String%2CSystem.Int32%29?displayProperty=nameWithType> метод, когда предпринимается попытка вставки строки, которые могли бы вызвать объекта <xref:System.Text.StringBuilder.Length%2A> свойство к превышению максимальной емкости.  
+**При вызове <xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType> метод.**  
+
+Вы пытаетесь увеличить длину <xref:System.Text.StringBuilder> объектов без учета размера, указанного по его <xref:System.Text.StringBuilder.MaxCapacity%2A?displayProperty=nameWithType> свойство. В следующем примере показано <xref:System.OutOfMemoryException> исключение, возникающее при вызове <xref:System.Text.StringBuilder.Insert%28System.Int32%2CSystem.String%2CSystem.Int32%29?displayProperty=nameWithType> метод, когда предпринимается попытка вставки строки, которые могли бы вызвать объекта <xref:System.Text.StringBuilder.Length%2A> свойство к превышению максимальной емкости.  
   
- [!code-csharp[System.OutOfMemoryException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/sb_example1.cs#1)]
- [!code-vb[System.OutOfMemoryException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/sb_example1.vb#1)]  
+[!code-csharp[System.OutOfMemoryException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/sb_example1.cs#1)]
+[!code-vb[System.OutOfMemoryException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/sb_example1.vb#1)]  
   
- Необходимо выполнить одно из следующих действий, чтобы устранить эту ошибку:  
+Необходимо выполнить одно из следующих действий, чтобы устранить эту ошибку:  
   
 -   Замените вызов <xref:System.Text.StringBuilder.%23ctor%28System.Int32%2CSystem.Int32%29?displayProperty=nameWithType> конструктор с помощью вызова любых других <xref:System.Text.StringBuilder> перегрузку конструктора. Максимальная емкость вашей <xref:System.Text.StringBuilder> объекта устанавливается значение по умолчанию, который является <xref:System.Int32.MaxValue?displayProperty=nameWithType>.  
-  
+
 -   Вызовите <xref:System.Text.StringBuilder.%23ctor%28System.Int32%2CSystem.Int32%29?displayProperty=nameWithType> конструктор с `maxCapacity` значение, достаточное для размещения любого расширений для <xref:System.Text.StringBuilder> объекта.  
   
- Ваше приложение работает как 32-разрядном процессе.  
- 32-разрядных процессов можно выделить не более 2 ГБ памяти виртуальной пользовательского режима в 32-разрядных системах и 4 ГБ памяти виртуальной пользовательского режима, в 64-разрядных системах. Это можно сделать более сложным для CLR выделить достаточно непрерывной памяти, при необходимости выделении большого. Напротив 64-разрядных процессов можно выделить до 8 ТБ виртуальной памяти. Чтобы устранить это исключение, перекомпилируйте приложение для 64-разрядной платформы. Сведения о предназначенных для конкретных платформ в Visual Studio, см. в разделе [как: Настройка проекта для конкретной платформы](http://msdn.microsoft.com/library/845302fc-273d-4f81-820a-7296ce91bd76).  
+**Ваше приложение работает как 32-разрядном процессе.**
+
+32-разрядных процессов можно выделить не более 2 ГБ памяти виртуальной пользовательского режима в 32-разрядных системах и 4 ГБ памяти виртуальной пользовательского режима, в 64-разрядных системах. Это можно сделать более сложным для CLR выделить достаточно непрерывной памяти, при необходимости выделении большого. Напротив 64-разрядных процессов можно выделить до 8 ТБ виртуальной памяти. Чтобы устранить это исключение, перекомпилируйте приложение для 64-разрядной платформы. Сведения о предназначенных для конкретных платформ в Visual Studio, см. в разделе [как: настроить целевые платформы в проектах](https://msdn.microsoft.com/library/845302fc-273d-4f81-820a-7296ce91bd76).  
   
- В приложении существует утечка неуправляемых ресурсов  
- Хотя сборщик мусора может освободить память, выделенная для управляемых типов, он не контролирует память, выделенная для неуправляемые ресурсы, такие как операционная система обрабатывает (включая дескрипторы файлов, отображенные в память файлы, каналы, разделы реестра и дескрипторы ожидания) и блоки памяти, выделенные непосредственно вызовы Windows API или путем вызова функции выделения памяти, таких как `malloc`. Типы, которые используют неуправляемые ресурсы, реализуют <xref:System.IDisposable> интерфейс.  
+**В приложении существует утечка неуправляемых ресурсов** 
+
+Хотя сборщик мусора может освободить память, выделенная для управляемых типов, он не контролирует память, выделенная для неуправляемые ресурсы, такие как операционная система обрабатывает (включая дескрипторы файлов, отображенные в память файлы, каналы, разделы реестра и дескрипторы ожидания) и блоки памяти, выделенные непосредственно вызовы Windows API или путем вызова функции выделения памяти, таких как `malloc`. Типы, которые используют неуправляемые ресурсы, реализуют <xref:System.IDisposable> интерфейс.  
+
+При использовании типа, который использует неуправляемые ресурсы, необходимо обязательно вызвать его <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> метод после завершения его использования. (Некоторые типы также реализуют `Close` метод, идентичный функции `Dispose` метод.) Дополнительные сведения см. в разделе [с помощью объектов, реализовывать IDisposable](~/docs/standard/garbage-collection/using-objects.md) раздела.  
+
+Если вы создали типу, который использует неуправляемые ресурсы, убедитесь, что реализации шаблона удаления и, при необходимости указан метод завершения. Дополнительные сведения см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md) и <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.  
   
- При использовании типа, который использует неуправляемые ресурсы, необходимо обязательно вызвать его <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> метод после завершения его использования. (Некоторые типы также реализуют `Close` метод, идентичный функции `Dispose` метод.) Дополнительные сведения см. в разделе [с помощью объектов, реализовывать IDisposable](~/docs/standard/garbage-collection/using-objects.md) раздела.  
+**Вы пытаетесь создать большой массив в 64-разрядного процесса**
+
+По умолчанию среда CLR в .NET Framework не поддерживает отдельных объектов, размер которых превышает 2 ГБ. Чтобы переопределить это поведение по умолчанию, можно использовать [ \<gcAllowVeryLargeObjects >](~/docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) параметр для включения массивы, общий размер которых превышает 2 ГБ. В .NET Core поддерживает для массивов больше 2 ГБ включено по умолчанию. 
   
- Если вы создали типу, который использует неуправляемые ресурсы, убедитесь, что реализации шаблона удаления и, при необходимости указан метод завершения. Дополнительные сведения см. в разделе [шаблон Dispose](~/docs/standard/design-guidelines/dispose-pattern.md), [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md), и <xref:System.Object.Finalize%2A?displayProperty=nameWithType> разделы.  
-  
- Вы пытаетесь создать большой массив в 64-разрядном процессе.  
- По умолчанию среда CLR не поддерживает отдельных объектов, размер которых превышает 2 ГБ. Чтобы переопределить это поведение по умолчанию, можно использовать параметр файла конфигурации для включения массивы, общий размер которых превышает 2 ГБ.  
-  
- Вы работаете с очень большими наборами данных (таких как массивы, коллекции или наборов данных базы данных) в памяти.  
- Когда интеллектуальных анализов данных и наборы данных, которые находятся в памяти становятся настолько большим, что среда CLR не удалось выделить достаточно непрерывной памяти для них, <xref:System.OutOfMemoryException> результаты исключения.  
-  
- Чтобы предотвратить <xref:System.OutOfMemoryException> исключения, необходимо изменить приложение таким образом, меньше данных, находящихся в памяти или данные разделяются на сегменты, которые требуют меньшего размера выделения памяти. Пример:  
-  
+**Вы работаете с очень большими наборами данных (таких как массивы, коллекции или наборов данных базы данных) в памяти.**
+
+Когда интеллектуальных анализов данных и наборы данных, которые находятся в памяти становятся настолько большим, что среда CLR не удалось выделить достаточно непрерывной памяти для них, <xref:System.OutOfMemoryException> результаты исключения.  
+
+Чтобы предотвратить <xref:System.OutOfMemoryException> исключения, необходимо изменить приложение таким образом, меньше данных, находящихся в памяти или данные разделяются на сегменты, которые требуют меньшего размера выделения памяти. Например:  
+
 -   Если вы являетесь извлечение всех данных из базы данных и их фильтрации в вашем приложении, чтобы свести к минимуму обращений к серверу, следует изменить запросы, чтобы вернуть только подмножество данных, необходимый вашему приложению. При работе с большими таблицами, несколько запросов почти всегда являются более эффективно, чем извлечение всех данных в одной таблице и затем преобразовывая их.  
-  
+
 -   При выполнении запросов, динамически создаваемые пользователями, следует убедиться, что число записей, возвращаемых запросом ограничено.  
-  
+
 -   Если вы используете больших массивов или других коллекция объектов, результаты которого размер в <xref:System.OutOfMemoryException> исключение, следует изменить приложение для работы в подмножествах данных, а не все одновременно с ним работать.  
   
- Следующий пример возвращает массив, который состоит из значения с плавающей запятой 200 млн, а затем вычисляет их среднее значение. Выходные данные примера показано, что, так как в примере сохраняется весь массив в памяти, прежде чем он вычисляет среднее значение, <xref:System.OutOfMemoryException> — возникает исключение.  
+Следующий пример возвращает массив, который состоит из значения с плавающей запятой 200 млн, а затем вычисляет их среднее значение. Выходные данные примера показано, что, так как в примере сохраняется весь массив в памяти, прежде чем он вычисляет среднее значение, <xref:System.OutOfMemoryException> возникает исключение.  
+
+[!code-csharp[System.OutOfMemoryException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data1.cs#3)]
+[!code-vb[System.OutOfMemoryException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data1.vb#3)]  
   
- [!code-csharp[System.OutOfMemoryException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data1.cs#3)]
- [!code-vb[System.OutOfMemoryException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data1.vb#3)]  
+Следующий пример исключает <xref:System.OutOfMemoryException> исключения путем обработки входящих данных без сохранения в памяти, сериализация данных в файл, при необходимости для разрешения дальнейшей обработке (эти строки будут закомментированы в примере набора данных Поскольку в этом случае они создают файл, размер которых превышает 1 ГБ) и возвращает среднее значение вычисляемого и количество вариантов вызывающую программу.  
+
+[!code-csharp[System.OutOfMemoryException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data2.cs#4)]
+[!code-vb[System.OutOfMemoryException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data2.vb#4)]  
   
- Следующий пример исключает <xref:System.OutOfMemoryException> исключения путем обработки входящих данных без сохранения в памяти, сериализация данных в файл, при необходимости для разрешения дальнейшей обработке (эти строки будут закомментированы в примере набора данных Поскольку в этом случае они создают файл, размер которых превышает 1 ГБ) и возвращает среднее значение вычисляемого и количество вариантов вызывающую программу.  
+**Несколько раз объединении больших строк.** 
+
+Поскольку строки являются неизменяемыми, каждой операции сцепления строк создает новую строку. Влияние для коротких строк, или для небольшого числа операций объединения незначительны. Но для больших строк или большое количество операций объединения, объединение строк может привести к большое количество операций выделения памяти и фрагментации памяти, низкая производительность и, возможно, <xref:System.OutOfMemoryException> исключения.  
+
+При объединении больших строк или выполнения большого количества операций объединения, следует использовать <xref:System.Text.StringBuilder> вместо класса <xref:System.String> класса. При обработке строки завершена, преобразовать <xref:System.Text.StringBuilder> экземпляр в строку путем вызова <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> метод.  
   
- [!code-csharp[System.OutOfMemoryException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data2.cs#4)]
- [!code-vb[System.OutOfMemoryException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data2.vb#4)]  
-  
- Несколько раз объединении больших строк.  
- Поскольку строки являются неизменяемыми, каждой операции сцепления строк создает новую строку. Влияние для коротких строк, или для небольшого числа операций объединения незначительны. Но для больших строк или большое количество операций объединения, объединение строк может привести к большое количество операций выделения памяти и фрагментации памяти, низкая производительность и, возможно, <xref:System.OutOfMemoryException> исключения.  
-  
- При объединении больших строк или выполнения большого количества операций объединения, следует использовать <xref:System.Text.StringBuilder> вместо класса <xref:System.String> класса. При обработке строки завершена, преобразовать <xref:System.Text.StringBuilder> экземпляр в строку путем вызова <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> метод.  
-  
- Закрепить большом числе объектов в памяти.  
- Закрепление большом числе объектов в памяти в течение длительных периодов времени будет трудно выделить смежные блоки памяти сборщика мусора. Если вы закрепили большом числе объектов в памяти, например с помощью `fixed` инструкции на языке C# или путем вызова <xref:System.Runtime.InteropServices.GCHandle.Alloc%28System.Object%2CSystem.Runtime.InteropServices.GCHandleType%29?displayProperty=nameWithType> метод с типом дескриптора <xref:System.Runtime.InteropServices.GCHandleType.Pinned?displayProperty=nameWithType>, можно выполнять следующие адрес <xref:System.OutOfMemoryException> исключение.  
+**Закрепить большом числе объектов в памяти.**  
+ 
+Закрепление большом числе объектов в памяти в течение длительных периодов времени будет трудно выделить смежные блоки памяти сборщика мусора. Если вы закрепили большом числе объектов в памяти, например с помощью `fixed` инструкции на языке C# или путем вызова <xref:System.Runtime.InteropServices.GCHandle.Alloc%28System.Object%2CSystem.Runtime.InteropServices.GCHandleType%29?displayProperty=nameWithType> метод с типом дескриптора <xref:System.Runtime.InteropServices.GCHandleType.Pinned?displayProperty=nameWithType>, можно выполнять следующие адрес <xref:System.OutOfMemoryException> исключение.  
   
 -   Проверять каждый объект действительно требуется закрепить.  
-  
+
 -   Убедитесь, что каждый объект является Незакрепленным как можно скорее.  
-  
+
 -   Убедитесь, что при каждом вызове <xref:System.Runtime.InteropServices.GCHandle.Alloc%28System.Object%2CSystem.Runtime.InteropServices.GCHandleType%29?displayProperty=nameWithType> метод память ПИН-код имеет соответствующего вызова <xref:System.Runtime.InteropServices.GCHandle.Free%2A?displayProperty=nameWithType> метод позволяет отключить эту память.  
+
+Корпорации Майкрософт, промежуточные инструкции (MSIL) throw <xref:System.OutOfMemoryException> исключение:  
   
- Корпорации Майкрософт, промежуточные инструкции (MSIL) throw <xref:System.OutOfMemoryException> исключение:  
-  
--   [поле](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.box.aspx)  
-  
--   [newarr](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.newarr.aspx)  
-  
--   [newobj](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.newobj.aspx)newobj  
-  
- <xref:System.OutOfMemoryException> использует значение HRESULT `COR_E_OUTOFMEMORY`, которая имеет значение 0x8007000E.  
-  
- Список начальных значений свойств для экземпляра <xref:System.OutOfMemoryException>, см. в разделе <xref:System.OutOfMemoryException.%23ctor%2A> конструкторы.  
-  
-> [!NOTE]
->  Значение наследуемого <xref:System.Exception.Data%2A> свойство всегда имеет `null`.  
-  
+-   [поле](https://msdn.microsoft.com/library/system.reflection.emit.opcodes.box.aspx)  
+-   [newarr](https://msdn.microsoft.com/library/system.reflection.emit.opcodes.newarr.aspx)  
+
+-   [newobj](https://msdn.microsoft.com/library/system.reflection.emit.opcodes.newobj.aspx)newobj  
+
+
  ]]></format>
     </remarks>
     <altmember cref="T:System.Exception" />
@@ -287,8 +287,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
@@ -339,7 +339,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если параметр <c>innerException</c> не является пустой ссылкой (<see langword="Nothing" /> в Visual Basic), текущее исключение создается в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="innerException">Исключение, которое является причиной текущего исключения. Если параметр <paramref name="innerException" /> не является указателем null (<see langword="Nothing" /> в Visual Basic), то текущее исключение создается в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.OutOfMemoryException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

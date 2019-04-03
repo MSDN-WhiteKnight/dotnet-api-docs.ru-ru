@@ -1,13 +1,5 @@
 <Type Name="IBindingList" FullName="System.ComponentModel.IBindingList">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2465ec19cd51ebeb589a960dfd244cec5a097e87" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51304265" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IBindingList : System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="21625802dee908457538505bd465600bab3c6563" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58718765" /></Metadata><TypeSignature Language="C#" Value="public interface IBindingList : System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindingList implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.IBindingList" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBindingList&#xA;Implements IList" />
@@ -23,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -85,6 +78,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -128,6 +122,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -150,13 +145,13 @@
  Реализация этого метода означает, что <xref:System.ComponentModel.IBindingList> списка необходимо понять, какого типа объектов, добавляемых в список и понять, как создать новый экземпляр этого типа. Например, если у вас есть коллекция `myCustomer` объектов, <xref:System.ComponentModel.IBindingList.AddNew%2A> метод должен добавить новый `myCustomer` объект в список.  
   
 > [!NOTE]
->  Если объекты в этом списке реализуют <xref:System.ComponentModel.IEditableObject> интерфейс, вызвав <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> следует отменить объекта, не добавляйте его в список, если объект был создан с помощью метода <xref:System.ComponentModel.IBindingList.AddNew%2A> метод. Объект должен добавляться только к списку при <xref:System.ComponentModel.IEditableObject.EndEdit%2A?displayProperty=nameWithType> вызывается метод. Таким образом необходимо синхронизировать объекта и списка тщательно.  
+>  Если объекты в этом списке реализуют <xref:System.ComponentModel.IEditableObject> интерфейс, вызвав <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> следует отменить объекта, не добавляйте его в список, если объект был создан с помощью метода <xref:System.ComponentModel.IBindingList.AddNew%2A> метод. Объект должен добавляться только к списку при <xref:System.ComponentModel.IEditableObject.EndEdit%2A?displayProperty=nameWithType> вызывается метод. Таким образом необходимо выполнить синхронизацию объекта и списка тщательно.  
   
  При вызове этого метода следует вызвать <xref:System.ComponentModel.IBindingList.ListChanged> событие с <xref:System.ComponentModel.ListChangedType.ItemAdded> перечисления, включающим соответствующий индекс. Добавленная строка находится в состоянии, когда нажатие клавиши Esc на <xref:System.Windows.Forms.DataGridView> управления можно удалить новую строку. Вызов <xref:System.ComponentModel.IBindingList.ListChanged> событие с <xref:System.ComponentModel.ListChangedType.ItemAdded> перечисления во второй раз выбранная строка указывает, что элемент теперь обычная строка (не в новое состояние).  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.AllowNew" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.AllowNew" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="AllowEdit">
@@ -177,6 +172,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -210,6 +206,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -250,6 +247,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -293,6 +291,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -308,7 +307,7 @@
       </Parameters>
       <Docs>
         <param name="property">Дескриптор <see cref="T:System.ComponentModel.PropertyDescriptor" /> для сортировки.</param>
-        <param name="direction">Одно из значений перечисления <see cref="T:System.ComponentModel.ListSortDirection" />.</param>
+        <param name="direction">Одно из значений <see cref="T:System.ComponentModel.ListSortDirection" />.</param>
         <summary>Сортирует список, используя дескриптор <see cref="T:System.ComponentModel.PropertyDescriptor" /> и направление <see cref="T:System.ComponentModel.ListSortDirection" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -320,10 +319,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> имеет значение <see langword="false" />.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализация этого метода следует вызвать <see cref="E:System.ComponentModel.IBindingList.ListChanged" /> событие с <see cref="F:System.ComponentModel.ListChangedType.Reset" /> перечисления.</para>
-        </block>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> — <see langword="false" />.</exception>
+        <block subset="none" type="overrides"><para>Реализация этого метода следует вызвать <see cref="E:System.ComponentModel.IBindingList.ListChanged" /> событие с <see cref="F:System.ComponentModel.ListChangedType.Reset" /> перечисления.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Find">
@@ -344,6 +341,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -359,7 +357,7 @@
       </Parameters>
       <Docs>
         <param name="property">Дескриптор <see cref="T:System.ComponentModel.PropertyDescriptor" /> для поиска.</param>
-        <param name="key">Значение параметра <c>property</c> для поиска.</param>
+        <param name="key">Значение параметра <paramref name="property" />, используемое для поиска.</param>
         <summary>Возвращает индекс строки с данным дескриптором <see cref="T:System.ComponentModel.PropertyDescriptor" />.</summary>
         <returns>Индекс строки с данным дескриптором <see cref="T:System.ComponentModel.PropertyDescriptor" />.</returns>
         <remarks>
@@ -380,7 +378,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSearching" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSearching" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsSorted">
@@ -401,6 +399,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -423,7 +422,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ListChanged">
@@ -444,6 +443,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -454,7 +454,7 @@
         <ReturnType>System.ComponentModel.ListChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Происходит при изменении в списке или в элементе списка.</summary>
+        <summary>Происходит при изменениях в списке или при изменении элемента списка.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -483,6 +483,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -526,6 +527,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -548,7 +550,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SortDirection">
@@ -569,6 +571,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -580,7 +583,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает направление сортировки.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.ComponentModel.ListSortDirection" />.</value>
+        <value>Одно из значений <see cref="T:System.ComponentModel.ListSortDirection" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -589,7 +592,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SortProperty">
@@ -610,6 +613,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -630,7 +634,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Свойство <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> имеет значение <see langword="false" />.</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> — <see langword="false" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SupportsChangeNotification">
@@ -651,6 +655,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -691,6 +696,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -734,6 +740,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>

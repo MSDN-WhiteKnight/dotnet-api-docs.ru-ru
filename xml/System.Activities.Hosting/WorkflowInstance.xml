@@ -1,13 +1,5 @@
 <Type Name="WorkflowInstance" FullName="System.Activities.Hosting.WorkflowInstance">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8c2d89f99d79afb2981a843b318c8849621240d2" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971737" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d3f9599fb8a859242cf5b1b2a1ae36d9717ba339" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936827" /></Metadata><TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract WorkflowInstance extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstance" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WorkflowInstance" />
@@ -29,7 +21,7 @@
 ## Remarks  
  Класс <xref:System.Activities.Hosting.WorkflowInstance> является однопотоковым и предполагает, что узел выполняет синхронизацию доступа к нему. При попытке одновременного вызова нескольких API сформируется исключение <xref:System.InvalidOperationException>.  
   
- Внутренне <xref:System.Activities.Hosting.WorkflowInstance> имеет два состояния: «выполняется» и «приостановлен». Единственным способом перевода среды выполнения из состояния «приостановлен» в состояние «выполняется» является вызов метода <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>. Все действия (за исключением приостановки) могут выполняться только во время приостановки среды выполнения. Среда выполнения будет автоматически приостановлена в следующих ситуациях.  
+ На внутреннем уровне <xref:System.Activities.Hosting.WorkflowInstance> имеет два состояния: Запущен и приостановлена. Единственным способом перевода среды выполнения из состояния «приостановлен» в состояние «выполняется» является вызов метода <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>. Все действия (за исключением приостановки) могут выполняться только во время приостановки среды выполнения. Среда выполнения будет автоматически приостановлена в следующих ситуациях.  
   
 -   Произошла неустранимая ошибка среды выполнения. Метод <xref:System.Activities.Hosting.WorkflowInstance.OnRequestAbort%2A> отправит уведомление узлу (что не означает переход в состояние «приостановлено»), после чего узлу будет отправлено уведомление с помощью <xref:System.Activities.Hosting.WorkflowInstance.OnNotifyPaused%2A>.  
   
@@ -41,9 +33,9 @@
   
  Метод <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.RequestPause%2A> экземпляра <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl>, возвращенный свойством <xref:System.Activities.Hosting.WorkflowInstance.Controller%2A>, является единственным методом, который может быть вызван, если <xref:System.Activities.Hosting.WorkflowInstance> находится в состоянии «выполняется». При вызове других методов будет сформировано исключение <xref:System.InvalidOperationException>. В соответствии с правилами изменения состояния <xref:System.Activities.Hosting.WorkflowInstance> общее определение состояний «выполняется» и «приостановлено» можно сформулировать следующим образом:  
   
--   Выполняется — состояние между вызовом метода <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A> и следующим WorkflowInstance.OnNotify*.  
+-   Выполнение — состояние между вызовом <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A> и следующим WorkflowInstance.OnNotify*.  
   
--   Приостановлено — состояние между последним вызовом WorkflowInstance.OnNotify* и следующим вызовом <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>.  
+-   Приостановлено — состояние между последним вызовом WorkflowInstance.OnNotify* и следующего вызова <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>.  
   
  ]]></format>
     </remarks>
@@ -92,8 +84,8 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="workflowDefinition" Type="System.Activities.Activity" />
-        <Parameter Name="definitionIdentity" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="workflowDefinition" Type="System.Activities.Activity" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="definitionIdentity" Type="System.Activities.WorkflowIdentity" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="workflowDefinition">Действие, определяющее рабочий процесс.</param>
@@ -118,9 +110,9 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="callback" Type="System.AsyncCallback" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="state" Type="System.Object" Index="2" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="timeout">Промежуток времени, по истечении которого нужно прекратить попытку.</param>
@@ -210,7 +202,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="result" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="result">Состояние асинхронной операции отслеживания.</param>
@@ -234,7 +226,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="timeout">Промежуток времени, по истечении которого нужно прекратить попытку.</param>
@@ -258,8 +250,8 @@
         <ReturnType>System.Collections.Generic.IList&lt;System.Activities.DynamicUpdate.ActivityBlockingUpdate&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="deserializedRuntimeState" Type="System.Object" />
-        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" />
+        <Parameter Name="deserializedRuntimeState" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="deserializedRuntimeState">Десериализованное состояние среды выполнения.</param>
@@ -458,8 +450,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="deserializedRuntimeState" Type="System.Object" />
-        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" />
+        <Parameter Name="deserializedRuntimeState" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="deserializedRuntimeState">Состояние среды выполнения, используемой для выполнения рабочего процесса.</param>
@@ -517,7 +509,7 @@
       <Docs>
         <param name="keys">Ключи экземпляра, которые необходимо связать с этим экземпляром рабочего процесса.</param>
         <param name="callback">Метод, вызываемый при завершении этой операции.</param>
-        <param name="state">Дополнительный объект, связанный с приложением, который содержит сведения об асинхронной операции.</param>
+        <param name="state">Относящийся к необязательному приложению объект, содержащий сведения об асинхронной операции.</param>
         <summary>Вызывает среду выполнения рабочего процесса для уведомления узла о том, что новые ключи экземпляра должны быть связаны с этим экземпляром.</summary>
         <returns>Ссылка на асинхронную операцию связанных ключей.</returns>
         <remarks>To be added.</remarks>
@@ -571,7 +563,7 @@
       </Parameters>
       <Docs>
         <param name="callback">Метод, вызываемый при завершении операции сохранения.</param>
-        <param name="state">Дополнительный объект, связанный с приложением, который содержит сведения об асинхронной операции.</param>
+        <param name="state">Относящийся к необязательному приложению объект, содержащий сведения об асинхронной операции.</param>
         <summary>Асинхронный вызов узла для сохранения рабочего процесса.</summary>
         <returns>Ссылка на текущую операцию сохранения.</returns>
         <remarks>To be added.</remarks>
@@ -603,7 +595,7 @@
         <param name="value">Данные, передаваемые действию, создавшему закладку <see cref="T:System.Activities.Bookmark" />.</param>
         <param name="timeout">Период времени, в течение которого операция возобновления должна быть завершена, прежде чем операция отменяется и создается исключение <see cref="T:System.TimeoutException" />.</param>
         <param name="callback">Метод, вызываемый при завершении операции возобновления.</param>
-        <param name="state">Дополнительный объект, связанный с приложением, который содержит сведения об асинхронной операции.</param>
+        <param name="state">Относящийся к необязательному приложению объект, содержащий сведения об асинхронной операции.</param>
         <summary>Вызывается средой выполнения рабочего процесса для уведомления узла о начале операции возобновления закладки.</summary>
         <returns>Ссылка на асинхронную операцию возобновления.</returns>
         <remarks>To be added.</remarks>

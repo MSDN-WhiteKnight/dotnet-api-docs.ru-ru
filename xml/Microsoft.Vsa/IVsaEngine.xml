@@ -1,13 +1,5 @@
 <Type Name="IVsaEngine" FullName="Microsoft.Vsa.IVsaEngine">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f528f47bf49afdb953ee12f7c191dc54343a2d7b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971660" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IVsaEngine" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d5d4ae9507dd2a8d88966ecaaea2a8a748b57e3a" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55344359" /></Metadata><TypeSignature Language="C#" Value="public interface IVsaEngine" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaEngine" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Vsa.IVsaEngine" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVsaEngine" />
@@ -23,15 +15,15 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
       <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("E0C0FFE1-7eea-4ee2-b7e4-0080c7eb0b74")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Определяет методы и свойства, которые должен поддерживать обработчик скриптов, и предоставляет программный доступ к обработчику скриптов.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -52,8 +44,8 @@
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает ссылку на запущенную сборку, созданную методом <see cref="M:Microsoft.Vsa.IVsaEngine.Run" />.</summary>
+        <value>Ссылка на работающую в данный момент сборку.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -75,7 +67,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Закрывает обработчик сценариев и освобождает все ресурсы. Если обработчик сценариев в данный момент запущен, сначала вызывается метод <see cref="M:Microsoft.Vsa.IVsaEngine.Reset" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,8 +89,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Выполняет компиляцию существующего состояния исходного кода обработчиком сценариев.</summary>
+        <returns>Значение <see langword="true" /> при успешной компиляции, указывающее на то, что метод <see cref="M:Microsoft.Vsa.IVsaEngine.Run" /> можно вызывать для недавно скомпилированной сборки. Значение <see langword="false" />, если произошел сбой компиляции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,8 +111,8 @@
         <ReturnType>System.Security.Policy.Evidence</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Предоставляет свидетельство в целях проверки удостоверения текущего объекта.</summary>
+        <value>Ссылка на объект свидетельства.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,7 +133,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Задает или получает логическое значение, которое обозначает, выводит ли обработчик скриптов отладочную информацию при вызове метода <see cref="M:Microsoft.Vsa.IVsaEngine.Compile" />.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -166,9 +158,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">Имя возвращаемого параметра.</param>
+        <summary>Возвращает параметры реализации для обработчика сценариев.</summary>
+        <returns>Значение параметра.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,7 +182,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Предоставляет уведомление о том, что этап инициализации завершен и что обработчик сценариев подготовлен для добавления объектов <see cref="T:Microsoft.Vsa.IVsaItem" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -211,8 +203,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает значение, которое обозначает, выводит ли обработчик скриптов отладочную информацию при вызове метода <see cref="M:Microsoft.Vsa.IVsaEngine.Compile" />.</summary>
+        <value><see langword="true" /> Если обработчик скриптов настроен на создание отладочной информации при <see cref="M:Microsoft.Vsa.IVsaEngine.Compile" /> метод вызван; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,8 +225,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает значение, указывающее, изменилось ли состояние источника обработчика скриптов с момента последней операции сохранения или исходной загрузки обработчика скриптов.</summary>
+        <value><see langword="true" /> Если обработчик скриптов помечен как изменения (то есть, «грязным»); в противном случае <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -255,8 +247,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает значение, которое указывает, находится ли обработчик скриптов в настоящий момент в режиме выполнения.</summary>
+        <value><see langword="true" /> Если обработчик скриптов запущен; в противном случае <see langword="false" />. Значение по умолчанию для этого свойства — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -280,9 +272,9 @@
         <Parameter Name="identifier" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="identifier">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="identifier">Строковое значение, предоставляемое в качестве идентификатора.</param>
+        <summary>Проверяет допустимость предоставленного идентификатора для обработчика сценариев.</summary>
+        <returns>Значение <see langword="true" />, если идентификатор допустим. В противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -303,8 +295,8 @@
         <ReturnType>Microsoft.Vsa.IVsaItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает коллекцию <see cref="T:Microsoft.Vsa.IVsaItems" /> объектов <see cref="T:Microsoft.Vsa.IVsaItem" />, которые представляют все элементы, добавленные в обработчик скриптов с помощью метода CreateItem, включая элементы кода, элементы ссылок и глобальные элементы.</summary>
+        <value>Коллекция всех элементов, добавленных в обработчик сценариев, с помощью метода CreateItem, включая элементы кода, элементы ссылок и глобальные элементы.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -325,8 +317,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает нелокализуемое название языка программирования, поддерживаемого обработчиком скриптов.</summary>
+        <value>Имя языка программирования, поддерживаемого обработчиком скриптов английского языка.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,8 +339,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Возвращает или задает географическое расположение и язык для сообщений об исключениях.</summary>
+        <value>Целое значение, представляющее параметры языка для сообщений об исключении.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -372,8 +364,8 @@
         <Parameter Name="site" Type="Microsoft.Vsa.IVsaPersistSite" />
       </Parameters>
       <Docs>
-        <param name="site">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="site">Сайт, с которого загружаются указанные исходные элементы.</param>
+        <summary>Предписывает обработчику сценариев загрузить исходные элементы из точки сохраняемости, заданной предоставленным основным приложением объектом, который реализует интерфейс <see cref="T:Microsoft.Vsa.IVsaPersistSite" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -394,8 +386,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает или задает отображаемое имя обработчика сценариев, которое служит, в первую очередь, для обозначения обработчика сценариев для пользователей в размещенной среде.</summary>
+        <value>Значение свойства Name обработчика сценариев, который может быть пустой строкой.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -417,7 +409,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Выводит обработчик сценариев из состояния выполнения и отсоединяет автоматически привязанные обработчики событий.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -439,7 +431,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Делает недействительной кэшированную сборку, заданную корневым моникером, для обработчика сценариев.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -460,8 +452,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Задает или получает корневой моникер обработчика сценариев.</summary>
+        <value>Текущее значение свойства RootMoniker.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -482,8 +474,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Задает или получает корневое пространство имен, используемое обработчиком сценариев.</summary>
+        <value>Строковое значение корневого пространства имен.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -505,7 +497,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Инициирует выполнение скомпилированного кода в обработчике сценариев и связывает все обработчики событий.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -530,9 +522,9 @@
         <Parameter Name="pdb" Type="System.Byte[]" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pe">To be added.</param>
-        <param name="pdb">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="pe">Скомпилированное состояние обработчика сценариев.</param>
+        <param name="pdb">Задает отладочную информацию, содержащуюся в PDB-файле, в соответствии с форматом PE (переносимый исполняемый файл).</param>
+        <summary>Сохраняет скомпилированное состояние обработчика сценариев. Дополнительно сохраняет отладочную информацию.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -556,8 +548,8 @@
         <Parameter Name="site" Type="Microsoft.Vsa.IVsaPersistSite" />
       </Parameters>
       <Docs>
-        <param name="site">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="site">Сайт, созданный интерфейсом <see cref="T:Microsoft.Vsa.IVsaPersistSite" />, на котором сохраняется исходное состояние.</param>
+        <summary>Предписывает обработчику сценариев сохранить исходное состояние в указанном объекте <see cref="T:Microsoft.Vsa.IVsaPersistSite" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -582,9 +574,9 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">Имя задаваемого параметра.</param>
+        <param name="value">Задаваемое значение параметра.</param>
+        <summary>Задает параметры реализации для обработчика сценариев.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -605,8 +597,8 @@
         <ReturnType>Microsoft.Vsa.IVsaSite</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Задает или получает реализуемый основным приложением объект <see cref="T:Microsoft.Vsa.IVsaSite" />, который используется обработчиком сценариев для связи с основным приложением.</summary>
+        <value>Ссылку на текущий <see cref="T:Microsoft.Vsa.IVsaSite" /> объекта.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -627,8 +619,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Возвращает текущую версию компилятора языка, поддерживаемую обработчиком скриптов, в виде основной_номер.дополнительный_номер.редакция.сборка.</summary>
+        <value>Строковое значение текущей версии, в формате основной_номер.дополнительный_номер.редакция.сборка.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

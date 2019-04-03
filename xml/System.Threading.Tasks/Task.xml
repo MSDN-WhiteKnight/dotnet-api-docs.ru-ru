@@ -1,13 +1,5 @@
 <Type Name="Task" FullName="System.Threading.Tasks.Task">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c16340e471c95a0473b0f16f55090f971e888200" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51308315" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9bd576ddd6eb1bc0a5ea614cefc399143bb707e7" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58695751" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Task extends System.Object implements class System.IAsyncResult, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Task" />
   <TypeSignature Language="VB.NET" Value="Public Class Task&#xA;Implements IAsyncResult, IDisposable" />
@@ -26,6 +18,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
@@ -123,7 +116,7 @@
   
  Также можно использовать токен отмены, путем вызова <xref:System.Threading.Tasks.Task.Wait%28System.Threading.CancellationToken%29> и <xref:System.Threading.Tasks.Task.Wait%28System.Int32%2CSystem.Threading.CancellationToken%29> методы. Если токен <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> свойство `true` или становится `true` хотя <xref:System.Threading.Tasks.Task.Wait%2A> выполняется метод, этот метод вызывает <xref:System.OperationCanceledException>.  
   
- В некоторых случаях может потребоваться подождать для первого ряда выполнение задач для завершения, но не является осторожностью, что задачи.  Для этой цели, вы можете вызвать один из перегруженных версий <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType> метод.  В следующем примере создается три задачи, каждая из которых находится в спящем режиме, для определяют интервал с генератором случайных чисел. <xref:System.Threading.Tasks.Task.WaitAny%28System.Threading.Tasks.Task%5B%5D%29> Метод ожидает завершения первой задачи. Затем пример отображает сведения о состоянии всех трех задач.  
+ В некоторых случаях может потребоваться подождать для первого ряда выполнение задач для завершения, но не является осторожностью, что задачи.  Для этой цели, вы можете вызвать один из перегруженных версий <xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType> метод.  В следующем примере создается три задачи, каждая из которых находится в спящем режиме, для определяют интервал с генератором случайных чисел. <xref:System.Threading.Tasks.Task.WaitAny%28System.Threading.Tasks.Task%5B%5D%29> Метод ожидает завершения первой задачи. Затем пример отображает сведения о состоянии всех трех задач.  
   
  [!code-csharp[System.Threading.Tasks.Task#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task/cs/WhenAny1.cs#10)]
  [!code-vb[System.Threading.Tasks.Task#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task/vb/WaitAny1.vb#10)]  
@@ -190,6 +183,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -206,7 +200,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Вместо вызова этого конструктора, наиболее распространенным способом для создания экземпляра <xref:System.Threading.Tasks.Task> объекта и запуск задачи — путем вызова статического <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> или <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType> метод. Только преимущества, предлагаемые этим конструктором является то, что при создании объектов быть отделены от вызова задачи.  
+ Этот конструктор следует использовать только в сложных сценариях, когда он необходим отделяется создания и запуска задачи.  
+  
+ Вместо вызова этого конструктора, наиболее распространенным способом для создания экземпляра <xref:System.Threading.Tasks.Task> объекта и запуск задачи — путем вызова статического <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> или <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType> метод.  
+  
+ Если задача, не выполняя никаких действий для ситуация каким-то await, необходима только для потребителей API <xref:System.Threading.Tasks.TaskCompletionSource%601> следует использовать.  
   
    
   
@@ -247,6 +245,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -259,8 +258,8 @@
       </Parameters>
       <Docs>
         <param name="action">Делегат, который представляет код, выполняемый в рамках задачи.</param>
-        <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет контролироваться новой задачей.</param>
-        <summary>Инициализирует новую задачу <see cref="T:System.Threading.Tasks.Task" /> с заданным действием и токеном <see cref="T:System.Threading.CancellationToken" />.</summary>
+        <param name="cancellationToken">Маркер <see cref="T:System.Threading.CancellationToken" />, который будет контролироваться новой задачей.</param>
+        <summary>Инициализирует новую задачу <see cref="T:System.Threading.Tasks.Task" /> с заданными действием и токеном <see cref="T:System.Threading.CancellationToken" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -279,7 +278,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="action" /> имеет значение NULL.</exception>
       </Docs>
     </Member>
@@ -303,6 +302,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -350,6 +350,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -363,7 +364,7 @@
       <Docs>
         <param name="action">Делегат, который представляет код, выполняемый в рамках задачи.</param>
         <param name="state">Объект, который представляет данные, используемые действием.</param>
-        <summary>Инициализирует новую задачу <see cref="T:System.Threading.Tasks.Task" /> с заданным действием и состоянием.</summary>
+        <summary>Инициализирует новую задачу <see cref="T:System.Threading.Tasks.Task" /> с заданными действием и состоянием.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -404,6 +405,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -455,6 +457,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -504,6 +507,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -552,6 +556,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -607,6 +612,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -617,7 +623,7 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает объект состояния, предоставленный при создании задачи <see cref="T:System.Threading.Tasks.Task" />, или значение null, если объект не предоставлен.</summary>
+        <summary>Получает объект состояния, предоставленный при создании задачи <see cref="T:System.Threading.Tasks.Task" />, или значение null, если объект не предоставлен.</summary>
         <value>Объект <see cref="T:System.Object" />, представляющий данные о состоянии, переданные задаче на этапе создания.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -649,6 +655,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -695,6 +702,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -710,7 +718,7 @@
         <ReturnType>System.Runtime.CompilerServices.ConfiguredTaskAwaitable</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continueOnCapturedContext" Type="System.Boolean" />
+        <Parameter Name="continueOnCapturedContext" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continueOnCapturedContext">Значение <see langword="true" />, чтобы попытаться выполнить маршалинг продолжения обратно в исходный захваченный контекст; в противном случае — значение <see langword="false" />.</param>
@@ -750,6 +758,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -810,6 +819,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -820,13 +830,13 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения задачи. При запуске делегату передается в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
-        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и которое выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
         <returns>Новая задача продолжения.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -859,6 +869,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -875,7 +886,7 @@
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="cancellationToken">Токен <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
-        <summary>Создает продолжение, которое получает токен отмены и выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <summary>Создает продолжение, которое получает маркер отмены и которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -885,8 +896,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.</exception>
       </Docs>
     </Member>
@@ -911,6 +921,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -925,9 +936,9 @@
         <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие для запуска в соответствии с заданными параметрами <c>continuationOptions</c>. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationAction">Действие для запуска в соответствии с заданными <paramref name="continuationOptions" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <summary>Создает продолжение, выполняемое после завершения целевой задачи в соответствии с заданными параметрами <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</summary>
+        <summary>Создает продолжение, которое выполняется после завершения целевой задачи в соответствии с заданными параметрами <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1008,6 +1019,7 @@ End Class
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1037,7 +1049,7 @@ End Class
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
       </Docs>
     </Member>
@@ -1061,6 +1073,7 @@ End Class
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1071,15 +1084,15 @@ End Class
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
-        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и токен отмены и которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и маркер отмены и которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1090,7 +1103,7 @@ End Class
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <Member MemberName="ContinueWith">
@@ -1114,6 +1127,7 @@ End Class
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1124,15 +1138,15 @@ End Class
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение выполняется на основе набора указанных условий.</summary>
+        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и которое выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение выполняется на основе набора указанных условий.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1167,6 +1181,7 @@ End Class
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1177,9 +1192,9 @@ End Class
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />.  При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
@@ -1218,6 +1233,7 @@ End Class
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1234,11 +1250,11 @@ End Class
         <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие для запуска в соответствии с заданными параметрами <c>continuationOptions</c>. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationAction">Действие для запуска в соответствии с заданными <paramref name="continuationOptions" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="cancellationToken">Токен <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
         <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
-        <summary>Создает продолжение, выполняемое после завершения целевой задачи в соответствии с заданными параметрами <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />. Продолжение получает токен отмены и использует указанный планировщик.</summary>
+        <summary>Создает продолжение, которое выполняется после завершения целевой задачи в соответствии с заданными параметрами <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />. Продолжение получает маркер отмены и использует указанный планировщик.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1289,11 +1305,10 @@ End Sub
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
       </Docs>
@@ -1318,6 +1333,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1328,19 +1344,19 @@ End Sub
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
-        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и токен отмены и которое выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение выполняется на основе набора указанных условий и использует указанный планировщик.</summary>
+        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который связывается с задачей продолжения для ее запуска.</param>
+        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и маркер отмены и которое выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение выполняется на основе набора указанных условий и использует указанный планировщик.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1352,7 +1368,7 @@ End Sub
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <Member MemberName="ContinueWith&lt;TResult&gt;">
@@ -1376,6 +1392,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1394,7 +1411,7 @@ End Sub
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
         <param name="continuationFunction">Функция, которую необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
-        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task`1" /> и возвращает значение.</summary>
+        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task`1" /> и которое возвращает значение.</summary>
         <returns>Новая задача продолжения.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1437,6 +1454,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1450,14 +1468,14 @@ End Sub
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
         <param name="continuationFunction">Функция, которую необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые функцией продолжения.</param>
-        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />, а также возвращает значение.</summary>
+        <summary>Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии, выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1490,6 +1508,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1510,7 +1529,7 @@ End Sub
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
         <param name="continuationFunction">Функция, которую необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="cancellationToken">Токен <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
-        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение. Продолжение получает токен отмены.</summary>
+        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение. Продолжение получает маркер отмены.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1522,7 +1541,7 @@ End Sub
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.  
   
-- или - 
+-или- 
 <see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
       </Docs>
@@ -1548,6 +1567,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1566,9 +1586,9 @@ End Sub
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
-        <param name="continuationFunction">Функция для запуска в соответствии с условием, заданным в <c>continuationOptions</c>. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationFunction">Функция для запуска в соответствии с заданным условием в <paramref name="continuationOptions" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <summary>Создает продолжение, выполняемое в соответствии с заданными параметрами и возвращает значение.</summary>
+        <summary>Создает продолжение, которое выполняется в соответствии с заданными параметрами и которое возвращает значение.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1604,6 +1624,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1637,7 +1658,7 @@ End Sub
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
       </Docs>
     </Member>
@@ -1661,6 +1682,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1674,16 +1696,16 @@ End Sub
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
         <param name="continuationFunction">Функция, которую необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые функцией продолжения.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
-        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и токен отмены.</summary>
+        <summary>Создает продолжение, которое выполняется асинхронно после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и маркер отмены.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1694,7 +1716,7 @@ End Sub
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <Member MemberName="ContinueWith&lt;TResult&gt;">
@@ -1718,6 +1740,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1731,16 +1754,16 @@ End Sub
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
         <param name="continuationFunction">Функция, которую необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые функцией продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <summary>Создает продолжение, которое выполняется на основе указанных параметров продолжения токена после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение получает предоставленные вызывающей стороной сведения.</summary>
+        <summary>Создает продолжение, которое выполняется на основе указанных параметров продолжения задачи после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" />. Продолжение получает предоставленные вызывающей стороной сведения.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1775,6 +1798,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1788,9 +1812,9 @@ End Sub
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
@@ -1830,6 +1854,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1854,7 +1879,7 @@ End Sub
         <param name="cancellationToken">Токен <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
         <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
-        <summary>Создает продолжение, выполняемое в соответствии с заданными параметрами и возвращает значение. Продолжение получает токен отмены и использует указанный планировщик.</summary>
+        <summary>Создает продолжение, которое выполняется в соответствии с заданными параметрами и которое возвращает значение. Продолжение получает маркер отмены и использует указанный планировщик.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1874,11 +1899,11 @@ End Sub
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.  
   
-- или - 
+-или- 
 <see cref="T:System.Threading.CancellationTokenSource" />, создавший уже освобожденный токен.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
       </Docs>
@@ -1903,6 +1928,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1916,11 +1942,11 @@ End Sub
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,System.Object,TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, созданного продолжением.</typeparam>
@@ -1928,8 +1954,8 @@ End Sub
         <param name="state">Объект, который представляет данные, используемые функцией продолжения.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
-        <summary>Создает продолжение, которое выполняется на основе указанных параметров продолжения токена после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и токен отмены, а также использует указанный планировщик.</summary>
+        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который связывается с задачей продолжения для ее запуска.</param>
+        <summary>Создает продолжение, которое выполняется на основе указанных параметров продолжения задачи после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task" /> и которое возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и маркер отмены, а также использует указанный планировщик.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1941,7 +1967,7 @@ End Sub
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <Member MemberName="CreationOptions">
@@ -1965,6 +1991,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2001,6 +2028,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2057,6 +2085,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2067,10 +2096,10 @@ End Sub
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="millisecondsDelay" Type="System.Int32" />
+        <Parameter Name="millisecondsDelay" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="millisecondsDelay">Число миллисекунд, в течение которого ожидается завершение возвращаемой задачи, или -1 для неограниченного времени ожидания.</param>
+        <param name="millisecondsDelay">Время в миллисекундах, в течение которого ожидается завершение возвращаемой задачи, или -1 для неограниченного времени ожидания.</param>
         <summary>Создает задачу, которая завершается через заданное количество миллисекунд.</summary>
         <returns>Задача, представляющая временную задержку.</returns>
         <remarks>
@@ -2127,6 +2156,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2137,10 +2167,10 @@ End Sub
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="delay" Type="System.TimeSpan" />
+        <Parameter Name="delay" Type="System.TimeSpan" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="delay">Интервал времени, в течение которого ожидается завершение возвращаемой задачи, или <see langword="TimeSpan.FromMilliseconds(-1)" /> для неограниченного времени ожидания.</param>
+        <param name="delay">Время, в течение которого ожидается завершение возвращаемой задачи, или <see langword="TimeSpan.FromMilliseconds(-1)" /> для неограниченного времени ожидания.</param>
         <summary>Создает задачу, которая завершается через заданное время.</summary>
         <returns>Задача, представляющая временную задержку.</returns>
         <remarks>
@@ -2163,10 +2193,9 @@ End Sub
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="delay" /> представляет отрицательный интервал времени, отличный от <see langword="TimeSpan.FromMillseconds(-1)" />.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="delay" /> представляет отрицательный интервал времени, отличный от <see langword="TimeSpan.FromMillseconds(-1)" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.TimeSpan.TotalMilliseconds" /> аргумента <paramref name="delay" /> больше, чем <see cref="F:System.Int32.MaxValue" />.</exception>
       </Docs>
     </Member>
@@ -2190,6 +2219,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2200,11 +2230,11 @@ End Sub
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="millisecondsDelay" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="millisecondsDelay" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="millisecondsDelay">Число миллисекунд, в течение которого ожидается завершение возвращаемой задачи, или -1 для неограниченного времени ожидания.</param>
+        <param name="millisecondsDelay">Время в миллисекундах, в течение которого ожидается завершение возвращаемой задачи, или -1 для неограниченного времени ожидания.</param>
         <param name="cancellationToken">Токен отмены, который нужно контролировать во время ожидания выполнения задачи.</param>
         <summary>Создает отменяемую задачу, которая завершается через заданное количество миллисекунд.</summary>
         <returns>Задача, представляющая временную задержку.</returns>
@@ -2230,7 +2260,7 @@ End Sub
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="millisecondsDelay" /> меньше –1.</exception>
         <exception cref="T:System.Threading.Tasks.TaskCanceledException">Задача была отменена.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <paramref name="cancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <paramref name="cancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <Member MemberName="Delay">
@@ -2253,6 +2283,7 @@ End Sub
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2263,11 +2294,11 @@ End Sub
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="delay" Type="System.TimeSpan" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="delay" Type="System.TimeSpan" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="delay">Интервал времени, в течение которого ожидается завершение возвращаемой задачи, или <see langword="TimeSpan.FromMilliseconds(-1)" /> для неограниченного времени ожидания.</param>
+        <param name="delay">Время, в течение которого ожидается завершение возвращаемой задачи, или <see langword="TimeSpan.FromMilliseconds(-1)" /> для неограниченного времени ожидания.</param>
         <param name="cancellationToken">Токен отмены, который нужно контролировать во время ожидания выполнения задачи.</param>
         <summary>Создает отменяемую задачу, которая завершается через заданное время.</summary>
         <returns>Задача, представляющая временную задержку.</returns>
@@ -2297,13 +2328,12 @@ Task t Status: RanToCompletion, Result: 42
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="delay" /> представляет отрицательный интервал времени, отличный от <see langword="TimeSpan.FromMillseconds(-1)" />.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="delay" /> представляет отрицательный интервал времени, отличный от <see langword="TimeSpan.FromMillseconds(-1)" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.TimeSpan.TotalMilliseconds" /> аргумента <paramref name="delay" /> больше, чем <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.Threading.Tasks.TaskCanceledException">Задача была отменена.</exception>
-        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <paramref name="cancellationToken" /> уже удален.</exception>
+        <exception cref="T:System.ObjectDisposedException">Предоставленный объект <paramref name="cancellationToken" /> уже был удален.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Dispose">
@@ -2335,6 +2365,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2354,7 +2385,7 @@ Task t Status: RanToCompletion, Result: 42
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Threading.Tasks.Task> Класс реализует <xref:System.IDisposable> интерфейс, так как внутренне он использует ресурсы, которые также реализуют <xref:System.IDisposable>. Тем не менее особенно в том случае, если ваше приложение предназначено [!INCLUDE[net_v45](~/includes/net-v45-md.md)] или более поздней версии, нет необходимости вызывать <xref:System.Threading.Tasks.Task.Dispose%2A> Если производительность или масштабируемость тестирование показывает, что, на основе использования шаблонов, удалив задач будет улучшена производительность приложения. Дополнительные сведения см. в разделе [нужно избавиться от задач?](http://blogs.msdn.com/b/pfxteam/archive/2012/03/25/10287435.aspx) в параллельному программированию в блоге .NET.  
+ <xref:System.Threading.Tasks.Task> Класс реализует <xref:System.IDisposable> интерфейс, так как внутренне он использует ресурсы, которые также реализуют <xref:System.IDisposable>. Тем не менее особенно в том случае, если ваше приложение предназначено [!INCLUDE[net_v45](~/includes/net-v45-md.md)] или более поздней версии, нет необходимости вызывать <xref:System.Threading.Tasks.Task.Dispose%2A> Если производительность или масштабируемость тестирование показывает, что, на основе использования шаблонов, удалив задач будет улучшена производительность приложения. Дополнительные сведения см. в разделе [нужно избавиться от задач?](https://devblogs.microsoft.com/pfxteam/do-i-need-to-dispose-of-tasks/) в параллельному программированию в блоге .NET.  
   
  ]]></format>
         </remarks>
@@ -2377,6 +2408,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2390,16 +2422,16 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="disposing">Логическое значение, указывающее, вызывается ли данный метод из-за вызова задачи <see cref="M:System.Threading.Tasks.Task.Dispose" />.</param>
-        <summary>Удаляет задачу<see cref="T:System.Threading.Tasks.Task" />, освобождая все используемые ею неуправляемые ресурсы.</summary>
+        <param name="disposing">Логическое значение, указывающее, вызывается ли данный метод из-за вызова метода <see cref="M:System.Threading.Tasks.Task.Dispose" />.</param>
+        <summary>Удаляет задачу <see cref="T:System.Threading.Tasks.Task" />, освобождая все используемые ею неуправляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Threading.Tasks.Task> Класс реализует <xref:System.IDisposable> интерфейс, так как внутренне он использует ресурсы, которые также реализуют <xref:System.IDisposable>. Тем не менее особенно в том случае, если ваше приложение предназначено [!INCLUDE[net_v45](~/includes/net-v45-md.md)] или более поздней версии, нет необходимости вызывать <xref:System.Threading.Tasks.Task.Dispose%2A> Если производительность или масштабируемость тестирование показывает, что, на основе использования шаблонов, удалив задач будет улучшена производительность приложения. Дополнительные сведения см. в разделе [нужно избавиться от задач?](http://blogs.msdn.com/b/pfxteam/archive/2012/03/25/10287435.aspx) в параллельному программированию в блоге .NET.  
+ <xref:System.Threading.Tasks.Task> Класс реализует <xref:System.IDisposable> интерфейс, так как внутренне он использует ресурсы, которые также реализуют <xref:System.IDisposable>. Тем не менее особенно в том случае, если ваше приложение предназначено [!INCLUDE[net_v45](~/includes/net-v45-md.md)] или более поздней версии, нет необходимости вызывать <xref:System.Threading.Tasks.Task.Dispose%2A> Если производительность или масштабируемость тестирование показывает, что, на основе использования шаблонов, удалив задач будет улучшена производительность приложения. Дополнительные сведения см. в разделе [нужно избавиться от задач?](https://devblogs.microsoft.com/pfxteam/do-i-need-to-dispose-of-tasks/) в параллельному программированию в блоге .NET.  
   
  ]]></format>
         </remarks>
@@ -2428,6 +2460,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2438,7 +2471,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.AggregateException</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает объект <see cref="T:System.AggregateException" />, который привел к преждевременному завершению задачи <see cref="T:System.Threading.Tasks.Task" />. Если задача <see cref="T:System.Threading.Tasks.Task" /> завершилась успешно или еще не создала ни одного исключения, возвращает значение <see langword="null" />.</summary>
+        <summary>Получает объект <see cref="T:System.AggregateException" />, который привел к преждевременному завершению задачи <see cref="T:System.Threading.Tasks.Task" />. Если задача <see cref="T:System.Threading.Tasks.Task" /> завершилась успешно или еще не создала ни одного исключения, возвращает значение <see langword="null" />.</summary>
         <value>Объект <see cref="T:System.AggregateException" />, который привел к преждевременному завершению задачи <see cref="T:System.Threading.Tasks.Task" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2471,6 +2504,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2481,7 +2515,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.TaskFactory</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Предоставляет доступ к методам фабрики для создания и настройки экземпляров <see cref="T:System.Threading.Tasks.Task" /> и <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
+        <summary>Предоставляет доступ к фабричным методам для создания и настройки экземпляров <see cref="T:System.Threading.Tasks.Task" /> и <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <value>Объект фабрики, который может создавать разнообразные объекты <see cref="T:System.Threading.Tasks.Task" /> и <see cref="T:System.Threading.Tasks.Task`1" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2530,6 +2564,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2540,7 +2575,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">Маркер отмены, с которым завершается задача.</param>
@@ -2569,6 +2604,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2582,7 +2618,7 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, возвращенного задачей.</typeparam>
@@ -2612,6 +2648,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2622,7 +2659,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="exception" Type="System.Exception" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="exception">Исключение, с которым завершается задача.</param>
@@ -2657,6 +2694,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2670,7 +2708,7 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="exception" Type="System.Exception" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, возвращенного задачей.</typeparam>
@@ -2716,6 +2754,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2729,12 +2768,12 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="result" Type="TResult" />
+        <Parameter Name="result" Type="TResult" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, возвращенного задачей.</typeparam>
         <param name="result">Результат, сохраняемый в завершенную задачу.</param>
-        <summary>Создает задачу <see cref="T:System.Threading.Tasks.Task`1" />, которая завершается удачно с указанным результатом.</summary>
+        <summary>Создает <see cref="T:System.Threading.Tasks.Task`1" />, которая завершается удачно с указанным результатом.</summary>
         <returns>Успешно завершенная задача.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2778,6 +2817,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2794,7 +2834,7 @@ Task t Status: RanToCompletion, Result: 42
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает объект типа awaiter, используемый для данного объекта <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <summary>Получает объект типа awaiter, используемый для данного объекта <see cref="T:System.Threading.Tasks.Task" />.</summary>
         <returns>Экземпляр объекта типа awaiter.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2827,6 +2867,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2837,7 +2878,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает идентификатор данного экземпляра <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <summary>Возвращает идентификатор указанного экземпляра <see cref="T:System.Threading.Tasks.Task" />.</summary>
         <value>Идентификатор, присвоенный системой данному экземпляру <see cref="T:System.Threading.Tasks.Task" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2845,7 +2886,7 @@ Task t Status: RanToCompletion, Result: 42
 ## Remarks  
  Идентификаторы задач назначаются по запросу и не обязательно представляют порядок, в какую задачу создаются экземпляры. Обратите внимание, что несмотря на то, что конфликты очень редки, задача не гарантируется, что идентификаторы должны быть уникальными.  
   
- Чтобы получить идентификатор задачи текущая выполняющаяся задача из кода, выполняющего эту задачу, используйте <xref:System.Threading.Tasks.Task.CurrentId%2A> свойство.  
+ Чтобы получить идентификатор задачи текущей выполняемой задачи из кода эта задача выполняется, используйте <xref:System.Threading.Tasks.Task.CurrentId%2A> свойство.  
   
  ]]></format>
         </remarks>
@@ -2873,6 +2914,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2883,7 +2925,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, указывающее, завершилось ли выполнение данного экземпляра <see cref="T:System.Threading.Tasks.Task" /> из-за отмены.</summary>
+        <summary>Получает значение, указывающее, завершилось ли выполнение данного экземпляра <see cref="T:System.Threading.Tasks.Task" /> из-за отмены.</summary>
         <value>Значение <see langword="true" />, если задача была завершена из-за отмены; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2928,6 +2970,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2943,16 +2986,15 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, которое показывает, завершилась ли задача <see cref="T:System.Threading.Tasks.Task" />.</summary>
-        <value>Значение <see langword="true" />, если задача была завершена; в противном случае — значение <see langword="false" />.</value>
+        <summary>Получает значение, указывающее, завершена ли задача.</summary>
+        <value><see langword="true" /> Если задача была завершена (то есть задача находится в одном из трех конечных состояний: <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion" />, <see cref="F:System.Threading.Tasks.TaskStatus.Faulted" />, или <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" />); в противном случае <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Threading.Tasks.Task.IsCompleted%2A> Возвращает `true` когда задача находится в одном из трех конечных состояний: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>, <xref:System.Threading.Tasks.TaskStatus.Faulted>, или <xref:System.Threading.Tasks.TaskStatus.Canceled>.  
   
 > [!IMPORTANT]
->  Получение значения <xref:System.Threading.Tasks.Task.IsCompleted%2A?displayProperty=nameWithType> свойство не блокирует вызывающий поток до завершения задачи.  
+> Получение значения <xref:System.Threading.Tasks.Task.IsCompleted%2A?displayProperty=nameWithType> свойство не блокирует вызывающий поток до завершения задачи.  
   
  ]]></format>
         </remarks>
@@ -2976,6 +3018,7 @@ Task t Status: RanToCompletion, Result: 42
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3010,6 +3053,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3020,7 +3064,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, указывающее, завершилась ли задача <see cref="T:System.Threading.Tasks.Task" /> из-за необработанного исключения.</summary>
+        <summary>Получает значение, указывающее, завершилась ли задача <see cref="T:System.Threading.Tasks.Task" /> из-за необработанного исключения.</summary>
         <value>Значение <see langword="true" />, если задача создала необрабатываемое исключение; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3073,6 +3117,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3083,7 +3128,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="action" Type="System.Action" />
+        <Parameter Name="action" Type="System.Action" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="action">Работа для асинхронного выполнения</param>
@@ -3152,6 +3197,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3162,7 +3208,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" />
+        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="function">Работа для асинхронного выполнения</param>
@@ -3200,6 +3246,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3210,13 +3257,13 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="action" Type="System.Action" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="action" Type="System.Action" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="action">Работа для асинхронного выполнения</param>
-        <param name="cancellationToken">Токен отмены, который может использоваться для отмены работы.</param>
-        <summary>Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект <see cref="T:System.Threading.Tasks.Task" />, представляющий эту работу. Токен отмены позволяет отменить работу.</summary>
+        <param name="cancellationToken">Маркер отмены, который может использоваться для отмены работы.</param>
+        <summary>Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект <see cref="T:System.Threading.Tasks.Task" />, представляющий эту работу. Маркер отмены позволяет отменить работу.</summary>
         <returns>Задача, которая представляет работу в очереди на выполнение в пуле потоков.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3268,6 +3315,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3278,12 +3326,12 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="function">Работа для асинхронного выполнения.</param>
-        <param name="cancellationToken">Токен отмены, который должен использоваться для отмены работы.</param>
+        <param name="cancellationToken">Маркер отмены, который должен использоваться для отмены работы.</param>
         <summary>Ставит в очередь указанную работу для запуска в пуле потоков и возвращает прокси для задачи, возвращаемой функцией <paramref name="function" />.</summary>
         <returns>Задача, которая представляет прокси для задачи, возвращаемой <paramref name="function" />.</returns>
         <remarks>
@@ -3322,6 +3370,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3335,7 +3384,7 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" />
+        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, возвращенного задачей прокси-сервера.</typeparam>
@@ -3375,6 +3424,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3388,7 +3438,7 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип возвращаемого значения задачи.</typeparam>
@@ -3445,6 +3495,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3458,8 +3509,8 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="function" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата, возвращенного задачей прокси-сервера.</typeparam>
@@ -3502,6 +3553,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3515,14 +3567,14 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип результата задачи.</typeparam>
         <param name="function">Работа для асинхронного выполнения</param>
         <param name="cancellationToken">Токен отмены, который должен использоваться для отмены работы</param>
-        <summary>Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект <see langword="Task(TResult)" />, представляющий эту работу. Токен отмены позволяет отменить работу.</summary>
+        <summary>Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект <see langword="Task(TResult)" />, представляющий эту работу. Маркер отмены позволяет отменить работу.</summary>
         <returns>Задача <see langword="Task(TResult)" />, которая представляет работу в очереди на выполнение в пуле потоков.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3595,6 +3647,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3651,6 +3704,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3714,6 +3768,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3772,6 +3827,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3825,6 +3881,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3835,7 +3892,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.TaskStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает состояние <see cref="T:System.Threading.Tasks.TaskStatus" /> данной задачи.</summary>
+        <summary>Получает состояние <see cref="T:System.Threading.Tasks.TaskStatus" /> данной задачи.</summary>
         <value>Текущее состояние <see cref="T:System.Threading.Tasks.TaskStatus" /> данного экземпляра задачи.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3881,6 +3938,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3928,6 +3986,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3938,7 +3997,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, указывающее, синхронно ли выполнена операция.</summary>
+        <summary>Получает значение, указывающее, синхронно ли выполнена операция.</summary>
         <value>Значение <see langword="true" />, если операция завершилась синхронно, в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -3974,6 +4033,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3990,7 +4050,7 @@ Task t Status: RanToCompletion, Result: 42
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Threading.Tasks.Task.Wait%2A> — Это метод синхронизации, который вызывающий поток до завершения текущей задачи. Если текущая задача еще не началось выполнение, метода Wait пытается удалить задание из планировщика и выполните его, встроенные в текущем потоке. Если не удается это сделать, или если выполнения текущей задачи уже начался, он блокирует вызывающий поток до завершения выполнения задачи. Дополнительные сведения см. в разделе [Task.Wait и «Встраивание»](http://blogs.msdn.com/b/pfxteam/archive/2009/10/15/9907713.aspx) в параллельному программированию в блоге .NET.   
+ <xref:System.Threading.Tasks.Task.Wait%2A> — Это метод синхронизации, который вызывающий поток до завершения текущей задачи. Если текущая задача еще не началось выполнение, метода Wait пытается удалить задание из планировщика и выполните его, встроенные в текущем потоке. Если не удается это сделать, или если выполнения текущей задачи уже начался, он блокирует вызывающий поток до завершения выполнения задачи. Дополнительные сведения см. в разделе [Task.Wait и «Встраивание»](https://devblogs.microsoft.com/pfxteam/task-wait-and-inlining/) в параллельному программированию в блоге .NET.   
   
 ## Examples  
  В следующем примере запускается задача, которая создает один миллион случайных целых чисел от 0 до 100 и вычисляет их среднее значение. В примере используется <xref:System.Threading.Tasks.Task.Wait%2A> метод, чтобы гарантировать, что задача будет завершена, прежде чем приложение завершит работу. В противном случае — так как это консольное приложение, пример завершает работу до задачи можно вычислить и отобразить среднее значение.  
@@ -4003,9 +4063,9 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.</exception>
         <exception cref="T:System.AggregateException">Задача отменена. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит объект <see cref="T:System.Threading.Tasks.TaskCanceledException" />.  
   
-- или - 
+-или- 
 Во время выполнения задачи возникло исключение. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит сведения об исключении или исключениях.</exception>
-        <related type="ExternalDocumentation" href="http://blogs.msdn.com/b/pfxteam/archive/2009/10/15/9907713.aspx">Task.Wait и «Встраивания»</related>
+        <related type="ExternalDocumentation" href="https://devblogs.microsoft.com/pfxteam/task-wait-and-inlining/">Task.Wait и «Встраивания»</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -4029,6 +4089,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4071,7 +4132,7 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.AggregateException">Задача отменена. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит объект <see cref="T:System.Threading.Tasks.TaskCanceledException" />.  
   
-- или - 
+-или- 
 Во время выполнения задачи возникло исключение. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит сведения об исключении или исключениях.</exception>
       </Docs>
     </Member>
@@ -4095,6 +4156,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4137,7 +4199,7 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ObjectDisposedException">Задача была удалена.</exception>
         <exception cref="T:System.AggregateException">Задача отменена. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит объект <see cref="T:System.Threading.Tasks.TaskCanceledException" />.  
   
-- или - 
+-или- 
 Во время выполнения задачи возникло исключение. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит сведения об исключении или исключениях.</exception>
       </Docs>
     </Member>
@@ -4162,6 +4224,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4201,13 +4264,12 @@ Task t Status: RanToCompletion, Result: 42
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.AggregateException">Задача отменена. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит объект <see cref="T:System.Threading.Tasks.TaskCanceledException" />.  
   
-- или - 
+-или- 
 Во время выполнения задачи возникло исключение. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит сведения об исключении или исключениях.</exception>
       </Docs>
     </Member>
@@ -4231,6 +4293,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4283,7 +4346,7 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.AggregateException">Задача отменена. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит объект <see cref="T:System.Threading.Tasks.TaskCanceledException" />.  
   
-- или - 
+-или- 
 Во время выполнения задачи возникло исключение. Коллекция <see cref="P:System.AggregateException.InnerExceptions" /> содержит сведения об исключении или исключениях.</exception>
       </Docs>
     </Member>
@@ -4318,6 +4381,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4330,7 +4394,7 @@ Task t Status: RanToCompletion, Result: 42
       <Parameters>
         <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -4354,11 +4418,11 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="tasks" /> — пустой массив.</exception>
         <exception cref="T:System.AggregateException">По крайней мере один из экземпляров <see cref="T:System.Threading.Tasks.Task" /> был удален. Если задача была отменена, <see cref="T:System.AggregateException" /> содержит исключение <see cref="T:System.OperationCanceledException" /> в коллекции <see cref="P:System.AggregateException.InnerExceptions" />.  
   
-- или - 
+-или- 
 Возникло исключение во время выполнения по крайней мере одного из экземпляров <see cref="T:System.Threading.Tasks.Task" />.</exception>
       </Docs>
     </Member>
@@ -4383,6 +4447,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4400,19 +4465,18 @@ Task t Status: RanToCompletion, Result: 42
         <param name="tasks">Массив экземпляров <see cref="T:System.Threading.Tasks.Task" />, завершения выполнения которых следует дождаться.</param>
         <param name="millisecondsTimeout">Время ожидания в миллисекундах или функция <see cref="F:System.Threading.Timeout.Infinite" /> (-1) в случае неограниченного времени ожидания.</param>
         <summary>Ожидает завершения выполнения всех указанных объектов <see cref="T:System.Threading.Tasks.Task" /> в течение указанного числа миллисекунд.</summary>
-        <returns>
-          <see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
+        <returns><see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">Один или несколько объектов <see cref="T:System.Threading.Tasks.Task" /> в <paramref name="tasks" /> были удалены.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">По крайней мере один из экземпляров <see cref="T:System.Threading.Tasks.Task" /> был удален. Если задача была отменена, <see cref="T:System.AggregateException" /> содержит <see cref="T:System.OperationCanceledException" /> в коллекции <see cref="P:System.AggregateException.InnerExceptions" />.  
   
-- или - 
+-или- 
 Возникло исключение во время выполнения по крайней мере одного из экземпляров <see cref="T:System.Threading.Tasks.Task" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="tasks" /> — пустой массив.</exception>
       </Docs>
     </Member>
@@ -4436,6 +4500,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4465,11 +4530,11 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">По крайней мере один из экземпляров <see cref="T:System.Threading.Tasks.Task" /> был удален. Если задача была отменена, <see cref="T:System.AggregateException" /> содержит <see cref="T:System.OperationCanceledException" /> в коллекции <see cref="P:System.AggregateException.InnerExceptions" />.  
   
-- или - 
+-или- 
 Возникло исключение во время выполнения по крайней мере одного из экземпляров <see cref="T:System.Threading.Tasks.Task" />.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="tasks" /> — пустой массив.</exception>
         <exception cref="T:System.ObjectDisposedException">Один или несколько объектов <see cref="T:System.Threading.Tasks.Task" /> в <paramref name="tasks" /> были удалены.</exception>
       </Docs>
@@ -4495,6 +4560,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4512,22 +4578,20 @@ Task t Status: RanToCompletion, Result: 42
         <param name="tasks">Массив экземпляров <see cref="T:System.Threading.Tasks.Task" />, завершения выполнения которых следует дождаться.</param>
         <param name="timeout">Период <see cref="T:System.TimeSpan" />, представляющий время ожидания в миллисекундах, или период <see cref="T:System.TimeSpan" />, представляющий -1 миллисекунду для неограниченного ожидания.</param>
         <summary>Ожидает завершения выполнения всех указанных отменяемых объектов <see cref="T:System.Threading.Tasks.Task" /> в течение указанного временного интервала.</summary>
-        <returns>
-          <see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
+        <returns><see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">Один или несколько объектов <see cref="T:System.Threading.Tasks.Task" /> в <paramref name="tasks" /> были удалены.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">По крайней мере один из экземпляров <see cref="T:System.Threading.Tasks.Task" /> был удален. Если задача была отменена, <see cref="T:System.AggregateException" /> содержит <see cref="T:System.OperationCanceledException" /> в коллекции <see cref="P:System.AggregateException.InnerExceptions" />.  
   
-- или - 
+-или- 
 Возникло исключение во время выполнения по крайней мере одного из экземпляров <see cref="T:System.Threading.Tasks.Task" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое означает бесконечное время ожидания. 
-- или - 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое представляет неограниченное время ожидания. 
+-или- 
  Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="tasks" /> — пустой массив.</exception>
       </Docs>
     </Member>
@@ -4551,6 +4615,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4570,8 +4635,7 @@ Task t Status: RanToCompletion, Result: 42
         <param name="millisecondsTimeout">Время ожидания в миллисекундах или функция <see cref="F:System.Threading.Timeout.Infinite" /> (-1) в случае неограниченного времени ожидания.</param>
         <param name="cancellationToken">Токен <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />, который нужно контролировать во время ожидания выполнения задач.</param>
         <summary>Ожидает завершения выполнения всех указанных объектов <see cref="T:System.Threading.Tasks.Task" /> в течение указанного числа миллисекунд или до отмены ожидания.</summary>
-        <returns>
-          <see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
+        <returns><see langword="true" />, если все экземпляры <see cref="T:System.Threading.Tasks.Task" /> завершили выполнение в выделенное время; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4584,12 +4648,12 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">По крайней мере один из экземпляров <see cref="T:System.Threading.Tasks.Task" /> был удален. Если задача была отменена, <see cref="T:System.AggregateException" /> содержит <see cref="T:System.OperationCanceledException" /> в коллекции <see cref="P:System.AggregateException.InnerExceptions" />.  
   
-- или - 
+-или- 
 Возникло исключение во время выполнения по крайней мере одного из экземпляров <see cref="T:System.Threading.Tasks.Task" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="millisecondsTimeout" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.  
   
-- или - 
+-или- 
 Аргумент <paramref name="tasks" /> — пустой массив.</exception>
         <exception cref="T:System.OperationCanceledException">Объект <paramref name="cancellationToken" /> отменен.</exception>
       </Docs>
@@ -4625,6 +4689,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4637,7 +4702,7 @@ Task t Status: RanToCompletion, Result: 42
       <Parameters>
         <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -4684,6 +4749,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4729,6 +4795,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4775,6 +4842,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4796,10 +4864,9 @@ Task t Status: RanToCompletion, Result: 42
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task" /> удален.</exception>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> является отрицательным числом, отличным от -1 миллисекунды, которое означает бесконечное время ожидания. 
-- или - 
- Значение <paramref name="timeout" /> больше значения <see cref="F:System.Int32.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Параметр <see cref="P:System.TimeSpan.TotalMilliseconds" /> аргумента <paramref name="timeout" /> является отрицательным числом, отличающимся от -1, которое представляет неограниченное время ожидания. 
+-или- 
+Свойство <paramref name="timeout" /> аргумента <see cref="P:System.TimeSpan.TotalMilliseconds" /> больше чем <see cref="F:System.Int32.MaxValue" />.</exception>
         <exception cref="T:System.ArgumentException">Аргумент <paramref name="tasks" /> содержит элемент NULL.</exception>
       </Docs>
     </Member>
@@ -4823,6 +4890,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4882,6 +4950,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4892,11 +4961,11 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt;" />
+        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="tasks">Задачи, завершение которых требуется подождать.</param>
-        <summary>Создает задачу, которая будет выполнена, когда все <see cref="T:System.Threading.Tasks.Task" /> объекты в перечислимой коллекции будут завершены.</summary>
+        <summary>Создает задачу, которая будет выполнена, когда все объекты <see cref="T:System.Threading.Tasks.Task" /> в перечисляемой коллекции будут завершены.</summary>
         <returns>Задача, представляющая завершение всех предоставленных задач.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4926,7 +4995,7 @@ Task t Status: RanToCompletion, Result: 42
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имел значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Коллекция <paramref name="tasks" />содержала задачу <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Коллекция <paramref name="tasks" /> содержала задачу <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="WhenAll">
@@ -4950,6 +5019,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4960,9 +5030,9 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]">
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -5000,7 +5070,7 @@ Task t Status: RanToCompletion, Result: 42
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имел значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Массив <paramref name="tasks" /> содержал задачу <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Массив <paramref name="tasks" />, содержащший задачу <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="WhenAll&lt;TResult&gt;">
@@ -5024,6 +5094,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5037,12 +5108,12 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" />
+        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип завершенной задачи.</typeparam>
         <param name="tasks">Задачи, завершение которых требуется подождать.</param>
-        <summary>Создает задачу, которая будет выполнена, когда все <see cref="T:System.Threading.Tasks.Task`1" /> объекты в перечислимой коллекции будут завершены.</summary>
+        <summary>Создает задачу, которая будет выполнена, когда все объекты <see cref="T:System.Threading.Tasks.Task`1" /> в перечисляемой коллекции будут завершены.</summary>
         <returns>Задача, представляющая завершение всех предоставленных задач.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5066,12 +5137,12 @@ Task t Status: RanToCompletion, Result: 42
  [!code-csharp[System.Threading.Tasks.Task.WhenAll#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task.whenall/cs/whenall1.cs#1)]
  [!code-vb[System.Threading.Tasks.Task.WhenAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task.whenall/vb/whenall1.vb#1)]  
   
- В этом случае десяти отдельных задач хранятся в <xref:System.Collections.Generic.List%601> объекта. Класс <xref:System.Collections.Generic.List%601> реализует интерфейс списка <xref:System.Collections.Generic.IEnumerable%601>.  
+ В этом случае десяти отдельных задач хранятся в <xref:System.Collections.Generic.List%601> объекта. Интерфейс <xref:System.Collections.Generic.List%601> реализует интерфейс <xref:System.Collections.Generic.IEnumerable%601>.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имел значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Коллекция <paramref name="tasks" />содержала задачу <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Коллекция <paramref name="tasks" /> содержала задачу <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="WhenAll&lt;TResult&gt;">
@@ -5095,6 +5166,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5108,9 +5180,9 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TResult&gt;[]">
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TResult&gt;[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -5146,7 +5218,7 @@ Task t Status: RanToCompletion, Result: 42
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="tasks" /> имел значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Массив <paramref name="tasks" /> содержал задачу <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Массив <paramref name="tasks" />, содержащший задачу <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="WhenAny">
@@ -5180,6 +5252,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5190,7 +5263,7 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt;" />
+        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="tasks">Задачи, завершение которых требуется подождать.</param>
@@ -5229,6 +5302,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5239,9 +5313,9 @@ Task t Status: RanToCompletion, Result: 42
         <ReturnType>System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]">
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -5284,6 +5358,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5297,7 +5372,7 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" />
+        <Parameter Name="tasks" Type="System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TResult">Тип завершенной задачи.</typeparam>
@@ -5337,6 +5412,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5350,9 +5426,9 @@ Task t Status: RanToCompletion, Result: 42
         <TypeParameter Name="TResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TResult&gt;[]">
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TResult&gt;[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -5396,6 +5472,7 @@ Task t Status: RanToCompletion, Result: 42
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -5413,7 +5490,7 @@ Task t Status: RanToCompletion, Result: 42
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Можно использовать `await Task.Yield();` в асинхронном методе для принудительного завершения асинхронного метода. Если текущий контекст синхронизации (<xref:System.Threading.SynchronizationContext> объекта), этот поток будет публиковать в конце выполнения метода к этого контекста. Тем не менее контекст будет решить, как назначать приоритет этой работы по отношению к другим операциям, может быть отложена. Контекст синхронизации, которая присутствует в потоке пользовательского интерфейса в большинстве сред пользовательского интерфейса будет часто определения приоритета работы, отправляется выше, чем входных данных и подготовки к просмотру рабочего контекста. По этой причине не следует полагаться на `await Task.Yield();` для сохранения отклика пользовательского интерфейса.  Дополнительные сведения см. в записи [полезные абстракции снабженный ContinueWith](http://blogs.msdn.com/b/pfxteam/archive/2008/07/23/8768673.aspx) в параллельному программированию в блоге .NET.  
+ Можно использовать `await Task.Yield();` в асинхронном методе для принудительного завершения асинхронного метода. Если текущий контекст синхронизации (<xref:System.Threading.SynchronizationContext> объекта), этот поток будет публиковать в конце выполнения метода к этого контекста. Тем не менее контекст будет решить, как назначать приоритет этой работы по отношению к другим операциям, может быть отложена. Контекст синхронизации, которая присутствует в потоке пользовательского интерфейса в большинстве сред пользовательского интерфейса будет часто определения приоритета работы, отправляется выше, чем входных данных и подготовки к просмотру рабочего контекста. По этой причине не следует полагаться на `await Task.Yield();` для сохранения отклика пользовательского интерфейса.  Дополнительные сведения см. в записи [полезные абстракции снабженный ContinueWith](https://devblogs.microsoft.com/pfxteam/useful-abstractions-enabled-with-continuewith/) в параллельному программированию в блоге .NET.  
   
  ]]></format>
         </remarks>

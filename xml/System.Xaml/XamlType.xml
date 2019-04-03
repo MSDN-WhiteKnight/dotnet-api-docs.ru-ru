@@ -1,13 +1,5 @@
 <Type Name="XamlType" FullName="System.Xaml.XamlType">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="80d4822e5991e5067db28caf8beba0afd9792221" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48607825" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class XamlType : IEquatable&lt;System.Xaml.XamlType&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5f660970c55af6a8e8be700e1df5ac2c266d1596" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56383496" /></Metadata><TypeSignature Language="C#" Value="public class XamlType : IEquatable&lt;System.Xaml.XamlType&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlType extends System.Object implements class System.IEquatable`1&lt;class System.Xaml.XamlType&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Xaml.XamlType" />
   <TypeSignature Language="VB.NET" Value="Public Class XamlType&#xA;Implements IEquatable(Of XamlType)" />
@@ -163,7 +155,7 @@
       </Parameters>
       <Docs>
         <param name="unknownTypeNamespace">Пространство имен XAML для типа в виде строки.</param>
-        <param name="unknownTypeName">Имя типа в предоставленном пространстве имен XAML <c>unknownTypeNamespace</c>.</param>
+        <param name="unknownTypeName">Имя типа в предоставленном пространстве имен XAML <paramref name="unknownTypeNamespace" />.</param>
         <param name="typeArguments">Аргументы типа для объекта <see cref="T:System.Xaml.XamlType" />, представляющего универсальный тип. Может (нередко) иметь значение <see langword="null" />, указывающее, что представленный тип не является универсальным.</param>
         <param name="schemaContext">Контекст схемы XAML для средств чтения и записи XAML.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Xaml.XamlType" /> на основе пространства имен XAML и строки имени для типа. Этот конструктор предназначен исключительно для анализа и записи в узлы XAML использований типов, о которых известно, что они не зарезервированы в базовой системе типов и контексте схемы XAML.</summary>
@@ -438,8 +430,7 @@
       <Docs>
         <param name="obj">Объект, который требуется сравнить с данным объектом.</param>
         <summary>Позволяет определить, равен ли текущий объект другому объекту.</summary>
-        <returns>
-          <see langword="true" />, если текущий объект эквивалентен параметру <paramref name="obj" />, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если текущий объект равен параметру <paramref name="obj" />, в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -471,9 +462,8 @@
       </Parameters>
       <Docs>
         <param name="other">Объект, который требуется сравнить с данным объектом.</param>
-        <summary>Указывает, эквивалентен ли текущий объект другому объекту того же типа.</summary>
-        <returns>
-          <see langword="true" />, если текущий объект эквивалентен параметру <paramref name="other" />, в противном случае — <see langword="false" />.</returns>
+        <summary>Указывает, равен ли текущий объект другому объекту того же типа.</summary>
+        <returns><see langword="true" />, если текущий объект равен параметру <paramref name="other" />, в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1159,7 +1149,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, которое показывает, выполняется ли построение данного типа <see cref="T:System.Xaml.XamlType" /> сверху вниз во время инициализации XAML.</summary>
-        <value>Значение <see langword="true" />, если этот класс <see cref="T:System.Xaml.XamlType" /> строится сверху вниз в ходе инициализации XAML; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если этот класс <see cref="T:System.Xaml.XamlType" /> строится сверху вниз в ходе инициализации XAML; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1547,7 +1537,7 @@
 ## Remarks  
  Этот метод вызывается внутреннего частного метода (без общего `CollectionKind` или `GetCollectionKind` API существует на <xref:System.Xaml.XamlType>).  
   
- Реализация по умолчанию использует внутреннее отражение среды CLR. Для случаев, где <xref:System.Xaml.XamlType.UnderlyingType%2A> — `null`, реализация по умолчанию можно использовать <xref:System.Xaml.XamlType.BaseType%2A>, если он доступен. Это поведение косвенно вызывает <xref:System.Xaml.XamlType.LookupCollectionKind%2A> рекурсивно, чтобы попытаться найти является допустимым базовым типом; он возвращает <xref:System.Xaml.Schema.XamlCollectionKind.None?displayProperty=nameWithType> Если допустимый базового типа не существует. Как правило, реализация по умолчанию пытается найти `Add` метод базового типа путем отражения. Если найден, <xref:System.Reflection.MethodInfo> из `Add` метод является достаточно информации, чтобы определить, какие <xref:System.Xaml.Schema.XamlCollectionKind> должно возвращаться значение. В противном случае возвращает значение <xref:System.Xaml.Schema.XamlCollectionKind.None?displayProperty=nameWithType>.  
+ Реализация по умолчанию использует внутреннее отражение среды CLR. Для случаев, где <xref:System.Xaml.XamlType.UnderlyingType%2A> — `null`, реализация по умолчанию можно использовать <xref:System.Xaml.XamlType.BaseType%2A>, если он доступен. Это поведение косвенно вызывает <xref:System.Xaml.XamlType.LookupCollectionKind%2A> рекурсивно, чтобы попытаться найти является допустимым базовым типом; он возвращает <xref:System.Xaml.Schema.XamlCollectionKind.None?displayProperty=nameWithType> Если допустимый базового типа не существует. Как правило, реализация по умолчанию пытается найти `Add` метод базового типа путем отражения. Если найден, <xref:System.Reflection.MethodInfo> из `Add` метод является достаточно информации, чтобы определить, какие <xref:System.Xaml.Schema.XamlCollectionKind> должно возвращаться значение. В противном случае она возвращает <xref:System.Xaml.Schema.XamlCollectionKind.None?displayProperty=nameWithType>.  
   
  Переопределите этот метод, если вы не полагаться на внутреннее отражение среды CLR по умолчанию и используете метаданные или другие методы для создания отчетов о системе типов XAML или сведения о схеме типа.  
   
@@ -2174,7 +2164,7 @@
       </Parameters>
       <Docs>
         <param name="name">Имя (в виде строки) члена, который требуется получить.</param>
-        <param name="skipReadOnlyCheck">Значение <see langword="true" />, если необходимо возвратить член, даже если в этом члене задано значение <see langword="true" /> для свойства <see cref="P:System.Xaml.XamlMember.IsReadOnly" />. Значение <see langword="false" />, чтобы не возвращать член <see cref="P:System.Xaml.XamlMember.IsReadOnly" />. Значение по умолчанию: <see langword="false" />.</param>
+        <param name="skipReadOnlyCheck">Значение <see langword="true" />, если необходимо возвратить член, даже если в этом члене задано значение <see langword="true" /> для свойства <see cref="P:System.Xaml.XamlMember.IsReadOnly" />. Значение <see langword="false" />, чтобы не возвращать член <see cref="P:System.Xaml.XamlMember.IsReadOnly" />. Значение по умолчанию — <see langword="false" />.</param>
         <summary>Возвращает член <see cref="T:System.Xaml.XamlMember" /> для определенного именованного члена из данного типа <see cref="T:System.Xaml.XamlType" />.</summary>
         <returns>Сведения <see cref="T:System.Xaml.XamlMember" /> для члена, если он найден; в противном случае — значение <see langword="null" />.</returns>
         <remarks>
@@ -2539,11 +2529,11 @@
       </Parameters>
       <Docs>
         <param name="xamlType1">
-          <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
+  <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
         <param name="xamlType2">
-          <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
+  <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
         <summary>Определяет, совпадают ли значения двух указанных объектов <see cref="T:System.Xaml.XamlType" />.</summary>
-        <returns>Значение <see langword="true" />, если значение параметра <paramref name="xamlType1" /> совпадает со значением <paramref name="xamlType2" />; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если значение <paramref name="xamlType1" /> совпадает со значением <paramref name="xamlType2" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2568,9 +2558,9 @@
       </Parameters>
       <Docs>
         <param name="xamlType1">
-          <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
+  <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
         <param name="xamlType2">
-          <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
+  <see cref="T:System.Xaml.XamlType" /> или <see langword="null" />.</param>
         <summary>Определяет, различаются ли значения двух указанных объектов <see cref="T:System.Xaml.XamlType" />.</summary>
         <returns>Значение <see langword="true" />, если значение <paramref name="xamlType1" /> отличается от значения <paramref name="xamlType2" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>

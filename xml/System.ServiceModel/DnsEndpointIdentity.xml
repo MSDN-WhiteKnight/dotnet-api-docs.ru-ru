@@ -1,13 +1,5 @@
 <Type Name="DnsEndpointIdentity" FullName="System.ServiceModel.DnsEndpointIdentity">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cc495f07a9e730f51883667a73d3c1fbec7da2e1" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49147648" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class DnsEndpointIdentity : System.ServiceModel.EndpointIdentity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ebeb09d7b48b879c06d49ca3e7e2b60ac10b3cab" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58553480" /></Metadata><TypeSignature Language="C#" Value="public class DnsEndpointIdentity : System.ServiceModel.EndpointIdentity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DnsEndpointIdentity extends System.ServiceModel.EndpointIdentity" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.DnsEndpointIdentity" />
   <TypeSignature Language="VB.NET" Value="Public Class DnsEndpointIdentity&#xA;Inherits EndpointIdentity" />
@@ -21,9 +13,12 @@
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.0.2.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.1</AssemblyVersion>
+    <AssemblyVersion>4.5.0.3</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ServiceModel.EndpointIdentity</BaseTypeName>
@@ -35,7 +30,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот класс задает ожидаемое удостоверение сервера. Удостоверение является действительным для режима проверки подлинности сертификата X509, если сертификат сервера содержит DNS с тем же самым значением. Оно также действительно для режима проверки подлинности Windows, если SPN имеет такое же значение. В этом случае клиента, указав удостоверения DnsEndpointIdentity «server1.microsoft.com» для режима проверки подлинности Windows эквивалентно указанию удостоверения SpnEndpointIdentity «host/server1.microsoft.com».  
+ Этот класс задает ожидаемое удостоверение сервера. Этот идентификатор является допустимым для X509 режима проверки подлинности сертификата, если сертификат сервера содержит DNS с тем же значением. Оно также действительно для режима проверки подлинности Windows, если SPN имеет такое же значение. В этом случае клиента, указав удостоверения DnsEndpointIdentity «server1.microsoft.com» для режима проверки подлинности Windows эквивалентно указанию удостоверения SpnEndpointIdentity «host/server1.microsoft.com».  
   
  ]]></format>
     </remarks>
@@ -67,11 +62,10 @@
         <AssemblyName>System.ServiceModel.Security</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="identity" Type="System.IdentityModel.Claims.Claim" />
+        <Parameter Name="identity" Type="System.IdentityModel.Claims.Claim" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="identity">
-          <see cref="T:System.IdentityModel.Claims.Claim" />.</param>
+        <param name="identity"><see cref="T:System.IdentityModel.Claims.Claim" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DnsEndpointIdentity" /> на основании утверждения.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -81,7 +75,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="identity" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="identity" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -100,9 +94,12 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dnsName" Type="System.String" />
@@ -118,7 +115,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="dnsName" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dnsName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Значение типа утверждения <paramref name="dnsName" /> отлично от <see cref="P:System.IdentityModel.Claims.ClaimTypes.Dns" />.</exception>
       </Docs>
     </Member>

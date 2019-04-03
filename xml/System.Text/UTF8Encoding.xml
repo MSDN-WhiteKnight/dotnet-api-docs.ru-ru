@@ -1,13 +1,5 @@
 <Type Name="UTF8Encoding" FullName="System.Text.UTF8Encoding">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b89769ead4d3fef4b5ae9039a8eb6d38f12a8544" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49134687" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class UTF8Encoding : System.Text.Encoding" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="43d9b9f106d73cfb09db1473ac704034fdcd752e" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58456721" /></Metadata><TypeSignature Language="C#" Value="public class UTF8Encoding : System.Text.Encoding" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit UTF8Encoding extends System.Text.Encoding" />
   <TypeSignature Language="DocId" Value="T:System.Text.UTF8Encoding" />
   <TypeSignature Language="VB.NET" Value="Public Class UTF8Encoding&#xA;Inherits Encoding" />
@@ -39,8 +31,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -68,11 +60,11 @@
   
  Для кодировщика или декодера, которое сможет сохранить сведения о состоянии для кодирования или декодирования данных, охватывающих несколько блоков (например, строка 1 миллиона символов, кодируется в сегментах 100 000 символов), используйте <xref:System.Text.UTF8Encoding.GetEncoder%2A> и <xref:System.Text.UTF8Encoding.GetDecoder%2A> свойства, соответственно.  
   
- При необходимости <xref:System.Text.UTF8Encoding> предоставляет метку порядка байтов (BOM), который представляет собой массив байтов, которые может иметь префикс в начало потока, полученный в результате процесса кодирования. Если метку порядка байтов (BOM), используемое потока байтов в кодировке UTF-8, декодер определить порядок байтов и формат преобразования или UTF. Обратите внимание, что стандарт Юникод не требуется, и не рекомендует метки порядка БАЙТОВ в кодировке UTF-8 в кодировке потоков. Дополнительные сведения о порядке байтов и отметки порядка байтов, см. в разделе стандарта Юникод на [домашней странице Юникода](http://go.microsoft.com/fwlink/?LinkId=37123).  
+ При необходимости <xref:System.Text.UTF8Encoding> предоставляет метку порядка байтов (BOM), который представляет собой массив байтов, которые может иметь префикс в начало потока, полученный в результате процесса кодирования. Если метку порядка байтов (BOM), используемое потока байтов в кодировке UTF-8, декодер определить порядок байтов и формат преобразования или UTF. Обратите внимание, что стандарт Юникод не требуется, и не рекомендует метки порядка БАЙТОВ в кодировке UTF-8 в кодировке потоков. Дополнительные сведения о порядке байтов и отметки порядка байтов, см. в разделе стандарта Юникод на [домашней странице Юникода](https://go.microsoft.com/fwlink/?LinkId=37123).  
   
  Если кодировщик настроен для поддержки Спецификации, его можно получить, вызвав <xref:System.Text.UTF8Encoding.GetPreamble%2A> метода; в противном случае метод возвращает пустой массив. Обратите внимание, что, даже если <xref:System.Text.UTF8Encoding> объект настроен для поддержки Спецификации, необходимо включить метки порядка БАЙТОВ в начале потока закодированных байтов в виде соответствующих; методов кодирования из <xref:System.Text.UTF8Encoding> класс делают это автоматически.  
   
-> [!NOTE]
+> [!CAUTION]
 >  Чтобы включить обнаружение ошибок и защищенности экземпляра класса следует вызывать <xref:System.Text.UTF8Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%29> конструктора и задайте `throwOnInvalidBytes` параметр `true`. С помощью обнаружение ошибок включено, вызывает метод, который обнаруживает недопустимую последовательность символов или байтов <xref:System.ArgumentException> исключение. Без обнаружения ошибки исключение не создается, и Недопустимая последовательность обычно игнорируется.  
   
 > [!NOTE]
@@ -87,7 +79,7 @@
  [!code-csharp[System.Text.UTF8Encoding Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.UTF8Encoding Example/CS/snippet.cs#1)]
  [!code-vb[System.Text.UTF8Encoding Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.UTF8Encoding Example/VB/snippet.vb#1)]  
   
- В следующем примере та же строка в предыдущем примере, за исключением того, что она записывает закодированных байтов в файл и добавляет в поток байтов с метку порядка байтов (BOM). Затем он считывает из файла двумя разными способами: как текстовый файл с помощью <xref:System.IO.StreamReader> объекта; и как двоичный файл. Как и следовало ожидать, ни регистром Спецификации включается в вновь считанного строку.  
+ В следующем примере та же строка в предыдущем примере, за исключением того, что она записывает закодированных байтов в файл и добавляет в поток байтов с метку порядка байтов (BOM). Затем он считывает из файла двумя разными способами: как текстовый файл с помощью <xref:System.IO.StreamReader> объекта; и как двоичный файл. Как и следовало ожидать, ни одна из строк вновь чтения включает в себя метки порядка БАЙТОВ.  
   
  [!code-csharp[System.Text.UTF8Encoding Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.UTF8Encoding Example/CS/bom1.cs#2)]
  [!code-vb[System.Text.UTF8Encoding Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.UTF8Encoding Example/VB/bom1.vb#2)]  
@@ -144,7 +136,7 @@
 ## Remarks  
  Этот конструктор создает экземпляр, который не поддерживает метки порядка байтов Юникода и не выдает исключение при обнаружении недопустимой кодировки.  
   
-> [!NOTE]
+> [!CAUTION]
 >  По соображениям безопасности рекомендуется включить обнаружение ошибок путем вызова конструктора с `throwOnInvalidBytes` параметр и присвоить ему значение `true`.  
   
    
@@ -199,7 +191,7 @@
 ## Remarks  
  Этот конструктор создает экземпляр, который не выдает исключение при обнаружении недопустимой кодировки.  
   
-> [!NOTE]
+> [!CAUTION]
 >  По соображениям безопасности следует включить обнаружение ошибок, вызвав конструктор, который включает в себя `throwOnInvalidBytes` параметр и присвоить ему значение `true`.  
   
  `encoderShouldEmitUTF8Identifier` Параметр управляет операциями <xref:System.Text.UTF8Encoding.GetPreamble%2A> метод. Если `true`, метод возвращает массив байтов, содержащий метку порядка байтов (BOM) Юникода в формате UTF-8.  Если `false`, он возвращает массив байтов нулевой длины. Однако можно присвоить `encoderShouldEmitUTF8Identifier` для `true` не приводит к <xref:System.Text.UTF8Encoding.GetBytes%2A> метод в качестве префикса метки порядка БАЙТОВ в начале байтового массива, привести к не <xref:System.Text.UTF8Encoding.GetByteCount%2A> метод включать число байтов в Спецификации в счетчик байтов.  
@@ -260,7 +252,7 @@
   
  Если `throwOnInvalidBytes` — `true`, вызывает метод, который обнаруживает недопустимые последовательности байтов <xref:System.ArgumentException?displayProperty=nameWithType> исключение. В противном случае этот метод создает исключение, и недопустимую последовательность учитывается.  
   
-> [!NOTE]
+> [!CAUTION]
 >  По соображениям безопасности следует включить обнаружение ошибок, вызвав конструктор, который включает в себя `throwOnInvalidBytes` параметр и установив для этого параметра `true`.  
   
    
@@ -412,7 +404,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="chars" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chars" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
@@ -447,13 +439,13 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -461,8 +453,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="chars" Type="System.Char*" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="chars">Указатель на первый кодируемый символ.</param>
@@ -481,10 +473,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="chars" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chars" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
@@ -561,13 +553,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="chars" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chars" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="chars" />.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="chars" /> содержит недопустимую последовательность символов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
@@ -610,12 +602,12 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="s" Type="System.String" Index="0" FrameworkAlternate="netframework-1.1" />
       </Parameters>
       <Docs>
-        <param name="s">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="s">Кодируемая строка символов.</param>
+        <summary>Кодирует символы из указанного объекта <see cref="T:System.String" /> в последовательность байтов.</summary>
+        <returns>Массив байтов, содержащий закодированные символы из строки, заданной параметром s.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -643,13 +635,13 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -657,10 +649,10 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="chars" Type="System.Char*" />
-        <Parameter Name="charCount" Type="System.Int32" />
-        <Parameter Name="bytes" Type="System.Byte*" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="chars" Type="System.Char*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="charCount" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bytes" Type="System.Byte*" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="chars">Указатель на первый кодируемый символ.</param>
@@ -683,14 +675,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="chars" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="chars" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charCount" /> или <paramref name="byteCount" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="chars" /> содержит недопустимую последовательность символов.  
   
-- или - 
+-или- 
  <paramref name="byteCount" /> меньше результирующего числа байтов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -773,20 +765,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="chars" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="chars" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="chars" /> содержит недопустимую последовательность символов.  
   
-- или - 
+-или- 
  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -868,20 +860,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charIndex" />, <paramref name="charCount" /> или <paramref name="byteIndex" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="charIndex" /> и <paramref name="charCount" /> не указывают допустимый диапазон в <paramref name="chars" />.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="byteIndex" /> не является допустимым индексом в <paramref name="bytes" />.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и <paramref name="s" /> содержит недопустимую последовательность символов.  
   
-- или - 
+-или- 
  Недостаточно емкости <paramref name="bytes" /> от <paramref name="byteIndex" /> до конца массива для размещения полученных байтов.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -925,13 +917,13 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -939,8 +931,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bytes" Type="System.Byte*" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="bytes" Type="System.Byte*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="bytes">Указатель на первый декодируемый байт.</param>
@@ -957,10 +949,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и параметр <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
@@ -1036,13 +1028,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и параметр <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
@@ -1087,13 +1079,13 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1101,10 +1093,10 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bytes" Type="System.Byte*" />
-        <Parameter Name="byteCount" Type="System.Int32" />
-        <Parameter Name="chars" Type="System.Char*" />
-        <Parameter Name="charCount" Type="System.Int32" />
+        <Parameter Name="bytes" Type="System.Byte*" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="chars" Type="System.Char*" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="charCount" Type="System.Int32" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="bytes">Указатель на первый декодируемый байт.</param>
@@ -1127,14 +1119,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="chars" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="chars" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteCount" /> или <paramref name="charCount" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и параметр <paramref name="bytes" /> содержит недопустимую последовательность байтов.  
   
-- или - 
+-или- 
  <paramref name="charCount" /> меньше результирующего числа символов.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -1218,20 +1210,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="chars" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="chars" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteIndex" />, <paramref name="byteCount" /> или <paramref name="charIndex" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="byteindex" /> и <paramref name="byteCount" /> не указывают допустимый диапазон в <paramref name="bytes" />.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="charIndex" /> не является допустимым индексом в <paramref name="chars" />.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и параметр <paramref name="bytes" /> содержит недопустимую последовательность байтов.  
   
-- или - 
+-или- 
  Недостаточно емкости <paramref name="chars" /> от <paramref name="charIndex" /> до конца массива для размещения полученных символов.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -1473,7 +1465,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="charCount" /> меньше нуля.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -1547,7 +1539,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="byteCount" /> меньше нуля.  
   
-- или - 
+-или- 
 Результирующее число байтов больше максимального количества, которое можно вернуть как целочисленное значение.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 
 - и - 
@@ -1611,12 +1603,10 @@
   
  Есть некоторые недостатки использования метки порядка БАЙТОВ. Например сложно выбрать способы ограничения полей базы данных, используйте метки порядка БАЙТОВ. Объединение файлов может стать проблемой также, например, когда файлы будут объединены таким образом, что необязательный символ может оказаться в центре данных. Несмотря на некоторые недостатки тем не менее, использование спецификации настоятельно рекомендуется.  
   
- Дополнительные сведения о порядке байтов и отметки порядка байтов, см. в разделе стандарта Юникод на [домашней странице Юникода](http://go.microsoft.com/fwlink/?LinkId=37123).  
+ Дополнительные сведения о порядке байтов и отметки порядка байтов, см. в разделе стандарта Юникод на [домашней странице Юникода](https://go.microsoft.com/fwlink/?LinkId=37123).  
   
-> [!CAUTION]
->  Чтобы обеспечить правильное декодирование закодированных байтов когда они сохраняются в виде файла или потока, можно добавить префикс начало потока закодированных байтов с начальной части. Обратите внимание, что <xref:System.Text.UTF8Encoding.GetBytes%2A> метод не добавить в начало метки порядка БАЙТОВ в последовательность закодированных байтов; предоставление метки порядка БАЙТОВ в начале соответствующих байтового потока является обязанностью разработчика.  
-  
-   
+> [!IMPORTANT]
+>  Чтобы обеспечить правильное декодирование закодированных байтов когда они сохраняются в виде файла или потока, можно добавить префикс начало потока закодированных байтов с начальной части. Обратите внимание, что <xref:System.Text.UTF8Encoding.GetBytes%2A> метод не добавить в начало метки порядка БАЙТОВ в последовательность закодированных байтов; предоставление метки порядка БАЙТОВ в начале соответствующих байтового потока является обязанностью разработчика.
   
 ## Examples  
  В следующем примере используется <xref:System.Text.UTF8Encoding.GetPreamble%2A> метод для возврата байтов Юникода порядок следования, закодированную в формате UTF-8. Обратите внимание, что конструктор по умолчанию для <xref:System.Text.UTF8Encoding> преамбула не предоставляется.  
@@ -1673,9 +1663,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bytes" Type="System.Byte[]" />
-        <Parameter Name="index" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="bytes" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="bytes">Массив байтов, содержащий последовательность байтов, которую требуется декодировать.</param>
@@ -1705,10 +1695,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="bytes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> или <paramref name="count" /> меньше нуля.  
   
-- или - 
+-или- 
  Параметры <paramref name="index" /> и <paramref name="count" /> не указывают допустимый диапазон в <paramref name="bytes" />.</exception>
         <exception cref="T:System.ArgumentException">Обнаружение ошибок включено, и параметр <paramref name="bytes" /> содержит недопустимую последовательность байтов.</exception>
         <exception cref="T:System.Text.DecoderFallbackException">Произошел откат (полное объяснение см. в статье [Кодировка символов в .NET Framework](~/docs/standard/base-types/character-encoding.md)). 

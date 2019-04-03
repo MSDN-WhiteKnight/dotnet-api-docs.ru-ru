@@ -1,13 +1,5 @@
 <Type Name="SmtpClient" FullName="System.Net.Mail.SmtpClient">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ed8ce43d1fb03376cd6b79bde7bced0e3d59109e" />
-    <Meta Name="ms.sourcegitcommit" Value="996ba67625b61917bcf75bfefe6dcb016019c2d8" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/02/2018" />
-    <Meta Name="ms.locfileid" Value="50965530" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SmtpClient : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2b67a25f4970d215593c1b4fd6a827035088a4bd" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58459269" /></Metadata><TypeSignature Language="C#" Value="public class SmtpClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SmtpClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Mail.SmtpClient" />
   <TypeSignature Language="VB.NET" Value="Public Class SmtpClient&#xA;Implements IDisposable" />
@@ -49,12 +41,12 @@
 ## Remarks  
  `System.Net.Mail.SmtpClient` Класс используется для отправки электронной почты на сервер SMTP для доставки. Протокол SMTP определяется в RFC 2821, доступный в [ https://www.ietf.org ](https://www.ietf.org/).  
 
->  [!IMPORTANT]
+> [!IMPORTANT]
 >  Мы не рекомендуем использовать `SmtpClient` класса для разработки новых приложений. Дополнительные сведения см. в разделе [SmtpClient не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0005.md) на сайте GitHub.
 
  Классы, показанные в следующей таблице используются для создания сообщения электронной почты, которые могут быть отправлены с помощью <xref:System.Net.Mail.SmtpClient>.  
   
-|Класс|Описание:|  
+|Класс|Описание|  
 |-----------|-----------------|  
 |<xref:System.Net.Mail.Attachment>|Представляет файловые вложения. Этот класс позволяет пользователю присоединять файлы, потоки или текст в сообщение электронной почты.|  
 |<xref:System.Net.Mail.MailAddress>|Представляет адрес электронной почты отправителя и получателей.|  
@@ -244,7 +236,7 @@
       </Parameters>
       <Docs>
         <param name="host">Значение <see cref="T:System.String" />, содержащее имя или IP-адрес хоста, используемого для SMTP-транзакций.</param>
-        <param name="port">Значение <see cref="T:System.Int32" />, большее нуля, которое задает порт, используемый на узле <c>host</c>.</param>
+        <param name="port">Значение <see cref="T:System.Int32" />, большее нуля, которое задает порт, используемый на хосте <paramref name="host" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Net.Mail.SmtpClient" />, который отправляет электронную почту с помощью указанного сервера SMTP и порта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -264,7 +256,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="port" /> не может иметь значение меньше нуля.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Свойство <paramref name="port" /> не может иметь значение меньше нуля.</exception>
         <permission cref="T:System.Net.Mail.SmtpPermission">для задания порта. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.ConnectToUnrestrictedPort" />.</permission>
       </Docs>
     </Member>
@@ -403,9 +395,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает формат доставки, используемый <see cref="T:System.Net.Mail.SmtpClient" /> для отправки электронной почты.</summary>
-        <value>Возвращает <see cref="T:System.Net.Mail.SmtpDeliveryFormat" />.  
-  
-Формат доставки, используемый <see cref="T:System.Net.Mail.SmtpClient" />.</value>
+        <value>Формат доставки, используемый <see cref="T:System.Net.Mail.SmtpClient" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -581,7 +571,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="disposing">Значение <see langword="true" /> для освобождения управляемых и неуправляемых ресурсов; значение <see langword="false" /> для освобождения только неуправляемых ресурсов.</param>
@@ -641,8 +631,7 @@
       </ReturnValue>
       <Docs>
         <summary>Указывает, использует ли <see cref="T:System.Net.Mail.SmtpClient" /> протокол SSL для шифрования подключения.</summary>
-        <value>
-          <see langword="true" />, если <see cref="T:System.Net.Mail.SmtpClient" /> использует SSL; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="T:System.Net.Mail.SmtpClient" /> использует SSL; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -772,7 +761,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />, содержащий данные событий.</param>
-        <summary>Вызывает событие <see cref="E:System.Net.Mail.SmtpClient.SendCompleted" />.</summary>
+        <summary>Создает событие <see cref="E:System.Net.Mail.SmtpClient.SendCompleted" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -783,9 +772,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Net.Mail.SmtpClient.OnSendCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> в производном классе, не забудьте вызвать базовый класс <see cref="M:System.Net.Mail.SmtpClient.OnSendCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> получения метода, чтобы зарегистрированные делегаты <see cref="E:System.Net.Mail.SmtpClient.SendCompleted" /> событий.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Net.Mail.SmtpClient.OnSendCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> в производном классе, не забудьте вызвать базовый класс <see cref="M:System.Net.Mail.SmtpClient.OnSendCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> получения метода, чтобы зарегистрированные делегаты <see cref="E:System.Net.Mail.SmtpClient.SendCompleted" /> событий.</para></block>
       </Docs>
     </Member>
     <Member MemberName="PickupDirectoryLocation">
@@ -974,19 +961,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="message" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Данный <see cref="T:System.Net.Mail.SmtpClient" /> в настоящий момент вызывает <see cref="Overload:System.Net.Mail.SmtpClient.SendAsync" />.  
   
-- или - 
- Свойство <see cref="P:System.Net.Mail.MailMessage.From" /> имеет значение <see langword="null" />.  
+-или- 
+ <see cref="P:System.Net.Mail.MailMessage.From" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Отсутствуют получатели в свойствах <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> и <see cref="P:System.Net.Mail.MailMessage.Bcc" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />, а свойству <see cref="P:System.Net.Mail.SmtpClient.Host" /> задано значение <see langword="null" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" /> и <see cref="P:System.Net.Mail.SmtpClient.Host" /> равно пустой строке ("").  
   
 -или- 
@@ -994,32 +981,33 @@
         <exception cref="T:System.ObjectDisposedException">Данный объект удален.</exception>
         <exception cref="T:System.Net.Mail.SmtpException">Сбой подключения к серверу SMTP.  
   
-- или - 
+-или- 
 Проверка подлинности не пройдена.  
   
-- или - 
+-или- 
 Истекло время ожидания для выполнения операции. 
-- или - 
+-или- 
  <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true" />, а свойство <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> имеет значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.SpecifiedPickupDirectory" /> или <see cref="F:System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis" />.  
   
-- или - 
+-или- 
  Свойство <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true," /> однако почтовый SMTP-сервер не отправил STARTTLS в ответ на команду EHLO.</exception>
         <exception cref="T:System.Net.Mail.SmtpFailedRecipientException">Сообщение <paramref name="message" /> не удалось доставить одному из получателей <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> или <see cref="P:System.Net.Mail.MailMessage.Bcc" />.</exception>
         <exception cref="T:System.Net.Mail.SmtpFailedRecipientsException">Сообщение <paramref name="message" /> не удалось доставить двум или более получателям <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> или <see cref="P:System.Net.Mail.MailMessage.Bcc" />.</exception>
-        <permission cref="T:System.Net.Mail.SmtpPermission">для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
+        <permission cref="T:System.Net.Mail.SmtpPermission">Для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
       </Docs>
     </Member>
     <Member MemberName="Send">
-      <MemberSignature Language="C#" Value="public void Send (string from, string recipients, string subject, string body);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(string from, string recipients, string subject, string body) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.Send(System.String,System.String,System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub Send (from As String, recipients As String, subject As String, body As String)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Send(System::String ^ from, System::String ^ recipients, System::String ^ subject, System::String ^ body);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+      <MemberSignature Language="C#" Value="public void Send (string from, string recipients, string subject, string body);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(string from, string recipients, string subject, string body) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.Send(System.String,System.String,System.String,System.String)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Send (from As String, recipients As String, subject As String, body As String)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Send(System::String ^ from, System::String ^ recipients, System::String ^ subject, System::String ^ body);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
       <MemberSignature Language="C#" Value="public void Send (string from, string to, string subject, string body);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(string from, string to, string subject, string body) cil managed" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="VB.NET" Value="Public Sub Send (from As String, to As String, subject As String, body As String)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; void Send(System::String ^ from, System::String ^ to, System::String ^ subject, System::String ^ body);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="member this.Send : string * string * string * string -&gt; unit" Usage="smtpClient.Send (from, to, subject, body)" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.Send(System.String,System.String,System.String,System.String)" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="member this.Send : string * string * string * string -&gt; unit" Usage="smtpClient.Send (from, to, subject, body)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1041,7 +1029,7 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="from" Type="System.String" Index="0" />
-        <Parameter Name="recipients" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="recipients" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
         <Parameter Name="to" Type="System.String" Index="1" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
         <Parameter Name="subject" Type="System.String" Index="2" />
         <Parameter Name="body" Type="System.String" Index="3" />
@@ -1074,20 +1062,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="from" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="from" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="recipients" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Свойство <paramref name="from" /> имеет значение <see cref="F:System.String.Empty" />.  
+-или- 
+ <paramref name="recipients" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="from" /> — <see cref="F:System.String.Empty" />.  
   
-- или - 
- Свойство <paramref name="recipients" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+-или- 
+ <paramref name="recipients" /> — <see cref="F:System.String.Empty" />.</exception>
         <exception cref="T:System.InvalidOperationException">Данный <see cref="T:System.Net.Mail.SmtpClient" /> в настоящий момент вызывает <see cref="Overload:System.Net.Mail.SmtpClient.SendAsync" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />, а свойству <see cref="P:System.Net.Mail.SmtpClient.Host" /> задано значение <see langword="null" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" /> и <see cref="P:System.Net.Mail.SmtpClient.Host" /> равно пустой строке ("").  
   
 -или- 
@@ -1095,19 +1083,19 @@
         <exception cref="T:System.ObjectDisposedException">Данный объект удален.</exception>
         <exception cref="T:System.Net.Mail.SmtpException">Сбой подключения к серверу SMTP.  
   
-- или - 
+-или- 
 Проверка подлинности не пройдена.  
   
-- или - 
+-или- 
 Истекло время ожидания для выполнения операции. 
-- или - 
+-или- 
  <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true" />, а свойство <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> имеет значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.SpecifiedPickupDirectory" /> или <see cref="F:System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis" />.  
   
-- или - 
+-или- 
  Свойство <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true," /> однако почтовый SMTP-сервер не отправил STARTTLS в ответ на команду EHLO.</exception>
         <exception cref="T:System.Net.Mail.SmtpFailedRecipientException">Сообщение <paramref name="message" /> не удалось доставить одному из получателей <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> или <see cref="P:System.Net.Mail.MailMessage.Bcc" />.</exception>
         <exception cref="T:System.Net.Mail.SmtpFailedRecipientsException">Сообщение <paramref name="message" /> не удалось доставить двум или более получателям <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> или <see cref="P:System.Net.Mail.MailMessage.Bcc" />.</exception>
-        <permission cref="T:System.Net.Mail.SmtpPermission">для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
+        <permission cref="T:System.Net.Mail.SmtpPermission">Для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
       </Docs>
     </Member>
     <MemberGroup MemberName="SendAsync">
@@ -1190,19 +1178,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="message" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.  
   
-- или - 
- Свойство <see cref="P:System.Net.Mail.MailMessage.From" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <see cref="P:System.Net.Mail.MailMessage.From" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Данный <see cref="T:System.Net.Mail.SmtpClient" /> в настоящий момент вызывает <see cref="Overload:System.Net.Mail.SmtpClient.SendAsync" />.  
   
-- или - 
+-или- 
 Отсутствуют получатели в свойствах <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> и <see cref="P:System.Net.Mail.MailMessage.Bcc" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />, а свойству <see cref="P:System.Net.Mail.SmtpClient.Host" /> задано значение <see langword="null" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" /> и <see cref="P:System.Net.Mail.SmtpClient.Host" /> равно пустой строке ("").  
   
 -или- 
@@ -1210,33 +1198,34 @@
         <exception cref="T:System.ObjectDisposedException">Данный объект удален.</exception>
         <exception cref="T:System.Net.Mail.SmtpException">Сбой подключения к серверу SMTP.  
   
-- или - 
+-или- 
 Проверка подлинности не пройдена.  
   
-- или - 
+-или- 
 Истекло время ожидания для выполнения операции. 
-- или - 
+-или- 
  <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true" />, а свойство <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> имеет значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.SpecifiedPickupDirectory" /> или <see cref="F:System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis" />.  
   
-- или - 
+-или- 
  Свойство <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true," /> однако почтовый SMTP-сервер не отправил STARTTLS в ответ на команду EHLO.  
   
-- или - 
+-или- 
 Сообщение <paramref name="message" /> не удалось доставить одному или нескольким получателям <see cref="P:System.Net.Mail.MailMessage.To" />, <see cref="P:System.Net.Mail.MailMessage.CC" /> или <see cref="P:System.Net.Mail.MailMessage.Bcc" />.</exception>
-        <permission cref="T:System.Net.Mail.SmtpPermission">для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
+        <permission cref="T:System.Net.Mail.SmtpPermission">Для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
       </Docs>
     </Member>
     <Member MemberName="SendAsync">
-      <MemberSignature Language="C#" Value="public void SendAsync (string from, string recipients, string subject, string body, object userToken);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string from, string recipients, string subject, string body, object userToken) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.SendAsync(System.String,System.String,System.String,System.String,System.Object)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub SendAsync (from As String, recipients As String, subject As String, body As String, userToken As Object)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SendAsync(System::String ^ from, System::String ^ recipients, System::String ^ subject, System::String ^ body, System::Object ^ userToken);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+      <MemberSignature Language="C#" Value="public void SendAsync (string from, string recipients, string subject, string body, object userToken);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string from, string recipients, string subject, string body, object userToken) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.SendAsync(System.String,System.String,System.String,System.String,System.Object)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SendAsync (from As String, recipients As String, subject As String, body As String, userToken As Object)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SendAsync(System::String ^ from, System::String ^ recipients, System::String ^ subject, System::String ^ body, System::Object ^ userToken);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8;netcore-2.2;netcore-3.0" />
       <MemberSignature Language="C#" Value="public void SendAsync (string from, string to, string subject, string body, object userToken);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string from, string to, string subject, string body, object userToken) cil managed" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="VB.NET" Value="Public Sub SendAsync (from As String, to As String, subject As String, body As String, userToken As Object)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; void SendAsync(System::String ^ from, System::String ^ to, System::String ^ subject, System::String ^ body, System::Object ^ userToken);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="member this.SendAsync : string * string * string * string * obj -&gt; unit" Usage="smtpClient.SendAsync (from, to, subject, body, userToken)" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpClient.SendAsync(System.String,System.String,System.String,System.String,System.Object)" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="member this.SendAsync : string * string * string * string * obj -&gt; unit" Usage="smtpClient.SendAsync (from, to, subject, body, userToken)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1258,7 +1247,7 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="from" Type="System.String" Index="0" />
-        <Parameter Name="recipients" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0;netcore-2.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="recipients" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
         <Parameter Name="to" Type="System.String" Index="1" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
         <Parameter Name="subject" Type="System.String" Index="2" />
         <Parameter Name="body" Type="System.String" Index="3" />
@@ -1299,20 +1288,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="from" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="from" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="recipient" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Свойство <paramref name="from" /> имеет значение <see cref="F:System.String.Empty" />.  
+-или- 
+ <paramref name="recipient" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="from" /> — <see cref="F:System.String.Empty" />.  
   
-- или - 
- Свойство <paramref name="recipient" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+-или- 
+ <paramref name="recipient" /> — <see cref="F:System.String.Empty" />.</exception>
         <exception cref="T:System.InvalidOperationException">Данный <see cref="T:System.Net.Mail.SmtpClient" /> в настоящий момент вызывает <see cref="Overload:System.Net.Mail.SmtpClient.SendAsync" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />, а свойству <see cref="P:System.Net.Mail.SmtpClient.Host" /> задано значение <see langword="null" />.  
   
-- или - 
+-или- 
  Свойству <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> задано значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" /> и <see cref="P:System.Net.Mail.SmtpClient.Host" /> равно пустой строке ("").  
   
 -или- 
@@ -1320,18 +1309,18 @@
         <exception cref="T:System.ObjectDisposedException">Данный объект удален.</exception>
         <exception cref="T:System.Net.Mail.SmtpException">Сбой подключения к серверу SMTP.  
   
-- или - 
+-или- 
 Проверка подлинности не пройдена.  
   
-- или - 
+-или- 
 Истекло время ожидания для выполнения операции. 
-- или - 
+-или- 
  <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true" />, а свойство <see cref="P:System.Net.Mail.SmtpClient.DeliveryMethod" /> имеет значение <see cref="F:System.Net.Mail.SmtpDeliveryMethod.SpecifiedPickupDirectory" /> или <see cref="F:System.Net.Mail.SmtpDeliveryMethod.PickupDirectoryFromIis" />.  
   
-- или - 
+-или- 
  Свойство <see cref="P:System.Net.Mail.SmtpClient.EnableSsl" /> имеет значение <see langword="true," /> однако почтовый SMTP-сервер не отправил STARTTLS в ответ на команду EHLO.  
   
-- или - 
+-или- 
 Сообщение не удалось доставить одному или нескольким получателям <paramref name="recipients" />.</exception>
         <permission cref="T:System.Net.Mail.SmtpPermission">Для подключения к SMTP-сервера. Связанное перечисление: <see cref="F:System.Net.Mail.SmtpAccess.Connect" /></permission>
       </Docs>
@@ -1470,14 +1459,12 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.Net.Mail.MailMessage" />
+        <Parameter Name="message" Type="System.Net.Mail.MailMessage" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Объект <see cref="T:System.Net.Mail.MailMessage" />, который содержит отправляемое сообщение.</param>
         <summary>Отправляет указанное сообщение SMTP-серверу для доставки в качестве асинхронной операции.</summary>
-        <returns>Возвращает <see cref="T:System.Threading.Tasks.Task" />.  
-  
-Объект задачи, представляющий асинхронную операцию.</returns>
+        <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1486,7 +1473,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="message" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SendMailAsync">
@@ -1515,10 +1502,10 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="from" Type="System.String" />
-        <Parameter Name="recipients" Type="System.String" />
-        <Parameter Name="subject" Type="System.String" />
-        <Parameter Name="body" Type="System.String" />
+        <Parameter Name="from" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="recipients" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="subject" Type="System.String" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="body" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="from">Значение <see cref="T:System.String" />, содержащее информацию об адресе отправителя сообщения.</param>
@@ -1526,9 +1513,7 @@
         <param name="subject">Значение <see cref="T:System.String" />, содержащее строку темы сообщения.</param>
         <param name="body">Значение <see cref="T:System.String" />, содержащее основную часть сообщения.</param>
         <summary>Отправляет указанное сообщение SMTP-серверу для доставки в качестве асинхронной операции. . Отправитель, получатели, тема и основная часть сообщения указываются с помощью объектов <see cref="T:System.String" />.</summary>
-        <returns>Возвращает <see cref="T:System.Threading.Tasks.Task" />.  
-  
-Объект задачи, представляющий асинхронную операцию.</returns>
+        <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1537,14 +1522,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="from" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="from" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="recipients" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Свойство <paramref name="from" /> имеет значение <see cref="F:System.String.Empty" />.  
+-или- 
+ <paramref name="recipients" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="from" /> — <see cref="F:System.String.Empty" />.  
   
-- или - 
- Свойство <paramref name="recipients" /> имеет значение <see cref="F:System.String.Empty" />.</exception>
+-или- 
+ <paramref name="recipients" /> — <see cref="F:System.String.Empty" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ServicePoint">
@@ -1599,7 +1584,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение <see cref="P:System.Net.Mail.SmtpClient.Host" /> равно <see langword="null" /> или пустой строке ("").  
   
-- или - 
+-или- 
  <see cref="P:System.Net.Mail.SmtpClient.Port" /> равен нулю.</exception>
         <related type="Article" href="~/docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md">connectionManagement (параметры сети)</related>
         <related type="Article" href="~/docs/framework/network-programming/managing-connections.md">Управление подключениями</related>

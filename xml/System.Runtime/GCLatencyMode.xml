@@ -1,13 +1,5 @@
 <Type Name="GCLatencyMode" FullName="System.Runtime.GCLatencyMode">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="09ed34a7621a685af7618f7f7a8ae32b4b5a0993" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48691740" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum GCLatencyMode" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6e0e2f032f5584e34758cafdf445dc8b1a38a363" /><Meta Name="ms.sourcegitcommit" Value="a489a0c68ea6b109393f1400bbd772073b4befd4" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/20/2019" /><Meta Name="ms.locfileid" Value="54416986" /></Metadata><TypeSignature Language="C#" Value="public enum GCLatencyMode" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed GCLatencyMode extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.GCLatencyMode" />
   <TypeSignature Language="VB.NET" Value="Public Enum GCLatencyMode" />
@@ -36,8 +28,8 @@
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -46,13 +38,15 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Степень вмешательства сборщика мусора можно настроить в приложении, присвоив <xref:System.Runtime.GCSettings.LatencyMode%2A> одну <xref:System.Runtime.GCLatencyMode> значение перечисления, за исключением NoGCRegion. Вы также можете определить текущий режим задержки сборщик мусора, получая <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> значение свойства.  
+ Степень вмешательства сборщика мусора можно настроить в приложении, присвоив <xref:System.Runtime.GCSettings.LatencyMode%2A> одну <xref:System.Runtime.GCLatencyMode> значение перечисления, за исключением `GCLatencyMode.NoGCRegion`. Вы также можете определить текущий режим задержки сборщик мусора, получая <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> значение свойства.  
   
  См. в разделе [режимы задержки](~/docs/standard/garbage-collection/latency.md) описание как параметры конфигурации среды выполнения для сборки мусора влияют на значение по умолчанию для данного перечисления.  
-  
+
+<xref:System.Runtime.GCLatencyMode.Batch?displayProperty=nameWithType> Переопределяет режим [ \<gcConcurrent >](~/docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) параметр конфигурации среды выполнения. Если параллельная сборка мусора включена по [ \<gcConcurrent >](~/docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) элемент, переключения в пакетный режим не позволяет дополнительно параллельных коллекций.    
+
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/96278bb7-6eab-4612-8594-ceebfc887d81">Режимы задержки</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/96278bb7-6eab-4612-8594-ceebfc887d81">Режимы задержки</related>
   </Docs>
   <Members>
     <Member MemberName="Batch">
@@ -87,17 +81,7 @@
       </ReturnValue>
       <MemberValue>0</MemberValue>
       <Docs>
-        <summary>Отключает параллельную сборку мусора и подбирает объекты, используя пакетный вызов. Это режим с наибольшим уровнем вмешательства.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Этот режим предназначен для максимальной пропускной способности за счет скорости реагирования.  
-  
- Этот режим переопределяет параметр конфигурации среды выполнения. При включении переключения в пакетный режим не позволяет дополнительно параллельных коллекций.  
-  
- ]]></format>
-        </remarks>
+        <summary>Отключает параллельную сборку мусора и подбирает объекты, используя пакетный вызов. Это режим с наибольшим уровнем вмешательства. Этот режим предназначен для максимальной пропускной способности за счет скорости отклика.</summary>
       </Docs>
     </Member>
     <Member MemberName="Interactive">
@@ -132,15 +116,7 @@
       </ReturnValue>
       <MemberValue>1</MemberValue>
       <Docs>
-        <summary>Включает параллельную сборку мусора и подбирает объекты во время работы приложения. Это режим по умолчанию для сборки мусора на рабочей станции, обеспечивающий меньшее вмешательство по сравнению с <see cref="F:System.Runtime.GCLatencyMode.Batch" />. В нем сбалансированы пропускная способность и время отклика приложения.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Этот режим эквивалентен сбора мусора на рабочей станции, является параллельной.  
-  
- ]]></format>
-        </remarks>
+        <summary>Включает параллельную сборку мусора и подбирает объекты во время работы приложения. Это режим по умолчанию для сборки мусора на рабочей станции, обеспечивающий меньшее вмешательство по сравнению с <see cref="F:System.Runtime.GCLatencyMode.Batch" />. В нем сбалансированы пропускная способность и время отклика приложения. Этот режим эквивалентен сборке мусора на параллельной рабочей станции.</summary>
       </Docs>
     </Member>
     <Member MemberName="LowLatency">
@@ -175,15 +151,7 @@
       </ReturnValue>
       <MemberValue>2</MemberValue>
       <Docs>
-        <summary>Включает режим сборки мусора, при котором объекты подбираются с большей осторожностью. Полная сборка происходит только в случае недостатка памяти, в то время как сборки нулевого и первого поколения могут происходить чаще.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Этот режим недоступен для сборщика мусора сервера.  
-  
- ]]></format>
-        </remarks>
+        <summary>Включает режим сборки мусора, при котором объекты подбираются с большей осторожностью. Полная сборка происходит только в случае недостатка памяти, в то время как сборки нулевого и первого поколения могут происходить чаще. Этот режим недоступен для сборщика мусора сервера.</summary>
       </Docs>
     </Member>
     <Member MemberName="NoGCRegion">

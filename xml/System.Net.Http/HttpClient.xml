@@ -1,13 +1,5 @@
 <Type Name="HttpClient" FullName="System.Net.Http.HttpClient">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0af28bdb707ea819788c7a9f893bb71081b5f236" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49151457" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class HttpClient : System.Net.Http.HttpMessageInvoker" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1deca3c650aa448d02a22e7c674181575d0a3a8f" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58705738" /></Metadata><TypeSignature Language="C#" Value="public class HttpClient : System.Net.Http.HttpMessageInvoker" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClient extends System.Net.Http.HttpMessageInvoker" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.HttpClient" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpClient&#xA;Inherits HttpMessageInvoker" />
@@ -24,6 +16,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Net.Http.HttpMessageInvoker</BaseTypeName>
@@ -87,29 +80,51 @@ public class GoodController : ApiController
 | Windows и .NET Framework      | <xref:System.Net.HttpWebRequest>                                                          |
 | Windows/Mono                | <xref:System.Net.HttpWebRequest>                                                          |
 | Windows или UWP                 | Машинный код Windows <xref:System.Net.Http.WinHttpHandler> (поддержкой HTTP 2.0)                   |
-| Windows и .NET Core           | Машинный код Windows <xref:System.Net.Http.WinHttpHandler> (поддержкой HTTP 2.0)                   |
+| Windows и .NET Core 1.0 2.0   | Машинный код Windows <xref:System.Net.Http.WinHttpHandler> (поддержкой HTTP 2.0)                   |
 | Android и Xamarin             | Выбрать во время сборки. Можно либо использовать <xref:System.Net.HttpWebRequest> или настроить для использования собственного Android [`HttpURLConnection`](https://developer.xamarin.com/api/type/Java.Net.HttpURLConnection/) |
 | iOS, tvOS, watchOS и Xamarin  | Выбрать во время сборки. Можно либо использовать <xref:System.Net.HttpWebRequest> или настроить для использования Apple [ `NSUrlSession` ](https://developer.xamarin.com/api/type/MonoTouch.Foundation.NSUrlSession/) (поддержкой HTTP 2.0) |
 | macOS и Xamarin               | Выбрать во время сборки. Можно либо использовать <xref:System.Net.HttpWebRequest> или настроить для использования Apple [ `NSUrlSession` ](https://developer.xamarin.com/api/type/MonoTouch.Foundation.NSUrlSession/) (поддержкой HTTP 2.0) |
-| macOS/Mono                  | <xref:System.Net.HttpWebRequest>                                                                          |
-| macOS и .NET Core             | `libcurl`-на основе транспорта HTTP (HTTP 2.0 поддерживает)                                         |
+| macOS/Mono                  | <xref:System.Net.HttpWebRequest>                                                          |
+| macOS и .NET Core 1.0 2.0     | `libcurl`-на основе транспорта HTTP (HTTP 2.0 поддерживает)                                         |
 | Linux/Mono                  | <xref:System.Net.HttpWebRequest>                                                          |
-| Linux и .NET Core             | `libcurl`-на основе транспорта HTTP (HTTP 2.0 поддерживает)                                         |
+| Linux/.NET Core 1.0-2.0     | `libcurl`-на основе транспорта HTTP (HTTP 2.0 поддерживает)                                         |
+| .NET core 2.1 и более поздние версии     | <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>                    |
 
 Пользователи также могут настроить конкретный транспорт для <xref:System.Net.Http.HttpClient> путем вызова <xref:System.Net.Http.HttpClient.%23ctor*> конструктор, принимающий <xref:System.Net.Http.HttpMessageHandler>.
 
 ### <a name="httpclient-and-net-core"></a>HttpClient и .NET Core
 
-Начиная с .NET Core 2.1 <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> вместо класса `HttpClientHandler` предоставляет реализацию, используемые сетевые классы более высокого уровня HTTP, например `HttpClient`. Можно настроить приложение на использование более старой версии <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> вместо путем вызова <xref:System.AppContext.SetSwitch%2A> метод следующим образом:
+Начиная с .NET Core 2.1 <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> вместо класса `HttpClientHandler` предоставляет реализацию, используемые сетевые классы более высокого уровня HTTP, например `HttpClient`. Использование <xref:System.Net.Http.SocketsHttpHandler> предлагает ряд преимуществ:
 
-```csharp
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
-```
+- Значительное улучшение производительности по сравнению с предыдущей реализацией.
 
-```vb
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
-``` 
+- Устранение зависимости платформы, что упрощает развертывание и обслуживание. Например `libcurl` больше не является зависимость от .NET Core для macOS и .NET Core для Linux.
+
+- Согласованного поведения на всех платформах .NET.
+
+Если это изменение нежелательно, можно настроить приложение на использование более старой версии <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> вместо этого в следующих случаях:
+
+- Путем вызова <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> метод следующим образом:
+
+   ```csharp
+   AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
+   ```
+
+   ```vb
+   AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", False)
+   ``` 
+- Определив `System.Net.Http.UseSocketsHttpHandler` переключиться в *. netcore.runtimeconfig.json* файла конфигурации:
+
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "System.Net.Http.UseSocketsHttpHandler": false
+    }
+  }
+  ```
   
+- Путем задания переменной среды с именем `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` и установив значение либо `false` или 0.
+
 ## Examples  
  [!code-csharp[System.Net.Http.HttpClient#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.net.http.httpclient/cs/source.cs#1)]  
   
@@ -117,11 +132,11 @@ AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
  
  ]]></format>
     </remarks>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=245696">Подключение к веб-службы</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=245697">Краткое руководство: Подключение с помощью HttpClient</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=245699">Как использовать обработчики HttpClient</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=245698">Как защитить подключения HttpClient</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=242550">Пример HttpClient</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=245696">Подключение к веб-службы</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=245697">Краткое руководство. Подключение с помощью HttpClient</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=245699">Как использовать обработчики HttpClient</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=245698">Как защитить подключения HttpClient</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=242550">Пример HttpClient</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -175,6 +190,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -201,6 +217,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handler" Type="System.Net.Http.HttpMessageHandler" />
@@ -238,6 +255,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handler" Type="System.Net.Http.HttpMessageHandler" />
@@ -270,6 +288,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -306,6 +325,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -342,6 +362,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Http.Headers.HttpRequestHeaders</ReturnType>
@@ -390,6 +411,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -433,6 +455,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -475,6 +498,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -519,6 +543,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -564,6 +589,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -626,6 +652,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -668,6 +695,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -710,6 +738,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -753,6 +782,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -797,6 +827,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -840,6 +871,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -883,6 +915,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -928,6 +961,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -993,6 +1027,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1007,7 +1042,7 @@ public class GoodController : ApiController
       </Parameters>
       <Docs>
         <param name="requestUri">Универсальный код ресурса (URI), по которому отправляется запрос.</param>
-        <summary>Отправка запроса GET согласно указанному универсальному коду ресурса (URI) и возврат текста ответа в виде массива байтов в асинхронной операции.</summary>
+        <summary>Отправляет запрос GET согласно указанному универсальному коду ресурса (URI) и возвращает текст ответа в виде массива байтов в асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1040,6 +1075,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1106,6 +1142,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1153,6 +1190,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1219,6 +1257,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1266,6 +1305,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -1313,6 +1353,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -1347,13 +1388,14 @@ public class GoodController : ApiController
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="requestUri" Type="System.String" />
-        <Parameter Name="content" Type="System.Net.Http.HttpContent" />
+        <Parameter Name="requestUri" Type="System.String" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="content" Type="System.Net.Http.HttpContent" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="requestUri">To be added.</param>
@@ -1377,13 +1419,14 @@ public class GoodController : ApiController
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="requestUri" Type="System.Uri" />
-        <Parameter Name="content" Type="System.Net.Http.HttpContent" />
+        <Parameter Name="requestUri" Type="System.Uri" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="content" Type="System.Net.Http.HttpContent" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="requestUri">To be added.</param>
@@ -1406,14 +1449,15 @@ public class GoodController : ApiController
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="requestUri" Type="System.String" />
-        <Parameter Name="content" Type="System.Net.Http.HttpContent" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="requestUri" Type="System.String" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="content" Type="System.Net.Http.HttpContent" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="requestUri">To be added.</param>
@@ -1437,14 +1481,15 @@ public class GoodController : ApiController
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="requestUri" Type="System.Uri" />
-        <Parameter Name="content" Type="System.Net.Http.HttpContent" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="requestUri" Type="System.Uri" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="content" Type="System.Net.Http.HttpContent" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="requestUri">To be added.</param>
@@ -1493,6 +1538,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1537,6 +1583,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1580,6 +1627,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1625,6 +1673,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1690,6 +1739,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1734,6 +1784,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1777,6 +1828,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1822,6 +1874,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1887,6 +1940,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1930,6 +1984,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -1974,6 +2029,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -2018,6 +2074,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
@@ -2065,6 +2122,7 @@ public class GoodController : ApiController
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.TimeSpan</ReturnType>

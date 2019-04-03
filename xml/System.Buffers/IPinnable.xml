@@ -1,13 +1,5 @@
 <Type Name="IPinnable" FullName="System.Buffers.IPinnable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="be00511f9d4a90cd58fa2d8fe8de92d57caae763" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36647458" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IPinnable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="69be3db305f6da6f6e7127dbe6894991bce348c0" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460712" /></Metadata><TypeSignature Language="C#" Value="public interface IPinnable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPinnable" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IPinnable" />
   <TypeSignature Language="VB.NET" Value="Public Interface IPinnable" />
@@ -17,10 +9,24 @@
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.2.1.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Memory</AssemblyName>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+  </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Предоставляет механизм для закрепления и открепления объектов, чтобы предотвратить их перемещение сборщиком мусора.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Класс <xref:System.Buffers.MemoryManager%601> реализует интерфейс `IPinnable`.
+
+       ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Pin">
@@ -35,17 +41,34 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Buffers.MemoryHandle</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="elementIndex" Type="System.Int32" />
+        <Parameter Name="elementIndex" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="elementIndex">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="elementIndex">Смещение к элементу в буфере памяти, к которому относятся возвращенные точки <see cref="T:System.Buffers.MemoryHandle" />.</param>
+        <summary>Закрепляет блок памяти.</summary>
+        <returns>Дескриптор блока памяти.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Разработчик может получить доступ к объект, реализующий <xref:System.Buffers.IPinnable> интерфейс без закрепите ее только с помощью управляемых интерфейсов API. Закрепление необходим для доступа по неуправляемым интерфейсам API. 
+
+Вызовите этот метод для указания того, что <xref:System.Buffers.IPinnable> объект невозможно переместить при помощи сборщик мусора, чтобы можно было использовать адрес закрепленного объекта.
+
+
+       ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Unpin">
@@ -60,13 +83,28 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает блок закрепленной памяти.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Вызовите этот метод для указания того, что <xref:System.Buffers.IPinnable> объект больше не требуется закрепить, и что сборщик мусора теперь можно переместить объект.
+
+
+       ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

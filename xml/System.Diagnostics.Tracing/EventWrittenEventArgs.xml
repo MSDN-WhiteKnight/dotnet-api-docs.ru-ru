@@ -1,13 +1,5 @@
 <Type Name="EventWrittenEventArgs" FullName="System.Diagnostics.Tracing.EventWrittenEventArgs">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="314bc61097ccf66d85dc49d1de9fe4066d1e7d24" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49124807" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class EventWrittenEventArgs : EventArgs" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="912cba65d383ee517f865540deb4e019a2f661f0" /><Meta Name="ms.sourcegitcommit" Value="3f21796619d6e69ad383c958cc013ce44c0678de" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/11/2019" /><Meta Name="ms.locfileid" Value="56062124" /></Metadata><TypeSignature Language="C#" Value="public class EventWrittenEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventWrittenEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Tracing.EventWrittenEventArgs" />
   <TypeSignature Language="VB.NET" Value="Public Class EventWrittenEventArgs&#xA;Inherits EventArgs" />
@@ -37,7 +29,29 @@
   <Interfaces />
   <Docs>
     <summary>Предоставляет данные для обратного вызова <see cref="M:System.Diagnostics.Tracing.EventListener.OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs)" />.</summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Каждый раз, когда отправляется событие <xref:System.Diagnostics.Tracing.EventListener>, <xref:System.Diagnostics.Tracing.EventListener.OnEventWritten%2A?displayProperty=nameWithType> вызывается метод обратного вызова. Он передается `EventWrittenEventArgs` экземпляр, содержащий сведения, связанные с событием. Все значения свойств `EventWrittenEventArgs` класс допустимы только во время обратного вызова. 
+
+В следующих разделах содержатся дополнительные сведения об отдельных `EventWrittenEventArgs` свойства.
+
+### <a name="activityid-property"></a>Свойство ActivityId
+
+При использовании <xref:System.Activities.Activity?displayProperty=nameWithType> и его производные классы потоков, которые могут быть помечены как наличие в действие, связанное с ними. `ActivityId` Свойство возвращает идентификатор действия потока, который зафиксировал событие. Обратите внимание, что потоки содержать действие, в этом случае это свойство возвращает <xref:System.Guid.Empty?displayProperty=nameWithType>.
+
+### <a name="osthreadid-and-timestamp-properties"></a>Свойства нельзя получить OSThreadId и метки времени 
+
+Начиная с .NET Core 2.2, <xref:System.Diagnostics.Tracing.EventListener> объекты могут подписываться на события собственной среды выполнения (например, события сборки Мусора, JIT-компилятора и threadpool) в дополнение к события, генерируемые <xref:System.Diagnostics.Tracing.EventSource> объектов. В предыдущих версиях .NET Core и всех версий платформы .NET Framework, thead идентификатор и отметку времени можно собирать из среды, так как их отправки синхронно, в том же потоке, создавшего их. Не все события собственной среды выполнения могут подготавливаться синхронно, тем не менее. Некоторые события, например события сборки Мусора, создаются при управлении выполнение потока приостановлено. Эти события буферизуются в машинном коде и отправляются, и поток dispatcher, когда управляемый код выполнить снова. Поскольку эти события буферизуются, среде не позволяет надежно получить идентификатор потока и метки времени. По этой причине начиная с .NET Core 2.2, идентификатор потока и метки времени доступны как члены `EventWrittenEventArgs` класса.
+
+### <a name="relatedactivityid-property"></a>Свойство RelatedActivityId
+
+ Сопутствующее действие является действием, которое тесно связаны в текущий поток. Как правило, это действие, вызвавшее текущее действие (события с `Start` opcode обычно делается) или действие, которое было создано текущего (события с `Send` opcode обычно делается). При использовании, `RelatedActivityID` передается явным образом с методом, выполняющим ведения журнала. Многие события не передавайте `RelatedActivityId`, в этом случае это свойство возвращает <xref:System.Guid.Empty?displayProperty=nameWithType>.
+
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="ActivityId">
@@ -66,7 +80,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>get: System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -74,21 +88,9 @@
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>[Поддерживается в .NET Framework 4.5.1 и более поздних версиях.] 
-Получает идентификатор действий в потоке, куда было записано событие.</summary>
-        <value>Идентификатор действий в потоке, куда было записано событие.</value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Получение значения <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId%2A> свойство обращается к локальной памяти потока. Это подразумевает следующее:  
-  
--   <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId%2A> Поле является допустимым только в течение <xref:System.Diagnostics.Tracing.EventListener.OnEventWritten%2A?displayProperty=nameWithType> обратного вызова.  
-  
--   Если идентификатор действия изменяется во время обратного вызова, возвращенный идентификатор действия <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId%2A> свойство является недопустимым.  
-  
- ]]></format>
-        </remarks>
+        <summary>Получает идентификатор действия в потоке, куда было записано событие.</summary>
+        <value>Идентификатор действия в потоке, куда было записано событие.</value>
+        <remarks>To be added.</remarks>
         <altmember cref="P:System.Diagnostics.Tracing.EventWrittenEventArgs.RelatedActivityId" />
         <altmember cref="M:System.Diagnostics.Tracing.EventSource.SetCurrentThreadActivityId(System.Guid)" />
       </Docs>
@@ -189,7 +191,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя события.</summary>
+        <summary>Получение имени события.</summary>
         <value>Имя события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -224,7 +226,7 @@
         <ReturnType>System.Diagnostics.Tracing.EventSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает объект источника события.</summary>
+        <summary>Получает объект источника события.</summary>
         <value>Объект источника события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -259,7 +261,7 @@
         <ReturnType>System.Diagnostics.Tracing.EventKeywords</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает ключевые слова для события.</summary>
+        <summary>Получает ключевые слова для события.</summary>
         <value>Ключевые слова для события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -294,7 +296,7 @@
         <ReturnType>System.Diagnostics.Tracing.EventLevel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает уровень события.</summary>
+        <summary>Получает уровень события.</summary>
         <value>Уровень события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -329,7 +331,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает сообщение для события.</summary>
+        <summary>Получает сообщение для события.</summary>
         <value>Сообщение для события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -364,8 +366,35 @@
         <ReturnType>System.Diagnostics.Tracing.EventOpcode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает код операции для события.</summary>
+        <summary>Получает код операции для события.</summary>
         <value>Код операции для события.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OSThreadId">
+      <MemberSignature Language="C#" Value="public long OSThreadId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OSThreadId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Tracing.EventWrittenEventArgs.OSThreadId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OSThreadId As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long OSThreadId { long get(); };" />
+      <MemberSignature Language="F#" Value="member this.OSThreadId : int64" Usage="System.Diagnostics.Tracing.EventWrittenEventArgs.OSThreadId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Получает идентификатор потока для потока операционной системы, который записал событие. (.NET Core 2.2 и более поздних версий.)</summary>
+        <value>Идентификатор потока для потока операционной системы, который написал события.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -399,7 +428,7 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Object&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает полезные данные для события.</summary>
+        <summary>Получает полезные данные для события.</summary>
         <value>Полезные данные для события.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -463,7 +492,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>get: System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -471,17 +500,9 @@
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>[Поддерживается в .NET Framework 4.5.1 и более поздних версиях.] 
-Возвращает идентификатор действия, которое связано с действием, представленным текущим экземпляром.</summary>
+        <summary>Возвращает идентификатор действия, которое связано с действием, представленное текущим экземпляром.</summary>
         <value>Идентификатор связанного действия, либо значение <see cref="F:System.Guid.Empty" />, если отсутствует связанная действие.</value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.RelatedActivityId%2A> Является дочерним элементом <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId%2A> свойство. Идентификатор действия можно связать с несколькими идентификаторы связанных действий.  
-  
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <altmember cref="P:System.Diagnostics.Tracing.EventWrittenEventArgs.ActivityId" />
         <altmember cref="M:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId(System.Int32,System.Guid,System.Object[])" />
       </Docs>
@@ -549,8 +570,35 @@
         <ReturnType>System.Diagnostics.Tracing.EventTask</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает задачу для события.</summary>
+        <summary>Получает задачу для события.</summary>
         <value>Задача для события.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeStamp">
+      <MemberSignature Language="C#" Value="public DateTime TimeStamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeStamp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Tracing.EventWrittenEventArgs.TimeStamp" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TimeStamp As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime TimeStamp { DateTime get(); };" />
+      <MemberSignature Language="F#" Value="member this.TimeStamp : DateTime" Usage="System.Diagnostics.Tracing.EventWrittenEventArgs.TimeStamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Получает время, в которое изначально было создано событие, как метку времени <see cref="System.DateTime" />. (.NET Core 2.2 и более поздних версий.)</summary>
+        <value>Дата и время, когда событие было зарегистрировано. Система пытается быть максимально точным.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -584,7 +632,7 @@
         <ReturnType>System.Byte</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает версию события.</summary>
+        <summary>Получает версию события.</summary>
         <value>Версия события.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,13 +1,5 @@
 <Type Name="PathSegment" FullName="System.Windows.Media.PathSegment">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bfdb6544d1ce2fce4f0138725e99b99046a350b6" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48605134" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class PathSegment : System.Windows.Media.Animation.Animatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8b2f543be528e5f3a3a4a931cc2ed2433b8cfb40" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55370384" /></Metadata><TypeSignature Language="C#" Value="public abstract class PathSegment : System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract PathSegment extends System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.PathSegment" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class PathSegment&#xA;Inherits Animatable" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
     </Attribute>
   </Attributes>
@@ -35,16 +27,14 @@
 ## Remarks  
  Классы, производные от <xref:System.Windows.Media.PathSegment>, такие как <xref:System.Windows.Media.ArcSegment>, <xref:System.Windows.Media.BezierSegment>, и <xref:System.Windows.Media.LineSegment>, представляющие определенные типы геометрических сегментов.  
   
- **Возможности объектов Freezable:** поскольку <xref:System.Windows.Media.PathSegment> объекты наследуют от <xref:System.Windows.Freezable> класса, они предоставляют ряд специальных возможностей: они может быть объявлен как совместно использоваться несколькими объектами, делать доступными только для чтения с целью повышения производительности, клонировать и внесенные поточно ориентированными. Дополнительные сведения о различных функциях, предоставляемых <xref:System.Windows.Freezable> объектов, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ **Возможности объектов Freezable:** Так как <xref:System.Windows.Media.PathSegment> объекты наследуют от <xref:System.Windows.Freezable> класса, они предоставляют ряд специальных возможностей: они могут быть объявлен как совместно использоваться несколькими объектами, делать доступными только для чтения с целью повышения производительности, клонировать и делать потокобезопасными. Дополнительные сведения о различных функциях, предоставляемых <xref:System.Windows.Freezable> объектов, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Несмотря на то, что этот класс является абстрактным, он не является открытым для расширения.</para>
-    </block>
+    <block subset="none" type="overrides"><para>Несмотря на то, что этот класс является абстрактным, он не является открытым для расширения.</para></block>
     <altmember cref="T:System.Windows.Shapes.Path" />
     <altmember cref="T:System.Windows.Media.GeometryDrawing" />
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=159989">Примеры геометрических объектов</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=159989">Примеры геометрических объектов</related>
   </Docs>
   <Members>
     <Member MemberName="Clone">
@@ -65,8 +55,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает модифицируемый клон данного объекта <see cref="T:System.Windows.Media.PathSegment" />, делая глубокие копии значений этого объекта.</summary>
-        <returns>Изменяемая глубокая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> объекта-клона имеет значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта имеет значение <see langword="true." /></returns>
+        <summary>Создает изменяемую копию объекта <see cref="T:System.Windows.Media.PathSegment" />, делая глубокие копии его значений.</summary>
+        <returns>Изменяемая глубокая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта возвращает <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> источника — <see langword="true." /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -87,7 +77,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathSegment.CloneCurrentValue" />
       <MemberSignature Language="VB.NET" Value="Public Function CloneCurrentValue () As PathSegment" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Media::PathSegment ^ CloneCurrentValue();" />
-      <MemberSignature Language="F#" Value="member this.CloneCurrentValue : unit -&gt; System.Windows.Media.PathSegment" Usage="pathSegment.CloneCurrentValue " />
+      <MemberSignature Language="F#" Value="override this.CloneCurrentValue : unit -&gt; System.Windows.Media.PathSegment" Usage="pathSegment.CloneCurrentValue " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -100,7 +90,7 @@
       <Parameters />
       <Docs>
         <summary>Создает модифицируемый клон данного объекта <see cref="T:System.Windows.Media.PathSegment" />, делая глубокие копии значений этого объекта. Данный метод не копирует указатели на ресурсы, связи с данными и анимации, но копирует их текущие значения.</summary>
-        <returns>Модифицируемая глубокая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> имеет значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта имеет значение <see langword="true" />.</returns>
+        <returns>Изменяемая глубокая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> имеет значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта имеет значение <see langword="true" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -131,8 +121,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение, указывающее, интерпретируется ли соединение между этим <see cref="T:System.Windows.Media.PathSegment" /> и предыдущим <see cref="T:System.Windows.Media.PathSegment" /> как угол, когда оно рисуется с помощью <see cref="T:System.Windows.Media.Pen" />.</summary>
-        <value>
-          <see langword="true" />, если соединение между этим <see cref="T:System.Windows.Media.PathSegment" /> и предыдущим <see cref="T:System.Windows.Media.PathSegment" /> не интерпретируется как угол; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если соединение между этим <see cref="T:System.Windows.Media.PathSegment" /> и предыдущим <see cref="T:System.Windows.Media.PathSegment" /> не интерпретируется как угол; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -189,8 +178,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение, указывающее, отображается ли линия сегмента.</summary>
-        <value>
-          <see langword="true" />, чтобы линия сегмента отображалась, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае линия сегмента не отображается. Значение по умолчанию: <see langword="true" />.</value>
+        <value><see langword="true" />, чтобы линия сегмента отображалась, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае линия сегмента не отображается. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

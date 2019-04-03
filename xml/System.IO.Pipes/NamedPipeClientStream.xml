@@ -1,13 +1,5 @@
 <Type Name="NamedPipeClientStream" FullName="System.IO.Pipes.NamedPipeClientStream">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e2c18cde9af5bb08dbdd83ca6c349b434ab0b8f8" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48653741" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class NamedPipeClientStream : System.IO.Pipes.PipeStream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d9a48bb33c64241b6ecf5599d82d8729aadae474" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57910801" /></Metadata><TypeSignature Language="C#" Value="public sealed class NamedPipeClientStream : System.IO.Pipes.PipeStream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NamedPipeClientStream extends System.IO.Pipes.PipeStream" />
   <TypeSignature Language="DocId" Value="T:System.IO.Pipes.NamedPipeClientStream" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class NamedPipeClientStream&#xA;Inherits PipeStream" />
@@ -51,7 +43,7 @@
 ## Examples  
  Следующий пример демонстрирует способ отправки строки из родительского процесса в дочерний процесс на том же компьютере с помощью именованных каналов. В этом примере создается <xref:System.IO.Pipes.NamedPipeServerStream> объекта в родительский процесс. <xref:System.IO.Pipes.NamedPipeServerStream> Объект имеет <xref:System.IO.Pipes.PipeDirection> значение <xref:System.IO.Pipes.PipeDirection.Out>. Сервер ожидает <xref:System.IO.Pipes.NamedPipeClientStream> объекта в дочерний процесс для подключения к нему. В этом примере, оба процесса находятся на одном компьютере и <xref:System.IO.Pipes.NamedPipeClientStream> объект имеет <xref:System.IO.Pipes.PipeDirection> значение <xref:System.IO.Pipes.PipeDirection.In>. Теперь родительский процесс отправляет предоставленную пользователем строку в дочерний процесс. Строка отображается в консоль.  
   
- Этот пример предназначен для клиентского процесса, который подключается к серверному процессу. Полный пример кода, включая код канала клиента и сервера, см. в разделе [как: использование именованных каналов для обмена данными межпроцессное](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md).  
+ Этот пример предназначен для клиентского процесса, который подключается к серверному процессу. Полный пример кода, включая код канала клиента и сервера, см. в разделе [как: Использование именованных каналов для сетевого взаимодействия между процессами](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md).  
   
  [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
@@ -126,10 +118,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -191,7 +182,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -261,10 +252,10 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".  
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -307,19 +298,15 @@
       </Parameters>
       <Docs>
         <param name="direction">Одно из значений перечисления, определяющее направление канала.</param>
-        <param name="isAsync">
-          <see langword="true" />, если дескриптор открыт асинхронно, в противном случае — <see langword="false" />.</param>
-        <param name="isConnected">
-          <see langword="true" />, если канал подключен, в противном случае — <see langword="false" />.</param>
+        <param name="isAsync"><see langword="true" />, если дескриптор открыт асинхронно, в противном случае — <see langword="false" />.</param>
+        <param name="isConnected"><see langword="true" />, если канал подключен, в противном случае — <see langword="false" />.</param>
         <param name="safePipeHandle">Безопасный дескриптор для канала, который будет инкапсулироваться данным объектом <see cref="T:System.IO.Pipes.NamedPipeClientStream" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> для заданного дескриптора канала с указанным направлением канала.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.IO.IOException">Поток закрыт.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="safePipeHandle" /> не является допустимым дескриптором.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="safePipeHandle" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="safePipeHandle" /> не является допустимым дескриптором.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="safePipeHandle" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -381,13 +368,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".  
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.</exception>
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -447,16 +434,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".  
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Параметр <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.</exception>
+ <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -486,12 +473,12 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="serverName" Type="System.String" />
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="desiredAccessRights" Type="System.IO.Pipes.PipeAccessRights" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="serverName" Type="System.String" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeName" Type="System.String" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="desiredAccessRights" Type="System.IO.Pipes.PipeAccessRights" Index="2" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="3" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" Index="4" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="5" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="serverName">Имя удаленного компьютера, к которому нужно подключиться, или значение ".", чтобы указать локальный компьютер.</param>
@@ -511,16 +498,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".  
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Параметр <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.  
+ <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.  
   
 -или- 
- Параметр <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
+ <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -553,12 +540,12 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="serverName" Type="System.String" />
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="serverName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeName" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="5" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="serverName">Имя удаленного компьютера, к которому нужно подключиться, или значение ".", чтобы указать локальный компьютер.</param>
@@ -571,19 +558,19 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="pipeName" /> или <paramref name="serverName" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> или параметр <paramref name="serverName" /> является строкой нулевой длины.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".  
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Параметр <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.  
+ <paramref name="impersonationLevel" /> не является допустимым значением <see cref="T:System.Security.Principal.TokenImpersonationLevel" />.  
   
 -или- 
- Параметр <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
+ <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -631,7 +618,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Подключается к ждущему серверу.</summary>
+        <summary>Подключается к ожидающему серверу.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Connect">
@@ -784,7 +771,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Асинхронно подключается к ожидающему серверу с бесконечным периодом тайм-аута.</summary>
+        <summary>Асинхронно подключается к ожидающему серверу с бессрочным временем ожидания.</summary>
         <returns>Задача, представляющая асинхронную операцию подключения.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -816,11 +803,11 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="timeout" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">Количество миллисекунд, задающее время ожидания соединения с сервером.</param>
-        <summary>Асинхронно подключается к ожидающему серверу с указанным периодом тайм-аута.</summary>
+        <summary>Асинхронно подключается к ожидающему серверу с заданным временем ожидания.</summary>
         <returns>Задача, представляющая асинхронную операцию подключения.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -851,7 +838,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">Токен для отслеживания запросов отмены. Значение по умолчанию — <see cref="P:System.Threading.CancellationToken.None" />.</param>
@@ -886,13 +873,13 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="timeout" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">Количество миллисекунд, задающее время ожидания соединения с сервером.</param>
         <param name="cancellationToken">Токен для отслеживания запросов отмены. Значение по умолчанию — <see cref="P:System.Threading.CancellationToken.None" />.</param>
-        <summary>Асинхронно подключается к ожидающему серверу с указанным периодом тайм-аута и отслеживает запросы отмены.</summary>
+        <summary>Асинхронно подключается к ожидающему серверу с заданным временем ожидания и отслеживает запросы отмены.</summary>
         <returns>Задача, представляющая асинхронную операцию подключения.</returns>
         <remarks>To be added.</remarks>
       </Docs>

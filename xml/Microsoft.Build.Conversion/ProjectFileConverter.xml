@@ -1,13 +1,5 @@
 <Type Name="ProjectFileConverter" FullName="Microsoft.Build.Conversion.ProjectFileConverter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0423df5a7a1e56ef437d160e446f3e812d12f7c4" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48770611" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5eb70dcffdc45612dfa0a7ec02f8947447b6b798" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57942001" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProjectFileConverter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Conversion.ProjectFileConverter" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ProjectFileConverter" />
@@ -197,7 +189,7 @@
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Obsolete("Use parameterless overload instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -251,7 +243,7 @@
       <Parameters />
       <Docs>
         <summary>Создает проект в памяти на основе файла <see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" />.</summary>
-        <returns>Возвращает преобразованный проект <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
+        <returns>Преобразуемый <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -294,7 +286,7 @@
       <Docs>
         <param name="engine">Объект <see cref="T:Microsoft.Build.BuildEngine.Engine" />, в котором нужно создать проект.</param>
         <summary>Создает проект в памяти на основе файла <see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" />.</summary>
-        <returns>Возвращает преобразованный проект <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
+        <returns>Преобразуемый <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -329,7 +321,7 @@
         <param name="engine">Объект <see cref="T:Microsoft.Build.BuildEngine.Engine" />, в котором нужно создать проект.</param>
         <param name="projectLoadSettings">Флаг <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" />, позволяющий указать, будут ли игнорироваться несуществующие файлы TARGET при загрузке проекта.</param>
         <summary>Это метод точки входа, который выполняет преобразование формата файла проекта. Этот метод просто создает объект проекта MSBuild в памяти, не пытаясь записать его на диск.</summary>
-        <returns>Возвращает преобразованный проект <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
+        <returns>Преобразуемый <see cref="T:Microsoft.Build.BuildEngine.Project" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,14 +341,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="actuallyMakeChanges" Type="System.Boolean" />
+        <Parameter Name="actuallyMakeChanges" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="actuallyMakeChanges">Если значение true, внесите изменения, в противном случае — не вносите никаких изменений, но верните значение, указывающее, планировали ли вы вносить изменения.</param>
         <summary>Выполняет преобразования, характерные для проектов F# (VS2008 CTP -&gt; VS2012) и (VS2010 -&gt; VS2012).  
   
 Это включает в себя изменение расположения целевых объектов FSharp, а также добавление явных ссылок mscorlib и FSharp.Core (для 2008CTP).</summary>
-        <returns>Возвращает значение true, если что-либо (могло быть) изменено, в противном случае — значение false.</returns>
+        <returns>Значение <see langword="true" />, если что-либо (могло быть) изменено, в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -388,7 +380,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение, указывающее, является ли преобразуемый файл проекта файлом USER.</summary>
+        <summary>Возвращает или задает значение, позволяющее определить, является ли преобразованный файл проекта файлом .user.</summary>
         <value>Если преобразованный файл проекта является файлом .user, значение <see langword="true" />; если нет, значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -421,8 +413,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает имя файла нового проекта.</summary>
-        <value>Строка, представляющая имя файла нового проекта.</value>
+        <summary>Возвращает или задает имя нового файла проекта.</summary>
+        <value>Строка, соответствующая новому имени файла проекта.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -461,8 +453,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает имя файла старого проекта.</summary>
-        <value>Имя файла старого проекта.</value>
+        <summary>Возвращает или задает имя старого файла проекта.</summary>
+        <value>Старое имя файла проекта.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -498,8 +490,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает имя файла решения, содержащего преобразуемый проект.</summary>
-        <value>Имя файла решения, содержащего преобразуемый проект.</value>
+        <summary>Возвращает или задает имя файла решения, в котором содержится преобразовываемый проект.</summary>
+        <value>Имя файла решения, в котором содержится преобразовываемый проект.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

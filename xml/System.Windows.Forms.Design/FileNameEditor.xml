@@ -1,13 +1,5 @@
 <Type Name="FileNameEditor" FullName="System.Windows.Forms.Design.FileNameEditor">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="5f3b9e1c8c95b5093873e5e25968b5f2f8dee9bf" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39905659" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class FileNameEditor : System.Drawing.Design.UITypeEditor" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="748d0d7720fd597d82700eb756f61518d1491815" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56349701" /></Metadata><TypeSignature Language="C#" Value="public class FileNameEditor : System.Drawing.Design.UITypeEditor" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileNameEditor extends System.Drawing.Design.UITypeEditor" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.FileNameEditor" />
   <TypeSignature Language="VB.NET" Value="Public Class FileNameEditor&#xA;Inherits UITypeEditor" />
@@ -19,10 +11,19 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
   </Base>
   <Interfaces />
+  <Attributes>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
     <summary>Предоставляет пользовательский интерфейс для выбора имени файла.</summary>
     <remarks>
@@ -42,9 +43,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Можно наследовать этот класс, чтобы предоставить собственные заголовок для диалогового окна и собственных расширений фильтра списка файлов.</para>
-    </block>
+    <block subset="none" type="overrides"><para>Можно наследовать этот класс, чтобы предоставить собственные заголовок для диалогового окна и собственных расширений фильтра списка файлов.</para></block>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -58,6 +57,10 @@
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -77,12 +80,16 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.FileNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function EditValue (context As ITypeDescriptorContext, provider As IServiceProvider, value As Object) As Object" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ EditValue(System::ComponentModel::ITypeDescriptorContext ^ context, IServiceProvider ^ provider, System::Object ^ value);" />
-      <MemberSignature Language="F#" Value="abstract member EditValue : System.ComponentModel.ITypeDescriptorContext * IServiceProvider * obj -&gt; obj&#xA;override this.EditValue : System.ComponentModel.ITypeDescriptorContext * IServiceProvider * obj -&gt; obj" Usage="fileNameEditor.EditValue (context, provider, value)" />
+      <MemberSignature Language="F#" Value="override this.EditValue : System.ComponentModel.ITypeDescriptorContext * IServiceProvider * obj -&gt; obj" Usage="fileNameEditor.EditValue (context, provider, value)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -94,7 +101,7 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="context">Интерфейс <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, используемый для получения дополнительных сведений о контексте.</param>
+        <param name="context">Контекст <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, используемый для получения дополнительных сведений о контексте.</param>
         <param name="provider">Объект поставщика услуг, с помощью которого можно получить услуги редактирования.</param>
         <param name="value">Экземпляр редактируемого значения.</param>
         <summary>Редактирует заданный объект, используя стиль редактора, предоставляемый с помощью метода <see cref="M:System.Windows.Forms.Design.FileNameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />.</summary>
@@ -115,12 +122,16 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.FileNameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEditStyle (context As ITypeDescriptorContext) As UITypeEditorEditStyle" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Drawing::Design::UITypeEditorEditStyle GetEditStyle(System::ComponentModel::ITypeDescriptorContext ^ context);" />
-      <MemberSignature Language="F#" Value="abstract member GetEditStyle : System.ComponentModel.ITypeDescriptorContext -&gt; System.Drawing.Design.UITypeEditorEditStyle&#xA;override this.GetEditStyle : System.ComponentModel.ITypeDescriptorContext -&gt; System.Drawing.Design.UITypeEditorEditStyle" Usage="fileNameEditor.GetEditStyle context" />
+      <MemberSignature Language="F#" Value="override this.GetEditStyle : System.ComponentModel.ITypeDescriptorContext -&gt; System.Drawing.Design.UITypeEditorEditStyle" Usage="fileNameEditor.GetEditStyle context" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -130,7 +141,7 @@
         <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
       </Parameters>
       <Docs>
-        <param name="context">Интерфейс <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, используемый для получения дополнительных сведений о контексте.</param>
+        <param name="context">Контекст <see cref="T:System.ComponentModel.ITypeDescriptorContext" />, используемый для получения дополнительных сведений о контексте.</param>
         <summary>Получает стиль редактирования, используемый методом <see cref="M:System.Windows.Forms.Design.FileNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />.</summary>
         <returns>Одно из значений <see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />, определяющих предоставленный стиль редактирования.</returns>
         <remarks>
@@ -157,6 +168,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -174,9 +189,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Можно переопределить этот метод, чтобы настроить процесс инициализации диалогового окна.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Можно переопределить этот метод, чтобы настроить процесс инициализации диалогового окна.</para></block>
         <altmember cref="T:System.Windows.Forms.OpenFileDialog" />
       </Docs>
     </Member>

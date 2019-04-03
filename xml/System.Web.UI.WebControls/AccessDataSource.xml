@@ -1,13 +1,5 @@
 <Type Name="AccessDataSource" FullName="System.Web.UI.WebControls.AccessDataSource">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="5b492b8edda11d7abaabca11d5af75e3155d53d9" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48655769" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class AccessDataSource : System.Web.UI.WebControls.SqlDataSource" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7b5dda3d0ce7bd5218afeb69d9efa7789081e4ee" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55334712" /></Metadata><TypeSignature Language="C#" Value="public class AccessDataSource : System.Web.UI.WebControls.SqlDataSource" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessDataSource extends System.Web.UI.WebControls.SqlDataSource" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AccessDataSource" />
   <TypeSignature Language="VB.NET" Value="Public Class AccessDataSource&#xA;Inherits SqlDataSource" />
@@ -26,7 +18,7 @@
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.AccessDataSourceDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.AccessDataSource))</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
@@ -45,11 +37,11 @@
   
  <xref:System.Web.UI.WebControls.AccessDataSource> Класс не поддерживает подключение к базам данных Access, которые защищены с помощью имени пользователя или пароля, так как невозможно задать <xref:System.Web.UI.WebControls.AccessDataSource.ConnectionString%2A> свойства. Если базу данных Access защищена с помощью имени пользователя или пароля, используйте <xref:System.Web.UI.WebControls.SqlDataSource> элемента управления, можно указать полную строку подключения к нему подключиться.  
   
- При привязке элемента управления с привязкой к данным для <xref:System.Web.UI.WebControls.AccessDataSource> с помощью `DataSourceID` свойство элемента управления с привязкой к данным. Дополнительные сведения о привязке элемента управления с привязкой данных к элементам управления источника данных, см. в разделе [привязки к данным с помощью элемента управления источником данных](http://msdn.microsoft.com/library/e41adfff-8fb8-449e-9cd1-9bd49788c5f7).  
+ При привязке элемента управления с привязкой к данным для <xref:System.Web.UI.WebControls.AccessDataSource> с помощью `DataSourceID` свойство элемента управления с привязкой к данным. Дополнительные сведения о привязке элемента управления с привязкой данных к элементам управления источника данных, см. в разделе [привязки к данным с помощью элемента управления источником данных](https://msdn.microsoft.com/library/e41adfff-8fb8-449e-9cd1-9bd49788c5f7).  
   
- Так как <xref:System.Web.UI.WebControls.AccessDataSource> управления для продукта только одну базу данных, в ней всегда используется тот же поставщик — <xref:System.Data.OleDb?displayProperty=nameWithType> поставщик данных .NET. По этой причине <xref:System.Web.UI.WebControls.AccessDataSource.ProviderName%2A> свойство доступно только для чтения. При использовании <xref:System.Data.OleDb?displayProperty=nameWithType> поставщик, важен порядок параметров в параметризованную инструкцию SQL; любой параметризованные запросы SQL, указываемые на <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>, <xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommand%2A>, <xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommand%2A>, и <xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommand%2A> необходимо свойства совпадает с порядком любого <xref:System.Web.UI.WebControls.Parameter> объектов в коллекции параметров. Если указан без параметра коллекции <xref:System.Web.UI.WebControls.AccessDataSource>, порядок параметров, предоставленных для этих операций должен соответствовать порядку, в котором они отображаются в базовой инструкции SQL. Дополнительные сведения см. в разделе [использование параметров с помощью элемента управления SqlDataSource](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295).  
+ Так как <xref:System.Web.UI.WebControls.AccessDataSource> управления для продукта только одну базу данных, в ней всегда используется один и тот же поставщик - <xref:System.Data.OleDb?displayProperty=nameWithType> поставщик данных .NET. По этой причине <xref:System.Web.UI.WebControls.AccessDataSource.ProviderName%2A> свойство доступно только для чтения. При использовании <xref:System.Data.OleDb?displayProperty=nameWithType> поставщик, важен порядок параметров в параметризованную инструкцию SQL; любой параметризованные запросы SQL, указываемые на <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>, <xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommand%2A>, <xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommand%2A>, и <xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommand%2A> необходимо свойства совпадает с порядком любого <xref:System.Web.UI.WebControls.Parameter> объектов в коллекции параметров. Если указан без параметра коллекции <xref:System.Web.UI.WebControls.AccessDataSource>, порядок параметров, предоставленных для этих операций должен соответствовать порядку, в котором они отображаются в базовой инструкции SQL. Дополнительные сведения см. в разделе [использование параметров с помощью элемента управления SqlDataSource](https://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295).  
   
- <xref:System.Web.UI.WebControls.AccessDataSource> Элемент управления поддерживает же поведение кэширования, который поддерживает его базового класса. Используйте кэширование для повышения производительности страниц, использующих <xref:System.Web.UI.WebControls.AccessDataSource> элемента управления. Дополнительные сведения о кэшировании источников данных, см. в разделе [кэширование данных с помощью элементов управления источниками данных](http://msdn.microsoft.com/library/8f534a06-3136-4048-bb2e-6563a8238d15).  
+ <xref:System.Web.UI.WebControls.AccessDataSource> Элемент управления поддерживает же поведение кэширования, который поддерживает его базового класса. Используйте кэширование для повышения производительности страниц, использующих <xref:System.Web.UI.WebControls.AccessDataSource> элемента управления. Дополнительные сведения о кэшировании источников данных, см. в разделе [кэширование данных с помощью элементов управления источниками данных](https://msdn.microsoft.com/library/8f534a06-3136-4048-bb2e-6563a8238d15).  
   
  В следующей таблице описаны возможности <xref:System.Web.UI.WebControls.AccessDataSource> элемента управления.  
   
@@ -59,7 +51,7 @@
 |Фильтрация|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A> свойства выражение фильтрации, используемый для фильтрации данных при <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A> вызывается метод.|  
 |Разбивка на страницы|<xref:System.Web.UI.WebControls.AccessDataSource> Не поддерживает прямые операции разбиения на страницы в базе данных Access. Управлять привязкой к данным, такими как <xref:System.Web.UI.WebControls.GridView>, можно переходить по страницам над элементов, возвращенных <xref:System.Web.UI.WebControls.AccessDataSource>, если <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A> свойству <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> значение.|  
 |Updating|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A> свойство в инструкцию SQL, используемую для обновления данных. Этот оператор обычно является параметризованным.|  
-|Deleting|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A> свойство в инструкцию SQL, используемую для удаления данных. Этот оператор обычно является параметризованным.|  
+|Удаление|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A> свойство в инструкцию SQL, используемую для удаления данных. Этот оператор обычно является параметризованным.|  
 |Вставка|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A> свойство в инструкцию SQL, используемые для вставки данных. Этот оператор обычно является параметризованным.|  
 |Кэширование|Задайте <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A> свойства <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> значение, <xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A> свойства `true`и <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A> и <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A> свойства в соответствии с поведением кэширования, требуется ваших кэшированных данных.|  
   
@@ -72,444 +64,444 @@
   
 ```  
 <asp:AccessDataSource  
-    CacheDuration="string|Infinite"  
-    CacheExpirationPolicy="Absolute|Sliding"  
-    CacheKeyDependency="string"  
-    CancelSelectOnNullParameter="True|False"  
-    ConflictDetection="OverwriteChanges|CompareAllValues"  
-    DataFile="uri"  
-    DataSourceMode="DataReader|DataSet"  
-    DeleteCommand="string"  
-    DeleteCommandType="Text|StoredProcedure"  
-    EnableCaching="True|False"  
-    EnableTheming="True|False"  
-    EnableViewState="True|False"  
-    FilterExpression="string"  
-    ID="string"  
-    InsertCommand="string"  
-    InsertCommandType="Text|StoredProcedure"  
-    OldValuesParameterFormatString="string"  
-    OnDataBinding="DataBinding event handler"  
-    OnDeleted="Deleted event handler"  
-    OnDeleting="Deleting event handler"  
-    OnDisposed="Disposed event handler"  
-    OnFiltering="Filtering event handler"  
-    OnInit="Init event handler"  
-    OnInserted="Inserted event handler"  
-    OnInserting="Inserting event handler"  
-    OnLoad="Load event handler"  
-    OnPreRender="PreRender event handler"  
-    OnSelected="Selected event handler"  
-    OnSelecting="Selecting event handler"  
-    OnUnload="Unload event handler"  
-    OnUpdated="Updated event handler"  
-    OnUpdating="Updating event handler"  
-    runat="server"  
-    SelectCommand="string"  
-    SelectCommandType="Text|StoredProcedure"  
-    SkinID="string"  
-    SortParameterName="string"  
-    UpdateCommand="string"  
-    UpdateCommandType="Text|StoredProcedure"  
-    Visible="True|False"  
+    CacheDuration="string|Infinite"  
+    CacheExpirationPolicy="Absolute|Sliding"  
+    CacheKeyDependency="string"  
+    CancelSelectOnNullParameter="True|False"  
+    ConflictDetection="OverwriteChanges|CompareAllValues"  
+    DataFile="uri"  
+    DataSourceMode="DataReader|DataSet"  
+    DeleteCommand="string"  
+    DeleteCommandType="Text|StoredProcedure"  
+    EnableCaching="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    FilterExpression="string"  
+    ID="string"  
+    InsertCommand="string"  
+    InsertCommandType="Text|StoredProcedure"  
+    OldValuesParameterFormatString="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleted="Deleted event handler"  
+    OnDeleting="Deleting event handler"  
+    OnDisposed="Disposed event handler"  
+    OnFiltering="Filtering event handler"  
+    OnInit="Init event handler"  
+    OnInserted="Inserted event handler"  
+    OnInserting="Inserting event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelected="Selected event handler"  
+    OnSelecting="Selecting event handler"  
+    OnUnload="Unload event handler"  
+    OnUpdated="Updated event handler"  
+    OnUpdating="Updating event handler"  
+    runat="server"  
+    SelectCommand="string"  
+    SelectCommandType="Text|StoredProcedure"  
+    SkinID="string"  
+    SortParameterName="string"  
+    UpdateCommand="string"  
+    UpdateCommandType="Text|StoredProcedure"  
+    Visible="True|False"  
 >  
-        <DeleteParameters>  
-                <asp:ControlParameter  
-                    ControlID="string"  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|  
+        <DeleteParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|  
                         ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:CookieParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    CookieName="string"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|  
                         ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:FormParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    FormField="string"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:Parameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64  
                         |Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:ProfileParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:QueryStringParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    QueryStringField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:SessionParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    SessionField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-        </DeleteParameters>  
-        <FilterParameters>  
-                <asp:ControlParameter  
-                    ControlID="string"  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+        </DeleteParameters>  
+        <FilterParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:CookieParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    CookieName="string"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:FormParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    FormField="string"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:Parameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:ProfileParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:QueryStringParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    QueryStringField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:SessionParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    SessionField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-        </FilterParameters>  
-        <InsertParameters>  
-                <asp:ControlParameter  
-                    ControlID="string"  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+        </FilterParameters>  
+        <InsertParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:CookieParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    CookieName="string"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:FormParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    FormField="string"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:Parameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:ProfileParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:QueryStringParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    QueryStringField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:SessionParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    SessionField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-        </InsertParameters>  
-        <SelectParameters>  
-                <asp:ControlParameter  
-                    ControlID="string"  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+        </InsertParameters>  
+        <SelectParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:CookieParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    CookieName="string"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:FormParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    FormField="string"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:Parameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:ProfileParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:QueryStringParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    QueryStringField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:SessionParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    SessionField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-        </SelectParameters>  
-        <UpdateParameters>  
-                <asp:ControlParameter  
-                    ControlID="string"  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+        </SelectParameters>  
+        <UpdateParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:CookieParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    CookieName="string"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:FormParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    FormField="string"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:Parameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:ProfileParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    PropertyName="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                        Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:QueryStringParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    QueryStringField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-                <asp:SessionParameter  
-                    ConvertEmptyStringToNull="True|False"  
-                    DefaultValue="string"  
-                    Direction="Input|Output|InputOutput|ReturnValue"  
-                    Name="string"  
-                    SessionField="string"  
-                    Size="integer"  
-                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
                         Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
                         Single|Double|Decimal|DateTime|String"  
-                />  
-        </UpdateParameters>  
+                />  
+        </UpdateParameters>  
 </asp:AccessDataSource>  
 ```  
   
@@ -526,7 +518,7 @@
     <altmember cref="T:System.Web.UI.WebControls.SqlDataSource" />
     <altmember cref="T:System.Web.UI.WebControls.Parameter" />
     <altmember cref="N:System.Data.OleDb" />
-    <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -536,7 +528,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.UI.WebControls.AccessDataSource" />.</summary>
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -570,7 +562,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -609,7 +601,7 @@
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.DataFile" />
         <altmember cref="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />
         <altmember cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="ConnectionString">
@@ -626,13 +618,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -660,7 +649,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Была предпринята попытка установить свойство <see cref="P:System.Web.UI.WebControls.AccessDataSource.ConnectionString" />.</exception>
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.DataFile" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="CreateDataSourceView">
@@ -696,7 +685,7 @@
         </remarks>
         <altmember cref="T:System.Web.UI.WebControls.AccessDataSourceView" />
         <altmember cref="M:System.Web.UI.IDataSource.GetView(System.String)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="DataFile">
@@ -713,13 +702,13 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.MdbDataFileEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Web.UI.UrlProperty</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
@@ -774,7 +763,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Указан недопустимый путь.</exception>
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.ConnectionString" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="GetDbProviderFactory">
@@ -799,7 +788,7 @@
         <returns>Объект <see cref="T:System.Data.OleDb.OleDbFactory" />.</returns>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.ProviderName" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="ProviderName">
@@ -816,13 +805,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -851,7 +837,7 @@
         <exception cref="T:System.InvalidOperationException">Была предпринята попытка установить свойство <see cref="P:System.Web.UI.WebControls.AccessDataSource.ProviderName" />.</exception>
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.ConnectionString" />
         <altmember cref="P:System.Web.UI.WebControls.AccessDataSource.DataFile" />
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
     <Member MemberName="SqlCacheDependency">
@@ -868,13 +854,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
         </Attribute>
       </Attributes>
@@ -893,7 +876,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">Предпринята попытка получить или задать свойство <see cref="P:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/f1685b00-09f3-46a4-ad74-2bea21d12863">Элементы управления веб-сервером с источником данных</related>
       </Docs>
     </Member>
   </Members>

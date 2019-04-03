@@ -1,13 +1,5 @@
 <Type Name="FileStream" FullName="System.IO.FileStream">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="905f01b0ff750b605eca8829d7898c8c69263b42" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50179112" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class FileStream : System.IO.Stream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="450ae81433090d293ab80bd6288a526770efbd22" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58700393" /></Metadata><TypeSignature Language="C#" Value="public class FileStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.IO.FileStream" />
   <TypeSignature Language="VB.NET" Value="Public Class FileStream&#xA;Inherits Stream" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type FileStream = class&#xA;    inherit Stream" />
   <AssemblyInfo>
     <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
@@ -27,6 +20,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
@@ -120,6 +114,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -131,6 +126,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -143,8 +139,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор для файла, являющегося текущим объектом <see langword="FileStream" />, будет инкапсулирован.</param>
@@ -167,12 +163,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
+-или- 
 Поток закрыт.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -199,6 +194,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -212,16 +208,19 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access) instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access) instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access) instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="System.IntPtr" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="handle" Type="System.IntPtr" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор для файла, являющегося текущим объектом <see langword="FileStream" />, будет инкапсулирован.</param>
@@ -244,12 +243,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
+-или- 
 Поток закрыт.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -268,6 +266,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -280,6 +279,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -338,21 +338,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д. в среде, отличной от NTFS.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.UnauthorizedAccessException">Параметр <paramref name="path" /> указывает файл, доступный только для чтения.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
-Поток был закрыт.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+-или- 
+Поток закрыт.</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -372,6 +371,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -383,6 +383,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -395,9 +396,9 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор для файла, являющегося текущим объектом <see langword="FileStream" />, будет инкапсулирован.</param>
@@ -421,13 +422,13 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="handle" /> является недопустимым дескриптором.  
   
-- или - 
+-или- 
 Параметр <paramref name="handle" /> является синхронным дескриптором, но был использован асинхронно.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -455,6 +456,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -468,17 +470,20 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access) instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="System.IntPtr" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="ownsHandle" Type="System.Boolean" />
+        <Parameter Name="handle" Type="System.IntPtr" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор для файла, являющегося текущим объектом <see langword="FileStream" />, будет инкапсулирован.</param>
@@ -502,12 +507,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="access" /> не является полем <see cref="T:System.IO.FileAccess" />.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
+-или- 
 Поток закрыт.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -526,6 +530,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -538,6 +543,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -557,7 +563,7 @@
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see langword="FileStream" />.</param>
         <param name="mode">Константа, определяющая способ открытия или создания файла.</param>
-        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <c>path</c> задает файл на диске.</param>
+        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <paramref name="path" /> задает файл на диске.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.FileStream" /> заданным путем, режимом создания и разрешением на чтение и запись.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -583,21 +589,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
@@ -617,6 +621,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -628,6 +633,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -640,10 +646,10 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="isAsync" Type="System.Boolean" />
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="isAsync" Type="System.Boolean" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор файла для файла, который будет инкапсулироваться с помощью объекта <see langword="FileStream" />.</param>
@@ -670,13 +676,13 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="handle" /> является недопустимым дескриптором.  
   
-- или - 
+-или- 
 Параметр <paramref name="handle" /> является синхронным дескриптором, но был использован асинхронно.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -704,6 +710,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -717,18 +724,21 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access, int bufferSize) instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access, int bufferSize) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access, int bufferSize) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="System.IntPtr" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="ownsHandle" Type="System.Boolean" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="handle" Type="System.IntPtr" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор файла для файла, который будет инкапсулироваться с помощью объекта <see langword="FileStream" />.</param>
@@ -753,12 +763,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="bufferSize" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="bufferSize" /> является отрицательным значением.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -777,6 +786,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -789,6 +799,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -809,7 +820,7 @@
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see langword="FileStream" />.</param>
         <param name="mode">Константа, определяющая способ открытия или создания файла.</param>
-        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <c>path</c> задает файл на диске.</param>
+        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <paramref name="path" /> задает файл на диске.</param>
         <param name="share">Константа, определяющая способ совместного использования файла процессами.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.FileStream" /> заданным путем, режимом создания, разрешением на чтение и запись и разрешением на совместное использование.</summary>
         <remarks>
@@ -843,24 +854,22 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
+-или- 
 Система работает под управлением Windows 98 или Windows 98 Second Edition, и для <paramref name="share" /> задано значение <see langword="FileShare.Delete" />.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
@@ -888,6 +897,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -901,19 +911,22 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access, int bufferSize, bool isAsync) instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access, int bufferSize, bool isAsync) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("This constructor has been deprecated.  Please use new FileStream(SafeFileHandle handle, FileAccess access, int bufferSize, bool isAsync) instead, and optionally make a new SafeFileHandle with ownsHandle=false if needed.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="handle" Type="System.IntPtr" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="ownsHandle" Type="System.Boolean" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="isAsync" Type="System.Boolean" />
+        <Parameter Name="handle" Type="System.IntPtr" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="isAsync" Type="System.Boolean" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="handle">Дескриптор файла для файла, который будет инкапсулироваться с помощью объекта <see langword="FileStream" />.</param>
@@ -941,10 +954,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="access" /> меньше <see langword="FileAccess.Read" /> или больше <see langword="FileAccess.ReadWrite" />, либо <paramref name="bufferSize" /> не больше 0.</exception>
         <exception cref="T:System.ArgumentException">Дескриптор недействителен.</exception>
-        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода (например, ошибка диска).  
+        <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например ошибка диска.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного дескриптора файлов, например, когда <paramref name="access" /> равен <see langword="Write" /> или <see langword="ReadWrite" />, а для дескриптора файлов установлен доступ только для чтения.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">для доступа к неуправляемому коду. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />.</permission>
@@ -963,6 +976,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -975,6 +989,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -996,7 +1011,7 @@
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see langword="FileStream" />.</param>
         <param name="mode">Константа, определяющая способ открытия или создания файла.</param>
-        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <c>path</c> задает файл на диске.</param>
+        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <paramref name="path" /> задает файл на диске.</param>
         <param name="share">Константа, определяющая способ совместного использования файла процессами.</param>
         <param name="bufferSize">Положительное значение <see cref="T:System.Int32" />, большее 0, определяющее размер буфера. Размер буфера по умолчанию — 4096.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.FileStream" /> заданным путем, режимом создания, разрешениями на чтение и запись и на совместное использование, а также размером буфера.</summary>
@@ -1020,28 +1035,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.  
   
-- или - 
+-или- 
  <paramref name="mode" />, <paramref name="access" /> или <paramref name="share" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
+-или- 
 Система работает под управлением Windows 98 или Windows 98 Second Edition, и для <paramref name="share" /> задано значение <see langword="FileShare.Delete" />.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -1060,6 +1073,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1072,6 +1086,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1094,10 +1109,10 @@
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see langword="FileStream" />.</param>
         <param name="mode">Константа, определяющая способ открытия или создания файла.</param>
-        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <c>path</c> задает файл на диске.</param>
+        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <paramref name="path" /> задает файл на диске.</param>
         <param name="share">Константа, определяющая способ совместного использования файла процессами.</param>
-        <param name="bufferSize">Положительное значение <see cref="T:System.Int32" />, большее 0, определяющее размер буфера. Размер буфера по умолчанию: 4096.</param>
-        <param name="useAsync">Указывает, использовать ли асинхронный ввод-вывод или синхронный ввод-вывод. Однако обратите внимание, что базовая операционная система может не поддерживать асинхронный ввод-вывод, поэтому, когда задается значение <see langword="true" />, дескриптор может быть открыт синхронно в зависимости от платформы. При асинхронном открытии методы <see cref="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> и <see cref="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> выполняются лучше при чтении или записи больших объемов, но они могут работать намного медленнее при чтении или записи маленьких объемов данных. Если приложение разработано таким образом, чтобы получить преимущества асинхронного ввода-вывода, установите для параметра <c>useAsync</c> значение <see langword="true" />. При корректном использовании асинхронного ввода-вывода быстродействие приложения может возрасти вплоть до 10 раз, но использование такого режима ввода-вывода без переработки приложения может во столько же раз ухудшить быстродействие.</param>
+        <param name="bufferSize">Положительное значение <see cref="T:System.Int32" />, большее 0, определяющее размер буфера. Размер буфера по умолчанию — 4096.</param>
+        <param name="useAsync">Указывает, использовать ли асинхронный ввод-вывод или синхронный ввод-вывод. Однако обратите внимание, что базовая операционная система может не поддерживать асинхронный ввод-вывод, поэтому, когда задается значение <see langword="true" />, дескриптор может быть открыт синхронно в зависимости от платформы. При асинхронном открытии методы <see cref="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> и <see cref="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> выполняются лучше при чтении или записи больших объемов, но они могут работать намного медленнее при чтении или записи маленьких объемов данных. Если приложение разработано таким образом, чтобы получить преимущества асинхронного ввода-вывода, установите для параметра <paramref name="useAsync" /> значение <see langword="true" />. При корректном использовании асинхронного ввода-вывода быстродействие приложения может возрасти вплоть до 10 раз, но использование такого режима ввода-вывода без переработки приложения может во столько же раз ухудшить быстродействие.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.FileStream" /> заданным путем, режимом создания, разрешениями на чтение и запись и совместное использование, размером буфера и синхронным или асинхронным состоянием.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1128,28 +1143,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.  
   
-- или - 
+-или- 
  <paramref name="mode" />, <paramref name="access" /> или <paramref name="share" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
+-или- 
 Система работает под управлением Windows 98 или Windows 98 Second Edition, и для <paramref name="share" /> задано значение <see langword="FileShare.Delete" />.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -1169,6 +1182,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1180,6 +1194,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1192,17 +1207,17 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="mode" Type="System.IO.FileMode" />
-        <Parameter Name="access" Type="System.IO.FileAccess" />
-        <Parameter Name="share" Type="System.IO.FileShare" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="options" Type="System.IO.FileOptions" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="mode" Type="System.IO.FileMode" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.IO.FileAccess" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="share" Type="System.IO.FileShare" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.FileOptions" Index="5" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see langword="FileStream" />.</param>
         <param name="mode">Константа, определяющая способ открытия или создания файла.</param>
-        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <c>path</c> задает файл на диске.</param>
+        <param name="access">Константа, определяющая способ доступа к файлу объекта <see langword="FileStream" />. Также определяет значения, возвращаемые свойствами <see cref="P:System.IO.FileStream.CanRead" /> и <see cref="P:System.IO.FileStream.CanWrite" /> объекта <see langword="FileStream" />. Свойство <see cref="P:System.IO.FileStream.CanSeek" /> имеет значение <see langword="true" />, если параметр <paramref name="path" /> задает файл на диске.</param>
         <param name="share">Константа, определяющая способ совместного использования файла процессами.</param>
         <param name="bufferSize">Положительное значение <see cref="T:System.Int32" />, большее 0, определяющее размер буфера. Размер буфера по умолчанию — 4096.</param>
         <param name="options">Значение, задающее дополнительные параметры файла.</param>
@@ -1238,28 +1253,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.  
   
-- или - 
+-или- 
  <paramref name="mode" />, <paramref name="access" /> или <paramref name="share" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.  
   
-- или - 
+-или- 
  Для <paramref name="options" /> указан режим <see cref="F:System.IO.FileOptions.Encrypted" />, но в текущей платформе шифрование файлов не поддерживается.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный путь, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -1297,12 +1310,12 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="mode" Type="System.IO.FileMode" />
-        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" />
-        <Parameter Name="share" Type="System.IO.FileShare" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="options" Type="System.IO.FileOptions" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="mode" Type="System.IO.FileMode" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="share" Type="System.IO.FileShare" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.FileOptions" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see cref="T:System.IO.FileStream" />.</param>
@@ -1336,29 +1349,27 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.  
   
-- или - 
+-или- 
  <paramref name="mode" />, <paramref name="access" /> или <paramref name="share" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
-        <exception cref="T:System.PlatformNotSupportedException">Текущая операционная система не является системой Windows NT или более поздней версией.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Текущая операционная система не является системой Windows NT или более поздней версии.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.  
   
-- или - 
+-или- 
  Для <paramref name="options" /> указан режим <see cref="F:System.IO.FileOptions.Encrypted" />, но в текущей платформе шифрование файлов не поддерживается.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный <paramref name="path" />, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
@@ -1395,13 +1406,13 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="mode" Type="System.IO.FileMode" />
-        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" />
-        <Parameter Name="share" Type="System.IO.FileShare" />
-        <Parameter Name="bufferSize" Type="System.Int32" />
-        <Parameter Name="options" Type="System.IO.FileOptions" />
-        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="mode" Type="System.IO.FileMode" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="share" Type="System.IO.FileShare" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bufferSize" Type="System.Int32" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.FileOptions" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" Index="6" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">Абсолютный или относительный путь к файлу, который будет инкапсулироваться объектом <see cref="T:System.IO.FileStream" />.</param>
@@ -1445,31 +1456,29 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="path" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> представляет собой пустую строку (""), содержащую только пробел или хотя бы один недопустимый символ.  
   
-- или - 
+-или- 
  <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде NTFS.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="path" /> ссылается на устройство нефайлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> ссылается на устройство не файлового типа, например "con:", "com1:", "lpt1:" и т. д., в среде, отличной от NTFS.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="bufferSize" /> имеет отрицательное значение или равен нулю.  
   
-- или - 
+-или- 
  <paramref name="mode" />, <paramref name="access" /> или <paramref name="share" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" /> и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, например когда <paramref name="mode" /> равно <see langword="FileMode.Truncate" /> или <see langword="FileMode.Open" />, и файл, заданный параметром <paramref name="path" />, не существует. Файл должен уже существовать в этих режимах.</exception>
         <exception cref="T:System.IO.IOException">Произошла ошибка ввода-вывода, например задание параметра <see langword="FileMode.CreateNew" />, когда файл, заданный параметром <paramref name="path" />, уже существует.  
   
-- или - 
-Поток был закрыт.</exception>
+-или- 
+Поток закрыт.</exception>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, ведущий на несопоставленный диск).</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">Указан недопустимый путь (например, он ведет на несопоставленный диск).</exception>
         <exception cref="T:System.UnauthorizedAccessException">Запрошенный <paramref name="access" /> не поддерживается операционной системой для указанного <paramref name="path" />, например когда <paramref name="access" /> равно <see langword="Write" /> или <see langword="ReadWrite" />, а для файла или каталога установлен доступ только для чтения.  
   
-- или - 
+-или- 
  Для <paramref name="options" /> указан режим <see cref="F:System.IO.FileOptions.Encrypted" />, но в текущей платформе шифрование файлов не поддерживается.</exception>
         <exception cref="T:System.IO.PathTooLongException">Указанный <paramref name="path" />, имя файла или оба значения превышают максимальную длину, заданную в системе.</exception>
-        <exception cref="T:System.PlatformNotSupportedException">Текущая операционная система не является системой Windows NT или более поздней версией.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Текущая операционная система не является системой Windows NT или более поздней версии.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения, записи и добавление к файлам. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, и <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -1477,13 +1486,27 @@
       </Docs>
     </Member>
     <Member MemberName="BeginRead">
-      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (array As Byte(), offset As Integer, numBytes As Integer, userCallback As AsyncCallback, stateObject As Object) As IAsyncResult" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ userCallback, System::Object ^ stateObject);" />
-      <MemberSignature Language="F#" Value="override this.BeginRead : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginRead (array, offset, numBytes, userCallback, stateObject)" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback callback, object state);" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (array As Byte(), offset As Integer, numBytes As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ callback, System::Object ^ state);" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="F#" Value="override this.BeginRead : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginRead (array, offset, numBytes, callback, state)" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (array As Byte(), offset As Integer, numBytes As Integer, userCallback As AsyncCallback, stateObject As Object) As IAsyncResult" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ userCallback, System::Object ^ stateObject);" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="override this.BeginRead : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginRead (array, offset, numBytes, userCallback, stateObject)" FrameworkAlternate="netcore-2.0;netcore-3.0;netframework-1.1" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" FrameworkAlternate="netcore-2.0" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -1492,11 +1515,9 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
-        <AssemblyName>System.Runtime</AssemblyName>
-      </AssemblyInfo>
-      <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1510,31 +1531,57 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="numBytes" Type="System.Int32" />
-        <Parameter Name="userCallback" Type="System.AsyncCallback" />
-        <Parameter Name="stateObject" Type="System.Object" />
+        <Parameter Name="array" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="numBytes" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="stateObject" Type="System.Object" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="array">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="numBytes">To be added.</param>
-        <param name="userCallback">To be added.</param>
-        <param name="stateObject">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="array">Буфер, в который должны считываться данные.</param>
+        <param name="buffer">To be added.</param>
+        <param name="offset">Смещение в <paramref name="array" /> (в байтах), с которого начинается чтение.</param>
+        <param name="numBytes">Максимальное число байтов, предназначенных для чтения.</param>
+        <param name="count">To be added.</param>
+        <param name="callback">Метод, вызываемый после завершения операции асинхронного чтения.</param>
+        <param name="userCallback">Метод, вызываемый после завершения операции асинхронного чтения.</param>
+        <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронное чтение от других запросов.</param>
+        <param name="stateObject">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронное чтение от других запросов.</param>
+        <summary>Начинает операцию асинхронного чтения. Вместо этого рекомендуется использовать <see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />.</summary>
+        <returns>Объект, который ссылается на асинхронное чтение.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">Длина массива минус <paramref name="offset" /> меньше <paramref name="numBytes" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="numBytes" /> является отрицательным значением.</exception>
+        <exception cref="T:System.IO.IOException">Предпринята попытка асинхронного чтения за пределами файла.</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginWrite">
-      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (array As Byte(), offset As Integer, numBytes As Integer, userCallback As AsyncCallback, stateObject As Object) As IAsyncResult" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ userCallback, System::Object ^ stateObject);" />
-      <MemberSignature Language="F#" Value="override this.BeginWrite : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginWrite (array, offset, numBytes, userCallback, stateObject)" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback callback, object state);" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (array As Byte(), offset As Integer, numBytes As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ callback, System::Object ^ state);" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
+      <MemberSignature Language="F#" Value="override this.BeginWrite : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginWrite (array, offset, numBytes, callback, state)" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (array As Byte(), offset As Integer, numBytes As Integer, userCallback As AsyncCallback, stateObject As Object) As IAsyncResult" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ array, int offset, int numBytes, AsyncCallback ^ userCallback, System::Object ^ stateObject);" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="override this.BeginWrite : byte[] * int * int * AsyncCallback * obj -&gt; IAsyncResult" Usage="fileStream.BeginWrite (array, offset, numBytes, userCallback, stateObject)" FrameworkAlternate="netcore-2.0;netcore-3.0;netframework-1.1" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" FrameworkAlternate="netcore-2.0" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -1543,11 +1590,9 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
-        <AssemblyName>System.Runtime</AssemblyName>
-      </AssemblyInfo>
-      <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1561,21 +1606,35 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="numBytes" Type="System.Int32" />
-        <Parameter Name="userCallback" Type="System.AsyncCallback" />
-        <Parameter Name="stateObject" Type="System.Object" />
+        <Parameter Name="array" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="numBytes" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-2.0;netcore-3.0;netstandard-2.1" />
+        <Parameter Name="stateObject" Type="System.Object" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="array">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="numBytes">To be added.</param>
-        <param name="userCallback">To be added.</param>
-        <param name="stateObject">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="array">Буфер, содержащий данные для записи в текущий поток.</param>
+        <param name="buffer">To be added.</param>
+        <param name="offset">Отсчитываемое от нуля смещение байтов в буфере <paramref name="array" />, с которого начинается копирование байтов в текущий поток.</param>
+        <param name="numBytes">Максимальное число байтов для записи.</param>
+        <param name="count">To be added.</param>
+        <param name="callback">Метод, вызываемый после завершения операции асинхронной записи.</param>
+        <param name="userCallback">Метод, вызываемый после завершения операции асинхронной записи.</param>
+        <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронную запись от других запросов.</param>
+        <param name="stateObject">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на асинхронную запись от других запросов.</param>
+        <summary>Начинает операцию асинхронной записи. Вместо этого рекомендуется использовать <see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />.</summary>
+        <returns>Объект, который ссылается на асинхронную запись.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">Длина <paramref name="array" /> минус <paramref name="offset" /> меньше <paramref name="numBytes" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="numBytes" /> является отрицательным значением.</exception>
+        <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
+        <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
+        <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.</exception>
       </Docs>
     </Member>
     <Member MemberName="CanRead">
@@ -1588,6 +1647,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1600,6 +1660,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1610,7 +1671,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, определяющее в текущем потоке наличие поддержки операций чтения.</summary>
+        <summary>Получает значение, указывающее, поддерживает ли текущий поток чтение.</summary>
         <value>Значение <see langword="true" />, если в потоке поддерживаются операции чтения; значение <see langword="false" />, если поток закрыт или открыт только для записи.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1646,6 +1707,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1658,6 +1720,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1668,7 +1731,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, определяющее в текущем потоке наличие поддержки операций поиска.</summary>
+        <summary>Получает значение, указывающее, поддерживает ли текущий поток поиск.</summary>
         <value>Значение <see langword="true" />, если поток поддерживает поиск; значение <see langword="false" />, если поток закрыт или если <see langword="FileStream" /> был сконструирован из дескриптора операционной системы, такого как канал или вывод на консоль.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1704,6 +1767,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1716,6 +1780,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1726,7 +1791,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, определяющее в текущем потоке наличие поддержки операций записи.</summary>
+        <summary>Получает значение, указывающее, поддерживает ли текущий поток запись.</summary>
         <value>Значение <see langword="true" />, если поток поддерживает операции записи; значение <see langword="false" />, если поток закрыт или открыт только для чтения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1784,7 +1849,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Этот член переопределяет <see cref="M:System.IO.Stream.Close" />; по данной теме может быть доступна более полная документация.
+
+Закрывает текущий поток и отключает все ресурсы (например, сокеты и файловые дескрипторы), связанные с текущим потоком.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1798,6 +1865,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1810,6 +1878,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1828,7 +1897,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.IO.FileStream" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1840,15 +1909,45 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see cref="M:System.ComponentModel.Component.Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see cref="M:System.IO.FileStream.Dispose(System.Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see cref="M:System.ComponentModel.Component.Dispose" />. Дополнительные сведения о том, как реализовать <see cref="M:System.IO.FileStream.Dispose(System.Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see cref="M:System.ComponentModel.Component.Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para>
-        </block>
+Дополнительные сведения о <see cref="M:System.ComponentModel.Component.Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="fileStream.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndRead">
@@ -1869,6 +1968,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1887,7 +1987,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="asyncResult">Ссылка на ожидаемый отложенный асинхронный запрос.</param>
@@ -1916,10 +2016,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asyncResult" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Этот объект <see cref="T:System.IAsyncResult" /> не был создан путем вызова <see cref="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> для данного класса.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="M:System.IO.FileStream.EndRead(System.IAsyncResult)" /> вызывается несколько раз.</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.IO.FileStream.EndRead(System.IAsyncResult)" /> вызывается несколько раз.</exception>
         <exception cref="T:System.IO.IOException">Поток закрыт, или произошла внутренняя ошибка.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -1945,6 +2044,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1963,7 +2063,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="asyncResult">Отложенный асинхронный запрос ввода-вывода.</param>
@@ -1989,10 +2089,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asyncResult" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Этот объект <see cref="T:System.IAsyncResult" /> не был создан путем вызова <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> для данного класса.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="M:System.IO.FileStream.EndWrite(System.IAsyncResult)" /> вызывается несколько раз.</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.IO.FileStream.EndWrite(System.IAsyncResult)" /> вызывается несколько раз.</exception>
         <exception cref="T:System.IO.IOException">Поток закрыт, или произошла внутренняя ошибка.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -2010,6 +2109,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2022,6 +2122,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2071,6 +2172,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2083,6 +2185,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2145,6 +2248,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2155,6 +2259,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2170,7 +2275,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="flushToDisk" Type="System.Boolean" />
+        <Parameter Name="flushToDisk" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="flushToDisk">Значение <see langword="true" /> для записи на диск  буферов всех промежуточных файлов; в противном случае — значение <see langword="false" />.</param>
@@ -2197,6 +2302,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2207,6 +2313,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2225,7 +2332,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">Токен для отслеживания запросов отмены.</param>
@@ -2278,7 +2385,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Получает объект <see cref="T:System.Security.AccessControl.FileSecurity" />, который инкапсулирует записи списка управления доступом (ACL) для файла, описываемого текущим объектом <see cref="T:System.IO.FileStream" />.</summary>
+        <summary>Возвращает объект <see cref="T:System.Security.AccessControl.FileSecurity" />, который инкапсулирует записи списка управления доступом (ACL) для файла, описываемого текущим объектом <see cref="T:System.IO.FileStream" />.</summary>
         <returns>Объект, инкапсулирующий параметры управления доступом для файла, который описывается текущим объектом <see cref="T:System.IO.FileStream" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2297,7 +2404,7 @@
         <exception cref="T:System.SystemException">Не удалось найти файл.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Эта операция не поддерживается на текущей платформе.  
   
-- или - 
+-или- 
 У вызывающего объекта отсутствует необходимое разрешение.</exception>
       </Docs>
     </Member>
@@ -2319,6 +2426,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2332,11 +2440,14 @@
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use SafeFileHandle instead")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use FileStream's SafeFileHandle property instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0;netstandard-2.1">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use FileStream's SafeFileHandle property instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2359,7 +2470,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Security.SecurityException">У вызывающего объекта отсутствует необходимое разрешение.</exception>
-        <permission cref="T:System.Security.Permissions.SecurityPermission">для возможности доступа к неуправляемому коду. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /> действие по обеспечению безопасности: <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />.</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">для возможности доступа к неуправляемому коду. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /> Действие по обеспечению безопасности: <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />.</permission>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Требует полного доверия для непосредственного вызывающего объекта. Этот член не может использоваться частично доверенным или прозрачным кодом.</permission>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
@@ -2376,6 +2487,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2388,6 +2500,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2398,7 +2511,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, определяющее, как был открыт объект <see langword="FileStream" />: синхронно или асинхронно.</summary>
+        <summary>Получает значение, указывающее, как был открыт <see langword="FileStream" />: синхронно или асинхронно.</summary>
         <value>Значение <see langword="true" />, если <see langword="FileStream" /> был открыт асинхронно, в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2434,6 +2547,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2446,6 +2560,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2461,7 +2576,7 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает длину потока в байтах.</summary>
+        <summary>Получает длину потока в байтах.</summary>
         <value>Длинное значение, представляющее длину потока в байтах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2505,6 +2620,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2523,8 +2639,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="position" Type="System.Int64" />
-        <Parameter Name="length" Type="System.Int64" />
+        <Parameter Name="position" Type="System.Int64" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="length" Type="System.Int64" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="position">Начало диапазона для блокировки. Значение этого параметра должно быть больше или равно нулю (0).</param>
@@ -2549,8 +2665,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="position" /> или <paramref name="length" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="position" /> или <paramref name="length" /> является отрицательным значением.</exception>
         <exception cref="T:System.ObjectDisposedException">Файл закрыт.</exception>
         <exception cref="T:System.IO.IOException">Процессу не удается получить доступ к файлу, так как другой процесс заблокировал часть этого файла.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
@@ -2568,6 +2683,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2580,6 +2696,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2633,6 +2750,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2645,6 +2763,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2687,13 +2806,47 @@
         <exception cref="T:System.NotSupportedException">Поток не поддерживает поиск.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.  
   
-\- или - 
+-или- 
 Для положения задано очень большое значение за пределами конца потока в Windows 98 или более ранней версии.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Попытка установить для положения отрицательное значение.</exception>
         <exception cref="T:System.IO.EndOfStreamException">Попытка поиска за пределами потока, который не поддерживает это.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (Span&lt;byte&gt; buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(valuetype System.Span`1&lt;unsigned int8&gt; buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Read(System.Span{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read (buffer As Span(Of Byte)) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read(Span&lt;System::Byte&gt; buffer);" />
+      <MemberSignature Language="F#" Value="override this.Read : Span&lt;byte&gt; -&gt; int" Usage="fileStream.Read buffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Read">
@@ -2706,6 +2859,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2718,6 +2872,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2738,8 +2893,8 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">После завершения выполнения данного метода буфер содержит указанный массив байтов, в котором значения в интервале между <c>offset</c> и (<c>offset</c> + <c>count</c> – 1<c>)</c> заменены байтами, считанными из текущего источника.</param>
-        <param name="offset">Смещение в байтах в массиве <c>array</c>, в который считанные байты будут помещены.</param>
+        <param name="array">Когда этот метод возвращает управление, он содержит указанный массив байтов, в котором значения между <paramref name="offset" /> и (<paramref name="offset" /> + <paramref name="count" /> - 1<c>)</c> заменены байтами, считанными из текущего источника.</param>
+        <param name="offset">Смещение в байтах в массиве <paramref name="array" />, в который будут помещены считанные байты.</param>
         <param name="count">Максимальное число байтов, предназначенных для чтения.</param>
         <summary>Выполняет чтение блока байтов из потока и запись данных в заданный буфер.</summary>
         <returns>Общее количество байтов, считанных в буфер. Оно может быть меньше запрошенного числа байтов, если в настоящее время не имеется нужного количества байтов, или же равно нулю, если достигнут конец потока.</returns>
@@ -2769,17 +2924,49 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="offset" /> и <paramref name="count" /> описывают недопустимый диапазон в <paramref name="array" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> и <paramref name="count" /> описывают недопустимый диапазон в <paramref name="array" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Методы были вызваны после закрытия потока.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask&lt;int&gt; ReadAsync (Memory&lt;byte&gt; buffer, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;int32&gt; ReadAsync(valuetype System.Memory`1&lt;unsigned int8&gt; buffer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="override this.ReadAsync : Memory&lt;byte&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;int&gt;" Usage="fileStream.ReadAsync (buffer, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Memory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ReadAsync">
@@ -2791,6 +2978,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2801,6 +2989,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2819,14 +3008,14 @@
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, в который записываются данные.</param>
-        <param name="offset">Смещение байтов в <c>buffer</c>, с которого начинается запись данных, считанных из потока.</param>
+        <param name="offset">Смещение байтов в <paramref name="buffer" />, с которого начинается запись данных из потока.</param>
         <param name="count">Максимальное число байтов, предназначенных для чтения.</param>
         <param name="cancellationToken">Токен для отслеживания запросов отмены.</param>
         <summary>Асинхронно считывает последовательность байтов из текущего потока, перемещает позицию в потоке на число считанных байтов и отслеживает запросы отмены.</summary>
@@ -2851,9 +3040,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -2871,6 +3059,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2883,6 +3072,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2923,11 +3113,9 @@
         </remarks>
         <exception cref="T:System.NotSupportedException">Текущий поток не поддерживает чтение.</exception>
         <exception cref="T:System.ObjectDisposedException">Текущий поток закрыт.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.  
+        <block subset="none" type="overrides"><para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.  
   
-Список общих файлов и операции с каталогами, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).</para>
-        </block>
+Список общих файлов и операции с каталогами, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
@@ -2943,6 +3131,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2954,6 +3143,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2981,7 +3171,7 @@
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">для разрешения на вызов неуправляемого кода.  
   
-Действие по обеспечению безопасности: требование связывания 
+Действие по обеспечению безопасности: Требование связывания 
 Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Требует полного доверия для непосредственного вызывающего объекта. Этот член не может использоваться частично доверенным или прозрачным кодом.</permission>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
@@ -2999,6 +3189,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -3011,6 +3202,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3030,8 +3222,8 @@
         <Parameter Name="origin" Type="System.IO.SeekOrigin" />
       </Parameters>
       <Docs>
-        <param name="offset">Указатель относительно начальной точки <c>origin</c>, от которой начинается поиск.</param>
-        <param name="origin">Описывает начальную, конечную или текущую позицию как опорную точку для <c>offset</c>, используя значение типа <see cref="T:System.IO.SeekOrigin" />.</param>
+        <param name="offset">Указатель относительно начальной точки <paramref name="origin" />, от которой начинается поиск.</param>
+        <param name="origin">Задает начальную, конечную или текущую позицию как опорную точку для <paramref name="offset" />, используя значение типа <see cref="T:System.IO.SeekOrigin" />.</param>
         <summary>Устанавливает текущее положение этого потока на заданное значение.</summary>
         <returns>Новая позиция в потоке.</returns>
         <remarks>
@@ -3103,7 +3295,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="fileSecurity">Объект, который описывает запись ACL, применяемую к текущему файлу.</param>
@@ -3139,6 +3331,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -3151,6 +3344,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3214,6 +3408,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3232,8 +3427,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="position" Type="System.Int64" />
-        <Parameter Name="length" Type="System.Int64" />
+        <Parameter Name="position" Type="System.Int64" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="length" Type="System.Int64" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="position">Начало диапазона, который должен быть разблокирован.</param>
@@ -3256,11 +3451,43 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="position" /> или <paramref name="length" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="position" /> или <paramref name="length" /> является отрицательным значением.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (ReadOnlySpan&lt;byte&gt; buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Write(System.ReadOnlySpan{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (buffer As ReadOnlySpan(Of Byte))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(ReadOnlySpan&lt;System::Byte&gt; buffer);" />
+      <MemberSignature Language="F#" Value="override this.Write : ReadOnlySpan&lt;byte&gt; -&gt; unit" Usage="fileStream.Write buffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Write">
@@ -3273,6 +3500,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -3285,6 +3513,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3306,7 +3535,7 @@
       </Parameters>
       <Docs>
         <param name="array">Буфер, содержащий данные для записи в поток.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>array</c>, с которого начинается копирование байтов в поток.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в объекте <paramref name="array" />, с которого начинается копирование байтов в поток.</param>
         <param name="count">Максимальное число байтов для записи.</param>
         <summary>Записывает блок байтов в файловый поток.</summary>
         <remarks>
@@ -3335,20 +3564,52 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="offset" /> и <paramref name="count" /> описывают недопустимый диапазон в <paramref name="array" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> и <paramref name="count" /> описывают недопустимый диапазон в <paramref name="array" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.IO.IOException">Ошибка ввода/вывода.  
   
-\- или - 
+-или- 
 Возможно, другой поток вызвал непредвиденное изменение положения дескриптора файла операционной системы.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
         <exception cref="T:System.NotSupportedException">Текущий экземпляр потока не поддерживает запись.</exception>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask WriteAsync (ReadOnlyMemory&lt;byte&gt; buffer, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask WriteAsync(valuetype System.ReadOnlyMemory`1&lt;unsigned int8&gt; buffer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="override this.WriteAsync : ReadOnlyMemory&lt;byte&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="fileStream.WriteAsync (buffer, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ReadOnlyMemory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -3360,6 +3621,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -3370,6 +3632,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3388,14 +3651,14 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">Буфер, из которого записываются данные.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>buffer</c>, с которого начинается копирование байтов в поток.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в объекте <paramref name="buffer" />, с которого начинается копирование байтов в поток.</param>
         <param name="count">Максимальное число байтов для записи.</param>
         <param name="cancellationToken">Токен для отслеживания запросов отмены.</param>
         <summary>Асинхронно записывает последовательность байтов в текущий поток, перемещает текущую позицию внутри потока на число записанных байтов и отслеживает запросы отмены.</summary>
@@ -3420,9 +3683,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="buffer" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> или <paramref name="count" /> является отрицательным значением.</exception>
         <exception cref="T:System.ArgumentException">Сумма <paramref name="offset" /> и <paramref name="count" /> больше, чем длина буфера.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
         <exception cref="T:System.ObjectDisposedException">Поток был удален.</exception>
@@ -3440,6 +3702,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -3452,6 +3715,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3496,11 +3760,9 @@
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Поток закрыт.</exception>
         <exception cref="T:System.NotSupportedException">Поток не поддерживает запись.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.  
+        <block subset="none" type="overrides"><para>Реализация по умолчанию в <see langword="Stream" /> создает новый массив однобайтовых, а затем вызывает <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />. Это формально верно, но неэффективно. Любой поток с внутренним буфером следует переопределить этот метод и предоставляют гораздо более эффективную версию, которая считывает буфера напрямую, как избежать дополнительное размещение массива при каждом вызове.  
   
-Список общих файлов и операции с каталогами, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).</para>
-        </block>
+Список общих файлов и операции с каталогами, см. в разделе [распространенные задачи ввода-вывода](~/docs/standard/io/common-i-o-tasks.md).</para></block>
         <related type="Article" href="~/docs/standard/io/index.md">Файловый и потоковый ввод-вывод</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">Практическое руководство. Считывание текста из файла</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">Практическое руководство. Запись текста в файл</related>

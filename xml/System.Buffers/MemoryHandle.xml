@@ -1,13 +1,5 @@
 <Type Name="MemoryHandle" FullName="System.Buffers.MemoryHandle">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6a7ed9062d4b5e44b5111e6a111e56d112d4ecdd" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39868641" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct MemoryHandle : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="58531779db52cd3846271db48d8dfa3b6a1dc772" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58452704" /></Metadata><TypeSignature Language="C#" Value="public struct MemoryHandle : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit MemoryHandle extends System.ValueType implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.MemoryHandle" />
   <TypeSignature Language="VB.NET" Value="Public Structure MemoryHandle&#xA;Implements IDisposable" />
@@ -16,6 +8,12 @@
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.2.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Memory</AssemblyName>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ValueType</BaseTypeName>
@@ -26,8 +24,21 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Предоставляет дескриптор памяти для блока памяти.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Объект `MemoryHandle` экземпляр представляет дескриптор закрепленных блок памяти. Он возвращается следующими методами:
+
+- <xref:System.Buffers.IPinnable.Pin%2A?displayProperty=nameWithType>.
+- <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType>
+- <xref:System.ReadOnlyMemory%601.Pin%2A?displayProperty=nameWithType>.
+- <xref:System.Buffers.MemoryManager%601.Pin%2A?displayProperty=<nameWithType>
+
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -40,21 +51,27 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.2;netcore-2.1;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="pointer" Type="System.Void*" />
-        <Parameter Name="handle" Type="System.Runtime.InteropServices.GCHandle" />
-        <Parameter Name="pinnable" Type="System.Buffers.IPinnable" />
+        <Parameter Name="pointer" Type="System.Void*" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="handle" Type="System.Runtime.InteropServices.GCHandle" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="pinnable" Type="System.Buffers.IPinnable" Index="2" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="pointer">To be added.</param>
-        <param name="handle">To be added.</param>
-        <param name="pinnable">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="pointer">Указатель на область памяти.</param>
+        <param name="handle">Дескриптор, используемый для закрепления буферов массивов.</param>
+        <param name="pinnable">Ссылка на объект, управляемый вручную, или <see langword="default" /> при отсутствии диспетчера памяти.</param>
+        <summary>Создает новый дескриптор памяти для блока памяти.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,12 +90,18 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Освобождает закрепленный дескриптор и освобождает экземпляр <see cref="T:System.Buffers.IPinnable" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,8 +116,14 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.2;netcore-2.1;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -102,9 +131,9 @@
         <ReturnType>System.Void*</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Возвращает указатель на блок памяти.</summary>
+        <value>Указатель на блок памяти.</value>
+        <remarks>Предполагается, что память была закреплена таким образом, чтобы ее адрес не меняется.</remarks>
       </Docs>
     </Member>
   </Members>

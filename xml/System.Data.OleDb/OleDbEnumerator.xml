@@ -1,13 +1,5 @@
 <Type Name="OleDbEnumerator" FullName="System.Data.OleDb.OleDbEnumerator">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a6a518107612b8a9c3978159965d12326571142b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37677127" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class OleDbEnumerator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f03f35fb6322f0a6f80f601f34842821ae94e1c5" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53446685" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbEnumerator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbEnumerator extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbEnumerator" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbEnumerator" />
@@ -64,19 +56,19 @@
       <Parameters />
       <Docs>
         <summary>Извлекает таблицу <see cref="T:System.Data.DataTable" />, в которой содержатся сведения о всех видимых поставщиках OLE DB.</summary>
-        <returns>Возвращает таблицу <see cref="T:System.Data.DataTable" />, в которой содержатся сведения о всех видимых поставщиках OLE DB.</returns>
+        <returns>Таблица <see cref="T:System.Data.DataTable" />, в которой содержатся сведения о видимых поставщиках OLE DB.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  Таблица, возвращаемая этим методом содержит следующие столбцы, которые содержат строки:  
   
-|Порядковый номер столбца|Столбец|Описание:|  
+|Порядковый номер столбца|Столбец|Описание|  
 |--------------------|------------|-----------------|  
 |0|SOURCES_NAME|Неизменяемое имя источника данных OLEDB или перечислителя.|  
 |1|SOURCES_PARSENAME|Понятное имя, которое можно преобразовать в моникер с помощью собственного интерфейса COM IParseDisplayName. Соответствует столбцу SOURCES_PARSENAME, возвращенный собственный набор строк источников OLE DB.|  
 |2|SOURCES_DESCRIPTION|Описание источника данных OLE DB. Соответствует столбцу SOURCES_DESCRIPTION, возвращенный собственный набор строк источников OLE DB.|  
-|3|SOURCES_TYPE|Одно из следующих членов перечисления: связыватель (0), DataSource_MDP (1), DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
+|3|SOURCES_TYPE|Один из следующих членов перечисления: Связыватель (0), (1), DataSource_MDP DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
 |4|SOURCES_ISPARENT|Применяется только к перечислителям. Если `true`, указывает, что операция применяется к тому же перечислителю, для которого был вызван вызывалась функция GetSourcesRowset, подразумевая, что он также содержится в подчиненное перечисление. Соответствует столбцу SOURCES_ISPARENT собственного набора строк источников OLE DB|  
 |5|SOURCES_CLSID|Понятное имя, который может быть преобразован в моникер, используя собственный интерфейс COM IParseDisplayName. Соответствует столбцу SOURCES_CLSID, возвращенный собственный набор строк источников OLE DB.|  
   
@@ -171,22 +163,22 @@ class Program
       <Docs>
         <param name="type">Объект <see cref="T:System.Type" />.</param>
         <summary>Использует конкретный перечислитель OLE DB для возврата объекта <see cref="T:System.Data.OleDb.OleDbDataReader" />, содержащего сведения об установленных в текущий момент поставщиках OLE DB, без требования экземпляра класса <see cref="T:System.Data.OleDb.OleDbEnumerator" />.</summary>
-        <returns>Возвращает объект <see cref="T:System.Data.OleDb.OleDbDataReader" />, содержащий сведения о запрошенных поставщиках OLE DB, используя заданный перечислитель OLE DB.</returns>
+        <returns>Объект <see cref="T:System.Data.OleDb.OleDbDataReader" />, содержащий сведения о запрошенных поставщиках OLE DB с помощью заданного перечислителя OLE DB.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  Средство чтения, который возвращается этим методом содержит следующие столбцы, которые содержат строки:  
   
-|Порядковый номер столбца|Столбец|Описание:|  
+|Порядковый номер столбца|Столбец|Описание|  
 |--------------------|------------|-----------------|  
 |0|SOURCES_NAME|Неизменяемое имя собственного источника данных OLE DB или перечислителя.|  
 |1|SOURCES_PARSENAME|Понятное имя, которое можно преобразовать в моникер с помощью собственного интерфейса COM **IParseDisplayName**. Соответствует столбцу SOURCES_PARSENAME, возвращенный собственный набор строк источников OLE DB.|  
 |2|SOURCES_DESCRIPTION|Описание источника данных OLE DB. Соответствует столбцу SOURCES_DESCRIPTION, возвращенный собственный набор строк источников OLE DB.|  
-|3|SOURCES_TYPE|Одно из следующих членов перечисления: связыватель (0), DataSource_MDP (1), DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
+|3|SOURCES_TYPE|Один из следующих членов перечисления: Связыватель (0), (1), DataSource_MDP DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
 |4|SOURCES_ISPARENT|Применяется только к перечислителям. Если `true`, указывает, что операция применяется к тому же перечислителю, на котором **вызывалась функция GetSourcesRowset** был вызван, подразумевая, что он также содержится в подчиненное перечисление. Соответствует столбцу SOURCES_ISPARENT собственного набора строк источников OLE DB|  
   
- OLE DB предоставляет разные компоненты перечислителя, включая MSDAENUM, MSDASQL перечислителя, перечислитель SQLNCLI, перечислитель SQLOLEDB и пр. Дополнительные сведения о компонентах перечислителя и их использовании см. в разделе [Справочник программиста OLE DB по](http://go.microsoft.com/fwlink/?LinkId=45232).  
+ OLE DB предоставляет разные компоненты перечислителя, включая MSDAENUM, MSDASQL перечислителя, перечислитель SQLNCLI, перечислитель SQLOLEDB и пр. Дополнительные сведения о компонентах перечислителя и их использовании см. в разделе [Справочник программиста OLE DB по](https://go.microsoft.com/fwlink/?LinkId=45232).  
   
    
   
@@ -281,7 +273,7 @@ class Program
       <Parameters />
       <Docs>
         <summary>Возвращает объект <see cref="T:System.Data.OleDb.OleDbDataReader" />, содержащий сведения об установленных в текущий момент поставщиках OLE DB, без требования экземпляра класса <see cref="T:System.Data.OleDb.OleDbEnumerator" />.</summary>
-        <returns>Возвращает таблицу <see cref="T:System.Data.OleDb.OleDbDataReader" />, в которой содержатся сведения о всех видимых поставщиках OLE DB.</returns>
+        <returns>Объект <see cref="T:System.Data.OleDb.OleDbDataReader" />, в котором содержатся сведения о видимых поставщиках OLE DB.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -293,7 +285,7 @@ class Program
 |0|SOURCES_NAME|Неизменяемое имя источника данных OLEDB или перечислителя.|  
 |1|SOURCES_PARSENAME|Понятное имя, которое можно преобразовать в моникер с помощью собственного интерфейса COM IParseDisplayName. Соответствует столбцу SOURCES_PARSENAME, возвращенный собственный набор строк источников OLE DB.|  
 |2|SOURCES_DESCRIPTION|Описание источника данных OLE DB. Соответствует столбцу SOURCES_DESCRIPTION, возвращенный собственный набор строк источников OLE DB.|  
-|3|SOURCES_TYPE|Одно из следующих членов перечисления: связыватель (0), DataSource_MDP (1), DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
+|3|SOURCES_TYPE|Один из следующих членов перечисления: Связыватель (0), (1), DataSource_MDP DataSource_TDP (2), перечислитель (3). Они соответствуют значениям, возвращаемым в столбце SOURCES_TYPE собственного набора строк источников OLE DB.|  
 |4|SOURCES_ISPARENT|Применяется только к перечислителям. Если `true`, указывает, что операция применяется к тому же перечислителю, для которого был вызван вызывалась функция GetSourcesRowset, подразумевая, что он также содержится в подчиненное перечисление. Соответствует столбцу SOURCES_ISPARENT собственного набора строк источников OLE DB|  
 |5|SOURCES_CLSID|Понятное имя, который может быть преобразован в моникер, используя собственный интерфейс COM IParseDisplayName. Соответствует столбцу SOURCES_CLSID, возвращенный собственный набор строк источников OLE DB.|  
   

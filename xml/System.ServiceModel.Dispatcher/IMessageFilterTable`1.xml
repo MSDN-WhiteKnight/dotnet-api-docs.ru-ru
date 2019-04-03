@@ -1,13 +1,5 @@
 <Type Name="IMessageFilterTable&lt;TFilterData&gt;" FullName="System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e765c9378a1787906c0fc8845a0178763e56c09d" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51305873" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IMessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b6c9254208124e63916aa2c6094ba447b47e5eb5" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58561059" /></Metadata><TypeSignature Language="C#" Value="public interface IMessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageFilterTable`1&lt;TFilterData&gt; implements class System.Collections.Generic.ICollection`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.Generic.IDictionary`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IMessageFilterTable(Of TFilterData)&#xA;Implements ICollection(Of KeyValuePair(Of MessageFilter, TFilterData)), IDictionary(Of MessageFilter, TFilterData), IEnumerable(Of KeyValuePair(Of MessageFilter, TFilterData))" />
@@ -46,8 +38,7 @@
   </Interfaces>
   <Docs>
     <typeparam name="TFilterData">Тип данных, сопоставленный с каждым фильтром в таблице.</typeparam>
-    <summary>
-      <see langword="interface" />, определяющий контракт, который должна применять таблица фильтров для проверки сообщений по критериям запроса, взятым из одного или нескольких фильтров.</summary>
+    <summary><see langword="interface" />, определяющий контракт, который должна применять таблица фильтров для проверки сообщений по критериям запроса, взятым из одного или нескольких фильтров.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -62,7 +53,7 @@
   
  Фильтр соответствует сообщению, если сообщение удовлетворяет критериям запроса фильтра. Существует четыре перегруженных метода поиска соответствия. Возвращаемые данные могут быть либо данными фильтра, либо самими объектами <xref:System.ServiceModel.Dispatcher.MessageFilter>. Эти данные возвращаются, если разрешены множественные совпадения или только одно совпадение. В следующей таблице приведена информация по каждой перегрузке.  
   
-|Имя метода|Соответствия|Возвращаемые данные|  
+|Имя метода|Число соответствий|Возвращаемые данные|  
 |-----------------|-------------|-------------------|  
 |<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A>|Single|`FilterData`|  
 |<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A>|Single|<xref:System.ServiceModel.Dispatcher.MessageFilter>|  
@@ -103,9 +94,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para></block>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetMatchingFilter">
@@ -114,9 +103,11 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilter(System::ServiceModel::Channels::Message ^ message, [Runtime::InteropServices::Out] System::ServiceModel::Dispatcher::MessageFilter ^ % filter);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.Message message, out System.ServiceModel.Dispatcher.MessageFilter result);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; result) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.Message,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilter(System::ServiceModel::Channels::Message ^ message, [Runtime::InteropServices::Out] System::ServiceModel::Dispatcher::MessageFilter ^ % result);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (message, result)" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.Message,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (message, result)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.Message,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (message, result)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -128,16 +119,15 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="message" Type="System.ServiceModel.Channels.Message" Index="0" />
-        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="result" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Объект <see cref="T:System.ServiceModel.Channels.Message" /> для проверки.</param>
-        <param name="filter">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <c>message</c>. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
-        <param name="result">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <c>message</c>. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
+        <param name="filter">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <paramref name="message" />. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
+        <param name="result">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <paramref name="message" />. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное сообщение критерию соответствия одного фильтра, и возвращает этот фильтр в параметре <see langword="out" />.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -148,11 +138,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.  
+        <block subset="none" type="overrides"><para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.  
   
-В данной версии берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para>
-        </block>
+В данной версии берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetMatchingFilter">
@@ -161,10 +149,13 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilter(System::ServiceModel::Channels::MessageBuffer ^ messageBuffer, [Runtime::InteropServices::Out] System::ServiceModel::Dispatcher::MessageFilter ^ % filter);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.MessageBuffer buffer, out System.ServiceModel.Dispatcher.MessageFilter result);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.MessageBuffer buffer, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; result) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.MessageBuffer,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilter (buffer As MessageBuffer, ByRef result As MessageFilter) As Boolean" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilter (buffer As MessageBuffer, ByRef result As MessageFilter) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilter(System::ServiceModel::Channels::MessageBuffer ^ buffer, [Runtime::InteropServices::Out] System::ServiceModel::Dispatcher::MessageFilter ^ % result);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (buffer, result)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilter (buffer As MessageBuffer, ByRef result As MessageFilter) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.MessageBuffer,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (buffer, result)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.MessageBuffer,System.ServiceModel.Dispatcher.MessageFilter@)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilter : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilter (buffer, result)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -175,19 +166,18 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="xamarinmac-3.0" />
-        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="result" Type="System.ServiceModel.Dispatcher.MessageFilter" RefType="out" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="messageBuffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
         <param name="buffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
-        <param name="filter">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <c>message</c>. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
-        <param name="result">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <c>message</c>. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
+        <param name="filter">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <paramref name="message" />. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
+        <param name="result">Параметр <see langword="out" />, содержащий фильтр, которому удовлетворяет параметр <paramref name="message" />. Если фильтр не найден, параметру присваивается значение по умолчанию.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное или буферизованное сообщение критерию соответствия одного фильтра, и возвращает этот фильтр в параметре <see langword="out" />.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -242,8 +232,7 @@
         <param name="message">Объект <see cref="T:System.ServiceModel.Channels.Message" /> для проверки.</param>
         <param name="results">Ссылочный параметр, в котором хранятся объекты <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />, соответствующие условиям фильтра <see cref="T:System.Collections.Generic.ICollection`1" />&lt;Filter&gt;.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное сообщение критерию соответствия хотя бы одного фильтра, и добавляет соответствующие фильтры в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -252,9 +241,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>В данной версии берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>В данной версии берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetMatchingFilters">
@@ -263,10 +250,13 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilters(System::ServiceModel::Channels::MessageBuffer ^ messageBuffer, System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::MessageFilter ^&gt; ^ results);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Channels.MessageBuffer buffer, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilters(class System.ServiceModel.Channels.MessageBuffer buffer, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilters (buffer As MessageBuffer, results As ICollection(Of MessageFilter)) As Boolean" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilters (buffer As MessageBuffer, results As ICollection(Of MessageFilter)) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingFilters(System::ServiceModel::Channels::MessageBuffer ^ buffer, System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::MessageFilter ^&gt; ^ results);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingFilters : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilters (buffer, results)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingFilters (buffer As MessageBuffer, results As ICollection(Of MessageFilter)) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilters : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilters (buffer, results)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingFilters : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingFilters (buffer, results)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -277,7 +267,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="xamarinmac-3.0" />
         <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" Index="1" />
       </Parameters>
@@ -286,8 +276,7 @@
         <param name="buffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
         <param name="results">Ссылочный параметр, в котором хранятся объекты <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />, соответствующие условиям фильтра <see cref="T:System.Collections.Generic.ICollection`1" />&lt;Filter&gt;.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное сообщение или буферизованное сообщение критерию соответствия хотя бы одного фильтра, и добавляет соответствующие фильтры в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -317,9 +306,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para></block>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetMatchingValue">
@@ -328,9 +315,11 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValue(System::ServiceModel::Channels::Message ^ message, [Runtime::InteropServices::Out] TFilterData % value);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.Message message, out TFilterData data);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.Message message, [out] !TFilterData&amp; data) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.Message,`0@)" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValue(System::ServiceModel::Channels::Message ^ message, [Runtime::InteropServices::Out] TFilterData % data);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (message, data)" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.Message,`0@)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (message, data)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.Message,`0@)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.Message *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (message, data)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -342,16 +331,15 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="message" Type="System.ServiceModel.Channels.Message" Index="0" />
-        <Parameter Name="value" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="value" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="data" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="message">Объект <see cref="T:System.ServiceModel.Channels.Message" /> для проверки.</param>
-        <param name="value">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <c>message</c>.</param>
-        <param name="data">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <c>message</c>.</param>
+        <param name="value">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <paramref name="message" />.</param>
+        <param name="data">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <paramref name="message" />.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное сообщение критерию соответствия одного фильтра, и добавляет соответствующие данные фильтра в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если сообщение удовлетворяет критериям соответствия только одного фильтра в таблице; <see langword="false" />, если не соответствует ни одному фильтру.</returns>
+        <returns><see langword="true" />, если сообщение удовлетворяет критериям соответствия только одного фильтра в таблице; <see langword="false" />, если не соответствует ни одному фильтру.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -364,11 +352,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.  
+        <block subset="none" type="overrides"><para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.  
   
-В данной перегрузке берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para>
-        </block>
+В данной перегрузке берется <see cref="T:System.ServiceModel.Channels.Message" /> и должно выдаваться исключение <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />, если производится попытка проверить текст сообщения.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetMatchingValue">
@@ -377,10 +363,13 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValue(System::ServiceModel::Channels::MessageBuffer ^ messageBuffer, [Runtime::InteropServices::Out] TFilterData % value);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.MessageBuffer buffer, out TFilterData data);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.MessageBuffer buffer, [out] !TFilterData&amp; data) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.MessageBuffer,`0@)" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValue (buffer As MessageBuffer, ByRef data As TFilterData) As Boolean" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValue (buffer As MessageBuffer, ByRef data As TFilterData) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValue(System::ServiceModel::Channels::MessageBuffer ^ buffer, [Runtime::InteropServices::Out] TFilterData % data);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (buffer, data)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValue (buffer As MessageBuffer, ByRef data As TFilterData) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.MessageBuffer,`0@)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (buffer, data)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.MessageBuffer,`0@)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValue : System.ServiceModel.Channels.MessageBuffer *  -&gt; bool" Usage="iMessageFilterTable.GetMatchingValue (buffer, data)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -391,19 +380,18 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="xamarinmac-3.0" />
-        <Parameter Name="value" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="value" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="data" Type="TFilterData" RefType="out" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="messageBuffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
         <param name="buffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
-        <param name="value">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <c>messageBuffer</c>.</param>
-        <param name="data">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <c>buffer</c>.</param>
+        <param name="value">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <paramref name="messageBuffer" />.</param>
+        <param name="data">Параметр <see langword="out" />, хранящий параметр <c>FilterData</c>, удовлетворяющий условиям <paramref name="buffer" />.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное буферизованное сообщение критерию соответствия одного фильтра, и добавляет соответствующие данные фильтра в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если сообщение удовлетворяет критериям соответствия только одного фильтра в таблице; <see langword="false" />, если не соответствует ни одному фильтру.</returns>
+        <returns><see langword="true" />, если сообщение удовлетворяет критериям соответствия только одного фильтра в таблице; <see langword="false" />, если не соответствует ни одному фильтру.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -412,9 +400,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если сообщению соответствуют несколько фильтров, должно быть создано исключение <see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" />.</para></block>
       </Docs>
     </Member>
     <MemberGroup MemberName="GetMatchingValues">
@@ -461,8 +447,7 @@
         <param name="message">Объект <see cref="T:System.ServiceModel.Channels.Message" /> для проверки.</param>
         <param name="results">Ссылочный параметр, хранящий данные фильтров, которые удовлетворяют условию, в универсальной коллекции.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное сообщение критерию соответствия хотя бы одного фильтра, и добавляет параметр <paramref name="FilterData" /> из соответствующих фильтров в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="message" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -483,10 +468,13 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValues(System::ServiceModel::Channels::MessageBuffer ^ messageBuffer, System::Collections::Generic::ICollection&lt;TFilterData&gt; ^ results);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Channels.MessageBuffer buffer, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValues(class System.ServiceModel.Channels.MessageBuffer buffer, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})" FrameworkAlternate="xamarinmac-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
-      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValues (buffer As MessageBuffer, results As ICollection(Of TFilterData)) As Boolean" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValues (buffer As MessageBuffer, results As ICollection(Of TFilterData)) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetMatchingValues(System::ServiceModel::Channels::MessageBuffer ^ buffer, System::Collections::Generic::ICollection&lt;TFilterData&gt; ^ results);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member GetMatchingValues : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;'FilterData&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingValues (buffer, results)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMatchingValues (buffer As MessageBuffer, results As ICollection(Of TFilterData)) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValues : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;'FilterData&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingValues (buffer, results)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="abstract member GetMatchingValues : System.ServiceModel.Channels.MessageBuffer * System.Collections.Generic.ICollection&lt;'FilterData&gt; -&gt; bool" Usage="iMessageFilterTable.GetMatchingValues (buffer, results)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -497,7 +485,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" Index="0" FrameworkAlternate="xamarinmac-3.0" />
         <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" Index="1" />
       </Parameters>
@@ -506,8 +494,7 @@
         <param name="buffer">Объект <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> для проверки.</param>
         <param name="results">Ссылочный параметр, хранящий данные фильтров, которые удовлетворяют условию, в универсальной коллекции <see cref="T:System.Collections.Generic.ICollection`1" />&lt;<c>FilterData</c>&gt;.</param>
         <summary>Возвращает значение, указывающее, удовлетворяет ли заданное буферизованное сообщение критерию соответствия хотя бы одного фильтра, и добавляет параметр <paramref name="FilterData" /> из соответствующих фильтров в коллекцию.</summary>
-        <returns>
-          <see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
+        <returns><see langword="true" />, если параметр <paramref name="messageBuffer" /> удовлетворяет критерию соответствия по крайней мере одного фильтра из таблицы; <see langword="false" />, если не удовлетворяются критерии ни одного из фильтров.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

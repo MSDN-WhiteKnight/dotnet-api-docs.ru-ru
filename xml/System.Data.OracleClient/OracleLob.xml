@@ -1,13 +1,5 @@
 <Type Name="OracleLob" FullName="System.Data.OracleClient.OracleLob">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="dc5770a6ce8ffce8a1408ff02468f5a03b185f1c" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51304714" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class OracleLob : System.IO.Stream, ICloneable, System.Data.SqlTypes.INullable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="aa9dd409c0f67866e6d19aa2f3fa7d1a852dcf07" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58553389" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleLob : System.IO.Stream, ICloneable, System.Data.SqlTypes.INullable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleLob extends System.IO.Stream implements class System.Data.SqlTypes.INullable, class System.ICloneable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleLob" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleLob&#xA;Inherits Stream&#xA;Implements ICloneable, INullable" />
@@ -43,7 +35,7 @@
   
  <xref:System.Data.OracleClient.OracleLob> Может принимать одно из этих <xref:System.Data.OracleClient.OracleType> типов данных.  
   
-|Тип данных OracleType|Описание:|  
+|Тип данных OracleType|Описание|  
 |--------------------------|-----------------|  
 |`Blob`|Oracle `BLOB` тип данных, содержащий двоичные данные с максимальным размером 4 гигабайта (ГБ). Соответствует <xref:System.Array> типа <xref:System.Byte>.|  
 |`Clob`|Oracle `CLOB` задать тип данных, содержащий символьные данные на основе символов по умолчанию на сервере, с максимальным размером 4 ГБ. Соответствует <xref:System.String>.|  
@@ -134,8 +126,7 @@ connection.Close
         <Parameter Name="source" Type="System.Data.OracleClient.OracleLob" />
       </Parameters>
       <Docs>
-        <param name="source">
-          <see langword="LOB" />, данные из которого необходимо добавить.</param>
+        <param name="source"><see langword="LOB" />, данные из которого необходимо добавить.</param>
         <summary>Добавляет данные из указанного <see langword="LOB" /> в текущий <see langword="LOB" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -402,7 +393,7 @@ connection.Close
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Закрывает текущий поток и освобождает все ресурсы, связанные с данным потоком.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -460,7 +451,7 @@ connection.Close
         <Parameter Name="destination" Type="System.Data.OracleClient.OracleLob" />
       </Parameters>
       <Docs>
-        <param name="destination">Назначение <see cref="T:System.Data.OracleClient.OracleLob" />.</param>
+        <param name="destination"><see cref="T:System.Data.OracleClient.OracleLob" /> — объект назначения.</param>
         <summary>Копирует из данного объекта <see cref="T:System.Data.OracleClient.OracleLob" /> в объект назначения — <see cref="T:System.Data.OracleClient.OracleLob" />.</summary>
         <returns>Скопированное число байт. В это число не входят дополненные нулевые байты.</returns>
         <remarks>
@@ -507,8 +498,7 @@ connection.Close
         <Parameter Name="destinationOffset" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="destination">
-          <see cref="T:System.Data.OracleClient.OracleLob" /> — объект назначения.</param>
+        <param name="destination"><see cref="T:System.Data.OracleClient.OracleLob" /> — объект назначения.</param>
         <param name="destinationOffset">Смещение, в которое выполняется копирование. Для данных типа <see langword="CLOB" /> и <see langword="NCLOB" /> это количество байтов должно быть четным.</param>
         <summary>Копирование из данного объекта <see cref="T:System.Data.OracleClient.OracleLob" /> в объект назначения — <see cref="T:System.Data.OracleClient.OracleLob" /> с указанным объемом данных.</summary>
         <returns>Скопированное число байт. В это число не входят дополненные нулевые байты.</returns>
@@ -532,10 +522,10 @@ connection.Close
         <exception cref="T:System.ArgumentNullException">Значение <see cref="T:System.Data.OracleClient.OracleLob" />, указанное в параметре <paramref name="destination" />, является полным.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение, указанное в параметре <paramref name="destinationOffset" />, меньше нуля или больше 4 гигабайт.  
   
-- или - 
+-или- 
 Значение, указанное в параметре <paramref name="destinationOffset" /> для типа данных <see langword="CLOB" /> или <see langword="NCLOB" />, не является четным.  
   
-- или - 
+-или- 
 Необходимо указать типы данных <see langword="CLOB" /> и <see langword="NCLOB" /> с четным количеством байтов.</exception>
         <exception cref="T:System.InvalidOperationException">Операция выполняется не в рамках транзакции, объект <see cref="T:System.Data.OracleClient.OracleLob" /> является пустым, или же закрыто подключение.</exception>
         <exception cref="T:System.Data.OracleClient.OracleException">Произошла ошибка Oracle.</exception>
@@ -591,7 +581,7 @@ connection.Close
         <exception cref="T:System.ArgumentNullException">Значение <see cref="T:System.Data.OracleClient.OracleLob" />, указанное в параметре <paramref name="destination" />, является полным.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение, заданное для параметра <paramref name="amount" />, <paramref name="sourceOffset" /> или <paramref name="destinationOffset" /> меньше нуля или больше 4 гигабайт.  
   
-- или - 
+-или- 
 Значение, заданное для параметра <paramref name="amount" />, <paramref name="sourceOffset" /> или <paramref name="destinationOffset" /> для данных типа <see langword="CLOB" /> или <see langword="NCLOB" /> не является четным.</exception>
         <exception cref="T:System.InvalidOperationException">Операция выполняется не в рамках транзакции, объект <see cref="T:System.Data.OracleClient.OracleLob" /> является пустым, или же закрыто подключение.</exception>
         <exception cref="T:System.Data.OracleClient.OracleException">Произошла ошибка Oracle.</exception>
@@ -617,7 +607,7 @@ connection.Close
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Освобождает ресурсы, используемые данным объектом.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -638,7 +628,7 @@ connection.Close
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="disposing">To be added.</param>
@@ -974,7 +964,7 @@ connection.Close
 ## Remarks  
  <xref:System.Data.OracleClient.OracleLob> Может принимать одно из следующих <xref:System.Data.OracleClient.OracleType> типов данных.  
   
-|Тип данных OracleType|Описание:|  
+|Тип данных OracleType|Описание|  
 |--------------------------|-----------------|  
 |`Blob`|Тип данных Oracle `BLOB`, содержащий двоичные данные размером не более 4 гигабайт. Соответствует <xref:System.Array> типа <xref:System.Byte>.|  
 |`Clob`|Тип данных Oracle `CLOB` содержит символьные данные на основе набора символов по умолчанию на сервере, размером не более 4 гигабайт. Соответствует <xref:System.String>.|  
@@ -1084,8 +1074,8 @@ If(myLob == OracleLob.Null)
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">Массив байтов. После завершения выполнения данного метода буфер содержит указанный массив байтов, в котором значения в интервале между <c>offset</c> и величиной (<c>offset</c> + <c>count</c>) заменены байтами, считанными из текущего источника.</param>
-        <param name="offset">Смещение байтов (начиная с нуля) в <c>buffer</c>, с которого начинается сохранение данных, считанных из текущего потока. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
+        <param name="buffer">Массив байтов. При возвращении данного метода буфер содержит указанный массив байтов, в котором значения между <paramref name="offset" /> и (<paramref name="offset" /> + <paramref name="count" />) заменены байтами, считанными из текущего источника.</param>
+        <param name="offset">Смещение байтов (начиная с нуля) в <paramref name="buffer" />, с которого начинается сохранение данных, считанных из текущего потока. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
         <param name="count">Максимальное количество байтов, которое должно быть считано из текущего потока. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
         <summary>Считывает последовательность байтов из текущего потока <see cref="T:System.Data.OracleClient.OracleLob" /> и перемещает позицию внутри потока на число считанных байтов.</summary>
         <returns>Общее количество байтов, считанных в буфер. Это число может быть меньше количества запрошенных байтов, если столько байтов в настоящее время недоступно, а также равняться нулю (0), если был достигнут конец потока.</returns>
@@ -1127,7 +1117,7 @@ public static void ReadLobExample(OracleCommand command)
       //Example - Reading CLOB/NCLOB data (in chunks).  
       //Note: You can read character data as raw Unicode bytes (using OracleLob.Read as in the above example).  
       //However, because the OracleLob object inherits directly from the.NET stream object,   
-      //all the existing classes that manipluate streams can also be used. For example, the   
+      //all the existing classes that manipulate streams can also be used. For example, the   
       //.NET StreamReader makes converting the raw bytes into actual characters easier.  
       StreamReader streamreader = new StreamReader(CLOB, Encoding.Unicode);  
       char[] cbuffer = new char[100];  
@@ -1158,14 +1148,13 @@ If(myLob == OracleLob.Null)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> является пустой ссылкой (<see langword="Nothing" /> в Visual Basic).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметров <paramref name="offset" /> или <paramref name="count" /> не является положительным.  
   
-- или - 
+-или- 
 Сумма параметров смещения и счетчика превышает длину буфера.  
   
-- или - 
+-или- 
 Значение, заданное для параметра <paramref name="amount" /> или <paramref name="offset" />, меньше нуля или больше 4 гигабайт.</exception>
         <exception cref="T:System.InvalidOperationException">Операция выполняется не в рамках транзакции, объект <see cref="T:System.Data.OracleClient.OracleLob" /> является пустым, или же закрыто подключение.</exception>
         <exception cref="T:System.ObjectDisposedException">Объект был закрыт или уничтожен.</exception>
@@ -1194,7 +1183,7 @@ If(myLob == OracleLob.Null)
         <Parameter Name="origin" Type="System.IO.SeekOrigin" />
       </Parameters>
       <Docs>
-        <param name="offset">Смещение в байтах по отношению к источнику. Если значение параметра <c>offset</c> является отрицательным, новая позиция предшествует позиции, заданной параметром <c>origin</c>, при этом расстояние между позициями равняется числу байтов, заданному параметром <c>offset</c>. Если значение параметра <c>offset</c> равно нулю, новая позиция совпадает с позицией, заданной параметром <c>origin</c>. Если значение параметра <c>offset</c> является положительным, новая позиция следует за позицией, заданной параметром <c>origin</c>, при этом расстояние между позициями равняется числу байтов, заданному параметром <c>offset</c>.</param>
+        <param name="offset">Смещение в байтах по отношению к источнику. Если значение параметра <paramref name="offset" /> является отрицательным, новая позиция будет предшествовать позиции, заданной параметром <paramref name="origin" />, при этом расстояние между позициями будет равняться числу байтов, заданному параметром <paramref name="offset" />. Если значение параметра <paramref name="offset" /> равно нулю, новая позиция будет совпадать с позицией, заданной параметром <paramref name="origin" />. Если значение параметра <paramref name="offset" /> является положительным, новая позиция будет следовать за позицией, заданной параметром <paramref name="origin" />, при этом расстояние между позициями будет равняться числу байтов, заданному параметром <paramref name="offset" />.</param>
         <param name="origin">Значение типа <see cref="T:System.IO.SeekOrigin" />, указывающее точку ссылки, которая используется для получения новой позиции.</param>
         <summary>Задает позицию в текущем потоке <see cref="T:System.Data.OracleClient.OracleLob" />.</summary>
         <returns>Новая позиция в текущем потоке.</returns>
@@ -1256,7 +1245,7 @@ If(myLob == OracleLob.Null)
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение, указанное в параметре <paramref name="value" /> для типа данных <see langword="CLOB" /> или <see langword="NCLOB" />, не является четным.  
   
-- или - 
+-или- 
 Значение, указанное в параметре <paramref name="value" />, меньше нуля или больше 4 гигабайт.</exception>
         <exception cref="T:System.InvalidOperationException">Операция выполняется не в рамках транзакции, объект <see cref="T:System.Data.OracleClient.OracleLob" /> является пустым, или же закрыто подключение.</exception>
         <exception cref="T:System.ObjectDisposedException">Объект был закрыт или уничтожен.</exception>
@@ -1321,8 +1310,8 @@ If(myLob == OracleLob.Null)
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">Массив байтов. Данный метод копирует количество байтов, заданных параметром <c>count</c>, из <c>buffer</c> в текущий поток.</param>
-        <param name="offset">Отсчитываемое от нуля смещение байтов в буфере <c>buffer</c>, с которого начинается копирование байтов в текущий поток. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
+        <param name="buffer">Массив байтов. Данный метод копирует количество байтов, заданных <paramref name="count" />, из <paramref name="buffer" /> в текущий поток.</param>
+        <param name="offset">Отсчитываемое от нуля смещение байтов в буфере <paramref name="buffer" />, с которого начинается копирование байтов в текущий поток. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
         <param name="count">Количество байтов, которое необходимо записать в текущий поток. Для типов данных <see langword="CLOB" /> и <see langword="NCLOB" /> это число должно быть четным.</param>
         <summary>Записывает последовательность байтов в текущий поток <see cref="T:System.Data.OracleClient.OracleLob" /> и перемещает текущую позицию внутри потока на число записанных байтов.</summary>
         <remarks>
@@ -1391,13 +1380,13 @@ public static void WriteLobExample(OracleCommand command)
         <exception cref="T:System.ArgumentNullException">Значением параметра <paramref name="buffer" /> является пустая ссылка (<see langword="Nothing" /> в Visual Basic).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметров <paramref name="offset" /> или <paramref name="count" /> не является положительным.  
   
-- или - 
+-или- 
 Сумма параметров <paramref name="offset" /> и <paramref name="count" /> превышает длину <paramref name="buffer" />.  
   
-- или - 
+-или- 
 Значение, заданное для параметра <paramref name="count" /> или <paramref name="offset" />, меньше нуля или больше 4 гигабайт.  
   
-- или - 
+-или- 
 Необходимо указать типы данных <see langword="CLOB" /> и <see langword="NCLOB" /> с четным количеством байтов.</exception>
         <exception cref="T:System.InvalidOperationException">Операция выполняется не в рамках транзакции, объект <see cref="T:System.Data.OracleClient.OracleLob" /> является пустым, или же закрыто подключение.</exception>
         <exception cref="T:System.ObjectDisposedException">Объект был закрыт или уничтожен.</exception>
@@ -1421,7 +1410,7 @@ public static void WriteLobExample(OracleCommand command)
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Byte" />
+        <Parameter Name="value" Type="System.Byte" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Байт, записываемый в поток.</param>

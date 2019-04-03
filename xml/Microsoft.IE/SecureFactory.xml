@@ -1,13 +1,5 @@
 <Type Name="SecureFactory" FullName="Microsoft.IE.SecureFactory">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3585bffe73a0e5f24fb6940e5f183cc9daf3c1da" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39859155" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SecureFactory : Microsoft.IE.ISecureFactory2" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="04996de91df9fd0a5afb924b7022f7d7a88f7f34" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57940714" /></Metadata><TypeSignature Language="C#" Value="public class SecureFactory : Microsoft.IE.ISecureFactory2" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecureFactory extends System.Object implements class Microsoft.IE.ISecureFactory, class Microsoft.IE.ISecureFactory2" />
   <TypeSignature Language="DocId" Value="T:Microsoft.IE.SecureFactory" />
   <TypeSignature Language="VB.NET" Value="Public Class SecureFactory&#xA;Implements ISecureFactory2" />
@@ -23,12 +15,16 @@
   </Base>
   <Interfaces>
     <Interface>
+      <InterfaceName>Microsoft.IE.ISecureFactory</InterfaceName>
+    </Interface>
+    <Interface>
       <InterfaceName>Microsoft.IE.ISecureFactory2</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Предоставляет методы для создания фабрик защищенных классов.</summary>
     <remarks>To be added.</remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="CORIESECURITY_SITE">
@@ -47,8 +43,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Указывает значение объекта 0x02.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CORIESECURITY_ZONE">
@@ -67,8 +64,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Указывает значение объекта 0x01.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CreateInstanceWithSecurity">
@@ -99,15 +97,30 @@
         <Parameter Name="licenses" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dwFlag">To be added.</param>
-        <param name="dwZone">To be added.</param>
-        <param name="pURL">To be added.</param>
-        <param name="uniqueIdString">To be added.</param>
-        <param name="link">To be added.</param>
-        <param name="licenses">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dwFlag">Одно из следующих значений CORIESECURITY:
+
+— CORIESECURITY_ZONE: 0x01
+
+— CORIESECURITY_SITE: 0x02</param>
+        <param name="dwZone">Одно из следующих значений URLZONE:
+
+— URLZONE_LOCAL_MACHINE: 0x00
+
+— URLZONE_INTRANET: 0x01
+
+— URLZONE_TRUSTED: 0x02
+
+— URLZONE_INTERNET: 0x03
+
+— URLZONE_UNTRUSTED: 0x04</param>
+        <param name="pURL">URL-адрес сайта, содержащего приложение, для которого будет создаваться фабрика защищенных классов.</param>
+        <param name="uniqueIdString">Уникальный идентификатор сайта.</param>
+        <param name="link">Часть ссылки в URL-адресе, которая может быть относительной.</param>
+        <param name="licenses">Расположение файлов лицензии для связи с доменом.</param>
+        <summary>Создает новый экземпляр типа COM, представляющий фабрику защищенных классов.</summary>
+        <returns>Объект, являющийся оболочкой для нового экземпляра. Необходимо развернуть возвращенное значение, чтобы получить доступ к истинному объекту.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CreateInstanceWithSecurity2">
@@ -129,25 +142,40 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dwFlags" Type="System.Int32" />
-        <Parameter Name="dwZone" Type="System.Int32" />
-        <Parameter Name="wszSite" Type="System.String" />
-        <Parameter Name="wszId" Type="System.String" />
-        <Parameter Name="wszConfig" Type="System.String" />
-        <Parameter Name="wszLicenses" Type="System.String" />
-        <Parameter Name="wszDeploymentManifest" Type="System.String" />
+        <Parameter Name="dwFlags" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="dwZone" Type="System.Int32" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="wszSite" Type="System.String" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="wszId" Type="System.String" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="wszConfig" Type="System.String" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="wszLicenses" Type="System.String" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
+        <Parameter Name="wszDeploymentManifest" Type="System.String" Index="6" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5" />
       </Parameters>
       <Docs>
-        <param name="dwFlags">To be added.</param>
-        <param name="dwZone">To be added.</param>
-        <param name="wszSite">To be added.</param>
-        <param name="wszId">To be added.</param>
-        <param name="wszConfig">To be added.</param>
-        <param name="wszLicenses">To be added.</param>
-        <param name="wszDeploymentManifest">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dwFlags">Одно из следующих значений CORIESECURITY:
+
+— CORIESECURITY_ZONE: 0x01
+
+— CORIESECURITY_SITE: 0x02</param>
+        <param name="dwZone">Одно из следующих значений URLZONE:
+
+— URLZONE_LOCAL_MACHINE: 0x00
+
+— URLZONE_INTRANET: 0x01
+
+— URLZONE_TRUSTED: 0x02
+
+— URLZONE_INTERNET: 0x03
+
+— URLZONE_UNTRUSTED: 0x04</param>
+        <param name="wszSite">URL-адрес сайта, содержащего приложение, для которого будет создаваться фабрика защищенных классов.</param>
+        <param name="wszId">Уникальный идентификатор сайта.</param>
+        <param name="wszConfig">Часть ссылки в URL-адресе, которая может быть относительной.</param>
+        <param name="wszLicenses">Расположение файлов лицензии для связи с доменом.</param>
+        <param name="wszDeploymentManifest">Расположение манифеста развертывания.</param>
+        <summary>Создает новый экземпляр типа COM, представляющий фабрику защищенных классов с помощью сведений из манифеста развертывания.</summary>
+        <returns>Объект, являющийся оболочкой для нового экземпляра. Необходимо развернуть возвращенное значение, чтобы получить доступ к истинному объекту.</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RemoteCreateInstance">
@@ -171,10 +199,11 @@
         <Parameter Name="ppvObject" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="riid">To be added.</param>
-        <param name="ppvObject">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="riid">Не используется.</param>
+        <param name="ppvObject">Всегда имеет значение NULL (Nothing в Visual Basic), когда этот метод возвращает результат.</param>
+        <summary>Не реализовано.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RemoteLockServer">
@@ -197,9 +226,10 @@
         <Parameter Name="fLock" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="fLock">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="fLock">Не используется.</param>
+        <summary>Не реализовано.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="Exec" FullName="Microsoft.Build.Tasks.Exec">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="01cc7e03f979630294b5db525409f07d32a42fe9" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48651531" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Exec : Microsoft.Build.Tasks.ToolTaskExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="273613d4c1d13f71a6dd1a69d450d629be30011f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57945433" /></Metadata><TypeSignature Language="C#" Value="public class Exec : Microsoft.Build.Tasks.ToolTaskExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Exec extends Microsoft.Build.Tasks.ToolTaskExtension" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Exec" />
   <TypeSignature Language="VB.NET" Value="Public Class Exec&#xA;Inherits ToolTaskExtension" />
@@ -26,7 +18,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Реализует задачу <c>Exec</c>. Используйте элемент <c>Exec</c> в файле проекта для создания и выполнения этой задачи. Сведения об использовании и параметрах см. в разделе [Задача Exec](http://msdn.microsoft.com/library/c9b7525a-b1c9-40fc-8bce-77a5b8f960d8).</summary>
+    <summary>Реализует задачу <c>Exec</c>. Используйте элемент <c>Exec</c> в файле проекта для создания и выполнения этой задачи. Сведения об использовании и параметрах см. в разделе [Задача Exec](https://msdn.microsoft.com/library/c9b7525a-b1c9-40fc-8bce-77a5b8f960d8).</summary>
     <remarks>To be added.</remarks>
     <forInternalUseOnly />
   </Docs>
@@ -99,7 +91,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -278,9 +270,9 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       <Docs>
         <param name="pathToTool">Путь к исполняемому средству.</param>
         <param name="responseFileCommands">Аргументы командной строки, которые должны перейти во временный файл ответов.</param>
-        <param name="commandLineCommands">Аргументы командной строки, которые должны быть переданы в средство напрямую.</param>
-        <summary>Выполняет программу cmd.exe, ожидает ее завершения и очищает пакетный файл после завершения выполнения.</summary>
-        <returns>Код выхода, возвращаемый средством.</returns>
+        <param name="commandLineCommands">Аргументы командной строки, которые нужно передать в каталог средства.</param>
+        <summary>Выполняет средство cmd.exe, ожидает завершения, а затем очищает пакетный файл после завершения выполнения.</summary>
+        <returns>Возвращаемый средством код выхода.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -340,8 +332,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает рабочий каталог, используемый для работы этого средства.</summary>
-        <returns>Рабочий каталог, используемый для работы этого средства.</returns>
+        <summary>Возвращает рабочий каталог, используемый для работы средства.</summary>
+        <returns>Рабочий каталог, используемый для работы средства.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -374,7 +366,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Записывает сообщение об ошибке в журнал и обрабатывает код выхода.</summary>
+        <summary>Заносит в журнал сообщение об ошибке и обрабатывает код выхода.</summary>
         <returns>Значение <see langword="true" />, если код выхода игнорируется; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -416,8 +408,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает логическое значение, указывающее, должна ли задача <c>Exec</c> игнорировать код выхода, предоставленный выполняемой командой (<see langword="true" />), или же возвращать значение <see langword="false" />, если выполняемая команда возвращает ненулевой код выхода (<see langword="false" />).</summary>
-        <value>
-          <see langword="true" /> Если <c>Exec</c> задаче следует игнорировать код выхода, предоставленный исполненной командой; <see langword="false" /> Если <c>Exec</c> задача должна возвращать <see langword="false" /> если выполняемая команда возвращает код выхода ненулевой длины.</value>
+        <value><see langword="true" /> Если <c>Exec</c> задаче следует игнорировать код выхода, предоставленный исполненной командой; <see langword="false" /> Если <c>Exec</c> задача должна возвращать <see langword="false" /> если выполняемая команда возвращает код выхода ненулевой длины.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -447,8 +438,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Docs>
         <summary>Возвращает или указывает логическое значение, которое определяет, следует ли игнорировать формат стандартной ошибки и предупреждения, а также ошибки и предупреждения журналов в выходных данных в виде обычных сообщений.</summary>
-        <value>
-          <see langword="true" /> Если <c>Exec</c> задача должна игнорировать стандартный формат ошибок и предупреждений и необходимо войти ошибки и предупреждения в виде обычных сообщения. <see langword="false" /> Если <c>Exec</c> задачи следует регистрировать ошибки и предупреждения, которые соответствуют стандартный формат ошибок и предупреждений.</value>
+        <value><see langword="true" /> Если <c>Exec</c> задача должна игнорировать стандартный формат ошибок и предупреждений и необходимо войти ошибки и предупреждения в виде обычных сообщения. <see langword="false" /> Если <c>Exec</c> задачи следует регистрировать ошибки и предупреждения, которые соответствуют стандартный формат ошибок и предупреждений.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -475,8 +465,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="singleLine" Type="System.String" />
-        <Parameter Name="messageImportance" Type="Microsoft.Build.Framework.MessageImportance" />
+        <Parameter Name="singleLine" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="messageImportance" Type="Microsoft.Build.Framework.MessageImportance" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="singleLine">Подлежащая анализу одиночная строка из выходных данных.</param>
@@ -511,8 +501,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </Parameters>
       <Docs>
         <param name="toolName">Имя средства.</param>
-        <param name="pathToTool">Текущий каталог, где запускается программа.</param>
-        <summary>Регистрирует в журнале имя программы и путь.</summary>
+        <param name="pathToTool">Текущий каталог, в котором выполняется средство.</param>
+        <summary>Заносит в журнал имя и путь к средству.</summary>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -540,8 +530,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="message">Укажите пустую строку. Этот параметр не используется.</param>
-        <summary>Регистрирует в журнале команду пакетного файла для выполнения.</summary>
+        <param name="message">Задает пустую строку. Этот параметр не используется.</param>
+        <summary>Заносит в журнал подлежащую выполнению команду для пакетного файла.</summary>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -563,7 +553,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -612,8 +602,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>System.Text.Encoding</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает кодировку перехватываемого стандартного потока ошибки.</summary>
-        <value>Кодировка перехватываемого стандартного потока ошибки.</value>
+        <summary>Получает кодировку перехватываемого стандартного потока ошибок задачи.</summary>
+        <value>Кодировка перехватываемого стандартного потока ошибок задачи.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -638,8 +628,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>Microsoft.Build.Framework.MessageImportance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает уровень важности для записи обычных сообщений в стандартный поток ошибок.</summary>
-        <value>Уровень важности для записи обычных сообщений в стандартный поток ошибок.</value>
+        <summary>Получает степень важности для занесения в журнал обычных сообщений в пределах стандартного потока ошибок.</summary>
+        <value>Степень важности для занесения в журнал обычных сообщений в пределах стандартного потока ошибок.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -670,7 +660,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Docs>
         <summary>Получает кодировку перехватываемого стандартного потока вывода задачи.</summary>
-        <value>Кодировка перехватываемого стандартного потока вывода задачи.</value>
+        <value>Кодировка перехватываемого стандартного выходного потока задачи.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -695,8 +685,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>Microsoft.Build.Framework.MessageImportance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает уровень важности для регистрации в журнале обычных сообщений в стандартном выходном потоке.</summary>
-        <value>Уровень важности для регистрации в журнале обычных сообщений в стандартном выходном потоке.</value>
+        <summary>Получает степень важности для занесения в журнал обычных сообщений в пределах стандартного выходного потока.</summary>
+        <value>Степень важности для занесения в журнал обычных сообщений в пределах стандартного выходного потока.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -718,7 +708,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
         </Attribute>
       </Attributes>
@@ -726,7 +716,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает кодировку перехватываемого стандартного потока ошибок задачи, который является видимым для проекта.</summary>
+        <summary>Возвращает или задает кодировку перехватываемого стандартного потока ошибок задачи, который является видимым для проекта.</summary>
         <value>Кодировка перехватываемого стандартного потока ошибок задачи, который является видимым для проекта.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -749,7 +739,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
         </Attribute>
       </Attributes>
@@ -757,7 +747,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает кодировку перехватываемого стандартного потока вывода задачи, который является видимым для проекта.</summary>
+        <summary>Возвращает или задает кодировку перехватываемого стандартного потока вывода задачи, который является видимым для проекта.</summary>
         <value>Кодировка перехватываемого стандартного потока вывода задачи, который является видимым для проекта.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -783,8 +773,8 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает имя инструмента (cmd.exe).</summary>
-        <value>Имя инструмента (cmd.exe).</value>
+        <summary>Получает имя средства (cmd.exe).</summary>
+        <value>Имя средства (cmd.exe).</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -810,7 +800,7 @@ ConsoleOutput включается, если ConsoleToMSBuild — true. Это �
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Проверяет входные параметры и записывает ошибки или предупреждения, если они есть. Возвращает логическое значение, которое указывает, следует ли продолжать выполнение задачи.</summary>
+        <summary>Проверяет входные параметры и заносит в журнал ошибки или предупреждения при их наличии. Возвращает логическое значение, указывающее, нужно ли продолжать выполнение задачи.</summary>
         <returns>Значение <see langword="true" />, если нужно продолжить выполнение задачи; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />

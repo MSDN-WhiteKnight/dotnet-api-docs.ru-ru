@@ -1,13 +1,5 @@
 <Type Name="WindowsImpersonationContext" FullName="System.Security.Principal.WindowsImpersonationContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cf6cc57ebe77fe0695b72d82f57a98cc2cc7e89e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48771677" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class WindowsImpersonationContext : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dd71acc1e09ea1c22d2e186ba6ca7c0caadc42f2" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57922683" /></Metadata><TypeSignature Language="C#" Value="public class WindowsImpersonationContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowsImpersonationContext extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.Principal.WindowsImpersonationContext" />
   <TypeSignature Language="VB.NET" Value="Public Class WindowsImpersonationContext&#xA;Implements IDisposable" />
@@ -55,9 +47,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Поскольку платформы Microsoft Windows 98 и Windows Millennium Edition не имеют пользователей или маркеров пользователей, олицетворения не может иметь место на этих платформах.</para>
-    </block>
+    <block subset="none" type="overrides"><para>Поскольку платформы Microsoft Windows 98 и Windows Millennium Edition не имеют пользователей или маркеров пользователей, олицетворения не может иметь место на этих платформах.</para></block>
   </Docs>
   <Members>
     <MemberGroup MemberName="Dispose">
@@ -107,7 +97,8 @@
 ## Remarks  
  Вызовите метод <xref:System.Security.Principal.WindowsImpersonationContext.Dispose%2A> по окончании использования класса <xref:System.Security.Principal.WindowsImpersonationContext>. Метод <xref:System.Security.Principal.WindowsImpersonationContext.Dispose%2A> оставляет класс <xref:System.Security.Principal.WindowsImpersonationContext> в непригодном для использования состоянии. После вызова метода <xref:System.Security.Principal.WindowsImpersonationContext.Dispose%2A>, необходимо освободить все ссылки на <xref:System.Security.Principal.WindowsImpersonationContext> , сборщик мусора мог освободить память, <xref:System.Security.Principal.WindowsImpersonationContext> занимаемую. Дополнительные сведения см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
- **Примечание:** вызов всегда <xref:System.Security.Principal.WindowsImpersonationContext.Dispose%2A> перед освобождением последней ссылки на <xref:System.Security.Principal.WindowsImpersonationContext>. В противном случае оно использует ресурсы не будут освобождены пока сборщик мусора не вызовет <xref:System.Security.Principal.WindowsImpersonationContext> объекта **Finalize** метод.  
+ > [!NOTE] 
+ > Всегда вызывайте метод <xref:System.Security.Principal.WindowsImpersonationContext.Dispose%2A> перед освобождением последней ссылки на класс <xref:System.Security.Principal.WindowsImpersonationContext>. В противном случае используемые им ресурсы не будут освобождены до тех пор, пока сборщик мусора не вызовет для объекта <xref:System.Security.Principal.WindowsImpersonationContext> метод `Finalize`.  
   
  ]]></format>
         </remarks>
@@ -139,10 +130,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Security.Principal.WindowsImpersonationContext" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -154,12 +145,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -179,8 +168,21 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает ресурсы, удерживаемые текущим экземпляром.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+
+> [!NOTE]
+> Этот элемент удаляется в .NET Framework версии 2.0 и последующие версии.
+
+
+Код приложения не вызывает этот метод; он автоматически вызывается во время сборки мусора, если завершение работы сборщика мусора была отключена. Дополнительные сведения см. в разделах <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> и <xref:System.Object.Finalize>. Этот метод переопределяет метод <xref:System.Object.Finalize>.
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Undo">
@@ -222,9 +224,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Security.SecurityException">Попытка использования данного метода для любых целей, кроме возврата удостоверения в исходное состояние.</exception>
-        <block subset="none" type="overrides">
-          <para>Поскольку платформы Microsoft Windows 98 и Windows Millennium Edition не имеют пользователей или маркеров пользователей, олицетворения не может иметь место на этих платформах.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Поскольку платформы Microsoft Windows 98 и Windows Millennium Edition не имеют пользователей или маркеров пользователей, олицетворения не может иметь место на этих платформах.</para></block>
       </Docs>
     </Member>
   </Members>

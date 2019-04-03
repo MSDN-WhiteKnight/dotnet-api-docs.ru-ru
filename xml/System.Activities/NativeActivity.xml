@@ -1,13 +1,5 @@
 <Type Name="NativeActivity" FullName="System.Activities.NativeActivity">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a50438126a7a346130c0057cfc3ca437cbbe81e0" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48754556" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class NativeActivity : System.Activities.Activity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="87a24291515d732d916107b6c82cc8d3e2caa6b8" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57946031" /></Metadata><TypeSignature Language="C#" Value="public abstract class NativeActivity : System.Activities.Activity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit NativeActivity extends System.Activities.Activity" />
   <TypeSignature Language="DocId" Value="T:System.Activities.NativeActivity" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class NativeActivity&#xA;Inherits Activity" />
@@ -22,7 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Абстрактный базовый класс для пользовательских действий, в которых логика выполнения реализуется с помощью метода <see cref="M:System.Activities.NativeActivity.Execute(System.Activities.NativeActivityContext)" />, который имеет полный доступ к функциям среды выполнения.</summary>
+    <summary>Абстрактный базовый класс для пользовательских действий, в которых логика выполнения реализуется с помощью метода <see cref="M:System.Activities.NativeActivity.Execute(System.Activities.NativeActivityContext)" />, который имеет полный доступ к возможностям среды выполнения.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -192,8 +184,8 @@ public sealed class MySequence : NativeActivity
         <Parameter Name="metadata" Type="System.Activities.ActivityMetadata" />
       </Parameters>
       <Docs>
-        <param name="metadata">Не реализован.</param>
-        <summary>Не реализован. Взамен рекомендуется использовать метод <see cref="M:System.Activities.NativeActivity.CacheMetadata(System.Activities.NativeActivityMetadata)" />.</summary>
+        <param name="metadata">Не реализовано.</param>
+        <summary>Не реализовано. Вместо этого рекомендуется использовать метод <see cref="M:System.Activities.NativeActivity.CacheMetadata(System.Activities.NativeActivityMetadata)" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -229,7 +221,7 @@ public sealed class MySequence : NativeActivity
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Среда выполнения рабочего процесса обеспечивает правильное построение рабочего процесса, а также управление связями времени выполнения и правилами времени существования с помощью реализации <xref:System.Activities.NativeActivity.CacheMetadata%2A> по умолчанию. Реализация <xref:System.Activities.NativeActivity.CacheMetadata%2A> по умолчанию проверяет открытые элементы типа действия с помощью описания <xref:System.ComponentModel.TypeDescriptor>. Эти открытые элементы имеют тип <xref:System.Activities.Argument>, <xref:System.Activities.Variable>, [IEnumerable\<переменной >](xref:System.Collections.Generic.IEnumerable%601), <xref:System.Activities.Activity>, [IEnumerable\<действия >](xref:System.Collections.Generic.IEnumerable%601), или <xref:System.Activities.ActivityDelegate>. Можно переопределить этот метод, чтобы настроить построение описания действия времени выполнения и предоставить пользовательскую логику проверки. Исключения, вызванные в методе <xref:System.Activities.NativeActivity.CacheMetadata%2A>, не считаются ошибками проверки. Эти исключения перейдут из метода <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> к вызывающему объекту, который должен их обработать.  
+ Среда выполнения рабочего процесса обеспечивает правильное построение рабочего процесса, а также управление связями времени выполнения и правилами времени существования с помощью реализации <xref:System.Activities.NativeActivity.CacheMetadata%2A> по умолчанию. Реализация по умолчанию <xref:System.Activities.NativeActivity.CacheMetadata%2A> проверяет открытые элементы типа действия, с помощью описания <xref:System.ComponentModel.TypeDescriptor>. Эти открытые элементы имеют тип <xref:System.Activities.Argument>, <xref:System.Activities.Variable>, [IEnumerable\<переменной >](xref:System.Collections.Generic.IEnumerable%601), <xref:System.Activities.Activity>, [IEnumerable\<действия >](xref:System.Collections.Generic.IEnumerable%601), или <xref:System.Activities.ActivityDelegate>. Можно переопределить этот метод, чтобы настроить построение описания действия времени выполнения и предоставить пользовательскую логику проверки. Исключения, вызванные в методе <xref:System.Activities.NativeActivity.CacheMetadata%2A>, не считаются ошибками проверки. Эти исключения перейдут из метода <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> к вызывающему объекту, который должен их обработать.  
   
    
   
@@ -342,7 +334,7 @@ public sealed class MySequence : NativeActivity
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.Runtime.Serialization.IgnoreDataMember</AttributeName>
         </Attribute>
       </Attributes>
@@ -401,8 +393,8 @@ public sealed class MySequence : NativeActivity
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" />
-        <Parameter Name="originalActivity" Type="System.Activities.Activity" />
+        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="originalActivity" Type="System.Activities.Activity" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="metadata">Метаданные.</param>
@@ -427,8 +419,8 @@ public sealed class MySequence : NativeActivity
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.UpdateMapMetadata" />
-        <Parameter Name="originalActivity" Type="System.Activities.Activity" />
+        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.UpdateMapMetadata" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="originalActivity" Type="System.Activities.Activity" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="metadata">Метаданные.</param>
@@ -453,7 +445,7 @@ public sealed class MySequence : NativeActivity
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="updateContext" Type="System.Activities.DynamicUpdate.NativeActivityUpdateContext" />
+        <Parameter Name="updateContext" Type="System.Activities.DynamicUpdate.NativeActivityUpdateContext" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="updateContext">Контекст обновления.</param>

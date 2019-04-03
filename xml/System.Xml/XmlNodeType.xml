@@ -1,13 +1,5 @@
 <Type Name="XmlNodeType" FullName="System.Xml.XmlNodeType">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="beb49da4e5041683aa68e9c41480c99fdd1e4848" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37481775" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum XmlNodeType" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="34fba412824f1d00caf11a5ebddab60e0467ed0e" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58681925" /></Metadata><TypeSignature Language="C#" Value="public enum XmlNodeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlNodeType extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeType" />
   <TypeSignature Language="VB.NET" Value="Public Enum XmlNodeType" />
@@ -31,13 +23,43 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Docs>
-    <summary>Задает тип узла.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Задает типа узла.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Следующая таблица предоставляет дополнительные сведения о XML-узлов, а также их родительских и дочерних узлов.
+
+| Поле | Описание | Может иметь дочерние узлы: | Может быть дочерним для узла: |
+|---|---|---|---|
+|`Attribute`| |`EntityReference`, `Text`|Отсутствует. Он не является дочерним для узла `Element`.|
+|`CDATA`| Разделы CDATA используются для экранирования блоков текста, который бы быть восприняты как элементы разметки.|Отсутствует.|`DocumentFragment`, `EntityReference`и `Element`|
+|`Comment`| | Отсутствует. |`Document`, `DocumentFragment`, `EntityReference`|
+|`Document`| |`XmlDeclaration`, `Element` (максимум один), `ProcessingInstruction`, `Comment`, `DocumentType`|None|
+|`DocumentFragment`|Связывает узел или поддерево с документом, не являясь фактически включенным в документе.|`Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, `EntityReference`|Отсутствует. 
+|`DocumentType`| |`Notation`, `Entity`|None|
+|`Element`| |`Element`, `Text`, `Comment`, `ProcessingInstruction`, `CDATA`, `EntityReference`| `Document`, `DocumentFragment`, `EntityReference`, `Element`|
+|`EndElement`|Возвращается, когда <xref:System.Xml.XmlReader> получает до конца элемента.| | |   
+|`EndEntity`| | | |
+|`Entity`| |Дочерние узлы, предоставляющие расширенную сущность (например, `Text` и `EntityReference` узлов) |`DocumentType`|
+|`EntityReference`| |`Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, `EntityReference` |`Attribute`, `DocumentFragment`, `Element`, `EntityReference` |
+|`None`| | | |
+|`Notation`| | None | `DocumentType`| 
+|`ProcessingInstruction`| | None | `Document`, `DocumentFragment`, `Element`, `EntityReference`|
+|`SignificantWhitespace`| | | |
+|`Text`| | None | `Attribute`, `DocumentFragment`, `Element`, `EntityReference` |
+|`Whitespace`| | | |
+|`XmlDeclaration`| Должен быть первым узлом в документе. Он может иметь атрибуты, предоставляющие версии и кодирования информации. |None|`Document`|
+
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Attribute">
@@ -66,6 +88,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -73,14 +96,6 @@
       <MemberValue>2</MemberValue>
       <Docs>
         <summary>Атрибут (например, <c>id='123'</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Attribute` Узел может иметь следующие типы дочерних узлов: `Text` и `EntityReference`. `Attribute` Узла не отображается как дочерний узел узла любого другого типа. Он не является дочерним для узла `Element`.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CDATA">
@@ -109,6 +124,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -116,14 +132,6 @@
       <MemberValue>4</MemberValue>
       <Docs>
         <summary>Например CDATA (например, <c>&lt;![CDATA[экранированный текст]]&gt;</c> ).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Разделы CDATA используются для экранирования блоков текста, который бы быть восприняты как элементы разметки. Объект `CDATA` узел не может иметь дочерних узлов. Он может быть дочерним элементом элемента `DocumentFragment`, `EntityReference`, и `Element` узлов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Comment">
@@ -152,6 +160,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -159,14 +168,6 @@
       <MemberValue>8</MemberValue>
       <Docs>
         <summary>Комментарий (например, <c>&lt;!-- мой комментарий --&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Объект `Comment` узел не может иметь дочерних узлов. Он может быть дочерним элементом элемента `Document`, `DocumentFragment`, `Element`, и `EntityReference` узлов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Document">
@@ -195,6 +196,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -202,14 +204,6 @@
       <MemberValue>9</MemberValue>
       <Docs>
         <summary>Объект документа, являющийся корневым элементом дерева документов, предоставляет доступ ко всему XML-документу.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Объект `Document` узел может иметь следующие типы дочерних узлов: `XmlDeclaration`, `Element` (максимум один), `ProcessingInstruction`, `Comment`, и `DocumentType`. Он не может быть дочерним узлом никаких других типов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DocumentFragment">
@@ -238,6 +232,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -245,14 +240,6 @@
       <MemberValue>11</MemberValue>
       <Docs>
         <summary>Фрагмент документа.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `DocumentFragment` Узла связывает узел или поддерево с документом не являясь фактически включенным в документе. Объект `DocumentFragment` узел может иметь следующие типы дочерних узлов: `Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, и `EntityReference`. Он не может быть дочерним узлом никаких других типов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DocumentType">
@@ -281,6 +268,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -288,14 +276,6 @@
       <MemberValue>10</MemberValue>
       <Docs>
         <summary>Объявление типа документа, обозначенное следующим тегом (например, <c>&lt;!DOCTYPE...&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Объект `DocumentType` узел может иметь следующие типы дочерних узлов: `Notation` и `Entity`. Он может быть дочерним элементом элемента `Document` узла.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Element">
@@ -324,6 +304,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -331,14 +312,6 @@
       <MemberValue>1</MemberValue>
       <Docs>
         <summary>Элемент (например, <c>&lt;item&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Element` Узел может иметь следующие типы дочерних узлов: `Element`, `Text`, `Comment`, `ProcessingInstruction`, `CDATA`, и `EntityReference`. Он может быть дочерним элементом элемента `Document`, `DocumentFragment`, `EntityReference`, и `Element` узлов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndElement">
@@ -367,6 +340,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -374,14 +348,6 @@
       <MemberValue>15</MemberValue>
       <Docs>
         <summary>Конечный тег элемента (например, <c>&lt;/item&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `EndElement` узлы возвращаются, когда <xref:System.Xml.XmlReader> получает до конца элемента.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndEntity">
@@ -410,6 +376,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -445,6 +412,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -452,14 +420,6 @@
       <MemberValue>6</MemberValue>
       <Docs>
         <summary>Объявление сущности (например, <c>&lt;!ENTITY...&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Entity` Узел может иметь дочерние узлы, предоставляющие расширенную сущность (например, `Text` и `EntityReference` узлов). Он может быть дочерним элементом элемента `DocumentType` узла.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EntityReference">
@@ -488,6 +448,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -495,14 +456,6 @@
       <MemberValue>5</MemberValue>
       <Docs>
         <summary>Ссылка на сущность (например, <c>&amp;num;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `EntityReference` Узел может иметь следующие типы дочерних узлов: `Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, и `EntityReference`. Он может быть дочерним элементом элемента `Attribute`, `DocumentFragment`, `Element`, и `EntityReference` узлов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="None">
@@ -531,6 +484,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -566,6 +520,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -573,14 +528,6 @@
       <MemberValue>12</MemberValue>
       <Docs>
         <summary>Нотация в объявлении типа документа (например, <c>&lt;!NOTATION...&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Объект `Notation` узел не может иметь дочерних узлов. Он может быть дочерним элементом элемента `DocumentType` узла.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ProcessingInstruction">
@@ -609,6 +556,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -616,14 +564,6 @@
       <MemberValue>7</MemberValue>
       <Docs>
         <summary>Инструкция по обработке (например, <c>&lt;?pi test?&gt;</c>).</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Объект `ProcessingInstruction` узел не может иметь дочерних узлов. Он может быть дочерним элементом элемента `Document`, `DocumentFragment`, `Element`, и `EntityReference` узлов.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SignificantWhitespace">
@@ -652,6 +592,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -687,6 +628,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -730,6 +672,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -765,6 +708,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>

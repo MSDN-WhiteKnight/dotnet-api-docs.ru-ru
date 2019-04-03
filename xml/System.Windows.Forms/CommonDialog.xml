@@ -1,13 +1,5 @@
 <Type Name="CommonDialog" FullName="System.Windows.Forms.CommonDialog">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f23cf9a30d3d25b6a80b610a52f86557344bbddb" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48619798" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class CommonDialog : System.ComponentModel.Component" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="708aceab46bdc904ee30d16baf231d1011d520a7" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56381820" /></Metadata><TypeSignature Language="C#" Value="public abstract class CommonDialog : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonDialog extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CommonDialog" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class CommonDialog&#xA;Inherits Component" />
@@ -24,7 +16,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
     </Attribute>
   </Attributes>
@@ -140,7 +132,7 @@
         <param name="msg">Полученное сообщение.</param>
         <param name="wparam">Дополнительные сведения о сообщении.</param>
         <param name="lparam">Дополнительные сведения о сообщении.</param>
-        <summary>Определяет процедуру обработки общего диалогового окна, переопределенную, чтобы добавить специальные функции для общего диалогового окна.</summary>
+        <summary>Определяет процедуру подключения общего диалогового окна, переопределенную, чтобы добавить конкретную функциональность для общего диалогового окна.</summary>
         <returns>Нулевое значение, если заданная по умолчанию процедура диалогового окна обрабатывает сообщение; отличное от нуля значение, если заданная по умолчанию процедура игнорирует это сообщение.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -151,7 +143,7 @@
  По умолчанию процедура центрирование диалогового окна на экране в ответ на сообщение WM_INITDIALOG.  
   
 > [!NOTE]
->  Этот метод использует <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> для предотвращения его вызова из ненадежного кода; только непосредственный вызывающий оператор должен иметь <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType> разрешение. Если ваш код может вызываться из частично доверенного кода, не передавайте введенные <xref:System.Runtime.InteropServices.Marshal> методы без проверки класса. Для важных ограничениях на использование `LinkDemand` член, см. в разделе [Demand и. LinkDemand](http://msdn.microsoft.com/library/1ab877f2-70f4-4e0d-8116-943999dfe8f5).  
+>  Этот метод использует <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> для предотвращения его вызова из ненадежного кода; только непосредственный вызывающий оператор должен иметь <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType> разрешение. Если ваш код может вызываться из частично доверенного кода, не передавайте введенные <xref:System.Runtime.InteropServices.Marshal> методы без проверки класса. Для важных ограничениях на использование `LinkDemand` член, см. в разделе [Demand и. LinkDemand](https://msdn.microsoft.com/library/1ab877f2-70f4-4e0d-8116-943999dfe8f5).  
   
  Это свойство также использует <xref:System.Security.Permissions.SecurityAction.InheritanceDemand?displayProperty=nameWithType> атрибут безопасности; переопределение этого члена производного класса должен иметь `CustomPermission` разрешение.  
   
@@ -167,9 +159,7 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">для непосредственного вызывающего на вызов неуправляемого кода. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
-        <block subset="none" type="overrides">
-          <para>Наследующие классы могут переопределить этот метод, чтобы добавить специальные функции для общее диалоговое окно. При переопределении метода <see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" /> в производном классе, не забудьте вызвать базовый класс <see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Наследующие классы могут переопределить этот метод, чтобы добавить специальные функции для общее диалоговое окно. При переопределении метода <see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" /> в производном классе, не забудьте вызвать базовый класс <see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" /> метод.</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnHelpRequest">
@@ -194,7 +184,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Forms.HelpEventArgs" />, предоставляющий данные события.</param>
-        <summary>Вызывает событие <see cref="E:System.Windows.Forms.CommonDialog.HelpRequest" />.</summary>
+        <summary>Создает событие <see cref="E:System.Windows.Forms.CommonDialog.HelpRequest" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -231,9 +221,9 @@
       <Docs>
         <param name="hWnd">Дескриптор окна отправляемого сообщения.</param>
         <param name="msg">Сообщение Win32 для отправки.</param>
-        <param name="wparam">Параметр <c>wparam</c>, отправляемый с сообщением.</param>
-        <param name="lparam">Параметр <c>lparam</c>, отправляемый с сообщением.</param>
-        <summary>Определяет процедуру окна-владельца, которая переопределяется, чтобы добавить специальные функции для общего диалогового окна.</summary>
+        <param name="wparam">Параметр <paramref name="wparam" />, отправляемый с сообщением.</param>
+        <param name="lparam">Параметр <paramref name="lparam" />, отправляемый с сообщением.</param>
+        <summary>Определяет процедуру окна-владельца, которая переопределяется, чтобы добавить конкретную функциональность для общего диалогового окна.</summary>
         <returns>Результат обработки сообщения, зависящий от отправленного сообщения.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -268,9 +258,7 @@
         <summary>В случае переопределения в производном классе устанавливает для свойств общего диалогового окна их значения по умолчанию.</summary>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">для неуправляемого кода для вызова этого метода. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
-        <block subset="none" type="overrides">
-          <para>Наследующие классы могут переопределить этот метод, чтобы сбросить их свойства.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Наследующие классы могут переопределить этот метод, чтобы сбросить их свойства.</para></block>
       </Docs>
     </Member>
     <Member MemberName="RunDialog">
@@ -389,8 +377,8 @@
         <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
       </Parameters>
       <Docs>
-        <param name="owner">Любой объект, который реализует <see cref="T:System.Windows.Forms.IWin32Window" />, представляющий окно верхнего уровня, которое станет владельцем модального диалогового окна.</param>
-        <summary>Запускает общее диалоговое окно с указанным владельцем.</summary>
+        <param name="owner">Любой объект, реализующий <see cref="T:System.Windows.Forms.IWin32Window" />, которое представляет окно верхнего уровня — будущего собственника модального диалогового окна.</param>
+        <summary>Запускает общее диалоговое окно с заданным владельцем.</summary>
         <returns>Значение <see cref="F:System.Windows.Forms.DialogResult.OK" />, если пользователь нажимает кнопку **ОК** в диалоговом окне; в противном случае значение <see cref="F:System.Windows.Forms.DialogResult.Cancel" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -418,16 +406,16 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">

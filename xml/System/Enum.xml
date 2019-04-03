@@ -1,13 +1,5 @@
 <Type Name="Enum" FullName="System.Enum">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0f63bb8a07b29b93f1ea35399e1ec2cc54524806" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51323967" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class Enum : ValueType, IComparable, IConvertible, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1e84548759cfa681f91067026ae0a5e2dba3a9a5" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57942287" /></Metadata><TypeSignature Language="C#" Value="public abstract class Enum : ValueType, IComparable, IConvertible, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Enum extends System.ValueType implements class System.IComparable, class System.IConvertible, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Enum" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Enum&#xA;Inherits ValueType&#xA;Implements IComparable, IConvertible, IFormattable" />
@@ -51,8 +43,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -338,8 +330,8 @@
  </description></item><item><term> Больше нуля 
  </term><description> Значение данного экземпляра больше значения параметра <paramref name="target" />.  
   
-- или - 
- Свойство <paramref name="target" /> имеет значение <see langword="null" />.  
+-или- 
+ <paramref name="target" /> — <see langword="null" />.  
   
  </description></item></list></returns>
         <remarks>
@@ -354,10 +346,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="target" /> и этот экземпляр не принадлежат к одному типу.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> и этот экземпляр не принадлежат к одному типу.</exception>
         <exception cref="T:System.InvalidOperationException">Этот экземпляр не является типом <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" /> или <see cref="T:System.UInt64" />.</exception>
         <altmember cref="M:System.Enum.Equals(System.Object)" />
+        <exception cref="T:System.NullReferenceException">Этот экземпляр имеет значение NULL.</exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -402,8 +394,7 @@
       <Docs>
         <param name="obj">Объект, сравниваемый с этим экземпляром, или значение <see langword="null" />.</param>
         <summary>Возвращает значение, показывающее, равен ли данный экземпляр заданному объекту.</summary>
-        <returns>
-          <see langword="true" />, если <paramref name="obj" /> является значением перечисления того же типа и с тем же базовым значением, что и у этого экземпляра; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <paramref name="obj" /> является значением перечисления того же типа и с тем же базовым значением, что и у этого экземпляра; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -482,9 +473,9 @@
 ## Remarks  
  В следующей таблице показаны допустимые значения для `format` параметра.  
   
-|Формат|Описание:|  
+|Формат|Описание|  
 |------------|-----------------|  
-|"G" или "g"|Если `value` является именованным Перечислимая константа, имя этой константы равна возвращен; в противном случае — его десятичный эквивалент `value` возвращается.<br /><br /> Например предположим, только константы перечислимого типа, называется Red и его значение равно 1. Если `value` имеет значение 1, этот формат возвращает «Red». Тем не менее если `value` равно 2, этот формат возвращает «2».<br /><br /> - или -<br /><br /> Если <xref:System.FlagsAttribute> настраиваемый атрибут применяется к перечислению, `value` рассматривается как битовое поле, которое содержит один или несколько флагов, которые состоят из одного или нескольких битов.<br /><br /> Если `value` называется равным сочетание констант-перечислителей, возвращается список имен этих констант разделителями. `value` флаги, переходя от флага с наибольшим значением до наименьшего значения, выполняется поиск. Для каждого флага, соответствующего к битовому полю в `value`, имя константы объединяется в список с разделителями. Значение флага исключается из дальнейшего рассмотрения, и продолжается поиск следующего флага.<br /><br /> Если `value` не равно сочетания именованных констант-перечислителей, его десятичный эквивалент `value` возвращается.|  
+|"G" или "g"|Если `value` является именованным Перечислимая константа, имя этой константы равна возвращен; в противном случае — его десятичный эквивалент `value` возвращается.<br /><br /> Например предположим, только константы перечислимого типа, называется Red и его значение равно 1. Если `value` имеет значение 1, этот формат возвращает «Red». Тем не менее если `value` равно 2, этот формат возвращает «2».<br /><br /> -или-<br /><br /> Если <xref:System.FlagsAttribute> настраиваемый атрибут применяется к перечислению, `value` рассматривается как битовое поле, которое содержит один или несколько флагов, которые состоят из одного или нескольких битов.<br /><br /> Если `value` называется равным сочетание констант-перечислителей, возвращается список имен этих констант разделителями. `value` флаги, переходя от флага с наибольшим значением до наименьшего значения, выполняется поиск. Для каждого флага, соответствующего к битовому полю в `value`, имя константы объединяется в список с разделителями. Значение флага исключается из дальнейшего рассмотрения, и продолжается поиск следующего флага.<br /><br /> Если `value` не равно сочетания именованных констант-перечислителей, его десятичный эквивалент `value` возвращается.|  
 |"X" или "x"|Представляет `value` в шестнадцатеричном формате без начальных «0 x».|  
 |"D" или "d"|Представляет `value` в десятичном формате.|  
 |"F" или "f"|Ведет себя идентично «G» или «g», за исключением того, что <xref:System.FlagsAttribute> необязательно должны присутствовать в <xref:System.Enum> объявления.|  
@@ -503,10 +494,10 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" />, <paramref name="value" /> или <paramref name="format" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не принадлежит типу <see cref="T:System.Enum" />.  
   
-- или - 
+-или- 
 <paramref name="value" /> принадлежит перечислению, которое отличается от <paramref name="enumType" /> по типу.  
   
-- или - 
+-или- 
 Тип <paramref name="value" /> не является базовым типом <paramref name="enumType" />.</exception>
         <exception cref="T:System.FormatException">Параметр <paramref name="format" /> содержит недопустимое значение.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="format" /> равен X, но тип перечисления неизвестен.</exception>
@@ -620,10 +611,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" /> или <paramref name="value" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="enumType" /> или <paramref name="value" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.  
   
-- или - 
+-или- 
  <paramref name="value" /> не является типом <paramref name="enumType" /> и не имеет базового типа, совпадающего с типом <paramref name="enumType" />.</exception>
       </Docs>
     </Member>
@@ -692,7 +683,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> — не <see cref="T:System.Enum" />.</exception>
       </Docs>
     </Member>
@@ -797,7 +788,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.GetTypeCode" />
       </Docs>
@@ -877,10 +868,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <exception cref="T:System.InvalidOperationException">Метод вызывается с помощью отражения в контексте только для отражения. 
-- или - 
+-или- 
  <paramref name="enumType" /> является типом из сборки, загруженной в контекст только для отражения.</exception>
       </Docs>
     </Member>
@@ -919,7 +910,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="flag" Type="System.Enum" />
+        <Parameter Name="flag" Type="System.Enum" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="flag">Значение перечисления.</param>
@@ -952,8 +943,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="flag" /> — тип, отличный от текущего экземпляра.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="flag" /> — тип, отличный от текущего экземпляра.</exception>
         <altmember cref="T:System.FlagsAttribute" />
         <altmember cref="M:System.Enum.Equals(System.Object)" />
       </Docs>
@@ -1000,7 +990,7 @@ thisInstance And flag = flag
       </Parameters>
       <Docs>
         <param name="enumType">Тип перечисления.</param>
-        <param name="value">Значение или имя константы в <c>enumType</c>.</param>
+        <param name="value">Значение или имя константы в <paramref name="enumType" />.</param>
         <summary>Возвращает логическое значение, указывающее, существует ли заданное целочисленное значение или его имя в виде строки в заданном перечислении.</summary>
         <returns>Значение <see langword="true" />, если константа в <paramref name="enumType" /> имеет значение <paramref name="value" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -1029,22 +1019,19 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" /> или <paramref name="value" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="enumType" /> или <paramref name="value" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see langword="Enum" />.  
   
-- или - 
+-или- 
 Тип <paramref name="value" /> является перечислением, но не является перечислением типа <paramref name="enumType" />.  
   
-- или - 
+-или- 
 Тип <paramref name="value" /> не является базовым типом <paramref name="enumType" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="value" /> не является типом <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" />, <see cref="T:System.UInt64" /> или <see cref="T:System.String" />.</exception>
-        <block subset="none" type="usage">
-          <para>Если <paramref name="enumType" /> представляет собой перечисление, определяется с помощью <see cref="T:System.FlagsAttribute" /> атрибута, метод возвращает <see langword="false" /> Если несколько битовые поля в <paramref name="value" /> заданы, но <paramref name="value" /> не соответствует значение составного перечисления или, если <paramref name="value" /> представляет собой объединение строки имена нескольких битовых флагов. В следующем примере <c>животных</c> перечисления задан <see cref="T:System.FlagsAttribute" /> атрибута. <see cref="M:System.Enum.IsDefined(System.Type,System.Object)" /> Возвращает <see langword="false" /> при передаче его значение перечисления, которое имеет два битовых полей (<c>Pets.Dog</c> и <c>Pets.Cat</c>) значение, и при передаче его строковое представление, значение перечисления («собака, кот»).  
+        <exception cref="T:System.InvalidOperationException"><paramref name="value" /> не является типом <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" />, <see cref="T:System.UInt64" /> или <see cref="T:System.String" />.</exception>
+        <block subset="none" type="usage"><para>Если <paramref name="enumType" /> представляет собой перечисление, определяется с помощью <see cref="T:System.FlagsAttribute" /> атрибута, метод возвращает <see langword="false" /> Если несколько битовые поля в <paramref name="value" /> заданы, но <paramref name="value" /> не соответствует значение составного перечисления или, если <paramref name="value" /> представляет собой объединение строки имена нескольких битовых флагов. В следующем примере <c>животных</c> перечисления задан <see cref="T:System.FlagsAttribute" /> атрибута. <see cref="M:System.Enum.IsDefined(System.Type,System.Object)" /> Возвращает <see langword="false" /> при передаче его значение перечисления, которое имеет два битовых полей (<c>Pets.Dog</c> и <c>Pets.Cat</c>) значение, и при передаче его строковое представление, значение перечисления («собака, кот»).  
   
-[! code-csharp[System.Enum.IsDefined#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined2.cs#2)] [! код vb[System.Enum.IsDefined#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/isdefined2.vb#2)] 
-Можно определить, установлены ли несколько битовых полей, вызвав <see cref="M:System.Enum.HasFlag(System.Enum)" /> метод.</para>
-        </block>
+[!code-csharp[System.Enum.IsDefined#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined2.cs#2)] [!code-vb[System.Enum.IsDefined#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/isdefined2.vb#2)] 
+Можно определить, установлены ли несколько битовых полей, вызвав <see cref="M:System.Enum.HasFlag(System.Enum)" /> метод.</para></block>
         <altmember cref="M:System.Enum.GetName(System.Type,System.Object)" />
         <altmember cref="M:System.Enum.GetNames(System.Type)" />
         <altmember cref="M:System.Enum.GetValues(System.Type)" />
@@ -1134,16 +1121,15 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" /> или <paramref name="value" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="enumType" /> или <paramref name="value" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.  
   
-- или - 
+-или- 
  <paramref name="value" /> является пустой строкой ("") или содержит только пробелы.  
   
-- или - 
+-или- 
  <paramref name="value" /> — имя, но для перечисления не определено ни одной именованной константы.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="value" /> находится за пределами диапазона базового типа <paramref name="enumType" />.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="value" /> находится за пределами диапазона базового типа <paramref name="enumType" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
     </Member>
@@ -1217,16 +1203,15 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" /> или <paramref name="value" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="enumType" /> или <paramref name="value" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.  
   
-- или - 
+-или- 
  <paramref name="value" /> является пустой строкой ("") или содержит только пробелы.  
   
-- или - 
+-или- 
  <paramref name="value" /> — имя, но для перечисления не определено ни одной именованной константы.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="value" /> находится за пределами диапазона базового типа <paramref name="enumType" />.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="value" /> находится за пределами диапазона базового типа <paramref name="enumType" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
     </Member>
@@ -1262,7 +1247,7 @@ thisInstance And flag = flag
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TEnum">To be added.</typeparam>
@@ -1304,8 +1289,8 @@ thisInstance And flag = flag
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TEnum">To be added.</typeparam>
@@ -1380,7 +1365,7 @@ thisInstance And flag = flag
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1429,7 +1414,7 @@ thisInstance And flag = flag
         <ReturnType>System.Byte</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1477,7 +1462,7 @@ thisInstance And flag = flag
         <ReturnType>System.Char</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1526,7 +1511,7 @@ thisInstance And flag = flag
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1575,7 +1560,7 @@ thisInstance And flag = flag
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1624,7 +1609,7 @@ thisInstance And flag = flag
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1673,7 +1658,7 @@ thisInstance And flag = flag
         <ReturnType>System.Int16</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1721,7 +1706,7 @@ thisInstance And flag = flag
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1769,7 +1754,7 @@ thisInstance And flag = flag
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1822,7 +1807,7 @@ thisInstance And flag = flag
         <ReturnType>System.SByte</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1870,7 +1855,7 @@ thisInstance And flag = flag
         <ReturnType>System.Single</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -1909,7 +1894,7 @@ thisInstance And flag = flag
         <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;dotnet-uwp-10.0">
           <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString().")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1917,7 +1902,7 @@ thisInstance And flag = flag
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="provider">To be added.</param>
@@ -1957,8 +1942,8 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Целевой тип преобразования.</param>
@@ -2012,7 +1997,7 @@ thisInstance And flag = flag
         <ReturnType>System.UInt16</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -2065,7 +2050,7 @@ thisInstance And flag = flag
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -2118,7 +2103,7 @@ thisInstance And flag = flag
         <ReturnType>System.UInt64</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Объект, предоставляющий сведения о форматировании для определенного языка и региональных параметров.</param>
@@ -2158,7 +2143,7 @@ thisInstance And flag = flag
         <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;dotnet-uwp-10.0">
           <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString(String).")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2166,15 +2151,17 @@ thisInstance And flag = flag
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
-        <param name="format">To be added.</param>
+        <param name="format">Спецификация формата.</param>
         <param name="provider">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Эта перегрузка метода является устаревшей. Используйте <see cref="M:System.Enum.ToString(System.String)" />.</summary>
+        <returns>Строковое представление значения данного экземпляра, определяемое параметром <paramref name="format" />.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.FormatException">Формат <paramref name="format" /> не содержит допустимой спецификации формата.</exception>
+        <exception cref="T:System.InvalidOperationException">Параметр <paramref name="format" /> равен X, но тип перечисления неизвестен.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ToObject">
@@ -2223,11 +2210,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.Byte" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Byte" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 8-разрядного целого числа в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2241,7 +2228,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2282,11 +2269,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.Int16" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Int16" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 16-разрядного знакового целого числа в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2300,7 +2287,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2341,11 +2328,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 32-разрядного знакового целого числа в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2359,7 +2346,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2400,11 +2387,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.Int64" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 64-разрядного знакового целого числа в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2418,7 +2405,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2464,7 +2451,7 @@ thisInstance And flag = flag
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует заданный объект с целочисленным значением в член перечисления.</summary>
         <returns>Объект перечисления, значение которого равно <paramref name="value" />.</returns>
@@ -2478,10 +2465,10 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="enumType" /> или <paramref name="value" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="enumType" /> или <paramref name="value" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.  
   
-- или - 
+-или- 
  <paramref name="value" /> не является типом <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" /> или <see cref="T:System.UInt64" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2511,7 +2498,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -2525,11 +2512,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.SByte" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.SByte" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 8-разрядного знакового целого числа в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2543,7 +2530,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2573,7 +2560,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -2587,11 +2574,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.UInt16" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.UInt16" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 16-разрядного целого числа без знака в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2605,7 +2592,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2635,7 +2622,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -2649,11 +2636,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.UInt32" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.UInt32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 32-разрядного целого числа без знака в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2667,7 +2654,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2697,7 +2684,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -2711,11 +2698,11 @@ thisInstance And flag = flag
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.UInt64" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="value" Type="System.UInt64" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="enumType">Тип перечисления, который необходимо вернуть.</param>
+        <param name="enumType">Тип перечисления, который требуется вернуть.</param>
         <param name="value">Значение, которое необходимо преобразовать в член перечисления.</param>
         <summary>Преобразует значение заданного 64-разрядного целого числа без знака в член перечисления.</summary>
         <returns>Экземпляр перечисления, которому присвоено значение <paramref name="value" />.</returns>
@@ -2729,7 +2716,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="enumType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="enumType" /> не является классом <see cref="T:System.Enum" />.</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2800,14 +2787,12 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Если несколько членов перечисления имеют тем же базовым значением и не удается получить строковое представление имени члена перечисления на основе его базового значения, код не должна делать никаких предположений, о какое имя будет возвращать метод. Например, следующее перечисление определяет два члена <c>Shade.Gray</c> и <c>Shade.Grey</c>, имеющих тем же базовым значением.  
+        <block subset="none" type="usage"><para>Если несколько членов перечисления имеют тем же базовым значением и не удается получить строковое представление имени члена перечисления на основе его базового значения, код не должна делать никаких предположений, о какое имя будет возвращать метод. Например, следующее перечисление определяет два члена <c>Shade.Gray</c> и <c>Shade.Grey</c>, имеющих тем же базовым значением.  
   
-[! code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [! код vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
+[!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
 Пытается получить имя элемента в следующий вызов метода <c>Shade</c> перечисления, чье базовое значение равно 1. Этот метод может возвращать «Gray» или «Серый», и ваш код не следует делать никаких предположений, о которых будет возвращена строка.  
   
-[! code-csharp[System.Enum.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#2)] [! код vb[System.Enum.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#2)]</para>
-        </block>
+[!code-csharp[System.Enum.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#2)] [!code-vb[System.Enum.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#2)]</para></block>
         <altmember cref="M:System.Enum.Format(System.Type,System.Object,System.String)" />
         <altmember cref="M:System.Enum.Parse(System.Type,System.String)" />
       </Docs>
@@ -2840,7 +2825,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString().")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2848,7 +2833,7 @@ thisInstance And flag = flag
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">(Является устаревшим.)</param>
@@ -2917,17 +2902,14 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">
-          <paramref name="format" /> содержит недопустимую спецификацию.</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" /> содержит недопустимую спецификацию.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="format" /> равен X, но тип перечисления неизвестен.</exception>
-        <block subset="none" type="usage">
-          <para>Если несколько членов перечисления имеют тем же базовым значением и не удается получить строковое представление имени члена перечисления на основе его базового значения, код не должна делать никаких предположений, о какое имя будет возвращать метод. Например, следующее перечисление определяет два члена <c>Shade.Gray</c> и <c>Shade.Grey</c>, имеющих тем же базовым значением.  
+        <block subset="none" type="usage"><para>Если несколько членов перечисления имеют тем же базовым значением и не удается получить строковое представление имени члена перечисления на основе его базового значения, код не должна делать никаких предположений, о какое имя будет возвращать метод. Например, следующее перечисление определяет два члена <c>Shade.Gray</c> и <c>Shade.Grey</c>, имеющих тем же базовым значением.  
   
-[! code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [! код vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
+[!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
 Пытается получить имя элемента в следующий вызов метода <c>Shade</c> перечисления, чье базовое значение равно 1. Этот метод может возвращать «Gray» или «Серый», и ваш код не следует делать никаких предположений, о которых будет возвращена строка.  
   
-[! code-csharp[System.Enum.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#3)] [! код vb[System.Enum.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#3)]</para>
-        </block>
+[!code-csharp[System.Enum.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#3)] [!code-vb[System.Enum.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#3)]</para></block>
         <altmember cref="M:System.Enum.Format(System.Type,System.Object,System.String)" />
         <altmember cref="M:System.Enum.Parse(System.Type,System.String)" />
         <altmember cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />
@@ -2963,7 +2945,7 @@ thisInstance And flag = flag
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString(String).")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2971,8 +2953,8 @@ thisInstance And flag = flag
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="format">Спецификация формата.</param>
@@ -3029,9 +3011,9 @@ thisInstance And flag = flag
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="result" Type="System.Object" RefType="out" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="value" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.Object" RefType="out" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="enumType">To be added.</param>
@@ -3065,10 +3047,10 @@ thisInstance And flag = flag
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="enumType" Type="System.Type" />
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="ignoreCase" Type="System.Boolean" />
-        <Parameter Name="result" Type="System.Object" RefType="out" />
+        <Parameter Name="enumType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="value" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.Object" RefType="out" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="enumType">To be added.</param>
@@ -3124,13 +3106,13 @@ thisInstance And flag = flag
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="result" Type="TEnum" RefType="out" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="TEnum" RefType="out" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="TEnum">Тип перечисления, в который требуется преобразовать <c>значение</c>.</typeparam>
+        <typeparam name="TEnum">Тип перечисления, в который требуется преобразовать <paramref name="value" />.</typeparam>
         <param name="value">Чувствительное к регистру строковое представление имени перечисления или базового значения для преобразования.</param>
-        <param name="result">При возврате этого метода <c>result</c> содержит объект типа <c>TEnum</c>, значение которого представлено параметром <c>value</c>, если операция анализа выполнена успешно. Если операция анализа завершается неудачно, то <c>result</c> содержит значение по умолчанию базового типа <c>TEnum</c>. Обратите внимание, что это значение не обязательно должно быть членом перечисления <c>TEnum</c>. Этот параметр передается неинициализированным.</param>
+        <param name="result">При возврате данного метода <paramref name="result" /> содержит объект типа <c>TEnum</c>, значение которого представлено параметром <paramref name="value" />, если операция анализа выполнена успешно. Если операция анализа завершается неудачно, то <paramref name="result" /> содержит значение по умолчанию базового типа <c>TEnum</c>. Обратите внимание, что это значение не обязательно должно быть членом перечисления <c>TEnum</c>. Этот параметр передается неинициализированным.</param>
         <summary>Преобразует строковое представление имени или числового значения одной или нескольких перечислимых констант в эквивалентный перечислимый объект. Возвращаемое значение указывает, успешно ли выполнено преобразование.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="value" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -3153,8 +3135,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="TEnum" /> не является типом перечисления.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TEnum" /> не является типом перечисления.</exception>
         <altmember cref="M:System.Enum.Parse(System.Type,System.String)" />
       </Docs>
     </Member>
@@ -3202,15 +3183,15 @@ thisInstance And flag = flag
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="ignoreCase" Type="System.Boolean" />
-        <Parameter Name="result" Type="TEnum" RefType="out" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="TEnum" RefType="out" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="TEnum">Тип перечисления, в который требуется преобразовать <c>значение</c>.</typeparam>
+        <typeparam name="TEnum">Тип перечисления, в который требуется преобразовать <paramref name="value" />.</typeparam>
         <param name="value">Строковое представление имени перечисления или базового значения для преобразования.</param>
         <param name="ignoreCase">Значение <see langword="true" />, чтобы игнорировать регистр; значение <see langword="false" />, чтобы учитывать регистр.</param>
-        <param name="result">При возврате этого метода <c>result</c> содержит объект типа <c>TEnum</c>, значение которого представлено параметром <c>value</c>, если операция анализа выполнена успешно. Если операция анализа завершается неудачно, то <c>result</c> содержит значение по умолчанию базового типа <c>TEnum</c>. Обратите внимание, что это значение не обязательно должно быть членом перечисления <c>TEnum</c>. Этот параметр передается неинициализированным.</param>
+        <param name="result">При возврате данного метода <paramref name="result" /> содержит объект типа <c>TEnum</c>, значение которого представлено параметром <paramref name="value" />, если операция анализа выполнена успешно. Если операция анализа завершается неудачно, то <paramref name="result" /> содержит значение по умолчанию базового типа <c>TEnum</c>. Обратите внимание, что это значение не обязательно должно быть членом перечисления <c>TEnum</c>. Этот параметр передается неинициализированным.</param>
         <summary>Преобразует строковое представление имени или числового значения одной или нескольких перечислимых констант в эквивалентный перечислимый объект. Параметр указывает, учитывается ли в операции регистр. Возвращаемое значение указывает, успешно ли выполнено преобразование.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="value" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -3233,8 +3214,7 @@ thisInstance And flag = flag
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="TEnum" /> не является типом перечисления.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TEnum" /> не является типом перечисления.</exception>
         <altmember cref="M:System.Enum.Parse(System.Type,System.String,System.Boolean)" />
       </Docs>
     </Member>

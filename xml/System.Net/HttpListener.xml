@@ -1,13 +1,5 @@
 <Type Name="HttpListener" FullName="System.Net.HttpListener">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4873f33219bd7ea7a8d2ddffffaefddbe854e814" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46612163" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0e02270f5e712436e72d273e8fd86520bf841422" /><Meta Name="ms.sourcegitcommit" Value="a47b87b664d20090dc34412ab430dec69af9c3f8" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/04/2019" /><Meta Name="ms.locfileid" Value="54030713" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListener extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListener" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListener&#xA;Implements IDisposable" />
@@ -46,14 +38,14 @@
    
  Для использования <xref:System.Net.HttpListener>, создайте новый экземпляр класса с использованием <xref:System.Net.HttpListener> конструктор и используйте <xref:System.Net.HttpListener.Prefixes%2A> свойство для получения доступа к коллекции, содержащий строки, которые указывают, какой универсальный код ресурса (URI) префиксы <xref:System.Net.HttpListener>должен обрабатывать.
   
- Строка префикса URI представляет собой схему (http или https), узел, дополнительного порта и дополнительный путь. Например, строку завершения префикса * http://www.contoso.com:8080/customerData/ *. Префиксы должны заканчиваться косой чертой («/»). <xref:System.Net.HttpListener> Объекта с префиксом, наиболее точно соответствующий запрашиваемому URL-АДРЕСУ ответа на запрос. Несколько <xref:System.Net.HttpListener> объектов не удается добавить тот же префикс; <xref:System.ComponentModel.Win32Exception> исключение вызывается в том случае, если <xref:System.Net.HttpListener> добавляет префикс, который уже используется.
+ Строка префикса URI представляет собой схему (http или https), узел, дополнительного порта и дополнительный путь. Например, строку завершения префикса *http://www.contoso.com:8080/customerData/*. Префиксы должны заканчиваться косой чертой («/»). <xref:System.Net.HttpListener> Объекта с префиксом, наиболее точно соответствующий запрашиваемому URL-АДРЕСУ ответа на запрос. Несколько <xref:System.Net.HttpListener> объектов не удается добавить тот же префикс; <xref:System.ComponentModel.Win32Exception> исключение вызывается в том случае, если <xref:System.Net.HttpListener> добавляет префикс, который уже используется.
   
  Если указан порт, элемент узла может быть заменен с "\*" Указывает, что <xref:System.Net.HttpListener> принимает запросы, отправленные в порт, если запрошенный URI не соответствует любой другой префикс. Например, чтобы получать все запросы отправляются к порту 8080, когда запрошенный URI не обрабатывается каким-либо <xref:System.Net.HttpListener>, используется префикс *http://\*: 8080 /*. Аналогичным образом чтобы указать, что <xref:System.Net.HttpListener> принимает все запросы, отправляемые на порт, замените элемент узла символ «+». Например, *https://+:8080*. "\*" И «+» символы могут быть представлены в префиксах, содержащих пути.
   
  Начиная с .NET Core 2.0 или .NET Framework 4.6 в Windows 10, дочерние домены с подстановочными знаками поддерживаются в URI-префиксов, которые управляются <xref:System.Net.HttpListener> объекта. Чтобы указать дочерний домен с подстановочными знаками, используйте "\*" символ как часть имени узла в префикс URI. Например *http://\*.foo.com/*. Это передается в качестве аргумента для <xref:System.Net.HttpListenerPrefixCollection.Add%2A> метод. Это работает, начиная с .NET Core 2.0 или .NET Framework 4.6 в Windows 10; в более ранних версий, это приводит к возникновению ошибки <xref:System.Net.HttpListenerException>.
 
  > [!WARNING]
- > Поставить (*http://\*: 8080 /* и * http://+:8080 *) следует **не** использоваться. Это может создать уязвимость и поставить ваше приложение под угрозу. Сюда относятся и строгие, и нестрогие подстановочные знаки. Вместо этого используйте имена узлов в явном виде. Привязки с подстановочными знаками на уровне дочерних доменов (например `*.mysub.com`) не создают таких угроз безопасности, если вы полностью контролируете родительский домен (в отличие от варианта `*.com`, создающего уязвимость). Дополнительные сведения см. в документе [rfc7230, раздел 5.4](https://tools.ietf.org/html/rfc7230#section-5.4).
+ > Поставить (*http://\*: 8080 /* и *http://+:8080*) следует **не** использоваться. Это может создать уязвимость и поставить ваше приложение под угрозу. Сюда относятся и строгие, и нестрогие подстановочные знаки. Вместо этого используйте имена узлов в явном виде. Привязки с подстановочными знаками на уровне дочерних доменов (например `*.mysub.com`) не создают таких угроз безопасности, если вы полностью контролируете родительский домен (в отличие от варианта `*.com`, создающего уязвимость). Дополнительные сведения см. в документе [rfc7230, раздел 5.4](https://tools.ietf.org/html/rfc7230#section-5.4).
   
  Чтобы начать прослушивать запросы от клиентов, добавьте префиксы URI для коллекции и вызвать <xref:System.Net.HttpListener.Start%2A> метод. <xref:System.Net.HttpListener> включает в себя как синхронные, так и асинхронную модели обработки клиентских запросов. Запросы и ответы на них связанные осуществляется с помощью <xref:System.Net.HttpListenerContext> объект, возвращаемый <xref:System.Net.HttpListener.GetContext%2A> метода или его асинхронной аналоги, <xref:System.Net.HttpListener.BeginGetContext%2A> и <xref:System.Net.HttpListener.EndGetContext%2A> методы.
   
@@ -83,7 +75,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="http://msdn.microsoft.com/library/8bf0b428-5a21-4299-8d6e-bf8251fd978a">Изменения в аутентификации NTLM для HTTPWebRequest в версии 3.5 с пакетом обновления 1</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/8bf0b428-5a21-4299-8d6e-bf8251fd978a">Изменения в аутентификации NTLM для HTTPWebRequest в версии 3.5 с пакетом обновления 1</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -127,9 +119,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Этот класс не может использоваться в этой операционной системе. Для использования экземпляров этого класса требуется операционная система Windows Server 2003 или Windows XP с пакетом обновления 2.</exception>
-        <block subset="none" type="usage">
-          <para>Примечание: Данный член генерирует сведения трассировки, при включении трассировки сети в приложении. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Примечание. Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="Abort">
@@ -178,9 +168,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="AuthenticationSchemes">
@@ -336,7 +324,7 @@
       </Parameters>
       <Docs>
         <param name="callback">Делегат <see cref="T:System.AsyncCallback" />, ссылающийся на метод, который следует вызвать при наличии клиентского запроса.</param>
-        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <c>callback</c> по завершении операции.</param>
+        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <paramref name="callback" /> после завершения операции.</param>
         <summary>Начинает асинхронное получение входящего запроса.</summary>
         <returns>Объект <see cref="T:System.IAsyncResult" />, представляющий состояние асинхронной операции.</returns>
         <remarks>
@@ -367,9 +355,7 @@
         <exception cref="T:System.Net.HttpListenerException">Вызов функции Win32 завершился с ошибкой. Проверьте свойство исключения <see cref="P:System.Net.HttpListenerException.ErrorCode" />, чтобы определить причину исключения.</exception>
         <exception cref="T:System.InvalidOperationException">Этот объект не был запущен или в настоящее время остановлен.</exception>
         <exception cref="T:System.ObjectDisposedException">Данный объект закрыт.</exception>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="Close">
@@ -418,9 +404,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="DefaultServiceNames">
@@ -547,12 +531,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="asyncResult" /> не получено вызовом метода <see cref="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asyncResult" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.Net.HttpListenerException">Вызов функции Win32 завершился с ошибкой. Проверьте свойство исключения <see cref="P:System.Net.HttpListenerException.ErrorCode" />, чтобы определить причину исключения.</exception>
         <exception cref="T:System.InvalidOperationException">Метод <see cref="M:System.Net.HttpListener.EndGetContext(System.IAsyncResult)" /> уже был вызван для указанного объекта <paramref name="asyncResult" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Данный объект закрыт.</exception>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="ExtendedProtectionPolicy">
@@ -590,7 +573,7 @@
         <ReturnType>System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает объект <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который используется для расширенной защиты сеанса.</summary>
+        <summary>Получает или задает объект <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который используется для расширенной защиты сеанса.</summary>
         <value>Объект <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который задает политику для расширенной защиты.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -647,7 +630,7 @@
         <ReturnType>System.Net.HttpListener+ExtendedProtectionSelector</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает делегат, вызываемый для определения объекта <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который следует использовать для каждого запроса.</summary>
+        <summary>Получает или задает делегат, вызываемый для определения объекта <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который следует использовать для каждого запроса.</summary>
         <value>Объект <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />, который задает политику для расширенной защиты.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -726,12 +709,10 @@
         <exception cref="T:System.Net.HttpListenerException">Вызов функции Win32 завершился с ошибкой. Проверьте свойство исключения <see cref="P:System.Net.HttpListenerException.ErrorCode" />, чтобы определить причину исключения.</exception>
         <exception cref="T:System.InvalidOperationException">Этот объект не был запущен или в настоящее время остановлен.  
   
-- или - 
+-или- 
 Прослушиватель <see cref="T:System.Net.HttpListener" /> не имеет префиксов URI для ответа.</exception>
         <exception cref="T:System.ObjectDisposedException">Данный объект закрыт.</exception>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetContextAsync">
@@ -762,9 +743,7 @@
       <Parameters />
       <Docs>
         <summary>Ожидает входящий запрос как асинхронную операцию.</summary>
-        <returns>Возвращает <see cref="T:System.Threading.Tasks.Task`1" />.  
-  
-Объект задачи, представляющий асинхронную операцию. Свойство <see cref="P:System.Threading.Tasks.Task`1.Result" /> объекта задачи возвращает объект <see cref="T:System.Net.HttpListenerContext" />, представляющий запрос клиента.</returns>
+        <returns>Объект задачи, представляющий асинхронную операцию. Свойство <see cref="P:System.Threading.Tasks.Task`1.Result" /> объекта задачи возвращает объект <see cref="T:System.Net.HttpListenerContext" />, представляющий запрос клиента.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -811,7 +790,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение <see cref="T:System.Boolean" />, которое определяет, получает ли приложение исключения, которые возникают при отправке прослушивателем <see cref="T:System.Net.HttpListener" /> ответа клиенту.</summary>
-        <value>Значение <see langword="true" />, если этот прослушиватель <see cref="T:System.Net.HttpListener" /> не должен возвращать исключения, возникающие при отправке ответа клиенту; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
+        <value><see langword="true" /> Если этот <see cref="T:System.Net.HttpListener" /> не должен возвращать исключения, возникающие при отправке ответа клиенту; в противном случае <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1061,7 +1040,7 @@
  После запуска <xref:System.Net.HttpListener> объекта, можно использовать <xref:System.Net.HttpListener.Stop%2A> метод для ее остановки.  
   
 > [!NOTE]
->  Если этот экземпляр прослушивателя использует протокол https, необходимо установить и выбрать сертификат сервера. В противном случае <xref:System.Net.HttpWebRequest> подзапрос этого <xref:System.Net.HttpListener> завершится с неожиданный запрос закрытия соединения. Сертификаты сервера и другие параметры прослушивателя можно настроить с помощью HttpCfg.exe. См. в разделе [ http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp ](http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp) для получения дополнительных сведений.  
+>  Если этот экземпляр прослушивателя использует протокол https, необходимо установить и выбрать сертификат сервера. В противном случае <xref:System.Net.HttpWebRequest> подзапрос этого <xref:System.Net.HttpListener> завершится с неожиданный запрос закрытия соединения. Сертификаты сервера и другие параметры прослушивателя можно настроить с помощью HttpCfg.exe. См. в разделе [ http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp ](https://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp) для получения дополнительных сведений.  
   
    
   
@@ -1074,9 +1053,7 @@
         </remarks>
         <exception cref="T:System.Net.HttpListenerException">Вызов функции Win32 завершился с ошибкой. Проверьте свойство исключения <see cref="P:System.Net.HttpListenerException.ErrorCode" />, чтобы определить причину исключения.</exception>
         <exception cref="T:System.ObjectDisposedException">Данный объект закрыт.</exception>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="Stop">
@@ -1126,9 +1103,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Объект закрыт.</exception>
-        <block subset="none" type="usage">
-          <para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
-        </block>
+        <block subset="none" type="usage"><para>Данный член генерирует сведения трассировки, если в приложении включена трассировка сети. Дополнительные сведения см. в разделе [сетевая трассировка в .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para></block>
       </Docs>
     </Member>
     <Member MemberName="System.IDisposable.Dispose">
@@ -1209,9 +1184,7 @@
       </ReturnValue>
       <Docs>
         <summary>Диспетчер времени ожидания для этого экземпляра <see cref="T:System.Net.HttpListener" />.</summary>
-        <value>Возвращает <see cref="T:System.Net.HttpListenerTimeoutManager" />.  
-  
-Диспетчер времени ожидания для этого экземпляра <see cref="T:System.Net.HttpListener" />.</value>
+        <value>Диспетчер времени ожидания для этого экземпляра <see cref="T:System.Net.HttpListener" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

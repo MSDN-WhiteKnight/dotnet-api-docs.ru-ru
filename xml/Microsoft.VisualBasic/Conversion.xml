@@ -1,13 +1,5 @@
 <Type Name="Conversion" FullName="Microsoft.VisualBasic.Conversion">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fc28c5733fb9f77e132ec584a6f025b3048ad10b" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48643512" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Conversion" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9765a35a73e33a7e4affa6bc4de891155e6dac2a" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57950153" /></Metadata><TypeSignature Language="C#" Value="public sealed class Conversion" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Conversion extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Conversion" />
   <TypeSignature Language="VB.NET" Value="Public Module Conversion" />
@@ -24,7 +16,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
     </Attribute>
   </Attributes>
@@ -66,8 +58,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Expression" Type="System.Object" />
-        <Parameter Name="TargetType" Type="System.Type" />
+        <Parameter Name="Expression" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="TargetType" Type="System.Type" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="Expression">Преобразуемый объект.</param>
@@ -142,7 +134,7 @@ End Class
         <TypeParameter Name="TargetType" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="Expression" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TargetType">Тип данных, в который требуется преобразовать объект.</typeparam>
@@ -245,8 +237,7 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="ErrorNumber" /> выходит за пределы диапазона.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="ErrorNumber" /> выходит за пределы допустимого диапазона.</exception>
         <altmember cref="T:Microsoft.VisualBasic.ErrObject" />
         <altmember cref="P:Microsoft.VisualBasic.ErrObject.Description" />
         <altmember cref="T:System.ArgumentException" />
@@ -273,7 +264,7 @@ End Class
         <Parameter Name="ErrorNumber" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ErrorNumber">Необязательный. Любой допустимый номер ошибки.</param>
+        <param name="ErrorNumber">Необязательный параметр. Любой допустимый номер ошибки.</param>
         <summary>Возвращает сообщение об ошибке, соответствующее данному номеру ошибки.</summary>
         <returns>Сообщение об ошибке, соответствующее данному номеру ошибки.</returns>
         <remarks>
@@ -293,8 +284,7 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="ErrorNumber" /> выходит за пределы диапазона.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="ErrorNumber" /> выходит за пределы допустимого диапазона.</exception>
         <altmember cref="T:Microsoft.VisualBasic.ErrObject" />
         <altmember cref="P:Microsoft.VisualBasic.ErrObject.Description" />
         <altmember cref="T:System.ArgumentException" />
@@ -306,7 +296,7 @@ End Class
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Возвращают целую часть числа.</summary>
+        <summary>Возвращает целую часть числа.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Fix">
@@ -330,9 +320,9 @@ End Class
         <Parameter Name="Number" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Decimal" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -343,18 +333,16 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
-   
-  
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -393,9 +381,9 @@ End Class
         <Parameter Name="Number" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Double" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -405,19 +393,24 @@ End Class
  Разница между `Int` и `Fix` "функции" — что если `Number` отрицательное, `Int` возвращает первое отрицательное целое число меньше или равно `Number`, тогда как `Fix` возвращает первое отрицательное целое число больше или равно `Number`. Например `Int` преобразует-8.4 в -9, и `Fix` преобразует-8.4 в -8.  
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
-  
-   
+
+Начиная с Visual Basic 15.8, производительность `Double`-к-преобразование целочисленные оптимизирован в том случае, если передается значение, возвращенное `Fix` метода к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или если `Double`значение, возвращенное `Fix` неявно преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) присвоено `Off`. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. В следующем примере показано такое оптимизированные преобразование:
+
+```vb
+Dim d As Double = 173.7619
+Dim i1 As Integer = CInt(Fix(d))           ' Result: 173
+```  
   
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -456,9 +449,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Short" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -476,11 +469,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -519,9 +512,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Integer" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -539,11 +532,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -582,9 +575,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Long" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -602,11 +595,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -645,9 +638,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Object" /> или любое допустимое числовое выражение. Если параметр <paramref name="Number" /> имеет значение <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -657,19 +650,26 @@ End Class
  Разница между `Int` и `Fix` "функции" — что если `Number` отрицательное, `Int` возвращает первое отрицательное целое число меньше или равно `Number`, тогда как `Fix` возвращает первое отрицательное целое число больше или равно `Number`. Например `Int` преобразует-8.4 в -9, и `Fix` преобразует-8.4 в -8.  
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
-  
-   
+
+Начиная с Visual Basic 15.8, если `Number` аргумент – это объект, тип которого среда выполнения `Double` или `Single`, оптимизирована производительность плавающей-запятой в целочисленные преобразования, если передается значение, возвращаемое `Fix` метод к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или если значение, возвращаемое функцией `Fix` автоматически преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) , равным Off. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. Например:
+
+```vb
+Dim d As Object = 173.7619
+Dim i1 As Integer = CInt(Fix(d))           ' Result: 173
+Dim s As Object = 173.7619F
+Dim i2 As Integer = CInt(Fix(s))           ' Result: 173
+```     
   
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -708,9 +708,9 @@ End Class
         <Parameter Name="Number" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Single" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -721,18 +721,23 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
+Начиная с Visual Basic 15.8, производительность `Single`-к-преобразование целочисленные оптимизирован в том случае, если передается значение, возвращенное `Fix` метода к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или если `Single`значение, возвращенное `Fix` автоматически преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) , равным Off. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. В следующем примере показано такое оптимизированные преобразование:
    
-  
+```vb
+Dim s As Single = 173.7619
+Dim i2 As Integer = CInt(Fix(s))           ' Result: 173
+```
+
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -780,9 +785,9 @@ End Class
         <Parameter Name="Number" Type="System.Byte" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -805,10 +810,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -836,9 +839,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -861,10 +864,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -892,9 +893,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -917,10 +918,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -948,9 +947,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -973,10 +972,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1004,9 +1001,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1029,10 +1026,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1061,12 +1056,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.SByte" />
+        <Parameter Name="Number" Type="System.SByte" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1090,10 +1085,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Byte)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1122,12 +1115,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt16" />
+        <Parameter Name="Number" Type="System.UInt16" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1151,10 +1144,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int16)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1183,12 +1174,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt32" />
+        <Parameter Name="Number" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1212,10 +1203,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int32)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1244,12 +1233,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt64" />
+        <Parameter Name="Number" Type="System.UInt64" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую шестнадцатеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую шестнадцатеричное значение числа.</returns>
+        <returns>Строка, представляющая шестнадцатеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1273,10 +1262,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Hex(System.Int64)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Oct" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/functions/type-conversion-functions.md">Type Conversion Functions</related>
@@ -1289,7 +1276,7 @@ End Class
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Возвращают целую часть числа.</summary>
+        <summary>Возвращает целую часть числа.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Int">
@@ -1313,9 +1300,9 @@ End Class
         <Parameter Name="Number" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Decimal" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1326,18 +1313,16 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
-   
-  
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1376,9 +1361,9 @@ End Class
         <Parameter Name="Number" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Double" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1389,18 +1374,23 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
-   
+Начиная с Visual Basic 15.8, производительность двойной в целочисленные преобразования оптимизирован при передаче значения, возвращенного `Int` метода к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или, если значение типа Double возвращенный `Int` автоматически преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) , равным Off. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. В следующем примере показано такое оптимизированные преобразование:
+
+```vb
+Dim dbl As Double = 175.7619
+Dim i3 As Integer = CInt(Int(dbl))         ' Result: 175
+```  
   
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1439,9 +1429,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Short" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1459,11 +1449,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1502,9 +1492,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Integer" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1522,11 +1512,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1565,9 +1555,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Long" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1585,11 +1575,11 @@ End Class
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1628,9 +1618,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Object" /> или любое допустимое числовое выражение. Если параметр <paramref name="Number" /> имеет значение <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1641,18 +1631,25 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
-   
-  
+Начиная с Visual Basic 15.8, если `Number` аргумент – это объект, тип которого среда выполнения `Double` или `Single`, оптимизирована производительность плавающей-запятой в целочисленные преобразования, если передается значение, возвращаемое `Int` метод к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или если значение, возвращаемое функцией `Int` автоматически преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) , равным Off. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. Например:
+
+```vb
+Dim d As Object = 173.7619
+Dim i1 As Integer = CInt(Int(d))           ' Result: 173
+Dim s As Object = 173.7619F
+Dim i2 As Integer = CInt(Int(s))           ' Result: 173
+```
+
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1691,9 +1688,9 @@ End Class
         <Parameter Name="Number" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Число типа <see langword="Double" /> или любое допустимое числовое выражение. Если параметр <c>Number</c> содержит <see langword="Nothing" />, то возвращается значение <see langword="Nothing" />.</param>
-        <summary>Возвращают целую часть числа.</summary>
-        <returns>Возвращают целую часть числа.</returns>
+        <param name="Number">Обязательный. Число типа <see langword="Single" /> или любое допустимое числовое выражение.</param>
+        <summary>Возвращает целую часть числа.</summary>
+        <returns>Целая часть числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1704,18 +1701,23 @@ End Class
   
  `Fix(number)` эквивалентно `Sign(number) * Int(Abs(number)).`  
   
-   
-  
+Начиная с Visual Basic 15.8, производительность `Single`-к-преобразование целочисленные оптимизирован в том случае, если передается значение, возвращенное `Int` метода к любому из [функции преобразования целочисленных](~/docs/visual-basic/language-reference/functions/conversion-functions.md), или если `Single`значение, возвращенное `Int` автоматически преобразуется в целое число с [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) , равным Off. Эта оптимизация позволяет коду выполняться быстрее — до двух раз быстрее для кода, который выполняет большое количество преобразований в целочисленные типы. В следующем примере показано такое оптимизированные преобразование:
+
+```vb
+Dim sng As Single = 175.7619
+Dim i3 As Integer = CInt(Fix(sng))         ' Result: 175
+```
+
 ## Examples  
  В этом примере показано, как `Int` и `Fix` функции возвращают целой части числа. В случае отрицательных числовой аргумент `Int` функция возвращает первый отрицательное целое число меньше или равно числу; `Fix` функция возвращает первый отрицательное целое число, больше или равно числу. В следующем примере требуется, можно указать `Option Strict Off` , так как неявные преобразования из типа `Double` ввода `Integer` не разрешены в `Option Strict On`:  
   
  [!code-vb[VbVbalrMath#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class2.vb#4)]  
   
- Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Пример:  
+ Можно использовать `CInt` функцию для явного преобразования типов данных к типу `Integer` с `Option Strict Off`. Тем не менее `CInt` округляет значение до ближайшего целого числа вместо отбрасывания дробной части числа. Например:  
   
  [!code-vb[VbVbalrMath#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#5)]  
   
- Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Пример:  
+ Можно использовать `CInt` функция результат вызова `Fix` или `Int` для выполнения явного преобразования в целое число без округления. Например:  
   
  [!code-vb[VbVbalrMath#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#6)]  
   
@@ -1763,9 +1765,9 @@ End Class
         <Parameter Name="Number" Type="System.Byte" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1788,10 +1790,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -1819,9 +1819,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1844,10 +1844,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -1875,9 +1873,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1900,10 +1898,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -1931,9 +1927,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1956,10 +1952,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -1987,9 +1981,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2012,10 +2006,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -2044,12 +2036,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.SByte" />
+        <Parameter Name="Number" Type="System.SByte" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2073,10 +2065,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Byte)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -2105,12 +2095,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt16" />
+        <Parameter Name="Number" Type="System.UInt16" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2134,10 +2124,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int16)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -2166,12 +2154,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt32" />
+        <Parameter Name="Number" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2195,10 +2183,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int32)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -2227,12 +2213,12 @@ End Class
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="Number" Type="System.UInt64" />
+        <Parameter Name="Number" Type="System.UInt64" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
+        <param name="Number">Обязательный. Любое допустимое числовое выражение или выражение типа <see langword="String" />.</param>
         <summary>Возвращает строку, представляющую восьмеричное значение числа.</summary>
-        <returns>Возвращает строку, представляющую восьмеричное значение числа.</returns>
+        <returns>Строка, представляющая восьмеричное значение числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2256,10 +2242,8 @@ End Class
  ]]></format>
         </remarks>
         <altCompliant cref="M:Microsoft.VisualBasic.Conversion.Oct(System.Int64)" />
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Hex" />
         <altmember cref="T:System.ArgumentNullException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/keywords/conversion-summary.md">Сводка по преобразованию</related>
@@ -2287,9 +2271,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">Обязательно. <see langword="Object" />, содержащий любое допустимое числовое выражение.</param>
+        <param name="Number">Обязательный. <see langword="Object" />, содержащий любое допустимое числовое выражение.</param>
         <summary>Возвращает представление <see langword="String" /> числа.</summary>
-        <returns>Возвращает представление <see langword="String" /> числа.</returns>
+        <returns>Представление <see langword="String" /> числа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2310,10 +2294,8 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="Number" /> не задан.</exception>
-        <exception cref="T:System.InvalidCastException">
-          <paramref name="Number" /> не относится к числовому типу.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="Number" /> не задан.</exception>
+        <exception cref="T:System.InvalidCastException"><paramref name="Number" /> не относится к числовому типу.</exception>
         <altmember cref="M:Microsoft.VisualBasic.Strings.Format(System.Object,System.String)" />
         <altmember cref="Overload:Microsoft.VisualBasic.Conversion.Val" />
         <altmember cref="T:System.ArgumentNullException" />
@@ -2352,9 +2334,9 @@ End Class
         <Parameter Name="Expression" Type="System.Char" />
       </Parameters>
       <Docs>
-        <param name="Expression">Обязательно. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <c>Expression</c> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
+        <param name="Expression">Обязательный. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <paramref name="Expression" /> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
         <summary>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</summary>
-        <returns>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
+        <returns>Порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2363,37 +2345,34 @@ End Class
   
  Следующий вызов возвращает значение 1615198.  
   
+```vb  
+Val(" 1615 198th Street N.E.")   
 ```  
   
-Val(" 1615 198th Street N.E.")   
-```  
+Следующий вызов возвращает десятичное значение -1.  
   
- Следующий вызов возвращает десятичное значение -1.  
-  
-```  
-  
-Val("&HFFFF")   
+```vb  
+Val("&HFFFF")   
 ```  
   
 > [!NOTE]
 >  `Val` Функция распознает только точку (`.`) в качестве допустимого десятичного разделителя. Если используются разные десятичные разделители, например приложения на разных языках, использовать `CDbl` или `CInt` вместо этого для преобразования строки в число. Чтобы преобразовать строковое представление числа в определенной культуры в числовое значение, используйте числовой тип `Parse(String, IFormatProvider)` метод. Например, использовать <xref:System.Double.Parse%2A?displayProperty=nameWithType> при преобразовании строки в `Double`.  
   
-> [!NOTE]
->  <xref:System.InvalidCastException> Исключение может возникать в ответ на определенные редко числовые форматы. Например следующий код вызывает это исключение.  
->   
->  `' These examples cause run-time errors.`  
->   
->  `'Console.WriteLine(Val("1.34%"))`  
->   
->  `'Console.WriteLine(Val("1.34&"))`  
->   
->  Конфликт между номером в формате `Double` и `Integer` и `Long` символы типа должен обнаруживаться компилятором, если она не содержалась в строке.  
->   
->  `' These examples cause compiler errors.`  
->   
->  `'Dim m = 1.34%`  
->   
->  `'Dim n = 1.34&`  
+<xref:System.InvalidCastException> Исключение может выдаваться в ответ на определенные редко числовые форматы. Например следующий код вызывает это исключение.  
+
+```vb
+' These examples cause run-time errors.  
+Console.WriteLine(Val("1.34%"))  
+Console.WriteLine(Val("1.34&"))  
+```
+
+Конфликт между номером в формате `Double` и `Integer` и `Long` символы типа должен обнаруживаться компилятором, если она не содержалась в строке.  
+
+```vb
+' These examples cause compiler errors.  
+Dim m = 1.34%  
+Dim n = 1.34&
+```  
   
    
   
@@ -2404,10 +2383,8 @@ Val("&HFFFF")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">
-          <paramref name="InputStr" /> — слишком большое значение.</exception>
-        <exception cref="T:System.ArgumentException">
-          <see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="InputStr" /> — слишком большое значение.</exception>
+        <exception cref="T:System.ArgumentException"><see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
         <altmember cref="M:Microsoft.VisualBasic.Conversion.Str(System.Object)" />
         <altmember cref="T:System.OverflowException" />
         <altmember cref="T:System.InvalidCastException" />
@@ -2436,9 +2413,9 @@ Val("&HFFFF")
         <Parameter Name="Expression" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Expression">Обязательно. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <c>Expression</c> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
+        <param name="Expression">Обязательный. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <paramref name="Expression" /> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
         <summary>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</summary>
-        <returns>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
+        <returns>Порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2447,23 +2424,21 @@ Val("&HFFFF")
   
  Следующий вызов возвращает значение 1234123.  
   
+```vb  
+Val(" 1234 123th Street N.E.")   
 ```  
   
-Val(" 1234 123th Street N.E.")   
-```  
+Следующий вызов возвращает десятичное значение -1.  
   
- Следующий вызов возвращает десятичное значение -1.  
-  
-```  
-  
-Val("&HFFFF")   
+```vb  
+Val("&HFFFF")   
 ```  
   
 > [!NOTE]
 >  `Val` Функция распознает только точку (`.`) в качестве допустимого десятичного разделителя. При использовании других десятичные разделители, например в приложениях, используйте `CDbl` или `CInt` вместо этого для преобразования строки в число. Чтобы преобразовать строковое представление числа в определенной культуры в числовое значение, используйте числовой тип `Parse(String, IFormatProvider)` метод. Например, использовать <xref:System.Double.Parse%2A?displayProperty=nameWithType> при преобразовании строки в `Double`.  
   
 > [!NOTE]
->  <xref:System.InvalidCastException> Исключение может возникать в ответ на определенные редко числовые форматы. Например следующий код вызывает это исключение.  
+>  <xref:System.InvalidCastException> Исключение может выдаваться в ответ на определенные редко числовые форматы. Например следующий код вызывает это исключение.  
 >   
 >  `' These examples cause run-time errors.`  
 >   
@@ -2488,10 +2463,8 @@ Val("&HFFFF")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">
-          <paramref name="InputStr" /> — слишком большое значение.</exception>
-        <exception cref="T:System.ArgumentException">
-          <see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="InputStr" /> — слишком большое значение.</exception>
+        <exception cref="T:System.ArgumentException"><see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
         <altmember cref="M:Microsoft.VisualBasic.Conversion.Str(System.Object)" />
         <altmember cref="T:System.OverflowException" />
         <altmember cref="T:System.InvalidCastException" />
@@ -2520,9 +2493,9 @@ Val("&HFFFF")
         <Parameter Name="InputStr" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="InputStr">Обязательно. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <c>Expression</c> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
+        <param name="InputStr">Обязательный. Любое допустимое выражение<see langword="String" />, переменная <see langword="Object" /> или значение <see langword="Char" />. Если <paramref name="Expression" /> имеет тип <see langword="Object" />, значение должно быть преобразуемым в <see langword="String" />. В противном случае возникает ошибка <see cref="T:System.ArgumentException" />.</param>
         <summary>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</summary>
-        <returns>Возвращает порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
+        <returns>Порядковый номер, который содержится в строке в виде числовых значений соответствующего типа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2531,16 +2504,14 @@ Val("&HFFFF")
   
  Следующий вызов возвращает значение 1234123.  
   
+```vb  
+Val(" 1234 123th Street N.E.")   
 ```  
   
-Val(" 1234 123th Street N.E.")   
-```  
+Следующий вызов возвращает десятичное значение -1.  
   
- Следующий вызов возвращает десятичное значение -1.  
-  
-```  
-  
-Val("&HFFFF")   
+```vb  
+Val("&HFFFF")   
 ```  
   
 > [!NOTE]
@@ -2572,10 +2543,8 @@ Val("&HFFFF")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">
-          <paramref name="InputStr" /> — слишком большое значение.</exception>
-        <exception cref="T:System.ArgumentException">
-          <see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="InputStr" /> — слишком большое значение.</exception>
+        <exception cref="T:System.ArgumentException"><see langword="Object" /> — это выражение типа <see langword="String" />, которое нельзя преобразовать в <paramref name="Expression" />.</exception>
         <altmember cref="M:Microsoft.VisualBasic.Conversion.Str(System.Object)" />
         <altmember cref="T:System.OverflowException" />
         <altmember cref="T:System.InvalidCastException" />

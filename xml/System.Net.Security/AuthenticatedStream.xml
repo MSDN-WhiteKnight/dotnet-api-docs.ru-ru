@@ -1,13 +1,5 @@
 <Type Name="AuthenticatedStream" FullName="System.Net.Security.AuthenticatedStream">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f5d4d474378be8f68a5ed01b0425cded4566f1a8" />
-    <Meta Name="ms.sourcegitcommit" Value="cbcba80f998e27b87425ad54726bdb684fb3a932" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/04/2018" />
-    <Meta Name="ms.locfileid" Value="43654776" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class AuthenticatedStream : System.IO.Stream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="04253791639f777bf5a5ee902b84a2102c37ccd7" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58703073" /></Metadata><TypeSignature Language="C#" Value="public abstract class AuthenticatedStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AuthenticatedStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.Net.Security.AuthenticatedStream" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AuthenticatedStream&#xA;Inherits Stream" />
@@ -28,6 +20,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.IO.Stream</BaseTypeName>
@@ -55,9 +48,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>В производном классе необходимо переопределить следующие члены: <see cref="P:System.Net.Security.AuthenticatedStream.IsAuthenticated" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsEncrypted" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsMutuallyAuthenticated" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsServer" />, и <see cref="P:System.Net.Security.AuthenticatedStream.IsSigned" />.</para>
-    </block>
+    <block subset="none" type="overrides"><para>В производном классе необходимо переопределить следующие члены: <see cref="P:System.Net.Security.AuthenticatedStream.IsAuthenticated" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsEncrypted" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsMutuallyAuthenticated" />, <see cref="P:System.Net.Security.AuthenticatedStream.IsServer" />, и <see cref="P:System.Net.Security.AuthenticatedStream.IsSigned" />.</para></block>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -83,6 +74,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="innerStream" Type="System.IO.Stream" />
@@ -90,7 +82,7 @@
       </Parameters>
       <Docs>
         <param name="innerStream">Объект <see cref="T:System.IO.Stream" />, используемый потоком <see cref="T:System.Net.Security.AuthenticatedStream" /> для отправки и получения данных.</param>
-        <param name="leaveInnerStreamOpen">Объект <see cref="T:System.Boolean" />, указывающий, приводит ли закрытие данного объекта <see cref="T:System.Net.Security.AuthenticatedStream" /> к закрытию <c>innerStream</c>.</param>
+        <param name="leaveInnerStreamOpen">Объект <see cref="T:System.Boolean" />, указывающий, приводит ли закрытие данного объекта <see cref="T:System.Net.Security.AuthenticatedStream" /> к закрытию параметра <paramref name="innerStream" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Net.Security.AuthenticatedStream" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -102,9 +94,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="innerStream" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="innerStream" /> — <see langword="null" />.  
   
-- или - 
+-или- 
  <paramref name="innerStream" /> равно <see cref="F:System.IO.Stream.Null" />.</exception>
       </Docs>
     </Member>
@@ -131,6 +123,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -139,7 +132,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Security.AuthenticatedStream" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -151,10 +144,39 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
-            <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+        <block subset="none" type="overrides"><para>Метод 
+            <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
+  
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.AuthenticatedStream.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="authenticatedStream.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="InnerStream">
@@ -180,6 +202,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -225,6 +248,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -273,6 +297,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -321,6 +346,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -369,6 +395,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -417,6 +444,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -465,6 +493,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">

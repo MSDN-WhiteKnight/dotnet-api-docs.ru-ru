@@ -1,13 +1,5 @@
 <Type Name="JapaneseCalendar" FullName="System.Globalization.JapaneseCalendar">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1c572f4af92eb48b127299334118f0ede971e2d2" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48623412" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class JapaneseCalendar : System.Globalization.Calendar" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4596e028fcff6e1a812a49b938081c326e511f52" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58681524" /></Metadata><TypeSignature Language="C#" Value="public class JapaneseCalendar : System.Globalization.Calendar" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit JapaneseCalendar extends System.Globalization.Calendar" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.JapaneseCalendar" />
   <TypeSignature Language="VB.NET" Value="Public Class JapaneseCalendar&#xA;Inherits Calendar" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type JapaneseCalendar = class&#xA;    inherit Calendar" />
   <AssemblyInfo>
     <AssemblyName>System.Globalization.Calendars</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
@@ -27,6 +20,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
@@ -41,8 +35,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -56,8 +50,10 @@
 > [!NOTE]
 >  Дополнительные сведения об использовании <xref:System.Globalization.JapaneseCalendar> класса, а другой календарь на классы в .NET Framework, см. в разделе [работа с календарями](~/docs/standard/datetime/working-with-calendars.md).  
   
- Одна эра для каждого императора reign японский календарь. Текущая эра хранится эры Хэйсэй, которая началась в 1989 году григорианского календаря. Название эры обычно отображается до года. Например 2001 года григорианского календаря — Японский Хэйсэй календарного года. Обратите внимание, что первый год эры называется «Ганнэн». Таким образом год по григорианскому календарю 1989 был японский Хэйсэй Ганнэн календарного года.  
-  
+ Одна эра для каждого императора reign японский календарь. Текущая эра хранится эры Хэйсэй, которая началась в 1989 году григорианского календаря. Название эры обычно отображается до года. Например 2001 года григорианского календаря — Японский Хэйсэй календарного года. Обратите внимание, что первый год эры называется «Ганнэн». Таким образом год по григорианскому календарю 1989 был японский Хэйсэй Ганнэн календарного года. По умолчанию форматирование операций с указанной даты и времени строки формата, например «D», «F» и «Y», выходные данные Ганнэн, а не «1» в результирующей строке. 
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  Этот класс настраивает числа для эры следующим образом:  
   
 |Значение GetEra|Имя эры|Аббревиатура эры|Даты григорианского календаря|  
@@ -92,9 +88,9 @@
   
  Дату 1 января 2001 г. н. э. по григорианскому календарю соответствует первому дню месяца итигацу года эры Хэйсэй по японскому календарю.  
   
- Если приложение использует <xref:System.Globalization.JapaneseCalendar> класса <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> распознает сокращение названия эры перед года. Сокращение может без учета регистра латинского алфавита одиночные либо канджи одного символа.  
+ Если <xref:System.Globalization.JapaneseCalendar> является текущим календарем для японского языка и региональных параметров, <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> распознает сокращение названия эры перед года. Сокращение может без учета регистра латинского алфавита одиночные либо канджи одного символа. XRef:System.DateTime.Parse%2A?displayProperty=nameWithType > также распознает «1» или Ганнэн (元年) в качестве первого года эры.
   
- Каждый <xref:System.Globalization.CultureInfo> объект поддерживает несколько календарей. <xref:System.Globalization.CultureInfo.Calendar%2A> Свойство возвращает календаря по умолчанию для языка и региональных параметров и <xref:System.Globalization.CultureInfo.OptionalCalendars%2A> свойство возвращает массив, содержащий все календари, поддерживаемые языком и региональными параметрами. Чтобы изменить календарь, используемый <xref:System.Globalization.CultureInfo>, приложение должно задать <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> свойство <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> в новый <xref:System.Globalization.Calendar>.  
+ Каждый <xref:System.Globalization.CultureInfo> объект поддерживает несколько календарей. <xref:System.Globalization.CultureInfo.Calendar%2A> Свойство возвращает календаря по умолчанию для языка и региональных параметров и <xref:System.Globalization.CultureInfo.OptionalCalendars%2A> свойство возвращает массив, содержащий все календари, поддерживаемые языком и региональными параметрами. Чтобы изменить календарь, используемый <xref:System.Globalization.CultureInfo>, задайте <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType> свойство в новый <xref:System.Globalization.Calendar>.
   
  ]]></format>
     </remarks>
@@ -115,6 +111,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -127,6 +124,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -150,6 +148,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -162,6 +161,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -209,7 +209,7 @@
         <exception cref="T:System.ArgumentException">Полученное значение <see cref="T:System.DateTime" /> находится вне допустимого диапазона.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="months" /> меньше –120 000.  
   
-- или - 
+-или- 
  Значение <paramref name="months" /> больше 120 000.</exception>
         <altmember cref="T:System.DateTime" />
         <altmember cref="M:System.Globalization.JapaneseCalendar.AddYears(System.DateTime,System.Int32)" />
@@ -231,6 +231,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -243,6 +244,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -290,7 +292,7 @@
         <exception cref="T:System.ArgumentException">Полученное значение <see cref="T:System.DateTime" /> находится вне допустимого диапазона.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="time" /> находится вне допустимого диапазона типа <see cref="T:System.Globalization.JapaneseCalendar" />.  
   
-- или - 
+-или- 
  <paramref name="years" /> меньше –10 000 или больше 10 000.</exception>
         <altmember cref="T:System.DateTime" />
         <altmember cref="M:System.Globalization.JapaneseCalendar.AddMonths(System.DateTime,System.Int32)" />
@@ -319,6 +321,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -362,6 +365,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -374,6 +378,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -391,7 +396,9 @@
   
 ## Remarks  
  Одна эра для каждого императора reign японский календарь. Текущая эра хранится эры Хэйсэй, которая началась в 1989 году григорианского календаря. Название эры обычно отображается до года. Например 2001 года григорианского календаря — Японский Хэйсэй календарного года. Обратите внимание, что первый год эры называется «Ганнэн». Таким образом год по григорианскому календарю 1989 был японский Хэйсэй Ганнэн календарного года.  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  Этот класс настраивает числа для эры следующим образом:  
   
 |Значение GetEra|Имя эры|Аббревиатура эры|Даты григорианского календаря|  
@@ -404,7 +411,7 @@
  Этот класс обрабатывает даты с 8 сентября 2008 года Мэйдзи (1 января 1868 г. по григорианскому календарю). Несмотря на то, что японского календаря была переключена с лунный календарь солнечный календарь в году Мэйдзи (1873 г. по григорианскому календарю), эта реализация зависит только солнечный календарь.  
   
 > [!NOTE]
->  Дополнительные эр добавляются в будущем, ли приложений могут возникнуть более четырех эр для японского календаря. Необходимо тестировать приложения, чтобы убедиться, что они продолжают работать в таких случаях; см. в разделе [эры обработки для японского календаря](http://go.microsoft.com/fwlink/p/?LinkId=239618).  
+>  Дополнительные эр добавляются в будущем, ли приложений могут возникнуть более четырех эр для японского календаря. Необходимо тестировать приложения, чтобы убедиться, что они продолжают работать в таких случаях; см. в разделе [эры обработки для японского календаря](https://go.microsoft.com/fwlink/p/?LinkId=239618).  
   
    
   
@@ -430,6 +437,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -442,6 +450,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -455,8 +464,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает день месяца из заданной структуры <see cref="T:System.DateTime" />.</summary>
         <returns>Целое число от 1 до 31, обозначающее день месяца в заданном <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -490,6 +498,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -502,6 +511,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -515,8 +525,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает день недели из заданной структуры <see cref="T:System.DateTime" />.</summary>
         <returns>Значение <see cref="T:System.DayOfWeek" />, представляющее день недели в заданном <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -566,6 +575,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -578,6 +588,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -591,8 +602,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает день года в заданном параметре <see cref="T:System.DateTime" />.</summary>
         <returns>Целое число от 1 до 366, обозначающее день года в заданном значении <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -631,6 +641,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -643,6 +654,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -682,10 +694,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="month" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -703,6 +715,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -715,6 +728,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -752,7 +766,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -770,6 +784,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -782,6 +797,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -795,8 +811,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает значение эры из заданного объекта <see cref="T:System.DateTime" />.</summary>
         <returns>Целое число, представляющее эру в заданном <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -804,7 +819,9 @@
   
 ## Remarks  
  Одна эра для каждого императора reign японский календарь. Текущая эра хранится эры Хэйсэй, которая началась в 1989 году григорианского календаря. Название эры обычно отображается до года. Например 2001 года григорианского календаря — Японский Хэйсэй календарного года. Обратите внимание, что первый год эры называется «Ганнэн». Таким образом год по григорианскому календарю 1989 был японский Хэйсэй Ганнэн календарного года.  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  Этот класс настраивает числа для эры следующим образом:  
   
 |Значение GetEra|Имя эры|Аббревиатура эры|Даты григорианского календаря|  
@@ -815,8 +832,6 @@
 |1|明治 (Meiji)|明 ("M", "m")|8 сентября 1868 29 июля 1912|  
   
  Как правило <xref:System.Globalization.JapaneseCalendar> класс поддерживает датами из 8 сентября 2008 года Мэйдзи (8 сентября 1868 григорианского календаря), которое является значением из <xref:System.Globalization.JapaneseCalendar.MinSupportedDateTime%2A> свойство. Тем не менее <xref:System.Globalization.JapaneseCalendar.GetEra%2A> метод успешно возвращает эру для дат с 1 января по 7 сентября Мэйдзи года (1 января 1868 через 7 сентября 1868 по григорианскому календарю). Для дат ранее 1 января 1868 по григорианскому календарю, метод вызывает <xref:System.ArgumentOutOfRangeException> исключение.  
-  
-   
   
 ## Examples  
  В следующем примере отображаются значения из нескольких компонентов, <xref:System.DateTime> с точки зрения японский календарь.  
@@ -853,6 +868,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -864,6 +880,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -879,8 +896,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="year" Type="System.Int32" />
-        <Parameter Name="era" Type="System.Int32" />
+        <Parameter Name="year" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="era" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="year">Год.</param>
@@ -908,6 +925,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -920,6 +938,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -933,8 +952,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает месяц в заданном типе <see cref="T:System.DateTime" />.</summary>
         <returns>Целое число от 1 до 12, обозначающее месяц в заданном объекте <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -972,6 +990,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -984,6 +1003,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1016,7 +1036,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -1034,6 +1054,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1045,6 +1066,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1060,13 +1082,12 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="time" Type="System.DateTime" />
-        <Parameter Name="rule" Type="System.Globalization.CalendarWeekRule" />
-        <Parameter Name="firstDayOfWeek" Type="System.DayOfWeek" />
+        <Parameter Name="time" Type="System.DateTime" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rule" Type="System.Globalization.CalendarWeekRule" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="firstDayOfWeek" Type="System.DayOfWeek" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <param name="rule">Одно из значений <see cref="T:System.Globalization.CalendarWeekRule" />, определяющее календарную неделю.</param>
         <param name="firstDayOfWeek">Одно из значений <see cref="T:System.DayOfWeek" />, представляющее первый день недели.</param>
         <summary>Возвращает неделю года, к которой относится дата в заданном типе <see cref="T:System.DateTime" />.</summary>
@@ -1098,7 +1119,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="time" /> или <paramref name="firstDayOfWeek" /> находятся вне поддерживаемого диапазона значений данного календаря.  
   
-- или - 
+-или- 
  <paramref name="rule" /> не является допустимым значением <see cref="T:System.Globalization.CalendarWeekRule" />.</exception>
       </Docs>
     </Member>
@@ -1112,6 +1133,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1124,6 +1146,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1137,8 +1160,7 @@
         <Parameter Name="time" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="time">
-          <see cref="T:System.DateTime" />, который требуется прочитать.</param>
+        <param name="time"><see cref="T:System.DateTime" />, который требуется прочитать.</param>
         <summary>Возвращает значение года в заданном <see cref="T:System.DateTime" />.</summary>
         <returns>Целое число, представляющее год в заданном <see cref="T:System.DateTime" />.</returns>
         <remarks>
@@ -1176,6 +1198,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1188,6 +1211,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1231,13 +1255,13 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="month" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="day" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -1257,6 +1281,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1269,6 +1294,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1310,10 +1336,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="month" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -1332,6 +1358,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1344,6 +1371,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1381,7 +1409,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
         <altmember cref="P:System.Globalization.JapaneseCalendar.Eras" />
@@ -1399,6 +1427,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1410,6 +1439,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1451,6 +1481,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1462,6 +1493,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1508,6 +1540,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1520,6 +1553,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1555,30 +1589,39 @@
   
 ## Remarks  
  <xref:System.Globalization.JapaneseCalendar.ToDateTime%2A> Метод полезен, так как он может преобразовать в дату григорианского календаря любую дату в текущем календаре. Дата по григорианскому календарю впоследствии можно, например, для сравнения дат в разных календарях или создания эквивалентной даты в конкретном календаре.  
-  
+
+Так как <xref:System.Globalization.JapaneseCalendar> поддерживает несколько эр, в зависимости от reign императора в том, следует всегда вызывать этот метод и явным образом указать эру во избежание непреднамеренного дату и чтобы сделать назначение кода более понятным. В примере для создания экземпляра дату, которая всегда в текущей эры и один, которому принадлежит указанной эры.
+
+## Examples
+
+В следующем примере создается две даты. Первый всегда будет первый день второго года текущей эры, а второй определяет определенный день в эпоху Taisho. Выходные данные примера был создан с эры Хэйсэй как текущей эры.
+
+[!code-csharp[Specifying the era](~/samples/snippets/csharp/api/system.globalization/japanesecalendar/todatetime/program.cs)]
+[!code-vb[Specifying the era](~/samples/snippets/visualbasic/api/system.globalization/japanesecalendar/todatetime/Program.vb)]  
+
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="year" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="month" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="day" /> находится вне диапазона, поддерживаемого календарем.  
   
-- или - 
+-или- 
  Параметр <paramref name="hour" /> меньше нуля или больше 23.  
   
-- или - 
+-или- 
  Параметр <paramref name="minute" /> меньше нуля или больше 59.  
   
-- или - 
+-или- 
  Параметр <paramref name="second" /> меньше нуля или больше 59.  
   
-- или - 
+-или- 
  Параметр <paramref name="millisecond" /> меньше нуля или больше 999.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="era" /> находится вне диапазона, поддерживаемого календарем.</exception>
         <altmember cref="T:System.DateTime" />
         <altmember cref="F:System.Globalization.Calendar.CurrentEra" />
@@ -1597,6 +1640,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1609,6 +1653,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1651,6 +1696,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1663,6 +1709,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1687,7 +1734,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение, указанное в операции установки, меньше 99.  
   
-- или - 
+-или- 
 Значение, указанное в операции установки, больше 8011 (или <see langword="MaxSupportedDateTime.Year" />).</exception>
         <exception cref="T:System.InvalidOperationException">В операции задания текущий экземпляр доступен только для чтения.</exception>
         <altmember cref="M:System.Globalization.JapaneseCalendar.ToFourDigitYear(System.Int32)" />

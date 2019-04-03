@@ -1,13 +1,5 @@
 <Type Name="AppDomainIsolatedTask" FullName="Microsoft.Build.Utilities.AppDomainIsolatedTask">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6fbe7517cdd77c95c6f81593084afa113c34c9bc" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48734287" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class AppDomainIsolatedTask : MarshalByRefObject, Microsoft.Build.Framework.ITask" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3e53740b92f800a09aa20e6b39305d4a47c14bd8" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55381747" /></Metadata><TypeSignature Language="C#" Value="public abstract class AppDomainIsolatedTask : MarshalByRefObject, Microsoft.Build.Framework.ITask" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AppDomainIsolatedTask extends System.MarshalByRefObject implements class Microsoft.Build.Framework.ITask" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.AppDomainIsolatedTask" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AppDomainIsolatedTask&#xA;Inherits MarshalByRefObject&#xA;Implements ITask" />
@@ -34,12 +26,12 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>Microsoft.Build.Framework.LoadInSeparateAppDomain</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Предоставляет те же функции, что и класс <see cref="T:Microsoft.Build.Utilities.Task" />, но также является производным от класса <see cref="T:System.MarshalByRefObject" />, и поэтому его экземпляры можно создавать в собственном домене приложения.</summary>
+    <summary>Предоставляет те же возможности, что и класс <see cref="T:Microsoft.Build.Utilities.Task" />, но также наследуется от <see cref="T:System.MarshalByRefObject" />, что позволяет создавать его экземпляр в собственном домене приложения.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -133,7 +125,7 @@
       <Docs>
         <param name="taskResources">Ресурсы задачи.</param>
         <param name="helpKeywordPrefix">Префикс ключевого слова справки.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.AppDomainIsolatedTask" /> и позволяет производным классам <see cref="T:Microsoft.Build.Utilities.Task" /> регистрировать свои ресурсы, а также передавать префикс для составления ключевых слов справки из имен строковых ресурсов.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Build.Utilities.AppDomainIsolatedTask" /> и позволяет производным классам <see cref="T:Microsoft.Build.Utilities.Task" /> регистрировать свои ресурсы, а также указывать префикс для составления ключевых слов справки из имен строковых ресурсов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -180,7 +172,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает интерфейс подсистемы сборки, который доступен для задач.</summary>
-        <value>Интерфейс <see cref="T:Microsoft.Build.Framework.IBuildEngine" />, доступный задачам.</value>
+        <value>Тип <see cref="T:Microsoft.Build.Framework.IBuildEngine" />, который доступен для задач.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -302,8 +294,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskHost</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает экземпляр объекта сайта, сопоставленный с производной задачей <see cref="T:Microsoft.Build.Utilities.Task" />.</summary>
-        <value>Экземпляр объекта сайта <see cref="T:Microsoft.Build.Framework.ITaskHost" />, сопоставленный с производной задачей <see cref="T:Microsoft.Build.Utilities.Task" />. Это значение может быть равно <see langword="null" />.</value>
+        <summary>Получает или задает экземпляр объекта узла, связанный с производным <see cref="T:Microsoft.Build.Utilities.Task" />.</summary>
+        <value>Экземпляр объекта узла, <see cref="T:Microsoft.Build.Framework.ITaskHost" />, связанный с производным <see cref="T:Microsoft.Build.Utilities.Task" />. Это значение может быть равно <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -345,7 +337,7 @@
       <Parameters />
       <Docs>
         <summary>При переопределении в производном классе предоставляет задачам неограниченный срок аренды.</summary>
-        <returns>Значение <see langword="null" /> задает неограниченное время жизни.</returns>
+        <returns><see langword="null" /> для указания неограниченного времени жизни.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -386,7 +378,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает экземпляр вспомогательного объекта ведения журнала задач, который содержит методы ведения журнала задач.</summary>
-        <value>Объект <see cref="T:Microsoft.Build.Utilities.TaskLoggingHelper" />, содержащий методы ведения журналов для задачи.</value>
+        <value>Объект <see cref="T:Microsoft.Build.Utilities.TaskLoggingHelper" />, содержащий методы ведения журнала задач.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -414,8 +406,8 @@
         <ReturnType>System.Resources.ResourceManager</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает ресурсы, относящиеся к языку и региональным параметрам, для производной задачи <see cref="T:Microsoft.Build.Utilities.Task" />.</summary>
-        <value>Объект <see cref="T:System.Resources.ResourceManager" />, являющийся ресурсом производной задачи <see cref="T:Microsoft.Build.Utilities.Task" />, который зависит от языка и региональных параметров. Это значение может быть равно <see langword="null" />.</value>
+        <summary>Возвращает или задает ресурсы производного объекта <see cref="T:Microsoft.Build.Utilities.Task" />, связанные с языком и региональными параметрами.</summary>
+        <value>Объект <see cref="T:System.Resources.ResourceManager" />, представляющий собой ресурс производного объекта <see cref="T:Microsoft.Build.Utilities.Task" />, связанный с языком и региональными параметрами. Это значение может быть равно <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

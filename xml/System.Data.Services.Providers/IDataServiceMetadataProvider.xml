@@ -1,13 +1,5 @@
 <Type Name="IDataServiceMetadataProvider" FullName="System.Data.Services.Providers.IDataServiceMetadataProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="03a7a8832c7a82237e303a89b933f6677867260d" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39833726" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDataServiceMetadataProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="35378bd54530fb502424933476532ec1dd67b455" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53447532" /></Metadata><TypeSignature Language="C#" Value="public interface IDataServiceMetadataProvider" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataServiceMetadataProvider" />
   <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.IDataServiceMetadataProvider" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataServiceMetadataProvider" />
@@ -42,7 +34,7 @@
       </ReturnValue>
       <Docs>
         <summary>Имя контейнера для источника данных.</summary>
-        <value>Строка, содержащая имя контейнера.</value>
+        <value>Строковое значение, содержащее имя контейнера.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,7 +80,7 @@
       </Parameters>
       <Docs>
         <param name="resourceType">Базовый <see cref="T:System.Data.Services.Providers.ResourceType" />.</param>
-        <summary>Пытается вернуть все типы, которые являются производными от указанного типа ресурса.</summary>
+        <summary>Пытается вернуть все типы, производные от указанного типа ресурса.</summary>
         <returns>Коллекция <see cref="T:System.Collections.Generic.IEnumerable`1" /> производных объектов <see cref="T:System.Data.Services.Providers.ResourceType" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -125,10 +117,10 @@
         <Parameter Name="resourceProperty" Type="System.Data.Services.Providers.ResourceProperty" />
       </Parameters>
       <Docs>
-        <param name="resourceSet">Набор ресурсов окончания исходной ассоциации.</param>
-        <param name="resourceType">Тип ресурсов окончания исходной ассоциации.</param>
-        <param name="resourceProperty">Свойство ресурса окончания исходной ассоциации.</param>
-        <summary>Получает экземпляр <see cref="T:System.Data.Services.Providers.ResourceAssociationSet" /> при получении окончания исходной ассоциации.</summary>
+        <param name="resourceSet">Набор ресурсов исходного элемента ассоциации.</param>
+        <param name="resourceType">Тип ресурса исходного элемента ассоциации.</param>
+        <param name="resourceProperty">Свойство ресурса исходного элемента ассоциации.</param>
+        <summary>Возвращает экземпляр <see cref="T:System.Data.Services.Providers.ResourceAssociationSet" /> по исходному элементу ассоциации.</summary>
         <returns>Экземпляр <see cref="T:System.Data.Services.Providers.ResourceAssociationSet" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -152,9 +144,9 @@
         <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType" />
       </Parameters>
       <Docs>
-        <param name="resourceType">Объект <see cref="T:System.Data.Services.Providers.ResourceType" />, подлежащий оценке.</param>
+        <param name="resourceType">Объект <see cref="T:System.Data.Services.Providers.ResourceType" /> для вычисления.</param>
         <summary>Определяет, имеет ли тип ресурса производные типы.</summary>
-        <returns>Значение равно <see langword="true" />, когда тип <paramref name="resourceType" /> представляет сущность, имеющую производные типы; в противном случае значение равно <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, когда тип <paramref name="resourceType" /> представляет сущность, имеющую производные типы; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,7 +167,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceSet&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает все доступные контейнеры.</summary>
+        <summary>Возвращает все доступные контейнеры.</summary>
         <value>Коллекция <see cref="T:System.Collections.Generic.IEnumerable`1" /> объектов <see cref="T:System.Data.Services.Providers.ResourceSet" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,9 +215,9 @@
         <Parameter Name="resourceSet" Type="System.Data.Services.Providers.ResourceSet" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="name">Имя набора <see cref="T:System.Data.Services.Providers.ResourceSet" />, подлежащего преобразованию.</param>
-        <param name="resourceSet">Возвращает набор ресурсов или значение <see langword="null" />, если не найден набор ресурсов с заданным именем <c>name</c>.</param>
-        <summary>Пытается возвратить набор ресурсов на основании указанного имени.</summary>
+        <param name="name">Имя <see cref="T:System.Data.Services.Providers.ResourceSet" /> для разрешения.</param>
+        <param name="resourceSet">Возвращает набор ресурсов или значение <see langword="null" />, если не найден набор ресурсов с заданным именем <paramref name="name" />.</param>
+        <summary>Пытается получить набор ресурсов на основе указанного имени.</summary>
         <returns>Значение равно <see langword="true" />, если найден набор ресурсов с заданным именем <paramref name="name" />; в противном случае значение равно <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -251,10 +243,10 @@
         <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="name">Имя типа, подлежащего преобразованию.</param>
-        <param name="resourceType">Возвращает тип ресурса или значение <see langword="null" />, если не найден тип ресурса с заданным именем <c>name</c>.</param>
-        <summary>Пытается возвратить тип ресурса на основании указанного имени.</summary>
-        <returns>Значение равно <see langword="true" />, если найден тип ресурса с заданным именем <paramref name="name" />; в противном случае значение равно <see langword="false" />.</returns>
+        <param name="name">Имя типа для разрешения.</param>
+        <param name="resourceType">Возвращает тип ресурса или значение <see langword="null" />, если не найден тип ресурса с заданным именем <paramref name="name" />.</param>
+        <summary>Пытается получить тип ресурса на основе указанного имени.</summary>
+        <returns>Значение равно <see langword="true" />, если найден тип ресурсов с заданным именем <paramref name="name" />; в противном случае значение равно <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,9 +271,9 @@
         <Parameter Name="serviceOperation" Type="System.Data.Services.Providers.ServiceOperation" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="name">Имя операции службы, подлежащей преобразованию.</param>
-        <param name="serviceOperation">Возвращает операцию службы или значение <see langword="null" />, если не найдена операция службы с заданным именем <c>name</c>.</param>
-        <summary>Пытается возвратить операцию службы на основании указанного имени.</summary>
+        <param name="name">Имя операции службы для разрешения.</param>
+        <param name="serviceOperation">Возвращает операцию службы или значение <see langword="null" />, если не найдена операция службы с заданным именем <paramref name="name" />.</param>
+        <summary>Пытается получить операцию службы на основе указанного имени.</summary>
         <returns>Значение равно <see langword="true" />, если найдена операция службы с заданным именем <paramref name="name" />; в противном случае значение равно <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>

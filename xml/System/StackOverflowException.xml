@@ -1,13 +1,5 @@
 <Type Name="StackOverflowException" FullName="System.StackOverflowException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2a740d20961d222fa2a2d96997b764c8eb151c60" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48712462" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class StackOverflowException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83846a51ad80a353d20d5d91869f90d01e810cc3" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56346581" /></Metadata><TypeSignature Language="C#" Value="public sealed class StackOverflowException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StackOverflowException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.StackOverflowException" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class StackOverflowException&#xA;Inherits SystemException" />
@@ -37,8 +29,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -47,21 +39,25 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.StackOverflowException> возникает при ошибке переполнения стека выполнения, обычно в случае очень глубокой или неограниченной рекурсии.  
+ `StackOverflowException` возникает при ошибке переполнения стека выполнения, обычно в случае очень глубокой или неограниченной рекурсии. Поэтому убедитесь, что в коде нет бесконечного цикла или бесконечной рекурсии.
   
- <xref:System.StackOverflowException> использует COR_E_STACKOVERFLOW HRESULT, которое имеет значение 0x800703E9. <xref:System.Reflection.Emit.OpCodes.Localloc> Промежуточный язык (IL) выдает <xref:System.StackOverflowException>. Список начальных значений свойств для <xref:System.StackOverflowException> объекта, см. в разделе <xref:System.StackOverflowException.%23ctor%2A> конструкторы.  
+ `StackOverflowException` использует COR_E_STACKOVERFLOW HRESULT, которое имеет значение 0x800703E9. <xref:System.Reflection.Emit.OpCodes.Localloc> Промежуточный язык (IL) выдает `StackOverflowException`. Список начальных значений свойств для `StackOverflowException` объекта, см. в разделе <xref:System.StackOverflowException.%23ctor%2A> конструкторы.  
   
-## <a name="version-considerations"></a>Описание версии  
- В .NET Framework 1.0 и 1.1, может обработать <xref:System.StackOverflowException> объекта (например, для восстановления после неограниченной рекурсии). Начиная с .NET Framework 2.0, не может перехватывать <xref:System.StackOverflowException> со `try` / `catch` блока, а соответствующий процесс завершается по умолчанию. Следовательно следует писать код для выявления и предотвращения переполнения стека. Например если приложение зависит от рекурсии, используйте счетчик или условие состояния для завершения рекурсивного цикла. В следующем примере используется счетчик, чтобы убедиться, что количество рекурсивных вызовов `Execute` метод превышает максимальную, определяется константой MAX_RECURSIVE_CALLS.  
+ Начиная с .NET Framework 2.0, не может перехватывать `StackOverflowException` со `try` / `catch` блока, а соответствующий процесс завершается по умолчанию. Следовательно следует писать код для выявления и предотвращения переполнения стека. Например если приложение зависит от рекурсии, используйте счетчик или условие состояния для завершения рекурсивного цикла.
+В разделе (Examples)(#examples) Пример использования этой технологии.
+ 
+> [!NOTE]
+>  Применение <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute> атрибут метод, который создает `StackOverflowException` не оказывает влияния. По-прежнему не удается обработать исключение из пользовательского кода.
+
+ Если приложение размещается среда CLR (CLR), оно может указать, что среда CLR будет производить выгрузку домена приложения, где возникает исключение переполнения стека и соответствующий процесс продолжит. Дополнительные сведения см. в разделе [интерфейс ICLRPolicyManager](~/docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md).
+
+## Examples
+
+ В следующем примере используется счетчик, чтобы убедиться, что количество рекурсивных вызовов `Execute` метод превышает максимальную, определяется константой MAX_RECURSIVE_CALLS.
   
  [!code-csharp[System.StackOverflowException.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.stackoverflowexception.class/cs/example1a.cs#1)]
  [!code-vb[System.StackOverflowException.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.stackoverflowexception.class/vb/example1a.vb#1)]  
-  
-> [!NOTE]
->  Применение <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute> атрибут метод, который создает <xref:System.StackOverflowException> не оказывает влияния. По-прежнему не удается обработать исключение из пользовательского кода.  
-  
- Если приложение размещается среда CLR (CLR), оно может указать, что среда CLR будет производить выгрузку домена приложения, где возникает исключение переполнения стека и соответствующий процесс продолжит. Дополнительные сведения см. в разделе [интерфейс ICLRPolicyManager](~/docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md).  
-  
+
  ]]></format>
     </remarks>
     <altmember cref="T:System.Exception" />
@@ -194,7 +190,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если параметр <c>innerException</c> не является пустой ссылкой (<see langword="Nothing" /> в Visual Basic), текущее исключение создается в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="innerException">Исключение, которое является причиной текущего исключения. Если параметр <paramref name="innerException" /> не является указателем null (<see langword="Nothing" /> в Visual Basic), то текущее исключение создается в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.StackOverflowException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

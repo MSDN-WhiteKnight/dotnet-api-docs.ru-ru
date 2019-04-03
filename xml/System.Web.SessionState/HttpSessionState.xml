@@ -1,13 +1,5 @@
 <Type Name="HttpSessionState" FullName="System.Web.SessionState.HttpSessionState">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="18f7affdc0f6b213b0b52cd239ff1cb01d7bf31d" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51303466" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="62158b5fb59aa3b2ab2dd80a470f10b4aa71febc" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58553779" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpSessionState extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.SessionState.HttpSessionState" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpSessionState&#xA;Implements ICollection" />
@@ -38,7 +30,7 @@
 ## Remarks  
  ASP.NET предоставляет управление состоянием сеанса, чтобы можно было хранить сведения, связанные с сеансом браузера уникальный нескольких запросов. Вы можете хранить коллекции значений, указанных по имени ключа или по числовому индексу. Доступ к значениям сеанса и функциональные возможности используется <xref:System.Web.SessionState.HttpSessionState> класс, который можно получить с помощью <xref:System.Web.HttpContext.Session%2A> текущего элемента <xref:System.Web.HttpContext>, или <xref:System.Web.UI.Page.Session%2A> свойство <xref:System.Web.UI.Page>.  
   
- Данные сеанса, связанный с сеансом конкретного браузера, с использованием уникального идентификатора. По умолчанию этот идентификатор хранится в файле cookie сеанса не истекает в браузере, но можно также настроить приложения для хранения идентификатора сеанса в URL-адрес, задав `cookieless` атрибут `true` или <xref:System.Web.HttpCookieMode.UseUri> в элементе конфигурации приложения. Вы можете определить, поддерживаются ли файлы cookie с помощью браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.UseDeviceProfile> для `cookieless` атрибута. Вы также можете определить, включены ли файлы cookie для браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.AutoDetect> для `cookieless` атрибута. Если файлы cookie, поддерживаются при <xref:System.Web.HttpCookieMode.UseDeviceProfile> указан, или когда включен <xref:System.Web.HttpCookieMode.AutoDetect> указан, то сеанс будет иметь идентификатор, хранимые в файле cookie; в противном случае будет храниться идентификатор сеанса в URL-адрес.  
+ Данные сеанса, связанный с сеансом конкретного браузера, с использованием уникального идентификатора. По умолчанию этот идентификатор хранится в файле cookie сеанса не истекает в браузере, но можно также настроить приложения для хранения идентификатора сеанса в URL-адрес, задав `cookieless` атрибут `true` или <xref:System.Web.HttpCookieMode.UseUri> в [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации приложения. Вы можете определить, поддерживаются ли файлы cookie с помощью браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.UseDeviceProfile> для `cookieless` атрибута. Вы также можете определить, включены ли файлы cookie для браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.AutoDetect> для `cookieless` атрибута. Если файлы cookie, поддерживаются при <xref:System.Web.HttpCookieMode.UseDeviceProfile> указан, или когда включен <xref:System.Web.HttpCookieMode.AutoDetect> указан, то сеанс будет иметь идентификатор, хранимые в файле cookie; в противном случае будет храниться идентификатор сеанса в URL-адрес.  
   
  Сеансы запускаются во время первого запроса и значения сеанса будет сохраняться до тех пор, пока выполняется новый запрос браузером перед количество минут, определенных в <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> pass свойство. При начале нового сеанса, согласованность сеанса <xref:System.Web.SessionState.SessionStateModule.Start> события. Это событие можно использовать для выполнения дополнительных операций в начале сеанса, например, установка по умолчанию значения сеанса. При превышении времени ожидания, <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> вызывается метод, или приложения ASP.NET выключен, сеанс <xref:System.Web.SessionState.SessionStateModule.End> события. Это событие можно использовать, чтобы выполнить необходимые операции очистки. <xref:System.Web.SessionState.SessionStateModule.End> Событие возникает только тогда, когда состояние сеанса `mode` присваивается <xref:System.Web.SessionState.SessionStateMode.InProc>.  
   
@@ -46,9 +38,9 @@
   
  Состояние сеанса не сохраняется за пределами границ приложения ASP.NET. Если браузер переходит в другое приложение, сведения о сеансе для нового приложения недоступен.  
   
- Значения сеанса хранятся в памяти на веб-сервере, по умолчанию. Можно также хранить значения сеанса в базе данных SQL Server, на сервере состояний ASP.NET или пользовательский сервер. Это позволяет сохранить значения сеанса, в случаях, где перезапускает процесс ASP.NET или IIS или приложения ASP.NET и сделать доступными значения сеанса на всех серверах в веб-ферме. Это поведение, настроить, задав `mode` атрибут является допустимым <xref:System.Web.SessionState.SessionStateMode> значение в элементе конфигурации приложения. Дополнительные сведения см. в разделе [режимы состояния сеанса](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4).  
+ Значения сеанса хранятся в памяти на веб-сервере, по умолчанию. Можно также хранить значения сеанса в базе данных SQL Server, на сервере состояний ASP.NET или пользовательский сервер. Это позволяет сохранить значения сеанса, в случаях, где перезапускает процесс ASP.NET или IIS или приложения ASP.NET и сделать доступными значения сеанса на всех серверах в веб-ферме. Это поведение, настроить, задав `mode` атрибут является допустимым <xref:System.Web.SessionState.SessionStateMode> значение в [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации приложения. Дополнительные сведения см. в разделе [режимы состояния сеанса](https://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4).  
   
- Альтернативы состоянию сеанса включают состояние приложения (см. в разделе <xref:System.Web.HttpApplication.Application%2A> свойства) и кэш ASP.NET (см. в разделе <xref:System.Web.Caching> пространство имен), какие переменные хранилища, которые может осуществляться всеми пользователями приложения ASP.NET; профиля ASP.NET (см. в разделе <xref:System.Web.Profile> пространство имен), хранящего значения пользователя в хранилище данных без истечение срока действия их с помощью времени ожидания; ASP.NET <xref:System.Web.UI.WebControls?displayProperty=nameWithType>, который сохранения значений элементов управления в <xref:System.Web.UI.Control.ViewState%2A>; <xref:System.Web.HttpResponse.Cookies%2A>; <xref:System.Web.HttpRequest.QueryString%2A> свойство; и поля в HTML-формы, которые доступны из HTTP `POST` с помощью <xref:System.Web.HttpRequest.Form%2A> коллекции. Дополнительные сведения о различиях между состоянием сеанса и другие альтернативные элементы управления состоянием см. в разделе [управления состоянием](http://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732).  
+ Альтернативы состоянию сеанса включают состояние приложения (см. в разделе <xref:System.Web.HttpApplication.Application%2A> свойства) и кэш ASP.NET (см. в разделе <xref:System.Web.Caching> пространство имен), какие переменные хранилища, которые может осуществляться всеми пользователями приложения ASP.NET; профиля ASP.NET (см. в разделе <xref:System.Web.Profile> пространство имен), хранящего значения пользователя в хранилище данных без истечение срока действия их с помощью времени ожидания; ASP.NET <xref:System.Web.UI.WebControls?displayProperty=nameWithType>, который сохранения значений элементов управления в <xref:System.Web.UI.Control.ViewState%2A>; <xref:System.Web.HttpResponse.Cookies%2A>; <xref:System.Web.HttpRequest.QueryString%2A> свойство; и поля в HTML-формы, которые доступны из HTTP `POST` с помощью <xref:System.Web.HttpRequest.Form%2A> коллекции. Дополнительные сведения о различиях между состоянием сеанса и другие альтернативные элементы управления состоянием см. в разделе [управления состоянием](https://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732).  
   
    
   
@@ -56,7 +48,7 @@
  В следующем примере кода задает и получает значения из состояния сеанса.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[HttpSessionState#30](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/session2cs.aspx#30)]
  [!code-aspx-vb[HttpSessionState#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/session2vb.aspx#30)]  
@@ -65,8 +57,8 @@
     </remarks>
     <altmember cref="N:System.Web.Profile" />
     <altmember cref="N:System.Web.Caching" />
-    <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07">Общие сведения об использовании скрипта</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07">Общие сведения об использовании скрипта</related>
   </Docs>
   <Members>
     <Member MemberName="Abandon">
@@ -95,13 +87,13 @@
 ## Remarks  
  Один раз <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> вызывается метод, текущий сеанс больше не является допустимым, и запускается новый сеанс. <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> вызывает <xref:System.Web.SessionState.SessionStateModule.End> возникает событие. Новый <xref:System.Web.SessionState.SessionStateModule.Start> событие будет вызываться при следующем запросе.  
   
- По умолчанию уничтожен идентификаторы сеансов для сеансов отказов или просрочен. То есть если выполняется запрос, включающий идентификатор сеанса для сеанса истекшим сроком действия или отмены, новый сеанс запускается через один и тот же идентификатор сеанса. Вы можете отключить, задав `regenerateExpiredSessionId` атрибута элемента конфигурации для `true`. Дополнительные сведения см. в разделе [идентификаторы сеансов](http://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb).  
+ По умолчанию уничтожен идентификаторы сеансов для сеансов отказов или просрочен. То есть если выполняется запрос, включающий идентификатор сеанса для сеанса истекшим сроком действия или отмены, новый сеанс запускается через один и тот же идентификатор сеанса. Вы можете отключить, задав `regenerateExpiredSessionId` атрибут [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации, `true`. Дополнительные сведения см. в разделе [идентификаторы сеансов](https://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb).  
   
  <xref:System.Web.SessionState.SessionStateModule.End> Событий поддерживается только тогда, когда <xref:System.Web.SessionState.HttpSessionState.Mode%2A> свойству <xref:System.Web.SessionState.SessionStateMode.InProc>.  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -141,15 +133,15 @@
  В следующем примере показано, как для хранения значений в состоянии сеанса с помощью <xref:System.Web.SessionState.HttpSessionState.Add%2A> метод. Также показано, как для удаления значений в состоянии сеанса с помощью <xref:System.Web.SessionState.HttpSessionState.Remove%2A> метод. Объект <xref:System.Web.UI.WebControls.Repeater> управления используется для отображения состояния сеанса содержимое на веб-странице. <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A> Метод используется для прохода по коллекции состояния сеанса и заполнить <xref:System.Web.UI.WebControls.Repeater> элемента управления.  
   
 > [!IMPORTANT]
->  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
+>  В этом примере имеется текстовое поле, принимающее вводимые пользователем данные, что является потенциальной угрозой безопасности. По умолчанию данные, вводимые пользователем на веб-страницах ASP.NET, проверяются на наличие скриптов и HTML-элементов. Дополнительные сведения см. в разделе [Общие сведения об использовании сценариев](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
  [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
  [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
-        <related type="Article" href="http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07">Общие сведения об использовании скрипта</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07">Общие сведения об использовании скрипта</related>
       </Docs>
     </Member>
     <Member MemberName="Clear">
@@ -171,9 +163,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Удаляет все ключи и значения из коллекции состояния сеанса.</summary>
+        <summary>Удаляет из коллекции состояния сеанса все ключи и значения.</summary>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="CodePage">
@@ -206,7 +198,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Contents">
@@ -245,7 +237,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="CookieMode">
@@ -265,8 +257,8 @@
         <ReturnType>System.Web.HttpCookieMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, настроено ли приложение для сеансов без поддержки файлов cookie.</summary>
-        <value>Одно из значений <see cref="T:System.Web.HttpCookieMode" />, позволяющее определить, настроено ли приложение для сеансов без поддержки файлов Cookie. Значение по умолчанию: <see cref="F:System.Web.HttpCookieMode.UseCookies" />.</value>
+        <summary>Возвращает значение, позволяющее определить, настроено ли приложение для сеансов без поддержки файлов Cookie.</summary>
+        <value>Одно из значений <see cref="T:System.Web.HttpCookieMode" />, позволяющее определить, настроено ли приложение для сеансов без поддержки файлов Cookie. Значение по умолчанию — <see cref="F:System.Web.HttpCookieMode.UseCookies" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -291,7 +283,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
@@ -319,10 +311,10 @@
       </Parameters>
       <Docs>
         <param name="array">Массив <see cref="T:System.Array" />, в который записываются значения сеанса.</param>
-        <param name="index">Отсчитываемый от нуля индекс в массиве <c>array</c>, с которого начинается копирование.</param>
-        <summary>Копирует коллекцию значений состояния сеанса в одномерный массив начиная с указанного индекса в массиве.</summary>
+        <param name="index">Значение индекса в массиве <paramref name="array" /> (индексация с нуля), с которого начинается копирование.</param>
+        <summary>Копирует коллекцию значений состояния сеанса в одномерный массив, начиная с заданного индекса массива.</summary>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -349,7 +341,7 @@
         <summary>Получает число элементов в коллекции состояний сеанса.</summary>
         <value>Количество элементов в коллекции.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
@@ -374,7 +366,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает перечислитель, который можно использовать для чтения всех переменных имен состояния сеанса в текущем сеансе.</summary>
+        <summary>Возвращает перечислитель, который можно использовать для считывания всех имен переменных состояния сеанса в текущем сеансе.</summary>
         <returns>Объект <see cref="T:System.Collections.IEnumerator" />, который может использоваться для итерации по именам переменных в коллекции состояния сеанса.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -387,7 +379,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="IsCookieless">
@@ -414,7 +406,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- ASP.NET однозначно определяет сеансы с каждым браузером. По умолчанию уникальный идентификатор для сеанса хранится в файле cookie сеанса не истекает в браузере. Можно указать, что идентификаторы сеанса не сохраняются в файле cookie, задав `cookieless` атрибут `true` элемента конфигурации.  
+ ASP.NET однозначно определяет сеансы с каждым браузером. По умолчанию уникальный идентификатор для сеанса хранится в файле cookie сеанса не истекает в браузере. Можно указать, что идентификаторы сеанса не сохраняются в файле cookie, задав `cookieless` атрибут `true` в [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемента конфигурации.  
   
 > [!NOTE]
 >  Для повышения безопасности приложения, приложения пользователи должны иметь возможность выполнять выход, после чего он должен вызывать <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> метод. Это уменьшает вероятность получения с помощью уникального идентификатора в URL-АДРЕСЕ для извлечения личных данных, хранимых в сеансе пользователя.  
@@ -429,7 +421,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  Идентификатор сеанса внедрен в URL-адрес после косой черты, который следует за именем приложения и перед любой оставшиеся идентификатор файла или виртуального каталога. Это позволяет ASP.NET обрабатывать имя приложения до включения <xref:System.Web.SessionState.SessionStateModule> в запросе.  
   
- По умолчанию перезапускаются идентификаторы сеанса, используемые в сеансах без файлов cookie. То есть если выполняется запрос с Идентификатором сеанса с истекшим сроком действия, запускается новый сеанс с помощью идентификатора сеанса, содержащимся в запросе. Такое поведение может привести к нежелательному раскрытию данных сеанса, если ссылку, которая содержит идентификатор сеанса без файлов cookie совместно используется несколькими обозревателями, возможно через поисковую систему или другую программу. Можно уменьшить вероятность данные сеанса совместно с несколькими клиентами, отключив повторное использование идентификаторов сеансов. Чтобы сделать это, установите `regenerateExpiredSessionId` атрибута элемента конфигурации для `true`. Таким образом новый идентификатор сеанса создается при запросе без поддержки файлов cookie сеанса с идентификатором сеанса с истекшим сроком действия. Обратите внимание, что если запроса, выполняемого с истекший идентификатор сеанса используется протокол HTTP `POST` метод, то все переданные данные будут потеряны `regenerateExpiredSessionId` является `true`, как ASP.NET выполняет перенаправление, чтобы гарантировать, что браузер имеет идентификатор сеанса в URL-адрес.  
+ По умолчанию перезапускаются идентификаторы сеанса, используемые в сеансах без файлов cookie. То есть если выполняется запрос с Идентификатором сеанса с истекшим сроком действия, запускается новый сеанс с помощью идентификатора сеанса, содержащимся в запросе. Такое поведение может привести к нежелательному раскрытию данных сеанса, если ссылку, которая содержит идентификатор сеанса без файлов cookie совместно используется несколькими обозревателями, возможно через поисковую систему или другую программу. Можно уменьшить вероятность данные сеанса совместно с несколькими клиентами, отключив повторное использование идентификаторов сеансов. Чтобы сделать это, установите `regenerateExpiredSessionId` атрибут [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации, `true`. Таким образом новый идентификатор сеанса создается при запросе без поддержки файлов cookie сеанса с идентификатором сеанса с истекшим сроком действия. Обратите внимание, что если запроса, выполняемого с истекший идентификатор сеанса используется протокол HTTP `POST` метод, то все переданные данные будут потеряны `regenerateExpiredSessionId` является `true`, как ASP.NET выполняет перенаправление, чтобы гарантировать, что браузер имеет идентификатор сеанса в URL-адрес.  
   
 > [!NOTE]
 >  Хотя параметр `regenerateExpiredSessionId` атрибут `true` снижает вероятность нежелательных совместного использования данных сеанса, он не защищает от получения получения доступа к сеансу другого пользователя путем получения <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> значение и включив его в запросы к серверу. При сохранении личных или конфиденциальных сведений в состоянии сеанса, рекомендуется использовать SSL для шифрования любое взаимодействие между браузером и сервером, который включает в себя <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>.  
@@ -453,7 +445,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="IsNewSession">
@@ -477,7 +469,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <summary>Возвращает значение, позволяющее определить, был ли создан сеанс с текущим запросом.</summary>
         <value>Если сеанс был создан с текущим запросом, значение <see langword="true" />, если нет, значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
@@ -499,9 +491,9 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, позволяющее определить, доступен ли сеанс только для чтения.</summary>
-        <value>Значение <see langword="true" />, если сеанс доступен только для чтения; в противном случае — значение <see langword="false" />.</value>
+        <value>Если сеанс доступен только для чтения, значение <see langword="true" />, если нет, значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="IsSynchronized">
@@ -526,9 +518,9 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, позволяющее определить, синхронизирован ли доступ к коллекции значений состояния сеанса (потокобезопасный доступ).</summary>
-        <value>Значение <see langword="true" />, если доступ к коллекции является синхронизированным (потокобезопасным); в противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если доступ к коллекции синхронизирован (потокобезопасен); в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="Item">
@@ -538,7 +530,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       </AssemblyInfo>
       <Docs>
         <summary>Возвращает или задает индивидуальные значения сеанса.</summary>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="Item">
@@ -566,7 +558,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <summary>Возвращает или задает значение сеанса по числовому индексу.</summary>
         <value>Значение состояния сеанса, сохраненное по указанному индексу или значение <see langword="null" />, если элемент не существует.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -594,7 +586,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <summary>Возвращает или задает значение сеанса по имени.</summary>
         <value>Значение состояния сеанса с указанным именем или значение <see langword="null" />, если элемент не существует.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Keys">
@@ -618,7 +610,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <summary>Возвращает коллекцию ключей для всех значений, хранящихся в коллекции состояния сеанса.</summary>
         <value>Объект <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />, в котором содержатся все сеансовые ключи.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="LCID">
@@ -639,7 +631,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает код языка (LCID) текущего сеанса.</summary>
+        <summary>Возвращает или задает код языка текущего сеанса.</summary>
         <value>Экземпляр <see cref="T:System.Globalization.CultureInfo" />, который задает язык и региональные параметры текущего сеанса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -651,7 +643,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Mode">
@@ -673,12 +665,12 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       </ReturnValue>
       <Docs>
         <summary>Возвращает текущий режим состояния сеанса.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Web.SessionState.SessionStateMode" />.</value>
+        <value>Одно из значений <see cref="T:System.Web.SessionState.SessionStateMode" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Сведения о том, как настроить сервер для <xref:System.Web.SessionState.SessionStateMode.StateServer> или <xref:System.Web.SessionState.SessionStateMode.SQLServer> хранения состояния сеанса см. в разделе [ASP.NET Session State Overview](http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc).  
+ Сведения о том, как настроить сервер для <xref:System.Web.SessionState.SessionStateMode.StateServer> или <xref:System.Web.SessionState.SessionStateMode.SQLServer> хранения состояния сеанса см. в разделе [ASP.NET Session State Overview](https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc).  
   
    
   
@@ -699,7 +691,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса ASP.NET</related>
       </Docs>
     </Member>
     <Member MemberName="Remove">
@@ -723,7 +715,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">Имя элемента, удаляемого из коллекции состояний сеанса.</param>
+        <param name="name">Имя элемента, который необходимо удалить из коллекции состояния сеанса.</param>
         <summary>Удаляет элемент из коллекции состояния сеанса.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -741,7 +733,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveAll">
@@ -768,7 +760,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Удаляет все ключи и значения из коллекции состояния сеанса.</summary>
+        <summary>Удаляет из коллекции состояния сеанса все ключи и значения.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -777,7 +769,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
@@ -801,14 +793,14 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс элемента, удаляемого из коллекции состояний сеанса.</param>
+        <param name="index">Индекс элемента, который необходимо удалить из коллекции состояния сеанса.</param>
         <summary>Удаляет элемент по заданному индексу из коллекции состояния сеанса.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.  
   
-\- или - 
+-или- 
  Значение параметра <paramref name="index" /> больше или равно значению свойства <see cref="P:System.Web.SessionState.HttpSessionState.Count" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="SessionID">
@@ -829,7 +821,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает уникальный идентификатор сеанса.</summary>
+        <summary>Возвращает для сеанса уникальный идентификатор.</summary>
         <value>Уникальный идентификатор сеанса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -837,7 +829,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
 ## Remarks  
  <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> Свойство используется для уникальной идентификации браузера с помощью данных сеанса на сервере. <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> Значение случайным образом созданный ASP.NET и сохраняется в файле cookie сеанса не истекает в браузере. <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> Значение затем отправляется в файле cookie при каждом запросе к приложению ASP.NET.  
   
- Если вы хотите отключить использование файлов cookie в приложении ASP.NET и все еще используют состояние сеанса, можно настроить приложение для хранения идентификатора сеанса в URL-адрес вместо файла cookie, задав `cookieless` атрибут конфигурации элемент `true`, или <xref:System.Web.HttpCookieMode.UseUri>, в файле Web.config для приложения. Вы можете определить, поддерживаются ли файлы cookie с помощью браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.UseDeviceProfile> для `cookieless` атрибута. Вы также можете определить, включены ли файлы cookie для браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.AutoDetect> для `cookieless` атрибута. Если файлы cookie, поддерживаются при <xref:System.Web.HttpCookieMode.UseDeviceProfile> указан, или когда включен <xref:System.Web.HttpCookieMode.AutoDetect> указан, то сеанс будет иметь идентификатор, хранимые в файле cookie; в противном случае будет храниться идентификатор сеанса в URL-адрес. Дополнительные сведения см. в описании свойства <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A>.  
+ Если вы хотите отключить использование файлов cookie в приложении ASP.NET и все еще используют состояние сеанса, можно настроить приложение для хранения идентификатора сеанса в URL-адрес вместо файла cookie, задав `cookieless` атрибут [ sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации, `true`, или <xref:System.Web.HttpCookieMode.UseUri>, в файле Web.config для приложения. Вы можете определить, поддерживаются ли файлы cookie с помощью браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.UseDeviceProfile> для `cookieless` атрибута. Вы также можете определить, включены ли файлы cookie для браузера, указав значение ASP.NET <xref:System.Web.HttpCookieMode.AutoDetect> для `cookieless` атрибута. Если файлы cookie, поддерживаются при <xref:System.Web.HttpCookieMode.UseDeviceProfile> указан, или когда включен <xref:System.Web.HttpCookieMode.AutoDetect> указан, то сеанс будет иметь идентификатор, хранимые в файле cookie; в противном случае будет храниться идентификатор сеанса в URL-адрес. Дополнительные сведения см. в описании свойства <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A>.  
   
  <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> Передаются между сервером и обозревателем в виде открытого текста, либо в файле cookie, либо в URL-адрес. В результате получения может получить доступ к сеансу другого пользователя путем получения <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> значение и включив его в запросы к серверу. При сохранении личных или конфиденциальных сведений в состоянии сеанса, рекомендуется использовать SSL для шифрования любое взаимодействие между браузером и сервером, который включает в себя <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>.  
   
@@ -863,7 +855,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="StaticObjects">
@@ -904,7 +896,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="SyncRoot">
@@ -928,10 +920,10 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает объект, который можно использовать для синхронизации доступа к коллекции значений состояния сеанса.</summary>
+        <summary>Возвращает объект, который можно использовать для синхронизации доступа к коллекции значений состояния сеанса.</summary>
         <value>Объект, который можно использовать для синхронизации доступа к коллекции.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
     <Member MemberName="Timeout">
@@ -952,13 +944,13 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает и задает количество времени (в минутах), которое проходит между запросами, прежде чем поставщик состояния сеанса завершает сеанс.</summary>
+        <summary>Получает или задает количество времени (в минутах), которое проходит между запросами, прежде чем поставщик состояния сеанса завершает сеанс.</summary>
         <value>Время ожидания в минутах.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> Свойство можно задать в файле Web.config для приложения с помощью `timeout` атрибут элемент конфигурации, или можно задать <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> значение свойства, непосредственно с помощью кода приложения.  
+ <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> Свойство можно задать в файле Web.config для приложения с помощью `timeout` атрибут [sessionState](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100)) элемент конфигурации, либо задать <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> напрямую, используя значение свойства код приложения.  
   
  <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> Свойство не может быть присвоено значение больше, чем 525,600 минут (1 год). Значение по умолчанию — 20 минут.  
   
@@ -980,7 +972,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc">Общие сведения о состоянии сеанса</related>
       </Docs>
     </Member>
   </Members>

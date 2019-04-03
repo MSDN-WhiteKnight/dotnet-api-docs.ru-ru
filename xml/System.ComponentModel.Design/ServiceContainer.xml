@@ -1,17 +1,9 @@
 <Type Name="ServiceContainer" FullName="System.ComponentModel.Design.ServiceContainer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fb16f24c7c76d5335b7b2a9df8572aba25d90812" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51307523" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ServiceContainer : IDisposable, System.ComponentModel.Design.IServiceContainer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="76fb7da126ec2dfa0179d176443fd2884a2176c1" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57929521" /></Metadata><TypeSignature Language="C#" Value="public class ServiceContainer : IDisposable, IServiceProvider, System.ComponentModel.Design.IServiceContainer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceContainer extends System.Object implements class System.ComponentModel.Design.IServiceContainer, class System.IDisposable, class System.IServiceProvider" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ServiceContainer" />
-  <TypeSignature Language="VB.NET" Value="Public Class ServiceContainer&#xA;Implements IDisposable, IServiceContainer" />
-  <TypeSignature Language="C++ CLI" Value="public ref class ServiceContainer : IDisposable, System::ComponentModel::Design::IServiceContainer" />
+  <TypeSignature Language="VB.NET" Value="Public Class ServiceContainer&#xA;Implements IDisposable, IServiceContainer, IServiceProvider" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ServiceContainer : IDisposable, IServiceProvider, System::ComponentModel::Design::IServiceContainer" />
   <TypeSignature Language="F#" Value="type ServiceContainer = class&#xA;    interface IServiceContainer&#xA;    interface IDisposable&#xA;    interface IServiceProvider" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -49,7 +41,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.ComponentModel.Design.ServiceContainer> Объект может использоваться для хранения и предоставления служб. Класс <xref:System.ComponentModel.Design.ServiceContainer> реализует интерфейс списка <xref:System.ComponentModel.Design.IServiceContainer>.  
+ <xref:System.ComponentModel.Design.ServiceContainer> Объект может использоваться для хранения и предоставления служб. Интерфейс <xref:System.ComponentModel.Design.ServiceContainer> реализует интерфейс <xref:System.ComponentModel.Design.IServiceContainer>.  
   
  <xref:System.ComponentModel.Design.ServiceContainer> Объект может быть создан с помощью конструктора, который добавляет родительского <xref:System.ComponentModel.Design.IServiceContainer> через службы, которые можно при необходимости добавлении или удалении из всех родительских <xref:System.ComponentModel.Design.IServiceContainer> объектов, включая ближайший родительский объект <xref:System.ComponentModel.Design.IServiceContainer>. Чтобы добавить или удалить службу из всех <xref:System.ComponentModel.Design.IServiceContainer> реализации, которые связаны с это <xref:System.ComponentModel.Design.IServiceContainer> через родительские связи, вызовите <xref:System.ComponentModel.Design.ServiceContainer.AddService%2A> или <xref:System.ComponentModel.Design.ServiceContainer.RemoveService%2A> перегрузку метода, которая принимает логическое значение, указывающее, следует ли распространить запрос службы .  
   
@@ -226,7 +218,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="callback" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="serviceType" /> или <paramref name="callback" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">В контейнере уже присутствует служба с типом <paramref name="serviceType" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
@@ -272,7 +264,7 @@
       </Parameters>
       <Docs>
         <param name="serviceType">Тип добавляемой службы.</param>
-        <param name="serviceInstance">Экземпляр добавляемой службы. Этот объект должен реализовывать или наследовать тип, определяемый параметром <c>serviceType</c>.</param>
+        <param name="serviceInstance">Экземпляр добавляемой службы. Данный объект должен реализовывать или наследовать тип, определяемый параметром <paramref name="serviceType" />.</param>
         <summary>Добавляет заданную службу в контейнер служб.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -286,7 +278,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="serviceInstance" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="serviceType" /> или <paramref name="serviceInstance" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">В контейнере уже присутствует служба с типом <paramref name="serviceType" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
@@ -332,7 +324,7 @@
         <param name="promote">Значение <see langword="true" />, если эту службу следует добавить в любой родительский контейнер служб; в противном случае — значение <see langword="false" />.</param>
         <summary>Добавляет заданную службу в контейнер служб.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="callback" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="serviceType" /> или <paramref name="callback" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">В контейнере уже присутствует служба с типом <paramref name="serviceType" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
@@ -374,11 +366,11 @@
       </Parameters>
       <Docs>
         <param name="serviceType">Тип добавляемой службы.</param>
-        <param name="serviceInstance">Экземпляр добавляемого типа службы. Этот объект должен реализовывать или наследовать тип, определяемый параметром <c>serviceType</c>.</param>
+        <param name="serviceInstance">Экземпляр добавляемого типа службы. Данный объект должен реализовывать или наследовать тип, определяемый параметром <paramref name="serviceType" />.</param>
         <param name="promote">Значение <see langword="true" />, если эту службу следует добавить в любой родительский контейнер служб; в противном случае — значение <see langword="false" />.</param>
         <summary>Добавляет заданную службу в контейнер служб.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="serviceInstance" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="serviceType" /> или <paramref name="serviceInstance" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">В контейнере уже присутствует служба с типом <paramref name="serviceType" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
@@ -516,7 +508,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="disposing">Значение <see langword="true" />, если объект <see cref="T:System.ComponentModel.Design.ServiceContainer" /> находится в процессе удаления; в обратном случае — значение <see langword="false" />.</param>
@@ -533,12 +525,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetService">
@@ -549,6 +539,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ GetService(Type ^ serviceType);" />
       <MemberSignature Language="F#" Value="abstract member GetService : Type -&gt; obj&#xA;override this.GetService : Type -&gt; obj" Usage="serviceContainer.GetService serviceType" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -572,7 +565,7 @@
         <Parameter Name="serviceType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="serviceType">Тип возвращаемой службы.</param>
+        <param name="serviceType">Тип извлекаемой службы.</param>
         <summary>Возвращает запрашиваемую службу.</summary>
         <returns>Экземпляр службы, если ее удалось найти, в обратном случае — значение <see langword="null" />.</returns>
         <remarks>To be added.</remarks>
@@ -642,7 +635,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="serviceType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serviceType" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
     </Member>
@@ -685,7 +678,7 @@
         <param name="promote">Значение <see langword="true" />, если эту службу следует удалить из любого родительского контейнера служб; в противном случае — <see langword="false" />.</param>
         <summary>Удаляет службы указанного типа из контейнера служб.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="serviceType" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serviceType" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.ComponentModel.Design.IServiceContainer" />
       </Docs>
     </Member>

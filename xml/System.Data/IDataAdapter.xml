@@ -1,13 +1,5 @@
 <Type Name="IDataAdapter" FullName="System.Data.IDataAdapter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c3ba188b4aa23926c517bdb170261648720c47e6" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37668925" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDataAdapter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ccfe5816dad413d7b60fcc102b5215bd09c9535b" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51903168" /></Metadata><TypeSignature Language="C#" Value="public interface IDataAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataAdapter" />
   <TypeSignature Language="DocId" Value="T:System.Data.IDataAdapter" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataAdapter" />
@@ -54,9 +46,24 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Для обеспечения согласованности между поставщиками данных .NET Framework, наследующий классу имя в форме <paramref name="Prv" /> DataAdapter где <paramref name="Prv" /> — стандартный префикс для всех классов в пространстве имен поставщика данных .NET Framework. Например <paramref name="Sql" /> является префиксом <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> в класс <see langword="System.Data.SqlClient" /> пространства имен.  При наследовании от <see cref="T:System.Data.IDataAdapter" /> интерфейса, следует реализовать следующие конструкторы: <list type="table"><listheader><term> элемент </term><description> описание </description></listheader><item><term> PrvDataAdapter() </term><description> Инициализирует новый экземпляр класса PrvDataAdapter.  </description></item><item><term> PrvDataAdapter (PrvCommand selectCommand) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с помощью указанной инструкции SQL SELECT.  </description></item><item><term> PrvDataAdapter (selectCommandText строка, строка selectConnectionString) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter, используя инструкцию SQL SELECT и строку подключения.  </description></item><item><term> PrvDataAdapter (строка selectCommandText, selectConnection PrvConnection при получении) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter, используя инструкцию SQL SELECT и объектом PrvConnection при получении.  </description></item></list></para>
-    </block>
+    <block subset="none" type="overrides"><para>Для обеспечения согласованности между поставщиками данных .NET Framework, наследующий классу имя в форме <paramref name="Prv" /> DataAdapter где <paramref name="Prv" /> — стандартный префикс для всех классов в пространстве имен поставщика данных .NET Framework. Например <paramref name="Sql" /> является префиксом <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> в класс <see langword="System.Data.SqlClient" /> пространства имен.  
+  
+При наследовании от <see cref="T:System.Data.IDataAdapter" /> интерфейса, следует реализовать следующие конструкторы: 
+ <list type="table"><listheader><term> Элемент 
+ </term><description> Описание: 
+ </description></listheader><item><term> PrvDataAdapter() 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter.  
+  
+ </description></item><item><term> PrvDataAdapter (PrvCommand selectCommand) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с помощью указанной инструкции SQL SELECT.  
+  
+ </description></item><item><term> PrvDataAdapter (selectCommandText строка, строка selectConnectionString) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter, используя инструкцию SQL SELECT и строку подключения.  
+  
+ </description></item><item><term> PrvDataAdapter (строка selectCommandText, selectConnection PrvConnection при получении) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с помощью инструкции SQL SELECT и объектом PrvConnection при получении.  
+  
+ </description></item></list></para></block>
   </Docs>
   <Members>
     <Member MemberName="Fill">
@@ -147,9 +154,9 @@
         <Parameter Name="schemaType" Type="System.Data.SchemaType" />
       </Parameters>
       <Docs>
-        <param name="dataSet">Объект <see cref="T:System.Data.DataSet" />, который необходимо заполнить сведениями схемы из источника данных.</param>
+        <param name="dataSet">Объект <see cref="T:System.Data.DataSet" /> для заполнения схемой из источника данных.</param>
         <param name="schemaType">Одно из значений перечисления <see cref="T:System.Data.SchemaType" />.</param>
-        <summary>Добавляет объект <see cref="T:System.Data.DataTable" /> с именем "Таблица" к указанному объекту <see cref="T:System.Data.DataSet" /> и настраивает схему в соответствии с источником данных, основанном на указанном значении типа <see cref="T:System.Data.SchemaType" />.</summary>
+        <summary>Добавляет объект <see cref="T:System.Data.DataTable" /> с именем Table в указанный объект <see cref="T:System.Data.DataSet" /> и настраивает схему для соответствия этому объекту в источнике данных на основе указанного значения типа <see cref="T:System.Data.SchemaType" />.</summary>
         <returns>Массив объектов <see cref="T:System.Data.DataTable" />, который содержит сведения схемы, возвращенные из источника данных.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -179,7 +186,7 @@
   
  Обратите внимание, что первичные и уникальные ограничения добавляются <xref:System.Data.ConstraintCollection> в соответствии с предыдущими правилами, а также ограничения других типов не добавляются.  
   
- Если уникальный кластеризованный индекс определен на столбец или столбцы в таблицу SQL Server, и ограничение первичного ключа определен на отдельный набор столбцов, имена столбцов в кластеризованном индексе будет возвращен. Чтобы получить имя или имена первичных ключевых столбцов, используйте подсказки в запросе в инструкции SELECT, которая указывает имя индекса первичного ключа. Дополнительные сведения о том, как задать указания запросов см. в разделе [указания запросов (Transact-SQL)](http://msdn.microsoft.com/library/ms181714.aspx).  
+ Если уникальный кластеризованный индекс определен на столбец или столбцы в таблицу SQL Server, и ограничение первичного ключа определен на отдельный набор столбцов, имена столбцов в кластеризованном индексе будет возвращен. Чтобы получить имя или имена первичных ключевых столбцов, используйте подсказки в запросе в инструкции SELECT, которая указывает имя индекса первичного ключа. Дополнительные сведения о том, как задать указания запросов см. в разделе [указания запросов (Transact-SQL)](https://msdn.microsoft.com/library/ms181714.aspx).  
   
  Если <xref:System.Data.IDataAdapter> встречает идентичные столбцы при заполнении <xref:System.Data.DataTable>, он создает имена для последующих столбцов, используя шаблон «столбцами columnname1», «columnname2», «имя_столбца3» и т. д. Если входные данные содержат безымянные столбцы, они помещаются в <xref:System.Data.DataSet> в соответствии с шаблоном «Column1», «Column2» и т. д. При добавлении нескольких результирующих наборов <xref:System.Data.DataSet>, каждый набор результатов помещается в отдельную таблицу. Дополнительные результирующие наборы именуются путем добавления целочисленного значения к указанным именем таблицы (например, «Таблица», «Table1», «Table2» и т. д.). Приложения должны использовать осторожность при использовании имена столбцов и таблиц, чтобы избежать возникновения конфликтов шаблонов именования.  
   
@@ -262,7 +269,7 @@ private static void GetParameters(String connectiongString) {
       </ReturnValue>
       <Docs>
         <summary>Указывает, будут ли несопоставленные столбцы-источники или таблицы-источники передаваться со своими исходными именами, чтобы пройти через фильтр или вызвать ошибку.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Data.MissingMappingAction" />. Значение по умолчанию: <see langword="Passthrough" />.</value>
+        <value>Одно из значений перечисления <see cref="T:System.Data.MissingMappingAction" />. Значение по умолчанию — <see langword="Passthrough" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -304,7 +311,7 @@ private static void GetParameters(String connectiongString) {
       </ReturnValue>
       <Docs>
         <summary>Указывает или задает значение, определяющее, будут ли отсутствующие исходные таблицы, столбцы и их отношения добавляться в схему набора данных, игнорироваться или вызывать ошибку.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Data.MissingSchemaAction" />. Значение по умолчанию: <see langword="Add" />.</value>
+        <value>Одно из значений перечисления <see cref="T:System.Data.MissingSchemaAction" />. Значение по умолчанию — <see langword="Add" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">Заданное значение не является одним из значений <see cref="T:System.Data.MissingSchemaAction" />.</exception>
         <altmember cref="P:System.Data.Common.DataAdapter.MissingMappingAction" />

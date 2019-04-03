@@ -1,17 +1,9 @@
 <Type Name="ObjectSet&lt;TEntity&gt;" FullName="System.Data.Objects.ObjectSet&lt;TEntity&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f472a690a87f3d4b1fef4f6f9f5cc8c07b4c8780" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51311373" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ObjectSet&lt;TEntity&gt; : System.Data.Objects.ObjectQuery&lt;TEntity&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.Data.Objects.IObjectSet&lt;TEntity&gt; where TEntity : class" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bdd1a327ea46b646f05e1a71c1f7bfaef2b4aee7" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53516405" /></Metadata><TypeSignature Language="C#" Value="public class ObjectSet&lt;TEntity&gt; : System.Data.Objects.ObjectQuery&lt;TEntity&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.Data.Objects.IObjectSet&lt;TEntity&gt;, System.Linq.IQueryable&lt;TEntity&gt; where TEntity : class" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectSet`1&lt;class TEntity&gt; extends System.Data.Objects.ObjectQuery`1&lt;!TEntity&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!TEntity&gt;, class System.Collections.IEnumerable, class System.Data.Objects.IObjectSet`1&lt;!TEntity&gt;, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!TEntity&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectSet`1" />
-  <TypeSignature Language="VB.NET" Value="Public Class ObjectSet(Of TEntity)&#xA;Inherits ObjectQuery(Of TEntity)&#xA;Implements IEnumerable(Of TEntity), IObjectSet(Of TEntity)" />
-  <TypeSignature Language="C++ CLI" Value="generic &lt;typename TEntity&gt;&#xA; where TEntity : classpublic ref class ObjectSet : System::Data::Objects::ObjectQuery&lt;TEntity&gt;, System::Collections::Generic::IEnumerable&lt;TEntity&gt;, System::Data::Objects::IObjectSet&lt;TEntity&gt;" />
+  <TypeSignature Language="VB.NET" Value="Public Class ObjectSet(Of TEntity)&#xA;Inherits ObjectQuery(Of TEntity)&#xA;Implements IEnumerable(Of TEntity), IObjectSet(Of TEntity), IQueryable(Of TEntity)" />
+  <TypeSignature Language="C++ CLI" Value="generic &lt;typename TEntity&gt;&#xA; where TEntity : classpublic ref class ObjectSet : System::Data::Objects::ObjectQuery&lt;TEntity&gt;, System::Collections::Generic::IEnumerable&lt;TEntity&gt;, System::Data::Objects::IObjectSet&lt;TEntity&gt;, System::Linq::IQueryable&lt;TEntity&gt;" />
   <TypeSignature Language="F#" Value="type ObjectSet&lt;'Entity (requires 'Entity : null)&gt; = class&#xA;    inherit ObjectQuery&lt;'Entity (requires 'Entity : null)&gt;&#xA;    interface IObjectSet&lt;'Entity (requires 'Entity : null)&gt;&#xA;    interface IQueryable&lt;'Entity (requires 'Entity : null)&gt;&#xA;    interface seq&lt;'Entity (requires 'Entity : null)&gt;&#xA;    interface IEnumerable&#xA;    interface IQueryable" />
   <AssemblyInfo>
     <AssemblyName>System.Data.Entity</AssemblyName>
@@ -31,6 +23,9 @@
     </BaseTypeArguments>
   </Base>
   <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
     <Interface>
       <InterfaceName>System.Collections.Generic.IEnumerable&lt;TEntity&gt;</InterfaceName>
     </Interface>
@@ -114,7 +109,7 @@
         <Parameter Name="currentEntity" Type="TEntity" />
       </Parameters>
       <Docs>
-        <param name="currentEntity">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту. Ключ сущности объекта <c>currentEntity</c> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> записи в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
+        <param name="currentEntity">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту. Ключ сущности объекта <paramref name="currentEntity" /> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> сущности в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
         <summary>Копирует скалярные значения из указанного объекта в объект в контексте <see cref="T:System.Data.Objects.ObjectContext" />, содержащем тот же ключ.</summary>
         <returns>Обновленный объект.</returns>
         <remarks>
@@ -148,7 +143,7 @@
         <Parameter Name="originalEntity" Type="TEntity" />
       </Parameters>
       <Docs>
-        <param name="originalEntity">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту. Ключ сущности объекта <c>originalEntity</c> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> записи в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
+        <param name="originalEntity">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту. Ключ сущности объекта <paramref name="originalEntity" /> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> сущности в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
         <summary>Задает свойство <see cref="P:System.Data.Objects.ObjectStateEntry.OriginalValues" /> объекта <see cref="T:System.Data.Objects.ObjectStateEntry" />, совпадающее со значениями свойств предоставленного объекта.</summary>
         <returns>Обновленный объект.</returns>
         <remarks>
@@ -308,7 +303,7 @@
         <Parameter Name="entity" Type="TEntity" />
       </Parameters>
       <Docs>
-        <param name="entity">Отсоединяемый объект. Удаляется только сущность <c>entity</c>. При наличии каких-либо связанных объектов, которые отслеживаются тем же объектом <see cref="T:System.Data.Objects.ObjectStateManager" />, они не отсоединяются автоматически.</param>
+        <param name="entity">Отсоединяемый объект. Удаляется только <paramref name="entity" />; при наличии связанных объектов, отслеживаемых тем же <see cref="T:System.Data.Objects.ObjectStateManager" />, они не будут автоматически отсоединены.</param>
         <summary>Удаляет объект из контекста объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

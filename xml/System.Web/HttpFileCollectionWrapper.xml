@@ -1,13 +1,5 @@
 <Type Name="HttpFileCollectionWrapper" FullName="System.Web.HttpFileCollectionWrapper">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="014a8b55d89cf2bc8023e249b2ac70b49109626c" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48734679" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class HttpFileCollectionWrapper : System.Web.HttpFileCollectionBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="72a37119f7fa8b22ae436acf71608ff03f962b98" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57920499" /></Metadata><TypeSignature Language="C#" Value="public class HttpFileCollectionWrapper : System.Web.HttpFileCollectionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpFileCollectionWrapper extends System.Web.HttpFileCollectionBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpFileCollectionWrapper" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpFileCollectionWrapper&#xA;Inherits HttpFileCollectionBase" />
@@ -31,7 +23,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Инкапсулирует встроенный HTTP-объект, предоставляющий доступ к файлам, которые были отправлены клиентом.</summary>
+    <summary>Инкапсулирует встроенный HTTP-объект, предоставляющий доступ к файлам, загруженным на сервер клиентом.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -58,13 +50,13 @@
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="httpFileCollection" Type="System.Web.HttpFileCollection" />
+        <Parameter Name="httpFileCollection" Type="System.Web.HttpFileCollection" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="httpFileCollection">Объект, к которому предоставляет доступ данный класс-оболочка.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.HttpFileCollectionWrapper" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="httpApplicationState" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="httpApplicationState" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="AllKeys">
@@ -87,7 +79,7 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает массив, содержащий ключи (имена) всех отправленных файловых объектов в коллекции.</summary>
+        <summary>Получает массив, содержащий ключи (имена) всех переданных объектов файлов в коллекции.</summary>
         <value>Массив имен файлов.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -112,19 +104,19 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dest" Type="System.Array" />
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="dest" Type="System.Array" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="dest">Одномерный массив, куда копируются элементы из данной коллекции. Индекс в массиве должен начинаться с нуля.</param>
-        <param name="index">Отсчитываемый от нуля индекс в массиве <c>array</c>, с которого начинается копирование.</param>
+        <param name="index">Отсчитываемый от нуля индекс в массиве <paramref name="dest" />, с которого начинается копирование.</param>
         <summary>Копирует элементы коллекции в массив начиная с указанного индекса в массиве.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Массив <paramref name="array" /> является многомерным.  
   
-- или - 
+-или- 
 Число элементов в исходном объекте <see cref="T:System.Web.HttpFileCollectionWrapper" /> больше доступного места от положения, заданного значением параметра <paramref name="index" />, до конца массива назначения.</exception>
         <exception cref="T:System.InvalidCastException">Тип исходного объекта <see cref="T:System.Web.HttpFileCollectionWrapper" /> нельзя автоматически привести к типу массива назначения.</exception>
       </Docs>
@@ -183,15 +175,14 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс возвращаемого элемента.</param>
-        <summary>Возвращает переданный объект файла по указанному индексу.</summary>
+        <summary>Возвращает переданный объект файла с указанным индексом.</summary>
         <returns>Переданный объект файла, указанный в параметре <paramref name="index" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -214,7 +205,7 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя возвращаемого объекта.</param>
@@ -244,7 +235,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает перечислитель, используемый для прохода по коллекции.</summary>
+        <summary>Возвращает перечислитель, который можно использовать для итерации по коллекции.</summary>
         <returns>Объект, который можно использовать для перечисления элементов коллекции.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -269,15 +260,14 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="index">Индекс возвращаемого имени объекта.</param>
-        <summary>Возвращает имя переданного файлового объекта по указанному индексу.</summary>
+        <summary>Возвращает имя переданного объекта файла с указанным индексом.</summary>
         <returns>Имя переданного объекта файла, указанного в параметре <paramref name="index" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetMultiple">
@@ -299,7 +289,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;System.Web.HttpPostedFileBase&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Сопоставляемое имя.</param>
@@ -314,7 +304,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.HttpFileCollectionWrapper.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
-      <MemberSignature Language="F#" Value="abstract member GetObjectData : System.Runtime.Serialization.SerializationInfo * System.Runtime.Serialization.StreamingContext -&gt; unit&#xA;override this.GetObjectData : System.Runtime.Serialization.SerializationInfo * System.Runtime.Serialization.StreamingContext -&gt; unit" Usage="httpFileCollectionWrapper.GetObjectData (info, context)" />
+      <MemberSignature Language="F#" Value="override this.GetObjectData : System.Runtime.Serialization.SerializationInfo * System.Runtime.Serialization.StreamingContext -&gt; unit" Usage="httpFileCollectionWrapper.GetObjectData (info, context)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -328,8 +318,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="info">Данные, необходимые для сериализации объекта <see cref="T:System.Web.HttpFileCollectionWrapper" />.</param>
@@ -359,8 +349,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, является ли доступ к коллекции потокобезопасным.</summary>
-        <value>
-          <see langword="true" />, если доступ является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если доступ является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -393,15 +382,14 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="index">Индекс возвращаемого элемента.</param>
-        <summary>Получает переданный объект файла по указанному индексу.</summary>
+        <param name="index">Индекс получаемого элемента.</param>
+        <summary>Получает переданный объект файла с указанным индексом.</summary>
         <value>Переданный объект файла, указанный в параметре <paramref name="index" />.</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> находится вне допустимого диапазона индексов для коллекции.</exception>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -424,7 +412,7 @@
         <ReturnType>System.Web.HttpPostedFileBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="name">Имя получаемого объекта.</param>
@@ -454,7 +442,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает экземпляр класса <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />, который содержит все ключи экземпляра класса <see cref="T:System.Web.HttpApplicationStateWrapper" />.</summary>
-        <value>Коллекция, содержащая все ключи в коллекции.</value>
+        <value>Коллекция, содержащая все ключи коллекции.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -464,7 +452,7 @@
       <MemberSignature Language="DocId" Value="M:System.Web.HttpFileCollectionWrapper.OnDeserialization(System.Object)" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Sub OnDeserialization (sender As Object)" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override void OnDeserialization(System::Object ^ sender);" />
-      <MemberSignature Language="F#" Value="abstract member OnDeserialization : obj -&gt; unit&#xA;override this.OnDeserialization : obj -&gt; unit" Usage="httpFileCollectionWrapper.OnDeserialization sender" />
+      <MemberSignature Language="F#" Value="override this.OnDeserialization : obj -&gt; unit" Usage="httpFileCollectionWrapper.OnDeserialization sender" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -478,7 +466,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="sender" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="sender">Источник события десериализации.</param>

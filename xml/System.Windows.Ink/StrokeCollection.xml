@@ -1,13 +1,5 @@
 <Type Name="StrokeCollection" FullName="System.Windows.Ink.StrokeCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6ccfe86d186edb341597673665c7162d4913d8cf" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48723447" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class StrokeCollection : System.Collections.ObjectModel.Collection&lt;System.Windows.Ink.Stroke&gt;, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.INotifyPropertyChanged" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0b134415c90cff315c3060957a381ba4287d559f" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55374635" /></Metadata><TypeSignature Language="C#" Value="public class StrokeCollection : System.Collections.ObjectModel.Collection&lt;System.Windows.Ink.Stroke&gt;, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StrokeCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Ink.Stroke&gt; implements class System.Collections.Specialized.INotifyCollectionChanged, class System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Ink.StrokeCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class StrokeCollection&#xA;Inherits Collection(Of Stroke)&#xA;Implements INotifyCollectionChanged, INotifyPropertyChanged" />
@@ -33,7 +25,7 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.StrokeCollectionConverter))</AttributeName>
     </Attribute>
   </Attributes>
@@ -50,14 +42,14 @@
 |Для этого...|См. в статье|  
 |-----------------|----------------------|  
 |Создать элемент управления, который выполняет сбор цифровых рукописных данных|[Создание элемента управления рукописным вводом](~/docs/framework/wpf/advanced/creating-an-ink-input-control.md)|  
-|Создать элемент управления, позволяющий пользователю выбрать рукописного ввода|[Как: выбор рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)|  
-|Создать элемент управления, который позволяет пользователю точечное стирание рукописного ввода|[Практическое: Удаление рукописного ввода в пользовательский элемент управления](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)|  
+|Создать элемент управления, позволяющий пользователю выбрать рукописного ввода|[Практическое руководство. Выбор рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)|  
+|Создать элемент управления, который позволяет пользователю точечное стирание рукописного ввода|[Практическое руководство. Удаление данных рукописного ввода на пользовательский элемент управления](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)|  
   
 <a name="xamlAttributeUsage_StrokeCollection"></a>   
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
   
 ```  
-<object StrokeCollection="isfString"/>  
+<object StrokeCollection="isfString"/>  
 ```  
   
 <a name="xamlObjectElementUsage_StrokeCollection"></a>   
@@ -220,7 +212,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Объект <see cref="T:System.Windows.Ink.Stroke" /> в <paramref name="strokes" /> уже является элементом коллекции <see cref="T:System.Windows.Ink.StrokeCollection" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="strokes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="strokes" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="AddPropertyData">
@@ -244,9 +236,8 @@
         <Parameter Name="propertyData" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="propertyDataId">
-          <see cref="T:System.Guid" /> для связывания с пользовательским свойством.</param>
-        <param name="propertyData">Значение настраиваемого свойства. Параметр <c>propertyData</c> должен относиться к типу <see cref="T:System.Char" />, <see cref="T:System.Byte" />, <see cref="T:System.Int16" />, <see cref="T:System.UInt16" />, <see cref="T:System.Int32" />, <see cref="T:System.UInt32" />, <see cref="T:System.Int64" />, <see cref="T:System.UInt64" />, <see cref="T:System.Single" />, <see cref="T:System.Double" />, <see cref="T:System.DateTime" />, <see cref="T:System.Boolean" />, <see cref="T:System.String" />, <see cref="T:System.Decimal" /> или быть массивом этих типов данных, кроме типа <see cref="T:System.String" />, который не допускается.</param>
+        <param name="propertyDataId"><see cref="T:System.Guid" /> для связывания с пользовательским свойством.</param>
+        <param name="propertyData">Значение настраиваемого свойства. Параметр <paramref name="propertyData" /> должен относиться к типу <see cref="T:System.Char" />, <see cref="T:System.Byte" />, <see cref="T:System.Int16" />, <see cref="T:System.UInt16" />, <see cref="T:System.Int32" />, <see cref="T:System.UInt32" />, <see cref="T:System.Int64" />, <see cref="T:System.UInt64" />, <see cref="T:System.Single" />, <see cref="T:System.Double" />, <see cref="T:System.DateTime" />, <see cref="T:System.Boolean" />, <see cref="T:System.String" />, <see cref="T:System.Decimal" /> или быть массивом этих типов данных, кроме типа <see cref="T:System.String" />, который не допускается.</param>
         <summary>Добавляет настраиваемое свойство в коллекцию <see cref="T:System.Windows.Ink.StrokeCollection" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -264,10 +255,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="propertyDataId" /> является пустым <see cref="T:System.Guid" />.  
+        <exception cref="T:System.ArgumentException"><paramref name="propertyDataId" /> является пустым <see cref="T:System.Guid" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="propertyData" /> не относится ни к одному из разрешенных типов данных, перечисленных в разделе <see langword="Parameters" />.</exception>
       </Docs>
     </Member>
@@ -482,8 +472,7 @@
         <Parameter Name="context" Type="System.Windows.Media.DrawingContext" />
       </Parameters>
       <Docs>
-        <param name="context">
-          <see cref="T:System.Windows.Media.DrawingContext" /> для рисования <see cref="T:System.Windows.Ink.StrokeCollection" />.</param>
+        <param name="context"><see cref="T:System.Windows.Media.DrawingContext" /> для рисования <see cref="T:System.Windows.Ink.StrokeCollection" />.</param>
         <summary>Рисует штрихи, содержащиеся в коллекции <see cref="T:System.Windows.Ink.StrokeCollection" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -615,8 +604,7 @@
       </Parameters>
       <Docs>
         <param name="eraserPath">Массив типа <see cref="T:System.Windows.Point" />, который указывает путь для стирания.</param>
-        <param name="eraserShape">
-          <see cref="T:System.Windows.Ink.StylusShape" />, определяющий форму ластика.</param>
+        <param name="eraserShape"><see cref="T:System.Windows.Ink.StylusShape" />, определяющий форму ластика.</param>
         <summary>Заменяет все штрихи, обрезанные в области, которая была создана в результате перемещения заданного объекта <see cref="T:System.Windows.Ink.StylusShape" /> по указанному пути, новыми штрихами, которые не попадают в эту область.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -708,7 +696,7 @@
    
   
 ## Examples  
- Следующий пример демонстрирует, как получить <xref:System.Windows.Ink.IncrementalLassoHitTester> , позволяющий пользователю выбирать штрихи с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод, см. в разделе [как: выберите рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
+ Следующий пример демонстрирует, как получить <xref:System.Windows.Ink.IncrementalLassoHitTester> , позволяющий пользователю выбирать штрихи с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод, см. в разделе [как: Выбор рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
   
  [!code-csharp[StrokeCollectionMethods#17](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeCollectionMethods/CSharp/InkSelector.cs#17)]
  [!code-vb[StrokeCollectionMethods#17](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeCollectionMethods/VisualBasic/InkSelector.vb#17)]  
@@ -749,7 +737,7 @@
    
   
 ## Examples  
- Следующий пример демонстрирует, как получить <xref:System.Windows.Ink.IncrementalStrokeHitTester> , можно использовать для удаления части <xref:System.Windows.Ink.Stroke>. Чтобы создать элемент управления, который позволяет пользователю удаление данных рукописного ввода, см. в разделе [как: О пользовательский элемент управления](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md).  
+ Следующий пример демонстрирует, как получить <xref:System.Windows.Ink.IncrementalStrokeHitTester> , можно использовать для удаления части <xref:System.Windows.Ink.Stroke>. Чтобы создать элемент управления, который позволяет пользователю удаление данных рукописного ввода, см. в разделе [как: Удаление данных рукописного ввода на пользовательский элемент управления](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md).  
   
  [!code-csharp[InkEraser#4](~/samples/snippets/csharp/VS_Snippets_Wpf/InkEraser/CSharp/InkEraser.cs#4)]
  [!code-vb[InkEraser#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkEraser/VisualBasic/InkEraser.vb#4)]  
@@ -778,8 +766,7 @@
         <Parameter Name="propertyDataId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="propertyDataId">
-          <see cref="T:System.Guid" />, связанный с пользовательским свойством, значение которого необходимо получить.</param>
+        <param name="propertyDataId"><see cref="T:System.Guid" />, связанный с пользовательским свойством, значение которого необходимо получить.</param>
         <summary>Возвращает значение настраиваемого свойства, сопоставленного указанному идентификатору <see cref="T:System.Guid" />.</summary>
         <returns>Значение пользовательского свойства, связанного с указанным <see cref="T:System.Guid" />.</returns>
         <remarks>
@@ -900,24 +887,24 @@
       </Parameters>
       <Docs>
         <param name="lassoPoints">Массив типа <see cref="T:System.Windows.Point" />, который содержит границы области, подлежащей проверки на касание.</param>
-        <param name="percentageWithinLasso">Допустимая длина объекта <see cref="T:System.Windows.Ink.Stroke" /> в процентах, которую может содержать параметр <c>lassoPoints</c>.</param>
+        <param name="percentageWithinLasso">Допустимая длина объекта <see cref="T:System.Windows.Ink.Stroke" /> в процентах, которую может содержать параметр <paramref name="lassoPoints" />.</param>
         <summary>Возвращает коллекцию штрихов, которые по меньшей мере частично попадают в указанную область.</summary>
         <returns>Коллекция <see cref="T:System.Windows.Ink.StrokeCollection" />, штрихи из которой имеют не менее заданной доли в массиве <see cref="T:System.Windows.Point" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- Приведенный ниже показано, как удалить все штрихи, по крайней мере на 80% в пределах указанного лассо из <xref:System.Windows.Ink.StrokeCollection>. Это полезно в том случае, когда пользовательский элемент управления позволяет пользователю выбор рукописного ввода с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод с помощью лассо, см. в разделе [как: выберите рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
+ Приведенный ниже показано, как удалить все штрихи, по крайней мере на 80% в пределах указанного лассо из <xref:System.Windows.Ink.StrokeCollection>. Это полезно в том случае, когда пользовательский элемент управления позволяет пользователю выбор рукописного ввода с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод с помощью лассо, см. в разделе [как: Выбор рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
   
  [!code-csharp[StrokeCollectionMethods#16](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeCollectionMethods/CSharp/StrokeCollectionDemo.cs#16)]
  [!code-vb[StrokeCollectionMethods#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeCollectionMethods/VisualBasic/StrokeCollectionDemo.vb#16)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="lassoPoints" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="lassoPoints" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="percentageWithinLasso" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="percentageWithinLasso" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="lassoPoints" /> содержит пустой массив.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="percentageWithinLasso" /> имеет значение меньше 0 или больше 100.</exception>
       </Docs>
@@ -943,7 +930,7 @@
       </Parameters>
       <Docs>
         <param name="path">Массив типа <see cref="T:System.Windows.Point" />, который указывает путь для проверки касания.</param>
-        <param name="stylusShape">Объект <see cref="T:System.Windows.Ink.StylusShape" />, который определяет форму объекта <c>eraserPath</c>.</param>
+        <param name="stylusShape">Объект <see cref="T:System.Windows.Ink.StylusShape" />, который определяет форму объекта <paramref name="eraserPath" />.</param>
         <summary>Возвращает коллекцию штрихов, пересекающих указанный путь.</summary>
         <returns>Коллекция <see cref="T:System.Windows.Ink.StrokeCollection" /> штрихов, пересекающихся с объектом <paramref name="path" />.</returns>
         <remarks>
@@ -979,8 +966,7 @@
         <Parameter Name="diameter" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="point">
-          <see cref="T:System.Windows.Point" />, используемая для проверки на пересечение.</param>
+        <param name="point"><see cref="T:System.Windows.Point" />, используемая для проверки на пересечение.</param>
         <param name="diameter">Размер области вокруг объекта <see cref="T:System.Windows.Point" /> для проверки касания.</param>
         <summary>Возвращает коллекцию штрихов, пересекающих указанную область.</summary>
         <returns>Коллекция объектов <see cref="T:System.Windows.Ink.Stroke" />, которая пересекает заданную точку.</returns>
@@ -1211,9 +1197,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Windows.Ink.StrokeCollection.OnStrokesChanged(System.Windows.Ink.StrokeCollectionChangedEventArgs)" /> в производном классе, не забудьте вызвать <see cref="M:System.Windows.Ink.StrokeCollection.OnStrokesChanged(System.Windows.Ink.StrokeCollectionChangedEventArgs)" /> метода для базового класса, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Windows.Ink.StrokeCollection.OnStrokesChanged(System.Windows.Ink.StrokeCollectionChangedEventArgs)" /> в производном классе, не забудьте вызвать <see cref="M:System.Windows.Ink.StrokeCollection.OnStrokesChanged(System.Windows.Ink.StrokeCollectionChangedEventArgs)" /> метода для базового класса, чтобы зарегистрированные делегаты получили событие.</para></block>
       </Docs>
     </Member>
     <Member MemberName="PropertyDataChanged">
@@ -1278,7 +1262,7 @@
    
   
 ## Examples  
- Приведенный ниже показано, как удалить все штрихи, по крайней мере на 80% в пределах указанного лассо из <xref:System.Windows.Ink.StrokeCollection>. Это полезно в том случае, когда пользовательский элемент управления позволяет пользователю выбор рукописного ввода с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод с помощью лассо, см. в разделе [как: выберите рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
+ Приведенный ниже показано, как удалить все штрихи, по крайней мере на 80% в пределах указанного лассо из <xref:System.Windows.Ink.StrokeCollection>. Это полезно в том случае, когда пользовательский элемент управления позволяет пользователю выбор рукописного ввода с помощью лассо. Чтобы создать элемент управления, позволяющий пользователю выбрать рукописный ввод с помощью лассо, см. в разделе [как: Выбор рукописного ввода из пользовательского элемента управления](~/docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md).  
   
  [!code-csharp[StrokeCollectionMethods#16](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeCollectionMethods/CSharp/StrokeCollectionDemo.cs#16)]
  [!code-vb[StrokeCollectionMethods#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeCollectionMethods/VisualBasic/StrokeCollectionDemo.vb#16)]  
@@ -1332,8 +1316,7 @@
         <Parameter Name="propertyDataId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="propertyDataId">
-          <see cref="T:System.Guid" />, связанный с пользовательским свойством, которое необходимо удалить.</param>
+        <param name="propertyDataId"><see cref="T:System.Guid" />, связанный с пользовательским свойством, которое необходимо удалить.</param>
         <summary>Удаляет пользовательское свойство, связанное с указанным <see cref="T:System.Guid" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1399,10 +1382,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="strokesToReplace" /> пуст.  
   
-- или - 
+-или- 
  Параметр <paramref name="strokesToReplaceWith" /> пуст.  
   
-- или - 
+-или- 
 Объект <see cref="T:System.Windows.Ink.Stroke" /> в коллекции <paramref name="strokesToReplaceWith" /> уже содержится в <paramref name="strokesToReplace" />.</exception>
       </Docs>
     </Member>
@@ -1448,13 +1431,13 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="strokesToReplace" /> пуст.  
   
-- или - 
+-или- 
  Параметр <paramref name="strokesToReplaceWith" /> пуст.  
   
-- или - 
+-или- 
 Объект <see cref="T:System.Windows.Ink.Stroke" /> в коллекции <paramref name="strokesToReplaceWith" /> уже содержится в <paramref name="strokesToReplace." />.  
   
-- или - 
+-или- 
 Штрихи в коллекции <paramref name="strokesToReplaceWith" /> не являются последовательными.</exception>
       </Docs>
     </Member>
@@ -1621,13 +1604,15 @@
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NotifyCollectionChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Происходит при изменении свойства <see cref="T:System.Windows.Ink.StrokeCollection" />.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.INotifyPropertyChanged.PropertyChanged">
@@ -1642,13 +1627,15 @@
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Происходит при изменении значения любого свойства <see cref="T:System.Windows.Ink.StrokeCollection" />.</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Transform">
@@ -1673,8 +1660,7 @@
       </Parameters>
       <Docs>
         <param name="transformMatrix">Объект <see cref="T:System.Windows.Media.Matrix" />, который определяет, какое преобразование должно быть выполнено для коллекции <see cref="T:System.Windows.Ink.StrokeCollection" />.</param>
-        <param name="applyToStylusTip">
-          <see langword="true" /> для применения преобразования к кончику пера; иначе <see langword="false" />.</param>
+        <param name="applyToStylusTip"><see langword="true" /> для применения преобразования к кончику пера; иначе <see langword="false" />.</param>
         <summary>Изменяет каждый из объектов <see cref="P:System.Windows.Ink.Stroke.StylusPoints" />, а также свойство <see cref="P:System.Windows.Ink.DrawingAttributes.StylusTipTransform" /> (необязательно) для каждого штриха в коллекции <see cref="T:System.Windows.Ink.StrokeCollection" /> в соответствии с заданным объектом <see cref="T:System.Windows.Media.Matrix" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

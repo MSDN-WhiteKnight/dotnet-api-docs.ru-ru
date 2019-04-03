@@ -1,13 +1,5 @@
 <Type Name="FtpWebRequest" FullName="System.Net.FtpWebRequest">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="15f557050486131d7ccfdbc8fbe0d087732f89bf" />
-    <Meta Name="ms.sourcegitcommit" Value="996ba67625b61917bcf75bfefe6dcb016019c2d8" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/02/2018" />
-    <Meta Name="ms.locfileid" Value="50965335" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class FtpWebRequest : System.Net.WebRequest" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="41203164dafb005712242dd59c047f67c0d5a50e" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53390578" /></Metadata><TypeSignature Language="C#" Value="public sealed class FtpWebRequest : System.Net.WebRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FtpWebRequest extends System.Net.WebRequest" />
   <TypeSignature Language="DocId" Value="T:System.Net.FtpWebRequest" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FtpWebRequest&#xA;Inherits WebRequest" />
@@ -39,7 +31,7 @@
   
 ## Remarks
 
->  [!IMPORTANT]
+> [!IMPORTANT]
 >  Мы не рекомендуем использовать `FtpWebRequest` класса для разработки новых приложений. Дополнительные сведения и альтернативные варианты `FtpWebRequest`, см. в разделе [WebRequest не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0003.md) на сайте GitHub.
 
  Чтобы получить экземпляр <xref:System.Net.FtpWebRequest>, используйте <xref:System.Net.WebRequest.Create%2A> метод. Можно также использовать <xref:System.Net.WebClient> класс отправлять и загружать данные из FTP-сервера. С помощью любого из этих подходов, при указании сетевой ресурс, который использует схему FTP (например, `"ftp://contoso.com"`) <xref:System.Net.FtpWebRequest> предоставляет возможность программно взаимодействовать с FTP-серверами.  
@@ -61,7 +53,7 @@
   
  Можно задать значение времени ожидания для чтения или записи к серверу с помощью <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> свойство. Если превышено время ожидания, вызывающего метод вызывает <xref:System.Net.WebException> с <xref:System.Net.WebExceptionStatus> присвоено <xref:System.Net.WebExceptionStatus.Timeout>.  
   
- При загрузке файла с FTP-сервера, если команда выполнена успешно, содержимое файла запрошенного доступны в потоке объект ответа. Можно получить доступ к этого потока путем вызова <xref:System.Net.FtpWebResponse.GetResponseStream%2A> метод. Дополнительные сведения см. в разделе <xref:System.Net.FtpWebResponse>.  
+ При загрузке файла с FTP-сервера, если команда выполнена успешно, содержимое файла запрошенного доступны в потоке объект ответа. Можно получить доступ к этого потока путем вызова <xref:System.Net.FtpWebResponse.GetResponseStream%2A> метод. Для получения дополнительной информации см. <xref:System.Net.FtpWebResponse>.  
   
  Если <xref:System.Net.FtpWebRequest.Proxy%2A> свойство имеет значение, либо непосредственно или в файле конфигурации, обмен данными с FTP-сервера, поставляющего указанного прокси-сервера. Если указанный прокси-сервер — это HTTP-прокси, только <xref:System.Net.WebRequestMethods.Ftp.DownloadFile>, <xref:System.Net.WebRequestMethods.Ftp.ListDirectory>, и <xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails> команды поддерживаются.  
   
@@ -188,7 +180,7 @@
       </Parameters>
       <Docs>
         <param name="callback">Делегат <see cref="T:System.AsyncCallback" />, ссылающийся на метод, вызываемый по завершении данной операции.</param>
-        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <c>callback</c> по завершении операции.</param>
+        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <paramref name="callback" /> после завершения операции.</param>
         <summary>Начинает асинхронное открытие потока с содержимым запроса для записи.</summary>
         <returns>Экземпляр <see cref="T:System.IAsyncResult" />, представляющий состояние операции.</returns>
         <remarks>
@@ -217,9 +209,7 @@
         <exception cref="T:System.InvalidOperationException">Предыдущий вызов этого метода или потока <see cref="M:System.Net.FtpWebRequest.GetRequestStream" /> еще не был завершен.</exception>
         <exception cref="T:System.Net.WebException">Не удается установить подключение к FTP-серверу.</exception>
         <exception cref="T:System.Net.ProtocolViolationException">Свойству <see cref="P:System.Net.FtpWebRequest.Method" /> невозможно присвоить значение <see cref="F:System.Net.WebRequestMethods.Ftp.UploadFile" />.</exception>
-        <block subset="none" type="usage">
-          <para>Этот метод создает сетевой трафик.</para>
-        </block>
+        <block subset="none" type="usage"><para>Этот метод создает сетевой трафик.</para></block>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
         <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
@@ -260,7 +250,7 @@
       </Parameters>
       <Docs>
         <param name="callback">Делегат <see cref="T:System.AsyncCallback" />, ссылающийся на метод, вызываемый по завершении данной операции.</param>
-        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <c>callback</c> по завершении операции.</param>
+        <param name="state">Пользовательский объект, содержащий сведения об операции. Этот объект передается делегату <paramref name="callback" /> после завершения операции.</param>
         <summary>Начинает асинхронно отправлять запрос и получать ответ с FTP-сервера.</summary>
         <returns>Экземпляр <see cref="T:System.IAsyncResult" />, представляющий состояние операции.</returns>
         <remarks>
@@ -290,11 +280,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="M:System.Net.FtpWebRequest.GetResponse" /> или <see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> уже был вызван для этого экземпляра.</exception>
-        <block subset="none" type="usage">
-          <para>Этот метод создает сетевой трафик.</para>
-        </block>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.FtpWebRequest.GetResponse" /> или <see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> уже был вызван для этого экземпляра.</exception>
+        <block subset="none" type="usage"><para>Этот метод создает сетевой трафик.</para></block>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
         <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
@@ -341,7 +328,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Сертификаты клиента используются для проверки подлинности клиента во время начального согласования подключения SSL. Дополнительные сведения см. в разделе <xref:System.Net.FtpWebRequest.EnableSsl%2A>.  
+ Сертификаты клиента используются для проверки подлинности клиента во время начального согласования подключения SSL. Для получения дополнительной информации см. <xref:System.Net.FtpWebRequest.EnableSsl%2A>.  
   
 > [!NOTE]
 >  Платформа .NET Framework кэширует сеансы SSL, так как они создаются и пытается повторно использовать кэшированный сеанс для нового запроса, если это возможно. При попытке повторно использовать сеанс SSL, платформа .NET Framework использует первый элемент <xref:System.Net.HttpWebRequest.ClientCertificates%2A> (если есть), или производится попытка повторного использования анонимными пользователями, если <xref:System.Net.HttpWebRequest.ClientCertificates%2A> пуст.  
@@ -698,7 +685,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Вызывающий объект пытался установить значение этого свойства, равное <see langword="null" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/0eb0c5cb-dd97-484d-8614-785e88877abb">defaultFtpCachePolicy (параметры сети)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/0eb0c5cb-dd97-484d-8614-785e88877abb">defaultFtpCachePolicy (параметры сети)</related>
       </Docs>
     </Member>
     <Member MemberName="EnableSsl">
@@ -887,9 +874,7 @@
         <exception cref="T:System.ArgumentException">Параметр <paramref name="asyncResult" /> не был получен путем вызова <see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />.</exception>
         <exception cref="T:System.InvalidOperationException">Этот метод уже был вызван для операции, указанной в параметре <paramref name="asyncResult" />.</exception>
         <exception cref="T:System.Net.WebException">Произошла ошибка при использовании прокси-сервера HTTP.</exception>
-        <block subset="none" type="usage">
-          <para>Этот метод создает сетевой трафик.</para>
-        </block>
+        <block subset="none" type="usage"><para>Этот метод создает сетевой трафик.</para></block>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
         <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
@@ -954,13 +939,11 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Метод <see cref="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> был вызван, но не был завершен.  
   
-\- или - 
+- или - 
 Прокси-сервер HTTP включен, и была предпринята попытка использования FTP-команды, отличной от <see cref="F:System.Net.WebRequestMethods.Ftp.DownloadFile" />, <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectory" /> или <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails" />.</exception>
         <exception cref="T:System.Net.WebException">Не удается установить подключение к FTP-серверу.</exception>
         <exception cref="T:System.Net.ProtocolViolationException">Свойству <see cref="P:System.Net.FtpWebRequest.Method" /> не присвоено значение <see cref="F:System.Net.WebRequestMethods.Ftp.UploadFile" /> или <see cref="F:System.Net.WebRequestMethods.Ftp.AppendFile" />.</exception>
-        <block subset="none" type="usage">
-          <para>Этот метод создает сетевой трафик.</para>
-        </block>
+        <block subset="none" type="usage"><para>Этот метод создает сетевой трафик.</para></block>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
         <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
@@ -1026,18 +1009,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="M:System.Net.FtpWebRequest.GetResponse" /> или <see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> уже был вызван для этого экземпляра.  
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.FtpWebRequest.GetResponse" /> или <see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> уже был вызван для этого экземпляра.  
   
-\- или - 
+-или- 
 Прокси-сервер HTTP включен, и была предпринята попытка использования FTP-команды, отличной от <see cref="F:System.Net.WebRequestMethods.Ftp.DownloadFile" />, <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectory" /> или <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails" />.</exception>
         <exception cref="T:System.Net.WebException">Значение свойства <see cref="P:System.Net.FtpWebRequest.EnableSsl" /> равно <see langword="true" />, однако сервер не поддерживает эту функциональную возможность.  
   
-\- или - 
+- или - 
 Срок ожидания <see cref="P:System.Net.FtpWebRequest.Timeout" /> был указан и истек.</exception>
-        <block subset="none" type="usage">
-          <para>Этот метод создает сетевой трафик.</para>
-        </block>
+        <block subset="none" type="usage"><para>Этот метод создает сетевой трафик.</para></block>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
         <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
@@ -1208,10 +1188,10 @@
         <exception cref="T:System.InvalidOperationException">Для этого свойства задано новое значение для уже выполняющегося запроса.</exception>
         <exception cref="T:System.ArgumentException">Метод является недопустимым.  
   
-\- или - 
+- или - 
 Метод не поддерживается.  
   
-\- или - 
+- или - 
 Было указано несколько методов.</exception>
         <altmember cref="T:System.Net.FtpWebResponse" />
         <altmember cref="T:System.Net.FtpStatusCode" />
@@ -1289,7 +1269,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает прокси-сервер, используемый для связи с FTP-сервером.</summary>
-        <value>Экземпляр <see cref="T:System.Net.IWebProxy" />, ответственный за связь с FTP-сервером. В .NET Core, его значение равно<see langword="null" />.</value>
+        <value>Экземпляр <see cref="T:System.Net.IWebProxy" />, ответственный за связь с FTP-сервером. В .NET Core, его значение равно <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1742,7 +1722,7 @@
 ## Remarks  
  Установка <xref:System.Net.FtpWebRequest.UsePassive%2A> свойства `true` отправляет "`PASV"` команды на сервер. Эта команда запрашивает сервер для прослушивания порта данных, а также для ожидания соединения, а не после получения команды на передачу данных.  
   
- Описание поведения, которые указываются с помощью <xref:System.Net.FtpWebRequest.UsePassive%2A>, см. в разделе [RFC 959: «File Transfer Protocol», раздел 3.2: «Установления подключения к данным» и разделе 4.1.2: «Передачи параметра команды»](https://www.ietf.org/rfc/rfc959.txt).  
+ Описание поведения, которые указываются с помощью <xref:System.Net.FtpWebRequest.UsePassive%2A>, см. в разделе [RFC 959: «Протокол», раздел 3.2: «При установлении подключения к данным» и разделе 4.1.2: «Перенести параметр команды»](https://www.ietf.org/rfc/rfc959.txt).  
   
  Изменение <xref:System.Net.FtpWebRequest.UsePassive%2A> после вызова метода <xref:System.Net.FtpWebRequest.GetRequestStream%2A>, <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>, <xref:System.Net.FtpWebRequest.GetResponse%2A>, или <xref:System.Net.FtpWebRequest.BeginGetResponse%2A> метода заставляет <xref:System.InvalidOperationException> исключение.  
   

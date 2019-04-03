@@ -1,13 +1,5 @@
 <Type Name="SignedXml" FullName="System.Security.Cryptography.Xml.SignedXml">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4d5cb7ac1ed8bdc175e4ec1920f1b00b6a789910" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49134635" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SignedXml" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="079e48bf43a937108d2ea68a3b2a558a36577827" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56775330" /></Metadata><TypeSignature Language="C#" Value="public class SignedXml" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignedXml extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.SignedXml" />
   <TypeSignature Language="VB.NET" Value="Public Class SignedXml" />
@@ -23,6 +15,7 @@
     <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,7 +33,7 @@
   
  <xref:System.Security.Cryptography.Xml.SignedXml> Класс позволяет создать три следующие виды цифровых подписей XML:  
   
-|Тип подписи|Описание:|  
+|Тип подписи|Описание|  
 |--------------------|-----------------|  
 |Запечатанной подписи|Подпись содержится в элементе XML, чтобы входить.|  
 |Запечатывающая сигнатура|Подписанный XML-код содержится в <`Signature`> элемента.|  
@@ -73,7 +66,7 @@
  Ниже приведены основные части этой структуры.  
   
  <`CanonicalizationMethod`> Элемент  
- Указывает правила для перезаписи `Signature` элемента из XML-текста в байтах для проверки подписи. Значение по умолчанию в .NET Framework — http://www.w3.org/TR/2001/REC-xml-c14n-20010315, который идентифицирует trustworthy алгоритм. Этот элемент, представленный объектом <xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A?displayProperty=nameWithType> свойство.  
+ Указывает правила для перезаписи `Signature` элемента из XML-текста в байтах для проверки подписи. Значение по умолчанию в .NET Framework — https://www.w3.org/TR/2001/REC-xml-c14n-20010315, который идентифицирует trustworthy алгоритм. Этот элемент, представленный объектом <xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A?displayProperty=nameWithType> свойство.  
   
  <`SignatureMethod`> Элемент  
  Указывает алгоритм, используемый для создания и проверки, которая была применена к подписи <`Signature`> элемент для получения значения в <`SignatureValue`>. В примере выше, значение http://www.w3.org/2000/09/xmldsig#rsa-sha1 определяет подпись PKCS1 RSA SHA-1. Этот элемент, представленный объектом <xref:System.Security.Cryptography.Xml.SignedXml.SignatureMethod%2A> свойство.  
@@ -99,7 +92,7 @@
   
 -   Каждый алгоритм преобразования определяется как обеспечивающий XML или байтов в качестве выходных данных.  
   
--   Если выходные данные алгоритма последнего преобразования не определен в байтах (или никакие преобразования не были указаны), затем метод канонизации http://www.w3.org/TR/2001/REC-xml-c14n-20010315 используется в качестве неявного преобразования (даже если другой алгоритм был указан в <`CanonicalizationMethod`> элемент).  
+-   Если выходные данные алгоритма последнего преобразования не определен в байтах (или никакие преобразования не были указаны), а затем [метод канонизации](https://www.w3.org/TR/2001/REC-xml-c14n-20010315) используется в качестве неявного преобразования (даже если другой алгоритм был указан в <`CanonicalizationMethod`> элемент).  
   
 -   Значение http://www.w3.org/2000/09/xmldsig#enveloped-signature для преобразования алгоритм кодирует правило, которое интерпретируется как remove <`Signature`> элемент из документа. В противном случае будет дайджест-проверки запечатанной подписи документа, включая подпись, но подписавшего бы систематизировать документ до применения подпись, начальные разные ответы.  
   
@@ -107,7 +100,7 @@
  Определяет метод хэш-кода (криптографический хэш) для применения на преобразованное содержимое, идентифицируемый `URI` атрибут <`Reference`> элемента. Это ограничение задается <xref:System.Security.Cryptography.Xml.Reference.DigestMethod%2A?displayProperty=nameWithType> свойство.  
   
 ## <a name="choosing-a-canonicalization-method"></a>Выбор метода канонизации  
- Если взаимодействие со спецификацией, который требуется использовать другое значение, мы не рекомендуем использовать метод канонизации по умолчанию в .NET Framework, которая представляет собой алгоритм XML C14N 1.0, значение которого равно http://www.w3.org/TR/2001/REC-xml-c14n-20010315. Алгоритм XML C14N 1.0 необходима для поддержки всех реализаций XMLDSIG, особенно в том случае, поскольку это конечное неявное преобразование для применения.  
+ Если взаимодействие со спецификацией, который требуется использовать другое значение, мы не рекомендуем использовать метод канонизации по умолчанию в .NET Framework, которая представляет собой алгоритм XML C14N 1.0, значение которого равно https://www.w3.org/TR/2001/REC-xml-c14n-20010315. Алгоритм XML C14N 1.0 необходима для поддержки всех реализаций XMLDSIG, особенно в том случае, поскольку это конечное неявное преобразование для применения.  
   
  Существуют версии алгоритмы канонизации, которые поддерживают Сохранение комментариев. Комментарий с сохранением канонизации методы не рекомендуется, так как они нарушают принцип «подписать показанному». То есть в комментариях в <`Signature`> элемент будет не удалось изменить логику обработки для выполнением подпись, является просто какие значение подписи. В сочетании с алгоритмом нестойкие подписи, позволяя комментарии, чтобы быть включены дает свободу ненужные злоумышленник для принудительного конфликт хэша, что делает искаженные документ выглядел законным.  В .NET Framework по умолчанию поддерживаются только встроенная canonicalizers. Для поддержки дополнительных или настраиваемых canonicalizers, см. в разделе <xref:System.Security.Cryptography.Xml.SignedXml.SafeCanonicalizationMethods%2A> свойство. Если в документе используется метод канонизации, который не находится в коллекции, представленной <xref:System.Security.Cryptography.Xml.SignedXml.SafeCanonicalizationMethods%2A> свойства, а затем <xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A> метод возвратит `false`.  
   
@@ -155,7 +148,7 @@
 ## <a name="choosing-the-transform-algorithm"></a>Выбор алгоритма преобразования  
  При взаимодействии со спецификацией, которая определенные значения (например, XrML), зависит от, необходимо выполнить в спецификации.  При наличии запечатанной подписи (например, когда подписи весь документ), то необходимо использовать http://www.w3.org/2000/09/xmldsig#enveloped-signature (представленный <xref:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform> класса). Можно указать также неявные преобразования XML C14N, но это не требуется.  Для подписи запечатанной или отсоединения никакие преобразования не являются обязательными. Неявные преобразования XML-C14N выполняет все действия.  
   
- С помощью обновлениях безопасности представленные [бюллетень Microsoft по безопасности MS16-035](https://technet.microsoft.com/en-us/library/security/ms16-035.aspx), .NET Framework имеет ограниченную преобразований, которые могут быть используется в проверке документа по умолчанию с ненадежных преобразованиями, вызывая <xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A>всегда возвращает `false`. В частности преобразований, которые требуют дополнительных входных данных (заданных в качестве дочерних элементов в XML) не допускается из-за их подверженность о нарушении пользователей-злоумышленников. W3C будет указано, как избежать преобразования XPath и XSLT, которые являются два основных преобразования влияют эти ограничения.  
+ С помощью обновлениях безопасности представленные [бюллетень Microsoft по безопасности MS16-035](https://docs.microsoft.com/security-updates/securitybulletins/2016/ms16-035), .NET Framework имеет ограниченную преобразований, которые могут быть используется в проверке документа по умолчанию с ненадежных преобразованиями, вызывая <xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A>всегда возвращает `false`. В частности преобразований, которые требуют дополнительных входных данных (заданных в качестве дочерних элементов в XML) не допускается из-за их подверженность о нарушении пользователей-злоумышленников. W3C будет указано, как избежать преобразования XPath и XSLT, которые являются два основных преобразования влияют эти ограничения.  
   
 ## <a name="the-problem-with-external-references"></a>Проблема с внешних ссылок  
  Если приложение не проверяет, что внешние ссылки не подходят для текущего контекста, они могут дают способами, которые предоставляют множество уязвимостей в системе безопасности (включая отказ в обслуживании, распределенных отражения отказ в обслуживании, сведения Раскрытие обход проверки подписи и удаленное выполнение программного кода). Даже если приложение для проверки ссылки URI, останется проблема ресурса, загружаемый в два раза: когда когда приложение считывает его и один раз при <xref:System.Security.Cryptography.Xml.SignedXml> считывает его. Так как нет никакой гарантии, что приложения чтения и выполнения убедитесь, что действия имеют одинаковое содержимое, подпись не предоставляет уровень доверия.  
@@ -208,6 +201,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -256,6 +250,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="document" Type="System.Xml.XmlDocument" />
@@ -289,7 +284,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="document" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Параметр <paramref name="document" /> содержит свойство <see cref="P:System.Xml.XmlDocument.DocumentElement" /> со значением null.</exception>
       </Docs>
     </Member>
@@ -311,6 +306,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="elem" Type="System.Xml.XmlElement" />
@@ -339,6 +335,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -389,6 +386,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -461,6 +459,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -502,10 +501,10 @@
         </remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Свойство <see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" /> открытого ключа в подписи не совпадает со свойством <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureMethod" />.  
   
-- или - 
+-или- 
 Не удалось создать описание сигнатуры.  
   
-или 
+-или 
 Не удалось создать хэш-алгоритм.</exception>
       </Docs>
     </Member>
@@ -527,6 +526,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -559,10 +559,10 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="key" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Свойство <see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" /> параметра <paramref name="key" /> не совпадает со свойством <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureMethod" />.  
   
-- или - 
+-или- 
 Не удалось создать описание сигнатуры.  
   
-или 
+-или 
 Не удалось создать хэш-алгоритм.</exception>
       </Docs>
     </Member>
@@ -584,6 +584,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -616,10 +617,10 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="macAlg" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Свойство <see cref="P:System.Security.Cryptography.HashAlgorithm.HashSize" /> указанного объекта <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" /> недопустимо.  
   
-- или - 
+-или- 
 Значение свойства <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Не удалось создать криптографическое преобразование, используемое для проверки подписи.</exception>
       </Docs>
     </Member>
@@ -640,6 +641,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
@@ -653,8 +655,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
-        <Parameter Name="verifySignatureOnly" Type="System.Boolean" />
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="verifySignatureOnly" Type="System.Boolean" Index="1" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="certificate">Объект <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />, используемый для проверки свойства <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />.</param>
@@ -662,7 +664,7 @@
         <summary>Определяет, проверяется ли свойство <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" /> для указанного объекта <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> и действителен ли сертификат (необязательно).</summary>
         <returns>Значение <see langword="true" />, если подпись является допустимой; в противном случае — значение <see langword="false" />.  
   
-- или - 
+-или- 
  Значение <see langword="true" />, если подпись и сертификат действительны; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -704,6 +706,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -736,10 +739,10 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="signingKey" /> имеет значение null.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Свойство <see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" /> открытого ключа в подписи не совпадает со свойством <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureMethod" />.  
   
-- или - 
+-или- 
 Не удалось создать описание сигнатуры.  
   
-или 
+-или 
 Не удалось создать хэш-алгоритм.</exception>
       </Docs>
     </Member>
@@ -770,6 +773,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -804,10 +808,10 @@
         </remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Значение свойства <see cref="P:System.Security.Cryptography.Xml.SignedXml.SigningKey" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Security.Cryptography.Xml.SignedXml.SigningKey" /> не является объектом <see cref="T:System.Security.Cryptography.DSA" /> или объектом <see cref="T:System.Security.Cryptography.RSA" />.  
   
-- или - 
+-или- 
 Не удалось загрузить ключ.</exception>
       </Docs>
     </Member>
@@ -829,6 +833,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -867,10 +872,10 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="macAlg" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Объект <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />, определенный параметром <paramref name="macAlg" /> не является экземпляром <see cref="T:System.Security.Cryptography.HMACSHA1" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Security.Cryptography.HashAlgorithm.HashSize" /> указанного объекта <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" /> недопустимо.  
   
-- или - 
+-или- 
 Не удалось создать криптографическое преобразование, используемое для проверки подписи.</exception>
       </Docs>
     </Member>
@@ -891,6 +896,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
@@ -924,6 +930,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlElement</ReturnType>
@@ -958,6 +965,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
@@ -997,6 +1005,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlElement</ReturnType>
@@ -1008,7 +1017,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Значение свойства <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignedInfo" /> — <see langword="null" />.  
   
-- или - 
+-или- 
 Значение свойства <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureValue" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
@@ -1030,6 +1039,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.Xml.KeyInfo</ReturnType>
@@ -1084,6 +1094,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1109,7 +1120,7 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="value" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Параметр <paramref name="value" /> не содержит допустимое свойство <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureValue" />.  
   
-- или - 
+-или- 
 Параметр <paramref name="value" /> не содержит допустимое свойство <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignedInfo" />.</exception>
       </Docs>
     </Member>
@@ -1131,6 +1142,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.Xml.Signature</ReturnType>
@@ -1158,6 +1170,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1185,6 +1198,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
@@ -1223,13 +1237,13 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>[Поддерживается в .NET Framework 4.5.1 и более поздних версиях.] 
-Возвращает имена методов, алгоритмы каноничности которых явно разрешены.</summary>
+        <summary>Возвращает имена методов, алгоритмы каноничности которых явно разрешены.</summary>
         <value>Коллекция имен методов, которые безопасно создают канонический XML.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1259,6 +1273,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.Xml.Signature</ReturnType>
@@ -1311,6 +1326,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Func&lt;System.Security.Cryptography.Xml.SignedXml,System.Boolean&gt;</ReturnType>
@@ -1328,7 +1344,7 @@
   
  Можно также получить текущий делегат объекта и его цепочку, если требуется.  
   
- Если вы настраиваете формат проверяющий элемент управления, получают в качестве входного параметра делегата, указываемое в <xref:System.Security.Cryptography.Xml.SignedXml> выполняется проверка и возвращает логическое значение — `true` Если формат приемлем, `false` Если это не так. Если делегат вернул `false` для какой-либо причине <xref:System.Security.Cryptography.Xml.SignedXml> объект сообщит, что XML-подписи не является допустимым.  
+ Если вы настраиваете формат проверяющий элемент управления, получают в качестве входного параметра делегата, вы предоставляете <xref:System.Security.Cryptography.Xml.SignedXml> выполняется проверка и возвращает значение типа Boolean - `true` Если формат приемлем, `false` Если это не. Если делегат вернул `false` для какой-либо причине <xref:System.Security.Cryptography.Xml.SignedXml> объект сообщит, что XML-подписи не является допустимым.  
   
  ]]></format>
         </remarks>
@@ -1352,6 +1368,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1380,6 +1397,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1419,6 +1437,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -1458,6 +1477,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.Xml.SignedInfo</ReturnType>
@@ -1497,6 +1517,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
@@ -1553,6 +1574,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1580,6 +1602,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1617,6 +1640,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1665,6 +1689,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1675,13 +1700,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl> поле является "http://www.w3.org/TR/2001/REC-xml-c14n-20010315«.  
+ Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl> поле является `http://www.w3.org/TR/2001/REC-xml-c14n-20010315`.  
   
  Это поле можно используйте для упрощения установки значения для одного из атрибутов URI элемента, используемого для подписи XMLDSIG.  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NTransform> Класс реализует преобразование, описываемого <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl> поля.  
   
- Дополнительные сведения см. в спецификации консорциума World Wide Web (W3C) в http://www.w3.org/TR/2001/REC-xml-c14n-20010315.  
+ Дополнительные сведения см. в разделе World Wide Web Consortium (W3C) [канонический XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315) спецификации.  
   
  Это поле имеет то же значение, что <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl> поля.  
   
@@ -1715,6 +1740,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1725,13 +1751,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl> поле является "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments «.  
+ Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl> поле является `http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments`.  
   
  Это поле можно используйте для упрощения установки значения для одного из атрибутов URI элемента, используемого для подписи XMLDSIG.  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform> Класс реализует преобразование, описываемого <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl> поля.  
   
- Дополнительные сведения см. в спецификации консорциума World Wide Web (W3C) в http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments.  
+ Дополнительные сведения см. в разделе World Wide Web Consortium (W3C) [канонический XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments) спецификации.  
   
  Это поле имеет то же значение, что <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl> поля.  
   
@@ -1757,6 +1783,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1767,13 +1794,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl> поле является "http://www.w3.org/TR/2001/REC-xml-c14n-20010315«.  
+ Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl> поле является `http://www.w3.org/TR/2001/REC-xml-c14n-20010315`.  
   
  Это поле можно используйте для упрощения установки значения для одного из атрибутов URI элемента, используемого для подписи XMLDSIG.  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NTransform> Класс реализует преобразование, описываемого <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl> поля.  
   
- Дополнительные сведения см. в спецификации консорциума World Wide Web (W3C) в http://www.w3.org/TR/2001/REC-xml-c14n-20010315.  
+ Дополнительные сведения см. в разделе World Wide Web Consortium (W3C) [канонический XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315) спецификации.  
   
  Это поле имеет то же значение, что <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl> поля.  
   
@@ -1799,6 +1826,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1809,13 +1837,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl> поле является "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments«.  
+ Значение <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl> поле является `http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments`.  
   
  Это поле можно используйте для упрощения установки значения для одного из атрибутов URI элемента, используемого для подписи XMLDSIG.  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform> Класс реализует преобразование, описываемого <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl> поля.  
   
- Дополнительные сведения см. в спецификации консорциума World Wide Web (W3C) в http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments.  
+ Дополнительные сведения см. в разделе World Wide Web Consortium (W3C) [канонический XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments) спецификации.  
   
  Это поле имеет то же значение, что <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl> поля.  
   
@@ -1841,6 +1869,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1878,6 +1907,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1926,6 +1956,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1974,6 +2005,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2023,6 +2055,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2061,6 +2094,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2099,6 +2133,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2137,6 +2172,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2171,6 +2207,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2205,6 +2242,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2239,6 +2277,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2277,6 +2316,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2311,6 +2351,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2345,6 +2386,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2379,6 +2421,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2416,6 +2459,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2463,6 +2507,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2511,6 +2556,7 @@
         <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

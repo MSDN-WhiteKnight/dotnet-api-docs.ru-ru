@@ -1,13 +1,5 @@
 <Type Name="IDisposable" FullName="System.IDisposable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="412bc937768dc61068983038308bc6d28e1b145d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48590392" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="20ef4ce10ae7d883f64127d17e5c321125ea4a32" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51896551" /></Metadata><TypeSignature Language="C#" Value="public interface IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.IDisposable" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDisposable" />
@@ -86,7 +78,7 @@
  [!code-csharp[System.IDisposable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/calling2.cs#2)]
  [!code-vb[System.IDisposable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/calling2.vb#2)]  
   
- Дополнительные сведения о `try` / `finally` шаблонов, см. в разделе [попробуйте... CATCH... Оператор Finally](~/docs/visual-basic/language-reference/statements/try-catch-finally-statement.md), [try-finally](~/docs/csharp/language-reference/keywords/try-finally.md), или [оператор try-finally](http://msdn.microsoft.com/library/514400c1-c322-4bf3-9e48-3047240b8a82).  
+ Дополнительные сведения о `try` / `finally` шаблонов, см. в разделе [попробуйте... CATCH... Оператор Finally](~/docs/visual-basic/language-reference/statements/try-catch-finally-statement.md), [try-finally](~/docs/csharp/language-reference/keywords/try-finally.md), или [оператор try-finally](https://msdn.microsoft.com/library/514400c1-c322-4bf3-9e48-3047240b8a82).  
   
 ## <a name="implementing-idisposable"></a>Использование IDisposable  
  Следует реализовать <xref:System.IDisposable> только в том случае, если ваш тип использует неуправляемые ресурсы, напрямую. Потребители типа могут вызвать ваш <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> реализации для освобождения ресурсов, в том случае, если экземпляр больше не нужен. Для обработки случаев, в которых они не удастся вызвать <xref:System.IDisposable.Dispose%2A>, следует использовать либо класс, производный от <xref:System.Runtime.InteropServices.SafeHandle> программы-оболочки неуправляемые ресурсы, или вы должны переопределять <xref:System.Object.Finalize%2A?displayProperty=nameWithType> метод для ссылочного типа. В любом случае используйте <xref:System.IDisposable.Dispose%2A> метод для выполнения любой очистки необходим после использования неуправляемых ресурсов, например удалением, высвобождением или сбросом неуправляемых ресурсов.  

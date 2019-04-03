@@ -1,13 +1,5 @@
 <Type Name="ReadOnlyArrayAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0754ad8d2ab603bc2e3ed9ca98c9a8ed4488abc8" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48644804" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ReadOnlyArrayAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="80d961da166c07350b1ba27fbd26b7b6ea98f58c" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56380701" /></Metadata><TypeSignature Language="C#" Value="public sealed class ReadOnlyArrayAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReadOnlyArrayAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ReadOnlyArrayAttribute&#xA;Inherits Attribute" />
@@ -28,7 +20,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=false)</AttributeName>
     </Attribute>
   </Attributes>
@@ -44,21 +36,21 @@
   
 -   Применить <xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute> атрибут, если содержимое массива для использования только для вывода (то есть метод задает содержимое массива, но не считывает их).  
   
- Применение обоих атрибутов для параметра приводит к ошибке. Дополнительные сведения, включая стандартный шаблон для внесения изменений в массив, см. в разделе [Передача массивов в компонент среды выполнения Windows](http://go.microsoft.com/fwlink/?LinkId=251026) в центре разработки для Windows.  
+ Применение обоих атрибутов для параметра приводит к ошибке. Дополнительные сведения, включая стандартный шаблон для внесения изменений в массив, см. в разделе [Передача массивов в компонент среды выполнения Windows](https://go.microsoft.com/fwlink/?LinkId=251026) в центре разработки для Windows.  
   
 > [!IMPORTANT]
 >  Параметры, имеющие <xref:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute> атрибут ведут себя по-разному в зависимости от того, написана ли вызывающий объект в машинном или управляемом коде. Если вызывающему объекту машинного кода (расширения компонентов Visual C++ или JavaScript), массив копируется в том случае, когда вызов пересекает границы двоичного интерфейса (ABI) приложения. Элементы преобразуются при необходимости. Таким образом, любые случайные изменения, внесенные методом в массив только для ввода, не видны вызывающему объекту.  
 >   
->  Если вызывающий объект является управляемым кода, массив не копируется. Исходный массив доступен вызываемому методу, как было бы при любом вызове метода в .NET Framework. Содержимое массива может изменяться в коде .NET Framework, поэтому любые изменения, внесенные методом в массив, видны вызывающему объекту. Это важно помнить, так как оно влияет на модульные тесты для [!INCLUDE[wrt](~/includes/wrt-md.md)] компонента. Если тесты написаны в управляемом коде, то во время тестирования содержимое массива выглядит изменяемым.  
+>  Если вызывающий объект является управляемым кода, массив не копируется. Исходный массив доступен вызываемому методу, как было бы при любом вызове метода в .NET Framework. Содержимое массива может изменяться в коде .NET Framework, поэтому любые изменения, внесенные методом в массив, видны вызывающему объекту. Это важно помнить, поскольку это влияет на модульные тесты, написанные для компонента [!INCLUDE[wrt](~/includes/wrt-md.md)]. Если тесты написаны в управляемом коде, то во время тестирования содержимое массива выглядит изменяемым.  
   
  Применение этого атрибута к параметру, который имеет <xref:System.Runtime.InteropServices.InAttribute> или <xref:System.Runtime.InteropServices.OutAttribute> атрибут приводит к ошибке при экспорте модуля. Применение атрибута к `out` параметра также приводит к ошибке.  
   
  ]]></format>
     </remarks>
     <altmember cref="T:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute" />
-    <related type="Article" href="http://msdn.microsoft.com/library/d2ce0683-343d-403e-bb8d-209186f7a19d">Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/p/?LinkId=238313">Создание компонентов среды выполнения Windows в C# и Visual Basic</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=251026">Передача массивов в компонент среды выполнения Windows</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/d2ce0683-343d-403e-bb8d-209186f7a19d">Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/p/?LinkId=238313">Создание компонентов среды выполнения Windows в C# и Visual Basic</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=251026">Передача массивов в компонент среды выполнения Windows</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">

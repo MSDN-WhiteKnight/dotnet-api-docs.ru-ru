@@ -1,13 +1,5 @@
 <Type Name="AssemblyLoadContext" FullName="System.Runtime.Loader.AssemblyLoadContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1a5798f3c81e8fb04f46cc72b9ff78a79f39acec" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36536424" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class AssemblyLoadContext" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e3cdf5b1dd5217e7f54ec5ce6fcb7f581a871d9d" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58455217" /></Metadata><TypeSignature Language="C#" Value="public abstract class AssemblyLoadContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AssemblyLoadContext extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Loader.AssemblyLoadContext" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AssemblyLoadContext" />
@@ -18,6 +10,7 @@
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.2.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -28,8 +21,58 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Представляет концепцию области среды выполнения для привязки. Это абстрактный класс.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks
+ <xref:System.Runtime.Loader.AssemblyLoadContext> Представляет контекст загрузки. По существу контекст загрузки создает область для загрузки, разрешение и потенциально выгрузки набор сборок.
+ 
+ <xref:System.Runtime.Loader.AssemblyLoadContext> является абстрактным классом. <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)?displayProperty=nameWithType> Должна быть реализована для создания конкретного класса.
+ 
+ <xref:System.Runtime.Loader.AssemblyLoadContext> Существует в основном для обеспечения изоляции привязки сборок. Она позволяет несколько версий одной сборки для загрузки в одном процессе. Он заменяет изоляции механизмов, предоставляемых средой несколько <xref:System.AppDomain> экземпляров в .NET Framework.
+ 
+ > [!NOTE]
+ > <xref:System.Runtime.Loader.AssemblyLoadContext> не поддерживает все функции безопасности. Весь код имеет полные права процесса.
+
+### <a name="usage-in-the-runtime"></a>Использование в среде выполнения
+ Среда выполнения реализует двух контекстов загрузки сборки:
+ * <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> Представляет контекст привязки по умолчанию среды выполнения, который используется для главной сборки приложения и зависимые статические.
+ * <xref:System.Reflection.Assembly.LoadFile(System.String)?displayProperty=nameWithType> Метод изолирует сборки, он загружает путем создания экземпляра основная <xref:System.Runtime.Loader.AssemblyLoadContext>. Он имеет схему упрощенный изоляции, которая загружает каждой сборки в свой собственный <xref:System.Runtime.Loader.AssemblyLoadContext> с решения нет зависимостей.
+ 
+### <a name="application-usage"></a>Использование приложения
+ Приложение может создать свой собственный <xref:System.Runtime.Loader.AssemblyLoadContext> для создания пользовательского решения расширенных сценариях привязки. Настройка раздел посвящен определению механизмы разрешения зависимостей.
+ 
+ <xref:System.Runtime.Loader.AssemblyLoadContext> Предоставляет две точки расширения для реализации разрешение управляемой сборки:
+ 1. <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)?displayProperty=nameWithType> Предоставляет первый вероятность <xref:System.Runtime.Loader.AssemblyLoadContext> для разрешения сборки, загрузить его и вернуть его. Если <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)?displayProperty=nameWithType> возвращает `null`, загрузчик пытается загрузить сборку в <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType>.
+ 2. Если <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> не удается разрешить сборку исходного <xref:System.Runtime.Loader.AssemblyLoadContext> возвращает вторую попытку разрешить сборку. Среда выполнения вызывает <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving> событий.
+ 
+ Кроме того <xref:System.Runtime.Loader.AssemblyLoadContext.LoadUnmanagedDll(System.String)?displayProperty=nameWithType> виртуальный метод предоставляет возможность настройки разрешения сборки по умолчанию неуправляемые. Реализация по умолчанию возвращает `null`, что вызывает поиск среды выполнения использовать ее стандартную политику поиска, этого достаточно для большинства сценариев.
+
+### <a name="technical-challenges"></a>Технические проблемы
+ * Это не позволяет загружать несколько версий среды выполнения в одном процессе.
+     > [!CAUTION]
+     > Загрузка нескольких копий или разные версии сборки .NET framework может привести к непредвиденным и трудно диагностировать поведение.
+     
+     > [!TIP]
+     > Используйте границы процессов с удаленного взаимодействия и/или межпроцессного взаимодействия, чтобы решить эту проблему изоляции.
+ 
+ * Время загрузки сборки может затруднить тестирование и отладка. Сборки обычно загружаются без их зависимости немедленно устранена. Зависимости загружаются в том случае, когда они нужны:
+     * Если код ветвей в зависимой сборки.
+     * Когда код загружает ресурсы.
+     * Когда код явным образом загружает сборки.
+ 
+ * Реализация <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)?displayProperty=nameWithType> можно добавить новые зависимости, которые может потребоваться быть изолированы, чтобы разрешить разные версии существует. Самым естественным выбором реализации следует поместить эти зависимости в контексте по умолчанию. Тщательная разработка можно изолировать новые зависимости.
+ 
+ * Процесс изоляции привязки создает несколько типов с одинаковым именем типа.
+     * Это может привести к непредвиденным сообщения об ошибках, например «тип Foo.Foo не может быть приведен к типу Foo.Foo.»
+     * Маршалинг через границы изоляции является нетривиальным. Обычным решением будет использовать интерфейс, определенный в сборке, которая загружается только в контексте загрузки по умолчанию.
+ 
+ ]]></format>
+    </remarks>
+    <related type="Article" href="https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/assemblyloadcontext.md">AssemblyLoadContext CoreCLR проектный документ</related>
+    <related type="Article" href="/en-us/dotnet/standard/assembly/unloadability-howto">Как использовать и unloadability сборки отладки в .NET Core</related>
+    <related type="Article" href="https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/unloadability.md">AssemblyLoadContext unloadability проектный документ</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,6 +87,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -51,7 +95,36 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Runtime.Loader.AssemblyLoadContext" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Данный конструктор является защищенным. Может вызываться только из <xref:System.Runtime.Loader.AssemblyLoadContext> класса или его производных классов.
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AssemblyLoadContext (bool isCollectible);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool isCollectible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Loader.AssemblyLoadContext.#ctor(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (isCollectible As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; AssemblyLoadContext(bool isCollectible);" />
+      <MemberSignature Language="F#" Value="new System.Runtime.Loader.AssemblyLoadContext : bool -&gt; System.Runtime.Loader.AssemblyLoadContext" Usage="new System.Runtime.Loader.AssemblyLoadContext isCollectible" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Loader</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isCollectible" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="isCollectible"><see langword="true" /> — включение сборки мусора; в противном случае — значение <see langword="false" />.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Runtime.Loader.AssemblyLoadContext" /> со значением, определяющим включение сборки мусора.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,6 +141,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -77,8 +151,8 @@
         <ReturnType>System.Runtime.Loader.AssemblyLoadContext</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Возвращает значение по умолчанию для объекта <see cref="T:System.Runtime.Loader.AssemblyLoadContext" />. Контекст по умолчанию содержит основную сборку приложения и его статические зависимости.</summary>
+        <value>Контекст загрузки сборки по умолчанию.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,6 +169,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -107,10 +182,13 @@
         <Parameter Name="assemblyPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="assemblyPath">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assemblyPath">Путь к сборке.</param>
+        <summary>Получает <see cref="T:System.Reflection.AssemblyName" /> для пути к сборке.</summary>
+        <returns>Объект, содержащий полностью проанализированное имя для этой сборки в <paramref name="assemblyPath" />.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assemblyPath" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти сборку.</exception>
+        <exception cref="T:System.BadImageFormatException">Сборка не является допустимой.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetLoadContext">
@@ -125,6 +203,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -137,10 +216,39 @@
         <Parameter Name="assembly" Type="System.Reflection.Assembly" />
       </Parameters>
       <Docs>
-        <param name="assembly">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assembly">Сборка</param>
+        <summary>Получает <see cref="T:System.Runtime.Loader.AssemblyLoadContext" /> с указанным <see cref="T:System.Reflection.Assembly" />.</summary>
+        <returns>Контекст загрузки сборки с <paramref name="assembly" />.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assembly" /> — <see langword="null" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollectible">
+      <MemberSignature Language="C#" Value="public bool IsCollectible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollectible" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Loader.AssemblyLoadContext.IsCollectible" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsCollectible As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsCollectible { bool get(); };" />
+      <MemberSignature Language="F#" Value="member this.IsCollectible : bool" Usage="System.Runtime.Loader.AssemblyLoadContext.IsCollectible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Loader</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Получает значение, указывающее, является ли контекст <see cref="T:System.Runtime.Loader.AssemblyLoadContext" /> забираемым.</summary>
+        <value><see langword="true" /> Если этот <see cref="T:System.Runtime.Loader.AssemblyLoadContext" /> собираемой; в противном случае — значение <see langword="false" />. Если значение не указано в конструкторе, значение равно <see langword="false" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ Дополнительные сведения см. в разделе <see href="/en-us/dotnet/standard/assembly/unloadability-howto">способы использования и отладка unloadability сборки в .NET Core</see>.
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Load">
@@ -155,6 +263,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -167,10 +276,20 @@
         <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
       </Parameters>
       <Docs>
-        <param name="assemblyName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="assemblyName">Объект, описывающий загружаемую сборку.</param>
+        <summary>При переопределении в производном классе позволяет сборке разрешаться и загружаться в зависимости от <see cref="T:System.Reflection.AssemblyName" />.</summary>
+        <returns>Загруженная сборка или <see langword="null" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+ 
+## Remarks
+ Во время разрешения сборки <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)> у метода, чтобы разрешить имя сборки в загруженной сборки. Его можно загрузить сборку или возвращать `null`. Если он возвращает `null`, процесс продолжается. См. в разделе <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName(System.Reflection.AssemblyName)> для описания полного процесса.
+ 
+ > [!IMPORTANT]
+ > Чтобы предотвратить переполнение стека рекурсивный, не следует вызывать этот экземпляр <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName(System.Reflection.AssemblyName)> метод из этого метода.
+ 
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LoadFromAssemblyName">
@@ -185,6 +304,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -197,10 +317,32 @@
         <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
       </Parameters>
       <Docs>
-        <param name="assemblyName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="assemblyName">Объект, который описывает сборку, подлежащую загрузке.</param>
+        <summary>Разрешает и загружает сборку в зависимости от <see cref="T:System.Reflection.AssemblyName" />.</summary>
+        <returns>Загруженная сборка или исключение.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A> Загружает сборку, разрешая <xref:System.Reflection.AssemblyName>. Это активирует полным разрешением. Последовательность резервных разрешение продолжает этот процесс: 1. Этот метод вызывает <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)>.
+         > [!IMPORTANT]
+         > <xref:System.Runtime.Loader.AssemblyLoadContext.Load(System.Reflection.AssemblyName)> must not call this method to prevent recursive stack overflow.
+     2. Unless the assembly is loaded or an exception is thrown, the method attempts to load the assembly in the default <xref:System.Runtime.Loader.AssemblyLoadContext>.
+     3. Unless the assembly is loaded or an exception is thrown, the method fires the <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving> event.
+     4. Unless the assembly is loaded or an exception is thrown, the method fires the <xref:System.AppDomain.AssemblyResolve> event.
+ 
+ > [!NOTE]
+ > <xref:System.IO.FileLoadException> возникает, если `assemblyRef` указывает полное имя сборки и первой сборки, которая соответствует простое имя имеет несовместимую версию или языка и региональных параметров. Загрузчик не производит поиск других сборок, которые соответствуют простым именем.
+ 
+ Каждый <xref:System.Runtime.Loader.AssemblyLoadContext> можно загрузить только: * одну версию исполняемого файла сборки.
+* Одну версию вспомогательной сборки для каждого языка и региональных параметров.
+ 
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assemblyName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="assemblyName" /> не найден.</exception>
+        <exception cref="T:System.BadImageFormatException"><paramref name="assemblyName" /> не является допустимой сборкой.</exception>
+        <exception cref="T:System.IO.FileLoadException">Загружены сборка или модуль, которые не соответствуют <paramref name="assemblyName" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadFromAssemblyPath">
@@ -216,6 +358,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -228,10 +371,15 @@
         <Parameter Name="assemblyPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="assemblyPath">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assemblyPath">Полный путь к загружаемому файлу.</param>
+        <summary>Загружает содержимое файла сборки, находящегося по указанному пути.</summary>
+        <returns>Загруженная сборка.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">Аргумент <paramref name="assemblyPath" /> не является абсолютным путем.</exception>
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="assemblyPath" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.IO.FileLoadException">Не удалось загрузить файл, который был найден.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Параметр <paramref name="assemblyPath" /> представляет собой пустую строку ("") или не существует.</exception>
+        <exception cref="T:System.BadImageFormatException"><paramref name="assemblyPath" /> не является допустимой сборкой.</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadFromNativeImagePath">
@@ -247,6 +395,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -260,11 +409,26 @@
         <Parameter Name="assemblyPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="nativeImagePath">To be added.</param>
-        <param name="assemblyPath">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="nativeImagePath">Полный путь к загружаемому файлу.</param>
+        <param name="assemblyPath">Полный путь к версии IL файла для загрузки или <see langword="null" />.</param>
+        <summary>Загружает содержимое собственного образа файла управляемой сборки по указанному пути.</summary>
+        <returns>Загруженная сборка.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ Для управляемой сборки образов в машинном коде — предварительно скомпилированные JIT-компилятором для оптимизации выполнения на определенной платформе.
+ 
+ Путь к сборке ссылается на путь к IL версию сборки. Это необязательный аргумент IL-код обычно в составе образа в машинном коде. Он используется средой выполнения как переход на резервный ресурс Если образа в машинном коде не найден.
+ 
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">Аргумент <paramref name="nativeImagePath" /> не является абсолютным путем.</exception>
+        <exception cref="T:System.ArgumentException">Аргумент <paramref name="assemblyPath" /> не является абсолютным путем.</exception>
+        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="nativeImagePath" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.IO.FileLoadException">Не удалось загрузить файл, который был найден.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Параметр <paramref name="nativeImagePath" /> представляет собой пустую строку ("") или не существует.</exception>
+        <exception cref="T:System.BadImageFormatException"><paramref name="assemblyPath" /> не является допустимой сборкой.</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadFromStream">
@@ -279,6 +443,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -291,10 +456,12 @@
         <Parameter Name="assembly" Type="System.IO.Stream" />
       </Parameters>
       <Docs>
-        <param name="assembly">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assembly">Массив байтов, который является образом в формате COFF, содержащим управляемую сборку.</param>
+        <summary>Загружает сборку с образом в формате COFF, содержащим управляемую сборку.</summary>
+        <returns>Загруженная сборка.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assembly" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.BadImageFormatException"><paramref name="assembly" /> не является допустимой сборкой.</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadFromStream">
@@ -309,6 +476,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -322,11 +490,13 @@
         <Parameter Name="assemblySymbols" Type="System.IO.Stream" />
       </Parameters>
       <Docs>
-        <param name="assembly">To be added.</param>
-        <param name="assemblySymbols">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assembly">Массив байтов, который является образом в формате COFF, содержащим управляемую сборку.</param>
+        <param name="assemblySymbols">Массив байтов, содержащий необработанные байты, которые представляют символы для сборки.</param>
+        <summary>Загружает сборку с образом в формате COFF, содержащим управляемую сборку и (дополнительно) символы для сборки.</summary>
+        <returns>Загруженная сборка.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assembly" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.BadImageFormatException"><paramref name="assembly" /> не является допустимой сборкой.</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadUnmanagedDll">
@@ -342,6 +512,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -354,10 +525,19 @@
         <Parameter Name="unmanagedDllName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="unmanagedDllName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="unmanagedDllName">Имя неуправляемые библиотеки. Как правило, это имя файла без пути или расширений.</param>
+        <summary>Позволяет производному классу загружать неуправляемую библиотеку по имени.</summary>
+        <returns>Дескриптор для загруженной библиотеки или <see langword="null" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ Реализация по умолчанию всегда возвращают `null`. Когда `null` возвращается, среда выполнения загружает библиотеку вместе с его политики по умолчанию.
+ 
+ Этот виртуальный метод может переопределяться настройка алгоритма поиска неуправляемую библиотеку. При переопределении имя может использоваться для идентификации библиотеки. Загруженной библиотеки совпадение запрошенного не требуется имя, но могут быть преобразованы, при необходимости. Сюда могут входить, изменив имя для определенного имени платформы.
+ 
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LoadUnmanagedDllFromPath">
@@ -373,6 +553,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -385,10 +566,13 @@
         <Parameter Name="unmanagedDllPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="unmanagedDllPath">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="unmanagedDllPath">Путь к неуправляемой библиотеке.</param>
+        <summary>Загружает неуправляемую библиотеку из указанного пути.</summary>
+        <returns>Дескриптор для загруженной библиотеки.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="unmanagedDllPath" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">Аргумент <paramref name="unmanagedDllPath" /> не является абсолютным путем.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти неуправляемую библиотеку.</exception>
       </Docs>
     </Member>
     <Member MemberName="Resolving">
@@ -404,6 +588,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -411,6 +596,40 @@
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Func&lt;System.Runtime.Loader.AssemblyLoadContext,System.Reflection.AssemblyName,System.Reflection.Assembly&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Происходит, когда разрешение сборки завершается неудачей при попытке загрузки в этот контекст загрузки сборки.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ Он отвечает за обработчик этого события для возврата сборку, заданную, или для возврата `null` Если сборка не распознан.
+ 
+ > [!IMPORTANT]
+ >  Если более чем один обработчик событий зарегистрирован для данного события, обработчики событий вызываются в порядке, пока обработчик события возвращает значение, которое не `null`. Последующие обработчики учитываются.
+ 
+ Дополнительные сведения об обработке событий см. в разделе [обработка и вызов событий](~/docs/standard/events/index.md).
+ 
+ Примечательно, что можно добавить обработчик для данного события, для какого-либо <xref:System.Runtime.Loader.AssemblyLoadContext>, включая контекст по умолчанию.
+ 
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvingUnmanagedDll">
+      <MemberSignature Language="C#" Value="public event Func&lt;System.Reflection.Assembly,string,IntPtr&gt; ResolvingUnmanagedDll;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Func`3&lt;class System.Reflection.Assembly, string, native int&gt; ResolvingUnmanagedDll" />
+      <MemberSignature Language="DocId" Value="E:System.Runtime.Loader.AssemblyLoadContext.ResolvingUnmanagedDll" />
+      <MemberSignature Language="VB.NET" Value="Public Event ResolvingUnmanagedDll As Func(Of Assembly, String, IntPtr) " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Func&lt;System::Reflection::Assembly ^, System::String ^, IntPtr&gt; ^ ResolvingUnmanagedDll;" />
+      <MemberSignature Language="F#" Value="member this.ResolvingUnmanagedDll : Func&lt;System.Reflection.Assembly, string, nativeint&gt; " Usage="member this.ResolvingUnmanagedDll : System.Func&lt;System.Reflection.Assembly, System.string, System.nativeint&gt; " />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Loader</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Reflection.Assembly,System.String,System.IntPtr&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>To be added.</summary>
@@ -430,6 +649,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -460,6 +680,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -477,6 +698,38 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="public void Unload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Unload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Loader.AssemblyLoadContext.Unload" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Unload ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Unload();" />
+      <MemberSignature Language="F#" Value="member this.Unload : unit -&gt; unit" Usage="assemblyLoadContext.Unload " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Loader</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Инициирует выгрузку <see cref="T:System.Runtime.Loader.AssemblyLoadContext" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
++ Если это собираемой AssemblyLoadContext только может быть выгружен.
++ Выгрузка будет выполняться асинхронно.
++ Выгрузка не будет выполняться при наличии ссылок на AssemblyLoadContext.
+
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Выгрузка не допускается.</exception>
+      </Docs>
+    </Member>
     <Member MemberName="Unloading">
       <MemberSignature Language="C#" Value="public event Action&lt;System.Runtime.Loader.AssemblyLoadContext&gt; Unloading;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Action`1&lt;class System.Runtime.Loader.AssemblyLoadContext&gt; Unloading" />
@@ -490,6 +743,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -499,7 +753,7 @@
         <ReturnType>System.Action&lt;System.Runtime.Loader.AssemblyLoadContext&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Происходит при выгрузке <see cref="T:System.Runtime.Loader.AssemblyLoadContext" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

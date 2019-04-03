@@ -1,13 +1,5 @@
 <Type Name="StoryFragment" FullName="System.Windows.Documents.DocumentStructures.StoryFragment">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="56c6aae67acd8e131e6e76d907515d82b748963a" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51306833" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class StoryFragment : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;, System.Windows.Markup.IAddChild" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b16ada421f10e37e8647f6d48d69ac026dcdd3e1" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57924685" /></Metadata><TypeSignature Language="C#" Value="public class StoryFragment : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;, System.Windows.Markup.IAddChild" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StoryFragment extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Documents.DocumentStructures.BlockElement&gt;, class System.Collections.IEnumerable, class System.Windows.Markup.IAddChild" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DocumentStructures.StoryFragment" />
   <TypeSignature Language="VB.NET" Value="Public Class StoryFragment&#xA;Implements IAddChild, IEnumerable(Of BlockElement)" />
@@ -33,7 +25,7 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Windows.Markup.ContentProperty("BlockElementList")</AttributeName>
     </Attribute>
   </Attributes>
@@ -43,13 +35,13 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- История XPS в [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа является приблизительным аналогом статьи в газете или журнале. Она представляет собой текст и графическое содержимое, обычно на один раздел, в одной [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа. Как правило, он занимает несколько страниц, но может быть короче, чем такие боковой панели страницы — текст в рамке, в журнале. Статьи также может быть дискретное как первой странице газеты с продолжением на странице 4. Следовательно Данная страница может иметь более одной статьи и частей нескольких статей. Верхний или нижний колонтитул также — это особый тип истории, который полностью заключен на одной странице.  
+ История XPS в [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа является приблизительным аналогом статьи в газете или журнале. Она представляет собой текст и графическое содержимое, обычно на один раздел, в одной [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документа. Как правило он занимает несколько страниц, но может быть меньше страницы как врезка - текст в рамке - журнала. Статьи также может быть дискретное как первой странице газеты с продолжением на странице 4. Следовательно Данная страница может иметь более одной статьи и частей нескольких статей. Верхний или нижний колонтитул также — это особый тип истории, который полностью заключен на одной странице.  
   
  Объект <xref:System.Windows.Documents.DocumentStructures.StoryFragment> представляет все или часть истории. Он не может занимать более одной страницы, но он может занимать всю страницу или поделиться страницей с других фрагментах. Если статья занимает несколько страниц, каждая часть запроса на каждой странице представляет собой отдельный фрагмент. Хотя статьи могут раздельно размещенных фрагментов, фрагмент может сам быть дискретное.  
   
  Только <xref:System.Windows.Documents.DocumentStructures.StoryFragments> элемент может быть родителем <xref:System.Windows.Documents.DocumentStructures.StoryFragment>.  Расположение <xref:System.Windows.Documents.DocumentStructures.StoryBreak> элементы внутри <xref:System.Windows.Documents.DocumentStructures.StoryFragment> показывает историю содержится в нескольких фрагментов, если дополнительные фрагменты предшествовать или следовать текущего фрагмента.  
   
- При <xref:System.Windows.Documents.DocumentStructures.StoryFragment> заканчивается середине некоторые структурного элемента; say `<TableRowGroupStructure>`, затем [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документы приложения необходимо добавить соответствующий закрывающий тег для элемента (в данном случае `</TableRowGroupStructure>`) перед `</StoryFragment>` тег, даже Однако структура продолжается в более поздней версии фрагмент. (Это необходимо, чтобы убедиться, что дерево элементов в пределах <xref:System.Windows.Documents.DocumentStructures.StoryFragment> допустимый формат XML.) Фрагмент, который продолжает историю должен начинаться с открывающего тега для прерванной структуры. Полное дерево прерванных структур должны обрабатываться так же (за одним исключением, о котором рассказывается ниже): необходимо добавить закрывающие теги для каждого тега начальных выше точки прерывания.  
+ При <xref:System.Windows.Documents.DocumentStructures.StoryFragment> заканчивается середине некоторые структурного элемента; say `<TableRowGroupStructure>`, затем [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] документы приложения необходимо добавить соответствующий закрывающий тег для элемента (в данном случае `</TableRowGroupStructure>`) перед `</StoryFragment>` тег, даже Однако структура продолжается в более поздней версии фрагмент. (Это необходимо, чтобы убедиться, что дерево элементов в пределах <xref:System.Windows.Documents.DocumentStructures.StoryFragment> допустимый формат XML.) Фрагмент, который продолжает историю должен начинаться с открывающего тега для прерванной структуры. Полное дерево прерванных структур должны обрабатываться так же (за одним исключением, о котором рассказывается ниже): Закрывающие теги должны добавляться для каждого тега начальных выше точки прерывания.  
   
  Исключение применяется, если История прерывания следует сразу же после `</TableCellStructure>` тег, то создатель приложения необходимо вставить структуру ячейку пустой таблицы (`<TableCellStructure></TableCellStructure>`) в соответствующей точке фрагмент, который продолжает историю. Это необходимо, чтобы потребляющие приложения, которые необходимо объединить все фрагменты определенной статьи для этого можно использовать простой алгоритм.  
   
@@ -157,7 +149,7 @@
   
  В приведенном выше примере Если пустая ячейка еще не добавлена в генерирующее приложение затем слияния фрагментов должен создать таблицу, первая строка которой была только одна ячейка, содержащая «SomeContent» и «MoreContent» ссылки вместо исходного сначала строки с двумя ячейками, каждая из которых содержит единственную ссылку  
   
- При слиянии весь материал, алгоритм должен повторяться для каждого последующего фрагмента, который является частью той же статье. Фрагменты, которые принадлежат истории индексируются в `<Story>` элемент. См. в разделе 9.1.15 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: спецификация и формировании](http://www.microsoft.com/whdc/xps/downloads.mspx). Последний фрагмент для определенной статьи будет иметь <xref:System.Windows.Documents.DocumentStructures.StoryBreak> как его последний дочерний элемент.  
+ При слиянии весь материал, алгоритм должен повторяться для каждого последующего фрагмента, который является частью той же статье. Фрагменты, которые принадлежат истории индексируются в `<Story>` элемент. См. в разделе 9.1.15 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: Загрузка спецификаций и лицензий](https://www.microsoft.com/whdc/xps/downloads.mspx). Последний фрагмент для определенной статьи будет иметь <xref:System.Windows.Documents.DocumentStructures.StoryBreak> как его последний дочерний элемент.  
   
    
   
@@ -206,7 +198,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="element" Type="System.Windows.Documents.DocumentStructures.BlockElement" />
+        <Parameter Name="element" Type="System.Windows.Documents.DocumentStructures.BlockElement" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="element">Добавляемый блок.</param>
@@ -246,7 +238,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Дополнительные сведения о `FragmentName` атрибут `</StoryFragment>` частью [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] документа, в главе 9 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: спецификация и формировании](http://www.microsoft.com/whdc/xps/downloads.mspx).  
+ Дополнительные сведения о `FragmentName` атрибут `</StoryFragment>` частью [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] документа, в главе 9 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: Загрузка спецификаций и лицензий](https://www.microsoft.com/whdc/xps/downloads.mspx).  
   
  ]]></format>
         </remarks>
@@ -287,7 +279,7 @@
 ## Remarks  
  Возможные значения включают «Header», «Footer» и «Содержимое».  
   
- Дополнительные сведения о `FragmentType` атрибут `</StoryFragment>` частью [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] документа, в главе 9 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: спецификация и формировании](http://www.microsoft.com/whdc/xps/downloads.mspx).  
+ Дополнительные сведения о `FragmentType` атрибут `</StoryFragment>` частью [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] документа, в главе 9 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: Загрузка спецификаций и лицензий](https://www.microsoft.com/whdc/xps/downloads.mspx).  
   
    
   
@@ -332,7 +324,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Все фрагменты определенной статьи должны иметь то же значение для этого свойства. Он должен соответствовать `StoryName` атрибут `<Story>` элемента. См. в разделе 9.1.15 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: спецификация и формировании](http://www.microsoft.com/whdc/xps/downloads.mspx).  
+ Все фрагменты определенной статьи должны иметь то же значение для этого свойства. Он должен соответствовать `StoryName` атрибут `<Story>` элемента. См. в разделе 9.1.15 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] спецификации, который можно получить в [XPS: Загрузка спецификаций и лицензий](https://www.microsoft.com/whdc/xps/downloads.mspx).  
   
  Это свойство может быть не указан, если <xref:System.Windows.Documents.DocumentStructures.StoryFragment.FragmentType%2A> является верхний или нижний колонтитул.  
   
@@ -368,7 +360,7 @@
       <Parameters />
       <Docs>
         <summary>Этот метод не был реализован.</summary>
-        <returns>Всегда вызывает <see cref="T:System.NotSupportedException" />.</returns>
+        <returns>Всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -392,7 +384,7 @@
       <Parameters />
       <Docs>
         <summary>Этот метод не был реализован.</summary>
-        <returns>Всегда вызывает <see cref="T:System.NotSupportedException" />.</returns>
+        <returns>Всегда вызывает исключение <see cref="T:System.NotSupportedException" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

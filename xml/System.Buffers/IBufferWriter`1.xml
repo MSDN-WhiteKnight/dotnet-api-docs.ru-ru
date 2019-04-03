@@ -1,13 +1,5 @@
 <Type Name="IBufferWriter&lt;T&gt;" FullName="System.Buffers.IBufferWriter&lt;T&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0e406d03abfc3ae223455324c274f283bbcfad67" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36648222" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="252b1dee3638a541d810d3dd33e85217543072a1" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460543" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBufferWriter`1&lt;T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IBufferWriter`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBufferWriter(Of T)" />
@@ -17,14 +9,18 @@
     <AssemblyName>System.Memory</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
   </TypeParameters>
   <Interfaces />
   <Docs>
-    <typeparam name="T">To be added.</typeparam>
-    <summary>To be added.</summary>
+    <typeparam name="T">Тип элементов в <see cref="T:System.Buffers.IBufferWriter`1" />.</typeparam>
+    <summary>Представляет приемник выходных данных, в который можно записать данные <typeparamref name="T" />.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -40,17 +36,21 @@
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="count">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="count">Число элементов данных, записанных в <see cref="T:System.Span`1" /> или <see cref="T:System.Memory`1" />.</param>
+        <summary>Уведомляет <see cref="T:System.Buffers.IBufferWriter`1" /> о том, что элементы данных <paramref name="count" /> записаны в <see cref="T:System.Span`1" /> или <see cref="T:System.Memory`1" /> выходных данных.</summary>
+        <remarks>Необходимо запросить новый буфер после вызова Advance продолжать запись дополнительных данных; не удается записать в буфер, полученного ранее.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetMemory">
@@ -64,18 +64,33 @@
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sizeHint" Type="System.Int32" />
+        <Parameter Name="sizeHint" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="sizeHint">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint">Минимальная длина значения <see cref="T:System.Memory`1" />. Если значение равно 0, возвращается непустой буфер.</param>
+        <summary>Возвращает <see cref="T:System.Memory`1" /> для записи минимального запрошенного размера (определяется <paramref name="sizeHint" />).</summary>
+        <returns><see cref="T:System.Memory`1" /> с минимальным размером <paramref name="sizeHint" />. Если значение <paramref name="sizeHint" /> равно 0, возвращается непустой буфер.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+Нет никакой гарантии, что последующие вызовы будут возвращать этот же буфер или же размера буфера.
+
+Это никогда не должно возвращать <xref:System.Span%601.Empty?displayProperty=nameWithType>, но может возникнуть исключение, если размер запрошенный буфер недоступен.
+
+После вызова метода необходимо запросить новый буфер `Advance` продолжать запись дополнительных данных; нельзя записывать в буфер, полученного ранее.
+
+         ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">Запрошенный размер буфера недоступен.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSpan">
@@ -89,18 +104,31 @@
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Span&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sizeHint" Type="System.Int32" />
+        <Parameter Name="sizeHint" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="sizeHint">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint">Минимальная длина возвращаемого значения <see cref="T:System.Span`1" />. Если значение равно 0, возвращается непустой буфер.</param>
+        <summary>Возвращает <see cref="T:System.Span`1" /> для записи минимального запрошенного размера (определяется <paramref name="sizeHint" />).</summary>
+        <returns><see cref="T:System.Span`1" /> с минимальным размером <paramref name="sizeHint" />. Если значение <paramref name="sizeHint" /> равно 0, возвращается непустой буфер.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+  
+Нет никакой гарантии, что последующие вызовы будут возвращать этот же буфер или же размера буфера.
+
+Этот метод никогда не должен возвращать <xref:System.Span%601.Empty?displayProperty=nameWithType>, но может возникнуть исключение, если размер запрошенный буфер недоступен.
+
+После вызова метода необходимо запросить новый буфер `Advance` продолжать запись дополнительных данных; нельзя записывать в буфер, полученного ранее.
+         ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="AggregateException" FullName="System.AggregateException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bd82a5d2b073927ee7e87552f5d5d91eae393c1e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48665805" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class AggregateException : Exception" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b7afa3b780e3c82824afcb69915f5841baa6f855" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57925439" /></Metadata><TypeSignature Language="C#" Value="public class AggregateException : Exception" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit AggregateException extends System.Exception" />
   <TypeSignature Language="DocId" Value="T:System.AggregateException" />
   <TypeSignature Language="VB.NET" Value="Public Class AggregateException&#xA;Inherits Exception" />
@@ -43,12 +35,12 @@
     <Attribute FrameworkAlternate="netframework-4.0">
       <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {InnerExceptions.Count}")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет одну или несколько ошибок, возникающих во время выполнения приложения.</summary>
+    <summary>Представляет одну или несколько ошибок, происходящих во время выполнения приложения.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -193,7 +185,7 @@
       <Parameters>
         <Parameter Name="innerExceptions" Type="System.Exception[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -287,8 +279,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
@@ -380,7 +372,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение с описанием исключения. Код, вызывающий этот конструктор, должен обеспечить локализацию данной строки в соответствии с текущим языком и региональными параметрами системы.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <c>innerException</c> не равно <see langword="null" />, текущее исключение возникает в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <paramref name="innerException" /> не равно <see langword="null" />, текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.AggregateException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -432,7 +424,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="innerExceptions" Type="System.Exception[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -505,7 +497,7 @@
  ]]></format>
         </remarks>
         <related type="Article" href="~/docs/standard/parallel-programming/exception-handling-task-parallel-library.md">Обработка исключений (библиотека параллельных задач)</related>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/p/?LinkId=259617">Статистическая обработка исключений</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/p/?LinkId=259617">Статистическая обработка исключений</related>
       </Docs>
     </Member>
     <Member MemberName="GetBaseException">
@@ -541,7 +533,7 @@
       <Parameters />
       <Docs>
         <summary>Возвращает объект <see cref="T:System.AggregateException" />, являющийся первопричиной данного исключения.</summary>
-        <returns>Возвращает объект <see cref="T:System.AggregateException" />, являющийся первопричиной данного исключения.</returns>
+        <returns>Объект <see cref="T:System.AggregateException" />, являющийся первопричиной данного исключения.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -579,8 +571,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
@@ -632,7 +624,7 @@
         <Parameter Name="predicate" Type="System.Func&lt;System.Exception,System.Boolean&gt;" />
       </Parameters>
       <Docs>
-        <param name="predicate">Предикат, который необходимо выполнить для каждого исключения. Предикат принимает в качестве аргумента подлежащий обработке объект <see cref="T:System.Exception" /> и возвращает логическое значение, указывающее, было ли обработано исключение.</param>
+        <param name="predicate">Предикат, который должен выполняться для каждого исключения. Предикат принимает в качестве аргумента подлежащий обработке объект <see cref="T:System.Exception" /> и возвращает логическое значение, указывающее, было ли обработано исключение.</param>
         <summary>Вызывает обработчик для каждого объекта <see cref="T:System.Exception" />, содержащегося в данном объекте <see cref="T:System.AggregateException" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -691,7 +683,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает доступную только для чтения коллекцию экземпляров <see cref="T:System.Exception" />, вызывавших текущее исключение.</summary>
-        <value>Возвращает доступную только для чтения коллекцию экземпляров <see cref="T:System.Exception" />, вызывавших текущее исключение.</value>
+        <value>Только для чтения коллекция <see cref="T:System.Exception" /> экземпляры, вызвавшее текущее исключение.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

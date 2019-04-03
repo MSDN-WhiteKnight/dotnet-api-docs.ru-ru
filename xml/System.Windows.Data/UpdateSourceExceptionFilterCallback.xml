@@ -1,13 +1,5 @@
 <Type Name="UpdateSourceExceptionFilterCallback" FullName="System.Windows.Data.UpdateSourceExceptionFilterCallback">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e705f0c7c41d3a00a3bae2974e637f4dbe257c38" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37521500" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public delegate object UpdateSourceExceptionFilterCallback(object bindExpression, Exception exception);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b715c214c4452338e4dca1c03eb939da6f68b56c" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51910019" /></Metadata><TypeSignature Language="C#" Value="public delegate object UpdateSourceExceptionFilterCallback(object bindExpression, Exception exception);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UpdateSourceExceptionFilterCallback extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.UpdateSourceExceptionFilterCallback" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function UpdateSourceExceptionFilterCallback(bindExpression As Object, exception As Exception) As Object " />
@@ -31,9 +23,21 @@
   <Docs>
     <param name="bindExpression">Объект с исключением.</param>
     <param name="exception">Возникло исключение.</param>
-    <summary>Представляет метод, который обрабатывает исключения, вызываемые во время обновления значения источника привязки. Должен использоваться вместе с <see cref="T:System.Windows.Controls.ExceptionValidationRule" />.</summary>
+    <summary>Представляет метод, который обрабатывает исключения, вызываемые во время обновления значения источника привязки. Он должен использоваться с <see cref="T:System.Windows.Controls.ExceptionValidationRule" />.</summary>
     <returns>Объект, который обычно является одним из следующих. 
- <list type="table"><listheader><term> Значение </term><description> Описание </description></listheader><item><term><see langword="null" /></term><description> Игнорировать любые исключения. Поведение по умолчанию (если нет <see cref="T:System.Windows.Data.UpdateSourceExceptionFilterCallback" />) — создать <see cref="T:System.Windows.Controls.ValidationError" /> с исключением и добавить его в коллекцию <see cref="P:System.Windows.Controls.Validation.Errors" /> привязанного элемента.  </description></item><item><term> Любой объект </term><description> Создать объект <see cref="T:System.Windows.Controls.ValidationError" /> с <see cref="P:System.Windows.Controls.ValidationError.ErrorContent" />, установленным для этого объекта.  <see cref="T:System.Windows.Controls.ValidationError" /> объект добавлен в коллекцию <see cref="P:System.Windows.Controls.Validation.Errors" /> привязанного элемента.  </description></item><item><term><see cref="T:System.Windows.Controls.ValidationError" /> Объект </term><description> Задать объект <see cref="T:System.Windows.Data.BindingExpression" /> или <see cref="T:System.Windows.Data.MultiBindingExpression" /> как <see cref="P:System.Windows.Controls.ValidationError.BindingInError" />. Объект <see cref="T:System.Windows.Controls.ValidationError" /> добавлен в коллекцию привязанного элемента <see cref="P:System.Windows.Controls.Validation.Errors" />. </description></item></list></returns>
+ <list type="table"><listheader><term> Значение 
+ </term><description> Описание: 
+ </description></listheader><item><term><see langword="null" /></term><description> Для игнорирования любых исключений. Поведение по умолчанию (если нет <see cref="T:System.Windows.Data.UpdateSourceExceptionFilterCallback" />) — создать <see cref="T:System.Windows.Controls.ValidationError" /> с исключением и добавить его в коллекцию <see cref="P:System.Windows.Controls.Validation.Errors" /> привязанного элемента.  
+  
+ </description></item><item><term> Любой объект 
+ </term><description> Для создания объекта <see cref="T:System.Windows.Controls.ValidationError" /> с установленным для этого объекта <see cref="P:System.Windows.Controls.ValidationError.ErrorContent" />.  
+  
+<see cref="T:System.Windows.Controls.ValidationError" /> объект добавлен в коллекцию <see cref="P:System.Windows.Controls.Validation.Errors" /> привязанного элемента.  
+  
+ </description></item><item><term> Объект <see cref="T:System.Windows.Controls.ValidationError" /> 
+ </term><description> Чтобы установить объект <see cref="T:System.Windows.Data.BindingExpression" /> или <see cref="T:System.Windows.Data.MultiBindingExpression" /> как <see cref="P:System.Windows.Controls.ValidationError.BindingInError" />. <see cref="T:System.Windows.Controls.ValidationError" /> объект добавлен в коллекцию <see cref="P:System.Windows.Controls.Validation.Errors" /> привязанного элемента.  
+  
+ </description></item></list></returns>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -57,7 +61,7 @@
   
  [!code-csharp[BindValidation#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml.cs#handler)]  
   
- Полный пример см. в разделе [пример проверки привязки](http://go.microsoft.com/fwlink/?LinkID=159972).  
+ Полный пример см. в разделе [пример проверки привязки](https://go.microsoft.com/fwlink/?LinkID=159972).  
   
  ]]></format>
     </remarks>

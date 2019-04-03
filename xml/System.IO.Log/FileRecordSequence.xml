@@ -1,13 +1,5 @@
 <Type Name="FileRecordSequence" FullName="System.IO.Log.FileRecordSequence">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4c853a66a932592421edbe6cd06c3f5073c2580e" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37654522" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class FileRecordSequence : IDisposable, System.IO.Log.IRecordSequence" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9c8958f97eafdd7bd6b29c30a88c38286688d109" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58561981" /></Metadata><TypeSignature Language="C#" Value="public sealed class FileRecordSequence : IDisposable, System.IO.Log.IRecordSequence" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileRecordSequence extends System.Object implements class System.IDisposable, class System.IO.Log.IRecordSequence" />
   <TypeSignature Language="DocId" Value="T:System.IO.Log.FileRecordSequence" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FileRecordSequence&#xA;Implements IDisposable, IRecordSequence" />
@@ -88,7 +80,7 @@
    
   
 ## Examples  
- В следующем примере создается последовательность записей, добавляется к ней запись, выполняется чтение записей и, наконец, удаляется последовательность.  
+ Следующий пример создает последовательность записей, добавляется к ней запись, считывает записи и наконец удаляет последовательность.  
   
  [!code-csharp[IRecordSequence#1](~/samples/snippets/csharp/VS_Snippets_CFX/irecordsequence/cs/readrecord.cs#1)]
  [!code-vb[IRecordSequence#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/irecordsequence/vb/readrecord.vb#1)]  
@@ -96,7 +88,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Файл, заданный параметром <paramref name="path" />, является недопустимым.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <paramref name="path" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <paramref name="path" />.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Доступ к заданному хранилищу журнала запрещен операционной системой.</exception>
@@ -125,7 +117,7 @@
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Log.FileRecordSequence" /> с указанным файлом и режимом доступа.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">Файл, заданный параметром <paramref name="path" />, является недопустимым.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <paramref name="path" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <paramref name="path" />.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Доступ к заданному хранилищу журнала запрещен операционной системой.</exception>
@@ -157,7 +149,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Один или несколько параметров выходят за пределы допустимого диапазона.</exception>
         <exception cref="T:System.ArgumentException">Файл, заданный параметром <paramref name="path" />, является недопустимым.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <paramref name="path" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <paramref name="path" />.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Доступ к заданному хранилищу журнала запрещен операционной системой.</exception>
@@ -189,9 +181,8 @@
         <param name="newBaseSequenceNumber">Новый базовый порядковый номер последовательности журналов.</param>
         <summary>Выполняет переход базового порядкового номера журнала. Наследовать этот метод нельзя.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="newBaseSequenceNumber" /> недопустим.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSequenceNumber" /> не лежит между основным и последним порядковыми номерами этой последовательности.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newBaseSequenceNumber" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSequenceNumber" /> не находится в пределах этой последовательности.</exception>
         <exception cref="T:System.IO.IOException">При изменении последовательности произошла ошибка ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
@@ -760,7 +751,7 @@
         <param name="callback">Необязательный асинхронный обратный вызов по завершении операции записи на диск.</param>
         <param name="state">Предоставляемый пользователем объект, являющийся отличительным признаком данного конкретного запроса на запись на диск от других запросов.</param>
         <summary>Начинает асинхронную операцию записи на диск, используя пространство, которое было ранее зарезервировано в последовательности. Наследовать этот метод нельзя.</summary>
-        <returns>Объект <see cref="T:System.IAsyncResult" />, представляющий асинхронную операцию очистки, которая может все еще ожидать выполнения.</returns>
+        <returns>Объект <see cref="T:System.IAsyncResult" />, представляющий асинхронную операцию записи на диск, которая может все еще ожидать выполнения.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -776,7 +767,7 @@
         <exception cref="T:System.ArgumentException">Один или несколько аргументов являются недопустимыми.  
   
  Значение параметра <paramref name="sequenceNumber" /> недопустимо для этой последовательности.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="sequenceNumber" /> не лежит между основным и последним порядковыми номерами этой последовательности.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="sequenceNumber" /> не находится в пределах этой последовательности.</exception>
         <exception cref="T:System.IO.IOException">При очистке данных произошла ошибка ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
@@ -983,13 +974,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="reservations" /> не был создан этой последовательностью записи.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
@@ -1050,13 +1041,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="reservations" /> не был создан этой последовательностью записи.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
@@ -1157,8 +1148,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="result" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="result" /> недопустим.</exception>
         <exception cref="T:System.InvalidOperationException">Метод <see langword="End" /> уже был вызван для данной асинхронной операции.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -1201,8 +1191,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="result" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="result" /> недопустим.</exception>
         <exception cref="T:System.InvalidOperationException">Метод <see langword="End" /> уже был вызван для данной асинхронной операции.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -1245,8 +1234,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="result" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="result" /> недопустим.</exception>
         <exception cref="T:System.InvalidOperationException">Метод <see langword="End" /> уже был вызван для данной асинхронной операции.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -1289,8 +1277,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="result" /> недопустим.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="result" /> недопустим.</exception>
         <exception cref="T:System.InvalidOperationException">Метод <see langword="End" /> уже был вызван для данной асинхронной операции.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -1375,7 +1362,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="sequenceNumber" /> не лежит между основным и последним порядковыми номерами этой последовательности.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="sequenceNumber" /> не находится в пределах этой последовательности.</exception>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="sequenceNumber" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.IO.IOException">При очистке данных произошла ошибка ввода-вывода.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
@@ -1489,11 +1476,11 @@
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для записи.</exception>
         <exception cref="T:System.IO.IOException">Последовательность записей повреждена.  
   
-- или - 
+-или- 
 Запись была сделана с помощью несовместимой версии последовательности записей.</exception>
         <exception cref="T:System.InvalidOperationException">Перечисление завершено.  
   
-- или - 
+-или- 
 Перечисление не запущено. Должен быть вызван метод <see cref="M:System.Collections.IEnumerator.MoveNext" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
@@ -1533,11 +1520,11 @@
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для записи.</exception>
         <exception cref="T:System.IO.IOException">Последовательность записей повреждена.  
   
-- или - 
+-или- 
 Запись была сделана с помощью несовместимой версии последовательности записей.</exception>
         <exception cref="T:System.InvalidOperationException">Перечисление завершено.  
   
-- или - 
+-или- 
 Перечисление не запущено. Должен быть вызван метод <see cref="M:System.Collections.IEnumerator.MoveNext" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Метод был вызван после удаления последовательности.</exception>
         <exception cref="T:System.OutOfMemoryException">Недостаточно памяти, чтобы продолжить выполнение программы.</exception>
@@ -1578,7 +1565,7 @@
         <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
         <Parameter Name="reservations" Type="System.Int64[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1641,7 +1628,7 @@
         <Parameter Name="reservationCollection" Type="System.IO.Log.ReservationCollection" />
         <Parameter Name="reservations" Type="System.Int64[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1758,7 +1745,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее, выполняется ли повторная автоматическая попытка добавления в случае заполнения журнала.</summary>
-        <value>Значение <see langword="true" />, если выполняется автоматическая повторная попытка добавления при заполнении журнала; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="true" />.</value>
+        <value>Значение <see langword="true" />, если выполняется автоматическая повторная попытка добавления при заполнении журнала; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1807,7 +1794,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1844,7 +1831,7 @@
       </Parameters>
       <Docs>
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1890,7 +1877,7 @@
       </Parameters>
       <Docs>
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1938,7 +1925,7 @@
       <Docs>
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
         <param name="newBaseSeqNum">Новый базовый порядковый номер. Заданный порядковый номер должен быть больше или равен текущему базовому порядковому номеру.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1955,9 +1942,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
@@ -1993,7 +1980,7 @@
       <Docs>
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
         <param name="newBaseSeqNum">Новый базовый порядковый номер. Заданный порядковый номер должен быть больше или равен текущему базовому порядковому номеру.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2010,9 +1997,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
@@ -2050,7 +2037,7 @@
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
         <param name="newBaseSeqNum">Новый базовый порядковый номер. Заданный порядковый номер должен быть больше или равен текущему базовому порядковому номеру.</param>
         <param name="reservations">Коллекция <see cref="T:System.IO.Log.ReservationCollection" />, содержащая резервирование, которое следует использовать для данной области перезапуска.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2071,13 +2058,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="reservations" /> не был создан этой последовательностью записи.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>
@@ -2115,7 +2102,7 @@
         <param name="data">Список фрагментов массива байтов, которые будут сцеплены и добавлены в качестве записи.</param>
         <param name="newBaseSeqNum">Новый базовый порядковый номер. Заданный порядковый номер должен быть больше или равен текущему базовому порядковому номеру.</param>
         <param name="reservations">Коллекция <see cref="T:System.IO.Log.ReservationCollection" />, содержащая резервирование, которое следует использовать для данной области перезапуска.</param>
-        <summary>Записывает область перезапуска в <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
+        <summary>Записывает область перезапуска в объект <see cref="T:System.IO.Log.FileRecordSequence" />. Наследовать этот метод нельзя.</summary>
         <returns>Порядковый номер записанной области перезапуска.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2136,13 +2123,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Один или несколько аргументов имеют значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="newBaseSeqNum" /> не лежит между основным и последним порядковыми номерами этой последовательности.  
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="newBaseSeqNum" /> не находится в пределах этой последовательности.  
   
-- или - 
+-или- 
 Новая или существующая архивная цепочка или база активного журнала недействительна.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="reservations" /> не был создан этой последовательностью записи.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="newBaseSeqNum" /> недопустимо для этой последовательности.</exception>
         <exception cref="T:System.NotSupportedException">Невозможно выполнить операцию, поскольку последовательность записей была открыта с доступом только для чтения.</exception>
         <exception cref="T:System.IO.IOException">Выполнить запрос невозможно из-за непредвиденного исключения ввода-вывода.</exception>

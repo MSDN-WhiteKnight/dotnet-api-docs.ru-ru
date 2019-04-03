@@ -1,13 +1,5 @@
 <Type Name="ObjectCache" FullName="System.Runtime.Caching.ObjectCache">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fe69235c262b495aa62720b0c8601d44717221c9" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51308421" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ObjectCache : System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="59fa32fc7e57fc1209e20ba0f2ff6e59a2225a77" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55349870" /></Metadata><TypeSignature Language="C#" Value="public abstract class ObjectCache : System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ObjectCache extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.ObjectCache" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ObjectCache&#xA;Implements IEnumerable(Of KeyValuePair(Of String, Object))" />
@@ -44,15 +36,13 @@
  ]]></format>
     </remarks>
     <threadsafe>Данный тип потокобезопасен.</threadsafe>
-    <block subset="none" type="overrides">
-      <para>Так как <see cref="T:System.Runtime.Caching.ObjectCache" /> тип представляет только общие функции кэша, не требуется для как <see cref="T:System.Runtime.Caching.ObjectCache" /> необходимо создать экземпляр и получить экземпляр. Кроме того, нет необходимости, конкретные реализации <see cref="T:System.Runtime.Caching.ObjectCache" /> класс должен быть одноэлементных экземпляров.  
+    <block subset="none" type="overrides"><para>Так как <see cref="T:System.Runtime.Caching.ObjectCache" /> тип представляет только общие функции кэша, не требуется для как <see cref="T:System.Runtime.Caching.ObjectCache" /> необходимо создать экземпляр и получить экземпляр. Кроме того, нет необходимости, конкретные реализации <see cref="T:System.Runtime.Caching.ObjectCache" /> класс должен быть одноэлементных экземпляров.  
   
  <block subset="none" type="note"><para><see cref="T:System.Runtime.Caching.MemoryCache" /> не является одноэлементным множеством, но необходимо создать только в одном несколько или потенциально только <see cref="T:System.Runtime.Caching.MemoryCache" /> экземпляра и код, который кэширует элементы следует использовать эти экземпляры.  
   
 </para></block>  
   
- При наследовании от <see cref="T:System.Runtime.Caching.ObjectCache" /> класса, необходимо переопределить его методы.</para>
-    </block>
+ При наследовании от <see cref="T:System.Runtime.Caching.ObjectCache" /> класса, необходимо переопределить его методы.</para></block>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -154,7 +144,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="absoluteExpiration">Фиксированные дата и время истечения срока действия записи кэша. Этот параметр обязательно указывается при вызове метода <see cref="Overload:System.Runtime.Caching.ObjectCache.Add" />.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе используется для вставки записи в кэш, без перезаписи существующей в кэше записи.</summary>
         <returns>Значение <see langword="true" />, если вставка выполнена успешно, или <see langword="false" />, если в кэше уже имеется запись с таким же ключом, как у <paramref name="key" /></returns>
         <remarks>
@@ -191,7 +181,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="policy">Объект, содержащий сведения о вытеснении для записи кэша. Этот объект предоставляет больше параметров для вытеснения, чем простой абсолютный срок действия.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе вставляет запись в кэш и задает сведения о способе удаления записи.</summary>
         <returns>Значение <see langword="true" />, если вставка производится успешно, или <see langword="false" />, если в кэше уже есть запись с таким же ключом, как у <paramref name="key" />.</returns>
         <remarks>
@@ -274,7 +264,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="absoluteExpiration">Фиксированные дата и время истечения срока действия записи кэша.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе вставляет запись в кэш, используя ключ, объект для записи кэша, абсолютное значение срока действия и (необязательно) область кэша для добавления.</summary>
         <returns>Заданное значение записи кэша, если существует запись кэша с таким же ключом; в противном случае — значение <see langword="null" />.</returns>
         <remarks>
@@ -311,7 +301,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="policy">Объект, содержащий сведения о вытеснении для записи кэша. Этот объект предоставляет больше параметров для вытеснения, чем простой абсолютный срок действия.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе вставляет запись в кэш, задавая ключ и значение для записи кэша и сведения о способе удаления этой записи.</summary>
         <returns>Заданное значение записи кэша, если существует запись кэша с таким же ключом; в противном случае — значение <see langword="null" />.</returns>
         <remarks>
@@ -344,7 +334,7 @@
       </Parameters>
       <Docs>
         <param name="key">Уникальный идентификатор записи кэша.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которой может быть найден кэш, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которой может быть найден кэш, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе проверяет, существует ли такая запись в кэше.</summary>
         <returns>Значение <see langword="true" />, если в кэше содержится запись с таким же ключом, как <paramref name="key" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
@@ -370,7 +360,7 @@
       </Parameters>
       <Docs>
         <param name="keys">Уникальные идентификаторы записей кэша, которые необходимо отслеживать.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которой могут существовать ключи кэша в параметре <c>keys</c>, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которой могут существовать ключи кэша в параметре <paramref name="keys" />, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе создает объект <see cref="T:System.Runtime.Caching.CacheEntryChangeMonitor" />, который может активировать события в ответ на изменения указанных записей кэша.</summary>
         <returns>Монитор изменений, следящий за записями в кэше.</returns>
         <remarks>
@@ -429,7 +419,7 @@
       </Parameters>
       <Docs>
         <param name="key">Уникальный идентификатор записи кэша, которую требуется получить.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую была добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую была добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе получает из кэша указанную запись кэша в виде объекта.</summary>
         <returns>Запись кэша, определяемая ключом <paramref name="key" />.</returns>
         <remarks>To be added.</remarks>
@@ -455,7 +445,7 @@
       </Parameters>
       <Docs>
         <param name="key">Уникальный идентификатор записи кэша, которую требуется получить.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую был добавлен кэш, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию равняется <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую был добавлен кэш, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию равняется <see langword="null" />.</param>
         <summary>При переопределении в производном классе получает из кэша указанную запись кэша в виде экземпляра <see cref="T:System.Runtime.Caching.CacheItem" />.</summary>
         <returns>Запись кэша, определяемая ключом <paramref name="key" />.</returns>
         <remarks>
@@ -488,7 +478,7 @@
         <Parameter Name="regionName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="regionName">Необязательный. Именованная область кэша, для которой необходимо вычислить количество записей кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, для которой необходимо вычислить количество записей кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе получает общее число записей в кэше.</summary>
         <returns>Число записей в кэше. Если значение <paramref name="regionName" /> не равно <see langword="null" />, это число обозначает количество записей в указанной области кэша.</returns>
         <remarks>To be added.</remarks>
@@ -560,7 +550,7 @@
       </Parameters>
       <Docs>
         <param name="keys">Коллекция уникальных идентификаторов записей кэша, которые необходимо получить.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую были добавлены одна или несколько записей кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую были добавлены одна или несколько записей кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе получает набор записей кэша, соответствующих указанным ключам.</summary>
         <returns>Словарь пар "ключ-значение", представляющих записи кэша.</returns>
         <remarks>
@@ -599,14 +589,14 @@
         <Parameter Name="regionName" Type="System.String" />
         <Parameter Name="keys" Type="System.String[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-plat-ext-2.1">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую были добавлены одна или несколько записей кэша, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию равняется <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую были добавлены одна или несколько записей кэша, если области реализованы. Поскольку в [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] области не реализованы, значение по умолчанию равняется <see langword="null" />.</param>
         <param name="keys">Коллекция уникальных идентификаторов записей кэша, которые необходимо получить.</param>
         <summary>Получает набор записей кэша, соответствующих указанным ключам.</summary>
         <returns>Словарь пар "ключ-значение", представляющих записи кэша.</returns>
@@ -659,7 +649,7 @@
   
  В следующей таблице перечислены набор служб среды узла, могут быть доступны в управляемой среде размещения, и, что <xref:System.Runtime.Caching.ObjectCache> реализации посредством <xref:System.Runtime.Caching.ObjectCache.Host%2A> свойство:  
   
-|Служба|Описание:|  
+|Служба|Описание|  
 |-------------|-----------------|  
 |<xref:System.Runtime.Caching.Hosting.IApplicationIdentifier>|Позволяет предоставлять идентификаторы доменов приложений, которые могут понадобиться реализацией кэша для функции, такие как идентификация счетчиков производительности среды размещения.|  
 |<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>|Позволяет предоставить пользовательские изменения файла система уведомлений, вместо использования, указанному в средах размещения [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
@@ -813,7 +803,7 @@
       </Parameters>
       <Docs>
         <param name="key">Уникальный идентификатор записи кэша.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую была добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую была добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе удаляет запись из кэша.</summary>
         <returns>Объект, представляющий значение удаленной записи кэша, заданной данным ключом, или значение <see langword="null" />, если заданная запись не найдена.</returns>
         <remarks>
@@ -903,7 +893,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="absoluteExpiration">Фиксированные дата и время истечения срока действия записи кэша.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе вставляет запись в кэш и задает сведения о сроке действия на основе диапазона времени.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -939,7 +929,7 @@
         <param name="key">Уникальный идентификатор записи кэша.</param>
         <param name="value">Вставляемый объект.</param>
         <param name="policy">Объект, содержащий сведения о вытеснении для записи кэша. Этот объект предоставляет больше параметров для вытеснения, чем простой абсолютный срок действия.</param>
-        <param name="regionName">Необязательный. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
+        <param name="regionName">Необязательный параметр. Именованная область кэша, в которую может быть добавлена запись кэша, если области реализованы. Значение необязательного параметра по умолчанию — <see langword="null" />.</param>
         <summary>При переопределении в производном классе вставляет запись в кэш.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -977,8 +967,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Поддерживает перебор по строго типизированной коллекции.</summary>
+        <returns>Объект перечислителя, предоставляющий доступ к записям кэша в кэше.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1007,7 +997,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться только в том случае, если производный <xref:System.Runtime.Caching.ObjectCache> экземпляр приводится к <xref:System.Collections.IEnumerable> интерфейс.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только в том случае, если производный <xref:System.Runtime.Caching.ObjectCache> экземпляр приводится к <xref:System.Collections.IEnumerable> интерфейс.  
   
  Разработчики могут использовать этот метод для выполнения итерации по универсальной коллекции записей кэша.  
   

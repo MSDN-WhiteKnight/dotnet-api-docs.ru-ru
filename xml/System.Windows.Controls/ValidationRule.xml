@@ -1,13 +1,5 @@
 <Type Name="ValidationRule" FullName="System.Windows.Controls.ValidationRule">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d44da7dd6f4fc7f1fcf03b68a8a811b3ec440ed1" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46658233" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ValidationRule" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d0086f68d83567c0b78f8c8cc9985293a8d86dd0" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57928013" /></Metadata><TypeSignature Language="C#" Value="public abstract class ValidationRule" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ValidationRule extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ValidationRule" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ValidationRule" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Предоставляет способ создания настраиваемого правила для проверки допустимости вводимых пользователем данных.</summary>
+    <summary>Предоставляет способ создания настраиваемого правила для проверки действительности ввода данных.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -41,7 +33,7 @@
 ## Examples  
  В следующем примере показано, как для реализации правила проверки. Входное значение является недопустимым, если он содержит алфавитно цифровые символы или выходит за пределы нижнюю и верхнюю границы. Если значение возвращаемого <xref:System.Windows.Controls.ValidationResult> является недопустимым, <xref:System.Windows.Controls.ValidationResult.ErrorContent%2A> свойству присваивается соответствующее сообщение об ошибке и <xref:System.Windows.Controls.ValidationResult.IsValid%2A> свойству `false`.  
   
- Полный пример см. в разделе [как: проверки привязки реализуют](~/docs/framework/wpf/data/how-to-implement-binding-validation.md).  
+ Полный пример см. в подразделе [Практическое руководство. Реализация проверки привязки](~/docs/framework/wpf/data/how-to-implement-binding-validation.md).  
   
  [!code-csharp[BindValidation#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/AgeRangeRule.cs#3)]  
   
@@ -140,8 +132,8 @@
         <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
       </Parameters>
       <Docs>
-        <param name="value">Проверяемое значение целевого объекта привязки.</param>
-        <param name="cultureInfo">Язык и региональные параметры, используемые в правиле.</param>
+        <param name="value">Проверяемое значение из цели привязки.</param>
+        <param name="cultureInfo">Язык и региональные параметры, которые используются в данном правиле.</param>
         <summary>При переопределении в производном классе выполняет проверку значения.</summary>
         <returns>Объект <see cref="T:System.Windows.Controls.ValidationResult" />.</returns>
         <remarks>
@@ -159,7 +151,7 @@
 ## Examples  
  В следующем примере показано, как для реализации правила проверки. В следующем примере входное значение является недопустимым, если он содержит алфавитно цифровые символы или выходит за пределы нижнюю и верхнюю границы. Если входное значение является недопустимым, <xref:System.Windows.Controls.ValidationResult.ErrorContent%2A> свойству присваивается соответствующее сообщение об ошибке и <xref:System.Windows.Controls.ValidationResult.IsValid%2A> свойству `false`.  
   
- Полный пример см. в разделе [как: проверки привязки реализуют](~/docs/framework/wpf/data/how-to-implement-binding-validation.md).  
+ Полный пример см. в подразделе [Практическое руководство. Реализация проверки привязки](~/docs/framework/wpf/data/how-to-implement-binding-validation.md).  
   
  [!code-csharp[BindValidation#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/AgeRangeRule.cs#3)]  
   
@@ -167,7 +159,7 @@
         </remarks>
         <altmember cref="T:System.Windows.Controls.DataErrorValidationRule" />
         <altmember cref="T:System.Windows.Controls.ExceptionValidationRule" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=159972">Пример проверки привязки</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=159972">Пример проверки привязки</related>
       </Docs>
     </Member>
     <Member MemberName="Validate">
@@ -185,13 +177,13 @@
         <ReturnType>System.Windows.Controls.ValidationResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
-        <Parameter Name="owner" Type="System.Windows.Data.BindingExpressionBase" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="owner" Type="System.Windows.Data.BindingExpressionBase" Index="2" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="value">Проверяемое значение целевого объекта привязки.</param>
-        <param name="cultureInfo">Язык и региональные параметры, используемые в правиле.</param>
+        <param name="value">Проверяемое значение из цели привязки.</param>
+        <param name="cultureInfo">Язык и региональные параметры, которые используются в данном правиле.</param>
         <param name="owner">Выражение привязки, использующее правило проверки.</param>
         <summary>Выполняет проверки по значению.</summary>
         <returns>Объект <see cref="T:System.Windows.Controls.ValidationResult" />.</returns>
@@ -213,13 +205,13 @@
         <ReturnType>System.Windows.Controls.ValidationResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
-        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
-        <Parameter Name="owner" Type="System.Windows.Data.BindingGroup" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="owner" Type="System.Windows.Data.BindingGroup" Index="2" FrameworkAlternate="netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="value">Проверяемое значение целевого объекта привязки.</param>
-        <param name="cultureInfo">Язык и региональные параметры, используемые в правиле.</param>
+        <param name="value">Проверяемое значение из цели привязки.</param>
+        <param name="cultureInfo">Язык и региональные параметры, которые используются в данном правиле.</param>
         <param name="owner">Группа привязки, использующая правило проверки.</param>
         <summary>Выполняет проверки по значению.</summary>
         <returns>Объект <see cref="T:System.Windows.Controls.ValidationResult" />.</returns>
@@ -296,7 +288,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает, когда выполняется правило проверки.</summary>
-        <value>Одно из значений перечисления.  Значение по умолчанию: <see cref="F:System.Windows.Controls.ValidationStep.RawProposedValue" />.</value>
+        <value>Одно из значений перечисления.  Значение по умолчанию — <see cref="F:System.Windows.Controls.ValidationStep.RawProposedValue" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

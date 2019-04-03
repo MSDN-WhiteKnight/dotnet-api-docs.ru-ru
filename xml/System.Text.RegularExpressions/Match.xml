@@ -1,13 +1,5 @@
 <Type Name="Match" FullName="System.Text.RegularExpressions.Match">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="13c607dda098b110d0be299d25ccb90fb25acd31" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48732549" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Match : System.Text.RegularExpressions.Group" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5e4a59f52c1d9eac6f8bc05b37102224acdf6fbf" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57947916" /></Metadata><TypeSignature Language="C#" Value="public class Match : System.Text.RegularExpressions.Group" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Match extends System.Text.RegularExpressions.Group" />
   <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.Match" />
   <TypeSignature Language="VB.NET" Value="Public Class Match&#xA;Inherits Group" />
@@ -38,8 +30,8 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -262,13 +254,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Время ожидания истекло.</exception>
-        <block subset="none" type="usage">
-          <para>При повторном попытки поиска совпадения, вызвав <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> , обработчик регулярных выражений дает пустые соответствия обрабатываются особым образом. Как правило <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> начинается поиск следующего соответствия ровно там, где предыдущего совпадения остановились. Однако после пустого соответствия <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> метод перемещает на один символ, перед попыткой следующего совпадения. Такое поведение гарантирует, что обработчик регулярных выражений будет протекать строки. В противном случае из-за пустого соответствия не приведет к любой перемещение вперед, следующий поиск начнется в том же месте, что и предыдущий, и процесс зациклится же пустая строка.  
+        <block subset="none" type="usage"><para>При повторном попытки поиска совпадения, вызвав <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> , обработчик регулярных выражений дает пустые соответствия обрабатываются особым образом. Как правило <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> начинается поиск следующего соответствия ровно там, где предыдущего совпадения остановились. Однако после пустого соответствия <see cref="M:System.Text.RegularExpressions.Match.NextMatch" /> метод перемещает на один символ, перед попыткой следующего совпадения. Такое поведение гарантирует, что обработчик регулярных выражений будет протекать строки. В противном случае из-за пустого соответствия не приведет к любой перемещение вперед, следующий поиск начнется в том же месте, что и предыдущий, и процесс зациклится же пустая строка.  
   
 Ниже приведен пример. Шаблон регулярного выражения <c>*</c> ищет ноль или более вхождения буквы «» в строке «abaabb». Как видно из примера, поиск совпадения шесть. Первая попытка match находит первый «». Второй поиск начинается точно в том случае, где первый соответствовать завершается, прежде чем первый b; он выполняет поиск вхождений «a» и возвращает пустую строку. Третье соответствие не начинается точно где второй объект match закончилось, так как второй объект match вернул пустую строку. Вместо этого он начинает один символ позже, после первой «b». Третье соответствие находит два вхождения «a» и возвращает «aa». Четвертый попытки поиска совпадения начинается, где закончился третий, перед второй «b» и возвращает пустую строку. Пятой попытки поиска совпадения снова перемещает один символ, так что он начинается еще до третьей «b» и возвращает пустую строку. Шестой поиск начинается после последнего «b» и снова возвращает пустую строку.  
   
-[! code-csharp[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/cs/nextmatch1.cs#1)] [! код vb[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/vb/nextmatch1.vb#1)]</para>
-        </block>
+[!code-csharp[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/cs/nextmatch1.cs#1)] [!code-vb[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/vb/nextmatch1.vb#1)]</para></block>
       </Docs>
     </Member>
     <Member MemberName="Result">
@@ -315,7 +305,7 @@
 ## Remarks  
  Тогда как <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> метод заменяет все совпадения во входной строке с помощью указанного шаблона замены, <xref:System.Text.RegularExpressions.Match.Result%2A> метод заменяет совпадение указанного шаблона замены. Так как он работает является отдельным соответствием, можно также для выполнения обработки в сопоставленной строке перед вызовом метода <xref:System.Text.RegularExpressions.Match.Result%2A> метод.  
   
- `replacement` Параметр является шаблон замены стандартных регулярного выражения. Он может включать литералы и знаки подстановки регулярного выражения. Дополнительные сведения см. в разделе [Подстановки](~/docs/standard/base-types/substitutions-in-regular-expressions.md).  
+ `replacement` Параметр является шаблон замены стандартных регулярного выражения. Он может включать литералы и знаки подстановки регулярного выражения. Для получения дополнительной информации см. [Подстановки](~/docs/standard/base-types/substitutions-in-regular-expressions.md).  
   
    
   
@@ -327,7 +317,7 @@
   
  Возможные интерпретации шаблона регулярного выражения `--(.+?)--` показаны в следующей таблице.  
   
-|Шаблон|Описание:|  
+|Шаблон|Описание|  
 |-------------|-----------------|  
 |`--`|Поиск двух дефисов.|  
 |`(.+?)`|Совпадение с любым символом один или несколько раз, но как можно меньшее число раз. Это первая группа записи.|  
@@ -339,10 +329,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="replacement" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="replacement" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Расширение для этого шаблона не разрешено.</exception>
         <altmember cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/d1f52431-1c7d-4dc6-8792-6b988256892e">Подстановки</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/d1f52431-1c7d-4dc6-8792-6b988256892e">Подстановки</related>
       </Docs>
     </Member>
     <Member MemberName="Synchronized">
@@ -373,14 +363,14 @@
         <ReturnType>System.Text.RegularExpressions.Match</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="inner" Type="System.Text.RegularExpressions.Match" />
+        <Parameter Name="inner" Type="System.Text.RegularExpressions.Match" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="inner">Сопоставление регулярному выражению, эквивалентное ожидаемому.</param>
-        <summary>Возвращает экземпляр <see cref="T:System.Text.RegularExpressions.Match" />, который эквивалентен одному из предоставленных экземпляров, пригодному для совместного использования несколькими потоками.</summary>
+        <summary>Возвращает экземпляр <see cref="T:System.Text.RegularExpressions.Match" />, эквивалентный одному из предоставленных экземпляров, пригодному для совместного использования несколькими потоками.</summary>
         <returns>Сопоставление регулярному выражению, пригодное для разделения между несколькими потоками.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="inner" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inner" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
   </Members>

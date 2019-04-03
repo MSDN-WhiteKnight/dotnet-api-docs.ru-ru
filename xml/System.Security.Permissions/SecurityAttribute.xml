@@ -1,13 +1,5 @@
 <Type Name="SecurityAttribute" FullName="System.Security.Permissions.SecurityAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bdfcc43be728e471d71962ab786d59416ed2cc58" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48723941" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class SecurityAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3414cdb8ebc7b79de313fbb0610837aa69eb4e21" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56772542" /></Metadata><TypeSignature Language="C#" Value="public abstract class SecurityAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit SecurityAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.SecurityAttribute" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class SecurityAttribute&#xA;Inherits Attribute" />
@@ -43,22 +35,20 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0;netcore-2.2;netcore-3.0;dotnet-plat-ext-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Struct, AllowMultiple=true, Inherited=false)</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="xamarinandroid-7.1">
       <AttributeName>System.Obsolete("CAS support is not available with Silverlight applications.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
     <summary>Указывает базовый класс атрибутов для декларативной безопасности, производным от которого является <see cref="T:System.Security.Permissions.CodeAccessSecurityAttribute" />.</summary>
     <remarks>To be added.</remarks>
-    <block subset="none" type="overrides">
-      <para>При наследовании от <see cref="T:System.Security.Permissions.SecurityAttribute" />, необходимо переопределить <see cref="M:System.Security.Permissions.SecurityAttribute.CreatePermission" />.</para>
-    </block>
+    <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Security.Permissions.SecurityAttribute" />, необходимо переопределить <see cref="M:System.Security.Permissions.SecurityAttribute.CreatePermission" />.</para></block>
     <related type="Article" href="~/docs/standard/attributes/index.md">Расширение метаданных с помощью атрибутов</related>
   </Docs>
   <Members>
@@ -93,7 +83,7 @@
         <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
       </Parameters>
       <Docs>
-        <param name="action">Одно из значений перечисления <see cref="T:System.Security.Permissions.SecurityAction" />.</param>
+        <param name="action">Одно из значений <see cref="T:System.Security.Permissions.SecurityAction" />.</param>
         <summary>Инициализирует новый экземпляр <see cref="T:System.Security.Permissions.SecurityAttribute" /> с указанным <see cref="T:System.Security.Permissions.SecurityAction" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -137,7 +127,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает действие по обеспечению безопасности.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Security.Permissions.SecurityAction" />.</value>
+        <value>Одно из значений <see cref="T:System.Security.Permissions.SecurityAction" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -190,7 +180,7 @@
       <Parameters />
       <Docs>
         <summary>При переопределении в производном классе создает объект разрешений, который может быть преобразован в серийную двоичную форму и сохранен вместе с <see cref="T:System.Security.Permissions.SecurityAction" /> в метаданных сборки.</summary>
-        <returns>Сериализуемый объект разрешения.</returns>
+        <returns>Сериализуемый объект разрешений.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

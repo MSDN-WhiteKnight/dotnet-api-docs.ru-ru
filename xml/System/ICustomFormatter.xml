@@ -1,13 +1,5 @@
 <Type Name="ICustomFormatter" FullName="System.ICustomFormatter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a314918c1d567aa8e851e722e13a8cf0a79fc268" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48638258" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface ICustomFormatter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7e0e89e011838e20213bc48e7d0a2f9e5f56f30c" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58681410" /></Metadata><TypeSignature Language="C#" Value="public interface ICustomFormatter" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomFormatter" />
   <TypeSignature Language="DocId" Value="T:System.ICustomFormatter" />
   <TypeSignature Language="VB.NET" Value="Public Interface ICustomFormatter" />
@@ -32,6 +24,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
@@ -40,7 +33,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Определяет метод, поддерживающий пользовательское форматирование значения объекта.</summary>
+    <summary>Определяет метод, поддерживающий нестандартное форматирование значения объекта.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -74,8 +67,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Среда CLR пытается использовать ваш <see cref="T:System.ICustomFormatter" /> реализации для каждого элемента форматирования в строке составного формата. Таким образом, следует ожидать, ваш <see cref="T:System.ICustomFormatter" /> реализации будет вызываться для предоставления служб форматирования для объектов или значений, которые вы не предназначены для обработки. В этих случаях ваши <see cref="M:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)" /> метод необходимо вызвать соответствующий метод форматирования для этого объекта или значение.  
+    <block subset="none" type="overrides"><para>Среда CLR пытается использовать ваш <see cref="T:System.ICustomFormatter" /> реализации для каждого элемента форматирования в строке составного формата. Таким образом, следует ожидать, ваш <see cref="T:System.ICustomFormatter" /> реализации будет вызываться для предоставления служб форматирования для объектов или значений, которые вы не предназначены для обработки. В этих случаях ваши <see cref="M:System.ICustomFormatter.Format(System.String,System.Object,System.IFormatProvider)" /> метод необходимо вызвать соответствующий метод форматирования для этого объекта или значение.  
   
 Существует два типа из <see cref="T:System.ICustomFormatter" /> реализаций: встроенные и расширение.  
   
@@ -97,8 +89,7 @@
   
 -Код для обработки всех строк формата, поддерживаемых вашим расширением.  
   
--Код для обработки всех строк формата, которые не поддерживает расширение. Они должны быть переданы типа <see cref="T:System.IFormattable" /> реализации. Вы должны быть готовы обрабатывать все исключения, вызовы этих методов может вызывать.</para>
-    </block>
+-Код для обработки всех строк формата, которые не поддерживает расширение. Они должны быть переданы типа <see cref="T:System.IFormattable" /> реализации. Вы должны быть готовы обрабатывать все исключения, вызовы этих методов может вызывать.</para></block>
     <altmember cref="T:System.IFormatProvider" />
   </Docs>
   <Members>
@@ -129,6 +120,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -141,14 +133,14 @@
       <Docs>
         <param name="format">Строка формата, содержащая спецификации форматирования.</param>
         <param name="arg">Объект для форматирования.</param>
-        <param name="formatProvider">Объект, предоставляющий сведения о формате для текущего экземпляра.</param>
-        <summary>Преобразует значение указанного объекта в эквивалентное ему строковое представление с использованием указанного формата и сведений об особенностях форматирования для данного языка и региональных параметров.</summary>
+        <param name="formatProvider">Объект, который предоставляет связанную с форматированием информацию о текущем экземпляре.</param>
+        <summary>Преобразует значение указанного объекта в эквивалентное ему строковое представление, используя указанный формат и сведений об особенностях форматирования, связанных с языком и региональными параметрами.</summary>
         <returns>Строковое представление значения <paramref name="arg" />, отформатированное с использованием параметров <paramref name="format" /> и <paramref name="formatProvider" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Метод <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> является методом обратного вызова. Вызывается метод, поддерживающий настраиваемое форматирование, такие как <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> или <xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>. Реализация вызывается один раз для каждого элемента форматирования в [Строка составного формата](~/docs/standard/base-types/composite-formatting.md). Например, в следующей инструкции <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> метод вызывается трижды.  
+ Метод<xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> является методом обратного вызова. Вызывается метод, поддерживающий настраиваемое форматирование, такие как <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> или <xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>. Реализация вызывается один раз для каждого элемента форматирования в [Строка составного формата](~/docs/standard/base-types/composite-formatting.md). Например, в следующей инструкции <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> метод вызывается трижды.  
   
  [!code-csharp[System.ICustomFormatter.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.icustomformatter.class/cs/binaryformatter.cs#4)]
  [!code-vb[System.ICustomFormatter.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.icustomformatter.class/vb/binaryformatter.vb#4)]  

@@ -1,13 +1,5 @@
 <Type Name="Single" FullName="System.Single">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="244d6ba71dbadc7d75916a9dfce8a1c810e4224d" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48617224" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct Single : IComparable, IComparable&lt;float&gt;, IConvertible, IEquatable&lt;float&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9a57b52d8b5395640ddf322aa25bf12210496090" /><Meta Name="ms.sourcegitcommit" Value="f9e71795ba0f9c2dfaa74bec233343ed0f3ffd99" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/15/2019" /><Meta Name="ms.locfileid" Value="57924451" /></Metadata><TypeSignature Language="C#" Value="public struct Single : IComparable, IComparable&lt;float&gt;, IConvertible, IEquatable&lt;float&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit float32 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;float32&gt;, class System.IConvertible, class System.IEquatable`1&lt;float32&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Single" />
   <TypeSignature Language="VB.NET" Value="Public Structure Single&#xA;Implements IComparable, IComparable(Of Single), IConvertible, IEquatable(Of Single), IFormattable" />
@@ -57,12 +49,15 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет число с плавающей запятой одиночной точности.</summary>
+    <summary>Представляет число одиночной точности с плавающей запятой.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -87,7 +82,7 @@
 ## <a name="floating-point-representation-and-precision"></a>Представление с плавающей запятой и точностью  
  <xref:System.Single> Тип данных хранит значения с плавающей запятой одиночной точности в двоичном формате 32 бита, как показано в следующей таблице:  
   
-|Отделение|Биты|  
+|Отделение|Bits|  
 |----------|----------|  
 |Значащей части числа, или мантиссе|0-22|  
 |Показатель степени|23-30|  
@@ -270,8 +265,8 @@
     |Тип|Максимальная точность (в десятичных разрядов)|Внутренняя точность (в десятичных разрядов)|  
     |----------|---------------------------------------------|----------------------------------------------|  
     |<xref:System.Double>|15|17|  
-    |<xref:System.Int32> и <xref:System.UInt32>.|10|10|  
-    |<xref:System.Int64> и <xref:System.UInt64>.|19|19|  
+    |<xref:System.Int32> и <xref:System.UInt32>|10|10|  
+    |<xref:System.Int64> и <xref:System.UInt64>|19|19|  
     |<xref:System.Single>|7|9|  
   
      Чаще всего проблема точности влияет на <xref:System.Single> значения, которые преобразуются в <xref:System.Double> значения. В следующем примере, полученных при операции деления идентичные значения не равны, так как одно из значений является значение точки с плавающей запятой одиночной точности, которое преобразуется в <xref:System.Double>.  
@@ -327,7 +322,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Объект для сравнения или значение <see langword="null" />.</param>
@@ -335,27 +330,27 @@
         <returns>Знаковое число, представляющее относительные значения этого экземпляра и параметра <paramref name="value" />.  
   
  <list type="table"><listheader><term> Возвращаемое значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> Меньше нуля 
  </term><description> Этот экземпляр меньше параметра <paramref name="value" />.  
   
-- или - 
+-или- 
 Данный экземпляр не является числом (<see cref="F:System.Single.NaN" />), а параметр <paramref name="value" /> является.  
   
  </description></item><item><term> Нуль 
  </term><description> Этот экземпляр и параметр <paramref name="value" /> равны.  
   
-- или - 
+-или- 
 И данный экземпляр, и значение относятся к нечисловому типу (<see cref="F:System.Single.NaN" />), равны <see cref="F:System.Single.PositiveInfinity" /> или <see cref="F:System.Single.NegativeInfinity" />.  
   
  </description></item><item><term> Больше нуля 
  </term><description> Этот экземпляр больше параметра <paramref name="value" />.  
   
-- или - 
+-или- 
 Данный экземпляр является числом, а параметр <paramref name="value" /> — нет (<see cref="F:System.Single.NaN" />).  
   
-- или - 
- Свойство <paramref name="value" /> имеет значение <see langword="null" />.  
+-или- 
+ <paramref name="value" /> — <see langword="null" />.  
   
  </description></item></list></returns>
         <remarks>
@@ -385,8 +380,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> не является объектом <see cref="T:System.Single" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> не является объектом <see cref="T:System.Single" />.</exception>
         <altmember cref="M:System.Single.Equals(System.Object)" />
       </Docs>
     </Member>
@@ -424,31 +418,31 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Single" />
+        <Parameter Name="value" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">Сравниваемое число с плавающей запятой одиночной точности.</param>
-        <summary>Сравнивает данный экземпляр с заданным числом с плавающей запятой одиночной точности и возвращает целое число, которое показывает, является ли значение данного экземпляра меньше, больше или равным значению заданного числа с плавающей запятой одиночной точности.</summary>
+        <summary>Сравнивает данный экземпляр с заданным числом одиночной точности с плавающей запятой и возвращает целое число, которое показывает, является ли значение данного экземпляра меньше, больше или равным значению заданного числа одиночной точности с плавающей запятой.</summary>
         <returns>Знаковое число, представляющее относительные значения этого экземпляра и параметра <paramref name="value" />.  
   
  <list type="table"><listheader><term> Возвращаемое значение 
- </term><description> Описание: 
+ </term><description> Описание 
  </description></listheader><item><term> Меньше нуля 
  </term><description> Этот экземпляр меньше параметра <paramref name="value" />.  
   
-- или - 
+-или- 
 Данный экземпляр не является числом (<see cref="F:System.Single.NaN" />), а параметр <paramref name="value" /> является.  
   
  </description></item><item><term> Нуль 
  </term><description> Этот экземпляр и параметр <paramref name="value" /> равны.  
   
-- или - 
+-или- 
 И этот экземпляр, и параметр <paramref name="value" /> не являются числами (<see cref="F:System.Single.NaN" />), равны <see cref="F:System.Single.PositiveInfinity" /> или <see cref="F:System.Single.NegativeInfinity" />.  
   
  </description></item><item><term> Больше нуля 
  </term><description> Этот экземпляр больше параметра <paramref name="value" />.  
   
-- или - 
+-или- 
 Данный экземпляр является числом, а параметр <paramref name="value" /> — нет (<see cref="F:System.Single.NaN" />).  
   
  </description></item></list></returns>
@@ -636,11 +630,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Разрешение перегрузки компилятор может учесть видимого различия в поведении двух <see cref="M:System.Single.Equals(System.Object)" /> перегрузок метода. Если неявное преобразование между <paramref name="obj" /> аргумент и <see cref="T:System.Single" /> определен и не имеет тип аргумента <see cref="T:System.Object" />, компиляторы могут выполнять неявное преобразование и вызов <see cref="M:System.Single.Equals(System.Single)" /> метод. В противном случае они вызывают <see cref="M:System.Single.Equals(System.Object)" /> метод, который всегда возвращает <see langword="false" /> если его <paramref name="obj" /> аргумент не является <see cref="T:System.Single" /> значение. В следующем примере показано различие в поведении между перегрузки двух методов. В случае всеми простыми числовыми типами, за исключением <see cref="T:System.Double" /> в Visual Basic и за исключением <see cref="T:System.Decimal" /> и <see cref="T:System.Double" /> в C#, первое сравнение возвращает <see langword="true" /> так, как компилятор автоматически выполняет расширяющее преобразование и вызывает метод <see cref="M:System.Single.Equals(System.Single)" /> метод, тогда как второй сравнение возвращает <see langword="false" /> так, как компилятор вызывает <see cref="M:System.Single.Equals(System.Object)" /> метод.  
+        <block subset="none" type="usage"><para>Разрешение перегрузки компилятор может учесть видимого различия в поведении двух <see cref="M:System.Single.Equals(System.Object)" /> перегрузок метода. Если неявное преобразование между <paramref name="obj" /> аргумент и <see cref="T:System.Single" /> определен и не имеет тип аргумента <see cref="T:System.Object" />, компиляторы могут выполнять неявное преобразование и вызов <see cref="M:System.Single.Equals(System.Single)" /> метод. В противном случае они вызывают <see cref="M:System.Single.Equals(System.Object)" /> метод, который всегда возвращает <see langword="false" /> если его <paramref name="obj" /> аргумент не является <see cref="T:System.Single" /> значение. В следующем примере показано различие в поведении между перегрузки двух методов. В случае всеми простыми числовыми типами, за исключением <see cref="T:System.Double" /> в Visual Basic и за исключением <see cref="T:System.Decimal" /> и <see cref="T:System.Double" /> в C#, первое сравнение возвращает <see langword="true" /> так, как компилятор автоматически выполняет расширяющее преобразование и вызывает метод <see cref="M:System.Single.Equals(System.Single)" /> метод, тогда как второй сравнение возвращает <see langword="false" /> так, как компилятор вызывает <see cref="M:System.Single.Equals(System.Object)" /> метод.  
   
-[! code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [! код vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para>
-        </block>
+[!code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [!code-vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
         <altmember cref="M:System.Single.CompareTo(System.Object)" />
       </Docs>
     </Member>
@@ -678,7 +670,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Single" />
+        <Parameter Name="obj" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект для сравнения с данным экземпляром.</param>
@@ -713,7 +705,7 @@
 > [!NOTE]
 >  Так как <xref:System.Single.Epsilon> определяет минимальное выражение положительного значения, диапазон которого приближается к нулю, должно быть больше погрешность <xref:System.Single.Epsilon>. Как правило, это много раз больше, чем <xref:System.Single.Epsilon>. По этой причине мы рекомендуем не использовать <xref:System.Double.Epsilon> при сравнении <xref:System.Double> значения на равенство.  
   
- Это второй метод, который позволяет избежать проблемы, связанные со сравнением на равенство включает в себя сравнение различий между двумя числами с плавающей запятой с некоторых абсолютным значением. Если разница — меньше или равно, абсолютное значение числа равны. Если значение больше, числа не равны. Один из способов сделать это является произвольным образом Выбор абсолютным значением. Тем не менее, это проблематично, поскольку допустимого поля различие зависит от величины <xref:System.Single> значения. Второй способ использует преимущества является особенностью формате с плавающей запятой: количество возможных значений с плавающей запятой, разделяющий указывает разницу между компонентами мантиссы представления целых чисел из двух значений с плавающей запятой два значения. Например, разница между 0,0 и <xref:System.Single.Epsilon> равно 1, поскольку <xref:System.Single.Epsilon> является наименьшим представимым значением при работе с <xref:System.Single> , значение которого равно нулю. В следующем примере этот метод используется для сравнения.33333 и 1/3, которые являются двумя <xref:System.Double> значения, в предыдущем примере кода с <xref:System.Single.Equals%28System.Single%29> найти метод были не эквивалентны. Обратите внимание, что в примере используется <xref:System.BitConverter.GetBytes%2A?displayProperty=nameWithType> и <xref:System.BitConverter.ToInt32%2A?displayProperty=nameWithType> методы преобразования значение с плавающей запятой одиночной точности в представление целого числа.  
+ Это второй метод, который позволяет избежать проблемы, связанные со сравнением на равенство включает в себя сравнение различий между двумя числами с плавающей запятой с некоторых абсолютным значением. Если разница — меньше или равно, абсолютное значение числа равны. Если значение больше, числа не равны. Один из способов сделать это является произвольным образом Выбор абсолютным значением. Тем не менее, это проблематично, поскольку допустимого поля различие зависит от величины <xref:System.Single> значения. Второй способ использует преимущества является особенностью формате с плавающей запятой: Разница между компонентами мантиссы представления целых чисел из двух значений с плавающей запятой указывает количество возможных значений с плавающей запятой, разделяющий два значения. Например, разница между 0,0 и <xref:System.Single.Epsilon> равно 1, поскольку <xref:System.Single.Epsilon> является наименьшим представимым значением при работе с <xref:System.Single> , значение которого равно нулю. В следующем примере этот метод используется для сравнения.33333 и 1/3, которые являются двумя <xref:System.Double> значения, в предыдущем примере кода с <xref:System.Single.Equals%28System.Single%29> найти метод были не эквивалентны. Обратите внимание, что в примере используется <xref:System.BitConverter.GetBytes%2A?displayProperty=nameWithType> и <xref:System.BitConverter.ToInt32%2A?displayProperty=nameWithType> методы преобразования значение с плавающей запятой одиночной точности в представление целого числа.  
   
  [!code-csharp[System.Single.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsabs1.cs#1)]
  [!code-vb[System.Single.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsabs1.vb#1)]  
@@ -722,11 +714,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="usage">
-          <para>Разрешение перегрузки компилятор может учесть видимого различия в поведении двух <see cref="M:System.Single.Equals(System.Object)" /> перегрузок метода. Если неявное преобразование между <paramref name="obj" /> аргумент и <see cref="T:System.Single" /> определен и не имеет тип аргумента <see cref="T:System.Object" />, компиляторы могут выполнять неявное преобразование и вызов <see cref="M:System.Single.Equals(System.Single)" /> метод. В противном случае они вызывают <see cref="M:System.Single.Equals(System.Object)" /> метод, который всегда возвращает <see langword="false" /> если его <paramref name="obj" /> аргумент не является <see cref="T:System.Single" /> значение. В следующем примере показано различие в поведении между перегрузки двух методов. В случае всеми простыми числовыми типами, за исключением <see cref="T:System.Double" /> в Visual Basic и за исключением <see cref="T:System.Decimal" /> и <see cref="T:System.Double" /> в C#, первое сравнение возвращает <see langword="true" /> так, как компилятор автоматически выполняет расширяющее преобразование и вызывает метод <see cref="M:System.Single.Equals(System.Single)" /> метод, тогда как второй сравнение возвращает <see langword="false" /> так, как компилятор вызывает <see cref="M:System.Single.Equals(System.Object)" /> метод.  
+        <block subset="none" type="usage"><para>Разрешение перегрузки компилятор может учесть видимого различия в поведении двух <see cref="M:System.Single.Equals(System.Object)" /> перегрузок метода. Если неявное преобразование между <paramref name="obj" /> аргумент и <see cref="T:System.Single" /> определен и не имеет тип аргумента <see cref="T:System.Object" />, компиляторы могут выполнять неявное преобразование и вызов <see cref="M:System.Single.Equals(System.Single)" /> метод. В противном случае они вызывают <see cref="M:System.Single.Equals(System.Object)" /> метод, который всегда возвращает <see langword="false" /> если его <paramref name="obj" /> аргумент не является <see cref="T:System.Single" /> значение. В следующем примере показано различие в поведении между перегрузки двух методов. В случае всеми простыми числовыми типами, за исключением <see cref="T:System.Double" /> в Visual Basic и за исключением <see cref="T:System.Decimal" /> и <see cref="T:System.Double" /> в C#, первое сравнение возвращает <see langword="true" /> так, как компилятор автоматически выполняет расширяющее преобразование и вызывает метод <see cref="M:System.Single.Equals(System.Single)" /> метод, тогда как второй сравнение возвращает <see langword="false" /> так, как компилятор вызывает <see cref="M:System.Single.Equals(System.Object)" /> метод.  
   
-[! code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [! код vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para>
-        </block>
+[!code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [!code-vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
         <altmember cref="M:System.Single.Equals(System.Object)" />
         <altmember cref="Overload:System.Single.CompareTo" />
       </Docs>
@@ -834,7 +824,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="f" Type="System.Single" />
+        <Parameter Name="f" Type="System.Single" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="f">To be added.</param>
@@ -883,7 +873,7 @@
         <Parameter Name="f" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="f">Число с плавающей запятой одиночной точности.</param>
+        <param name="f">Число одиночной точности с плавающей запятой.</param>
         <summary>Возвращает значение, позволяющее определить, равно ли данное число плюс или минус бесконечности.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="f" /> равен значению <see cref="F:System.Single.PositiveInfinity" /> или <see cref="F:System.Single.NegativeInfinity" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -952,14 +942,14 @@
         <Parameter Name="f" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="f">Число с плавающей запятой одиночной точности.</param>
+        <param name="f">Число одиночной точности с плавающей запятой.</param>
         <summary>Возвращает значение, показывающее, что указанное значение не является числом (<see cref="F:System.Single.NaN" />).</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="f" /> относится к нечисловому типу (<see cref="F:System.Single.NaN" />); в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Операции с плавающей запятой возвращают <xref:System.Single.NaN> для неопределенность, результат операции. Например, разделение 0,0, 0,0 приводит <xref:System.Single.NaN>.  
+ Операции с плавающей запятой возвращают <xref:System.Single.NaN> информировать, что результат операции не определено. Например, разделение 0,0, 0,0 приводит <xref:System.Single.NaN>.  
   
 > [!NOTE]
 >  <xref:System.Single.IsNaN%2A> Возвращает `false` Если <xref:System.Single> значение <xref:System.Single.PositiveInfinity> или <xref:System.Single.NegativeInfinity>. Чтобы проверить эти значения, используйте <xref:System.Single.IsInfinity%2A>, <xref:System.Single.IsPositiveInfinity%2A>, и <xref:System.Single.IsNegativeInfinity%2A> методы.  
@@ -1000,7 +990,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="f" Type="System.Single" />
+        <Parameter Name="f" Type="System.Single" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="f">To be added.</param>
@@ -1049,7 +1039,7 @@
         <Parameter Name="f" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="f">Число с плавающей запятой одиночной точности.</param>
+        <param name="f">Число одиночной точности с плавающей запятой.</param>
         <summary>Возвращает значение, позволяющее определить, равно ли данное число минус бесконечности.</summary>
         <returns>Значение <see langword="true" />, если значение параметра <paramref name="f" /> равно значению <see cref="F:System.Single.NegativeInfinity" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -1097,7 +1087,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="f" Type="System.Single" />
+        <Parameter Name="f" Type="System.Single" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="f">To be added.</param>
@@ -1146,7 +1136,7 @@
         <Parameter Name="f" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="f">Число с плавающей запятой одиночной точности.</param>
+        <param name="f">Число одиночной точности с плавающей запятой.</param>
         <summary>Возвращает значение, показывающее, равно ли данное число плюс бесконечности.</summary>
         <returns>Значение <see langword="true" />, если значение параметра <paramref name="f" /> равно значению <see cref="F:System.Single.PositiveInfinity" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -1194,7 +1184,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="f" Type="System.Single" />
+        <Parameter Name="f" Type="System.Single" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="f">To be added.</param>
@@ -1478,8 +1468,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
@@ -1526,15 +1516,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
         <param name="right">Второе сравниваемое значение.</param>
         <summary>Возвращает значение, указывающее, действительно ли заданное значение <see cref="T:System.Single" /> больше другого заданного значения <see cref="T:System.Single" />.</summary>
-        <returns>
-          <see langword="true" />, если <paramref name="left" /> больше <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <paramref name="left" /> больше <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1575,15 +1564,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
         <param name="right">Второе сравниваемое значение.</param>
         <summary>Возвращает значение, указывающее, действительно ли заданное значение <see cref="T:System.Single" /> больше или равно другому заданному значению <see cref="T:System.Single" />.</summary>
-        <returns>
-          <see langword="true" />, если значение <paramref name="left" /> больше или равно значению <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение <paramref name="left" /> больше или равно значению <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1624,8 +1612,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
@@ -1672,15 +1660,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
         <param name="right">Второе сравниваемое значение.</param>
         <summary>Возвращает значение, указывающее, действительно ли заданное значение <see cref="T:System.Single" /> меньше другого заданного значения <see cref="T:System.Single" />.</summary>
-        <returns>
-          <see langword="true" />, если значение <paramref name="left" /> меньше значения <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение <paramref name="left" /> меньше значения <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1721,15 +1708,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Single" />
-        <Parameter Name="right" Type="System.Single" />
+        <Parameter Name="left" Type="System.Single" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">Первое сравниваемое значение.</param>
         <param name="right">Второе сравниваемое значение.</param>
         <summary>Возвращает значение, указывающее, действительно ли заданное значение <see cref="T:System.Single" /> меньше или равно другому заданному значению <see cref="T:System.Single" />.</summary>
-        <returns>
-          <see langword="true" />, если значение <paramref name="left" /> меньше или равно значению <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение <paramref name="left" /> меньше или равно значению <paramref name="right" />; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1802,7 +1788,7 @@
   
  Элементы в квадратных скобках ([и]) являются необязательными. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Последовательность знаков пустого пространства.|  
 |*sign*|Отрицательный знак символа или символа знака положительного числа. Допустимые знаки определяются по <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A?displayProperty=nameWithType> и <xref:System.Globalization.NumberFormatInfo.PositiveSign%2A?displayProperty=nameWithType> свойства текущего языка и региональных параметров. Можно использовать только знак в начале.|  
@@ -1831,10 +1817,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">Параметр <paramref name="s" /> не представляет число в допустимом формате.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="s" /> представляет число, которое меньше значения <see cref="F:System.Single.MinValue" /> или больше значения <see cref="F:System.Single.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="s" /> не представляет число в допустимом формате.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> представляет число, которое меньше значения <see cref="F:System.Single.MinValue" /> или больше значения <see cref="F:System.Single.MaxValue" />.</exception>
         <altmember cref="M:System.Single.ToString" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">Синтаксический анализ числовых строк в .NET</related>
       </Docs>
@@ -1876,8 +1861,8 @@
       </Parameters>
       <Docs>
         <param name="s">Строка, содержащая преобразуемое число.</param>
-        <param name="style">Побитовое сочетание значений перечисления, определяющих элементы стиля, которые могут быть представлены в параметре <c>s</c>. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
-        <summary>Преобразует строковое представление числа в указанном стиле в эквивалентное ему число с плавающей запятой одиночной точности.</summary>
+        <param name="style">Побитовое сочетание значений перечисления, обозначающих элементы стиля, которые могут быть представлены в параметре <paramref name="s" />. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
+        <summary>Преобразует строковое представление числа в указанном стиле в эквивалентное ему число одиночной точности с плавающей запятой.</summary>
         <returns>Число с плавающей запятой одиночной точности, эквивалентное числовому значению или символу, указанному в параметре <paramref name="s" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1891,7 +1876,7 @@
   
  `s` Параметр может содержать текущего языка и региональных параметров <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>. В зависимости от значения `style`, он также может принимать форму:  
   
- [*ws*] [*$*] [*входа*] [*цифры целой части*[*,*]]* целые числа*[*.* [*дробной части*]] [E [*входа*]*экспоненциальные цифры*] [*ws*]  
+ [*ws*] [*$*] [*входа*] [*цифры целой части*[*,*]] *целые числа*[*.* [*дробной части*]] [E [*входа*]*экспоненциальные цифры*] [*ws*]  
   
  Элементы в квадратных скобках ([и]) являются необязательными. Каждый из элементов описан в таблице ниже.  
   
@@ -1962,15 +1947,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="s" /> не является числом в допустимом формате.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="s" /> не является числом в допустимом формате.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="s" /> представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
+        <exception cref="T:System.ArgumentException"><paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
   
-- или - 
- Параметр <paramref name="style" /> включает значение <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
+-или- 
+ <paramref name="style" /> включает значение <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
         <altmember cref="M:System.Single.ToString" />
         <altmember cref="Overload:System.Single.TryParse" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">Синтаксический анализ числовых строк в .NET</related>
@@ -2013,7 +1996,7 @@
       </Parameters>
       <Docs>
         <param name="s">Строка, содержащая преобразуемое число.</param>
-        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <c>s</c> в зависимости от языка и региональных параметров.</param>
+        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <paramref name="s" /> в зависимости от языка и региональных параметров.</param>
         <summary>Преобразует строковое представление числа, записанное в формате, соответствующем определенному языку и региональным параметрам, в эквивалентное ему число с плавающей запятой одиночной точности.</summary>
         <returns>Число с плавающей запятой одиночной точности, эквивалентное числовому значению или символу, указанному в параметре <paramref name="s" />.</returns>
         <remarks>
@@ -2028,7 +2011,7 @@
   
  Необязательные элементы заключены в квадратные скобки ([и]). Элементы, содержащие термин «цифры» состоят из последовательности цифр от 0 до 9.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Последовательность символов пробела.|  
 |*sign*|Знак минус символов (-) или знак плюс знак (+).|  
@@ -2064,10 +2047,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">Параметр <paramref name="s" /> не представляет число в допустимом формате.</exception>
-        <exception cref="T:System.OverflowException">
-          <paramref name="s" /> представляет число, которое меньше значения <see cref="F:System.Single.MinValue" /> или больше значения <see cref="F:System.Single.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="s" /> не представляет число в допустимом формате.</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> представляет число, которое меньше значения <see cref="F:System.Single.MinValue" /> или больше значения <see cref="F:System.Single.MaxValue" />.</exception>
         <altmember cref="M:System.Single.ToString" />
         <altmember cref="Overload:System.Single.TryParse" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">Синтаксический анализ числовых строк в .NET</related>
@@ -2094,9 +2076,9 @@
         <ReturnType>System.Single</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="s">To be added.</param>
@@ -2145,8 +2127,8 @@
       </Parameters>
       <Docs>
         <param name="s">Строка, содержащая преобразуемое число.</param>
-        <param name="style">Побитовое сочетание значений перечисления, определяющих элементы стиля, которые могут быть представлены в параметре <c>s</c>. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
-        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <c>s</c> в зависимости от языка и региональных параметров.</param>
+        <param name="style">Побитовое сочетание значений перечисления, обозначающих элементы стиля, которые могут быть представлены в параметре <paramref name="s" />. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
+        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <paramref name="s" /> в зависимости от языка и региональных параметров.</param>
         <summary>Преобразует строковое представление числа в указанном стиле и с использованием формата, соответствующего данному языку и региональным параметрам, в эквивалентное ему число с плавающей запятой одиночной точности.</summary>
         <returns>Число с плавающей запятой одиночной точности, эквивалентное числовому значению или символу, указанному в параметре <paramref name="s" />.</returns>
         <remarks>
@@ -2165,7 +2147,7 @@
   
  Элементы, заключенных в квадратные скобки ([и]) являются необязательными. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Последовательность символов пробела. Пробелы могут отображаться в начале `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> флаг и может отображаться в конце `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType> флаг.|  
 |$|Символ валюты. Его положение в строке определяется <xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType> и <xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType> свойства текущего языка и региональных параметров. Символ валюты для текущего языка и региональных параметров может встречаться в `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowCurrencySymbol?displayProperty=nameWithType> флаг.|  
@@ -2221,14 +2203,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="s" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="s" /> не представляет числовое значение.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException">Параметр <paramref name="s" /> не представляет числовое значение.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
   
-- или - 
- Значение параметра <paramref name="style" /> равно значению <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
+-или- 
+ <paramref name="style" /> является значением <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
         <exception cref="T:System.OverflowException">Параметр <paramref name="s" /> представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" />.</exception>
         <altmember cref="M:System.Single.ToString" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">Синтаксический анализ числовых строк в .NET</related>
@@ -2321,7 +2301,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
@@ -2393,18 +2373,17 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
         <summary>Описание этого члена см. в разделе <see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />.</summary>
-        <returns>
-          <see langword="true" />, если значение текущего экземпляра не равно нулю; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение текущего экземпляра не равно нулю; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToBoolean%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToBoolean%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2442,7 +2421,7 @@
         <ReturnType>System.Byte</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2452,7 +2431,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToByte%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToByte%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2490,7 +2469,7 @@
         <ReturnType>System.Char</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2532,7 +2511,7 @@
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2574,7 +2553,7 @@
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2584,7 +2563,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToDecimal%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToDecimal%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2622,7 +2601,7 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2632,7 +2611,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToDouble%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToDouble%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2670,7 +2649,7 @@
         <ReturnType>System.Int16</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2680,7 +2659,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt16%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt16%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2718,7 +2697,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2728,7 +2707,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt32%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt32%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2766,7 +2745,7 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2776,7 +2755,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt64%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToInt64%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2819,7 +2798,7 @@
         <ReturnType>System.SByte</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2829,7 +2808,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToSByte%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToSByte%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2867,7 +2846,7 @@
         <ReturnType>System.Single</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2877,7 +2856,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>.  
   
  ]]></format>
         </remarks>
@@ -2914,8 +2893,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="type">Тип, к которому необходимо привести это значение <see cref="T:System.Single" />.</param>
@@ -2926,7 +2905,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов `static` (`Shared` в Visual Basic) <xref:System.Convert.ChangeType%2A?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов `static` (`Shared` в Visual Basic) <xref:System.Convert.ChangeType%2A?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -2969,7 +2948,7 @@
         <ReturnType>System.UInt16</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -2979,7 +2958,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt16%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt16%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -3022,7 +3001,7 @@
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -3032,7 +3011,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt32%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt32%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -3075,7 +3054,7 @@
         <ReturnType>System.UInt64</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="provider">Этот параметр не учитывается.</param>
@@ -3085,7 +3064,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt64%28System.Single%29?displayProperty=nameWithType> метод.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Single> приведен к типу интерфейса <xref:System.IConvertible>. Рекомендуемой альтернативой является вызов <xref:System.Convert.ToUInt64%28System.Single%29?displayProperty=nameWithType> метод.  
   
  ]]></format>
         </remarks>
@@ -3162,7 +3141,7 @@
   
  Необязательные элементы заключены в квадратные скобки ([и]). Элементы, содержащие термин «цифры» состоят из последовательности цифр от 0 до 9. В следующей таблице перечислены каждого элемента:  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*sign*|Отрицательный знак или символа знака положительного числа.|  
 |*целые числа*|Последовательность цифр, обозначающих целую часть числа. Целые числа могут отсутствовать при наличии дробной части.|  
@@ -3264,7 +3243,7 @@
   
  Необязательные элементы заключены в квадратные скобки ([и]). Элементы, со словом «цифры» состоят из последовательности цифр от 0 до 9. В следующей таблице перечислены каждого элемента.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |sign|Отрицательный знак или символа знака положительного числа.|  
 |целые числа|Последовательность цифр, обозначающих целую часть числа. Целые числа могут отсутствовать при наличии дробной части.|  
@@ -3382,8 +3361,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">
-          <paramref name="format" /> недопустим.</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" /> недопустим.</exception>
         <altmember cref="M:System.Single.Parse(System.String)" />
         <altmember cref="T:System.String" />
         <related type="Article" href="~/docs/standard/base-types/formatting-types.md">Типы форматирования в .NET</related>
@@ -3501,10 +3479,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" />
-        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" />
-        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="charsWritten" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="format" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
@@ -3552,8 +3530,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="result" Type="System.Single" RefType="out" />
+        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="s">To be added.</param>
@@ -3599,12 +3577,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.String" />
-        <Parameter Name="result" Type="System.Single" RefType="out" />
+        <Parameter Name="s" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="s">Строка, представляющая преобразуемое число.</param>
-        <param name="result">Когда этот метод возвращает значение, оно содержит эквивалент числового значения или символа, содержащегося в параметре <c>s</c>, представленный в виде числа с плавающей запятой одиночной точности, если преобразование прошло успешно, или нуль, если произошел сбой преобразования. Преобразование завершается неудачно, если значение параметра <c>s</c> равно <see langword="null" /> или <see cref="F:System.String.Empty" />, не является числом допустимого формата или представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" />. Этот параметр передается неинициализированным; любое значение, первоначально предоставленное в параметре <c>result</c>, будет перезаписано.</param>
+        <param name="result">Когда этот метод возвращает значение, оно содержит эквивалент числового значения или символа, содержащегося в параметре <paramref name="s" />, представленный в виде числа с плавающей запятой одиночной точности, если преобразование прошло успешно, или нуль, если произошел сбой преобразования. Преобразование завершается сбоем, если значение параметра <paramref name="s" /> равно <see langword="null" /> или <see cref="F:System.String.Empty" />, не является числом допустимого формата или представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" />. Этот параметр передается неинициализированным; любое значение, первоначально предоставленное в <paramref name="result" />, будет перезаписано.</param>
         <summary>Преобразует строковое представление числа в эквивалентное ему число с плавающей запятой одиночной точности. Возвращает значение, указывающее, успешно ли выполнено преобразование.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="s" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -3619,7 +3597,7 @@
   
  Элементы в квадратных скобках являются необязательными. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Последовательность символов пробела.|  
 |*sign*|Отрицательный знак или символа знака положительного числа.|  
@@ -3675,10 +3653,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
-        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.Single" RefType="out" />
+        <Parameter Name="s" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" Index="1" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="result" Type="System.Single" RefType="out" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="s">To be added.</param>
@@ -3726,16 +3704,16 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="s" Type="System.String" />
-        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
-        <Parameter Name="provider" Type="System.IFormatProvider" />
-        <Parameter Name="result" Type="System.Single" RefType="out" />
+        <Parameter Name="s" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="provider" Type="System.IFormatProvider" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="result" Type="System.Single" RefType="out" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="s">Строка, представляющая преобразуемое число.</param>
-        <param name="style">Побитовая комбинация значений перечисления, которая определяет разрешенный формат параметра <c>s</c>. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
-        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <c>s</c> в зависимости от языка и региональных параметров.</param>
-        <param name="result">Когда этот метод возвращает значение, оно содержит эквивалент числового значения или символа, содержащегося в параметре <c>s</c>, представленный в виде числа с плавающей запятой одиночной точности, если преобразование прошло успешно, или нуль, если произошел сбой преобразования. Преобразование завершается неудачно, если параметр <c>s</c> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />, не является значением в формате, совместимом с параметром <c>style</c>, представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" /> либо если <c>style</c> не является допустимой комбинацией перечисленных констант <see cref="T:System.Globalization.NumberStyles" />. Этот параметр передается неинициализированным; любое значение, первоначально предоставленное в параметре <c>result</c>, будет перезаписано.</param>
+        <param name="style">Побитовая комбинация значений перечисления, которая показывает разрешенный формат параметра <paramref name="s" />. Обычно указывается значение <see cref="F:System.Globalization.NumberStyles.Float" /> в сочетании со значением <see cref="F:System.Globalization.NumberStyles.AllowThousands" />.</param>
+        <param name="provider">Объект, который предоставляет сведения о форматировании параметра <paramref name="s" /> в зависимости от языка и региональных параметров.</param>
+        <param name="result">Когда этот метод возвращает значение, оно содержит эквивалент числового значения или символа, содержащегося в параметре <paramref name="s" />, представленный в виде числа с плавающей запятой одиночной точности, если преобразование прошло успешно, или нуль, если произошел сбой преобразования. Преобразование завершается неудачно, если параметр <paramref name="s" /> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />, не является значением в формате, совместимом с параметром <paramref name="style" />, представляет число меньше <see cref="F:System.Single.MinValue" /> или больше <see cref="F:System.Single.MaxValue" />, либо если <paramref name="style" /> не является допустимой комбинацией перечисленных констант <see cref="T:System.Globalization.NumberStyles" />. Этот параметр передается неинициализированным; любое значение, первоначально предоставленное в <paramref name="result" />, будет перезаписано.</param>
         <summary>Преобразует строковое представление числа в указанном стиле и с использованием формата, соответствующего данному языку и региональным параметрам, в эквивалентное ему число с плавающей запятой одиночной точности. Возвращает значение, указывающее, успешно ли выполнено преобразование.</summary>
         <returns>Значение <see langword="true" />, если параметр <paramref name="s" /> успешно преобразован; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -3756,7 +3734,7 @@
   
  Элементы в квадратных скобках ([и]) являются необязательными. Каждый из элементов описан в таблице ниже.  
   
-|Элемент|Описание:|  
+|Элемент|Описание|  
 |-------------|-----------------|  
 |*ws*|Необязательный пробел. Пробелы могут отображаться в начале `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> флаг. Он может располагаться в конце `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType> флаг.|  
 |*$*|Символ валюты. Его положение в строке определяется <xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType> или <xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType> свойства <xref:System.Globalization.NumberFormatInfo> объект, возвращаемый <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> метод `provider` параметра. Символ валюты может встречаться в `s` Если `style` включает в себя <xref:System.Globalization.NumberStyles.AllowCurrencySymbol?displayProperty=nameWithType> флаг.|  
@@ -3784,7 +3762,7 @@
 |<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*Входа* элемент в конце `s`.|  
 |<xref:System.Globalization.NumberStyles.AllowParentheses>|*Входа* элемент в скобки, заключив числовое значение.|  
 |<xref:System.Globalization.NumberStyles.AllowThousands>|*,* Элемент.|  
-|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|* $ * Элемент.|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|*$* Элемент.|  
 |<xref:System.Globalization.NumberStyles.Currency>|Все. `s` Параметра не может представлять шестнадцатеричное число или число в экспоненциальном представлении.|  
 |<xref:System.Globalization.NumberStyles.Float>|*Ws* элемент в начале или конце `s`, *входа* в начале `s`и *.* символ. `s` Параметр можно также использовать экспоненциальное представление.|  
 |<xref:System.Globalization.NumberStyles.Number>|`ws`, `sign`, Тысячи разделителя (*,),* и десятичной запятой (*.*) элементов.|  
@@ -3812,11 +3790,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
+        <exception cref="T:System.ArgumentException"><paramref name="style" /> не является значением <see cref="T:System.Globalization.NumberStyles" />.  
   
-- или - 
- Значение параметра <paramref name="style" /> равно значению <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
+-или- 
+ <paramref name="style" /> является значением <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />.</exception>
         <altmember cref="M:System.Single.Parse(System.String)" />
         <altmember cref="M:System.Single.ToString" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">Синтаксический анализ числовых строк в .NET</related>

@@ -1,13 +1,5 @@
 <Type Name="IDuplexSession" FullName="System.ServiceModel.Channels.IDuplexSession">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a7b801b05899f26eebe24bc1705382cc49a5b354" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51303357" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDuplexSession : System.ServiceModel.Channels.IInputSession, System.ServiceModel.Channels.IOutputSession" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0645e045662e3571aef168103695c77bbbbb4065" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56791021" /></Metadata><TypeSignature Language="C#" Value="public interface IDuplexSession : System.ServiceModel.Channels.IInputSession, System.ServiceModel.Channels.IOutputSession" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDuplexSession implements class System.ServiceModel.Channels.IInputSession, class System.ServiceModel.Channels.IOutputSession, class System.ServiceModel.Channels.ISession" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IDuplexSession" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDuplexSession&#xA;Implements IInputSession, IOutputSession" />
@@ -21,9 +13,11 @@
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.1</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -76,9 +70,11 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -118,9 +114,11 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -172,9 +170,11 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -192,8 +192,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
+        <block subset="none" type="overrides"><para>
             <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> — метод сеанса, который может взаимодействовать с объектом <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" />, владеющим сеансом. В частности, если время существования сеанса скомпоновано со временем существования канала (как в случае с протоколом TCP и надежным сеансом и безопасностью), справедливо следующее. 
 Если <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> вызывается перед <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> вызывается для канала, <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> должно происходить ожидание <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> до конца.  
   
@@ -203,8 +202,7 @@
   
 -Канала должен произойти сбой, если <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> вызывает исключение.  
   
--Реализация <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> в канале должна вызывать метод <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> и убедитесь, что <see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> возвращает <see langword="null" />, что означает, что <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> был вызван с другой стороны сеанса.</para>
-        </block>
+-Реализация <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> в канале должна вызывать метод <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> и убедитесь, что <see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> возвращает <see langword="null" />, что означает, что <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> был вызван с другой стороны сеанса.</para></block>
       </Docs>
     </Member>
     <Member MemberName="CloseOutputSession">
@@ -223,9 +221,11 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -246,8 +246,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
+        <block subset="none" type="overrides"><para>
             <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> — метод сеанса, который может взаимодействовать с объектом <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" />, владеющим сеансом. В частности, если время существования сеанса скомпоновано со временем существования канала (как в случае с протоколом TCP и надежным сеансом и безопасностью), справедливо следующее. 
 Если <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> вызывается перед <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> вызывается для канала, <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> должно происходить ожидание <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> до конца.  
   
@@ -257,8 +256,7 @@
   
 -Канала должен произойти сбой, если <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> вызывает исключение.  
   
--Реализация <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> в канале должна вызывать метод <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> и убедитесь, что <see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> возвращает <see langword="null" />, указывая, что <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> был вызван с другой стороны сеанса.</para>
-        </block>
+-Реализация <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> в канале должна вызывать метод <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> и убедитесь, что <see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> возвращает <see langword="null" />, указывая, что <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> был вызван с другой стороны сеанса.</para></block>
       </Docs>
     </Member>
     <Member MemberName="EndCloseOutputSession">
@@ -277,9 +275,11 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

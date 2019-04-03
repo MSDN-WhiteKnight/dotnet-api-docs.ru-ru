@@ -1,13 +1,5 @@
 <Type Name="Hashtable" FullName="System.Collections.Hashtable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="42109135fc2d9f48f4adb8b7cbe1020e6ae9cdde" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51311644" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Hashtable : ICloneable, System.Collections.IDictionary, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="53ed2202033670d8b876ac3bf0ddfbe3e0765e81" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57922814" /></Metadata><TypeSignature Language="C#" Value="public class Hashtable : ICloneable, System.Collections.IDictionary, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Hashtable extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.ICloneable, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Collections.Hashtable" />
   <TypeSignature Language="VB.NET" Value="Public Class Hashtable&#xA;Implements ICloneable, IDeserializationCallback, IDictionary, ISerializable" />
@@ -15,6 +7,7 @@
   <TypeSignature Language="F#" Value="type Hashtable = class&#xA;    interface IDictionary&#xA;    interface ISerializable&#xA;    interface IDeserializationCallback&#xA;    interface ICloneable&#xA;    interface ICollection&#xA;    interface IEnumerable" />
   <AssemblyInfo>
     <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
@@ -66,8 +59,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -79,8 +72,8 @@
 
 Каждый элемент представляет пару ключ значение, хранящиеся в <xref:System.Collections.DictionaryEntry> объекта. Ключ не может быть `null`, но может быть значение.  
 
->  [!IMPORTANT]
->  Мы не рекомендуем использовать `Hashtable` класса для разработки новых приложений. Вместо этого мы рекомендуем использовать универсальный <xref:System.Collections.Generic.HashSet%601> класса. Дополнительные сведения см. в разделе [неуниверсальные коллекции не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md) на сайте GitHub.
+> [!IMPORTANT]
+>  Мы не рекомендуем использовать `Hashtable` класса для разработки новых приложений. Вместо этого мы рекомендуем использовать универсальный <xref:System.Collections.Generic.Dictionary%602> класса. Дополнительные сведения см. в разделе [неуниверсальные коллекции не должны использоваться](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md) на сайте GitHub.
   
  Объекты, используемые в качестве ключей с <xref:System.Collections.Hashtable> требуется переопределять <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> метод (или <xref:System.Collections.IHashCodeProvider> интерфейс) и <xref:System.Object.Equals%2A?displayProperty=nameWithType> метод (или <xref:System.Collections.IComparer> интерфейс). Реализация методов и интерфейсов должна обрабатывать чувствительность к регистру одинаково. в противном случае <xref:System.Collections.Hashtable> может работать неправильно. Например, при создании <xref:System.Collections.Hashtable>, необходимо использовать <xref:System.Collections.CaseInsensitiveHashCodeProvider> класс (или без учета регистра в любом <xref:System.Collections.IHashCodeProvider> реализации) с <xref:System.Collections.CaseInsensitiveComparer> класс (или без учета регистра в любом <xref:System.Collections.IComparer> реализации).  
   
@@ -98,9 +91,9 @@
   
  Емкость <xref:System.Collections.Hashtable> — количество элементов <xref:System.Collections.Hashtable> может содержать. При добавлении элементов к <xref:System.Collections.Hashtable>, емкость автоматически увеличивается должным образом посредством перераспределения.  
   
- Для очень больших <xref:System.Collections.Hashtable> объектов, можно увеличить максимальную емкость с элементами 2 миллиарда на 64-разрядной системе, задав `enabled` атрибута элемента конфигурации для `true` в среде выполнения.  
+ **.NET framework:** Для очень больших <xref:System.Collections.Hashtable> объектов, можно увеличить максимальную емкость с элементами 2 миллиарда на 64-разрядной системе, задав `enabled` атрибут [ `<gcAllowVeryLargeObjects>` ](~/docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) элемент конфигурации, `true` в Среда времени выполнения.  
   
- `foreach` Инструкции языка C# (`For Each` в Visual Basic) возвращает объект типа элементов в коллекции. Так как каждый элемент из <xref:System.Collections.Hashtable> — это пара ключ/значение, тип элемента не является типом ключа или тип значения. Вместо этого тип элемента — это <xref:System.Collections.DictionaryEntry>. Пример:  
+ `foreach` Инструкции языка C# (`For Each` в Visual Basic) возвращает объект типа элементов в коллекции. Так как каждый элемент из <xref:System.Collections.Hashtable> — это пара ключ/значение, тип элемента не является типом ключа или тип значения. Вместо этого тип элемента — это <xref:System.Collections.DictionaryEntry>. Например:  
   
  [!code-cpp[System.Collections.Hashtable_ClassExample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cpp/remarks.cpp#01)]
  [!code-csharp[System.Collections.Hashtable_ClassExample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cs/remarks.cs#01)]
@@ -125,8 +118,7 @@
   
  ]]></format>
     </remarks>
-    <threadsafe>
-      <see cref="T:System.Collections.Hashtable" /> является потокобезопасным, для использования несколькими потоками чтения и одним потоком записи. Он является поточно-ориентированным многопоточную использовать, когда только один из потоков выполнения операций записи (обновление), что позволяет без блокировки операций чтения, при условии, что авторы сериализуются в <see cref="T:System.Collections.Hashtable" />. Для обеспечения потокобезопасности все операции на <see cref="T:System.Collections.Hashtable" /> должны осуществляться через оболочку, возвращенную <see cref="M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)" /> метод, что отсутствуют потоки чтения <see cref="T:System.Collections.Hashtable" /> объекта.  
+    <threadsafe><see cref="T:System.Collections.Hashtable" /> является потокобезопасным, для использования несколькими потоками чтения и одним потоком записи. Он является поточно-ориентированным многопоточную использовать, когда только один из потоков выполнения операций записи (обновление), что позволяет без блокировки операций чтения, при условии, что авторы сериализуются в <see cref="T:System.Collections.Hashtable" />. Для обеспечения потокобезопасности все операции на <see cref="T:System.Collections.Hashtable" /> должны осуществляться через оболочку, возвращенную <see cref="M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)" /> метод, что отсутствуют потоки чтения <see cref="T:System.Collections.Hashtable" /> объекта.  
   
 Перечисление коллекции само по себе не является потокобезопасной процедурой. Даже если коллекция синхронизирована, другие потоки могут ее изменить, что приведет к тому, что перечислитель создаст исключение. Для обеспечения потокобезопасности при перечислении можно либо заблокировать коллекцию на все время перечисления, либо перехватывать исключения, возникающие в результате изменений, внесенных другими потоками.</threadsafe>
     <altmember cref="T:System.Collections.IDictionary" />
@@ -156,6 +148,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -218,6 +211,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -271,7 +265,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Collections.IDictionary" />
         <altmember cref="M:System.Object.GetHashCode" />
         <altmember cref="M:System.Object.Equals(System.Object)" />
@@ -287,6 +281,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -305,13 +300,12 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="equalityComparer">
-          <see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кодов по умолчанию и объекта сравнения по умолчанию. Поставщик хэш-кода по умолчанию является реализацией метода <see cref="M:System.Object.GetHashCode" />, а средство сравнения по умолчанию является реализацией метода <see cref="M:System.Object.Equals(System.Object)" />.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с заданными по умолчанию исходной емкостью и показателем загрузки и указанным объектом сравнения <see cref="T:System.Collections.IEqualityComparer" />.</summary>
         <remarks>
@@ -358,6 +352,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -424,6 +419,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -442,15 +438,14 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="d" Type="System.Collections.IDictionary" />
-        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+        <Parameter Name="d" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="d">Объект <see cref="T:System.Collections.IDictionary" />, предназначенный для копирования в новый объект <see cref="T:System.Collections.Hashtable" />.</param>
-        <param name="equalityComparer">
-          <see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кодов по умолчанию и объекта сравнения по умолчанию. Поставщик хэш-кода по умолчанию является реализацией метода <see cref="M:System.Object.GetHashCode" />, а средство сравнения по умолчанию является реализацией метода <see cref="M:System.Object.Equals(System.Object)" />.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> посредством копирования элементов из указанного словаря в новый объект <see cref="T:System.Collections.Hashtable" />. У нового объекта <see cref="T:System.Collections.Hashtable" /> исходная емкость равна числу копируемых элементов, и он обладает заданным по умолчанию показателем загрузки и указанным объектом сравнения <see cref="T:System.Collections.IEqualityComparer" />.</summary>
         <remarks>
@@ -486,7 +481,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Collections.IDictionary" />
         <altmember cref="T:System.Collections.IEqualityComparer" />
       </Docs>
@@ -501,6 +496,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -556,10 +552,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
         <altmember cref="T:System.Collections.IDictionary" />
         <altmember cref="M:System.Object.GetHashCode" />
@@ -594,22 +590,22 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use Hashtable(IEqualityComparer) instead.")</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
-        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="hcp">Интерфейс <see cref="T:System.Collections.IHashCodeProvider" /> — это объект, поставляющий хэш-коды для всех ключей в объекте <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кода по умолчанию, являющегося реализацией метода <see cref="M:System.Object.GetHashCode" /> для каждого ключа.</param>
         <param name="comparer">Интерфейс <see cref="T:System.Collections.IComparer" />, который используется для определения равенства двух ключей.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования блока сравнения по умолчанию, который является реализацией метода <see cref="M:System.Object.Equals(System.Object)" /> для каждого ключа.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с заданными по умолчанию исходной емкостью и показателем загрузки и указанными поставщиком хэш-кода и объектом сравнения.</summary>
         <remarks>
@@ -657,6 +653,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -675,15 +672,14 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="capacity" Type="System.Int32" />
-        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+        <Parameter Name="capacity" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="capacity">Приблизительное количество элементов, которое может первоначально содержать объект <see cref="T:System.Collections.Hashtable" />.</param>
-        <param name="equalityComparer">
-          <see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кодов по умолчанию и объекта сравнения по умолчанию. Поставщик хэш-кода по умолчанию является реализацией метода <see cref="M:System.Object.GetHashCode" />, а средство сравнения по умолчанию является реализацией метода <see cref="M:System.Object.Equals(System.Object)" />.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с указанными исходной емкостью и объектом сравнения <see cref="T:System.Collections.IEqualityComparer" /> и заданным по умолчанию показателем загрузки.</summary>
         <remarks>
@@ -731,6 +727,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -786,13 +783,12 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="capacity" /> меньше нуля.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="capacity" /> приводит к переполнению.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="capacity" /> приводит к переполнению.</exception>
         <altmember cref="M:System.Object.GetHashCode" />
         <altmember cref="M:System.Object.Equals(System.Object)" />
       </Docs>
@@ -825,8 +821,8 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo" />, содержащий сведения, которые требуются для сериализации объекта <see cref="T:System.Collections.Hashtable" />.</param>
@@ -852,7 +848,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="info" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Runtime.Serialization.ISerializable" />
         <altmember cref="T:System.Runtime.Serialization.SerializationInfo" />
         <altmember cref="T:System.Runtime.Serialization.StreamingContext" />
@@ -889,26 +885,26 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use Hashtable(IDictionary, IEqualityComparer) instead.")</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="d" Type="System.Collections.IDictionary" />
-        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
-        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+        <Parameter Name="d" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="d">Объект <see cref="T:System.Collections.IDictionary" />, предназначенный для копирования в новый объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="hcp">Интерфейс <see cref="T:System.Collections.IHashCodeProvider" /> — это объект, поставляющий хэш-коды для всех ключей в объекте <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кода по умолчанию, являющегося реализацией метода <see cref="M:System.Object.GetHashCode" /> для каждого ключа.</param>
         <param name="comparer">Интерфейс <see cref="T:System.Collections.IComparer" />, который используется для определения равенства двух ключей.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования блока сравнения по умолчанию, который является реализацией метода <see cref="M:System.Object.Equals(System.Object)" /> для каждого ключа.</param>
-        <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> посредством копирования элементов из указанного словаря в новый объект <see cref="T:System.Collections.Hashtable" />. У нового объекта <see cref="T:System.Collections.Hashtable" /> исходная емкость равна числу копируемых элементов, и он обладает заданным по умолчанию показателем загрузки и указанными поставщиком хэш-кода и объектом сравнения. Этот элемент API устарел. См. <see cref="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Collections.IEqualityComparer)" /> для альтернативных шагов.</summary>
+        <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> посредством копирования элементов из указанного словаря в новый объект <see cref="T:System.Collections.Hashtable" />. У нового объекта <see cref="T:System.Collections.Hashtable" /> исходная емкость равна числу копируемых элементов, и он обладает заданным по умолчанию показателем загрузки и указанными поставщиком хэш-кода и объектом сравнения. Этот API устарел. См. <see cref="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Collections.IEqualityComparer)" /> для альтернативных шагов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -940,7 +936,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Collections.IDictionary" />
         <altmember cref="T:System.Collections.IHashCodeProvider" />
         <altmember cref="T:System.Collections.IComparer" />
@@ -958,6 +954,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -976,17 +973,16 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="d" Type="System.Collections.IDictionary" />
-        <Parameter Name="loadFactor" Type="System.Single" />
-        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+        <Parameter Name="d" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="loadFactor" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="d">Объект <see cref="T:System.Collections.IDictionary" />, предназначенный для копирования в новый объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="loadFactor">Число в диапазоне от 0,1 до 1,0, умноженное на значение по умолчанию, обеспечивающее наилучшую производительность. Результат определяет максимальное отношение количества элементов к количеству сегментов.</param>
-        <param name="equalityComparer">
-          <see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кодов по умолчанию и объекта сравнения по умолчанию. Поставщик хэш-кода по умолчанию является реализацией метода <see cref="M:System.Object.GetHashCode" />, а средство сравнения по умолчанию является реализацией метода <see cref="M:System.Object.Equals(System.Object)" />.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> посредством копирования элементов из указанного словаря в новый объект <see cref="T:System.Collections.Hashtable" />. У нового объекта <see cref="T:System.Collections.Hashtable" /> исходная емкость равна числу копируемых элементов, и он обладает указанными показателем загрузки и объектом сравнения <see cref="T:System.Collections.IEqualityComparer" />.</summary>
         <remarks>
@@ -1022,10 +1018,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
         <altmember cref="T:System.Collections.IEqualityComparer" />
       </Docs>
@@ -1058,24 +1054,24 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use Hashtable(int, IEqualityComparer) instead.")</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="capacity" Type="System.Int32" />
-        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
-        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+        <Parameter Name="capacity" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="capacity">Приблизительное количество элементов, которое может первоначально содержать объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="hcp">Интерфейс <see cref="T:System.Collections.IHashCodeProvider" /> — это объект, поставляющий хэш-коды для всех ключей в объекте <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кода по умолчанию, являющегося реализацией метода <see cref="M:System.Object.GetHashCode" /> для каждого ключа.</param>
         <param name="comparer">Интерфейс <see cref="T:System.Collections.IComparer" />, который используется для определения равенства двух ключей.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования блока сравнения по умолчанию, который является реализацией метода <see cref="M:System.Object.Equals(System.Object)" /> для каждого ключа.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с указанными исходной емкостью, поставщиком хэш-кода и объектом сравнения и заданным по умолчанию показателем загрузки.</summary>
         <remarks>
@@ -1124,6 +1120,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1142,17 +1139,16 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="capacity" Type="System.Int32" />
-        <Parameter Name="loadFactor" Type="System.Single" />
-        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+        <Parameter Name="capacity" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="loadFactor" Type="System.Single" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="capacity">Приблизительное количество элементов, которое может первоначально содержать объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="loadFactor">Число в диапазоне от 0,1 до 1,0, умноженное на значение по умолчанию, обеспечивающее наилучшую производительность. Результат определяет максимальное отношение количества элементов к количеству сегментов.</param>
-        <param name="equalityComparer">
-          <see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" /> — это объект, определяющий поставщик хэш-кода и объект сравнения для использования с объектом <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кодов по умолчанию и объекта сравнения по умолчанию. Поставщик хэш-кода по умолчанию является реализацией метода <see cref="M:System.Object.GetHashCode" />, а средство сравнения по умолчанию является реализацией метода <see cref="M:System.Object.Equals(System.Object)" />.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с указанными исходной емкостью, показателем загрузки и объектом сравнения <see cref="T:System.Collections.IEqualityComparer" />.</summary>
         <remarks>
@@ -1188,10 +1184,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="capacity" /> меньше нуля.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
         <altmember cref="T:System.Collections.IEqualityComparer" />
       </Docs>
@@ -1224,26 +1220,26 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use Hashtable(IDictionary, float, IEqualityComparer) instead.")</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="d" Type="System.Collections.IDictionary" />
-        <Parameter Name="loadFactor" Type="System.Single" />
-        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
-        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+        <Parameter Name="d" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="loadFactor" Type="System.Single" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="d">Объект <see cref="T:System.Collections.IDictionary" />, предназначенный для копирования в новый объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="loadFactor">Число в диапазоне от 0,1 до 1,0, умноженное на значение по умолчанию, обеспечивающее наилучшую производительность. Результат определяет максимальное отношение количества элементов к количеству сегментов.</param>
         <param name="hcp">Интерфейс <see cref="T:System.Collections.IHashCodeProvider" /> — это объект, поставляющий хэш-коды для всех ключей в объекте <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кода по умолчанию, являющегося реализацией метода <see cref="M:System.Object.GetHashCode" /> для каждого ключа.</param>
         <param name="comparer">Интерфейс <see cref="T:System.Collections.IComparer" />, который используется для определения равенства двух ключей.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования блока сравнения по умолчанию, который является реализацией метода <see cref="M:System.Object.Equals(System.Object)" /> для каждого ключа.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> посредством копирования элементов из указанного словаря в новый объект <see cref="T:System.Collections.Hashtable" />. У нового объекта <see cref="T:System.Collections.Hashtable" /> исходная емкость равна числу копируемых элементов, и он обладает указанными показателем загрузки, поставщиком хэш-кода и объектом сравнения.</summary>
         <remarks>
@@ -1277,10 +1273,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="d" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="d" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
       </Docs>
     </Member>
@@ -1312,26 +1308,26 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use Hashtable(int, float, IEqualityComparer) instead.")</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="capacity" Type="System.Int32" />
-        <Parameter Name="loadFactor" Type="System.Single" />
-        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
-        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+        <Parameter Name="capacity" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="loadFactor" Type="System.Single" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="capacity">Приблизительное количество элементов, которое может первоначально содержать объект <see cref="T:System.Collections.Hashtable" />.</param>
         <param name="loadFactor">Число в диапазоне от 0,1 до 1,0, умноженное на значение по умолчанию, обеспечивающее наилучшую производительность. Результат определяет максимальное отношение количества элементов к количеству сегментов.</param>
         <param name="hcp">Интерфейс <see cref="T:System.Collections.IHashCodeProvider" /> — это объект, поставляющий хэш-коды для всех ключей в объекте <see cref="T:System.Collections.Hashtable" />.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> предусмотрено для использования поставщика хэш-кода по умолчанию, являющегося реализацией метода <see cref="M:System.Object.GetHashCode" /> для каждого ключа.</param>
         <param name="comparer">Интерфейс <see cref="T:System.Collections.IComparer" />, который используется для определения равенства двух ключей.  
   
-- или - 
+-или- 
  Значение <see langword="null" /> для использования блока сравнения по умолчанию, который является реализацией метода <see cref="M:System.Object.Equals(System.Object)" /> для каждого ключа.</param>
         <summary>Инициализирует новый пустой экземпляр класса <see cref="T:System.Collections.Hashtable" /> с указанными начальной емкостью, показателем загрузки, поставщиком хэш-кода и объектом сравнения.</summary>
         <remarks>
@@ -1365,10 +1361,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="capacity" /> меньше нуля.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> меньше 0,1.  
   
-- или - 
+-или- 
  Значение <paramref name="loadFactor" /> больше 1,0.</exception>
         <altmember cref="T:System.Collections.IHashCodeProvider" />
         <altmember cref="T:System.Collections.IComparer" />
@@ -1389,6 +1385,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1446,11 +1443,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Элемент с таким ключом уже существует в <see cref="T:System.Collections.Hashtable" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.Hashtable" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.Hashtable" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.Hashtable.Remove(System.Object)" />
         <altmember cref="P:System.Collections.Hashtable.Item(System.Object)" />
@@ -1470,6 +1467,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1535,6 +1533,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1605,7 +1604,7 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use KeyComparer properties.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1640,6 +1639,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1672,8 +1672,7 @@
       <Docs>
         <param name="key">Ключ, который требуется найти в <see cref="T:System.Collections.Hashtable" />.</param>
         <summary>Определяет, содержит ли объект <see cref="T:System.Collections.Hashtable" /> указанный ключ.</summary>
-        <returns>
-          <see langword="true" />, если <see cref="T:System.Collections.Hashtable" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <see cref="T:System.Collections.Hashtable" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1695,7 +1694,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Collections.Hashtable.ContainsKey(System.Object)" />
         <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
@@ -1710,6 +1709,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1737,8 +1737,7 @@
       <Docs>
         <param name="key">Ключ, который требуется найти в <see cref="T:System.Collections.Hashtable" />.</param>
         <summary>Определяет, содержит ли объект <see cref="T:System.Collections.Hashtable" /> указанный ключ.</summary>
-        <returns>
-          <see langword="true" />, если <see cref="T:System.Collections.Hashtable" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <see cref="T:System.Collections.Hashtable" /> содержит элемент с указанным ключом, в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1760,7 +1759,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Collections.Hashtable.Contains(System.Object)" />
         <altmember cref="M:System.Collections.Hashtable.ContainsValue(System.Object)" />
       </Docs>
@@ -1775,6 +1774,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1840,6 +1840,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1867,7 +1868,7 @@
       </Parameters>
       <Docs>
         <param name="array">Одномерный массив <see cref="T:System.Array" />, который является назначением для объектов <see cref="T:System.Collections.DictionaryEntry" />, копируемых из коллекции <see cref="T:System.Collections.Hashtable" />. Массив <see cref="T:System.Array" /> должен иметь индексацию, начинающуюся с нуля.</param>
-        <param name="arrayIndex">Отсчитываемый от нуля индекс в <c>массиве</c> с которого начинается копирование.</param>
+        <param name="arrayIndex">Отсчитываемый от нуля индекс в массиве <paramref name="array" />, указывающий начало копирования.</param>
         <summary>Копирует элементы коллекции <see cref="T:System.Collections.Hashtable" /> в экземпляр класса одномерного массива <see cref="T:System.Array" /> по указанному индексу.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1892,12 +1893,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="arrayIndex" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Массив <paramref name="array" /> является многомерным.  
   
-- или - 
-Число элементов в исходном массиве <see cref="T:System.Collections.Hashtable" /> больше возможного для размещения числа элементов от положения, заданного значением параметра <paramref name="arrayIndex" />, до конца массива назначения <paramref name="array" />.</exception>
+-или- 
+Число элементов в исходной коллекции <see cref="T:System.Collections.Hashtable" /> больше доступного места от положения, заданного значением параметра <paramref name="arrayIndex" />, до конца массива назначения <paramref name="array" />.</exception>
         <exception cref="T:System.InvalidCastException">Тип исходного массива <see cref="T:System.Collections.Hashtable" /> не может быть автоматически приведен к типу массива назначения <paramref name="array" />.</exception>
         <altmember cref="T:System.Array" />
         <altmember cref="T:System.Collections.DictionaryEntry" />
@@ -1917,6 +1918,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -1961,6 +1963,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2012,6 +2015,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2091,6 +2095,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2134,7 +2139,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NullReferenceException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.NullReferenceException"><paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Object.GetHashCode" />
         <altmember cref="T:System.Object" />
         <altmember cref="T:System.Collections.IHashCodeProvider" />
@@ -2179,8 +2184,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">Объект <see cref="T:System.Runtime.Serialization.SerializationInfo" />, который содержит сведения, требуемые для сериализации коллекции <see cref="T:System.Collections.Hashtable" />.</param>
@@ -2194,7 +2199,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="info" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Коллекция была изменена.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Требует полного доверия для непосредственного вызывающего объекта. Этот член не может использоваться частично доверенным или прозрачным кодом.</permission>
         <altmember cref="T:System.Runtime.Serialization.ISerializable" />
@@ -2231,7 +2236,7 @@
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Please use EqualityComparer property.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2266,6 +2271,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2289,7 +2295,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, имеет ли список <see cref="T:System.Collections.Hashtable" /> фиксированный размер.</summary>
-        <value>Значение <see langword="true" />, если словарь <see cref="T:System.Collections.Hashtable" /> имеет фиксированный размер; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если словарь <see cref="T:System.Collections.Hashtable" /> имеет фиксированный размер; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2317,6 +2323,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2340,7 +2347,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, является ли объект <see cref="T:System.Collections.Hashtable" /> доступным только для чтения.</summary>
-        <value>Значение <see langword="true" />, если интерфейс <see cref="T:System.Collections.Hashtable" /> доступен только для чтения; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если интерфейс <see cref="T:System.Collections.Hashtable" /> доступен только для чтения; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2368,6 +2375,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2391,8 +2399,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, показывающее, является ли доступ к коллекции <see cref="T:System.Collections.Hashtable" /> синхронизированным (потокобезопасным).</summary>
-        <value>
-          <see langword="true" />, если доступ к классу <see cref="T:System.Collections.Hashtable" /> является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если доступ к классу <see cref="T:System.Collections.Hashtable" /> является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2435,6 +2442,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2480,14 +2488,14 @@
   
  Получение значения этого свойства является операцией o(1). Задание этого свойства также является операцией o(1).  
   
- В языке C# ключевое слово используется для определения индексаторов вместо реализации <xref:System.Collections.IList.Item%2A> свойство. В языке Visual Basic в качестве свойства по умолчанию реализовано свойство <xref:System.Collections.Hashtable.Item%2A>, предоставляющее те же возможности индексирования.  
+ C# Использует язык [ `this` ](~/docs/csharp/language-reference/keywords/this.md) ключевое слово для определения индексаторов вместо реализации <xref:System.Collections.IList.Item%2A> свойство. В языке Visual Basic в качестве свойства по умолчанию реализовано свойство <xref:System.Collections.Hashtable.Item%2A>, предоставляющее те же возможности индексирования.  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Свойство задано, и список <see cref="T:System.Collections.Hashtable" /> доступен только для чтения.  
   
-- или - 
+-или- 
 Свойство задано, <paramref name="key" /> не существует в коллекции, а <see cref="T:System.Collections.Hashtable" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.Hashtable.Add(System.Object,System.Object)" />
       </Docs>
@@ -2502,6 +2510,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2528,8 +2537,8 @@
         <Parameter Name="key" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="item">Объект <see cref="T:System.Object" />, который необходимо сравнить с параметром <c>key</c>.</param>
-        <param name="key">Ключ в коллекции <see cref="T:System.Collections.Hashtable" />, который требуется сравнить со значением параметра <c>item</c>.</param>
+        <param name="item">Объект класса <see cref="T:System.Object" />, который требуется сравнить со значением ключа <paramref name="key" />.</param>
+        <param name="key">Ключ, существующий в коллекции <see cref="T:System.Collections.Hashtable" />, который требуется сравнить со значением параметра <paramref name="item" />.</param>
         <summary>Сравнивает указанный объект класса <see cref="T:System.Object" /> с указанным ключом, который содержится в коллекции <see cref="T:System.Collections.Hashtable" />.</summary>
         <returns>Значение <see langword="true" />, если <paramref name="item" /> и <paramref name="key" /> равны; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -2542,10 +2551,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="item" /> имеет значение <see langword="null" />.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" /> — <see langword="null" />.  
   
-- или - 
- Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+-или- 
+ <paramref name="key" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.Object" />
         <altmember cref="M:System.Collections.IComparer.Compare(System.Object,System.Object)" />
         <altmember cref="M:System.Object.Equals(System.Object)" />
@@ -2564,6 +2573,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2643,7 +2653,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="sender" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="sender">Источник события десериализации.</param>
@@ -2676,6 +2686,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2707,7 +2718,7 @@
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется удалить.</param>
-        <summary>Удаляет элемент с указанным ключом из <see cref="T:System.Collections.Hashtable" />.</summary>
+        <summary>Удаляет элемент с указанным ключом из объекта <see cref="T:System.Collections.Hashtable" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2727,10 +2738,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.Hashtable" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.Hashtable" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.Hashtable.Add(System.Object,System.Object)" />
         <altmember cref="M:System.Collections.IDictionary.Remove(System.Object)" />
@@ -2746,6 +2757,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2801,7 +2813,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="table" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="table" /> — <see langword="null" />.</exception>
         <altmember cref="P:System.Collections.Hashtable.IsSynchronized" />
         <altmember cref="P:System.Collections.Hashtable.SyncRoot" />
       </Docs>
@@ -2819,6 +2831,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2875,6 +2888,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
@@ -2945,6 +2959,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>

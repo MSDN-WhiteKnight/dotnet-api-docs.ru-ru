@@ -1,13 +1,5 @@
 <Type Name="WorkflowPersistenceService" FullName="System.Workflow.Runtime.Hosting.WorkflowPersistenceService">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="39624ad21a7024e1c9543042d7b61f0ac0a05cc9" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48704220" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WorkflowPersistenceService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6cbc9cd683f0346f1532afdb1709c1ce11dec398" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51935421" /></Metadata><TypeSignature Language="C#" Value="public abstract class WorkflowPersistenceService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WorkflowPersistenceService extends System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.WorkflowPersistenceService" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WorkflowPersistenceService&#xA;Inherits WorkflowRuntimeService" />
@@ -37,7 +29,7 @@
 > [!NOTE]
 >  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
   
- При возникновении определенных условий во время выполнения рабочего процесса подсистема среды выполнения рабочих процессов сохраняет сведения о состоянии экземпляра рабочего процесса. Постоянное хранение может возникнуть, например, при завершении атомарной транзакции при освобождении экземпляра рабочего процесса, когда основное приложение вызывает <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A?displayProperty=nameWithType> в экземпляре рабочего процесса или при прерывании или завершении экземпляра рабочего процесса. Когда семантика подсистемы среды выполнения рабочих процессов предписывает необходимость появления постоянного хранения, подсистема среды выполнения рабочих процессов вызывает методы, предоставленные службой постоянного хранения для сохранения сведений о состоянии экземпляра рабочего процесса. Подобным образом, когда подсистеме среды выполнения рабочих процессов необходимо восстановить ранее сохраненный экземпляр рабочего процесса, она вызывает методы, предоставленные службой постоянного хранения для загрузки этих сведений о состоянии. Подсистема среды выполнения рабочих процессов обрабатывает всю семантику относительно времени выполнения сохранения. Служба постоянного хранения обрабатывает фактически сохранение и загрузку сведений о состоянии рабочего процесса в хранилище данных или из него.  
+ При возникновении определенных условий во время выполнения рабочего процесса подсистема среды выполнения рабочих процессов сохраняет сведения о состоянии экземпляра рабочего процесса. Постоянное хранение может возникнуть, например, при завершении атомарной транзакции при освобождении экземпляра рабочего процесса, когда ведущее приложение вызывает <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A?displayProperty=nameWithType> в экземпляре рабочего процесса или при прерывании или завершении экземпляра рабочего процесса. Когда семантика подсистемы среды выполнения рабочих процессов предписывает необходимость появления постоянного хранения, подсистема среды выполнения рабочих процессов вызывает методы, предоставленные службой постоянного хранения для сохранения сведений о состоянии экземпляра рабочего процесса. Подобным образом, когда подсистеме среды выполнения рабочих процессов необходимо восстановить ранее сохраненный экземпляр рабочего процесса, она вызывает методы, предоставленные службой постоянного хранения для загрузки этих сведений о состоянии. Подсистема среды выполнения рабочих процессов обрабатывает всю семантику относительно времени выполнения сохранения. Служба постоянного хранения обрабатывает фактически сохранение и загрузку сведений о состоянии рабочего процесса в хранилище данных или из него.  
   
  Службу постоянного хранения можно создать путем наследования класса от класса <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService>.  Службу постоянного хранения можно добавить в подсистему среды выполнения рабочих процессов путем вызова метода <xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> или путем создания соответствующей записи в файле конфигурации приложения. В классе <xref:System.Workflow.Runtime.WorkflowRuntime> должна содержаться только одна служба постоянного хранения. Windows Workflow Foundation предоставляет класс <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, готовую службу постоянного хранения, которую можно использовать как есть или же ее можно расширить.  
   
@@ -70,7 +62,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- В следующем примере показано создание экземпляра класса `SqlWorkflowPersistenceService` (производного от `WorkflowPersistenceService`). Данный пример является частью образца SDK «Nested Exception Handlers» из класса Program.cs.  Дополнительные сведения см. в разделе [вложенные образец обработчики исключений](http://msdn.microsoft.com/library/d1da0209-842b-41c8-9b7c-0cbaa1034265).  
+ В следующем примере показано создание экземпляра класса `SqlWorkflowPersistenceService` (производного от `WorkflowPersistenceService`). Данный пример является частью образца SDK «Nested Exception Handlers» из класса Program.cs.  Дополнительные сведения см. в разделе [вложенные образец обработчики исключений](https://msdn.microsoft.com/library/d1da0209-842b-41c8-9b7c-0cbaa1034265).  
   
  [!code-csharp[WF_Samples#161](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#161)]
  [!code-vb[WF_Samples#161](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#161)]  
@@ -126,8 +118,7 @@
       <Docs>
         <param name="rootActivity">Корневое действие экземпляра рабочего процесса.</param>
         <summary>Указывает, является ли данное действие заблокированным.</summary>
-        <returns>
-          <see langword="true" />, если данное действие является заблокированным; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если данное действие является заблокированным; в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -219,7 +210,7 @@
    
   
 ## Examples  
- В следующем примере показана реализация метода `LoadCompletedContextActivity`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `LoadCompletedContextActivity`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#269](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#269)]
  [!code-vb[WF_Samples#269](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#269)]  
@@ -248,8 +239,7 @@
         <Parameter Name="instanceId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="instanceId">
-          <see cref="T:System.Guid" /> корневого действия экземпляра рабочего процесса.</param>
+        <param name="instanceId"><see cref="T:System.Guid" /> корневого действия экземпляра рабочего процесса.</param>
         <summary>При реализации в производном классе загружает заданное состояние экземпляра рабочего процесса обратно в память.</summary>
         <returns>Объект класса <see cref="T:System.Workflow.ComponentModel.Activity" />, представляющий корневое действие экземпляра рабочего процесса.</returns>
         <remarks>
@@ -263,7 +253,7 @@
    
   
 ## Examples  
- В следующем примере показана реализация метода `LoadWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `LoadWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#266](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#266)]
  [!code-vb[WF_Samples#266](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#266)]  
@@ -301,7 +291,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- В следующем примере показана реализация метода `RestoreFromDefaultSerializedForm`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `RestoreFromDefaultSerializedForm`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#269](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#269)]
  [!code-vb[WF_Samples#269](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#269)]  
@@ -348,7 +338,7 @@
    
   
 ## Examples  
- В следующем примере показана реализация метода `SaveCompletedContextActivity`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `SaveCompletedContextActivity`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#268](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#268)]
  [!code-vb[WF_Samples#268](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#268)]  
@@ -379,8 +369,7 @@
       </Parameters>
       <Docs>
         <param name="rootActivity">Корневое действие экземпляра рабочего процесса.</param>
-        <param name="unlock">
-          <see langword="true" />, если экземпляр рабочего процесса не должен быть заблокирован; <see langword="false" />, если экземпляр рабочего процесса должен быть заблокирован.</param>
+        <param name="unlock"><see langword="true" />, если экземпляр рабочего процесса не должен быть заблокирован; <see langword="false" />, если экземпляр рабочего процесса должен быть заблокирован.</param>
         <summary>При реализации в производном классе сохраняет состояние экземпляра рабочего процесса в хранилище данных.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -399,7 +388,7 @@
    
   
 ## Examples  
- В следующем примере показана реализация метода `SaveWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `SaveWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#264](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#264)]
  [!code-vb[WF_Samples#264](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#264)]  
@@ -434,7 +423,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- В следующем примере показана реализация метода `UnloadOnIdle`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `UnloadOnIdle`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#270](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#270)]
  [!code-vb[WF_Samples#270](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#270)]  
@@ -476,7 +465,7 @@
    
   
 ## Examples  
- В следующем примере показана реализация метода `UnlockWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](http://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
+ В следующем примере показана реализация метода `UnlockWorkflowInstanceState`. Данный пример кода является частью примера «Custom Persistence Service» из файла FilePersistenceService.cs. Дополнительные сведения см. в разделе [пример службы пользовательской сохраняемости](https://msdn.microsoft.com/library/869dfadf-5298-4551-bc80-f4cf7918729d).  
   
  [!code-csharp[WF_Samples#267](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#267)]
  [!code-vb[WF_Samples#267](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#267)]  

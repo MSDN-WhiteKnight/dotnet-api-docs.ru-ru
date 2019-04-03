@@ -1,13 +1,5 @@
 <Type Name="ResourceManager" FullName="System.Resources.ResourceManager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fb79a80752ee9d1cf7dfab2c8cf824a1b04335f5" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48711305" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ResourceManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8ede7b17b1019c4e3fda5c763b5a25cc348c5e2f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935657" /></Metadata><TypeSignature Language="C#" Value="public class ResourceManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ResourceManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Resources.ResourceManager" />
   <TypeSignature Language="VB.NET" Value="Public Class ResourceManager" />
@@ -38,11 +30,14 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-1.0;netstandard-1.1;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6">
+      <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -89,7 +84,7 @@
 ### <a name="creating-resources"></a>Создание ресурсов  
  При разработке приложений на основе ресурсов, вы храните сведения о ресурсах в текстовые файлы (файлы с расширением txt или restext) или XML-файлы (файлы с расширением .resx). После этого нужно скомпилировать текста или XML-файлы с [генератор файлов ресурсов (Resgen.exe)](~/docs/framework/tools/resgen-exe-resource-file-generator.md) для создания двоичных RESOURCES-файл. Затем, можно внедрить в исполняемый файл или библиотека полученный RESOURCES-файл с помощью параметра компилятора, например `/resources` для компиляторов C# и Visual Basic, или можно внедрить во вспомогательную сборку с помощью. Если включить RESX-файла в проект Visual Studio, Visual Studio обрабатывает компиляции и внедрения по умолчанию и локализованные ресурсы автоматически как часть процесса построения.  
   
- В идеале следует создавать ресурсы для всех языков, ваше приложение поддерживает, или по крайней мере для определенного подмножества каждого языка. Имена файлов в двоичные RESOURCES соглашению об именовании *basename*.* cultureName*.resources, где *basename* — это имя приложения или имя класса, в зависимости от уровня детализации информации. <xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType> Свойство используется для определения *cultureName*. Ресурс для языка и региональных параметров приложения по умолчанию должен быть назван *basename*.resources.  
+ В идеале следует создавать ресурсы для всех языков, ваше приложение поддерживает, или по крайней мере для определенного подмножества каждого языка. Имена файлов в двоичные RESOURCES соглашению об именовании *basename*. *cultureName*.resources, где *basename* — это имя приложения или имя класса, в зависимости от уровня детализации информации. <xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType> Свойство используется для определения *cultureName*. Ресурс для языка и региональных параметров приложения по умолчанию должен быть назван *basename*.resources.  
   
  Например предположим, что сборка содержит несколько ресурсов в файле ресурсов, который содержит имя MyResources. Эти файлы ресурсов должны иметь имена, такие как MyResources.ja JP.resources, для языка и региональных параметров (Япония), MyResources.de.resources для немецкого языка и региональных параметров, MyResources.zh-CHS.resources для упрощенного китайского языка и региональных параметров, и MyResources.fr BE.resources французский (Бельгия) языком и региональными параметрами. Файл ресурсов по умолчанию должна называться MyResources.resources. Ресурс для конкретного языка и региональных параметров обычно упаковываются во вспомогательные сборки для каждого языка и региональных параметров. Файл ресурсов по умолчанию необходимо внедрить в основную сборку приложения.  
   
@@ -158,7 +153,7 @@ vbc ShowTime.vb /resource:strings.resources
   
 -   Если явно не задано текущего языка и региональных параметров пользовательского интерфейса, а не определить язык и региональные параметры по умолчанию для текущего домена приложения, <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> свойство задается неявно Windows `GetUserDefaultUILanguage` функции. Эта функция предоставляется по многоязыкового интерфейса пользователя (MUI), который позволяет пользователю задать язык по умолчанию. Если пользователь не задал язык пользовательского интерфейса, по умолчанию используется язык установленной системы, который является языком ресурсов операционной системы.  
   
- В следующем примере простых «Hello world» явно задает текущий язык и региональные параметры пользовательского интерфейса. Она содержит множество ресурсов для трех языков: английский (США) или en US, французский (Франция) или fr-FR и русский (Россия) или ru-RU. В текстовом файле с именем Greetings.txt содержатся ресурсы en US:  
+ В следующем примере простых «Hello world» явно задает текущий язык и региональные параметры пользовательского интерфейса. Он содержит ресурсы для трех языков и региональных параметров: Английский (США) или en US, французский (Франция) или fr-FR и русский (Россия) или ru-RU. В текстовом файле с именем Greetings.txt содержатся ресурсы en US:  
   
 ```  
 HelloString=Hello world!  
@@ -209,7 +204,7 @@ al /embed:Greetings.ru-RU.resources /culture:ru-RU /out:ru-RU\Example.resources.
   
 |culture|Имя файла|Имя ресурса|Значение ресурса|  
 |-------------|---------------|-------------------|--------------------|  
-|ru-RU|DateStrings.txt|`DateStart`|Сегодня|  
+|en-US|DateStrings.txt|`DateStart`|Сегодня|  
 |fr-FR|DateStrings.fr-FR.txt|`DateStart`|Aujourd'hui c'est le|  
 |ru-RU|DateStrings.ru-RU.txt|`DateStart`|Сегодня|  
   
@@ -269,20 +264,20 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
  Для исполняемых файлов, развернутые и работающие с веб-сайта (файлы .exe HREF) <xref:System.Resources.ResourceManager> объект может зондировать наличие вспомогательных сборок в Интернете, которые могут снижать производительность приложения. Чтобы устранить проблемы с производительностью, можно ограничить это исследование вспомогательные сборки, которые развернуты с вашим приложением. Чтобы сделать это, создайте `<satelliteassemblies>` узел в файле конфигурации приложения, чтобы указать, что вы развернули определенный набор языков и региональных параметров для приложения и что <xref:System.Resources.ResourceManager> объекта не следует пытаться выборки данных для любого языка и региональных параметров, которого нет в этом узле.  
   
 > [!NOTE]
->  Предпочтительная альтернатива типу создание `<satelliteassemblies>` узла заключается в использовании [манифест развертывания ClickOnce](http://msdn.microsoft.com/library/8457e615-e3b6-4990-8dcf-11bc590e4e9b) функции.  
+>  Предпочтительная альтернатива типу создание `<satelliteassemblies>` узла заключается в использовании [манифест развертывания ClickOnce](https://msdn.microsoft.com/library/8457e615-e3b6-4990-8dcf-11bc590e4e9b) функции.  
   
  В файле конфигурации приложения создайте раздел следующего вида:  
   
 ```  
 <?xml version ="1.0"?>  
 <configuration>  
-    <satelliteassemblies>  
-        <assembly name="MainAssemblyName, Version=versionNumber, Culture=neutral, PublicKeyToken=null|yourPublicKeyToken">  
-            <culture>cultureName1</culture>  
-            <culture>cultureName2</culture>  
-            <culture>cultureName3</culture>  
-        </assembly>  
-    </satelliteassemblies>  
+    <satelliteassemblies>  
+        <assembly name="MainAssemblyName, Version=versionNumber, Culture=neutral, PublicKeyToken=null|yourPublicKeyToken">  
+            <culture>cultureName1</culture>  
+            <culture>cultureName2</culture>  
+            <culture>cultureName3</culture>  
+        </assembly>  
+    </satelliteassemblies>  
 </configuration>  
 ```  
   
@@ -306,7 +301,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
 ## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>Приложения [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]  
   
 > [!IMPORTANT]
->  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
+>  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](https://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
   
  Для [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, <xref:System.Resources.ResourceManager> класс извлекает ресурсы из пакета ресурсов (PRI) индекс файлов. Один PRI-файл (файл пакета приложения PRI) содержит ресурсы для культуры по умолчанию и всех локализованных языков и региональных параметров. Использование программы MakePRI для создания файла PRI, из одного или нескольких файлов ресурсов, которые находятся в формате XML-ресурсов (.resw). Для ресурсов, которые включены в проект Visual Studio Visual Studio обрабатывает процесс создания и упаковки в PRI-файл автоматически. Затем можно использовать .NET Framework <xref:System.Resources.ResourceManager> класс для доступа к ресурсам приложения или библиотеки.  
   
@@ -384,7 +379,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
     <altmember cref="T:System.Globalization.CultureInfo" />
     <altmember cref="P:System.Globalization.CultureInfo.CurrentUICulture" />
     <altmember cref="T:System.Resources.SatelliteContractVersionAttribute" />
-    <related type="Article" href="http://msdn.microsoft.com/library/8ad495d4-2941-40cf-bf64-e82e85825890">Ресурсы приложений</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/8ad495d4-2941-40cf-bf64-e82e85825890">Ресурсы приложений</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -494,7 +489,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
 ## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>Приложения [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]  
   
 > [!IMPORTANT]
->  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
+>  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](https://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
   
  В [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, <xref:System.Resources.ResourceManager> использует `resourceSource` параметра для определения сборки, базовое имя и пространство имен, где элементы ресурса можно найти в файл индекса (PRI) ресурсов пакета приложения. Например, если тип с именем MyCompany.MyProduct.MyType, который определен в `MyAssembly`, диспетчер ресурсов будет искать идентификатор с именем MyAssembly набор ресурсов и ищет MyCompany.MyProduct.MyType область в пределах этого набора ресурсов. Диспетчер ресурсов выполняет поиск элементов ресурса в контексте по умолчанию (текущий язык и региональные параметры, текущее значение параметра высокой контрастности и т. д.) в этой области.  
   
@@ -507,13 +502,13 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
   
 |culture|Имя файла|Имя ресурса|Значение ресурса|  
 |-------------|---------------|-------------------|--------------------|  
-|ru-RU|GreetingResources.txt|`Morning`|Доброе утро|  
-|ru-RU|GreetingResources.txt|`Afternoon`|Добрый день|  
-|ru-RU|GreetingResources.txt|`Evening`|Добрый вечер|  
+|en-US|GreetingResources.txt|`Morning`|Доброе утро|  
+|en-US|GreetingResources.txt|`Afternoon`|Добрый день|  
+|en-US|GreetingResources.txt|`Evening`|Добрый вечер|  
 |fr-FR|GreetingResources.fr-FR.txt|`Morning`|Bonjour|  
 |fr-FR|GreetingResources.fr-FR.txt|`Afternoon`|Bonjour|  
 |fr-FR|GreetingResources.fr-FR.txt|`Evening`|Bonsoir|  
-|ru-RU|GreetingResources.ru-RU.txt|`Morning`|ДОБРОЕ УТРО|  
+|ru-RU|GreetingResources.ru-RU.txt|`Morning`|Доброе утро|  
 |ru-RU|GreetingResources.ru-RU.txt|`Afternoon`|Добрый день|  
 |ru-RU|GreetingResources.ru-RU.txt|`Evening`|Добрый вечер|  
   
@@ -601,7 +596,7 @@ al /out:ru-RU\Greet.resources.dll /culture:ru-RU /embed: GreetingResources.ru-RU
 ## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>Приложения [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]  
   
 > [!IMPORTANT]
->  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
+>  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](https://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
   
  В [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, диспетчер ресурсов использует простое имя `assembly` набор параметров для поиска соответствующий ресурс в файл индекса (PRI) ресурсов пакета приложения. `baseName` Параметр используется для поиска элемента ресурса в наборе ресурсов. Например имя корневой папки для PortableLibrary1.Resource1.de DE.resources — PortableLibrary1.Resource1.  
   
@@ -642,9 +637,7 @@ csc Example.cs /resource:ExampleResources.resources
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="baseName" /> или параметра <paramref name="assembly" /> — <see langword="null" />.</exception>
-        <block subset="none" type="overrides">
-          <para>Этот конструктор использует предоставляемый системой <see cref="T:System.Resources.ResourceSet" /> реализации. Чтобы использовать формат файла настраиваемого ресурса, должен быть производным от <see cref="T:System.Resources.ResourceSet" /> класса, переопределить <see cref="M:System.Resources.ResourceSet.GetDefaultReader" /> и <see cref="M:System.Resources.ResourceSet.GetDefaultWriter" /> методы и pass, введите для <see cref="M:System.Resources.ResourceManager.#ctor(System.String,System.Reflection.Assembly,System.Type)" /> конструктор. С помощью пользовательского <see cref="T:System.Resources.ResourceSet" /> могут быть полезными для управления политикой кэширования ресурсов или поддержка собственного формата файла ресурсов, но обычно это не обязательно.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот конструктор использует предоставляемый системой <see cref="T:System.Resources.ResourceSet" /> реализации. Чтобы использовать формат файла настраиваемого ресурса, должен быть производным от <see cref="T:System.Resources.ResourceSet" /> класса, переопределить <see cref="M:System.Resources.ResourceSet.GetDefaultReader" /> и <see cref="M:System.Resources.ResourceSet.GetDefaultWriter" /> методы и pass, введите для <see cref="M:System.Resources.ResourceManager.#ctor(System.String,System.Reflection.Assembly,System.Type)" /> конструктор. С помощью пользовательского <see cref="T:System.Resources.ResourceSet" /> могут быть полезными для управления политикой кэширования ресурсов или поддержка собственного формата файла ресурсов, но обычно это не обязательно.</para></block>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -676,9 +669,9 @@ csc Example.cs /resource:ExampleResources.resources
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="baseName" Type="System.String" />
-        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
-        <Parameter Name="usingResourceSet" Type="System.Type" />
+        <Parameter Name="baseName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="usingResourceSet" Type="System.Type" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="baseName">Корневое имя файла ресурсов без расширения, но включающее какое-либо полное имя пространства имен. Например, имя корневой папки для файла ресурсов MyApplication.MyResource.en-US.resources будет MyApplication.MyResource.</param>
@@ -703,9 +696,7 @@ csc Example.cs /resource:ExampleResources.resources
         </remarks>
         <exception cref="T:System.ArgumentException">Объект <paramref name="usingResourceset" /> не является производным от класса <see cref="T:System.Resources.ResourceSet" />.</exception>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="baseName" /> или параметра <paramref name="assembly" /> — <see langword="null" />.</exception>
-        <block subset="none" type="usage">
-          <para>Этот конструктор позволяет указать <see cref="T:System.Resources.ResourceSet" /> реализации. Если вы не хотите конкретного <see cref="T:System.Resources.ResourceSet" /> реализации, но нужно будет использовать формат файла настраиваемого ресурса, должен быть производным от <see cref="T:System.Resources.ResourceSet" /> класса, переопределить <see cref="M:System.Resources.ResourceSet.GetDefaultReader" /> и <see cref="M:System.Resources.ResourceSet.GetDefaultWriter" /> методы и pass, введите для этого конструктора.</para>
-        </block>
+        <block subset="none" type="usage"><para>Этот конструктор позволяет указать <see cref="T:System.Resources.ResourceSet" /> реализации. Если вы не хотите конкретного <see cref="T:System.Resources.ResourceSet" /> реализации, но нужно будет использовать формат файла настраиваемого ресурса, должен быть производным от <see cref="T:System.Resources.ResourceSet" /> класса, переопределить <see cref="M:System.Resources.ResourceSet.GetDefaultReader" /> и <see cref="M:System.Resources.ResourceSet.GetDefaultWriter" /> методы и pass, введите для этого конструктора.</para></block>
       </Docs>
     </Member>
     <Member MemberName="BaseName">
@@ -825,13 +816,13 @@ csc Example.cs /resource:ExampleResources.resources
         <ReturnType>System.Resources.ResourceManager</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="baseName" Type="System.String" />
-        <Parameter Name="resourceDir" Type="System.String" />
-        <Parameter Name="usingResourceSet" Type="System.Type" />
+        <Parameter Name="baseName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="resourceDir" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="usingResourceSet" Type="System.Type" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="baseName">Имя корневой папки ресурсов. Например, имя корневой папки для файла ресурсов "MyResource.en-US.resources" будет "MyResource".</param>
-        <param name="resourceDir">Имя папки, в которой производится поиск ресурсов. <c>resourceDir</c> может быть абсолютным или относительным путем из каталога приложения.</param>
+        <param name="resourceDir">Имя папки, в которой производится поиск ресурсов. <paramref name="resourceDir" /> может быть абсолютным или относительным путем из каталога приложения.</param>
         <param name="usingResourceSet">Тип пользовательского объекта <see cref="T:System.Resources.ResourceSet" /> для использования. При значении <see langword="null" /> используется объект времени выполнения по умолчанию <see cref="T:System.Resources.ResourceSet" />.</param>
         <summary>Возвращает объект <see cref="T:System.Resources.ResourceManager" />, который ищет ресурсы в конкретном каталоге вместо манифеста сборки.</summary>
         <returns>Новый экземпляр диспетчера ресурсов, который выполняет поиск ресурсов в указанном каталоге вместо манифеста сборки.</returns>
@@ -929,7 +920,7 @@ csc Example.cs /resource:ExampleResources.resources
         <ReturnType>System.Globalization.CultureInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="a" Type="System.Reflection.Assembly" />
+        <Parameter Name="a" Type="System.Reflection.Assembly" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="a">Сборка, для которой требуется получить сведения, относящиеся к конкретному языку и региональным параметрам.</param>
@@ -977,7 +968,7 @@ csc Example.cs /resource:ExampleResources.resources
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Имя получаемого ресурса.</param>
@@ -1070,8 +1061,8 @@ GetObject.exe
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Имя получаемого ресурса.</param>
@@ -1147,8 +1138,7 @@ ShowNumbers.exe
         <exception cref="T:System.Resources.MissingManifestResourceException">Не было найдено никаких возможных наборов ресурсов и отсутствуют ресурсы языка и региональных параметров по умолчанию. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Ресурсы языка и региональных параметров по умолчанию находятся во вспомогательной сборке, которую не удалось найти. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
-        <threadsafe>
-          <see cref="M:System.Resources.ResourceManager.GetObject(System.String,System.Globalization.CultureInfo)" /> Метод является потокобезопасным.</threadsafe>
+        <threadsafe><see cref="M:System.Resources.ResourceManager.GetObject(System.String,System.Globalization.CultureInfo)" /> Метод является потокобезопасным.</threadsafe>
         <altmember cref="M:System.Resources.ResourceManager.GetStream(System.String,System.Globalization.CultureInfo)" />
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md">Упаковка и развертывание ресурсов</related>
@@ -1182,7 +1172,7 @@ ShowNumbers.exe
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="culture">Объект языка и региональных параметров, для которого создается имя файла ресурсов.</param>
@@ -1238,9 +1228,9 @@ ShowNumbers.exe
         <ReturnType>System.Resources.ResourceSet</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
-        <Parameter Name="createIfNotExists" Type="System.Boolean" />
-        <Parameter Name="tryParents" Type="System.Boolean" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="createIfNotExists" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="tryParents" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="culture">Язык и региональные параметры, ресурсы для которых необходимо получить.</param>
@@ -1357,7 +1347,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="a" Type="System.Reflection.Assembly" />
+        <Parameter Name="a" Type="System.Reflection.Assembly" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="a">Сборка для проверки атрибута <see cref="T:System.Resources.SatelliteContractVersionAttribute" />.</param>
@@ -1372,7 +1362,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Объект <see cref="T:System.Version" />, найденный в сборке <paramref name="a" />, неверен.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="a" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="a" /> — <see langword="null" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
         <altmember cref="T:System.Resources.SatelliteContractVersionAttribute" />
       </Docs>
@@ -1422,7 +1412,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
         <ReturnType>System.IO.UnmanagedMemoryStream</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Имя ресурса.</param>
@@ -1432,7 +1422,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Resources.ResourceManager.GetStream%2A> Метод принимает имя ресурса, который хранится в виде <xref:System.IO.MemoryStream> объекта, получает значение <xref:System.Object> ресурсов и возвращает <xref:System.IO.UnmanagedMemoryStream> объекта. Требуется работать непосредственно с поток байтов, которые затем преобразование в объект. Этот метод полезен в основном для повышения производительности: извлечение ресурса в качестве байтового потока вместо явного объекта может повысить производительность.  
+ <xref:System.Resources.ResourceManager.GetStream%2A> Метод принимает имя ресурса, который хранится в виде <xref:System.IO.MemoryStream> объекта, получает значение <xref:System.Object> ресурсов и возвращает <xref:System.IO.UnmanagedMemoryStream> объекта. Требуется работать непосредственно с поток байтов, которые затем преобразование в объект. Этот метод полезен в основном для повышения производительности: Извлечение ресурса в виде байтового потока вместо явного объекта может повысить производительность.  
   
  Возвращаемый ресурс локализован для языка и региональных параметров пользовательского интерфейса текущего потока, который определяется с <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> свойство. Если ресурс не локализован для этого языка и региональных параметров, диспетчер ресурсов использует резервные правила для загрузки соответствующего ресурса. При обнаружении не подходящий набор локализованных ресурсов <xref:System.Resources.ResourceManager> возвращается ресурсов культуры по умолчанию. Если набор ресурсов для культуры по умолчанию не найден, метод вызывает <xref:System.Resources.MissingManifestResourceException> исключение или, если ожидается набор ресурсов, находятся во вспомогательной сборке, <xref:System.Resources.MissingSatelliteAssemblyException> исключение. Если диспетчер ресурсов можно загрузить подходящий ресурс задать, но не удается найти ресурс с именем `name`, метод возвращает `null`.  
   
@@ -1451,7 +1441,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
  [!code-csharp[Conceptual.Resources.Retrieving#5](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstream.cs#5)]
  [!code-vb[Conceptual.Resources.Retrieving#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstream.vb#5)]  
   
- Для сборки примера на C# можно использовать приведенный ниже пакетный файл. Для Visual Basic, измените `csc` для `vbc`и измените расширение файла с исходным кодом из `.cs` для `.vb`...  
+ Для сборки примера на C# можно использовать приведенный ниже пакетный файл. Для Visual Basic замените `csc` на `vbc`, а также расширение файла исходного кода `.cs` на `.vb`. 
   
 ```  
   
@@ -1467,7 +1457,7 @@ csc GetStream.cs /resource:AppResources.resources
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение указанного ресурса не является объектом <see cref="T:System.IO.MemoryStream" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Resources.MissingManifestResourceException">Не было найдено никаких возможных наборов ресурсов и отсутствуют ресурсы по умолчанию. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Ресурсы языка и региональных параметров по умолчанию находятся во вспомогательной сборке, которую не удалось найти. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
@@ -1508,19 +1498,19 @@ csc GetStream.cs /resource:AppResources.resources
         <ReturnType>System.IO.UnmanagedMemoryStream</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Имя ресурса.</param>
-        <param name="culture">Объект, задающий язык и региональные параметры для использования при поиске ресурса. Если параметр <c>culture</c> имеет значение <see langword="null" />, используются язык и региональные параметры для текущего потока.</param>
+        <param name="culture">Объект, задающий язык и региональные параметры для использования при поиске ресурса. Если параметр <paramref name="culture" /> имеет значение <see langword="null" />, используется язык и региональные параметры для текущего потока.</param>
         <summary>Возвращает объект потока неуправляемой памяти из заданного ресурса, используя заданный язык и региональные параметры.</summary>
         <returns>Объект потока неуправляемой памяти, представляющий ресурс.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Resources.ResourceManager.GetStream%2A> Метод принимает имя ресурса, который хранится в виде <xref:System.IO.MemoryStream> объекта, получает значение <xref:System.Object> ресурсов и возвращает <xref:System.IO.UnmanagedMemoryStream> объекта. Требуется работать непосредственно с поток байтов, которые затем преобразование в объект. Этот метод полезен в основном для повышения производительности: извлечение ресурса в качестве байтового потока вместо явного объекта может повысить производительность.  
+ <xref:System.Resources.ResourceManager.GetStream%2A> Метод принимает имя ресурса, который хранится в виде <xref:System.IO.MemoryStream> объекта, получает значение <xref:System.Object> ресурсов и возвращает <xref:System.IO.UnmanagedMemoryStream> объекта. Требуется работать непосредственно с поток байтов, которые затем преобразование в объект. Этот метод полезен в основном для повышения производительности: Извлечение ресурса в виде байтового потока вместо явного объекта может повысить производительность.  
   
  Возвращаемый ресурс локализован для языка и региональных параметров, который задается параметром `culture`, или для языка и региональных параметров, который задается параметром <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> свойство Если `culture` является `null`. Если ресурс не локализован для этого языка и региональных параметров, диспетчер ресурсов использует резервные правила для загрузки соответствующего ресурса. При обнаружении не подходящий набор локализованных ресурсов <xref:System.Resources.ResourceManager> возвращается ресурсов культуры по умолчанию. Если набор ресурсов для культуры по умолчанию не найден, метод вызывает <xref:System.Resources.MissingManifestResourceException> исключение или, если ожидается набор ресурсов, находятся во вспомогательной сборке, <xref:System.Resources.MissingSatelliteAssemblyException> исключение. Если диспетчер ресурсов можно загрузить подходящий ресурс задать, но не удается найти ресурс с именем `name`, метод возвращает `null`.  
   
@@ -1529,7 +1519,7 @@ csc GetStream.cs /resource:AppResources.resources
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение указанного ресурса не является объектом <see cref="T:System.IO.MemoryStream" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
         <exception cref="T:System.Resources.MissingManifestResourceException">Не было найдено никаких возможных наборов ресурсов и отсутствуют ресурсы по умолчанию. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Ресурсы языка и региональных параметров по умолчанию находятся во вспомогательной сборке, которую не удалось найти. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
@@ -1596,7 +1586,7 @@ csc GetStream.cs /resource:AppResources.resources
 ## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>Приложения [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]  
   
 > [!IMPORTANT]
->  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
+>  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](https://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
   
  В [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, <xref:System.Resources.ResourceManager.GetString%28System.String%29> метод возвращает значение `name` строка ресурса, локализованного для текущих параметров языка и региональных параметров пользовательского интерфейса вызывающего. Список языков и региональных параметров является производным от списка язык пользовательского интерфейса основной операционной системы. Если диспетчер ресурсов не может совпадать с `name`, метод возвращает `null`.  
   
@@ -1607,7 +1597,7 @@ csc GetStream.cs /resource:AppResources.resources
   
 |culture|Имя файла|Имя ресурса|Значение ресурса|  
 |-------------|---------------|-------------------|--------------------|  
-|ru-RU|DateStrings.txt|`DateStart`|Сегодня|  
+|en-US|DateStrings.txt|`DateStart`|Сегодня|  
 |fr-FR|DateStrings.fr-FR.txt|`DateStart`|Aujourd'hui c'est le|  
 |ru-RU|DateStrings.ru-RU.txt|`DateStart`|Сегодня|  
   
@@ -1638,11 +1628,10 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
         <exception cref="T:System.Resources.MissingManifestResourceException">Не найден подходящий набор ресурсов и отсутствуют ресурсы языка и региональных параметров по умолчанию. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Ресурсы языка и региональных параметров по умолчанию находятся во вспомогательной сборке, которую не удалось найти. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
-        <threadsafe>
-          <see cref="M:System.Resources.ResourceManager.GetString(System.String)" /> Метод является потокобезопасным.</threadsafe>
+        <threadsafe><see cref="M:System.Resources.ResourceManager.GetString(System.String)" /> Метод является потокобезопасным.</threadsafe>
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md">Упаковка и развертывание ресурсов</related>
-        <related type="Article" href="http://msdn.microsoft.com/library/eca16922-1c46-4f68-aefe-e7a12283641f">Извлечение ресурсов во вспомогательных сборках</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/eca16922-1c46-4f68-aefe-e7a12283641f">Извлечение ресурсов во вспомогательных сборках</related>
       </Docs>
     </Member>
     <Member MemberName="GetString">
@@ -1705,7 +1694,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
 ## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>Приложения [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]  
   
 > [!IMPORTANT]
->  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
+>  Несмотря на то что <xref:System.Resources.ResourceManager> класс поддерживается в [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, мы не рекомендуем ее использовать. Этот класс используется только в том случае, при разработке [!INCLUDE[net_portable](~/includes/net-portable-md.md)] проекты, которые могут использоваться с [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений. Для извлечения ресурсов из [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложения, используют [Windows.ApplicationModel.Resources.ResourceLoader](https://go.microsoft.com/fwlink/p/?LinkId=238182) вместо этого класса.  
   
  В [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] приложений, <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29> метод возвращает значение `name` строка ресурса, локализованного для языка и региональных параметров, заданные `culture` параметра. Если ресурс не локализован для `culture` языка и региональных параметров, уточняющего запроса использует весь [!INCLUDE[win8](~/includes/win8-md.md)] резервный список языков и останавливается после просмотра региональных параметров по умолчанию. Если диспетчер ресурсов не может совпадать с `name`, метод возвращает `null`.  
   
@@ -1718,7 +1707,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
   
 |culture|Имя файла|Имя ресурса|Значение ресурса|  
 |-------------|---------------|-------------------|--------------------|  
-|ru-RU|DateStrings.txt|`DateStart`|Сегодня|  
+|en-US|DateStrings.txt|`DateStart`|Сегодня|  
 |fr-FR|DateStrings.fr-FR.txt|`DateStart`|Aujourd'hui c'est le|  
 |ru-RU|DateStrings.ru-RU.txt|`DateStart`|Сегодня|  
   
@@ -1749,8 +1738,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
         <exception cref="T:System.Resources.MissingManifestResourceException">Не найден подходящий набор ресурсов и отсутствуют ресурсы языка и региональных параметров по умолчанию. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Ресурсы языка и региональных параметров по умолчанию находятся во вспомогательной сборке, которую не удалось найти. Сведения об обработке этого исключения см. в подразделе "Обработка исключений MissingManifestResourceException и MissingSatelliteAssemblyException" раздела, посвященного классу <see cref="T:System.Resources.ResourceManager" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
-        <threadsafe>
-          <see cref="M:System.Resources.ResourceManager.GetString(System.String,System.Globalization.CultureInfo)" /> Метод является потокобезопасным.</threadsafe>
+        <threadsafe><see cref="M:System.Resources.ResourceManager.GetString(System.String,System.Globalization.CultureInfo)" /> Метод является потокобезопасным.</threadsafe>
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md">Упаковка и развертывание ресурсов</related>
       </Docs>
@@ -1865,9 +1853,9 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
         <ReturnType>System.Resources.ResourceSet</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
-        <Parameter Name="createIfNotExists" Type="System.Boolean" />
-        <Parameter Name="tryParents" Type="System.Boolean" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="createIfNotExists" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="tryParents" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="culture">Искомый объект языка и региональных параметров.</param>
@@ -1880,9 +1868,7 @@ al /out:ru-RU\Showdate.resources.dll /culture:ru-RU /embed:DateStrings.ru-RU.res
         <exception cref="T:System.ExecutionEngineException">Произошла внутренняя ошибка среды выполнения.</exception>
         <exception cref="T:System.Resources.MissingSatelliteAssemblyException">Не удается найти местоположение вспомогательной сборки, связанной с объектом <paramref name="culture" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">При вызове с поздним связыванием через механизмы например <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Связанное перечисление: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
-        <block subset="none" type="overrides">
-          <para>Этот метод выполняет все действия, необходимые для поиска ресурса задайте и может быть рекурсивным и повторный вход. Другими словами, этот метод может загружать сборки и триггер <see cref="E:System.AppDomain.AssemblyLoad" /> событие, которое затем выполняет обратный вызов <see cref="T:System.Resources.ResourceManager" /> объекта, который не был инициализирован полностью. Чтобы избежать излишних блокировок, этот метод не является потокобезопасным. <see cref="M:System.Resources.ResourceManager.GetResourceSet(System.Globalization.CultureInfo,System.Boolean,System.Boolean)" />, <see cref="M:System.Resources.ResourceManager.GetString(System.String)" />, И <see cref="M:System.Resources.ResourceManager.GetObject(System.String)" /> методы выполняют всю необходимую синхронизацию.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод выполняет все действия, необходимые для поиска ресурса задайте и может быть рекурсивным и повторный вход. Другими словами, этот метод может загружать сборки и триггер <see cref="E:System.AppDomain.AssemblyLoad" /> событие, которое затем выполняет обратный вызов <see cref="T:System.Resources.ResourceManager" /> объекта, который не был инициализирован полностью. Чтобы избежать излишних блокировок, этот метод не является потокобезопасным. <see cref="M:System.Resources.ResourceManager.GetResourceSet(System.Globalization.CultureInfo,System.Boolean,System.Boolean)" />, <see cref="M:System.Resources.ResourceManager.GetString(System.String)" />, И <see cref="M:System.Resources.ResourceManager.GetObject(System.String)" /> методы выполняют всю необходимую синхронизацию.</para></block>
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/standard/globalization-localization/index.md">Глобализация и локализация приложений .NET</related>
       </Docs>

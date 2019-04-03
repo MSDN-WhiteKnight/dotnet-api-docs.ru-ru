@@ -1,13 +1,5 @@
 <Type Name="WebFailureAuditEvent" FullName="System.Web.Management.WebFailureAuditEvent">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b35f5476f73479532c5b06be9a5c09a7e8a7a7ba" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46685084" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class WebFailureAuditEvent : System.Web.Management.WebAuditEvent" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="513b55fc8cccc6b724a38243b6a3890f944e6bfd" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51864935" /></Metadata><TypeSignature Language="C#" Value="public class WebFailureAuditEvent : System.Web.Management.WebAuditEvent" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebFailureAuditEvent extends System.Web.Management.WebAuditEvent" />
   <TypeSignature Language="DocId" Value="T:System.Web.Management.WebFailureAuditEvent" />
   <TypeSignature Language="VB.NET" Value="Public Class WebFailureAuditEvent&#xA;Inherits WebAuditEvent" />
@@ -53,7 +45,7 @@
  Когда <xref:System.Web.Management.WebFailureAuditEvent> события, наблюдение за работоспособностью ASP.NET увеличивает связанный счетчик производительности для событий аудита отказов, а затем проверяет `healthMonitoring` раздел конфигурации для определения ли все доступные поставщики подписаться на событие. Если поставщики подписаться на событие, ASP.NET отправляет событие им для обработки.  
   
 > [!NOTE]
->  Просмотр событий аудита отказов счетчика производительности в системном мониторе (PerfMon), в **добавить счетчики** выберите **ASP.NET** из **объект производительности** Выберите в раскрывающемся списке выберите **событий аудита отказов** счетчика производительности и нажмите кнопку **добавить** кнопки. Дополнительные сведения см. в разделе [с помощью системного монитора (PerfMon) с приложениями ASP.NET](http://go.microsoft.com/fwlink/?linkid=36882) в документации по службам IIS на сайте MSDN.  
+>  Просмотр событий аудита отказов счетчика производительности в системном мониторе (PerfMon), в **добавить счетчики** выберите **ASP.NET** из **объект производительности** Выберите в раскрывающемся списке выберите **событий аудита отказов** счетчика производительности и нажмите кнопку **добавить** кнопки. Дополнительные сведения см. в разделе [с помощью системного монитора (PerfMon) с приложениями ASP.NET](https://go.microsoft.com/fwlink/?linkid=36882) в документации по службам IIS на сайте MSDN.  
   
 > [!NOTE]
 >  В большинстве случаев можно использовать типы мониторинга состояния ASP.NET как реализованные и управлять системой мониторинга состояния, указав значения в `healthMonitoring` раздел конфигурации. Также можно извлекать данные из типов мониторинга состояния, чтобы создавать собственные пользовательские события и поставщиков. Пример использования производного от <xref:System.Web.Management.WebFailureAuditEvent> класса см. в разделе "Пример".  
@@ -100,13 +92,11 @@ profile="Default"/>
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>При форматировании данные пользовательских событий для отображения, переопределить <see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" /> метод вместо <see cref="Overload:System.Web.Management.WebBaseEvent.ToString" /> метод. Это позволит избежать перезаписи или изменения важной системной информации.</para>
-    </block>
+    <block subset="none" type="overrides"><para>При форматировании данные пользовательских событий для отображения, переопределить <see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" /> метод вместо <see cref="Overload:System.Web.Management.WebBaseEvent.ToString" /> метод. Это позволит избежать перезаписи или изменения важной системной информации.</para></block>
     <altmember cref="T:System.Web.Management.WebAuditEvent" />
     <altmember cref="T:System.Web.Management.WebSuccessAuditEvent" />
     <altmember cref="T:System.Web.Management.WebEventCodes" />
-    <related type="Article" href="http://msdn.microsoft.com/library/e003f224-70fe-4cd8-a71a-2dc81e2d7e4c">Обзор наблюдения за состоянием системы ASP.NET</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/e003f224-70fe-4cd8-a71a-2dc81e2d7e4c">Обзор наблюдения за состоянием системы ASP.NET</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -237,7 +227,7 @@ profile="Default"/>
 ## Remarks  
  Счетчик производительности аудит событий отказов отслеживает количество событий сбоя аудита с момента запуска приложения. Этот метод также вызывает родительский <xref:System.Web.Management.WebBaseEvent.IncrementPerfCounters%2A> метод, который увеличивает значение счетчика событий. Этот счетчик отслеживает общее число событий.  
   
- Для просмотра этих счетчиков производительности в системном мониторе (PerfMon), в **добавить счетчики** выберите окно **ASP.NET** из **объект производительности** раскрывающемся списке выберите счетчик производительности, которые вы хотите просмотреть и щелкните **добавить** кнопки. Дополнительные сведения см. в разделе [с помощью системного монитора (PerfMon) с приложениями ASP.NET](http://go.microsoft.com/fwlink/?linkid=36882) в документации по службам IIS на сайте MSDN.  
+ Для просмотра этих счетчиков производительности в системном мониторе (PerfMon), в **добавить счетчики** выберите окно **ASP.NET** из **объект производительности** раскрывающемся списке выберите счетчик производительности, которые вы хотите просмотреть и щелкните **добавить** кнопки. Дополнительные сведения см. в разделе [с помощью системного монитора (PerfMon) с приложениями ASP.NET](https://go.microsoft.com/fwlink/?linkid=36882) в документации по службам IIS на сайте MSDN.  
   
  ]]></format>
         </remarks>

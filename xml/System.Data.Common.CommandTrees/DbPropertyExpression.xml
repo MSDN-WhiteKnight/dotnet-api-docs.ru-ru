@@ -1,13 +1,5 @@
 <Type Name="DbPropertyExpression" FullName="System.Data.Common.CommandTrees.DbPropertyExpression">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d62eac85544ac285ec860184944dea3f82468cb9" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39843866" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class DbPropertyExpression : System.Data.Common.CommandTrees.DbExpression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b8584ae7b2707c73a494be0de777cfb4ca7b2882" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57929716" /></Metadata><TypeSignature Language="C#" Value="public sealed class DbPropertyExpression : System.Data.Common.CommandTrees.DbExpression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DbPropertyExpression extends System.Data.Common.CommandTrees.DbExpression" />
   <TypeSignature Language="DocId" Value="T:System.Data.Common.CommandTrees.DbPropertyExpression" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DbPropertyExpression&#xA;Inherits DbExpression" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Предоставляет методы и свойства для получения свойства экземпляра. Этот класс не наследуется.</summary>
+    <summary>Предоставляет методы и свойства для извлечения свойства экземпляра. Этот класс не наследуется.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -50,7 +42,7 @@
         <param name="visitor">Экземпляр <see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" />.</param>
         <summary>Реализует шаблон «Посетитель» для выражений, не возвращающих результирующее значение.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="visitor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="visitor" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Accept&lt;TResultType&gt;">
@@ -76,12 +68,12 @@
         <Parameter Name="visitor" Type="System.Data.Common.CommandTrees.DbExpressionVisitor&lt;TResultType&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TResultType">Тип результата, формируемого <c>посетителя</c>.</typeparam>
+        <typeparam name="TResultType">Тип результата, формируемого <paramref name="visitor" />.</typeparam>
         <param name="visitor">Экземпляр типизированного выражения <see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" />, возвращающего результирующее значение определенного типа.</param>
         <summary>Реализует шаблон «Посетитель» для выражений, возвращающих результирующее значение определенного типа.</summary>
         <returns>Результирующее значение определенного типа, возвращаемое выражением <see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="visitor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="visitor" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Instance">
@@ -110,7 +102,7 @@
         <value>Объект <see cref="T:System.Data.Common.CommandTrees.DbExpression" />, определяющий экземпляр, из которого нужно извлечь свойство.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Выражение имеет вид <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Это выражение не связано с деревом команд выражения <see cref="T:System.Data.Common.CommandTrees.DbPropertyExpression" />, либо тип его результата не равен и не может быть повышен до типа, определяющего свойство.</exception>
+        <exception cref="T:System.ArgumentException">Выражение не связано с деревом команд объекта <see cref="T:System.Data.Common.CommandTrees.DbPropertyExpression" /> или его результирующий тип не равен типу, который определяет свойство, либо не поддерживает приведение к этому типу.</exception>
       </Docs>
     </Member>
     <Member MemberName="op_Implicit">
@@ -129,7 +121,7 @@
         <ReturnType>System.Collections.Generic.KeyValuePair&lt;System.String,System.Data.Common.CommandTrees.DbExpression&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Data.Common.CommandTrees.DbPropertyExpression" />
+        <Parameter Name="value" Type="System.Data.Common.CommandTrees.DbPropertyExpression" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">Данное выражение свойства.</param>
@@ -167,8 +159,8 @@
         <ReturnType>System.Data.Metadata.Edm.EdmMember</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает метаданные получаемого свойства.</summary>
-        <value>Метаданные получаемого свойства.</value>
+        <summary>Получает метаданные извлекаемого свойства.</summary>
+        <value>Метаданные извлекаемого свойства.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

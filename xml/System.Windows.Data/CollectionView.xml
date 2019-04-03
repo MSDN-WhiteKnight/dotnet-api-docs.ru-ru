@@ -1,13 +1,5 @@
 <Type Name="CollectionView" FullName="System.Windows.Data.CollectionView">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="77e22002aabc573155d6571d13820eae68f7c6f3" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48636698" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class CollectionView : System.Windows.Threading.DispatcherObject, System.Collections.IEnumerable, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.ICollectionView, System.ComponentModel.INotifyPropertyChanged" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f181c00dad889a88fbb57a9bea13f2ea4a8a31bd" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56372867" /></Metadata><TypeSignature Language="C#" Value="public class CollectionView : System.Windows.Threading.DispatcherObject, System.Collections.IEnumerable, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.ICollectionView, System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionView extends System.Windows.Threading.DispatcherObject implements class System.Collections.IEnumerable, class System.Collections.Specialized.INotifyCollectionChanged, class System.ComponentModel.ICollectionView, class System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.CollectionView" />
   <TypeSignature Language="VB.NET" Value="Public Class CollectionView&#xA;Inherits DispatcherObject&#xA;Implements ICollectionView, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged" />
@@ -36,7 +28,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Представление обзора для группировки, сортировки, фильтрации и перемещения коллекции данных.</summary>
+    <summary>Представляет представление для группирования, сортировки, фильтрации коллекции данных и перемещения по ней.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -49,7 +41,7 @@
   
  В [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] приложений, все коллекции имеет Просмотр коллекции по умолчанию. Вместо того чтобы напрямую работать с коллекцией, механизм привязки всегда получает доступ к коллекции посредством связанного представления. Чтобы получить представление по умолчанию, используйте <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A?displayProperty=nameWithType> метод. Внутренний класс на основе <xref:System.Windows.Data.CollectionView> представление по умолчанию для коллекций, реализующих только <xref:System.Collections.IEnumerable>. <xref:System.Windows.Data.ListCollectionView> представление по умолчанию для коллекций, реализующих <xref:System.Collections.IList>. <xref:System.Windows.Data.BindingListCollectionView> представление по умолчанию для коллекций, реализующих <xref:System.ComponentModel.IBindingListView> или <xref:System.ComponentModel.IBindingList>.  
   
- Кроме того, можно создать представление коллекции в [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)] с помощью <xref:System.Windows.Data.CollectionViewSource> класса, а затем привязать элемент управления к этому представлению. <xref:System.Windows.Data.CollectionViewSource> Класс является [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] представление <xref:System.Windows.Data.CollectionView> класса. Например, см. в разделе [как: сортировка и группы данных с помощью представления в XAML](~/docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md).  
+ Кроме того, можно создать представление коллекции в [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)] с помощью <xref:System.Windows.Data.CollectionViewSource> класса, а затем привязать элемент управления к этому представлению. <xref:System.Windows.Data.CollectionViewSource> Класс является [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] представление <xref:System.Windows.Data.CollectionView> класса. Пример см. в статье [Практическое руководство. Сортировка и группировка данных с помощью представления в XAML](~/docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md).  
   
  Дополнительные сведения см. в разделе «Привязка к коллекциям» в [Общие сведения о привязке данных](~/docs/framework/wpf/data/data-binding-overview.md).  
   
@@ -122,6 +114,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanFilter { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.CanFilter : bool" Usage="System.Windows.Data.CollectionView.CanFilter" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.CanFilter</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -132,8 +127,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, которое определяет, поддерживает ли представление фильтрацию.</summary>
-        <value>
-          <see langword="true" />, если элемент поддерживает фильтрацию; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="true" />.</value>
+        <value><see langword="true" />, если элемент поддерживает фильтрацию; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="true" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -152,6 +146,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanGroup { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.CanGroup : bool" Usage="System.Windows.Data.CollectionView.CanGroup" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.CanGroup</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -162,8 +159,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, которое определяет, поддерживает ли представление группировку.</summary>
-        <value>
-          <see langword="false" /> во всех случаях.</value>
+        <value>Значение <see langword="false" /> во всех случаях.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -182,6 +178,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanSort { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.CanSort : bool" Usage="System.Windows.Data.CollectionView.CanSort" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.CanSort</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -192,8 +191,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, которое определяет, поддерживает ли представление сортировку.</summary>
-        <value>
-          <see langword="false" /> во всех случаях.</value>
+        <value>Значение <see langword="false" /> во всех случаях.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -218,7 +216,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Obsolete("Replaced by ClearPendingChanges")</AttributeName>
         </Attribute>
       </Attributes>
@@ -261,6 +259,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual event System::Collections::Specialized::NotifyCollectionChangedEventHandler ^ CollectionChanged;" />
       <MemberSignature Language="F#" Value="member this.CollectionChanged : System.Collections.Specialized.NotifyCollectionChangedEventHandler " Usage="member this.CollectionChanged : System.Collections.Specialized.NotifyCollectionChangedEventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -305,6 +306,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Contains(System::Object ^ item);" />
       <MemberSignature Language="F#" Value="abstract member Contains : obj -&gt; bool&#xA;override this.Contains : obj -&gt; bool" Usage="collectionView.Contains item" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.Contains(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -319,8 +323,7 @@
       <Docs>
         <param name="item">Объект для проверки.</param>
         <summary>Возврат значения, определяющего, принадлежит ли заданный элемент данному представлению.</summary>
-        <returns>
-          <see langword="true" />, если элемент принадлежит представлению; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если элемент принадлежит представлению; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -358,9 +361,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Windows.Data.CollectionView" />, переопределите это свойство, для предоставления более эффективная реализация.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Windows.Data.CollectionView" />, переопределите это свойство, для предоставления более эффективная реализация.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Culture">
@@ -371,13 +372,16 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Globalization::CultureInfo ^ Culture { System::Globalization::CultureInfo ^ get(); void set(System::Globalization::CultureInfo ^ value); };" />
       <MemberSignature Language="F#" Value="member this.Culture : System.Globalization.CultureInfo with get, set" Usage="System.Windows.Data.CollectionView.Culture" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.Culture</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -401,6 +405,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ CurrentChanged;" />
       <MemberSignature Language="F#" Value="member this.CurrentChanged : EventHandler " Usage="member this.CurrentChanged : System.EventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.ComponentModel.ICollectionView.CurrentChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -410,11 +417,9 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Происходит после того, как <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> изменился.</summary>
+        <summary>Происходит после изменения <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Событие после изменения <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Событие после изменения <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para></block>
         <altmember cref="E:System.ComponentModel.ICollectionView.CurrentChanged" />
       </Docs>
     </Member>
@@ -426,6 +431,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::ComponentModel::CurrentChangingEventHandler ^ CurrentChanging;" />
       <MemberSignature Language="F#" Value="member this.CurrentChanging : System.ComponentModel.CurrentChangingEventHandler " Usage="member this.CurrentChanging : System.ComponentModel.CurrentChangingEventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.ComponentModel.ICollectionView.CurrentChanging</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -437,9 +445,7 @@
       <Docs>
         <summary>Происходит, когда <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> меняется.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Событие перед изменением <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Событие перед изменением <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para></block>
         <altmember cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />
       </Docs>
     </Member>
@@ -451,6 +457,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ CurrentItem { System::Object ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.CurrentItem : obj" Usage="System.Windows.Data.CollectionView.CurrentItem" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.CurrentItem</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -460,8 +469,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает текущий элемент в представлении.</summary>
-        <value>Текущий элемент в представлении. По умолчанию первый элемент коллекции представляет текущий элемент.</value>
+        <summary>Возвращает текущий элемент в представлении.</summary>
+        <value>Текущий элемент представления. По умолчанию первый элемент коллекции представляет текущий элемент.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -474,9 +483,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Только классы, которые передают валюты обработки вызовов на другой внутренний <see cref="T:System.Windows.Data.CollectionView" /> объекта должны переопределять это свойство; все остальные производных классов следует использовать <see cref="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32)" /> метода, чтобы обновить текущие значения, хранящиеся в базовом классе.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Только классы, которые передают валюты обработки вызовов на другой внутренний <see cref="T:System.Windows.Data.CollectionView" /> объекта должны переопределять это свойство; все остальные производных классов следует использовать <see cref="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32)" /> метода, чтобы обновить текущие значения, хранящиеся в базовом классе.</para></block>
       </Docs>
     </Member>
     <Member MemberName="CurrentPosition">
@@ -487,6 +494,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int CurrentPosition { int get(); };" />
       <MemberSignature Language="F#" Value="member this.CurrentPosition : int" Usage="System.Windows.Data.CollectionView.CurrentPosition" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.CurrentPosition</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -499,9 +509,7 @@
         <summary>Получение порядкового номера <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> в рамках представления (возможна сортировка и фильтрация).</summary>
         <value>Порядковый номер <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> в рамках представления (возможна сортировка и фильтрация).</value>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Только классы, которые передают валюты обработки вызовов на другой внутренний <see cref="T:System.Windows.Data.CollectionView" /> объекта должны переопределять это свойство; все остальные производных классов следует использовать <see cref="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32)" /> метода, чтобы обновить текущие значения, хранящиеся в базовом классе.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Только классы, которые передают валюты обработки вызовов на другой внутренний <see cref="T:System.Windows.Data.CollectionView" /> объекта должны переопределять это свойство; все остальные производных классов следует использовать <see cref="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32)" /> метода, чтобы обновить текущие значения, хранящиеся в базовом классе.</para></block>
       </Docs>
     </Member>
     <Member MemberName="DeferRefresh">
@@ -512,6 +520,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IDisposable ^ DeferRefresh();" />
       <MemberSignature Language="F#" Value="abstract member DeferRefresh : unit -&gt; IDisposable&#xA;override this.DeferRefresh : unit -&gt; IDisposable" Usage="collectionView.DeferRefresh " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.DeferRefresh</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -570,6 +581,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Predicate&lt;System::Object ^&gt; ^ Filter { Predicate&lt;System::Object ^&gt; ^ get(); void set(Predicate&lt;System::Object ^&gt; ^ value); };" />
       <MemberSignature Language="F#" Value="member this.Filter : Predicate&lt;obj&gt; with get, set" Usage="System.Windows.Data.CollectionView.Filter" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.Filter</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -658,9 +672,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше 0.</exception>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Windows.Data.CollectionView" />, переопределите этот метод для предоставления более эффективная реализация.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Windows.Data.CollectionView" />, переопределите этот метод для предоставления более эффективная реализация.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GroupDescriptions">
@@ -671,6 +683,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ObservableCollection&lt;System::ComponentModel::GroupDescription ^&gt; ^ GroupDescriptions { System::Collections::ObjectModel::ObservableCollection&lt;System::ComponentModel::GroupDescription ^&gt; ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.GroupDescriptions : System.Collections.ObjectModel.ObservableCollection&lt;System.ComponentModel.GroupDescription&gt;" Usage="System.Windows.Data.CollectionView.GroupDescriptions" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.GroupDescriptions</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -681,8 +696,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение коллекции объектов <see cref="T:System.ComponentModel.GroupDescription" />, описывающих группировку элементов коллекции в данном представлении.</summary>
-        <value>
-          <see langword="null" /> во всех случаях.</value>
+        <value>Значение <see langword="null" /> во всех случаях.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -702,6 +716,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ReadOnlyObservableCollection&lt;System::Object ^&gt; ^ Groups { System::Collections::ObjectModel::ReadOnlyObservableCollection&lt;System::Object ^&gt; ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Groups : System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;obj&gt;" Usage="System.Windows.Data.CollectionView.Groups" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.Groups</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -712,8 +729,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает коллекцию групп высшего уровня, конструируемого на основе свойства <see cref="P:System.Windows.Data.CollectionView.GroupDescriptions" />.</summary>
-        <value>
-          <see langword="null" /> во всех случаях.</value>
+        <value>Значение <see langword="null" /> во всех случаях.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -746,7 +762,7 @@
       <Docs>
         <param name="item">Искомый элемент.</param>
         <summary>Возврат индекса, в котором расположен заданный элемент.</summary>
-        <returns>Индекс, в котором расположен заданный элемент, или -1, если элемент неизвестен.</returns>
+        <returns>Индекс, в котором расположен заданный элемент, или –1, если элемент неизвестен.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -767,6 +783,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsCurrentAfterLast { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.IsCurrentAfterLast : bool" Usage="System.Windows.Data.CollectionView.IsCurrentAfterLast" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.IsCurrentAfterLast</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -777,8 +796,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, показывающее, находится ли свойство <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> данного представления за пределами окончания коллекции.</summary>
-        <value>
-          <see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> представления за конечной границей коллекции; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> представления за конечной границей коллекции; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -798,6 +816,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsCurrentBeforeFirst { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.IsCurrentBeforeFirst : bool" Usage="System.Windows.Data.CollectionView.IsCurrentBeforeFirst" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.IsCurrentBeforeFirst</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -808,8 +829,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, определяющего, выходит ли <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> представления за начальную границу коллекции.</summary>
-        <value>
-          <see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> представления перед начальной границей коллекции; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> представления перед начальной границей коллекции; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -839,8 +859,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, которое определяет, находится ли <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> в <see cref="P:System.Windows.Data.CollectionView.CurrentPosition" />.</summary>
-        <value>
-          <see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> находится в представлении и в <see cref="P:System.Windows.Data.CollectionView.CurrentPosition" />; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если <see cref="P:System.Windows.Data.CollectionView.CurrentItem" /> находится в представлении и в <see cref="P:System.Windows.Data.CollectionView.CurrentPosition" />; в противном случае — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -867,8 +886,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, определяющего, предоставляет ли базовая коллекция уведомления об изменениях.</summary>
-        <value>
-          <see langword="true" />, если базовая коллекция предоставляет уведомления об изменениях; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если базовая коллекция предоставляет уведомления об изменениях; в противном случае — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -880,6 +898,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsEmpty { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.IsEmpty : bool" Usage="System.Windows.Data.CollectionView.IsEmpty" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.IsEmpty</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -890,8 +911,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, которое определяет, является ли пустым полученное (отфильтрованное) представление.</summary>
-        <value>
-          <see langword="true" />, если полученное представление является пустым; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если полученное представление является пустым; в противном случае — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -936,9 +956,7 @@
         <summary>Получает значение, которое указывает, используется ли метод <see cref="M:System.Windows.Data.CollectionView.DeferRefresh" />.</summary>
         <value>Значение <see langword="true" />, если метод <see cref="M:System.Windows.Data.CollectionView.DeferRefresh" /> используется; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Производные классы следует избегать вызова <see cref="M:System.Windows.Data.CollectionView.Refresh" /> Если <see cref="P:System.Windows.Data.CollectionView.IsRefreshDeferred" /> возвращает <see langword="true" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Производные классы следует избегать вызова <see cref="M:System.Windows.Data.CollectionView.Refresh" /> Если <see cref="P:System.Windows.Data.CollectionView.IsRefreshDeferred" /> возвращает <see langword="true" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="MoveCurrentTo">
@@ -949,6 +967,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentTo(System::Object ^ item);" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentTo : obj -&gt; bool&#xA;override this.MoveCurrentTo : obj -&gt; bool" Usage="collectionView.MoveCurrentTo item" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentTo(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -995,6 +1016,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToFirst();" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentToFirst : unit -&gt; bool&#xA;override this.MoveCurrentToFirst : unit -&gt; bool" Usage="collectionView.MoveCurrentToFirst " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentToFirst</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1026,6 +1050,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToLast();" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentToLast : unit -&gt; bool&#xA;override this.MoveCurrentToLast : unit -&gt; bool" Usage="collectionView.MoveCurrentToLast " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentToLast</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1057,6 +1084,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToNext();" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentToNext : unit -&gt; bool&#xA;override this.MoveCurrentToNext : unit -&gt; bool" Usage="collectionView.MoveCurrentToNext " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentToNext</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1088,6 +1118,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToPosition(int position);" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentToPosition : int -&gt; bool&#xA;override this.MoveCurrentToPosition : int -&gt; bool" Usage="collectionView.MoveCurrentToPosition position" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentToPosition(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1121,6 +1154,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToPrevious();" />
       <MemberSignature Language="F#" Value="abstract member MoveCurrentToPrevious : unit -&gt; bool&#xA;override this.MoveCurrentToPrevious : unit -&gt; bool" Usage="collectionView.MoveCurrentToPrevious " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.MoveCurrentToPrevious</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1167,8 +1203,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение значения, которое определяет, необходимо ли обновление представлению.</summary>
-        <value>
-          <see langword="true" />, если представлению необходимо обновление; в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если представлению необходимо обновление; в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1236,8 +1271,7 @@
       <Parameters />
       <Docs>
         <summary>Возвращение значения, которое определяет, может ли представление менять то, какой элемент является <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</summary>
-        <returns>
-          <see langword="false" />, если слушатель отменяет изменение; в противном случае — <see langword="true" />.</returns>
+        <returns><see langword="false" />, если слушатель отменяет изменение; в противном случае — <see langword="true" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1276,7 +1310,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Obsolete("Replaced by OnAllowsCrossThreadChangesChanged")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1290,8 +1324,7 @@
         <param name="args">Объект <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />, который добавлен в журнал изменений.</param>
         <summary>Вызван базовым классом, чтобы уведомить производный класс, что событие <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" /> было отправлено в очередь сообщений.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="args" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="args" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="OnCollectionChanged">
@@ -1501,8 +1534,7 @@
       <Docs>
         <param name="item">Проверяемый элемент.</param>
         <summary>Возврат значения, определяющего, принадлежит ли заданный элемент в базовой коллекции представлению.</summary>
-        <returns>
-          <see langword="true" />, если заданный элемент принадлежит представлению или на представления коллекции не настроен фильтр; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если заданный элемент принадлежит представлению или на представления коллекции не настроен фильтр; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1536,9 +1568,7 @@
         <param name="args">Объект <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />, который требуется обработать.</param>
         <summary>При переопределении в производном классе выполняется обработка одного изменения в потоке [!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)].</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод должен переопределяться в производном классе для обработки одно изменение на [!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)] потока.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод должен переопределяться в производном классе для обработки одно изменение на [!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)] потока.</para></block>
       </Docs>
     </Member>
     <Member MemberName="ProcessPendingChanges">
@@ -1570,6 +1600,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual event System::ComponentModel::PropertyChangedEventHandler ^ PropertyChanged;" />
       <MemberSignature Language="F#" Value="member this.PropertyChanged : System.ComponentModel.PropertyChangedEventHandler " Usage="member this.PropertyChanged : System.ComponentModel.PropertyChangedEventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1592,6 +1625,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Refresh();" />
       <MemberSignature Language="F#" Value="abstract member Refresh : unit -&gt; unit&#xA;override this.Refresh : unit -&gt; unit" Usage="collectionView.Refresh " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ICollectionView.Refresh</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1659,9 +1695,7 @@
       <Docs>
         <summary>Повторное создание представления.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Производные классы должны переопределять этот метод, чтобы изменить поведение <see cref="M:System.Windows.Data.CollectionView.Refresh" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Производные классы должны переопределять этот метод, чтобы изменить поведение <see cref="M:System.Windows.Data.CollectionView.Refresh" /> метод.</para></block>
       </Docs>
     </Member>
     <MemberGroup MemberName="SetCurrent">
@@ -1746,6 +1780,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::ComponentModel::SortDescriptionCollection ^ SortDescriptions { System::ComponentModel::SortDescriptionCollection ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.SortDescriptions : System.ComponentModel.SortDescriptionCollection" Usage="System.Windows.Data.CollectionView.SortDescriptions" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.SortDescriptions</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1781,6 +1818,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::IEnumerable ^ SourceCollection { System::Collections::IEnumerable ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.SourceCollection : System.Collections.IEnumerable" Usage="System.Windows.Data.CollectionView.SourceCollection" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.ComponentModel.ICollectionView.SourceCollection</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1842,12 +1882,13 @@
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NotifyCollectionChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Происходит при изменении представления.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1863,12 +1904,13 @@
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Возникает при смене значения свойства.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

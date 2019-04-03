@@ -1,13 +1,5 @@
 <Type Name="LazyInitializer" FullName="System.Threading.LazyInitializer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ec3544b1bf00297743ac8eb1e4eb459970889d98" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46609795" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class LazyInitializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9c6cb826eb4c9cc7e7c2970010b6d3cbdc3d09f8" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57932069" /></Metadata><TypeSignature Language="C#" Value="public static class LazyInitializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit LazyInitializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.LazyInitializer" />
   <TypeSignature Language="VB.NET" Value="Public Class LazyInitializer" />
@@ -34,7 +26,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Обеспечивает процедуры инициализации адаптирующегося типа.</summary>
+    <summary>Обеспечивает процедуры неактивной инициализации.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -196,8 +188,7 @@ ExpensiveData _data = null;
  ]]></format>
         </remarks>
         <exception cref="T:System.MissingMemberException">Тип <paramref name="T" /> не имеет конструктора по умолчанию.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="valueFactory" /> вернул значение NULL (Nothing в Visual Basic).</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="valueFactory" /> вернул значение NULL (Nothing в Visual Basic).</exception>
         <related type="Article" href="~/docs/framework/performance/lazy-initialization.md">Отложенная инициализация</related>
       </Docs>
     </Member>
@@ -240,7 +231,7 @@ ExpensiveData _data = null;
         <typeparam name="T">Тип инициализируемой ссылки.</typeparam>
         <param name="target">Ссылка или значение типа <c>T</c>, которое необходимо инициализировать, если оно еще не инициализировано.</param>
         <param name="initialized">Ссылка на логическое значение, определяющее, инициализирована ли цель.</param>
-        <param name="syncLock">Ссылка на объект, используемый как взаимоисключающая блокировка для инициализации параметра <c>target</c>. Если <c>syncLock</c> имеет значение <see langword="null" />, будет создан новый объект.</param>
+        <param name="syncLock">Ссылка на объект, используемый как взаимоисключающая блокировка для инициализации параметра <paramref name="target" />. Если <paramref name="syncLock" /> равно <see langword="null" />, то нового объект будет создан экземпляр.</param>
         <summary>Инициализирует целевой ссылочный тип или тип значения его конструктором по умолчанию, если он еще не инициализирован.</summary>
         <returns>Инициализированное значение типа <paramref name="T" />.</returns>
         <remarks>
@@ -286,9 +277,9 @@ ExpensiveData _data = null;
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="target" Type="T" RefType="ref" />
-        <Parameter Name="syncLock" Type="System.Object" RefType="ref" />
-        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" />
+        <Parameter Name="target" Type="T" RefType="ref" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="syncLock" Type="System.Object" RefType="ref" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
@@ -340,7 +331,7 @@ ExpensiveData _data = null;
         <typeparam name="T">Тип инициализируемой ссылки.</typeparam>
         <param name="target">Ссылка или значение типа <c>T</c>, которое необходимо инициализировать, если оно еще не инициализировано.</param>
         <param name="initialized">Ссылка на логическое значение, определяющее, инициализирована ли цель.</param>
-        <param name="syncLock">Ссылка на объект, используемый как взаимоисключающая блокировка для инициализации параметра <c>target</c>. Если <c>syncLock</c> имеет значение <see langword="null" />, будет создан новый объект.</param>
+        <param name="syncLock">Ссылка на объект, используемый как взаимоисключающая блокировка для инициализации параметра <paramref name="target" />. Если <paramref name="syncLock" /> равно <see langword="null" />, то нового объект будет создан экземпляр.</param>
         <param name="valueFactory">Функция, которая вызывается для инициализации ссылки или значения.</param>
         <summary>Инициализирует целевой ссылочный тип или тип значения с использованием указанной функцией, если он еще не инициализирован.</summary>
         <returns>Инициализированное значение типа <paramref name="T" />.</returns>

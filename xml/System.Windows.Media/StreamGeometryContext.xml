@@ -1,13 +1,5 @@
 <Type Name="StreamGeometryContext" FullName="System.Windows.Media.StreamGeometryContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4e6a87d9924c298998a73f24b742bed1e883596d" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39736977" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class StreamGeometryContext : System.Windows.Threading.DispatcherObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="752110559efba4524aa387d56d362fb0e45a4b37" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52224661" /></Metadata><TypeSignature Language="C#" Value="public abstract class StreamGeometryContext : System.Windows.Threading.DispatcherObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamGeometryContext extends System.Windows.Threading.DispatcherObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.StreamGeometryContext" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class StreamGeometryContext&#xA;Inherits DispatcherObject&#xA;Implements IDisposable" />
@@ -27,9 +19,9 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Описывает геометрию с использованием команд рисования. Данный класс используется с классом <see cref="T:System.Windows.Media.StreamGeometry" /> для создания легковесной геометрии, не поддерживающей привязку данных, анимацию или модификацию.</summary>
+    <summary>Описывает геометрию с использованием команд рисования. Этот класс используется с классом <see cref="T:System.Windows.Media.StreamGeometry" /> для создания упрощенной геометрии, которая не поддерживает привязку данных, анимацию или изменение.</summary>
     <remarks>To be added.</remarks>
-    <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+    <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
     <altmember cref="T:System.Windows.Media.StreamGeometry" />
     <altmember cref="T:System.Windows.Media.PathGeometry" />
   </Docs>
@@ -62,13 +54,10 @@
         <param name="point">Конечная точка дуги.</param>
         <param name="size">Радиусы овала (половина ширины и половина высоты), периметр которого используется для рисования угла. Если этот овал очень закруглен во всех направлениях, дуга будет закруглена, если она почти плоская, так же как дуга. Например, очень большая ширина и высота будут представлять очень большой овал, в результате чего угол получится слегка скривленным.</param>
         <param name="rotationAngle">Угол поворота овала, определяющий кривую. Кривизна дуги может быть повернута с помощью этого параметра.</param>
-        <param name="isLargeArc">
-          <see langword="true" /> для рисования дуги больше чем на 180 градусов; в противном случае — <see langword="false" />.</param>
+        <param name="isLargeArc"><see langword="true" /> для рисования дуги больше чем на 180 градусов; в противном случае — <see langword="false" />.</param>
         <param name="sweepDirection">Значение, указывающее, в каком направлении рисуется дуга: <see cref="F:System.Windows.Media.SweepDirection.Clockwise" /> или <see cref="F:System.Windows.Media.SweepDirection.Counterclockwise" />.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует дугу к заданной точке.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -118,7 +107,7 @@
       <Docs>
         <param name="startPoint">Точка <see cref="T:System.Windows.Point" />, с которой начинается фигура.</param>
         <param name="isFilled">Значение <see langword="true" /> для использования области, содержащейся в этой фигуре, для проверки нажатия, отрисовки и отсечения; в противном случае значение <see langword="false" />.</param>
-        <param name="isClosed">Значение <see langword="true" /> для создания замкнутой фигуры; в противном случае значение <see langword="false" />. Например, если рисуются две соединительные линии и <c>isClosed</c> имеет значение <see langword="false" />, рисунок будет состоять из двух линий, но если <c>isClosed</c> имеет значение <see langword="true" />, две линии будут замкнуты для образования треугольника.</param>
+        <param name="isClosed">Значение <see langword="true" /> для создания замкнутой фигуры; в противном случае значение <see langword="false" />. Например, если рисуются две соединенные линии и <paramref name="isClosed" /> имеет значение <see langword="false" />, рисунок будет состоять из двух линий, но если <paramref name="isClosed" /> имеет значение <see langword="true" />, две линии будут замкнуты для образования треугольника.</param>
         <summary>Задает начальную точку новой фигуры.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -159,10 +148,8 @@
         <param name="point1">Первая контрольная точка, используемая для задания формы кривой.</param>
         <param name="point2">Вторая контрольная точка, используемая для задания формы кривой.</param>
         <param name="point3">Конечная точка кривой.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует кривую Безье к заданной точке.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -184,7 +171,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.ArcTo(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.PolyBezierTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.QuadraticBezierTo(System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
@@ -248,10 +235,8 @@
       </Parameters>
       <Docs>
         <param name="point">Конечная точка линии.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует прямую к заданной объектом <see cref="T:System.Windows.Point" /> точке.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -271,7 +256,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.PolyLineTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
       </Docs>
     </Member>
@@ -298,10 +283,8 @@
       </Parameters>
       <Docs>
         <param name="points">Список точек, определяющих контрольные и конечные точки одной или более кривых Безье. Количество точек в данном списке должно быть кратно трем.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует одну или более соединенных кривых Безье.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -323,7 +306,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.ArcTo(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.BezierTo(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.QuadraticBezierTo(System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
@@ -353,10 +336,8 @@
       </Parameters>
       <Docs>
         <param name="points">Коллекция точек, определяющих конечные точки одной или более соединенных прямых линий.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует одну или более соединенных прямых линий.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -376,7 +357,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.LineTo(System.Windows.Point,System.Boolean,System.Boolean)" />
       </Docs>
     </Member>
@@ -403,10 +384,8 @@
       </Parameters>
       <Docs>
         <param name="points">Коллекция точек, определяющих контрольные и конечные точки одной или более кривых Безье второго порядка. Первая точка в этом списке определяет контрольную точку кривой, вторая — конечную точку, следующая точка определяет контрольную точку следующей кривой и т. д. Данный список должен содержать четное количество точек.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует одну или более соединенных кривых Безье второго порядка.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -426,7 +405,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.ArcTo(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.BezierTo(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.PolyBezierTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
@@ -458,10 +437,8 @@
       <Docs>
         <param name="point1">Контрольная точка, используемая для задания формы кривой.</param>
         <param name="point2">Конечная точка кривой.</param>
-        <param name="isStroked">
-          <see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
-        <param name="isSmoothJoin">
-          <see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isStroked"><see langword="true" />, чтобы сегмент был обведенным, когда для его визуализации используется <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
+        <param name="isSmoothJoin"><see langword="true" /> для интерпретации соединения между этим и предыдущим сегментами как угла при обводке с помощью <see cref="T:System.Windows.Media.Pen" />; в противном случае — <see langword="false" />.</param>
         <summary>Рисует кривую Безье второго порядка.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -483,7 +460,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавления сегмента, не начав фигуру путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Предпринята попытка добавить сегмент без запуска фигуры путем вызова метода <see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />.</exception>
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.ArcTo(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.BezierTo(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
         <altmember cref="M:System.Windows.Media.StreamGeometryContext.PolyBezierTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />

@@ -1,13 +1,5 @@
 <Type Name="Application" FullName="System.Windows.Forms.Application">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3bff535658c1535b6b4d0a6487f7f4d20c85d33a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48684967" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Application" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="28c0e715149bda84de593d0811549daf5e8f8dbe" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58456039" /></Metadata><TypeSignature Language="C#" Value="public sealed class Application" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Application extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Application" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Application" />
@@ -130,7 +122,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, определяющее, может ли вызывающий объект выйти из этого приложения.</summary>
-        <value>Значение <see langword="true" />, если вызывающий объект может выйти из этого приложения; в противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если вызывающий объект может выйти из этого приложения, в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -164,16 +156,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Необходимо присоединить обработчики событий к <xref:System.Windows.Forms.Application.Exit%2A> событий для выполнения необработанных необходимых задач перед закрытием приложения. Вы можете закрыть файлы, открытые с данным приложением, или удалить объекты, не восстановленные при сборке мусора.  
+ Необходимо присоединить обработчики событий к `ApplicationExit` событий для выполнения необработанных необходимых задач перед закрытием приложения. Вы можете закрыть файлы, открытые с данным приложением, или удалить объекты, не восстановленные при сборке мусора.  
   
- Так как это статическое событие, необходимо отсоединить все обработчики событий, присоединен с этому событию в <xref:System.Windows.Forms.Application.ApplicationExit> сам обработчик событий. Если эти обработчики не будут отсоединены, они остаются присоединенными и продолжать использовать память.  
+ Так как это статическое событие, необходимо отсоединить все обработчики событий, присоединен с этому событию в `ApplicationExit` сам обработчик событий. Если эти обработчики не будут отсоединены, они остаются присоединенными и продолжать использовать память.  
   
    
   
 ## Examples  
- В следующем примере кода показаны две формы и выход из приложения, при закрытии обе формы. Когда приложение запустится и завершает работу, позиция каждой формы запоминается. В этом примере показано использование <xref:System.Windows.Forms.Application.ApplicationExit> событие, чтобы знать, когда позиции формы следует сохранить в файл, а `FileStream` должен быть закрыт.  
+ В следующем примере кода показаны две формы и выход из приложения, при закрытии обе формы. Когда приложение запустится и завершает работу, позиция каждой формы запоминается. В этом примере показано использование `ApplicationExit` событие, чтобы знать, когда позиции формы следует сохранить в файл, а `FileStream` должен быть закрыт.  
   
- Класс `MyApplicationContext` наследует от <xref:System.Windows.Forms.ApplicationContext> и отслеживает при закрытии каждой формы и выходит из текущего потока, если они оба. Этот класс запоминает положение каждой формы, при его закрытии. Когда <xref:System.Windows.Forms.Application.ApplicationExit> происходит событие, класс записывает позиции каждого пользователя в файл. Данные позиции формы сохраняются в файле под названием `appdata.txt` , созданный в месте <xref:System.Windows.Forms.Application.UserAppDataPath%2A>. `Main` Вызовы методов `Application.Run(context)` для запуска приложения, получившего <xref:System.Windows.Forms.ApplicationContext>.  
+ Класс `MyApplicationContext` наследует от <xref:System.Windows.Forms.ApplicationContext> и отслеживает при закрытии каждой формы и выходит из текущего потока, если они оба. Этот класс запоминает положение каждой формы, при его закрытии. Когда `ApplicationExit` происходит событие, класс записывает позиции каждого пользователя в файл. Данные позиции формы сохраняются в файле под названием `appdata.txt` , созданный в месте <xref:System.Windows.Forms.Application.UserAppDataPath%2A>. `Main` Вызовы методов `Application.Run(context)` для запуска приложения, получившего <xref:System.Windows.Forms.ApplicationContext>.  
   
  Этот код является выдержкой из примера, приведенного в <xref:System.Windows.Forms.ApplicationContext> Общие сведения о классе. См. в разделе <xref:System.Windows.Forms.ApplicationContext> для кода.  
   
@@ -216,7 +208,7 @@
   
  <xref:System.Windows.Forms.Application.ProductVersion%2A> Первый выглядит, чтобы определить наличие сборки, содержащей основного исполняемого файла `AssemblyInformationalVersion` атрибут на нем. Если этот атрибут существует, он используется для обоих <xref:System.Windows.Forms.Application.ProductVersion%2A> и <xref:System.Windows.Forms.Application.CommonAppDataPath%2A>. Если этот атрибут не существует, оба свойства используйте версию исполняемого файла.  
   
- Путь будет отличаться в зависимости от того, является ли приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
+ Путь будет отличаться в зависимости от того, является ли приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
   
  ]]></format>
         </remarks>
@@ -242,7 +234,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает раздел реестра для данных приложения, являющихся общими для всех пользователей.</summary>
-        <value>Объект <see cref="T:Microsoft.Win32.RegistryKey" />, который представляет раздел реестра данных приложения, являющихся общими для всех пользователей.</value>
+        <value>Объект <see cref="T:Microsoft.Win32.RegistryKey" />, представляющий раздел реестра данных приложения, являющихся общими для всех пользователей.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -311,7 +303,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает или задает данные о языке и региональных параметрах для текущего потока.</summary>
-        <value>Объект <see cref="T:System.Globalization.CultureInfo" />, предоставляющий данные о языке и региональных параметрах для текущего потока.</value>
+        <value>Объект <see cref="T:System.Globalization.CultureInfo" /> предоставляет данные о языке и региональных параметрах для текущего потока.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -483,10 +475,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -539,7 +528,7 @@
         <summary>Получает путь для исполняемого файла, запустившего приложение, включая исполняемое имя.</summary>
         <value>Путь и исполняемое имя для исполняемого файла, запустившего приложение.  
   
-Этот путь будет отличаться в зависимости от того, развернуто ли приложение Windows Forms с использованием [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).</value>
+Этот путь будет отличаться в зависимости от того, развернуто ли приложение Windows Forms с использованием [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).</value>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.FileIOPermission">Для получения пути. Связанное перечисление: <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
       </Docs>
@@ -630,10 +619,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -641,7 +627,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Возвращает сведения о том, отменил ли выход какой-либо объект <see cref="T:System.Windows.Forms.Form" /> в приложении.</param>
@@ -697,10 +683,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -708,12 +691,33 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="message" Type="System.Windows.Forms.Message" RefType="ref" />
+        <Parameter Name="message" Type="System.Windows.Forms.Message" RefType="ref" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="message">Фильтруемое сообщение о событии Windows.</param>
         <summary>Запускает любые фильтры для сообщения окна и возвращает копию измененного сообщения.</summary>
-        <returns>Значение <see langword="True" />, если фильтр был обработан; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если фильтр был обработан; в противном случае — значение <see langword="false" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HighDpiMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.HighDpiMode HighDpiMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.HighDpiMode HighDpiMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.HighDpiMode" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property HighDpiMode As HighDpiMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Windows::Forms::HighDpiMode HighDpiMode { System::Windows::Forms::HighDpiMode get(); };" />
+      <MemberSignature Language="F#" Value="member this.HighDpiMode : System.Windows.Forms.HighDpiMode" Usage="System.Windows.Forms.Application.HighDpiMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HighDpiMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -773,10 +777,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -835,7 +836,7 @@
   
  *Базовый путь*\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>   
   
- Типичный базовый путь — C:\Documents and Settings\\*username*\Local Settings\Application данных. Этот путь будет отличаться, тем не менее, если приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] создает свой собственный каталог данных приложения, которая изолирована от всех других приложений. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
+ Типичный базовый путь — C:\Documents and Settings\\*username*\Local Settings\Application данных. Этот путь будет отличаться, тем не менее, если приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] создает свой собственный каталог данных приложения, которая изолирована от всех других приложений. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
   
    
   
@@ -904,7 +905,7 @@
       <Parameters />
       <Docs>
         <summary>Инициализирует OLE в текущем потоке.</summary>
-        <returns>Одно из значений перечисления <see cref="T:System.Threading.ApartmentState" />.</returns>
+        <returns>Одно из значений <see cref="T:System.Threading.ApartmentState" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -939,8 +940,8 @@
         <Parameter Name="t" Type="System.Exception" />
       </Parameters>
       <Docs>
-        <param name="t">Объект <see cref="T:System.Exception" /> представляет вызванное исключение.</param>
-        <summary>Вызывает событие <see cref="E:System.Windows.Forms.Application.ThreadException" />.</summary>
+        <param name="t">Объект <see cref="T:System.Exception" /> представляет выданное исключение.</param>
+        <summary>Создает событие <see cref="E:System.Windows.Forms.Application.ThreadException" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1016,7 +1017,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `ProductName` берется из метаданных сборки, содержащей главной формы текущего приложения. Его можно установить, задав <xref:System.Reflection.AssemblyProductAttribute> в манифесте сборки. Дополнительные сведения см. в разделе [манифест сборки](~/docs/framework/app-domains/assembly-manifest.md).  
+ `ProductName` берется из метаданных сборки, содержащей главной формы текущего приложения. Его можно установить, задав <xref:System.Reflection.AssemblyProductAttribute> в манифесте сборки. Дополнительные сведения см. в статье [Манифест сборки](~/docs/framework/app-domains/assembly-manifest.md).  
   
    
   
@@ -1058,7 +1059,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Как правило, отображает номер версии в виде *основной номер*.* Вспомогательная номер*.* номер сборки*.* номер закрытой части*. Может быть задана явно, установив версию сборки в манифесте сборки. Дополнительные сведения см. в разделе [манифест сборки](~/docs/framework/app-domains/assembly-manifest.md).  
+ Как правило, отображает номер версии в виде *основной номер*. *Вспомогательная номер*. *номер сборки*. *номер закрытой части*. Может быть задана явно, установив версию сборки в манифесте сборки. Дополнительные сведения см. в статье [Манифест сборки](~/docs/framework/app-domains/assembly-manifest.md).  
   
  <xref:System.Windows.Forms.Application.ProductVersion%2A> Первый выглядит, чтобы определить наличие сборки, содержащей основного исполняемого файла `AssemblyInformationalVersion` атрибут на нем. Если этот атрибут существует, он используется для обоих <xref:System.Windows.Forms.Application.ProductVersion%2A> и <xref:System.Windows.Forms.Application.CommonAppDataPath%2A>. Если этот атрибут не существует, оба свойства используйте версию исполняемого файла.  
   
@@ -1092,10 +1093,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1103,7 +1101,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.EventArgs" />
+        <Parameter Name="e" Type="System.EventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.EventArgs" />, передаваемый событию <see cref="E:System.Windows.Forms.Application.Idle" />.</param>
@@ -1133,10 +1131,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1144,7 +1139,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="callback" Type="System.Windows.Forms.Application+MessageLoopCallback" />
+        <Parameter Name="callback" Type="System.Windows.Forms.Application+MessageLoopCallback" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="callback">Метод, вызываемый, когда для Windows Forms требуется проверить, продолжают ли отправляться сообщения в размещаемых средах.</param>
@@ -1230,11 +1225,11 @@
   
  В следующей таблице показаны четыре условия, которые должны выполняться для <xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A> для возврата `true`.  
   
-|Условие|Описание:|  
+|Условие|Описание|  
 |---------------|-----------------|  
 |Операционная система поддерживает стили оформления|Чтобы проверить это условие отдельно, используйте свойство <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS%2A> класса <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> .|  
 |Пользователь включил стили оформления в операционной системе|Чтобы проверить это условие отдельно, используйте свойство <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A> класса <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> .|  
-|Визуальные стили включены в приложении|Стили оформления можно включить в приложении, вызвав метод <xref:System.Windows.Forms.Application.EnableVisualStyles> или воспользовавшись манифестом приложения, указывающим, что для рисования элементов управления будет применяться ComCtl32.dll версии 6 или более поздней.|  
+|Визуальные стили включены в приложении|Стили оформления можно включить в приложении, вызвав метод <xref:System.Windows.Forms.Application.EnableVisualStyles> или воспользовавшись манифестом приложения, указывающим, что для рисования элементов управления будет применяться ComCtl32.dll версии 6 или более поздней.|  
 |Стили оформления используются для рисования клиентской области окон приложений|Чтобы проверить это условие отдельно, используйте свойство <xref:System.Windows.Forms.Application.VisualStyleState%2A> класса <xref:System.Windows.Forms.Application> и убедитесь, что оно имеет значение <xref:System.Windows.Forms.VisualStyles.VisualStyleState.ClientAreaEnabled?displayProperty=nameWithType> или <xref:System.Windows.Forms.VisualStyles.VisualStyleState.ClientAndNonClientAreasEnabled?displayProperty=nameWithType>.|  
   
  ]]></format>
@@ -1343,7 +1338,7 @@
       </Parameters>
       <Docs>
         <param name="context">Объект <see cref="T:System.Windows.Forms.ApplicationContext" />, в котором запускается приложение.</param>
-        <summary>Запускает стандартный цикл обработки сообщений приложения в текущем потоке с <see cref="T:System.Windows.Forms.ApplicationContext" />.</summary>
+        <summary>Запускает стандартный цикл обработки сообщений приложения в текущем потоке, с <see cref="T:System.Windows.Forms.ApplicationContext" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1467,7 +1462,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="defaultValue" Type="System.Boolean" />
+        <Parameter Name="defaultValue" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="defaultValue">Значение по умолчанию, используемое для новых элементов управления. Если задано значение <see langword="true" />, новые элементы управления, поддерживающие <c>UseCompatibleTextRendering</c>, используют для отрисовки текста класс <see cref="T:System.Drawing.Graphics" /> основанный на [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]; если задано значение <see langword="false" />, новые элементы управления используют класс <see cref="T:System.Windows.Forms.TextRenderer" />, основанный на [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)].</param>
@@ -1522,6 +1517,30 @@ static class Program
         <altmember cref="M:System.Drawing.Text.PrivateFontCollection.AddMemoryFont(System.IntPtr,System.Int32)" />
       </Docs>
     </Member>
+    <Member MemberName="SetHighDpiMode">
+      <MemberSignature Language="C#" Value="public static bool SetHighDpiMode (System.Windows.Forms.HighDpiMode highDpiMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetHighDpiMode(valuetype System.Windows.Forms.HighDpiMode highDpiMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool SetHighDpiMode(System::Windows::Forms::HighDpiMode highDpiMode);" />
+      <MemberSignature Language="F#" Value="static member SetHighDpiMode : System.Windows.Forms.HighDpiMode -&gt; bool" Usage="System.Windows.Forms.Application.SetHighDpiMode highDpiMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="highDpiMode" Type="System.Windows.Forms.HighDpiMode" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="highDpiMode">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="SetSuspendState">
       <MemberSignature Language="C#" Value="public static bool SetSuspendState (System.Windows.Forms.PowerState state, bool force, bool disableWakeEvent);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetSuspendState(valuetype System.Windows.Forms.PowerState state, bool force, bool disableWakeEvent) cil managed" />
@@ -1539,14 +1558,14 @@ static class Program
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="state" Type="System.Windows.Forms.PowerState" />
-        <Parameter Name="force" Type="System.Boolean" />
-        <Parameter Name="disableWakeEvent" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.PowerState" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="force" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="disableWakeEvent" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="state">Объект <see cref="T:System.Windows.Forms.PowerState" />, указывающий режим питания, в который следует перейти.</param>
         <param name="force">Значение <see langword="true" />, чтобы немедленно перейти в режим приостановки работы; значение <see langword="false" />, чтобы система Windows отправила запрос на приостановку работы каждому приложению.</param>
-        <param name="disableWakeEvent">Значение <see langword="true" />, чтобы отключить восстановление активного состояния питания системы, если произойдет событие пробуждения; значение <see langword="false" />, чтобы включить восстановление активного состояния питания системы, если произойдет событие пробуждения.</param>
+        <param name="disableWakeEvent">Значение <see langword="true" />, чтобы отключить восстановление активного состояния питания системы, если произойдет событие пробуждения, значение <see langword="false" />, чтобы включить восстановление активного состояния питания системы, если произойдет событие пробуждения.</param>
         <summary>Приостанавливает работу системы или переводит ее в спящий режим или же запрашивает приостановку работы системы или перевод ее в спящий режим.</summary>
         <returns>Значение <see langword="true" />, если работа системы приостанавливается, в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -1605,7 +1624,7 @@ static class Program
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" />
+        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="mode">Значение <see cref="T:System.Windows.Forms.UnhandledExceptionMode" />, описывающее поведение приложения при выдаче исключения, которое не было перехвачено.</param>
@@ -1654,8 +1673,8 @@ static class Program
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" />
-        <Parameter Name="threadScope" Type="System.Boolean" />
+        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="threadScope" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="mode">Значение <see cref="T:System.Windows.Forms.UnhandledExceptionMode" />, описывающее поведение приложения при выдаче исключения, которое не было перехвачено.</param>
@@ -1712,7 +1731,7 @@ static class Program
         <summary>Получает путь для исполняемого файла, запустившего приложение, не включая исполняемое имя.</summary>
         <value>Путь для исполняемого файла, запустившего приложение.  
   
-Этот путь будет отличаться в зависимости от того, развернуто ли приложение Windows Forms с использованием [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).</value>
+Этот путь будет отличаться в зависимости от того, развернуто ли приложение Windows Forms с использованием [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] приложения хранятся в кэше приложений пользователя в C:\Documents and Settings\\*username* каталога. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1834,10 +1853,7 @@ static class Program
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1880,7 +1896,7 @@ static class Program
   
  Данные, хранящиеся в данном контуре является частью перемещаемого профиля пользователя. Перемещаемый пользователь работает на более чем один компьютер в сети. Профиль пользователя для перемещаемого профиля пользователя хранится на сервере в сети и загружается в систему при входе пользователя в систему. Для профиля пользователя, следует учитывать при перемещении операционная система должна поддерживать перемещаемые профили, и она должна быть включена.  
   
- Типичный базовый путь — C:\Documents and Settings\\*username*\Application Data. Этот путь будет отличаться, тем не менее, если приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] создает свой собственный каталог данных приложения, которая изолирована от всех других приложений. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
+ Типичный базовый путь — C:\Documents and Settings\\*username*\Application Data. Этот путь будет отличаться, тем не менее, если приложение Windows Forms развертывается с помощью [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] создает свой собственный каталог данных приложения, которая изолирована от всех других приложений. Дополнительные сведения см. в разделе [доступ к локальным и удаленным данным в приложениях ClickOnce](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d).  
   
    
   
@@ -1957,7 +1973,7 @@ static class Program
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает значение, которое указывает, используется ли курсор ожидания для всех открытых форм приложения.</summary>
+        <summary>Определяет, используется ли курсор ожидания для всех открытых форм приложения, или задает использование этого курсора.</summary>
         <value>Значение <see langword="true" />, если курсор ожидания будет использоваться для всех открытых форм; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

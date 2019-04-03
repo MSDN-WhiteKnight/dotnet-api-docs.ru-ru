@@ -1,13 +1,5 @@
 <Type Name="WSFederationAuthenticationModule" FullName="System.IdentityModel.Services.WSFederationAuthenticationModule">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4946a226efb8c22b2cb54ac00bf7e2cedea35d6e" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36558384" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class WSFederationAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="84794e52ef0e355ba168bb4ee4a2b5b1926e30a9" /><Meta Name="ms.sourcegitcommit" Value="9802d4c6745a8ae514b26f144fb3969265b224ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/22/2018" /><Meta Name="ms.locfileid" Value="53751249" /></Metadata><TypeSignature Language="C#" Value="public class WSFederationAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSFederationAuthenticationModule extends System.IdentityModel.Services.HttpModuleBase" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />
   <TypeSignature Language="VB.NET" Value="Public Class WSFederationAuthenticationModule&#xA;Inherits HttpModuleBase" />
@@ -22,8 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-      <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> представляет собой HTTP-модуль, используемый для защиты приложения ASP.NET путем применения параметров федеративной проверки подлинности к входящим запросам. <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> представляет собой готовый главный модуль, который WIF предлагает для обработки доступа по удостоверениям на основе утверждений в приложениях ASP.NET.  
+    <summary><see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> представляет собой HTTP-модуль, используемый для защиты приложения ASP.NET путем применения параметров федеративной проверки подлинности к входящим запросам. <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> представляет собой готовый главный модуль, который WIF предлагает для обработки доступа по удостоверениям на основе утверждений в приложениях ASP.NET.  
   
 Класс <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> вызывает несколько событий, что позволяет разработчикам ASP.NET изменять поведение по умолчанию и отслеживать сведения о порядке выполнения аутентификации и обработки утверждений. Функциональные возможности класса <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> разделены на методы, специфичные для задач.</summary>
     <remarks>
@@ -58,7 +49,7 @@
   
  Перед отправкой запроса входа WS-Federation STS, вызываются следующие события:  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>: Возникает при включенном пассивного перенаправления и неудачной авторизации на запрошенный ресурс.  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>: Вызывается, когда включена пассивного перенаправления и неудачной авторизации на запрошенный ресурс.  
   
 -   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>: Возникает непосредственно перед WSFAM отправляет запрос входа WS-Federation в службе маркеров безопасности. Это событие можно использовать для изменения параметров в запросе входа в систему.  
   
@@ -66,13 +57,13 @@
   
 -   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived>: Возникает сразу после маркера безопасности, отправленных службой маркеров безопасности, считать из ответа.  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>: Возникает только в том случае, после проверки маркера. Это событие можно использовать для фильтрации, преобразования или добавить утверждения в субъект утверждений (<xref:System.Security.Claims.ClaimsPrincipal>) создан из токена безопасности.  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>: Возникает сразу после проверки маркера. Это событие можно использовать для фильтрации, преобразования или добавить утверждения в субъект утверждений (<xref:System.Security.Claims.ClaimsPrincipal>) создан из токена безопасности.  
   
 -   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>: Возникает непосредственно перед маркера сеанса (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) созданная на основе утверждений субъекта используется для задания участника потока и текущего пользователя и записывается в файл cookie сеанса. Дает возможность изменить маркер сеанса или включить или отключить запись файла cookie сеанса.  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>: Возникает по завершении проверки подлинности только после основной и текущий пользователь потока.  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>: Возникает в конце проверки подлинности только в том случае, после основного и текущий пользователь потока были заданы.  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError>: Возникает при возникновении исключения во время входа. Можно отменить запрос и предотвратить возникновение исключения из возвращается вызывающему объекту.  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError>: Вызывается при возникновении исключения во время входа. Можно отменить запрос и предотвратить возникновение исключения из возвращается вызывающему объекту.  
   
  При входе из сеанса или при обработке запроса очистки выхода WS-Federation (wsignoutcleanup1.0), возникают следующие события:  
   
@@ -80,7 +71,7 @@
   
 -   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>: Возникает только в том случае, после удаления сеанса.  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>: Возникает при возникновении исключения во время выхода. Можно отменить выхода и предотвратить возникновение исключения из возвращается вызывающему объекту.  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>: Вызывается при возникновении исключения во время выхода. Можно отменить выхода и предотвратить возникновение исключения из возвращается вызывающему объекту.  
   
 > [!NOTE]
 >  События выхода не вызываются при выходе в STS, вызвав <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A> метод.  
@@ -240,7 +231,7 @@
       <Docs>
         <param name="request">Входящий HTTP-запрос.</param>
         <summary>Возвращает значение, указывающее, является ли заданный HTTP-запрос ответным сообщением входа WS-Federation. Если сообщение является сообщением очистки выхода WS-Federation ("wsignoutcleanup1.0"), этот метод обрабатывает запрос.</summary>
-        <returns>Значение <see langword="true" />, если указанный HTTP-запрос содержит метод POST формы, в котором параметр wa имеет значение "wsignout1.0", а параметр wresult не пуст; в противном случае значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если указанный HTTP-запрос содержит запрос POST формы, в котором параметр wa имеет значение "wsignout1.0", а параметр wresult не пуст; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -279,7 +270,7 @@
         <param name="request">Входящий HTTP-запрос.</param>
         <param name="onPage">Значение <see langword="true" />, если вызов происходит при обработке запроса страницы. <see langword="false" /> Если вызывающий объект — HTTP-модуль. Этот параметр определяет, как следует завершать обработку или отправлять сообщения перенаправления, если входящее сообщение является сообщением очистки выхода WS-Federation ("wsignoutcleanup1.0").</param>
         <summary>Возвращает значение, указывающее, является ли заданный HTTP-запрос ответным сообщением входа WS-Federation. Если сообщение является сообщением очистки выхода WS-Federation ("wsignoutcleanup1.0"), этот метод обрабатывает запрос.</summary>
-        <returns>Значение <see langword="true" />, если указанный HTTP-запрос содержит сообщение FORM, в котором параметр wa имеет значение "wsignout1.0", а параметр wresult не пуст; в противном случае значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если указанный HTTP-запрос содержит запрос POST формы, в котором параметр wa имеет значение "wsignout1.0", а параметр wresult не пуст; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -352,7 +343,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> имеет значение <see langword="null" /> или пустая строка.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> имеет значение <see langword="null" /> или пустая строка.</exception>
         <altmember cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider(System.String,System.String,System.Boolean)" />
       </Docs>
@@ -401,10 +392,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="signOutUrl" /> имеет значение, отличное от <see langword="null" />, и не является абсолютным универсальным кодом ресурса (URI).  
+        <exception cref="T:System.ArgumentException"><paramref name="signOutUrl" /> имеет значение, отличное от <see langword="null" />, и не является абсолютным универсальным кодом ресурса (URI).  
   
-- или - 
+-или- 
  <paramref name="replyUrl" /> имеет значение, отличное от <see langword="null" />, и не является абсолютным универсальным кодом ресурса (URI).</exception>
         <exception cref="T:System.InvalidOperationException">Свойство <paramref name="signOutUrl" /> имеет значение <see langword="null" />.</exception>
         <altmember cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut" />
@@ -786,8 +776,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Свойство <paramref name="message" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="message" /> не содержит токена. (Не содержит допустимый параметр wresult или wresultptr).</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="message" /> не содержит токена. (Не содержит допустимый параметр wresult или wresultptr).</exception>
       </Docs>
     </Member>
     <Member MemberName="GetXmlTokenFromMessage">
@@ -941,7 +930,7 @@
       <Docs>
         <param name="request">Входящий HTTP-запрос.</param>
         <summary>Получает значение, указывающее, является ли заданный запрос ответным сообщением входа WS-Federation.</summary>
-        <returns>Значение <see langword="true" />, если запрос является ответным сообщением входа WS-Federation; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если запрос является ответным сообщением входа WS-Federation; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -987,7 +976,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Предпринята попытка присвоить свойству значение <see langword="null" /> или пустую строку.  
   
-- или - 
+-или- 
 Предпринята попытка присвоить свойству значение, которое не является допустимым абсолютным универсальным кодом ресурса (URI).</exception>
       </Docs>
     </Member>
@@ -1032,7 +1021,7 @@
   
 5.  Вызывает событие <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>. Можно отменить дальнейшую обработку или изменить субъект утверждений в обработчике этого события.  
   
-6.  Использует модуль проверки подлинности настроенном сеансе (SAM) для создания <xref:System.IdentityModel.Tokens.SessionSecurityToken> объекта. (Настроенный СЭМ является <xref:System.IdentityModel.Services.SessionAuthenticationModule> объект, возвращаемый <xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule%2A?displayProperty=nameWithType> свойство.) Токен сеанса создается с помощью субъекта утверждений, возвращенного на шаге 5. <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A?displayProperty=nameWithType> И <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType> свойства задаются с помощью <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> и <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> свойства <xref:System.IdentityModel.Tokens.SecurityToken> , возвращенное на шаге 3 и проверяются на соответствие текущего времени и времени жизни маркера, определяется либо <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A>или <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A> свойство <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> объекта в коллекции обработчиков токенов, используемых WSFAM. Время существования маркера в обработчик токенов сеанса можно задать в конфигурации с помощью [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md) элемент. Примечание: <xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime%2A> свойство обработчик файлов cookie, настроенное для SAM не используется.  
+6.  Использует модуль проверки подлинности настроенном сеансе (SAM) для создания <xref:System.IdentityModel.Tokens.SessionSecurityToken> объекта. (Настроенный СЭМ является <xref:System.IdentityModel.Services.SessionAuthenticationModule> объект, возвращаемый <xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule%2A?displayProperty=nameWithType> свойство.) Токен сеанса создается с помощью субъекта утверждений, возвращенного на шаге 5. <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A?displayProperty=nameWithType> И <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType> свойства задаются с помощью <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> и <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> свойства <xref:System.IdentityModel.Tokens.SecurityToken> , возвращенное на шаге 3 и проверяются на соответствие текущего времени и времени жизни маркера, определяется либо <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A>или <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A> свойство <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> объекта в коллекции обработчиков токенов, используемых WSFAM. Время существования маркера в обработчик токенов сеанса можно задать в конфигурации с помощью [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md) элемент. Примечание. <xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime%2A> Свойство обработчик файлов cookie, настроенное для SAM не используется.  
   
 7.  Вызовы <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A> метода с маркером сеанса для записи файла cookie сеанса. <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A> Вызывает первый метод <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> событий. Можно изменить свойства маркера сеанса или изменить ли файл cookie должен сохраняться в обработчике этого события. После возникновения события метод затем записывает файл cookie с помощью SAM.  
   
@@ -1461,7 +1450,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Предпринята попытка присвоить свойству значение <see langword="null" /> или пустую строку.  
   
-- или - 
+-или- 
 Предпринята попытка присвоить свойству значение, которое не является допустимым абсолютным универсальным кодом ресурса (URI).</exception>
       </Docs>
     </Member>
@@ -1556,13 +1545,13 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Параметр <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> имеет значение <see langword="null" /> или является пустой строкой.  
   
-- или - 
+-или- 
  Параметр <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> имеет значение <see langword="null" /> или является пустой строкой.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Web.HttpContext.Current" /> имеет значение <see langword="null" /> или пусто.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Web.HttpContext.Response" /> контекста, возвращаемого свойством <see cref="P:System.Web.HttpContext.Current" />, имеет значение <see langword="null" /> или пусто.</exception>
       </Docs>
     </Member>
@@ -1695,7 +1684,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение параметра wres, используемого в запросах входа WS-Federation ("wsignin1.0").</summary>
+        <summary>Получает или задает значение параметра wres, используемого в запросах входа WS-Federation ("wsignin1.0").</summary>
         <value>Универсальный код ресурса (URI), определяющий ресурс, доступ к которому осуществлялся, проверяющую сторону (RP), для службы токенов безопасности (STS).</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2199,8 +2188,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="redirectUrl" /> не является допустимым URI.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="redirectUrl" /> не является допустимым URI.</exception>
       </Docs>
     </Member>
     <Member MemberName="SignOut">
@@ -2238,8 +2226,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="redirectUrl" /> не является допустимым URI.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="redirectUrl" /> не является допустимым URI.</exception>
         <exception cref="T:System.NotImplementedException">Класс <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> вызывает это исключение, если параметр <paramref name="initiateSignoutCleanup" /> имеет значение <see langword="true" />. Не устанавливайте этот параметр на <see langword="true" />.</exception>
       </Docs>
     </Member>
@@ -2356,13 +2343,13 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Параметр <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> имеет значение <see langword="null" /> или является пустой строкой.  
   
-- или - 
+-или- 
  Параметр <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> имеет значение <see langword="null" /> или является пустой строкой.  
   
-- или - 
+-или- 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /> имеет значение <see langword="true" /> и <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> не совместимы с HTTPS.  
   
-- или - 
+-или- 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /> имеет значение <see langword="true" /> и <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> не совместимы с HTTPS.</exception>
       </Docs>
     </Member>

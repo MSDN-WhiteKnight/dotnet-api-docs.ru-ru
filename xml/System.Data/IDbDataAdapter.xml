@@ -1,13 +1,5 @@
 <Type Name="IDbDataAdapter" FullName="System.Data.IDbDataAdapter">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ad7ef39687c100899e7bccb842a442f2c82c114b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37668546" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IDbDataAdapter : System.Data.IDataAdapter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7b8552f0b8cc3c321fda2dc30b6b5908095956ab" /><Meta Name="ms.sourcegitcommit" Value="800d45fb80a298c4bde743e8a40af69755fc850f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/24/2019" /><Meta Name="ms.locfileid" Value="54895334" /></Metadata><TypeSignature Language="C#" Value="public interface IDbDataAdapter : System.Data.IDataAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDbDataAdapter implements class System.Data.IDataAdapter" />
   <TypeSignature Language="DocId" Value="T:System.Data.IDbDataAdapter" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDbDataAdapter&#xA;Implements IDataAdapter" />
@@ -40,7 +32,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.IDbDataAdapter> Интерфейс наследует от <xref:System.Data.IDataAdapter> интерфейс, а также позволяет объекту создавать DataAdapter, разработанный для использования в реляционной базе данных. <xref:System.Data.IDbDataAdapter> Интерфейса и, возможно, служебный класс, <xref:System.Data.Common.DbDataAdapter>, разрешить наследующему классу реализовать класс DataAdapter, который представляет собой мост между источником данных и <xref:System.Data.DataSet>. Дополнительные сведения о классах DataAdapter, см. в разделе [заполнение набора данных из объекта DataAdapter](~/docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md). Дополнительные сведения о реализации поставщиков данных .NET Framework, см. в разделе [ &#91; \<topic://cpconimplementingnetdataprovider >&#93;](http://msdn.microsoft.com/library/a9fa1926-071b-4c6f-997d-a16bac633852).  
+ <xref:System.Data.IDbDataAdapter> Интерфейс наследует от <xref:System.Data.IDataAdapter> интерфейс, а также позволяет объекту создавать DataAdapter, разработанный для использования в реляционной базе данных. <xref:System.Data.IDbDataAdapter> Интерфейса и, возможно, служебный класс, <xref:System.Data.Common.DbDataAdapter>, разрешить наследующему классу реализовать класс DataAdapter, который представляет собой мост между источником данных и <xref:System.Data.DataSet>. Дополнительные сведения о классах DataAdapter, см. в разделе [заполнение набора данных из объекта DataAdapter](~/docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md). Дополнительные сведения о реализации поставщиков данных .NET Framework, см. в разделе [реализации поставщика данных .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/4ksaf9z5(v=vs.71)).  
   
  Приложение не создает экземпляр <xref:System.Data.IDbDataAdapter> интерфейса напрямую, но создает экземпляр класса, наследующего <xref:System.Data.IDbDataAdapter> и <xref:System.Data.Common.DbDataAdapter>.  
   
@@ -56,9 +48,24 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>Для обеспечения согласованности между поставщиками данных .NET Framework, наследующий классу имя в форме <paramref name="Prv" /> DataAdapter где <paramref name="Prv" /> — стандартный префикс для всех классов в пространстве имен поставщика данных .NET Framework. Например <paramref name="Sql" /> является префиксом <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> в класс <see langword="System.Data.SqlClient" /> пространства имен.  При наследовании от <see cref="T:System.Data.IDbDataAdapter" /> интерфейса, следует реализовать следующие конструкторы: <list type="table"><listheader><term> элемент </term><description> описание </description></listheader><item><term> PrvDataAdapter() </term><description> Инициализирует новый экземпляр класса PrvDataAdapter.  </description></item><item><term> PrvDataAdapter (PrvCommand selectCommand) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с заданным оператором SQL SELECT.  </description></item><item><term> PrvDataAdapter (selectCommandText строка, строка selectConnectionString) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с оператором SQL SELECT и строку подключения.  </description></item><item><term> PrvDataAdapter (строка selectCommandText, selectConnection PrvConnection при получении) </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с оператором SQL SELECT и объектом PrvConnection при получении.  </description></item></list></para>
-    </block>
+    <block subset="none" type="overrides"><para>Для обеспечения согласованности между поставщиками данных .NET Framework, наследующий классу имя в форме <paramref name="Prv" /> DataAdapter где <paramref name="Prv" /> — стандартный префикс для всех классов в пространстве имен поставщика данных .NET Framework. Например <paramref name="Sql" /> является префиксом <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> в класс <see langword="System.Data.SqlClient" /> пространства имен.  
+  
+При наследовании от <see cref="T:System.Data.IDbDataAdapter" /> интерфейса, следует реализовать следующие конструкторы: 
+ <list type="table"><listheader><term> Элемент 
+ </term><description> Описание 
+ </description></listheader><item><term> PrvDataAdapter() 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter.  
+  
+ </description></item><item><term> PrvDataAdapter (PrvCommand selectCommand) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с заданным оператором SQL SELECT.  
+  
+ </description></item><item><term> PrvDataAdapter (selectCommandText строка, строка selectConnectionString) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с оператором SQL SELECT и строку подключения.  
+  
+ </description></item><item><term> PrvDataAdapter (строка selectCommandText, selectConnection PrvConnection при получении) 
+ </term><description> Инициализирует новый экземпляр класса PrvDataAdapter с оператором SQL SELECT и объектом PrvConnection при получении.  
+  
+ </description></item></list></para></block>
   </Docs>
   <Members>
     <Member MemberName="DeleteCommand">

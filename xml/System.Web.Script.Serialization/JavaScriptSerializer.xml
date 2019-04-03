@@ -1,13 +1,5 @@
 <Type Name="JavaScriptSerializer" FullName="System.Web.Script.Serialization.JavaScriptSerializer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="6899a1cc1d5e826fd7612de323cccbeb5be6ef53" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51323463" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class JavaScriptSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9c600895e998de3cd0606108f6b2c1c3b3b6beb3" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57927363" /></Metadata><TypeSignature Language="C#" Value="public class JavaScriptSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JavaScriptSerializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Script.Serialization.JavaScriptSerializer" />
   <TypeSignature Language="VB.NET" Value="Public Class JavaScriptSerializer" />
@@ -23,8 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-      <see href="https://www.newtonsoft.com/json">Json.NET</see> следует использовать для сериализации и десериализации. Предоставляет возможности сериализации и десериализации для приложений с поддержкой AJAX.</summary>
+    <summary><see href="https://www.newtonsoft.com/json">Json.NET</see> следует использовать для сериализации и десериализации. Предоставляет возможности сериализации и десериализации для приложений с поддержкой AJAX.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -172,8 +163,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="targetType" Type="System.Type" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="obj">Преобразуемый объект.</param>
@@ -192,7 +183,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Результирующая строка формата JSON превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> содержит циклическую ссылку. Циклическая ссылка возникает, если дочерний объект ссылается на родительский объект, а родительский объект ссылается на дочерний.</exception>
         <exception cref="T:System.ArgumentException">Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.</exception>
       </Docs>
@@ -220,7 +211,7 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <typeparam name="T">Тип, к которому <c>obj</c> будут преобразованы.</typeparam>
+        <typeparam name="T">Тип, которому будет приведен параметр <paramref name="obj" />.</typeparam>
         <param name="obj">Преобразуемый объект.</param>
         <summary>Приводит заданный объект к указанному типу.</summary>
         <returns>Объект, приведенный к целевому типу.</returns>
@@ -244,20 +235,20 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="obj" /> (или вложенный член параметра <paramref name="obj" />) содержит свойство __type, которым обозначается пользовательский тип, однако связанному с сериализатором распознавателю типов не удалось найти соответствующий управляемый тип.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> (или вложенный член параметра <paramref name="obj" />) содержит свойство __type, которым обозначается пользовательский тип, однако результат десериализации соответствующей строки формата JSON не может быть назначен ожидаемому целевому типу.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> (или вложенный член параметра <paramref name="obj" />) содержит свойство __type, которым обозначается объект <see cref="T:System.Object" /> или тип, не поддерживающий создание экземпляров (например, абстрактный тип или интерфейс).  
   
-- или - 
+-или- 
 Предпринята попытка приведения параметра <paramref name="obj" /> к управляемому типу, относящемуся к классу массивов, использование которого как целевого типа десериализации не поддерживается.  
   
-- или - 
+-или- 
 Не удается привести параметр <paramref name="obj" /> к типу <paramref name="T" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="obj" /> является типом словаря и при этом обнаружено значение ключа не строчного типа.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> содержит определения членов, которые недоступны для типа <paramref name="T" />.</exception>
       </Docs>
     </Member>
@@ -277,11 +268,11 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="input" Type="System.String" />
-        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="input" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="targetType" Type="System.Type" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="input">Десериализируемая строка JSON.</param>
+        <param name="input">Десериализуемая строка формата JSON.</param>
         <param name="targetType">Тип результирующего объекта.</param>
         <summary>Преобразует строку формата JSON в объект заданного типа.</summary>
         <returns>Десериализованный объект.</returns>
@@ -293,32 +284,32 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Длина параметра <paramref name="input" /> превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
 Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит неизвестную последовательность символов.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> является типом словаря и при этом обнаружено значение ключа не строчного типа.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит определения членов, которые недоступны для целевого типа.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается пользовательский тип, однако распознавателю типов, связанному в данный момент с сериализатором, не удалось найти соответствующий управляемый тип.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается пользовательский тип, однако результат десериализации соответствующей строки формата JSON не удалось присвоить ожидаемому целевому типу.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается объект <see cref="T:System.Object" /> или тип, не поддерживающий создание экземпляров (например, абстрактный тип или интерфейс).  
   
-- или - 
+-или- 
 Предпринята попытка привести массив JSON к управляемому типу, относящемуся к классу массивов, использование которого в качестве целевого типа десериализации JSON не поддерживается.  
   
-- или - 
+-или- 
 Не удается привести параметр <paramref name="input" /> к целевому типу.</exception>
       </Docs>
     </Member>
@@ -374,30 +365,30 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Длина параметра <paramref name="input" /> превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
 Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит неизвестную последовательность символов.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> является типом словаря и при этом обнаружено значение ключа не строчного типа.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит определения членов, которые недоступны для типа <paramref name="T" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="input" /> содержит свойство __type, которым обозначается пользовательский тип, однако связанному с сериализатором распознавателю типов не удалось найти соответствующий управляемый тип.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается пользовательский тип, однако результат десериализации соответствующей строки формата JSON не удалось присвоить ожидаемому целевому типу.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство __type, которым обозначается объект <see cref="T:System.Object" /> или тип, не поддерживающий создание экземпляров (например, абстрактные типы или интерфейс).  
   
-- или - 
+-или- 
 Предпринята попытка привести массив JSON к управляемому типу, относящемуся к классу массивов, использование которого в качестве целевого типа десериализации JSON не поддерживается.  
   
-- или - 
+-или- 
 Не удается привести параметр <paramref name="input" /> к типу <paramref name="T" />.</exception>
       </Docs>
     </Member>
@@ -432,32 +423,32 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Длина параметра <paramref name="input" /> превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
 Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит неизвестную последовательность символов.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> является типом словаря и при этом обнаружено значение ключа не строчного типа.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит определения членов, которые недоступны для целевого типа.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается пользовательский тип, однако распознавателю типов, связанному в данный момент с сериализатором, не удалось найти соответствующий управляемый тип.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается пользовательский тип, однако результат десериализации соответствующей строки формата JSON не удалось присвоить ожидаемому целевому типу.  
   
-- или - 
+-или- 
  Параметр <paramref name="input" /> содержит свойство "__type", которым обозначается объект <see cref="T:System.Object" /> или тип, не поддерживающий создание экземпляров (например, абстрактный тип или интерфейс).  
   
-- или - 
+-или- 
 Предпринята попытка привести массив JSON к управляемому типу, относящемуся к классу массивов, использование которого в качестве целевого типа десериализации JSON не поддерживается.  
   
-- или - 
+-или- 
 Не удается привести параметр <paramref name="input" /> к целевому типу.</exception>
       </Docs>
     </Member>
@@ -483,13 +474,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает максимальную длину строк формата JSON, которые принимает класс <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />.</summary>
-        <value>Максимальная длина строк формата JSON. По умолчанию используется 2097152 символам, что эквивалентно 4 МБ данных строки Юникода.</value>
+        <summary>Возвращает или задает максимальную длину строки формата JSON, которую может принять класс <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />.</summary>
+        <value>Максимальная длина строки формата JSON. По умолчанию используется 2097152 символам, что эквивалентно 4 МБ данных строки Юникода.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Значение <xref:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength%2A> свойство применяется, только когда вы явно создаете экземпляр <xref:System.Web.Script.Serialization.JavaScriptSerializer> класса. Используйте `jsonSerialization` элемент файла конфигурации, чтобы задать максимальную длину внутреннего экземпляра сериализатора, используемый слой асинхронного взаимодействия. Дополнительные сведения об элементах конфигурации для сериализации см. в разделе [как: Настройка служб ASP.NET в Microsoft Ajax](http://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30).  
+ Значение <xref:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength%2A> свойство применяется, только когда вы явно создаете экземпляр <xref:System.Web.Script.Serialization.JavaScriptSerializer> класса. Используйте `jsonSerialization` элемент файла конфигурации, чтобы задать максимальную длину внутреннего экземпляра сериализатора, используемый слой асинхронного взаимодействия. Дополнительные сведения об элементах конфигурации для сериализации см. в разделе [как: Настройка служб ASP.NET в Microsoft Ajax](https://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30).  
   
  ]]></format>
         </remarks>
@@ -531,7 +522,7 @@
   
 -   Когда <xref:System.Web.Script.Serialization.JavaScriptSerializer> класс проход графа объекта во время сериализации.  
   
- Значение <xref:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit%2A> применяется, только когда вы явно создаете экземпляр <xref:System.Web.Script.Serialization.JavaScriptSerializer> класса. Используйте `jsonSerialization` элемент файла конфигурации, чтобы задать количество обрабатываемых для внутреннего экземпляра сериализатора, используемый слой асинхронного взаимодействия уровней объекта. Дополнительные сведения об элементах конфигурации для сериализации см. в разделе [как: Настройка служб ASP.NET в Microsoft Ajax](http://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30).  
+ Значение <xref:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit%2A> применяется, только когда вы явно создаете экземпляр <xref:System.Web.Script.Serialization.JavaScriptSerializer> класса. Используйте `jsonSerialization` элемент файла конфигурации, чтобы задать количество обрабатываемых для внутреннего экземпляра сериализатора, используемый слой асинхронного взаимодействия уровней объекта. Дополнительные сведения об элементах конфигурации для сериализации см. в разделе [как: Настройка служб ASP.NET в Microsoft Ajax](https://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30).  
   
  ]]></format>
         </remarks>
@@ -581,7 +572,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="converters" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="converters" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Serialize">
@@ -646,7 +637,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Результирующая строка формата JSON превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> содержит циклическую ссылку. Циклическая ссылка возникает, если дочерний объект ссылается на родительский объект, а родительский объект ссылается на дочерний.</exception>
         <exception cref="T:System.ArgumentException">Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.</exception>
       </Docs>
@@ -692,10 +683,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Результирующая строка формата JSON превышает значение свойства <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />.  
   
-- или - 
+-или- 
  Параметр <paramref name="obj" /> содержит циклическую ссылку. Циклическая ссылка возникает, если дочерний объект ссылается на родительский объект, а родительский объект ссылается на дочерний.</exception>
         <exception cref="T:System.ArgumentException">Превышено ограничение на рекурсию, заданное свойством <see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="output" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
   </Members>

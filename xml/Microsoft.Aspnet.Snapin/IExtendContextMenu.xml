@@ -1,13 +1,5 @@
 <Type Name="IExtendContextMenu" FullName="Microsoft.Aspnet.Snapin.IExtendContextMenu">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4fa93541d9d9236d2215896a862ecfef8eae066a" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39965664" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IExtendContextMenu" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2a26b04725934a2abe48fa1443999b138b8fa583" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55365483" /></Metadata><TypeSignature Language="C#" Value="public interface IExtendContextMenu" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtendContextMenu" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Aspnet.Snapin.IExtendContextMenu" />
   <TypeSignature Language="VB.NET" Value="Public Interface IExtendContextMenu" />
@@ -19,16 +11,24 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("4F3B7A4F-CFAC-11CF-B8E3-00C04FD8D5B0")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>Включает оснастку для добавления пунктов в существующее контекстное меню.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием интерфейса IExtendContextMenu и консоли управления (MMC) см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="AddMenuItems">
@@ -52,11 +52,19 @@
         <Parameter Name="pInsertionAllowed" Type="System.Int32" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="piDataObject">To be added.</param>
-        <param name="piCallback">To be added.</param>
-        <param name="pInsertionAllowed">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="piDataObject">Указатель на <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> на объекте данных того меню, к которому метод AddMenuItems добавляет пункты в контекстное меню.</param>
+        <param name="piCallback">Указатель на оснастку <see cref="T:Microsoft.Aspnet.Snapin.IContextMenuCallback" />, способную добавлять пункты в контекстное меню.</param>
+        <param name="pInsertionAllowed">Определенная консолью управления вставка пунктов меню — пункты, которые можно использовать.</param>
+        <summary>Включает оснастку для добавления пунктов в существующее контекстное меню.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IExtendContextMenu> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Command">
@@ -79,10 +87,18 @@
         <Parameter Name="piDataObject" Type="Microsoft.Aspnet.Snapin.IDataObject" />
       </Parameters>
       <Docs>
-        <param name="lCommandID">To be added.</param>
-        <param name="piDataObject">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="lCommandID">Идентификатор команды этого пункта меню.</param>
+        <param name="piDataObject">Указатель на <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> на объекте, для которого было отображено контекстное меню.</param>
+        <summary>Консоль управления (MMC) вызывает метод Command, когда выбирается один из добавленных пунктов контекстного меню.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Дополнительные сведения о программировании с использованием <xref:Microsoft.Aspnet.Snapin.IExtendContextMenu> интерфейса и консоли управления (MMC), см. в разделе [MMC Programmer's Guide](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

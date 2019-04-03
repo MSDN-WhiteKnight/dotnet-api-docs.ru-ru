@@ -1,13 +1,5 @@
 <Namespace Name="System.Transactions">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a0024f659857d33fabfbecb13896ccd2ff3c5535" />
-    <Meta Name="ms.sourcegitcommit" Value="e1a67db2e206daee8a9e2370b6cda8b921644a0a" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/19/2018" />
-    <Meta Name="ms.locfileid" Value="46321514" />
-  </Metadata>
-  <Docs>
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6888244b3701c273a4a914f4aedd622d8ea29c67" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51888842" /></Metadata><Docs>
     <summary>Пространство имен <see cref="N:System.Transactions" /> содержит классы, позволяющие создать собственное транзакционное приложение или диспетчер ресурсов. В частности, можно создать транзакцию (локальную или распределенную) и участвовать в ней с одним или несколькими участниками.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
@@ -19,11 +11,11 @@
   
  <xref:System.Transactions> Инфраструктуры делает программирование транзакций простым и эффективным во всей платформе, поддерживая транзакции, инициируемые в SQL Server, ADO.NET, MSMQ и координатор распределенных транзакций Microsoft (MSDTC). Он предоставляет как явная модель программирования на основе <xref:System.Transactions.Transaction> класса, а также в неявного программирования модели с помощью <xref:System.Transactions.TransactionScope> класса, в котором транзакции автоматически управляются инфраструктурой. Настоятельно рекомендуется использовать более простую модель неявного для разработки приложений. Чтобы приступить к работе, см. в разделе [реализации неявных транзакций с помощью области транзакций](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms172152(v=vs.85)) раздела. Дополнительные сведения о создании транзакционного приложения см. в разделе [записи транзакционного приложения](~/docs/framework/data/transactions/writing-a-transactional-application.md).
   
- <xref:System.Transactions> также предоставляет типы для реализации диспетчера ресурсов. Диспетчер транзакций, представленный на <xref:System.Transactions> инфраструктура позволяет неустойчивых ресурсов или зачисление один устойчивый ресурс, чтобы зафиксировать или откатить эффективно. Дополнительные сведения о реализации диспетчера ресурсов, см. в разделе [реализация диспетчера ресурсов](http://msdn.microsoft.com/library/81509719-d579-4530-831e-42e1acdef63e).  
+ <xref:System.Transactions> также предоставляет типы для реализации диспетчера ресурсов. Диспетчер транзакций, представленный на <xref:System.Transactions> инфраструктура позволяет неустойчивых ресурсов или зачисление один устойчивый ресурс, чтобы зафиксировать или откатить эффективно. Дополнительные сведения о реализации диспетчера ресурсов, см. в разделе [реализация диспетчера ресурсов](https://msdn.microsoft.com/library/81509719-d579-4530-831e-42e1acdef63e).  
   
  Диспетчер транзакций также прозрачно повышает локальные транзакции до распределенной транзакции, координируя через диспетчер транзакций на основе диска, подобным Координатору, когда дополнительный диспетчер устойчивых ресурсов зачисляется в транзакцию. Инфраструктура <xref:System.Transactions> обеспечивает повышенную производительность двумя основными способами.  
   
--   Динамическое повышение означает, что <xref:System.Transactions> инфраструктуры задействует координатор MSDTC, только если это действительно необходимых для транзакции. В этой области подробно рассматривается в [эскалации управления транзакцией](http://msdn.microsoft.com/library/5b87ae58-8ccf-4b9b-9715-41e4aade89b7) раздела.  
+-   Динамическое повышение означает, что <xref:System.Transactions> инфраструктуры задействует координатор MSDTC, только если это действительно необходимых для транзакции. В этой области подробно рассматривается в [эскалации управления транзакцией](https://msdn.microsoft.com/library/5b87ae58-8ccf-4b9b-9715-41e4aade89b7) раздела.  
   
 -   Повышаемое зачисление. Позволяет ресурсу, например базе данных, стать владельцем транзакции, если он является единственной сущностью, участвующей в транзакции. Более поздние версии, при необходимости <xref:System.Transactions> инфраструктуры можно передать управление транзакцией координатору MSDTC. Это дополнительно уменьшает вероятность использования координатора MSDTC. В этой области подробно рассматривается в [оптимизации с помощью однофазной фиксации и повышаемого однофазного уведомления](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms229980(v=vs.85)) раздела.  
   
@@ -51,15 +43,15 @@
   
  M:System.Transactions.TransactionScope.TransactionScope(System.Transactions.TransactionScopeOption,System.Transactions.TransactionOptions,System.Transactions.EnterpriseServicesInteropOption)  
   
- Дополнительные сведения о различных уровнях доверия, см. в разделе [уровни доверия в доступ к ресурсам](http://msdn.microsoft.com/library/8e45acbc-0d81-4f64-9da7-8f766aebff51).  
+ Дополнительные сведения о различных уровнях доверия, см. в разделе [уровни доверия в доступ к ресурсам](https://msdn.microsoft.com/library/8e45acbc-0d81-4f64-9da7-8f766aebff51).  
   
  Processing\ доступ технологии разработки Core  
   
  Дополнительные сведения об использовании <xref:System.Transactions> пространства имен, вы можете в основной документации [обработки транзакций](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/w97s6fw4(v=vs.85)), расположенный в области «Core разработки приведены доступ обработку\\«в разделе документации по. В частности Дополнительные сведения можно найти в следующих разделах.  
   
- [Функции, предоставляемые пространством имен System.Transactions](http://msdn.microsoft.com/library/99cc5ce0-b7fd-4d78-a553-a3dd3f17ed45)  
+ [Функции, предоставляемые пространством имен System.Transactions](https://msdn.microsoft.com/library/99cc5ce0-b7fd-4d78-a553-a3dd3f17ed45)  
   
- [Реализация диспетчера ресурсов](http://msdn.microsoft.com/library/81509719-d579-4530-831e-42e1acdef63e)  
+ [Реализация диспетчера ресурсов](https://msdn.microsoft.com/library/81509719-d579-4530-831e-42e1acdef63e)  
   
  ]]></format>
     </remarks>

@@ -1,14 +1,6 @@
 <Type Name="Lazy&lt;T&gt;" FullName="System.Lazy&lt;T&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3917f8b0245687c0b89b7089688ce2a062c7a923" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46672091" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Lazy&lt;T&gt;" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Lazy`1&lt;T&gt; extends System.Object" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1fe040656ca9af07674a26a02d9bd1c32874d7b8" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57911256" /></Metadata><TypeSignature Language="C#" Value="public class Lazy&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Lazy`1&lt;T&gt; extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Lazy`1" />
   <TypeSignature Language="VB.NET" Value="Public Class Lazy(Of T)" />
   <TypeSignature Language="C++ CLI" Value="generic &lt;typename T&gt;&#xA;public ref class Lazy" />
@@ -42,22 +34,22 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.Diagnostics.DebuggerDisplay("ThreadSafetyMode={Mode}, IsValueCreated={IsValueCreated}, IsValueFaulted={IsValueFaulted}, Value={ValueForDebugDisplay}")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.System_LazyDebugView`1))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <typeparam name="T">Тип объекта с отложенной инициализацией.</typeparam>
-    <summary>Обеспечивает поддержку отложенной инициализации.</summary>
+    <typeparam name="T">тип объекта, который неактивно инициализируется.</typeparam>
+    <summary>Обеспечивает поддержку неактивной инициализации.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -192,7 +184,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При отложенной инициализации используется конструктор по умолчанию для целевого типа.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При неактивной инициализации используется конструктор целевого типа по умолчанию.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -261,11 +253,11 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="isThreadSafe" Type="System.Boolean" />
+        <Parameter Name="isThreadSafe" Type="System.Boolean" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="isThreadSafe">Значение <see langword="true" />, если необходимо разрешить параллельное использование этого экземпляра несколькими потоками; значение <see langword="false" />, если необходимо разрешить одновременное использование этого экземпляра только одним потоком.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При отложенной инициализации используется конструктор по умолчанию целевого типа и указанный режим инициализации.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При неактивной инициализации используются конструктор целевого типа по умолчанию и заданный режим инициализации.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -325,11 +317,11 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" />
+        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="valueFactory">Делегат, вызываемый для создания значения с отложенной инициализацией при необходимости.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. Когда происходит отложенная инициализация, используется заданная функция инициализации.</summary>
+        <param name="valueFactory">Делегат, вызываемый для получения неактивно инициализированного значения, когда оно требуется.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При неактивной инициализации используется заданная функция инициализации.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -370,7 +362,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="valueFactory" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="valueFactory" /> — <see langword="null" />.</exception>
         <related type="Article" href="~/docs/framework/performance/lazy-initialization.md">Отложенная инициализация</related>
       </Docs>
     </Member>
@@ -404,7 +396,7 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="mode" Type="System.Threading.LazyThreadSafetyMode" />
+        <Parameter Name="mode" Type="System.Threading.LazyThreadSafetyMode" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="mode">Одно из значений перечисления, задающее потокобезопасный режим.</param>
@@ -478,12 +470,17 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="value" Type="T" />
+        <Parameter Name="value" Type="T" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="value">Предварительно инициализированное значение для использования.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />, использующий предварительно инициализированное заданное значение.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+## Remarks
+Экземпляр, созданный этим конструктором используется несколькими потоками одновременно.
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -516,13 +513,13 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" />
-        <Parameter Name="isThreadSafe" Type="System.Boolean" />
+        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="isThreadSafe" Type="System.Boolean" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="valueFactory">Делегат, вызываемый для создания значения с отложенной инициализацией при необходимости.</param>
+        <param name="valueFactory">Делегат, вызываемый для получения неактивно инициализированного значения, когда оно требуется.</param>
         <param name="isThreadSafe">Значение <see langword="true" />, если необходимо разрешить параллельное использование этого экземпляра несколькими потоками; значение <see langword="false" />, если необходимо разрешить одновременное использование этого экземпляра только одним потоком.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. Когда происходит отложенная инициализация, используются заданные функция инициализации и режим инициализации.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />. При неактивной инициализации используются заданные функция и режим инициализации.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -566,7 +563,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="valueFactory" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="valueFactory" /> — <see langword="null" />.</exception>
         <related type="Article" href="~/docs/framework/performance/lazy-initialization.md">Отложенная инициализация</related>
       </Docs>
     </Member>
@@ -600,11 +597,11 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" />
-        <Parameter Name="mode" Type="System.Threading.LazyThreadSafetyMode" />
+        <Parameter Name="valueFactory" Type="System.Func&lt;T&gt;" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="mode" Type="System.Threading.LazyThreadSafetyMode" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="valueFactory">Делегат, вызываемый для создания значения с отложенной инициализацией при необходимости.</param>
+        <param name="valueFactory">Делегат, вызываемый для получения неактивно инициализированного значения, когда оно требуется.</param>
         <param name="mode">Одно из значений перечисления, задающее потокобезопасный режим.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Lazy`1" />, который использует заданную функцию инициализации и потокобезопасный режим.</summary>
         <remarks>
@@ -661,7 +658,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="mode" /> содержит недопустимое значение.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="valueFactory" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="valueFactory" /> — <see langword="null" />.</exception>
         <related type="Article" href="~/docs/framework/performance/lazy-initialization.md">Отложенная инициализация</related>
       </Docs>
     </Member>
@@ -694,6 +691,11 @@
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
+          <AttributeName>get: System.Runtime.TargetedPatchingOptOut("Performance critical to inline across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -751,7 +753,7 @@
       <Parameters />
       <Docs>
         <summary>Создает и возвращает строковое представление свойства <see cref="P:System.Lazy`1.Value" /> данного экземпляра.</summary>
-        <returns>Результат вызова метода <see cref="M:System.Object.ToString" /> для свойства <see cref="P:System.Lazy`1.Value" /> данного экземпляра, если это значение было создано (то есть если свойство <see cref="P:System.Lazy`1.IsValueCreated" /> возвращает значение <see langword="true" />). В противном случае строка, указывающая, что значение не создано.</returns>
+        <returns>Результат вызова метода <see cref="M:System.Object.ToString" /> для свойства <see cref="P:System.Lazy`1.Value" /> данного экземпляра, если это значение было создано (то есть если свойство <see cref="P:System.Lazy`1.IsValueCreated" /> возвращает значение <see langword="true" />). В противном случае возвращается строка, указывающая, что значение не было создано.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -795,7 +797,7 @@
         <AssemblyName>System.Core</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8">
+        <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
           <AttributeName>System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>

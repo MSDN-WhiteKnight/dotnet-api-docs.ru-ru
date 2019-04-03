@@ -1,13 +1,5 @@
 <Type Name="Control+ControlAccessibleObject" FullName="System.Windows.Forms.Control+ControlAccessibleObject">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="47bf1b21fede942e2eb5b8dc1d68f77cfcb0b38b" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50174172" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Control.ControlAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1f1291d3ec28aef79fec03b695106d068916f001" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57960903" /></Metadata><TypeSignature Language="C#" Value="public class Control.ControlAccessibleObject : System.Windows.Forms.AccessibleObject" />
   <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Control/ControlAccessibleObject extends System.Windows.Forms.AccessibleObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Control.ControlAccessibleObject" />
   <TypeSignature Language="VB.NET" Value="Public Class Control.ControlAccessibleObject&#xA;Inherits AccessibleObject" />
@@ -391,9 +383,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="accEvent" Type="System.Windows.Forms.AccessibleEvents" />
-        <Parameter Name="objectID" Type="System.Int32" />
-        <Parameter Name="childID" Type="System.Int32" />
+        <Parameter Name="accEvent" Type="System.Windows.Forms.AccessibleEvents" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="objectID" Type="System.Int32" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="childID" Type="System.Int32" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="accEvent">Объект <see cref="T:System.Windows.Forms.AccessibleEvents" />, о котором требуется уведомлять клиентские приложения со специальными возможностями.</param>
@@ -462,7 +454,7 @@
         <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает родительский объект доступного объекта.</summary>
+        <summary>Возвращает родительский объект доступного объекта.</summary>
         <value>Объект <see cref="T:System.Windows.Forms.AccessibleObject" />, который представляет родительский элемент доступного объекта или <see langword="null" />, если родительский объект отсутствует.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -484,9 +476,18 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>Вызывает событие автоматизации пользовательского интерфейса LiveRegionChanged.</summary>
+        <returns>Значение <see langword="true" />, если операция прошла успешно; в противном случае — значение <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+Этот метод, чтобы быть эффективным, элемент управления должен реализовать <xref:System.Windows.Forms.Automation.IAutomationLiveRegion?displayProperty=nameWithType> интерфейс и его `LiveSetting` свойство должно возвращать либо <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType> или <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=<nameWithType>. Кроме того приложение должно быть компилируются повторно для платформы .NET Framework 4.8 или включить эту функцию, используя переключатели совместимости.
+
+       ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Элемент-владелец не является динамической областью.</exception>
       </Docs>
     </Member>
     <Member MemberName="Role">
@@ -508,7 +509,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает роль данного доступного объекта.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Windows.Forms.AccessibleRole" />.</value>
+        <value>Одно из значений <see cref="T:System.Windows.Forms.AccessibleRole" />.</value>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Windows.Forms.AccessibleObject.Role" />
       </Docs>
@@ -519,7 +520,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.ToString" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
-      <MemberSignature Language="F#" Value="abstract member ToString : unit -&gt; string&#xA;override this.ToString : unit -&gt; string" Usage="controlAccessibleObject.ToString " />
+      <MemberSignature Language="F#" Value="override this.ToString : unit -&gt; string" Usage="controlAccessibleObject.ToString " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>

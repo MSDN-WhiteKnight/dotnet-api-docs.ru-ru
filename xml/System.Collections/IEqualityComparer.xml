@@ -1,13 +1,5 @@
 <Type Name="IEqualityComparer" FullName="System.Collections.IEqualityComparer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bf85913712731223bee4f53b63a611e254f22c2d" />
-    <Meta Name="ms.sourcegitcommit" Value="996ba67625b61917bcf75bfefe6dcb016019c2d8" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/02/2018" />
-    <Meta Name="ms.locfileid" Value="50965115" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IEqualityComparer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1f937bf90e8a6eee03b7354c77839413f1aa7b7f" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58684507" /></Metadata><TypeSignature Language="C#" Value="public interface IEqualityComparer" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEqualityComparer" />
   <TypeSignature Language="DocId" Value="T:System.Collections.IEqualityComparer" />
   <TypeSignature Language="VB.NET" Value="Public Interface IEqualityComparer" />
@@ -31,6 +23,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
@@ -39,7 +32,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Определяет методы, поддерживающие сравнение объектов на предмет равенства.</summary>
+    <summary>Определяет методы для поддержки операций сравнения объектов в отношении равенства.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -85,6 +78,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -97,8 +91,7 @@
         <param name="x">Первый из сравниваемых объектов.</param>
         <param name="y">Второй из сравниваемых объектов.</param>
         <summary>Определяет, равны ли два указанных объекта.</summary>
-        <returns>
-          <see langword="true" />, если указанные объекты равны; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если указанные объекты равны; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -117,12 +110,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметры <paramref name="x" /> и <paramref name="y" /> имеют разные типы и не могут сравниваться друг с другом.</exception>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> Метод является симметричным, рефлексивным и транзитивным. То есть он возвращает <see langword="true" /> Если используется для сравнения объекта с самим собой; <see langword="true" /> для двух объектов <c>x</c> и <c>y</c> в случае <see langword="true" /> для <c>y</c> и <c>x</c>; и <see langword="true" /> для двух объектов <c>x</c> и <c>z</c> в случае <see langword="true" /> для <c>x</c> и <c>y</c> , а также <see langword="true" /> для <c>y</c> и <c>z</c>.  
+        <block subset="none" type="overrides"><para><see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> Метод является симметричным, рефлексивным и транзитивным. То есть он возвращает <see langword="true" /> Если используется для сравнения объекта с самим собой; <see langword="true" /> для двух объектов <paramref name="x" /> и <paramref name="y" /> в случае <see langword="true" /> для <paramref name="y" /> и <paramref name="x" />; и <see langword="true" /> для двух объектов <paramref name="x" /> и <c>z</c> ли <see langword="true" />для <paramref name="x" /> и <paramref name="y" /> , а также <see langword="true" /> для <paramref name="y" /> и <c>z</c>.  
   
-Реализации необходимы, если <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> возвращает <see langword="true" /> для двух объектов <c>x</c> и <c>y</c>, то значение, возвращенное <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> метод <c>x</c> должно быть равно значение, возвращаемое для <c>y</c>.</para>
-        </block>
+Реализации необходимы, если <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> возвращает <see langword="true" /> для двух объектов <paramref name="x" /> и <paramref name="y" />, затем значение, возвращенное <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> метод <paramref name="x" /> должно быть равно значение, возвращаемое для <paramref name="y" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
@@ -151,6 +141,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -180,9 +171,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Тип <paramref name="obj" /> является ссылочным типом и <paramref name="obj" /> — <see langword="null" />.</exception>
-        <block subset="none" type="overrides">
-          <para>Реализации необходимы, если <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> возвращает <see langword="true" /> для двух объектов <c>x</c> и <c>y</c>, то значение, возвращенное <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> метод <c>x</c> должно быть равно значение, возвращаемое для <c>y</c>.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Реализации необходимы, если <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> возвращает <see langword="true" /> для двух объектов <paramref name="x" /> и <paramref name="y" />, затем значение, возвращенное <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> метод <paramref name="x" /> должно быть равно значение, возвращаемое для <paramref name="y" />.</para></block>
         <altmember cref="M:System.Object.GetHashCode" />
         <altmember cref="T:System.Collections.IHashCodeProvider" />
       </Docs>

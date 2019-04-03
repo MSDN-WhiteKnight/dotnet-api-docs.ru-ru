@@ -1,13 +1,5 @@
 <Type Name="NamedPipeServerStream" FullName="System.IO.Pipes.NamedPipeServerStream">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="c40d6947ec66b9e66a0e8ba16ffcdc9847c55695" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48633890" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class NamedPipeServerStream : System.IO.Pipes.PipeStream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8640a8fd0035f2420f4bc5554ceac905119a5718" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57960331" /></Metadata><TypeSignature Language="C#" Value="public sealed class NamedPipeServerStream : System.IO.Pipes.PipeStream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NamedPipeServerStream extends System.IO.Pipes.PipeStream" />
   <TypeSignature Language="DocId" Value="T:System.IO.Pipes.NamedPipeServerStream" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class NamedPipeServerStream&#xA;Inherits PipeStream" />
@@ -51,7 +43,7 @@
 ## Examples  
  Следующий пример демонстрирует способ отправки строки из родительского процесса в дочерний процесс на том же компьютере с помощью именованных каналов. В этом примере создается <xref:System.IO.Pipes.NamedPipeServerStream> объекта в родительском процессе, в <xref:System.IO.Pipes.PipeDirection> значение <xref:System.IO.Pipes.PipeDirection.Out>. Сервер ожидает <xref:System.IO.Pipes.NamedPipeClientStream> объекта в дочерний процесс для подключения к нему. В этом примере, оба процесса находятся на одном компьютере и <xref:System.IO.Pipes.NamedPipeClientStream> объект имеет <xref:System.IO.Pipes.PipeDirection> значение <xref:System.IO.Pipes.PipeDirection.In>. Теперь родительский процесс отправляет предоставленную пользователем строку в дочерний процесс. Строка отображается в консоль.  
   
- Этот пример предназначен для серверного процесса, который использует <xref:System.IO.Pipes.NamedPipeServerStream> класса. В примере весь код, включая код канала клиента и сервера, см. в разделе [как: использование именованных каналов для обмена данными межпроцессное](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md).  
+ Этот пример предназначен для серверного процесса, который использует <xref:System.IO.Pipes.NamedPipeServerStream> класса. В примере весь код, включая код канала клиента и сервера, см. в разделе [как: Использование именованных каналов для сетевого взаимодействия между процессами](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md).  
   
  [!code-csharp[System.IO.Pipes.NamedPipeServerStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeServerStream_Sample1/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.NamedPipeServerStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeServerStream_Sample1/vb/program.vb#01)]  
@@ -132,13 +124,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">В качестве <paramref name="pipeName" /> задано "anonymous".</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -210,16 +201,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -264,7 +254,7 @@
         <param name="pipeName">Имя канала.</param>
         <param name="direction">Одно из значений перечисления, определяющее направление канала.</param>
         <param name="maxNumberOfServerInstances">Максимальное число экземпляров сервера с одинаковыми именами. Для этого значения можно передать <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Pipes.NamedPipeServerStream" /> с заданным именем канала, направлением и максимальным количеством экземпляров сервера.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Pipes.NamedPipeServerStream" /> с заданными именем и направлением канала, а также максимальным количеством экземпляров сервера.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -287,13 +277,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
 Требуется неотрицательное число.  
@@ -305,10 +294,9 @@
   
 -или- 
 Права доступа ограничены флагами <see cref="F:System.IO.Pipes.PipeAccessRights.ChangePermissions" />, <see cref="F:System.IO.Pipes.PipeAccessRights.TakeOwnership" /> и <see cref="F:System.IO.Pipes.PipeAccessRights.AccessSystemSecurity" />.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -351,22 +339,18 @@
       </Parameters>
       <Docs>
         <param name="direction">Одно из значений перечисления, определяющее направление канала.</param>
-        <param name="isAsync">
-          <see langword="true" />, если дескриптор открыт асинхронно, в противном случае — <see langword="false" />.</param>
-        <param name="isConnected">
-          <see langword="true" />, если канал подключен, в противном случае — <see langword="false" />.</param>
+        <param name="isAsync"><see langword="true" />, если дескриптор открыт асинхронно, в противном случае — <see langword="false" />.</param>
+        <param name="isConnected"><see langword="true" />, если канал подключен, в противном случае — <see langword="false" />.</param>
         <param name="safePipeHandle">Безопасный дескриптор для канала, который будет инкапсулироваться данным объектом <see cref="T:System.IO.Pipes.NamedPipeServerStream" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Pipes.NamedPipeServerStream" /> на основе указанного дескриптора канала.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="safePipeHandle" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Неправильный дескриптор <paramref name="safePipeHandle" />.</exception>
-        <exception cref="T:System.IO.IOException">
-          <paramref name="safePipeHandle" /> не является допустимым дескриптором канала.  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="safePipeHandle" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="safePipeHandle" /> не является допустимым дескриптором.</exception>
+        <exception cref="T:System.IO.IOException"><paramref name="safePipeHandle" /> не является допустимым дескриптором канала.  
   
 -или- 
-Превышено максимальное количество экземпляров сервера.</exception>
+Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -432,19 +416,18 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
- <paramref name="maxNumberofServerInstances" /> меньше -1 или больше 254 (-1 означает <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />)</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />).</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -510,21 +493,20 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
  Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />). 
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -592,24 +574,23 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
  Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />). 
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Значение <paramref name="inBufferSize" /> отрицательно.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="inBufferSize" /> является отрицательным значением.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -641,14 +622,14 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
-        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" />
-        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="inBufferSize" Type="System.Int32" />
-        <Parameter Name="outBufferSize" Type="System.Int32" />
-        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" />
+        <Parameter Name="pipeName" Type="System.String" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" Index="2" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" Index="3" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="4" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inBufferSize" Type="System.Int32" Index="5" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="outBufferSize" Type="System.Int32" Index="6" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" Index="7" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pipeName">Имя канала.</param>
@@ -672,24 +653,23 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
  Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />). 
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Значение <paramref name="inBufferSize" /> отрицательно.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="inBufferSize" /> является отрицательным значением.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -721,15 +701,15 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
-        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" />
-        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="inBufferSize" Type="System.Int32" />
-        <Parameter Name="outBufferSize" Type="System.Int32" />
-        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="pipeName" Type="System.String" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" Index="2" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" Index="3" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="4" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inBufferSize" Type="System.Int32" Index="5" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="outBufferSize" Type="System.Int32" Index="6" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" Index="7" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="8" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pipeName">Имя канала.</param>
@@ -750,27 +730,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
  Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />). 
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Значение <paramref name="inBufferSize" /> отрицательно.  
+ <paramref name="inBufferSize" /> является отрицательным значением.  
   
 -или- 
- Параметр <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -802,16 +781,16 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
-        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" />
-        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="inBufferSize" Type="System.Int32" />
-        <Parameter Name="outBufferSize" Type="System.Int32" />
-        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
-        <Parameter Name="additionalAccessRights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="pipeName" Type="System.String" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="maxNumberOfServerInstances" Type="System.Int32" Index="2" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="transmissionMode" Type="System.IO.Pipes.PipeTransmissionMode" Index="3" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="4" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inBufferSize" Type="System.Int32" Index="5" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="outBufferSize" Type="System.Int32" Index="6" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeSecurity" Type="System.IO.Pipes.PipeSecurity" Index="7" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="8" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="additionalAccessRights" Type="System.IO.Pipes.PipeAccessRights" Index="9" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pipeName">Имя канала.</param>
@@ -826,30 +805,29 @@
         <param name="additionalAccessRights">Одно из значений перечисления, задающее права доступа для канала.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Pipes.NamedPipeServerStream" /> с заданным именем канала, направлением канала, максимальным количеством экземпляров сервера, режимом передачи, параметрами канала, рекомендуемыми размерами входного и выходного буферов, режимом безопасности канала, режимом наследования и правами доступа к каналу.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="pipeName" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="pipeName" /> является пустой строкой.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pipeName" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> представляет собой строку нулевой длины.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Для <paramref name="pipeName" /> задано значение anonymous.  
   
 -или- 
- Параметр <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
+ <paramref name="direction" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeDirection" />.  
   
 -или- 
  Для параметра <paramref name="maxNumberofServerInstances" /> задано значение меньше -1 или больше 254 (значение -1 представляет собой <see cref="F:System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances" />). 
 -или- 
- Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
+ <paramref name="options" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeOptions" />.  
   
 -или- 
- Значение <paramref name="inBufferSize" /> отрицательно.  
+ <paramref name="inBufferSize" /> является отрицательным значением.  
   
 -или- 
- Параметр <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.  
+ <paramref name="inheritability" /> не является допустимым значением <see cref="T:System.IO.HandleInheritability" />.  
   
 -или- 
- Параметр <paramref name="additionalAccessRights" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeAccessRights" />.</exception>
-        <exception cref="T:System.NotSupportedException">Параметр <paramref name="pipeName" /> содержит двоеточие (":").</exception>
+ <paramref name="additionalAccessRights" /> не является допустимым значением <see cref="T:System.IO.Pipes.PipeAccessRights" />.</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="pipeName" /> содержит двоеточие (":").</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется неподдерживаемая операционная система: Windows Millennium Edition, Windows 98 или Windows 95.</exception>
-        <exception cref="T:System.IO.IOException">Превышено максимальное количество экземпляров сервера.</exception>
+        <exception cref="T:System.IO.IOException">Превышено максимальное число экземпляров сервера.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -885,8 +863,8 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="callback" Type="System.AsyncCallback" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="callback">Метод, который нужно вызывать, когда клиент подключается к объекту <see cref="T:System.IO.Pipes.NamedPipeServerStream" />.</param>
@@ -999,7 +977,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="asyncResult">Отложенный асинхронный запрос.</param>
@@ -1012,8 +990,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="asyncResult" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Канал не был открыт асинхронно.  
   
 -или- 
@@ -1193,7 +1170,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="impersonationWorker" Type="System.IO.Pipes.PipeStreamImpersonationWorker" />
+        <Parameter Name="impersonationWorker" Type="System.IO.Pipes.PipeStreamImpersonationWorker" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="impersonationWorker">Делегат, определяющий метод, который необходимо вызвать.</param>
@@ -1226,7 +1203,7 @@
         <exception cref="T:System.IO.IOException">Подключение канала разорвано.  
   
 -или- 
-Произошла ошибка ввода-вывода.</exception>
+Ошибка ввода/вывода.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermissionFlag">возможность управлять объектом участника. Действие по обеспечению безопасности: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />. Связанное перечисление: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" /></permission>
       </Docs>
     </Member>
@@ -1365,7 +1342,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">Токен для отслеживания запросов отмены.</param>

@@ -1,13 +1,5 @@
 <Type Name="ConstructorBuilder" FullName="System.Reflection.Emit.ConstructorBuilder">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="dcf145caf6e88338768b3d5a5626a2701dca1bb4" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48689921" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ConstructorBuilder : System.Reflection.ConstructorInfo, System.Runtime.InteropServices._ConstructorBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="075ce0704a47301386ca81da6ff5cbe89d3bd03c" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460582" /></Metadata><TypeSignature Language="C#" Value="public sealed class ConstructorBuilder : System.Reflection.ConstructorInfo, System.Runtime.InteropServices._ConstructorBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ConstructorBuilder extends System.Reflection.ConstructorInfo implements class System.Runtime.InteropServices._ConstructorBuilder" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.ConstructorBuilder" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ConstructorBuilder&#xA;Inherits ConstructorInfo&#xA;Implements _ConstructorBuilder" />
@@ -25,6 +17,9 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Reflection.ConstructorInfo</BaseTypeName>
@@ -88,9 +83,12 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Reflection.Emit.ConstructorBuilder" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -112,6 +110,9 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
@@ -121,8 +122,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
-        <Parameter Name="pset" Type="System.Security.PermissionSet" />
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="pset" Type="System.Security.PermissionSet" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="action">Выполняемое действие безопасности, например Demand, Assert и т. д.</param>
@@ -148,13 +149,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="action" /> является недопустимым (RequestMinimum, RequestOptional и RequestRefuse являются недопустимыми).</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="action" /> является недопустимым (RequestMinimum, RequestOptional и RequestRefuse являются недопустимыми).</exception>
         <exception cref="T:System.InvalidOperationException">Содержащий тип был создан ранее с помощью <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />.  
   
-- или - 
+-или- 
 Набор разрешений <paramref name="pset" /> содержит действие, добавленное ранее с помощью <see langword="AddDeclarativeSecurity" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="pset" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="pset" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Attributes">
@@ -178,12 +178,15 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodAttributes</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Извлекает атрибуты для данного конструктора.</summary>
-        <value>Возвращает атрибуты для данного конструктора.</value>
+        <summary>Получает атрибуты для этого конструктора.</summary>
+        <value>Атрибуты для данного конструктора.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -218,12 +221,15 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.CallingConventions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение <see cref="T:System.Reflection.CallingConventions" />, которое зависит от того, является ли объявляющий тип универсальным.</summary>
-        <value>Значение <see cref="F:System.Reflection.CallingConventions.HasThis" />, если объявляющий тип является универсальным; в противном случае — значение <see cref="F:System.Reflection.CallingConventions.Standard" />.</value>
+        <summary>Возвращает значение <see cref="T:System.Reflection.CallingConventions" />, которое зависит от того, является ли объявленный тип универсальным.</summary>
+        <value><see cref="F:System.Reflection.CallingConventions.HasThis" />, если объявляемый тип является универсальным; в противном случае — <see cref="F:System.Reflection.CallingConventions.Standard" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -248,12 +254,15 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Извлекает ссылку на объект <see cref="T:System.Type" /> для типа, который объявляет этот член.</summary>
-        <value>Возвращает объект <see cref="T:System.Type" /> для типа, который объявляет этот член.</value>
+        <summary>Получает ссылку на объект <see cref="T:System.Type" /> для типа, который объявляет этот элемент.</summary>
+        <value>Тип, который объявляет этот член.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -291,6 +300,9 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Emit.ParameterBuilder</ReturnType>
       </ReturnValue>
@@ -300,11 +312,11 @@
         <Parameter Name="strParamName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="iSequence">Позиция параметра в списке параметров. Параметры индексируются, начиная с номера 1 для первого параметра.</param>
+        <param name="iSequence">Позиция параметра в списке параметров. Параметры индексируются так, что первый параметр имеет номер 1.</param>
         <param name="attributes">Атрибуты параметра.</param>
         <param name="strParamName">Имя параметра. Имя может быть пустой строкой.</param>
         <summary>Определяет параметр данного конструктора.</summary>
-        <returns>Возвращает объект <see langword="ParameterBuilder" />, представляющий новый параметр этого конструктора.</returns>
+        <returns>Объект, представляющий новый параметр этого конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -313,8 +325,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="iSequence" /> меньше нуля или больше, чем число параметров конструктора.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="iSequence" /> меньше 0 (нуля) или больше, чем число параметров конструктора.</exception>
         <exception cref="T:System.InvalidOperationException">Содержащий тип был создан с помощью <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />.</exception>
       </Docs>
     </Member>
@@ -325,7 +336,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Возвращает настраиваемые атрибуты, определенные для этого конструктора.</summary>
+        <summary>Возвращает пользовательские атрибуты, определенные для данного конструктора.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetCustomAttributes">
@@ -348,16 +359,19 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="inherit">Управляет наследованием настраиваемых атрибутов базового класса. Этот параметр не учитывается.</param>
-        <summary>Возвращает все настраиваемые атрибуты, определенные для этого конструктора.</summary>
-        <returns>Возвращает массив объектов, предоставляющих все пользовательские атрибуты конструктора, который в свою очередь представлен экземпляром объекта <see cref="T:System.Reflection.Emit.ConstructorBuilder" />.</returns>
+        <param name="inherit">Управляет наследованием пользовательских атрибутов базового класса. Этот параметр не учитывается.</param>
+        <summary>Возвращает все пользовательские атрибуты, определенные для данного конструктора.</summary>
+        <returns>Массив объектов, представляющий все пользовательские атрибуты конструктора, который представлен этим экземпляром <see cref="T:System.Reflection.Emit.ConstructorBuilder" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -391,18 +405,21 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="attributeType">Тип настраиваемого атрибута.</param>
-        <param name="inherit">Управляет наследованием настраиваемых атрибутов базового класса. Этот параметр не учитывается.</param>
-        <summary>Возвращает настраиваемые атрибуты, определяемые заданным типом.</summary>
-        <returns>Возвращает массив типа <see cref="T:System.Object" /> представляющий атрибуты данного конструктора.</returns>
+        <param name="attributeType">Тип пользовательского атрибута.</param>
+        <param name="inherit">Управляет наследованием пользовательских атрибутов базового класса. Этот параметр не учитывается.</param>
+        <summary>Возвращает пользовательские атрибуты, идентифицируемые заданным типом.</summary>
+        <returns>Массив объектов, представляющий атрибуты этого конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -447,13 +464,16 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Получает <see cref="T:System.Reflection.Emit.ILGenerator" /> для этого конструктора.</summary>
-        <returns>Возвращает объект <see cref="T:System.Reflection.Emit.ILGenerator" /> для этого конструктора.</returns>
+        <summary>Получает объект <see cref="T:System.Reflection.Emit.ILGenerator" /> для данного конструктора.</summary>
+        <returns>Объект <see cref="T:System.Reflection.Emit.ILGenerator" /> для этого конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -471,10 +491,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Конструктор является конструктором по умолчанию.  
+        <exception cref="T:System.InvalidOperationException">Конструктор используется по умолчанию.  
   
-- или - 
-У конструктора есть флаги <see cref="T:System.Reflection.MethodAttributes" /> или <see cref="T:System.Reflection.MethodImplAttributes" />, указывающие, что он не должен иметь тело метода.</exception>
+-или- 
+Конструктор содержит флаги <see cref="T:System.Reflection.MethodAttributes" /> или <see cref="T:System.Reflection.MethodImplAttributes" />, которые указывают. что конструктор не должен содержать основной метод текста.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetILGenerator">
@@ -497,17 +517,19 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="streamSize" Type="System.Int32" />
+        <Parameter Name="streamSize" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="streamSize">Размер потока MSIL (в байтах).</param>
-        <summary>Получает объект <see cref="T:System.Reflection.Emit.ILGenerator" /> с указанным размером потока MSIL, который может использоваться для построения тела метода для данного конструктора.</summary>
-        <returns>
-          <see cref="T:System.Reflection.Emit.ILGenerator" /> для этого конструктора.</returns>
+        <param name="streamSize">Размер потока языка MSIL в байтах.</param>
+        <summary>Возвращает объект <see cref="T:System.Reflection.Emit.ILGenerator" /> с указанным размером потока MSIL, который может быть использован для построения основного текста метода для этого конструктора.</summary>
+        <returns>Объект <see cref="T:System.Reflection.Emit.ILGenerator" /> для данного конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -516,10 +538,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Конструктор является конструктором по умолчанию.  
+        <exception cref="T:System.InvalidOperationException">Конструктор используется по умолчанию.  
   
-- или - 
-У конструктора есть флаги <see cref="T:System.Reflection.MethodAttributes" /> или <see cref="T:System.Reflection.MethodImplAttributes" />, указывающие, что он не должен иметь тело метода.</exception>
+-или- 
+Конструктор содержит флаги <see cref="T:System.Reflection.MethodAttributes" /> или <see cref="T:System.Reflection.MethodImplAttributes" />, которые указывают. что конструктор не должен содержать основной метод текста.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetMethodImplementationFlags">
@@ -542,13 +564,16 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает флаги реализации метода для этого конструктора.</summary>
-        <returns>Флаги реализации метода для этого конструктора.</returns>
+        <summary>Возвращает флаги реализации метода для данного конструктора.</summary>
+        <returns>Флаги реализации метода для данного конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -581,13 +606,16 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Module</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает ссылку на модуль, содержащий этот конструктор.</summary>
-        <returns>Модуль, содержащий этот конструктор.</returns>
+        <summary>Возвращает ссылку на модуль, который содержит данный конструктор.</summary>
+        <returns>Модуль, содержащий данный конструктор.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -623,13 +651,16 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает параметры этого конструктора.</summary>
-        <returns>Возвращает массив объектов <see cref="T:System.Reflection.ParameterInfo" />, представляющих параметры этого конструктора.</returns>
+        <summary>Возвращает параметры данного конструктора.</summary>
+        <returns>Массив, представляющий параметры этого конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -647,10 +678,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> не был вызван для этого типа конструктора в платформе .NET Framework версий 1.0 и 1.1.</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> не был вызван для этого типа конструктора в платформе .NET Framework версии 2.0.</exception>
+        <exception cref="T:System.InvalidOperationException">Метод <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> не был вызван для этого типа конструктора в платформе .NET Framework версии 1.0 и 1.1.</exception>
+        <exception cref="T:System.NotSupportedException">Метод <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> не был вызван для этого типа конструктора в платформе .NET Framework версии 2.0.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetToken">
@@ -671,13 +700,16 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
         <summary>Возвращает объект <see cref="T:System.Reflection.Emit.MethodToken" />, представляющий токен данного конструктора.</summary>
-        <returns>Возвращает объект <see cref="T:System.Reflection.Emit.MethodToken" /> данного конструктора.</returns>
+        <returns><see cref="T:System.Reflection.Emit.MethodToken" /> этого конструктора.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -713,12 +745,15 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает значение, указывающее необходимость инициализации локальных переменных в этом конструкторе нулями.</summary>
-        <value>Чтение и запись. Получает или задает значение, указывающее необходимость инициализации локальных переменных в этом конструкторе нулями.</value>
+        <summary>Возвращает или задает признак, показывающий, инициализируются локальные переменные нулем или нет.</summary>
+        <value>Чтение и запись. Возвращает или задает признак, показывающий, инициализируются локальные переменные нулем или нет.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -751,22 +786,25 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
-        <Parameter Name="binder" Type="System.Reflection.Binder" />
-        <Parameter Name="parameters" Type="System.Object[]" />
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="invokeAttr">Это должен быть одноразрядный флаг из объекта <see cref="T:System.Reflection.BindingFlags" />, например InvokeMethod, NonPublic и др.</param>
-        <param name="binder">Объект, позволяющий осуществлять привязку, приведение типов аргументов, вызов элементов, а также поиск объектов <see langword="MemberInfo" /> с помощью отражения. Если связыватель имеет значение <see langword="null" />, используется связыватель по умолчанию. См. раздел <see cref="T:System.Reflection.Binder" />.</param>
-        <param name="parameters">Список аргументов. Это массив аргументов с тем же числом, порядком и типом, что и параметры вызываемого конструктора. При отсутствии параметров — <see langword="null" />.</param>
-        <param name="culture">Экземпляр объекта <see cref="T:System.Globalization.CultureInfo" />, используемого для управления приведением типов. Если его значением является null, для текущего потока используется <see cref="T:System.Globalization.CultureInfo" />. Например, необходимо преобразовывать объект <see cref="T:System.String" />, представляющий 1000, в числовой объект <see cref="T:System.Double" />, поскольку в разных языках и региональных параметрах 1000 представляется по-разному.</param>
-        <summary>Вызывает конструктор, динамически отраженный этим экземпляром для данного объекта, передавая указанные параметры и учитывая ограничения данного модуля привязки.</summary>
-        <returns>Возвращает объект <see cref="T:System.Object" />, являющийся значением, возвращаемым вызванным конструктором.</returns>
+        <param name="binder">Объект, позволяющий осуществлять привязку, приведение типов аргументов, вызов элементов, а также поиск объектов <see langword="MemberInfo" /> с помощью отражения. Если модуль привязки имеет значение <see langword="null" />, используется модуль привязки по умолчанию. См. раздел <see cref="T:System.Reflection.Binder" />.</param>
+        <param name="parameters">Список аргументов. Массив аргументов, число, порядок и тип которых соответствует параметрам вызываемого конструктора. При отсутствии параметров — <see langword="null" />.</param>
+        <param name="culture">Экземпляр объекта <see cref="T:System.Globalization.CultureInfo" />, используемого для управления приведением типов. Если параметр имеет значение NULL, для текущего потока используется <see cref="T:System.Globalization.CultureInfo" />. Например, необходимо преобразовывать объект <see cref="T:System.String" />, представляющий 1000, в числовой объект <see cref="T:System.Double" />, поскольку в разных языках и региональных параметрах 1000 представляется по-разному.</param>
+        <summary>Динамически вызывает конструктор, представленный этим экземпляром для данного объекта, передавая указанные параметры и учитывая ограничения данного модуля привязки.</summary>
+        <returns>Значение, возвращаемое вызванным конструктором.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -804,23 +842,25 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
-        <Parameter Name="binder" Type="System.Reflection.Binder" />
-        <Parameter Name="parameters" Type="System.Object[]" />
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="obj">Объект, который необходимо повторно инициализировать.</param>
+        <param name="obj">Объект, который нужно заново инициализировать.</param>
         <param name="invokeAttr">Одно из возможных значений <see langword="BindingFlags" />, указывающее требуемый тип связывания.</param>
-        <param name="binder">
-          <see langword="Binder" />, определяющий набор свойств и разрешающий связывание, приведение типов аргументов и вызов элементов с помощью отражения. Если <c>binder</c> имеет значение <see langword="null" />, то используется Binder.DefaultBinding.</param>
-        <param name="parameters">Список аргументов. Это массив аргументов с тем же числом, порядком и типом, что и параметры вызываемого конструктора. Если параметры отсутствуют, это должна быть NULL-ссылка (<see langword="Nothing" /> в Visual Basic).</param>
-        <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />, используемый для управления приведением типов. Если его значением является null, для текущего потока используется <see cref="T:System.Globalization.CultureInfo" />.</param>
+        <param name="binder"><see langword="Binder" />, определяющий набор свойств и разрешающий связывание, приведение типов аргументов и вызов элементов с помощью отражения. Если <paramref name="binder" /> имеет значение <see langword="null" />, используется Binder.DefaultBinding.</param>
+        <param name="parameters">Список аргументов. Массив аргументов, число, порядок и тип которых соответствует параметрам вызываемого конструктора. Если параметры отсутствуют, это должна быть NULL-ссылка (<see langword="Nothing" /> в Visual Basic).</param>
+        <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />, используемый для управления приведением типов. Если параметр имеет значение NULL, для текущего потока используется <see cref="T:System.Globalization.CultureInfo" />.</param>
         <summary>Динамически вызывает отражаемый данным экземпляром конструктор с указанными аргументами и с учетом ограничений, которые задает <see langword="Binder" />.</summary>
         <returns>Экземпляр класса, связанный с конструктором.</returns>
         <remarks>
@@ -860,19 +900,21 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="attributeType">Тип настраиваемого атрибута.</param>
-        <param name="inherit">Управляет наследованием настраиваемых атрибутов базового класса. Этот параметр не учитывается.</param>
-        <summary>Проверяет, определен ли заданный тип настраиваемого атрибута.</summary>
-        <returns>
-          <see langword="true" />, если указанный пользовательский атрибут определен; в противном случае — <see langword="false" />.</returns>
+        <param name="attributeType">Тип пользовательского атрибута.</param>
+        <param name="inherit">Управляет наследованием пользовательских атрибутов базового класса. Этот параметр не учитывается.</param>
+        <summary>Проверяет, определен ли указанный пользовательский атрибут.</summary>
+        <returns><see langword="true" />, если указанный пользовательский атрибут определен; в противном случае — <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -904,14 +946,17 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.RuntimeMethodHandle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Извлекает внутренний маркер метода. Используйте этот дескриптор для доступа к дескриптору базовых метаданных.</summary>
-        <value>Возвращает внутренний дескриптор метода. Используйте этот дескриптор для доступа к дескриптору базовых метаданных.</value>
+        <summary>Получает внутренний маркер метода. Этот дескриптор используется для доступа к основному дескриптору метаданных.</summary>
+        <value>Внутренний дескриптор метода. Этот дескриптор используется для доступа к основному дескриптору метаданных.</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.NotSupportedException">Это свойство не поддерживается для этого класса.</exception>
+        <exception cref="T:System.NotSupportedException">Для данного класса это свойство не поддерживается.</exception>
       </Docs>
     </Member>
     <Member MemberName="MethodImplementationFlags">
@@ -929,12 +974,15 @@
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Получает флаги <see cref="T:System.Reflection.MethodImplAttributes" />, указывающие атрибуты реализации методы.</summary>
+        <value>Флаги реализации метода.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -957,11 +1005,14 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Module</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает динамический модуль, в котором определен этот конструктор.</summary>
+        <summary>Возвращает динамический модуль, в котором определяется этот конструктор.</summary>
         <value>Объект <see cref="T:System.Reflection.Module" />, который представляет динамический модуль, в котором определен этот конструктор.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -995,12 +1046,15 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает имя конструктора.</summary>
-        <value>Возвращает имя конструктора.</value>
+        <summary>Извлекает имя данного конструктора.</summary>
+        <value>Имя данного конструктора.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1035,12 +1089,15 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Хранит ссылку на объект <see cref="T:System.Type" />, из которого был получен данный объект.</summary>
-        <value>Возвращает объект <see langword="Type" />, из которого был получен данный объект.</value>
+        <value><see langword="Type" /> Объект, из которого был получен данный объект.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1070,6 +1127,9 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinmac-3.0">
           <AttributeName>System.Obsolete</AttributeName>
@@ -1082,7 +1142,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает <see langword="null" />.</summary>
+        <summary>Получает <see langword="null" />.</summary>
         <value>Возвращает <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1125,6 +1185,9 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1146,7 +1209,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="customBuilder" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="customBuilder" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SetCustomAttribute">
@@ -1170,6 +1233,9 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
@@ -1188,12 +1254,12 @@
       <Docs>
         <param name="con">Конструктор настраиваемого атрибута.</param>
         <param name="binaryAttribute">Большой двоичный объект байтов, представляющий атрибуты.</param>
-        <summary>Задает настраиваемый атрибут с помощью большого двоичного объекта настраиваемых атрибутов.</summary>
+        <summary>Устанавливает пользовательский атрибут с помощью большого двоичного объекта пользовательских атрибутов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В спецификации метаданных в документации ECMA раздел II, Дополнительные сведения см. в разделе о том, как форматировать `binaryAttribute`. Документация доступна в Интернете; см. страницы [ECMAC# и стандарты Common Language Infrastructure](http://go.microsoft.com/fwlink/?LinkID=99212) на сайте MSDN и [Стандарт ECMA-335 — общеязыковая инфраструктура (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) на международном веб-сайте организации ECMA.  
+ В спецификации метаданных в документации ECMA раздел II, Дополнительные сведения см. в разделе о том, как форматировать `binaryAttribute`. Документация доступна в Интернете; см. страницы [ECMAC# и стандарты Common Language Infrastructure](https://go.microsoft.com/fwlink/?LinkID=99212) на сайте MSDN и [Стандарт ECMA-335 — общеязыковая инфраструктура (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) на международном веб-сайте организации ECMA.  
   
    
   
@@ -1206,7 +1272,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="con" /> или <paramref name="binaryAttribute" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="con" /> или <paramref name="binaryAttribute" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="SetImplementationFlags">
@@ -1230,6 +1296,9 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1238,7 +1307,7 @@
       </Parameters>
       <Docs>
         <param name="attributes">Флаги реализации метода.</param>
-        <summary>Задает флаги реализации метода для этого конструктора.</summary>
+        <summary>Устанавливает флаги реализации метода для данного конструктора.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1270,36 +1339,38 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="il" Type="System.Byte[]" />
-        <Parameter Name="maxStack" Type="System.Int32" />
-        <Parameter Name="localSignature" Type="System.Byte[]" />
-        <Parameter Name="exceptionHandlers" Type="System.Collections.Generic.IEnumerable&lt;System.Reflection.Emit.ExceptionHandler&gt;" />
-        <Parameter Name="tokenFixups" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+        <Parameter Name="il" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="maxStack" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="localSignature" Type="System.Byte[]" Index="2" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="exceptionHandlers" Type="System.Collections.Generic.IEnumerable&lt;System.Reflection.Emit.ExceptionHandler&gt;" Index="3" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="tokenFixups" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" Index="4" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="il">Массив, содержащий допустимые инструкции MSIL.</param>
-        <param name="maxStack">Максимальная глубина оценки стека.</param>
+        <param name="maxStack">Максимальная глубина вычисления стека.</param>
         <param name="localSignature">Массив байтов, содержащий сериализованную структуру локальной переменной. Укажите значение <see langword="null" />, если у конструктора отсутствуют локальные переменные.</param>
         <param name="exceptionHandlers">Коллекция, содержащая обработчики исключений для конструктора. Укажите значение <see langword="null" />, если у конструктора отсутствуют обработчики исключений.</param>
-        <param name="tokenFixups">Коллекция значений, представляющих смещения в <c>il</c>, каждое из которых задает начало токена, который может быть изменен. Укажите значение <see langword="null" />, если у конструктора отсутствуют токены, которые требуется изменить.</param>
-        <summary>Создает тело конструктора с использованием указанного массива байтов инструкций промежуточного языка Майкрософт (MSIL).</summary>
+        <param name="tokenFixups">Коллекция значений, представляющих смещения в <paramref name="il" />, каждое из которых определяет начало токена, который может быть изменен. Укажите значение <see langword="null" />, если у конструктора отсутствуют токены, которые требуется изменить.</param>
+        <summary>Создает тело конструктора с помощью указанного массива байтов, содержащего инструкции языка MSIL.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="il" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="maxStack" /> является отрицательным значением.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="il" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxStack" /> является отрицательным значением.  
   
-- или - 
+-или- 
 Один из <paramref name="exceptionHandlers" /> указывает смещение за пределами <paramref name="il" />.  
   
-- или - 
+-или- 
 Один из <paramref name="tokenFixups" /> задает смещение за пределами массива <paramref name="il" />.</exception>
         <exception cref="T:System.InvalidOperationException">Содержащий тип был создан ранее с помощью метода <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />.  
   
-- или - 
+-или- 
 Этот метод был вызван ранее в данном объекте <see cref="T:System.Reflection.Emit.ConstructorBuilder" />.</exception>
       </Docs>
     </Member>
@@ -1321,17 +1392,20 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="data" Type="System.Byte[]" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Имя пользовательского атрибута.</param>
         <param name="data">Значение пользовательского атрибута.</param>
-        <summary>Задает пользовательский атрибут этого конструктора, связанный с символьными данными.</summary>
+        <summary>Устанавливает пользовательский атрибут конструктора, связанный с символьной информацией.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1346,8 +1420,8 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Содержащий тип был создан с помощью <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />.  
   
-- или - 
-Для модуля не определен модуль записи символов. Например, модуль не является отладочным.</exception>
+-или- 
+Для модуля не определен интерфейс записи символов. Например, модуль не является отладочным.</exception>
       </Docs>
     </Member>
     <Member MemberName="Signature">
@@ -1368,12 +1442,15 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Извлекает сигнатуру поля в виде строки.</summary>
-        <value>Возвращает сигнатуру поля.</value>
+        <summary>Извлекает подпись поля в виде строки.</summary>
+        <value>Сигнатура поля.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1397,15 +1474,18 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="rgszNames" Type="System.IntPtr" />
-        <Parameter Name="cNames" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="rgDispId" Type="System.IntPtr" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="cNames" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="riid">Зарезервировано для будущего использования. Должно быть равным IID_NULL.</param>
@@ -1445,13 +1525,16 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="iTInfo" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+        <Parameter Name="iTInfo" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="iTInfo">Возвращаемые сведения о типе.</param>
@@ -1489,11 +1572,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" />
+        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pcTInfo">Указатель, по которому записывается число предоставляемых объектом интерфейсов, предназначенных для получения сведений о типе.</param>
@@ -1529,18 +1615,21 @@
       <AssemblyInfo>
         <AssemblyName>System.Reflection.Emit</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dispIdMember" Type="System.UInt32" />
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="wFlags" Type="System.Int16" />
-        <Parameter Name="pDispParams" Type="System.IntPtr" />
-        <Parameter Name="pVarResult" Type="System.IntPtr" />
-        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
-        <Parameter Name="puArgErr" Type="System.IntPtr" />
+        <Parameter Name="dispIdMember" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="wFlags" Type="System.Int16" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" Index="6" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" Index="7" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="dispIdMember">Идентифицирует член.</param>
@@ -1584,13 +1673,16 @@
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает этот экземпляр <see cref="T:System.Reflection.Emit.ConstructorBuilder" /> в виде <see cref="T:System.String" />.</summary>
-        <returns>Возвращает строку <see cref="T:System.String" />, содержащую имя, атрибуты и исключения данного конструктора, за которой следует текущий поток MSIL.</returns>
+        <summary>Возвращает экземпляр объекта <see cref="T:System.Reflection.Emit.ConstructorBuilder" /> в виде объекта <see cref="T:System.String" />.</summary>
+        <returns>Строка, содержащая имя, атрибуты и исключения этого конструктора, за которой следует текущий поток MSIL.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

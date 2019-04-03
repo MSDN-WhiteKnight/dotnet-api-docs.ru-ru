@@ -1,13 +1,5 @@
 <Type Name="EventBindingService" FullName="System.ComponentModel.Design.EventBindingService">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="bd89da6364bd5888c2d77619aa1e137fe468661b" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48697557" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class EventBindingService : System.ComponentModel.Design.IEventBindingService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f360f69528699ec15d4f659003285be62b276be8" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58718779" /></Metadata><TypeSignature Language="C#" Value="public abstract class EventBindingService : System.ComponentModel.Design.IEventBindingService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EventBindingService extends System.Object implements class System.ComponentModel.Design.IEventBindingService" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.EventBindingService" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class EventBindingService&#xA;Implements IEventBindingService" />
@@ -66,7 +58,7 @@
         <param name="provider">Поставщик службы, из которого класс <see cref="T:System.ComponentModel.Design.EventBindingService" /> будет направлять запрос службам.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.ComponentModel.Design.EventBindingService" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="provider" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="provider" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.IServiceProvider" />
         <altmember cref="T:System.ComponentModel.EventDescriptor" />
       </Docs>
@@ -79,6 +71,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract System::String ^ CreateUniqueMethodName(System::ComponentModel::IComponent ^ component, System::ComponentModel::EventDescriptor ^ e);" />
       <MemberSignature Language="F#" Value="abstract member CreateUniqueMethodName : System.ComponentModel.IComponent * System.ComponentModel.EventDescriptor -&gt; string" Usage="eventBindingService.CreateUniqueMethodName (component, e)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.CreateUniqueMethodName(System.ComponentModel.IComponent,System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -104,7 +99,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="component" /> или <paramref name="e" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="component" /> или <paramref name="e" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.IServiceProvider" />
         <altmember cref="T:System.ComponentModel.EventDescriptor" />
         <altmember cref="T:System.ComponentModel.IComponent" />
@@ -140,7 +135,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Некоторые реализации могут предназначены для удаления обработчика событий, при использовании нет событий. Путем переопределения <xref:System.ComponentModel.Design.EventBindingService.UseMethod%2A> и <xref:System.ComponentModel.Design.EventBindingService.FreeMethod%2A>, реализация может определить, когда метод больше не нужны.  
+ Некоторые реализации могут планируется удалить обработчик событий, при использовании нет событий. Путем переопределения <xref:System.ComponentModel.Design.EventBindingService.UseMethod%2A> и <xref:System.ComponentModel.Design.EventBindingService.FreeMethod%2A>, реализация может определить, когда метод больше не нужны.  
   
  ]]></format>
         </remarks>
@@ -157,6 +152,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract System::Collections::ICollection ^ GetCompatibleMethods(System::ComponentModel::EventDescriptor ^ e);" />
       <MemberSignature Language="F#" Value="abstract member GetCompatibleMethods : System.ComponentModel.EventDescriptor -&gt; System.Collections.ICollection" Usage="eventBindingService.GetCompatibleMethods e" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.GetCompatibleMethods(System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -180,7 +178,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="e" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.IServiceProvider" />
         <altmember cref="T:System.ComponentModel.EventDescriptor" />
       </Docs>
@@ -205,7 +203,7 @@
         <Parameter Name="serviceType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="serviceType">Тип возвращаемой службы.</param>
+        <param name="serviceType">Тип извлекаемой службы.</param>
         <summary>Возвращает запрошенную службу из поставщика служб.</summary>
         <returns>Ссылка на службу, заданную параметром <paramref name="serviceType" />, либо значение <see langword="null" />, если запрошенная служба недоступна.</returns>
         <remarks>To be added.</remarks>
@@ -229,6 +227,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract bool ShowCode();" />
       <MemberSignature Language="F#" Value="abstract member ShowCode : unit -&gt; bool" Usage="eventBindingService.ShowCode " />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.ShowCode</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -259,6 +260,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract bool ShowCode(int lineNumber);" />
       <MemberSignature Language="F#" Value="abstract member ShowCode : int -&gt; bool" Usage="eventBindingService.ShowCode lineNumber" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.ShowCode(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -331,6 +335,9 @@
       <MemberSignature Language="VB.NET" Value="Function CreateUniqueMethodName (component As IComponent, e As EventDescriptor) As String Implements IEventBindingService.CreateUniqueMethodName" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::String ^ System.ComponentModel.Design.IEventBindingService.CreateUniqueMethodName(System::ComponentModel::IComponent ^ component, System::ComponentModel::EventDescriptor ^ e) = System::ComponentModel::Design::IEventBindingService::CreateUniqueMethodName;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.CreateUniqueMethodName(System.ComponentModel.IComponent,System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -349,7 +356,7 @@
         <summary>Создает уникальное имя для метода обработчика событий заданного компонента и события.</summary>
         <returns>Рекомендованное имя метода обработчика событий для данного события.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="component" /> или <paramref name="e" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="component" /> или <paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.Design.IEventBindingService.GetCompatibleMethods">
@@ -359,6 +366,9 @@
       <MemberSignature Language="VB.NET" Value="Function GetCompatibleMethods (e As EventDescriptor) As ICollection Implements IEventBindingService.GetCompatibleMethods" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::ICollection ^ System.ComponentModel.Design.IEventBindingService.GetCompatibleMethods(System::ComponentModel::EventDescriptor ^ e) = System::ComponentModel::Design::IEventBindingService::GetCompatibleMethods;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.GetCompatibleMethods(System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -382,7 +392,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="e" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
         <altmember cref="T:System.IServiceProvider" />
         <altmember cref="T:System.ComponentModel.EventDescriptor" />
       </Docs>
@@ -394,6 +404,9 @@
       <MemberSignature Language="VB.NET" Value="Function GetEvent (property As PropertyDescriptor) As EventDescriptor Implements IEventBindingService.GetEvent" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::ComponentModel::EventDescriptor ^ System.ComponentModel.Design.IEventBindingService.GetEvent(System::ComponentModel::PropertyDescriptor ^ property) = System::ComponentModel::Design::IEventBindingService::GetEvent;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.GetEvent(System.ComponentModel.PropertyDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -419,6 +432,9 @@
       <MemberSignature Language="VB.NET" Value="Function GetEventProperties (events As EventDescriptorCollection) As PropertyDescriptorCollection Implements IEventBindingService.GetEventProperties" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::ComponentModel::PropertyDescriptorCollection ^ System.ComponentModel.Design.IEventBindingService.GetEventProperties(System::ComponentModel::EventDescriptorCollection ^ events) = System::ComponentModel::Design::IEventBindingService::GetEventProperties;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.GetEventProperties(System.ComponentModel.EventDescriptorCollection)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -435,7 +451,7 @@
         <summary>Преобразует набор дескрипторов событий в набор дескрипторов свойств.</summary>
         <returns>Массив объектов <see cref="T:System.ComponentModel.PropertyDescriptor" />, описывающих набор событий.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="events" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="events" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.Design.IEventBindingService.GetEventProperty">
@@ -445,6 +461,9 @@
       <MemberSignature Language="VB.NET" Value="Function GetEventProperty (e As EventDescriptor) As PropertyDescriptor Implements IEventBindingService.GetEventProperty" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::ComponentModel::PropertyDescriptor ^ System.ComponentModel.Design.IEventBindingService.GetEventProperty(System::ComponentModel::EventDescriptor ^ e) = System::ComponentModel::Design::IEventBindingService::GetEventProperty;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.GetEventProperty(System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -461,7 +480,7 @@
         <summary>Преобразует один дескриптор событий в дескриптор свойств.</summary>
         <returns>Объект <see cref="T:System.ComponentModel.PropertyDescriptor" />, описывающий событие.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="e" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="System.ComponentModel.Design.IEventBindingService.ShowCode">
@@ -480,6 +499,9 @@
       <MemberSignature Language="VB.NET" Value="Function ShowCode () As Boolean Implements IEventBindingService.ShowCode" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.ComponentModel.Design.IEventBindingService.ShowCode() = System::ComponentModel::Design::IEventBindingService::ShowCode;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.ShowCode</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -507,6 +529,9 @@
       <MemberSignature Language="VB.NET" Value="Function ShowCode (lineNumber As Integer) As Boolean Implements IEventBindingService.ShowCode" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.ComponentModel.Design.IEventBindingService.ShowCode(int lineNumber) = System::ComponentModel::Design::IEventBindingService::ShowCode;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.ShowCode(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -537,6 +562,9 @@
       <MemberSignature Language="VB.NET" Value="Function ShowCode (component As IComponent, e As EventDescriptor) As Boolean Implements IEventBindingService.ShowCode" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.ComponentModel.Design.IEventBindingService.ShowCode(System::ComponentModel::IComponent ^ component, System::ComponentModel::EventDescriptor ^ e) = System::ComponentModel::Design::IEventBindingService::ShowCode;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.Design.IEventBindingService.ShowCode(System.ComponentModel.IComponent,System.ComponentModel.EventDescriptor)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -555,7 +583,7 @@
         <summary>Отображает код пользователя для заданного события.</summary>
         <returns>Значение <see langword="true" />, если код отображается; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="events" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="events" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="UseMethod">
@@ -588,7 +616,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Некоторые реализации могут предназначены для удаления обработчика событий, при использовании нет событий. Путем переопределения <xref:System.ComponentModel.Design.EventBindingService.UseMethod%2A> и <xref:System.ComponentModel.Design.EventBindingService.FreeMethod%2A>, реализация может определить, когда метод больше не нужны.  
+ Некоторые реализации могут планируется удалить обработчик событий, при использовании нет событий. Путем переопределения <xref:System.ComponentModel.Design.EventBindingService.UseMethod%2A> и <xref:System.ComponentModel.Design.EventBindingService.FreeMethod%2A>, реализация может определить, когда метод больше не нужны.  
   
  ]]></format>
         </remarks>

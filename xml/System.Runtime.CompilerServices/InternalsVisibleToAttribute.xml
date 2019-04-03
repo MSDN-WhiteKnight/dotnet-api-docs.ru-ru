@@ -1,13 +1,5 @@
 <Type Name="InternalsVisibleToAttribute" FullName="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1b501f547ec35975c0fe75c45c8de4e50f610ae1" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48591159" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class InternalsVisibleToAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="74b4ad010e7aacda9354d35c92864c58b90a0987" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58703496" /></Metadata><TypeSignature Language="C#" Value="public sealed class InternalsVisibleToAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InternalsVisibleToAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.InternalsVisibleToAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class InternalsVisibleToAttribute&#xA;Inherits Attribute" />
@@ -31,13 +23,14 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0;netstandard-2.1">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true, Inherited=false)</AttributeName>
     </Attribute>
   </Attributes>
@@ -47,7 +40,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Как правило, типы и члены, практически `internal` области (в C#) и `friend` области (в Visual Basic) отображаются только в сборке, в котором они определены. <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> Атрибут делает их также видимым типам в указанной сборке, которая называется дружественной сборки.  
+ Как правило, типы и члены, практически `internal` или `private protected` области (в C#) и `Friend` и `Private Protected` области (в Visual Basic) отображаются только в сборке, в котором они определены. <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> Атрибут делает их также видимым типам в указанной сборке, которая называется дружественной сборки. Это относится только к `internal` (`Friend` в VB) или `private protected`(`Private Protected` в VB) методы, но не `private` те, которые.
   
  Атрибут применяется на уровне сборки. Это означает, что он может быть включено в начале файла исходного кода, или он может быть включено в файл AssemblyInfo в проекте Visual Studio. Атрибут используется для указания одного дружественной сборки, можно получить доступ к внутренним типам и членам текущей сборки. Несколько дружественных сборок можно определить двумя способами. Они могут отображаться как отдельные атрибуты уровня сборки, как показано в следующем примере.  
   
@@ -69,9 +62,9 @@
   
  Дополнительные сведения об использовании этого атрибута см. в разделах:  
   
--   [Дружественные сборки (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+-   [Дружественные сборки (C++)](https://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
   
--   [Дружественные сборки](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+-   [Дружественные сборки](https://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
   
 <a name="Key"></a>   
 ## <a name="getting-the-full-public-key"></a>Получение полного открытого ключа  
@@ -79,7 +72,7 @@
   
 1.  Извлеките открытый ключ из файла ключа со строгим именем в отдельный файл:  
   
-     **Sn -p***snk_file* *outfile  *  
+     **Sn -p***snk_file* *outfile*   
   
 2.  Для отображения полного открытого ключа на консоль:  
   
@@ -88,10 +81,10 @@
 3.  Скопируйте и вставьте значение полного открытого ключа в исходном коде.  
   
 ## <a name="compiling-the-friend-assembly-with-c"></a>Компиляция дружественной сборки с помощью C#  
- Если вы используете компилятор C# для компиляции дружественной сборки, необходимо явно указать имя выходного файла (.exe или .dll) с помощью **/out** параметр компилятора. Это необходимо потому, что компилятор еще не создал имя сборки, формируемой во время привязки к внешним ссылкам. **/Out** параметр компилятора является необязательным для компилятора Visual Basic и соответствующих **-out** или **-o** не следует использовать параметр компилятора при компиляции friend сборки с помощью компилятора F #.  
+ Если вы используете компилятор C# для компиляции дружественной сборки, необходимо явно указать имя выходного файла (.exe или .dll) с помощью **/out** параметр компилятора. Это необходимо потому, что компилятор еще не создал имя сборки, формируемой во время привязки к внешним ссылкам. **/Out** параметр компилятора является необязательным для компилятора Visual Basic и соответствующих **-out** или **-o** не следует использовать параметр компилятора при компиляции friend сборки с F# компилятора.  
   
 ## <a name="compiling-the-friend-assembly-with-c"></a>Компиляция дружественной сборки с помощью C++  
- В C++, чтобы сделать внутренние элементы, включаемые <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> атрибут доступным для дружественной сборки, необходимо использовать `as_friend` атрибут в директиве C++. Дополнительные сведения см. в разделе [дружественные сборки (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd).  
+ В C++, чтобы сделать внутренние элементы, включаемые <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> атрибут доступным для дружественной сборки, необходимо использовать `as_friend` атрибут в директиве C++. Дополнительные сведения см. в разделе [дружественные сборки (C++)](https://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd).  
   
    
   
@@ -152,6 +145,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="assemblyName" Type="System.String" />
@@ -163,18 +157,18 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A> Конструктора определяет дружественной сборки, который является сборкой, имеющей доступ к внутренним типам и членам текущей сборки.  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A> Конструктора определяет дружественной сборки, который является сборкой, которая имеет доступ к внутренней и частные защищенные типы и члены текущей сборки.  
   
  В текущей сборке и дружественной сборки должны быть без знака, или они должны быть подписаны строгим именем. (Дополнительные сведения о сборках со строгими именами см. в разделе [Создание и использование сборок со строгими именами](~/docs/framework/app-domains/create-and-use-strong-named-assemblies.md).) Если оба значения являются числа без знака, `assemblyName` аргумент состоит из имени дружественной сборки, указан без пути или файловом расширения каталога. Если они подписаны, `assemblyName` состоит из имени дружественной сборки без его каталог путь или расширение имени файла, вместе с его полного открытого ключа (но не его токен открытого ключа). Другие компоненты строгого имени, например те, которые предоставляют язык и региональные параметры, версии или сведения об архитектуре процессора, не может указываться в `assemblyName` аргумент.  
   
 > [!IMPORTANT]
->  Если вы используете компилятор C# для компиляции дружественной сборки, необходимо явно указать имя выходного файла (.exe или .dll) с помощью **/out** параметр компилятора. Это необходимо потому, что компилятор еще не создал имя сборки, формируемой во время привязки к внешним ссылкам. **/Out** параметр компилятора является необязательным для компилятора Visual Basic и соответствующих **-out** или **-o** не следует использовать параметр компилятора при компиляции friend сборки с помощью компилятора F #.  
+>  Если вы используете компилятор C# для компиляции дружественной сборки, необходимо явно указать имя выходного файла (.exe или .dll) с помощью **/out** параметр компилятора. Это необходимо потому, что компилятор еще не создал имя сборки, формируемой во время привязки к внешним ссылкам. **/Out** параметр компилятора является необязательным для компилятора Visual Basic и соответствующих **-out** или **-o** не следует использовать параметр компилятора при компиляции friend сборки с F# компилятора.  
   
  Можно использовать [Sn.exe (средство строгих имен)](~/docs/framework/tools/sn-exe-strong-name-tool.md) для получения полного открытого ключа из файла со строгим именем ключа (SNK). Чтобы сделать это, выполните следующие действия:  
   
 1.  Извлеките открытый ключ из файла ключа со строгим именем в отдельный файл:  
   
-     **Sn -p***snk_file* *outfile  *  
+     **Sn -p***snk_file* *outfile*   
   
 2.  Для отображения полного открытого ключа на консоль:  
   
@@ -184,9 +178,9 @@
   
  Дополнительные сведения об использовании <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> атрибут, см. в следующих разделах:  
   
--   [Дружественные сборки (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+-   [Дружественные сборки (C++)](https://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
   
--   [Дружественные сборки](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+-   [Дружественные сборки](https://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
   
    
   
@@ -238,6 +232,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -279,6 +274,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -292,9 +288,9 @@
 ## Remarks  
  Дополнительные сведения об использовании <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> атрибут, см. в следующих разделах:  
   
--   [Дружественные сборки (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+-   [Дружественные сборки (C++)](https://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
   
--   [Дружественные сборки](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+-   [Дружественные сборки](https://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
   
  ]]></format>
         </remarks>

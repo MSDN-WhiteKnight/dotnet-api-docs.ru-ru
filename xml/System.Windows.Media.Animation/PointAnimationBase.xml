@@ -1,13 +1,5 @@
 <Type Name="PointAnimationBase" FullName="System.Windows.Media.Animation.PointAnimationBase">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7fa5ddc500f0e90c44ae08639700bfea8ace4caa" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39899130" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class PointAnimationBase : System.Windows.Media.Animation.AnimationTimeline" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d8433dd10918035b8adcbb0760a483a84d92ef79" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52595669" /></Metadata><TypeSignature Language="C#" Value="public abstract class PointAnimationBase : System.Windows.Media.Animation.AnimationTimeline" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PointAnimationBase extends System.Windows.Media.Animation.AnimationTimeline" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.PointAnimationBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class PointAnimationBase&#xA;Inherits AnimationTimeline" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Абстрактный класс, который в случае реализации анимирует значение <see cref="T:System.Windows.Point" />.</summary>
+    <summary>Абстрактный класс, который при реализации анимирует значение <see cref="T:System.Windows.Point" />.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -34,9 +26,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>См. в разделе [Общие сведения о настраиваемых анимации](~/docs/framework/wpf/graphics-multimedia/custom-animations-overview.md) сведения о расширение классов анимации.</para>
-    </block>
+    <block subset="none" type="overrides"><para>См. в разделе [Общие сведения о настраиваемых анимации](~/docs/framework/wpf/graphics-multimedia/custom-animations-overview.md) сведения о расширение классов анимации.</para></block>
     <altmember cref="T:System.Windows.Media.Animation.PointAnimationUsingKeyFrames" />
   </Docs>
   <Members>
@@ -81,8 +71,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает модифицируемую копию данного объекта <see cref="T:System.Windows.Media.Animation.PointAnimationBase" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей этот метод копирует ссылки на ресурсы и привязки данных (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
-        <returns>Изменяемая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта будет содержать значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта содержало значение <see langword="true." /></returns>
+        <summary>Создает изменяемый клон данного объекта <see cref="T:System.Windows.Media.Animation.PointAnimationBase" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей этот метод копирует ссылки на ресурсы и привязки данных (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
+        <returns>Изменяемая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта будет содержать значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта содержало значение <see langword="true." />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -101,7 +91,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Возвращает текущее значение анимации.</summary>
+        <summary>Получает текущее значении анимации.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetCurrentValue">
@@ -127,9 +117,9 @@
       <Docs>
         <param name="defaultOriginValue">Начальное значение, используемое для анимации, если анимация не имеет собственного начального значения.</param>
         <param name="defaultDestinationValue">Конечное значение, используемое для анимации, если анимация не имеет собственного конечного значения.</param>
-        <param name="animationClock">Объект <see cref="T:System.Windows.Media.Animation.AnimationClock" />, который может генерировать значение <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемое анимацией для генерации выходного значения.</param>
-        <summary>Возвращает текущее значение анимации.</summary>
-        <returns>Значение, которое предположительно должно быть текущим значением свойства в анимации.</returns>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />, который может создать значение <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемое при анимации для создания выходного значения.</param>
+        <summary>Получает текущее значении анимации.</summary>
+        <returns>Значение, которое считается в данной анимации текущим значением свойства.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -175,11 +165,11 @@
         <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="defaultOriginValue">Исходное значение, предоставленное для анимации, если анимация не имеет собственного начального значения.</param>
+        <param name="defaultOriginValue">Начальное значение, используемое для анимации, если анимация не имеет собственного начального значения.</param>
         <param name="defaultDestinationValue">Конечное значение, используемое для анимации, если анимация не имеет собственного конечного значения.</param>
-        <param name="animationClock">Объект <see cref="T:System.Windows.Media.Animation.AnimationClock" />, который может генерировать значение <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемое анимацией для генерации выходного значения.</param>
-        <summary>Возвращает текущее значение анимации.</summary>
-        <returns>Значение, которое предположительно должно быть текущим значением свойства в анимации.</returns>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />, который может создать значение <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемое при анимации для создания выходного значения.</param>
+        <summary>Получает текущее значении анимации.</summary>
+        <returns>Значение, которое считается в данной анимации текущим значением свойства.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -225,10 +215,10 @@
         <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="defaultOriginValue">Предлагаемое исходное значение, используемое в том случае, если анимация не имеет собственного явно заданного начального значения.</param>
+        <param name="defaultOriginValue">Предлагаемое начальное значение, используемое, если анимация не имеет собственного, явно заданного начального значения.</param>
         <param name="defaultDestinationValue">Предлагаемое конечное значение, используемое, если анимация не имеет собственного явно заданного конечного значения.</param>
-        <param name="animationClock">Объект <see cref="T:System.Windows.Media.Animation.AnimationClock" />, создающий значения <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемые хост-анимацией.</param>
-        <summary>Вычисляет значение, представляющее текущее значение анимируемого свойства в соответствии с определением в родительской анимации.</summary>
+        <param name="animationClock">Метод <see cref="T:System.Windows.Media.Animation.AnimationClock" />, который создает <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> или <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />, используемые основной анимацией.</param>
+        <summary>Вычисляет значение, представляющее текущее значение анимируемого свойства, как определено основной анимацией.</summary>
         <returns>Текущее значение данной анимации.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -272,7 +262,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает тип значения, создаваемого данной анимацией.</summary>
+        <summary>Получает тип значения, создаваемого этой анимацией.</summary>
         <value>Тип значения, созданного этой анимацией.</value>
         <remarks>To be added.</remarks>
       </Docs>

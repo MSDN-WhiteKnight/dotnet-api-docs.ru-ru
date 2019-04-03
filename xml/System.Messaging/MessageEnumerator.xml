@@ -1,13 +1,5 @@
 <Type Name="MessageEnumerator" FullName="System.Messaging.MessageEnumerator">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="23b91a2631794fe77c1398283e744a03f64ef34f" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46645673" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class MessageEnumerator : MarshalByRefObject, IDisposable, System.Collections.IEnumerator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7864ee93fd1509c39ec215c7525d2b430580d936" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55341524" /></Metadata><TypeSignature Language="C#" Value="public class MessageEnumerator : MarshalByRefObject, IDisposable, System.Collections.IEnumerator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageEnumerator extends System.MarshalByRefObject implements class System.Collections.IEnumerator, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Messaging.MessageEnumerator" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageEnumerator&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable, IEnumerator" />
@@ -127,7 +119,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Вы вызвали <see cref="P:System.Messaging.MessageEnumerator.Current" /> до первого вызова <see cref="M:System.Messaging.MessageEnumerator.MoveNext" />. Курсор располагается перед первым элементом перечисления сообщений.  
   
-- или - 
+-или- 
 Вы вызвали <see cref="P:System.Messaging.MessageEnumerator.Current" /> после вызова <see cref="M:System.Messaging.MessageEnumerator.MoveNext" />, вернувшего <see langword="false" /> (это указывает, что курсор расположен за последним элементом перечисления сообщений).</exception>
         <exception cref="T:System.Messaging.MessageQueueException">Сообщение, на которое указывает перечислитель, больше не существует. Возможно, они были удалены.</exception>
         <altmember cref="M:System.Messaging.MessageEnumerator.MoveNext" />
@@ -231,7 +223,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Messaging.MessageEnumerator" />, а при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -243,12 +235,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами метода <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see langword="Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">Реализация метода Dispose</related>
         <related type="Article" href="~/docs/standard/garbage-collection/unmanaged.md">Очистка неуправляемых ресурсов</related>
       </Docs>
@@ -271,8 +261,18 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает ресурсы, используемые перечислителем.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Этот метод переопределяет метод <xref:System.Object.Finalize>. Код приложения не следует вызывать этот метод; метод Finalize объекта автоматически вызывается во время сборки мусора, если завершение работы сборщика мусора была отключена с помощью вызова <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> метод.
+
+Дополнительные сведения см. в разделе [методы Finalize и деструкторы](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0s71x931(v=vs.100)), [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md), и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <MemberGroup MemberName="MoveNext">
@@ -365,7 +365,7 @@
         <exception cref="T:System.ArgumentException">Для параметра timeout задано недопустимое значение. Возможно, это отрицательное число.</exception>
         <exception cref="T:System.Messaging.MessageQueueException">Возникло исключение, характерное для Message Queuing.  
   
-- или - 
+-или- 
 Истекло время тайм-аута.</exception>
         <altmember cref="P:System.Messaging.MessageEnumerator.Current" />
         <altmember cref="M:System.Messaging.MessageEnumerator.Reset" />
@@ -720,6 +720,8 @@
         <summary>Возвращает объект <see cref="T:System.Messaging.Message" />, который ссылается на сообщение в текущей позиции курсора.</summary>
         <value>Объект <see cref="T:System.Messaging.Message" />, который ссылается на сообщение в текущей позиции курсора.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">Пользователь обращается к этому свойству до первого вызова метода <see cref="M:System.Messaging.MessageEnumerator.MoveNext" />. Курсор располагается перед первым элементом перечисления сообщений, или вы обращаетесь к этому свойству после того, как вызов <see cref="M:System.Messaging.MessageEnumerator.MoveNext" /> вернул значение false (показывающее, что курсор находится за последним элементом перечисления сообщений).</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">Сообщение, на которое указывает перечислитель, больше не существует. Возможно, они были удалены.</exception>
       </Docs>
     </Member>
   </Members>

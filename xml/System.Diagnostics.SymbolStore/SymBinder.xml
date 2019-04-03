@@ -1,13 +1,5 @@
 <Type Name="SymBinder" FullName="System.Diagnostics.SymbolStore.SymBinder">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="69304a7b6185a4339d9007cd19142214de64b64b" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48630835" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SymBinder : System.Diagnostics.SymbolStore.SymBinderBase, IDisposable, System.Diagnostics.SymbolStore.ISymbolBinder, System.Diagnostics.SymbolStore.ISymbolBinder1" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="db392d8550fd4145f589105e2bf0091af4c12d43" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936408" /></Metadata><TypeSignature Language="C#" Value="public class SymBinder : System.Diagnostics.SymbolStore.SymBinderBase, IDisposable, System.Diagnostics.SymbolStore.ISymbolBinder, System.Diagnostics.SymbolStore.ISymbolBinder1" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SymBinder extends System.Diagnostics.SymbolStore.SymBinderBase implements class System.Diagnostics.SymbolStore.ISymbolBinder, class System.Diagnostics.SymbolStore.ISymbolBinder1, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.SymbolStore.SymBinder" />
   <TypeSignature Language="VB.NET" Value="Public Class SymBinder&#xA;Inherits SymBinderBase&#xA;Implements IDisposable, ISymbolBinder, ISymbolBinder1" />
@@ -40,7 +32,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет модуль привязки символов для управляемого кода.</summary>
+    <summary>Представляет привязку символов для управляемого кода.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -81,8 +73,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Освобождает ресурсы, удерживаемые текущим экземпляром.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Используйте <xref:System.Diagnostics.SymbolStore.SymBinder.Finalize> метод для освобождения ресурсов.
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="{dtor}">
@@ -170,7 +170,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="A_0" Type="System.Boolean" />
+        <Parameter Name="A_0" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="A_0">Значение <see langword="true" />, чтобы освободить все ресурсы (управляемые и неуправляемые); значение <see langword="false" />, чтобы освободить только неуправляемые ресурсы.</param>
@@ -221,7 +221,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Возвращает интерфейс средства чтения символов для текущего файла.</summary>
+        <summary>Получает интерфейс средства чтения символов для текущего файла.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetReader">
@@ -232,6 +232,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Diagnostics::SymbolStore::ISymbolReader ^ GetReader(int importer, System::String ^ filename, System::String ^ searchPath);" />
       <MemberSignature Language="F#" Value="abstract member GetReader : int * string * string -&gt; System.Diagnostics.SymbolStore.ISymbolReader&#xA;override this.GetReader : int * string * string -&gt; System.Diagnostics.SymbolStore.ISymbolReader" Usage="symBinder.GetReader (importer, filename, searchPath)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolBinder.GetReader(System.Int32,System.String,System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -279,6 +282,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Diagnostics::SymbolStore::ISymbolReader ^ GetReader(IntPtr importer, System::String ^ filename, System::String ^ searchPath);" />
       <MemberSignature Language="F#" Value="abstract member GetReader : nativeint * string * string -&gt; System.Diagnostics.SymbolStore.ISymbolReader&#xA;override this.GetReader : nativeint * string * string -&gt; System.Diagnostics.SymbolStore.ISymbolReader" Usage="symBinder.GetReader (importer, filename, searchPath)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Diagnostics.SymbolStore.ISymbolBinder1.GetReader(System.IntPtr,System.String,System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>ISymWrapper</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -288,15 +294,15 @@
         <ReturnType>System.Diagnostics.SymbolStore.ISymbolReader</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="importer" Type="System.IntPtr" />
-        <Parameter Name="filename" Type="System.String" />
-        <Parameter Name="searchPath" Type="System.String" />
+        <Parameter Name="importer" Type="System.IntPtr" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="filename" Type="System.String" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="searchPath" Type="System.String" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="importer">Структура, которая указывает на интерфейс импорта метаданных.</param>
         <param name="filename">Имя файла, для которого требуется интерфейс средства чтения.</param>
         <param name="searchPath">Путь поиска, используемый для поиска файла символов.</param>
-        <summary>Получает интерфейс средства чтения символов для текущего файла с использованием заданного указателя на интерфейс метаданных, имени файла и пути поиска.</summary>
+        <summary>Получает интерфейс средства чтения символов для текущего файла с использованием заданных указателя на интерфейс метаданных, имени файла и пути поиска.</summary>
         <returns>Интерфейс для чтения символов отладки.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

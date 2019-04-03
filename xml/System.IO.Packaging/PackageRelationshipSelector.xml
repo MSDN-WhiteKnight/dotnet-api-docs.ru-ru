@@ -1,13 +1,5 @@
 <Type Name="PackageRelationshipSelector" FullName="System.IO.Packaging.PackageRelationshipSelector">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3145a52d9182adb0ba2b0ac6fd7c08c7df740f6f" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49133868" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class PackageRelationshipSelector" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ed4afac65111f6b8afbfeda82d8a3428cc4486da" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56769337" /></Metadata><TypeSignature Language="C#" Value="public sealed class PackageRelationshipSelector" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PackageRelationshipSelector extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackageRelationshipSelector" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PackageRelationshipSelector" />
@@ -18,6 +10,7 @@
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.2.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
+    <AssemblyVersion>4.0.4.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>WindowsBase</AssemblyName>
@@ -43,9 +36,9 @@
     <altmember cref="T:System.IO.Packaging.PackageRelationshipSelectorType" />
     <altmember cref="T:System.IO.Packaging.PackageRelationship" />
     <altmember cref="T:System.IO.Packaging.PackagePart" />
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=159966">Создание пакета с помощью образца цифровой подписи</related>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=71255">Open Packaging характеристики соглашений (OPC)</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=159966">Создание пакета с помощью образца цифровой подписи</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=71255">Open Packaging характеристики соглашений (OPC)</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -61,6 +54,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -74,19 +68,22 @@
       </Parameters>
       <Docs>
         <param name="sourceUri">[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] объекта <see cref="T:System.IO.Packaging.PackagePart" /> или <see cref="T:System.IO.Packaging.Package" /> (<c>SourceUri</c>="/"), являющегося владельцем связи.</param>
-        <param name="selectorType">Тип <c>selectionCriteria</c> — по значению связи <see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Type" /> или по значению связи <see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />.</param>
-        <param name="selectionCriteria">Строка квалификации, используемая для выбора связей на основе <c>selectorType</c>.</param>
+        <param name="selectorType">Тип критерия выбора <paramref name="selectionCriteria" /> — по значению <see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" /> связи или по значению <see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Type" /> связи.</param>
+        <param name="selectionCriteria">Строка квалификации, используемая для выбора связей на основе <paramref name="selectorType" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.IO.Packaging.PackageRelationshipSelector" />.</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="sourceUri" /> или <paramref name="selectionCriteria" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="sourceUri" /> или <paramref name="selectionCriteria" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Недопустимый параметр <paramref name="selectorType" />.</exception>
         <exception cref="T:System.Xml.XmlException">В качестве параметра <paramref name="selectorType" /> указано <see cref="F:System.IO.Packaging.PackageRelationshipSelectorType.Id" />, однако <paramref name="selectionCriteria" /> не является допустимым [!INCLUDE[TLA#tla_xsd](~/includes/tlasharptla-xsd-md.md)] объекта [!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)].</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="sourceUri" /> не указывает на корень <see cref="T:System.IO.Packaging.Package" /> ("/") и не является допустимым [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] объекта <see cref="T:System.IO.Packaging.PackagePart" />.</exception>
+        <exception cref="T:System.ArgumentException">Значение <paramref name="selectionCriteria" /> недопустимо для указанного типа <paramref name="selectorType" />.
+
+-или-
+
+<paramref name="sourceUri" /> не указывает на корень <see cref="T:System.IO.Packaging.Package" /> ("/") и не является допустимым [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] объекта <see cref="T:System.IO.Packaging.PackagePart" />.</exception>
         <altmember cref="M:System.IO.Packaging.PackUriHelper.CreatePartUri(System.Uri)" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
       </Docs>
     </Member>
     <Member MemberName="Select">
@@ -101,6 +98,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -118,7 +116,7 @@
         <summary>Возвращает список объектов <see cref="T:System.IO.Packaging.PackageRelationship" />, соответствующих заданным значениям <see cref="P:System.IO.Packaging.PackageRelationshipSelector.SourceUri" />, <see cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" /> и <see cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />.</summary>
         <returns>Список связей, соответствующих параметрам выбора, заданным для конструктора <see cref="M:System.IO.Packaging.PackageRelationshipSelector.#ctor(System.Uri,System.IO.Packaging.PackageRelationshipSelectorType,System.String)" />.</returns>
         <remarks>To be added.</remarks>
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
       </Docs>
     </Member>
     <Member MemberName="SelectionCriteria">
@@ -134,6 +132,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -154,7 +153,7 @@
         <remarks>To be added.</remarks>
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SourceUri" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
       </Docs>
     </Member>
     <Member MemberName="SelectorType">
@@ -170,6 +169,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -190,7 +190,7 @@
         <remarks>To be added.</remarks>
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SourceUri" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
       </Docs>
     </Member>
     <Member MemberName="SourceUri">
@@ -206,6 +206,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.2.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -227,7 +228,7 @@
         <altmember cref="M:System.IO.Packaging.PackUriHelper.CreatePartUri(System.Uri)" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectionCriteria" />
         <altmember cref="P:System.IO.Packaging.PackageRelationshipSelector.SelectorType" />
-        <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=74494">Цифровые подписи Framework стандарта Open Packaging Conventions</related>
       </Docs>
     </Member>
   </Members>

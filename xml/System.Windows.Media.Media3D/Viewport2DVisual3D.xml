@@ -1,13 +1,5 @@
 <Type Name="Viewport2DVisual3D" FullName="System.Windows.Media.Media3D.Viewport2DVisual3D">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="dc88c6fbb70d22712058c04e23c8d07126f8c13e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48720548" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Viewport2DVisual3D : System.Windows.Media.Media3D.Visual3D" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="54ef7224b27515a272841d7398c1e83ac807f767" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55371736" /></Metadata><TypeSignature Language="C#" Value="public sealed class Viewport2DVisual3D : System.Windows.Media.Media3D.Visual3D" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Viewport2DVisual3D extends System.Windows.Media.Media3D.Visual3D" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Viewport2DVisual3D&#xA;Inherits Visual3D" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Markup.ContentProperty("Visual")</AttributeName>
     </Attribute>
   </Attributes>
@@ -44,7 +36,6 @@
   
  [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
   
- Полный пример см. в разделе [интерактивные 2-D на трехмерной образец](http://go.microsoft.com/fwlink/?LinkID=160007).  
   
  ]]></format>
     </remarks>
@@ -126,7 +117,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,7 +153,6 @@
   
  [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
   
- Полный пример см. в разделе [интерактивные 2-D на трехмерной образец](http://go.microsoft.com/fwlink/?LinkID=160007).  
   
  ]]></format>
         </remarks>
@@ -185,7 +175,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Geometry" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Geometry" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -218,7 +208,7 @@
       <Docs>
         <param name="element">Элемент, из которого считывается значение свойства.</param>
         <summary>Получает значение присоединенного свойства <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" /> для указанного элемента <see cref="T:System.Windows.UIElement" />.</summary>
-        <returns>Значение свойства <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" /> для элемента.</returns>
+        <returns>Значение свойства <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" /> элемента.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -265,10 +255,23 @@
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Получает или задает значение, показывающее, должен ли материал быть интерактивным.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+Необходимо задать `IsVisualHostMaterial` присоединенное свойство на носителе, на котором вы хотите иметь 2-D визуальный элемент помещен.
+
+## Examples  
+Приведенный ниже показано, как задать материал размещение visual 2-D (кнопка), задав <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.Material> свойства, а также задание параметров `IsVisualHostMaterial` вложенное свойство, чтобы `true`:
+
+[!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="IsVisualHostMaterialProperty">
@@ -333,7 +336,6 @@
   
  [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
   
- Полный пример см. в разделе [интерактивные 2-D на трехмерной образец](http://go.microsoft.com/fwlink/?LinkID=160007).  
   
  ]]></format>
         </remarks>
@@ -356,7 +358,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Material" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Material" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -435,8 +437,6 @@
   
  [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
   
- Полный пример см. в разделе [интерактивные 2-D на трехмерной образец](http://go.microsoft.com/fwlink/?LinkID=160007).  
-  
  ]]></format>
         </remarks>
       </Docs>
@@ -480,7 +480,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

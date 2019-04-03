@@ -1,13 +1,5 @@
 <Type Name="NullReferenceException" FullName="System.NullReferenceException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1889a73e6dd0c0791db93421a2a1596cb03dcb42" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48594682" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class NullReferenceException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a9a3969bf1ee9f62b0635f524efb48a1e58e22ea" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58691102" /></Metadata><TypeSignature Language="C#" Value="public class NullReferenceException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit NullReferenceException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.NullReferenceException" />
   <TypeSignature Language="VB.NET" Value="Public Class NullReferenceException&#xA;Inherits SystemException" />
@@ -32,6 +24,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Exception</BaseTypeName>
@@ -42,8 +35,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -88,7 +81,7 @@
      [!code-csharp[System.NullReferenceException.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.nullreferenceexception.class/cs/nullreturn2a.cs#5)]
      [!code-vb[System.NullReferenceException.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.nullreferenceexception.class/vb/nullreturn2a.vb#5)]  
   
--   Вы используете выражения (например, при привязке список методов и свойств вместе) для получения значения и, несмотря на то, что вы проверяете, является ли значение `null`, среда выполнения по-прежнему создает <xref:System.NullReferenceException> исключение. Это происходит потому, что один из промежуточных значений в выражении возвращает `null`. В результате вашего rest для `null` никогда не вычисляется.  
+-   Вы используете выражения (например, при привязке список методов и свойств вместе) для получения значения и, несмотря на то, что вы проверяете, является ли значение `null`, среда выполнения по-прежнему создает <xref:System.NullReferenceException> исключение. Это происходит потому, что один из промежуточных значений в выражении возвращает `null`. В результате теста для `null` никогда не вычисляется.  
   
      В следующем примере определяется `Pages` объект, который кэширует сведения о веб-страниц, которые представлены по `Page` объектов. `Example.Main` Метод проверяет ли текущей веб-страницы имеет заголовок отличное от null и, если это так, отображается заголовок. Несмотря на эту проверку, тем не менее, метод вызывает <xref:System.NullReferenceException> исключение.  
   
@@ -117,7 +110,7 @@
      [!code-csharp[System.NullReferenceException.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.nullreferenceexception.class/cs/example2.cs#3)]
      [!code-vb[System.NullReferenceException.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.nullreferenceexception.class/vb/example2.vb#3)]  
   
-     Чтобы устранить эту проблему, убедитесь, что аргумент, переданный в метод не `null`, или обрабатывать исключение в `try…catch…finally` блока. Дополнительные сведения см. в разделе [исключения](~/docs/standard/exceptions/index.md).  
+     Чтобы устранить эту проблему, убедитесь, что аргумент, переданный в метод не `null`, или обрабатывать исключение в `try…catch…finally` блока. Дополнительные сведения см. в разделе [Исключения](~/docs/standard/exceptions/index.md).  
   
  Корпорации Майкрософт, вызывать инструкции промежуточного языка MSIL <xref:System.NullReferenceException>: `callvirt`, `cpblk`, `cpobj`, `initblk`, `ldelem.<type>`, `ldelema`, `ldfld`, `ldflda`, `ldind.<type>` , `ldlen`, `stelem.<type>`, `stfld`, `stind.<type>`, `throw`, и `unbox`.  
   
@@ -184,6 +177,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -230,12 +224,13 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="message">Строка <see cref="T:System.String" />, описывающая ошибку. Содержимое параметра <c>message</c> должно быть понятным пользователю. Код, вызывающий этот конструктор, должен обеспечить локализацию данной строки в соответствии с текущим языком и региональными параметрами системы.</param>
+        <param name="message">Строка <see cref="T:System.String" />, описывающая ошибку. Содержимое параметра <paramref name="message" /> должно быть понятным пользователю. Код, вызывающий этот конструктор, должен обеспечить локализацию данной строки в соответствии с текущим языком и региональными параметрами системы.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.NullReferenceException" /> с указанным сообщением об ошибке.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -270,6 +265,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -282,8 +278,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="info">Объект, содержащий сериализованные данные объекта.</param>
@@ -327,6 +323,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -334,7 +331,7 @@
       </Parameters>
       <Docs>
         <param name="message">Сообщение об ошибке, указывающее причину создания исключения.</param>
-        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <c>innerException</c> не равно <see langword="null" />, текущее исключение возникает в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
+        <param name="innerException">Исключение, которое является причиной текущего исключения. Если значение параметра <paramref name="innerException" /> не равно <see langword="null" />, текущее исключение сгенерировано в блоке <see langword="catch" />, обрабатывающем внутреннее исключение.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.NullReferenceException" /> указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее данное исключение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

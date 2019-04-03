@@ -1,13 +1,5 @@
 <Type Name="SoundPlayer" FullName="System.Media.SoundPlayer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f1235c4794b6dcd5d3eb6e6e4b3f6fb6cae0eb8e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48700177" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SoundPlayer : System.ComponentModel.Component, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5aef0bd524abd815d4bf075ee705852ada730c3" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56380116" /></Metadata><TypeSignature Language="C#" Value="public class SoundPlayer : System.ComponentModel.Component, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable SoundPlayer extends System.ComponentModel.Component implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Media.SoundPlayer" />
   <TypeSignature Language="VB.NET" Value="Public Class SoundPlayer&#xA;Inherits Component&#xA;Implements ISerializable" />
@@ -16,6 +8,10 @@
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Extensions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -30,8 +26,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -44,14 +40,14 @@
   
  Для воспроизведения звука с помощью <xref:System.Media.SoundPlayer> класса, настройте <xref:System.Media.SoundPlayer> с путем к WAV-файла и вызовите один из методов воспроизведения. Можно определить WAV-файл для воспроизведения с помощью одного из конструкторов или путем задания либо <xref:System.Media.SoundPlayer.SoundLocation%2A> или <xref:System.Media.SoundPlayer.Stream%2A> свойство. Перед воспроизведение с помощью одного из методов загрузки можно загрузить файл или загрузку можно отложить, пока не будет вызван один из методов воспроизведения. Объект <xref:System.Media.SoundPlayer> настроено для загрузки WAV-файла из <xref:System.IO.Stream> или URL-адрес необходимо загрузить WAV-файла в память, прежде чем начинается воспроизведение.  
   
- Можно загрузить или воспроизвести WAV-файл синхронно или асинхронно. Если синхронный вызов или воспроизвести метод, вызывающий поток ожидает метода, что может привести к прерыванию рисования и других событий. Обращаясь к асинхронной загрузки или метода play позволит вызывающему потоку продолжить работу без прерывания. Дополнительные сведения об асинхронных вызовах методов, см. в разделе [как: выполнение операции в фоновом режиме](~/docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).  
+ Можно загрузить или воспроизвести WAV-файл синхронно или асинхронно. Если синхронный вызов или воспроизвести метод, вызывающий поток ожидает метода, что может привести к прерыванию рисования и других событий. Обращаясь к асинхронной загрузки или метода play позволит вызывающему потоку продолжить работу без прерывания. Дополнительные сведения об асинхронных вызовах методов, см. в разделе [как: Фоновое выполнение операции](~/docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).  
   
  Когда <xref:System.Media.SoundPlayer> завершила загрузку WAV-файл, он выдает <xref:System.Media.SoundPlayer.LoadCompleted> событий. Можно проверить <xref:System.ComponentModel.AsyncCompletedEventArgs> в обработчике событий, чтобы определить, если нагрузка успешно или неудачно. <xref:System.Media.SoundPlayer.SoundLocationChanged> Событие возникает, когда источник аудио присваивается новый путь к файлу или URL-адрес. <xref:System.Media.SoundPlayer.StreamChanged> Событие возникает, когда источник аудио присваивается новый <xref:System.IO.Stream>. Дополнительные сведения об обработке событий см. в разделе [обработка и вызов событий](~/docs/standard/events/index.md).  
   
  Дополнительные сведения о <xref:System.Media.SoundPlayer>, см. в разделе [Общие сведения о классе SoundPlayer](~/docs/framework/winforms/controls/soundplayer-class-overview.md).  
   
 > [!NOTE]
->  <xref:System.Media.SoundPlayer> Класс не может воспроизвести остальных типов файлов, например .wma или MP3. Если требуется воспроизвести других типов файлов, воспользуйтесь элементом управления проигрывателя Windows Media. Дополнительные сведения см. в разделе [использование элементом управления проигрывателя Windows Media в решении для .NET Framework](http://go.microsoft.com/fwlink/?LinkId=131267) и [Windows Media Player Справочник по объектной модели для Visual Basic .NET и C#](http://go.microsoft.com/fwlink/?LinkId=131269) в пакете SDK проигрывателя Windows Media .  
+>  <xref:System.Media.SoundPlayer> Класс не может воспроизвести остальных типов файлов, например .wma или MP3. Если требуется воспроизвести других типов файлов, воспользуйтесь элементом управления проигрывателя Windows Media. Дополнительные сведения см. в разделе [использование элементом управления проигрывателя Windows Media в решении для .NET Framework](https://go.microsoft.com/fwlink/?LinkId=131267) и [Windows Media Player Справочник по объектной модели для Visual Basic .NET и C#](https://go.microsoft.com/fwlink/?LinkId=131269) в пакете SDK проигрывателя Windows Media .  
   
    
   
@@ -65,7 +61,7 @@
  ]]></format>
     </remarks>
     <altmember cref="T:System.Media.SystemSounds" />
-    <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -89,6 +85,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Media.SoundPlayer" />.</summary>
@@ -100,7 +100,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -113,6 +113,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -134,7 +138,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -148,6 +152,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -165,7 +173,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.UriFormatException">URL-адрес, присвоенный параметру <paramref name="soundLocation" />, не может быть разрешен.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -180,6 +188,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
         <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
@@ -190,7 +202,7 @@
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Media.SoundPlayer" />.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.UriFormatException">Объект <see cref="P:System.Media.SoundPlayer.SoundLocation" />, заданный в параметре <paramref name="serializationInfo" />, не может быть разрешен.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="IsLoadCompleted">
@@ -206,6 +218,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
           <AttributeName>get: System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
@@ -218,7 +234,7 @@
         <summary>Получает значение, показывающее, успешно ли выполнена загрузка WAV-файла.</summary>
         <value>Значение <see langword="true" />, если WAV-файл загружен; значение <see langword="false" />, если WAV-файл еще не загружен.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="Load">
@@ -232,6 +248,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -263,11 +283,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ServiceProcess.TimeoutException">Время (в миллисекундах), затраченное на загрузку, превышает время, указанное в свойстве <see cref="P:System.Media.SoundPlayer.LoadTimeout" />.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
         <permission cref="T:System.Net.WebPermission">для доступа к Интернет-ресурсам HTTP. Связанное перечисление: <see cref="F:System.Net.NetworkAccess.Connect" /></permission>
         <altmember cref="M:System.Media.SoundPlayer.LoadAsync" />
         <altmember cref="E:System.Media.SoundPlayer.LoadCompleted" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="LoadAsync">
@@ -281,6 +301,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -299,7 +323,7 @@
   
  Если <xref:System.Media.SoundPlayer> настроен для загрузки WAV-файла из путь к локальному файлу, этот метод не выполняет никаких действий, поскольку загрузка откладывается до начала воспроизведения.  
   
- Дополнительные сведения об асинхронной загрузке см. в разделе [как: звук асинхронной загрузки в Windows Forms](~/docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md).  
+ Дополнительные сведения об асинхронной загрузке см. в разделе [как: Загрузка звука асинхронно в форму Windows](~/docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md).  
   
    
   
@@ -313,11 +337,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ServiceProcess.TimeoutException">Время (в миллисекундах), затраченное на загрузку, превышает время, указанное в свойстве <see cref="P:System.Media.SoundPlayer.LoadTimeout" />.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
         <altmember cref="M:System.Media.SoundPlayer.Load" />
         <altmember cref="E:System.Media.SoundPlayer.LoadCompleted" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
-        <related type="Article" href="http://msdn.microsoft.com/library/3b6a9296-1d5e-4d52-a4ba-94366d6fe302">Практическое руководство. Асинхронная загрузка звука в Windows Forms</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/3b6a9296-1d5e-4d52-a4ba-94366d6fe302">Практическое руководство. Асинхронная загрузка звука в Windows Forms</related>
       </Docs>
     </Member>
     <Member MemberName="LoadCompleted">
@@ -331,6 +355,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -358,7 +386,7 @@
  ]]></format>
         </remarks>
         <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="LoadTimeout">
@@ -372,6 +400,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -393,7 +425,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="OnLoadCompleted">
@@ -409,6 +441,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -417,7 +453,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />, содержащий данные события.</param>
-        <summary>Вызывает событие <see cref="E:System.Media.SoundPlayer.LoadCompleted" />.</summary>
+        <summary>Создает событие <see cref="E:System.Media.SoundPlayer.LoadCompleted" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -430,11 +466,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnLoadCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnLoadCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnLoadCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnLoadCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para></block>
         <altmember cref="E:System.Media.SoundPlayer.LoadCompleted" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="OnSoundLocationChanged">
@@ -450,6 +484,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -458,24 +496,22 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
-        <summary>Вызывает событие <see cref="E:System.Media.SoundPlayer.SoundLocationChanged" />.</summary>
+        <summary>Создает событие <see cref="E:System.Media.SoundPlayer.SoundLocationChanged" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  Этот метод вызывается при аудиоисточник новый путь для данного <xref:System.Media.SoundPlayer> было задано.  
   
- При возникновении события через делегат вызывается обработчик события. Дополнительные сведения см. в разделе Практическое: события предоставляют функциональные возможности и [обработка и вызов событий](~/docs/standard/events/index.md).  
+ При возникновении события через делегат вызывается обработчик события. Дополнительные сведения см. в разделах "Практическое руководство. Предоставляют функциональные возможности событий и [обработка и вызов событий](~/docs/standard/events/index.md).  
   
  Метод <xref:System.Media.SoundPlayer.OnSoundLocationChanged%2A> также позволяет производным классам обрабатывать событие, не присоединяя делегат. Это предпочтительная методика обработки событий в производном классе.  
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnSoundLocationChanged(System.EventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnSoundLocationChanged(System.EventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnSoundLocationChanged(System.EventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnSoundLocationChanged(System.EventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para></block>
         <altmember cref="P:System.Media.SoundPlayer.SoundLocation" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="OnStreamChanged">
@@ -491,6 +527,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -499,7 +539,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.EventArgs" />, содержащий данные события.</param>
-        <summary>Вызывает событие <see cref="E:System.Media.SoundPlayer.StreamChanged" />.</summary>
+        <summary>Создает событие <see cref="E:System.Media.SoundPlayer.StreamChanged" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -512,11 +552,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnStreamChanged(System.EventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnStreamChanged(System.EventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При переопределении метода <see cref="M:System.Media.SoundPlayer.OnStreamChanged(System.EventArgs)" /> в производном классе нужно убедиться, что вызывается метод <see cref="M:System.Media.SoundPlayer.OnStreamChanged(System.EventArgs)" /> базового класса, чтобы зарегистрированные делегаты получили событие.</para></block>
         <altmember cref="P:System.Media.SoundPlayer.Stream" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="Play">
@@ -530,6 +568,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -563,13 +605,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ServiceProcess.TimeoutException">Время (в миллисекундах), затраченное на загрузку, превышает время, указанное в свойстве <see cref="P:System.Media.SoundPlayer.LoadTimeout" />.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
         <exception cref="T:System.InvalidOperationException">Поврежден заголовок WAV-файла; файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />, не является WAV-файлом с модуляцией PCM.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения файлов. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа к машинному коду. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
         <altmember cref="M:System.Media.SoundPlayer.PlayLooping" />
         <altmember cref="M:System.Media.SoundPlayer.PlaySync" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="PlayLooping">
@@ -583,6 +625,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -604,7 +650,7 @@
   
  Если WAV-файл не был указан или не удается загрузить, <xref:System.Media.SoundPlayer.PlayLooping%2A> метод будет воспроизводиться звуковой сигнал по умолчанию.  
   
- Дополнительные сведения о <xref:System.Media.SoundPlayer.PlayLooping%2A>, см. в разделе [как: цикл, воспроизведение звука в Windows Forms](~/docs/framework/winforms/controls/how-to-loop-a-sound-playing-on-a-windows-form.md).  
+ Дополнительные сведения об использовании <xref:System.Media.SoundPlayer.PlayLooping%2A> см. в разделе [Практическое руководство. Цикл звуков в Windows Forms](~/docs/framework/winforms/controls/how-to-loop-a-sound-playing-on-a-windows-form.md).  
   
    
   
@@ -618,13 +664,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ServiceProcess.TimeoutException">Время (в миллисекундах), затраченное на загрузку, превышает время, указанное в свойстве <see cref="P:System.Media.SoundPlayer.LoadTimeout" />.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
         <exception cref="T:System.InvalidOperationException">Поврежден заголовок WAV-файла; файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />, не является WAV-файлом с модуляцией PCM.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения файлов. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа к машинному коду. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
         <altmember cref="M:System.Media.SoundPlayer.Play" />
         <altmember cref="M:System.Media.SoundPlayer.PlaySync" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="PlaySync">
@@ -638,6 +684,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -671,13 +721,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ServiceProcess.TimeoutException">Время (в миллисекундах), затраченное на загрузку, превышает время, указанное в свойстве <see cref="P:System.Media.SoundPlayer.LoadTimeout" />.</exception>
-        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный параметром <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
+        <exception cref="T:System.IO.FileNotFoundException">Не удается найти файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />.</exception>
         <exception cref="T:System.InvalidOperationException">Поврежден заголовок WAV-файла; файл, заданный свойством <see cref="P:System.Media.SoundPlayer.SoundLocation" />, не является WAV-файлом с модуляцией PCM.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для чтения файлов. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа к машинному коду. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
         <altmember cref="M:System.Media.SoundPlayer.Play" />
         <altmember cref="M:System.Media.SoundPlayer.PlayLooping" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="SoundLocation">
@@ -693,12 +743,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает путь к файлу или URL-адрес загружаемого WAV-файла.</summary>
-        <value>Путь к файлу или URL-адрес для загрузки WAV-файла или значение <see cref="F:System.String.Empty" />, если путь к файлу отсутствует. Значение по умолчанию: <see cref="F:System.String.Empty" />.</value>
+        <value>Путь к файлу или URL-адрес для загрузки WAV-файла или значение <see cref="F:System.String.Empty" />, если путь к файлу отсутствует. Значение по умолчанию — <see cref="F:System.String.Empty" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -717,7 +771,7 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.FileIOPermission">для поиска файлов. Связанное перечисление: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="SoundLocationChanged">
@@ -731,6 +785,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -757,7 +815,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="Stop">
@@ -771,6 +829,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -792,7 +854,7 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа к машинному коду. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="Stream">
@@ -808,12 +870,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает поток <see cref="T:System.IO.Stream" /> для загрузки WAV-файла.</summary>
-        <value>Поток <see cref="T:System.IO.Stream" /> для загрузки WAV-файла или значение <see langword="null" />, если поток отсутствует. Значение по умолчанию: <see langword="null" />.</value>
+        <value>Поток <see cref="T:System.IO.Stream" /> для загрузки WAV-файла или значение <see langword="null" />, если поток отсутствует. Значение по умолчанию — <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -823,7 +889,7 @@
  ]]></format>
         </remarks>
         <altmember cref="T:System.IO.Stream" />
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="StreamChanged">
@@ -837,6 +903,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -854,7 +924,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/fcebb938-62b9-4677-9cbe-6465bc863e22">Общие сведения о классе SoundPlayer (Windows Forms)</related>
       </Docs>
     </Member>
     <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
@@ -872,6 +942,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -887,7 +961,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот член представляет собой явную реализацию члена интерфейса. Он может использоваться, только если экземпляр <xref:System.Media.SoundPlayer> приведен к типу интерфейса <xref:System.Runtime.Serialization.ISerializable>.  
+ Данный элемент является явной реализацией элемента интерфейса. Он может использоваться только при условии, что экземпляр класса <xref:System.Media.SoundPlayer> приведен к типу интерфейса <xref:System.Runtime.Serialization.ISerializable>.  
   
  ]]></format>
         </remarks>
@@ -904,6 +978,10 @@
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>

@@ -1,13 +1,5 @@
 <Type Name="Task&lt;TResult&gt;" FullName="System.Threading.Tasks.Task&lt;TResult&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="45373ee4dcebcddee1d766d0390eef269ce7e2f2" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48641313" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Task&lt;TResult&gt; : System.Threading.Tasks.Task" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d2c9b15fe2739ed3c3a8705fe3e9376b52727adf" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58414194" /></Metadata><TypeSignature Language="C#" Value="public class Task&lt;TResult&gt; : System.Threading.Tasks.Task" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Task`1&lt;TResult&gt; extends System.Threading.Tasks.Task" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Task`1" />
   <TypeSignature Language="VB.NET" Value="Public Class Task(Of TResult)&#xA;Inherits Task" />
@@ -72,7 +64,7 @@
   
  Начиная с настольных приложений, предназначенных [!INCLUDE[net_v46](~/includes/net-v46-md.md)], язык и региональные параметры потока, который создает и вызывает задачу становится частью контекст потока. Независимо от текущего потока, на котором выполняется задача, текущий язык и региональные параметры задачи является язык и региональные параметры вызывающего потока. Для приложений, предназначенных для версий платформы .NET Framework до версии [!INCLUDE[net_v46](~/includes/net-v46-md.md)], язык и региональные параметры задачи — это язык и региональные параметры потока, на котором выполняется задача. Дополнительные сведения см. в разделе «Язык и региональные параметры и асинхронные операции на основе задач» в <xref:System.Globalization.CultureInfo> разделе. Обратите внимание на то, что приложения Store придерживаются среды выполнения Windows в задание и получение культуры по умолчанию.  
   
-Для операций, которые не возвращают значение, используйте <xref:System.Threading.Tasks.Task> класса. Если вы разрабатываете с C# 7, для более упрощенный задачу, которая является типом значения, а не ссылочным типом, используйте <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> структуры; он поддерживается, начиная с версии C# 7. 
+Для операций, которые не возвращают значение, используйте <xref:System.Threading.Tasks.Task> класса. Начиная с C# 7.0, для более упрощенный задачу, которая является типом значения, а не ссылочным типом, используйте <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> структуры. 
   
  ]]></format>
     </remarks>
@@ -130,7 +122,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Вместо вызова этого конструктора, наиболее распространенным способом для создания экземпляра <xref:System.Threading.Tasks.Task%601> объекта и запуск задачи — путем вызова статического <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> и <xref:System.Threading.Tasks.TaskFactory%601.StartNew%28System.Func%7B%600%7D%29?displayProperty=nameWithType> методы. Только преимущества, предлагаемые этим конструктором является то, что при создании объектов быть отделены от вызова задачи.  
+ Этот конструктор следует использовать только в сложных сценариях, когда он необходим отделяется создания и запуска задачи.  
+  
+ Вместо вызова этого конструктора, наиболее распространенным способом для создания экземпляра <xref:System.Threading.Tasks.Task%601> объекта и запуск задачи — путем вызова статического <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> и <xref:System.Threading.Tasks.TaskFactory%601.StartNew%28System.Func%7B%600%7D%29?displayProperty=nameWithType> методы.  
+  
+ Если задача, не выполняя никаких действий для ситуация каким-то await, необходима только для потребителей API <xref:System.Threading.Tasks.TaskCompletionSource%601> следует использовать.  
   
    
   
@@ -146,7 +142,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -194,7 +190,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -242,7 +238,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -291,7 +287,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="creationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskCreationOptions" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -341,7 +337,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -392,7 +388,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="creationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskCreationOptions" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -429,7 +425,7 @@
         <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
       </Parameters>
       <Docs>
-        <param name="function">Делегат, который представляет код, выполняемый в рамках задачи. После завершения выполнения функции будет установлено свойство <see cref="P:System.Threading.Tasks.Task`1.Result" /> результата задачи для возврата результата выполнения функции.</param>
+        <param name="function">Делегат, который представляет код, выполняемый в рамках задачи. После завершения выполнения функции для свойства задачи <see cref="P:System.Threading.Tasks.Task`1.Result" /> будет задано значение, равное значению, возвращенному функцией.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче.</param>
         <param name="creationOptions">Объект <see cref="T:System.Threading.Tasks.TaskCreationOptions" />, который используется для настройки поведения задачи.</param>
         <summary>Инициализирует новую задачу <see cref="T:System.Threading.Tasks.Task`1" /> с указанной функцией и параметрами создания.</summary>
@@ -443,7 +439,7 @@
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="creationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskCreationOptions" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -496,7 +492,7 @@
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="creationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskCreationOptions" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="function" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="function" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
       </Docs>
@@ -537,7 +533,7 @@
         <ReturnType>System.Runtime.CompilerServices.ConfiguredTaskAwaitable&lt;TResult&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continueOnCapturedContext" Type="System.Boolean" />
+        <Parameter Name="continueOnCapturedContext" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continueOnCapturedContext">Значение true, чтобы попытаться выполнить маршалинг продолжения обратно в исходный захваченный контекст; в противном случае — значение false.</param>
@@ -612,8 +608,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> равен пустой ссылке (<see langword="null" />).</exception>
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение <see langword="null" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -650,11 +646,11 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату передается в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
+        <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату передается в виде аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
         <summary>Создает продолжение, которое получает сведения о состоянии и выполняется после завершения целевой задачи <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
@@ -674,7 +670,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
     </Member>
@@ -712,7 +708,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату передается в виде аргумента завершенная задача.</param>
         <param name="cancellationToken">Токен отмены, передаваемый новой задаче продолжения.</param>
         <summary>Создает отменяемое продолжение, которое выполняется асинхронно после завершения выполнения целевой задачи <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <returns>Новая задача продолжения.</returns>
@@ -736,11 +732,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.  
   
 -или- 
 Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> равен пустой ссылке (<see langword="null" />).</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение <see langword="null" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -781,7 +777,7 @@
         <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие в соответствии с условием, заданным в <c>continuationOptions</c>. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationAction">Действие в соответствии с заданным условием в <paramref name="continuationOptions" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
         <summary>Создает продолжение, выполняемое в соответствии с условием, заданным в <paramref name="continuationOptions" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
@@ -795,8 +791,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.</exception>
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
@@ -850,11 +846,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.  
   
 -или- 
-Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -890,9 +886,9 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
@@ -908,7 +904,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
@@ -944,14 +940,14 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
-        <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
+        <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. К ним относятся такие критерии, как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
         <summary>Создает продолжение, которое выполняется после завершения выполнения целевого объекта <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
@@ -962,7 +958,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
@@ -998,9 +994,9 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
@@ -1016,7 +1012,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> равен пустой ссылке (<see langword="null" />).</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение <see langword="null" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
     </Member>
@@ -1056,7 +1052,7 @@
         <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
       </Parameters>
       <Docs>
-        <param name="continuationAction">Действие для запуска в соответствии с заданным условием в <c>continuationOptions</c>. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
+        <param name="continuationAction">Действие для запуска в соответствии с заданным условием в <paramref name="continuationOptions" />. При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
         <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
@@ -1070,14 +1066,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.  
   
 -или- 
 Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationAction" /> является null.  
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationAction" /> имеет значение NULL.  
   
 -или- 
-Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
@@ -1114,18 +1110,18 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationAction" Type="System.Action&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="continuationAction">Действие, которое необходимо выполнить после завершения <see cref="T:System.Threading.Tasks.Task`1" />. При запуске делегату будут переданы в качестве аргументов завершенная задача и предоставленный вызывающей стороной объект состояния.</param>
         <param name="state">Объект, который представляет данные, используемые действием продолжения.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче продолжения.</param>
-        <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
-        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который следует связать с задачей продолжения и использовать для ее запуска.</param>
+        <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. К ним относятся такие критерии, как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
+        <param name="scheduler">Планировщик <see cref="T:System.Threading.Tasks.TaskScheduler" />, который связывается с задачей продолжения для ее запуска.</param>
         <summary>Создает продолжение, которое выполняется после завершения выполнения целевого объекта <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <returns>Новое продолжение <see cref="T:System.Threading.Tasks.Task" />.</returns>
         <remarks>
@@ -1136,7 +1132,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -1191,8 +1187,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -1232,8 +1228,8 @@
         <TypeParameter Name="TNewResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
@@ -1257,7 +1253,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
     </Member>
@@ -1311,11 +1307,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.  
   
 -или- 
 Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -1360,7 +1356,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
-        <param name="continuationFunction">Функция для запуска в соответствии с условием, заданным в <c>continuationOptions</c>.  
+        <param name="continuationFunction">Функция для запуска в соответствии с заданным условием в <paramref name="continuationOptions" />.  
   
 При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="continuationOptions">Параметры, определяющие запланированное время продолжения и его поведение. Включаются критерии, такие как <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />, а также параметры выполнения, например <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />.</param>
@@ -1372,12 +1368,12 @@
 ## Remarks  
  Возвращенный <xref:System.Threading.Tasks.Task%601> не планируется для выполнения до завершения текущей задачи, она завершается из-за выполнение успешно, завершение со сбоем из-за необработанного исключения или преждевременного из-за отмены ли.  
   
- `continuationFunction`, При выполнении вернет <xref:System.Threading.Tasks.Task%601>...  
+ `continuationFunction`, При выполнении вернет <xref:System.Threading.Tasks.Task%601>. 
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
@@ -1435,11 +1431,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.  
   
 -или- 
-Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <altmember cref="T:System.Threading.Tasks.TaskScheduler" />
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
@@ -1479,9 +1475,9 @@
         <TypeParameter Name="TNewResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
@@ -1498,7 +1494,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
@@ -1537,9 +1533,9 @@
         <TypeParameter Name="TNewResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
@@ -1558,7 +1554,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
@@ -1597,9 +1593,9 @@
         <TypeParameter Name="TNewResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
@@ -1616,7 +1612,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
       </Docs>
     </Member>
@@ -1660,7 +1656,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
-        <param name="continuationFunction">Функция для запуска в соответствии с условием, заданным в <c>continuationOptions</c>.  
+        <param name="continuationFunction">Функция для запуска в соответствии с заданным условием в <paramref name="continuationOptions" />.  
   
 При запуске делегата завершенная задача будет передана ему в качестве аргумента.</param>
         <param name="cancellationToken">Токен <see cref="T:System.Threading.CancellationToken" />, который будет назначен новой задаче.</param>
@@ -1678,14 +1674,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> ликвидирован.  
+        <exception cref="T:System.ObjectDisposedException">Объект <see cref="T:System.Threading.Tasks.Task`1" /> удален.  
   
 -или- 
 Класс <see cref="T:System.Threading.CancellationTokenSource" />, создавший <paramref name="cancellationToken" />, уже удален.</exception>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="continuationFunction" /> является null.  
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="continuationFunction" /> имеет значение NULL.  
   
 -или- 
-Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>
@@ -1725,11 +1721,11 @@
         <TypeParameter Name="TNewResult" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" />
-        <Parameter Name="state" Type="System.Object" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
-        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;,System.Object,TNewResult&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="state" Type="System.Object" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" Index="3" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" Index="4" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TNewResult">Тип результата, созданного продолжением.</typeparam>
@@ -1750,7 +1746,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Аргументом параметра <paramref name="scheduler" /> является null.</exception>
+        <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="scheduler" /> имеет значение NULL.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Аргумент <paramref name="continuationOptions" /> задает недопустимое значение для <see cref="T:System.Threading.Tasks.TaskContinuationOptions" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Предоставленный объект <see cref="T:System.Threading.CancellationToken" /> уже был удален.</exception>
         <related type="Article" href="~/docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md">Создание цепочки задач с помощью задач продолжения</related>
@@ -1787,7 +1783,7 @@
         <ReturnType>System.Threading.Tasks.TaskFactory&lt;TResult&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Предоставляет доступ к методам фабрики для создания и настройки экземпляров <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
+        <summary>Предоставляет доступ к фабричным методам для создания и настройки экземпляров <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
         <value>Объект фабрики, который может создавать разнообразные объекты <see cref="T:System.Threading.Tasks.Task`1" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1807,7 +1803,12 @@
 > [!NOTE]
 >  Начиная с [!INCLUDE[net_v45](~/includes/net-v45-md.md)], <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> метод предоставляет самый простой способ создать <xref:System.Threading.Tasks.Task%601> объекта значения конфигурации по умолчанию.  
   
- В следующем примере используется статический <xref:System.Threading.Tasks.Task%601.Factory%2A> свойство для трех вызовов к <xref:System.Threading.Tasks.TaskFactory%601.StartNew%2A?displayProperty=nameWithType> метод. Первая начинается `Task<Int32>` объект, который выполняет лямбда-выражения и возвращает значение 1. Второй начинается `Task<Test>` объект, который выполняет лямбда-выражение, которое создает новый экземпляр `Test` экземпляра. Третий начинается "задача < строка]]></format>
+ В следующем примере используется статический <xref:System.Threading.Tasks.Task%601.Factory%2A> свойство для трех вызовов к <xref:System.Threading.Tasks.TaskFactory%601.StartNew%2A?displayProperty=nameWithType> метод. Первая начинается `Task<Int32>` объект, который выполняет лямбда-выражения и возвращает значение 1. Второй начинается `Task<Test>` объект, который выполняет лямбда-выражение, которое создает новый экземпляр `Test` экземпляра. Третий начинается `Task<String[]>` объект, который перечисляет файлы в каталоге C:\Users\Public\Pictures\Sample существовал. (Обратите внимание, что успешное выполнение этого примера требуется, что каталог существует и что она содержит файлы.  
+  
+ [!code-csharp[TPL#10](~/samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/returnavalue10.cs#10)]
+ [!code-vb[TPL#10](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/10_returnavalue.vb#10)]  
+  
+ ]]></format>
         </remarks>
         <related type="Article" href="~/docs/standard/parallel-programming/task-parallel-library-tpl.md">Библиотека параллельных задач (TPL)</related>
         <related type="Article" href="~/docs/standard/parallel-programming/task-based-asynchronous-programming.md">Асинхронное программирование на основе задач</related>

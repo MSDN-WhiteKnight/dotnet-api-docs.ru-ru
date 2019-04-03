@@ -1,13 +1,5 @@
 <Type Name="Container" FullName="System.ComponentModel.Container">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="604493ed8b142cb402c869a9eef5a545413ccb80" />
-    <Meta Name="ms.sourcegitcommit" Value="cbcba80f998e27b87425ad54726bdb684fb3a932" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/04/2018" />
-    <Meta Name="ms.locfileid" Value="43620579" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Container : IDisposable, System.ComponentModel.IContainer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8396f0039df42aa6a4bab547489455997db92eb0" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57932641" /></Metadata><TypeSignature Language="C#" Value="public class Container : IDisposable, System.ComponentModel.IContainer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Container extends System.Object implements class System.ComponentModel.IContainer, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Container" />
   <TypeSignature Language="VB.NET" Value="Public Class Container&#xA;Implements IContainer, IDisposable" />
@@ -149,7 +141,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="component" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="component" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.ComponentModel.Container.Remove(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
@@ -191,7 +183,7 @@
         <param name="component">Добавляемый компонент.</param>
         <param name="name">Назначаемое компоненту уникальное имя, в котором не учитывается регистр.  
   
-- или - 
+-или- 
  <see langword="null" />, при котором компонент остается безымянным.</param>
         <summary>Добавляет указанный <see cref="T:System.ComponentModel.Component" /> в <see cref="T:System.ComponentModel.Container" /> и присваивает ему имя.</summary>
         <remarks>
@@ -204,7 +196,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="component" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="component" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Значение <paramref name="name" /> не является уникальным.</exception>
         <altmember cref="M:System.ComponentModel.Container.Remove(System.ComponentModel.IComponent)" />
       </Docs>
@@ -287,7 +279,7 @@
       </Parameters>
       <Docs>
         <param name="component">Компонент <see cref="T:System.ComponentModel.IComponent" />, для которого создается узел.</param>
-        <param name="name">Имя, которое нужно присвоить параметру <c>component</c>, или <see langword="null" />, чтобы не назначать имя.</param>
+        <param name="name">Имя, которое нужно присвоить параметру <paramref name="component" />, или <see langword="null" />, чтобы опустить назначение имени.</param>
         <summary>Создает узел <see cref="T:System.ComponentModel.ISite" /> для указанного компонента <see cref="T:System.ComponentModel.IComponent" /> и присваивает узлу заданное имя.</summary>
         <returns>Вновь созданный узел.</returns>
         <remarks>
@@ -389,7 +381,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает неуправляемые ресурсы, используемые журналом <see cref="T:System.ComponentModel.Container" />, и при необходимости освобождает также управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -401,10 +393,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
-            <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+        <block subset="none" type="overrides"><para>Метод 
+            <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
+  
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -480,8 +472,8 @@
         <Parameter Name="service" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="service">Тип <see cref="T:System.Type" /> извлекаемой службы.</param>
-        <summary>Получает объект службы указанного типа, если он доступен.</summary>
+        <param name="service"><see cref="T:System.Type" /> искомой службы.</param>
+        <summary>Возвращает объект службы указанного типа, если он доступен.</summary>
         <returns>Объект <see cref="T:System.Object" />, реализующий запрошенную службу, или значение <see langword="null" />, если служба не может быть реализована.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -578,7 +570,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="component">Удаляемый компонент.</param>
@@ -621,8 +613,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="component">Компонент с именем.</param>
@@ -636,7 +628,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="component" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="component" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Значение <paramref name="name" /> не является уникальным.</exception>
         <altmember cref="M:System.ComponentModel.Container.Add(System.ComponentModel.IComponent,System.String)" />
       </Docs>

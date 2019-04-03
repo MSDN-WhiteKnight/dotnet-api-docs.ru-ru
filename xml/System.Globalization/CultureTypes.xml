@@ -1,13 +1,5 @@
 <Type Name="CultureTypes" FullName="System.Globalization.CultureTypes">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1da87064185ae8cc12a92e9131003a3f88d247ec" />
-    <Meta Name="ms.sourcegitcommit" Value="d71cc71109ed3cbcf3406a10a3cd7ac7e30f5e0c" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/10/2018" />
-    <Meta Name="ms.locfileid" Value="51525750" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum CultureTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8fd484c5abc837a2b49dcac4c67e971e4ea82ad5" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56404907" /></Metadata><TypeSignature Language="C#" Value="public enum CultureTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CultureTypes extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.CultureTypes" />
   <TypeSignature Language="VB.NET" Value="Public Enum CultureTypes" />
@@ -33,14 +25,14 @@
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
       <AttributeName>System.Flags</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -52,10 +44,22 @@
 
 Эти значения языка и региональных параметров типа возвращаются <xref:System.Globalization.CultureInfo.CultureTypes%2A?displayProperty=nameWithType> свойства, а также служат фильтр, ограничивающий языков и региональных параметров, возвращаемых <xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType> метод. Дополнительные сведения о языков и региональных параметров, см. в разделе <xref:System.Globalization.CultureInfo>.  
   
-Как правило, приложение должно перечислять все языки и региональные параметры с помощью `CultureTypes.AllCultures` значение. Это позволяет использовать перечисления пользовательских языков и региональных параметров, а также других типов языка и региональных параметров.  
+Как правило, перечислить все языки и региональные параметры с помощью `CultureTypes.AllCultures` значение. Это позволяет использовать перечисления пользовательских языков и региональных параметров, а также других типов языка и региональных параметров.  
   
 Обратите внимание, что все `CultureTypes` члены рекомендованных к использованию за исключением `CultureTypes.AllCultures`, `CultureTypes.NeutralCultures`, и `CultureTypes.SpecificCultures`.  
+
+.NET распознает следующие типы языка и региональных параметров, которые включены в перечисления, возвращенный `CultureTypes.AllTypes` член перечисления:
+
+- **Конкретные языки**, которые определяют, страну или регион и язык. Имена этих языков и региональных параметров соответствуют стандарту RFC 4646. Формат `<languagecode2>-<country/regioncode2>`, где `<languagecode2>` — двухбуквенный код, в нижнем регистре, производный от ISO 639-1, и `<country/regioncode2>` прописные двухбуквенный код является производным от ISO 3166. Например, код en-US, означающий английский язык (США), относится к конкретным языкам и региональным параметрам. Пользовательские конкретных языков и региональных параметров (то есть, языков и региональных параметров, которые являются приложения -, а не системный) может иметь любое имя определяемое пользователем, не только совместимые со стандартами из них.  
+
+- **Нейтральные культуры**, которые определяют язык дублирующие страны или региона. Имена нейтральные культуры представляют двухбуквенный код в нижнем регистре, производный от ISO 639-1. Например, en (английский) относится к нейтральным языкам и региональным параметрам. Пользовательских нейтральных языков и региональных параметров (то есть, языков и региональных параметров, которые являются приложения -, а не системный) может быть любое определяемое пользователем имя, не только двухбуквенный код.
   
+  Инвариантный язык и региональные параметры включен в массив языков и региональных параметров, возвращаемых <xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType> метод, который задает это значение.  
+
+- **Пользовательские языки и региональные параметры**, которые являются определяемые приложением языков и региональных параметров. Пользовательские языки и региональные параметры могут представлять конкретных языков или нейтральные культуры и может иметь любое имя приложения. 
+
+   В версиях Windows до Windows 10 `UserCustomCulture` значение будет назначено пользовательские языки и региональные параметры, созданные разработчиком. В Windows 10 `UserCustomCulture` также значения для системы, не поддерживаемый полный набор региональные данные и, не имеющих уникальные локальные идентификаторы языков и региональных параметров. (Все языки и региональные параметры типа `UserCustomCulture` совместно использовать <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType> значение `LOCALE_CUSTOM_UNSPECIFIED` (0x1000 или 4096)). В результате `CultureInfo.GetCultures(CultureTypes.UserCustomCulture)` метод возвращает разные наборы языков и региональных параметров в разных версиях Windows.  
+
 ## Examples  
 
 В следующем примере демонстрируется `CultureTypes.AllCultures` член перечисления и <xref:System.Globalization.CultureInfo.CultureTypes%2A> свойство.  
@@ -135,7 +139,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("This value has been deprecated.  Please use other values in CultureTypes.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -209,17 +213,6 @@
       <MemberValue>1</MemberValue>
       <Docs>
         <summary>Языки и региональные параметры, которые связаны с языком, но не являются специфичными для страны или региона.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-
-Имена языков и региональных параметров .NET представляют двухбуквенный код в нижнем регистре, производный от ISO 639-1. Например, en (английский) относится к нейтральным языкам и региональным параметрам. Пользовательские языки и региональные параметры (то есть, языков и региональных параметров, которые являются приложения -, а не системный) может быть любое определяемое пользователем имя, не только двухбуквенный код.  
-  
- Инвариантный язык и региональные параметры включен в массив языков и региональных параметров, возвращаемых <xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType> метод, который задает это значение.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ReplacementCultures">
@@ -283,17 +276,6 @@
       <MemberValue>2</MemberValue>
       <Docs>
         <summary>Конкретные языки и региональные параметры, характерные для стран или регионов.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks 
-
-Имена этих языков и региональных параметров соответствуют стандарту RFC 4646 (Windows Vista и более поздние версии). Формат &lt;languagecode2&gt;-&lt;country/regioncode2&gt;, где &lt;languagecode2&gt; — двухбуквенный код в нижнем регистре, производный от ISO 639-1, а &lt;country/regioncode2&gt; — двухбуквенный код в верхнем регистре в соответствии с ISO 3166. Например, код en-US, означающий английский язык (США), относится к конкретным языкам и региональным параметрам.
-
-Пользовательские языки и региональные параметры (то есть, языков и региональных параметров, которые являются приложения -, а не системный) может иметь любое указанное пользователем имя, не только стандартные, совместимые из них.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UserCustomCulture">
@@ -325,15 +307,6 @@
       <MemberValue>8</MemberValue>
       <Docs>
         <summary>**Этот элемент считается нерекомендуемым.** Пользовательские языки и региональные параметры, созданные пользователем.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-
-В версиях Windows до Windows 10 `UserCustomCulture` значение будет назначено пользовательские языки и региональные параметры, созданные разработчиком. В Windows 10 `UserCustomCulture` также значения для системы, не поддерживаемый полный набор региональные данные и, не имеющих уникальные локальные идентификаторы языков и региональных параметров. (Все языки и региональные параметры типа `UserCustomCulture` совместно использовать <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType> значение `LOCALE_CUSTOM_UNSPECIFIED` (0x1000 или 4096)). В результате `CultureInfo.GetCultures(CultureTypes.UserCustomCulture)` метод возвращает разные наборы языков и региональных параметров в разных версиях Windows.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="WindowsOnlyCultures">
@@ -360,7 +333,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("This value has been deprecated.  Please use other values in CultureTypes.")</AttributeName>
         </Attribute>
       </Attributes>

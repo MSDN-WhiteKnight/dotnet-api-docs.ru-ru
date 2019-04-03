@@ -1,13 +1,5 @@
 <Type Name="DES" FullName="System.Security.Cryptography.DES">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="84d44bcc218e8df031c5ddfaaa4aaa9b5b763ebd" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48592173" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class DES : System.Security.Cryptography.SymmetricAlgorithm" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a1f762c8ee5dad633c80fda54fd4e5b92a9a95b1" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56356497" /></Metadata><TypeSignature Language="C#" Value="public abstract class DES : System.Security.Cryptography.SymmetricAlgorithm" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DES extends System.Security.Cryptography.SymmetricAlgorithm" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DES" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DES&#xA;Inherits SymmetricAlgorithm" />
@@ -37,7 +29,7 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
     </Attribute>
   </Attributes>
@@ -265,8 +257,8 @@
         <Parameter Name="rgbKey" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="rgbKey">Секретный ключ, проверяемый на частичную слабость.</param>
-        <summary>Определяет, является ли указанный ключ частично слабым.</summary>
+        <param name="rgbKey">Секретный ключ, проверяемый на полуслабость.</param>
+        <summary>Определяет, является ли заданный ключ полуслабым.</summary>
         <returns>Значение <see langword="true" />, если ключ полуслабый; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -278,7 +270,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.Cryptography.CryptographicException">Недопустимый размер параметра <paramref name="rgbKey" />.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">Недопустимая длина значения параметра <paramref name="rgbKey" />.</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
       </Docs>
     </Member>
@@ -314,8 +306,8 @@
       </Parameters>
       <Docs>
         <param name="rgbKey">Секретный ключ, проверяемый на слабость.</param>
-        <summary>Определяет, является ли указанный ключ слабым.</summary>
-        <returns>Значение <see langword="true" />, если ключ слабый; в противном случае — значение <see langword="false" />.</returns>
+        <summary>Определяет, является ли заданный ключ слабым.</summary>
+        <returns>Значение <see langword="true" />, если ключ является слабым; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -326,7 +318,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.Cryptography.CryptographicException">Недопустимый размер параметра <paramref name="rgbKey" />.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">Недопустимая длина значения параметра <paramref name="rgbKey" />.</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>
       </Docs>
     </Member>
@@ -372,7 +364,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Предпринята попытка установить для этого ключа значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Предпринята попытка задания для ключа значения <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Предпринята попытка задания ключа, длина которого не равна <see cref="F:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue" />.</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">Предпринята попытка задания слабого (см. <see cref="M:System.Security.Cryptography.DES.IsWeakKey(System.Byte[])" />) или полуслабого ключа (см. <see cref="M:System.Security.Cryptography.DES.IsSemiWeakKey(System.Byte[])" />).</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">службы шифрования</related>

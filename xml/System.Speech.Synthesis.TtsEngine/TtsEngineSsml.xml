@@ -1,13 +1,5 @@
 <Type Name="TtsEngineSsml" FullName="System.Speech.Synthesis.TtsEngine.TtsEngineSsml">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2dd79a74db6eb6211a32e44ea8b840a4f9b244fe" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39998197" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class TtsEngineSsml" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f997637b2e580bde8d2113499021c961c4dc139d" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52216774" /></Metadata><TypeSignature Language="C#" Value="public abstract class TtsEngineSsml" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TtsEngineSsml extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class TtsEngineSsml" />
@@ -146,9 +138,7 @@ public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>()
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Отвечает реализации полностью знакомы и всегда сможет обработать лексикона, хранящееся в <paramref name="uri" />. Реализация необходимо также отслеживать и управлять временем жизни всех словари, которые он добавляет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Отвечает реализации полностью знакомы и всегда сможет обработать лексикона, хранящееся в <paramref name="uri" />. Реализация необходимо также отслеживать и управлять временем жизни всех словари, которые он добавляет.</para></block>
       </Docs>
     </Member>
     <Member MemberName="GetOutputFormat">
@@ -172,7 +162,7 @@ public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>()
       </Parameters>
       <Docs>
         <param name="speakOutputFormat">Допустимый член перечисления <see cref="T:System.Speech.Synthesis.TtsEngine.SpeakOutputFormat" />, указывающий тип запрошенного формата аудиовывода.</param>
-        <param name="targetWaveFormat">Указатель на структуру <see langword="struct" />, содержащую сведения о типе звукового формата, запрошенном аргументом <c>speakOutputFormat</c>.</param>
+        <param name="targetWaveFormat">Указатель на параметр <see langword="struct" />, содержащий сведения для звукового типа формата, запрошенного аргументом <paramref name="speakOutputFormat" />.</param>
         <summary>Возвращает максимально точного соответствующие звуковые выходные данные, поддерживаемые данным ответом механизма синтеза на запрос к механизму синтеза на поддержку определенного формата вывода.</summary>
         <returns>Возвращает допустимый экземпляр <see langword="IntPtr" /> при ссылке на <see langword="struct" />, содержащий подробные сведения о формате вывода.</returns>
         <remarks>
@@ -234,9 +224,7 @@ internal struct WaveFormat {
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Объект, наследуемый от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> проверить запрошенный формат в соответствии с <paramref name="targetWaveFormat" /> и возвращает ближайший формат, который он поддерживает.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Объект, наследуемый от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> проверить запрошенный формат в соответствии с <paramref name="targetWaveFormat" /> и возвращает ближайший формат, который он поддерживает.</para></block>
       </Docs>
     </Member>
     <Member MemberName="RemoveLexicon">
@@ -294,9 +282,7 @@ public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>()
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Отвечает реализации полностью знакомы и всегда сможет обработать лексикона, хранящееся в <paramref name="uri" />. Реализация необходимо также отслеживать и управлять временем жизни всех словари, которые она удаляет.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Отвечает реализации полностью знакомы и всегда сможет обработать лексикона, хранящееся в <paramref name="uri" />. Реализация необходимо также отслеживать и управлять временем жизни всех словари, которые она удаляет.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Speak">
@@ -322,8 +308,7 @@ public static Dictionary<Uri, Stream> _aLexicons = new Dictionary<Uri, Stream>()
       </Parameters>
       <Docs>
         <param name="fragment">Массив экземпляров <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />, содержащих текст для преобразования в речь.</param>
-        <param name="waveHeader">
-          <see langword="IntPtr" />, указывающий на структуру, содержащую формат аудиовыхода.</param>
+        <param name="waveHeader"><see langword="IntPtr" />, указывающий на структуру, содержащую формат аудиовыхода.</param>
         <param name="site">Ссылка на интерфейс <see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" /> передаваемые в инфраструктуре платформы, чтобы разрешить доступ к ресурсам инфраструктуры.</param>
         <summary>Отрисовывает указанный массив <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> в указанном формате вывода.</summary>
         <remarks>
@@ -415,9 +400,20 @@ override public void Speak (TextFragment [] frags, IntPtr wfx, ITtsEngineSite si
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Настраиваемое преобразование речи синтезатор реализует с помощью <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> и <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" /> работают как фильтры или посредников между приложениями синтезатор, создано с помощью инфраструктуры платформы по членам <see cref="N:System.Speech.Synthesis" /> пространства имен и Модули синтеза речи базовой системы.  Объект <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" /> реализации: 1.  Перехватывает или изменять аспекты входящего <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> объекты 2.  Создает все необходимые события, с помощью ссылки сайта <see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" /> 3 экземпляра.  Создает фактические синтезированную речь.  Формирования речи чаще всего осуществляется вызовом <c>Speak</c> на одном из речи, Подготовка к просмотру ядер, предоставляемые операционной системой.  Если один из доступных речи для подготовки отчетов не используется, объект, наследуемый от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> необходимо создать свой собственный механизм отрисовки речи.  Доступ к <c>Speak</c> метод полученного с помощью реестра и отражения.  При наследовании от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />, необходимо переопределить следующие члены: <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.#ctor(System.String)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon(System.Uri,System.String,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon(System.Uri,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat(System.Speech.Synthesis.TtsEngine.SpeakOutputFormat,System.IntPtr)" />, и <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Настраиваемое преобразование речи синтезатор реализует с помощью <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> и <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" /> работают как фильтры или посредников между приложениями синтезатор, создано с помощью инфраструктуры платформы по членам <see cref="N:System.Speech.Synthesis" /> пространства имен и Модули синтеза речи базовой системы.  
+  
+Объект <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" /> реализации: 
+1.  Перехватывает или изменять аспекты входящего <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> объектов 
+2.  Создает все необходимые события, с помощью ссылки сайта <see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" /> экземпляра 
+3.  Создает фактические синтезированную речь.  
+  
+Формирования речи чаще всего осуществляется вызовом <c>Speak</c> на одном из речи, Подготовка к просмотру ядер, предоставляемые операционной системой.  
+  
+Если один из доступных речи для подготовки отчетов не используется, объект, наследуемый от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" /> необходимо создать свой собственный механизм отрисовки речи.  
+  
+Доступ к <c>Speak</c> метод полученного с помощью реестра и отражения. .  
+  
+При наследовании от <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineSsml" />, необходимо переопределить следующие члены: <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.#ctor(System.String)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.AddLexicon(System.Uri,System.String,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.RemoveLexicon(System.Uri,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />, <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.GetOutputFormat(System.Speech.Synthesis.TtsEngine.SpeakOutputFormat,System.IntPtr)" />, и <see cref="M:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak(System.Speech.Synthesis.TtsEngine.TextFragment[],System.IntPtr,System.Speech.Synthesis.TtsEngine.ITtsEngineSite)" />.</para></block>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="HttpContent" FullName="System.Net.Http.HttpContent">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="48f984a2490e5cb14e5add7c00a1d776d6d06ddc" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39973850" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class HttpContent : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9bd85d70234245fc40ae5ba22563fe5350b02f61" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53469196" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpContent : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpContent extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.HttpContent" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HttpContent&#xA;Implements IDisposable" />
@@ -34,7 +26,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Базовый класс, представляющий заголовки содержимого и тело сущности HTTP.</summary>
+    <summary>Базовый класс, представляющий тело и заголовки содержимого сущности HTTP.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -71,7 +63,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Выполнит сериализацию содержимого HTTP в поток байтов и копирует его в объект потока, предоставленный в качестве параметра <paramref name="stream" />.</summary>
+        <summary>Сериализирует содержимое HTTP в поток байтов и копирует его в объект потока, предоставленный как параметр <paramref name="stream" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -109,13 +101,13 @@
       </Parameters>
       <Docs>
         <param name="stream">Целевой поток.</param>
-        <summary>Выполнит сериализацию содержимого HTTP в поток байтов и копирует его в объект потока, предоставленный в качестве параметра <paramref name="stream" />.</summary>
+        <summary>Сериализирует содержимое HTTP в поток байтов и копирует его в объект потока, предоставленный как параметр <paramref name="stream" />.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта операция не будет блокировать. Возвращенный <xref:System.Threading.Tasks.Task%601> объекта будет завершена после написания все содержимое в объект потока, переданного в качестве `stream` параметра.  
+ Эта операция не будет блокировать. Возвращенный <xref:System.Threading.Tasks.Task> объекта будет завершена после написания все содержимое в объект потока, переданного в качестве `stream` параметра.  
   
  ]]></format>
         </remarks>
@@ -150,13 +142,13 @@
       <Docs>
         <param name="stream">Целевой поток.</param>
         <param name="context">Сведения о транспорте (например, маркер привязки каналов). Этот параметр может иметь значение <see langword="null" />.</param>
-        <summary>Выполнит сериализацию содержимого HTTP в поток байтов и копирует его в объект потока, предоставленный в качестве параметра <paramref name="stream" />.</summary>
+        <summary>Сериализирует содержимое HTTP в поток байтов и копирует его в объект потока, предоставленный как параметр <paramref name="stream" />.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Эта операция не будет блокировать. Возвращенный <xref:System.Threading.Tasks.Task%601> объекта будет завершена после написания все содержимое в объект потока, переданного в качестве `stream` параметра.  
+ Эта операция не будет блокировать. Возвращенный <xref:System.Threading.Tasks.Task> объекта будет завершена после написания все содержимое в объект потока, переданного в качестве `stream` параметра.  
   
  ]]></format>
         </remarks>
@@ -192,7 +184,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Сериализация содержимого HTTP в поток памяти в качестве асинхронной операции.</summary>
+        <summary>Сериализация содержимого HTTP в поток в памяти в качестве асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -200,7 +192,7 @@
 ## Remarks  
  Эта операция не будет блокировать. Возвращенный <xref:System.Threading.Tasks.Task%601> объекта будет завершена после все содержимое записи в поток памяти.  
   
- После завершения операции, <xref:System.Threading.Tasks.Task%601.Result%2A> свойство в объекте возвращаемая задача содержит поток памяти, что, представляющий содержимое HTTP. Затем возвращенного потока можно использовать для чтения содержимого, используя поток различные API-интерфейсы.  
+ После завершения операции, <xref:System.Threading.Tasks.Task%601.Result%2A> свойство в объекте возвращаемая задача содержит поток памяти, представляющий содержимое HTTP. Затем возвращенного потока можно использовать для чтения содержимого, используя поток различные API-интерфейсы.  
   
  <xref:System.Net.Http.HttpContent.CreateContentReadStreamAsync%2A> Метод выполняет буферизацию содержимого в поток памяти. Это поведение можно переопределить в производных классах при наличии более эффективный способ получить содержимое в виде потока. Например, массив байтов или строка может использовать более эффективный способ метод например упаковки, доступное только для чтения <xref:System.IO.MemoryStream> вокруг байт или строка.)  
   
@@ -217,7 +209,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.HttpContent" />, и при необходимости удаляет управляемые ресурсы.</summary>
+        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.HttpContent" />, и опционально удаляет управляемые ресурсы.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Dispose">
@@ -280,7 +272,7 @@
       </Parameters>
       <Docs>
         <param name="disposing">Значение <see langword="true" /> для освобождения управляемых и неуправляемых ресурсов; значение <see langword="false" /> для освобождения только неуправляемых ресурсов.</param>
-        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.HttpContent" />, и при необходимости удаляет управляемые ресурсы.</summary>
+        <summary>Освобождает неуправляемые ресурсы, используемые объектом <see cref="T:System.Net.Http.HttpContent" />, и опционально удаляет управляемые ресурсы.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -315,8 +307,8 @@
         <ReturnType>System.Net.Http.Headers.HttpContentHeaders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает заголовки содержимого HTTP, определенные в RFC 2616.</summary>
-        <value>Заголовки содержимого, соответствующие определениям в RFC 2616.</value>
+        <summary>Получает заголовки HTTP-содержимого, как определено в RFC 2616.</summary>
+        <value>Заголовки HTTP-содержимого, как определено в RFC 2616.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,7 +320,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Сериализация содержимого HTTP в буфер памяти в качестве асинхронной операции.</summary>
+        <summary>Сериализация содержимого HTTP в буфер памяти в виде асинхронной операции.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -364,7 +356,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Сериализация содержимого HTTP в буфер памяти в качестве асинхронной операции.</summary>
+        <summary>Сериализация содержимого HTTP в буфер памяти в виде асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -410,8 +402,8 @@
         <Parameter Name="maxBufferSize" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="maxBufferSize">Максимальный размер используемого буфера в байтах.</param>
-        <summary>Сериализация содержимого HTTP в буфер памяти в качестве асинхронной операции.</summary>
+        <param name="maxBufferSize">Максимальный размер буфера для использования в байтах.</param>
+        <summary>Сериализация содержимого HTTP в буфер памяти в виде асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -457,7 +449,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Сериализация содержимого HTTP в массив байтов в качестве асинхронной операции.</summary>
+        <summary>Сериализация содержимого HTTP в массив байтов в виде асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -501,7 +493,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Выполнять сериализацию содержимого HTTP и возвращать поток, который представляет содержимое как асинхронную операции.</summary>
+        <summary>Сериализует HTTP-содержимое и возвращает поток, представляющий содержимое в асинхронной операции.</summary>
         <returns>Объект задачи, представляющий асинхронную операцию.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -627,9 +619,9 @@
         <Parameter Name="length" Type="System.Int64" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="length">Длина (в байтах) HTTP-содержимого.</param>
+        <param name="length">Длина содержимого HTTP в байтах.</param>
         <summary>Определяет, имеет ли содержимое HTTP допустимую длину в байтах.</summary>
-        <returns>Значение <see langword="true" />, если <paramref name="length" /> является допустимой длиной; в противном случае — значение <see langword="false" />.</returns>
+        <returns>Значение <see langword="true" />, если <paramref name="length" /> — допустимая длина. В противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

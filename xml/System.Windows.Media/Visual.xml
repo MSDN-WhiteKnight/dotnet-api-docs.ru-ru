@@ -1,13 +1,5 @@
 <Type Name="Visual" FullName="System.Windows.Media.Visual">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ec6f14fe77ef036cb2ea77a94acd31ca33695723" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48622398" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class Visual : System.Windows.DependencyObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="30bd38d787a4decfa3275e31bdb7b8ef5395b649" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57945719" /></Metadata><TypeSignature Language="C#" Value="public abstract class Visual : System.Windows.DependencyObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Visual extends System.Windows.DependencyObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Visual" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Visual&#xA;Inherits DependencyObject" />
@@ -28,9 +20,9 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Media.Visual> Класс — это базовая абстракция, из которого каждый <xref:System.Windows.FrameworkElement> объект является производным. Он также служит точкой входа для написания новых элементов управления [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]и во многих отношениях может рассматриваться как эквивалент дескриптор окна (HWND) в [!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)] модели приложения.  
+ Класс <xref:System.Windows.Media.Visual> — это базовая абстракция, и каждый объект <xref:System.Windows.FrameworkElement> является производным от него. Он также служит точкой входа для написания новых элементов управления [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]и во многих отношениях может рассматриваться как эквивалент дескриптор окна (HWND) в [!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)] модели приложения.  
   
- <xref:System.Windows.Media.Visual> Объект — это основное [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] объекта, Главная роль которого заключается в поддержке отрисовки. Элементы управления пользовательского интерфейса, такие как <xref:System.Windows.Controls.Button> и <xref:System.Windows.Controls.TextBox>, являются производными от <xref:System.Windows.Media.Visual> класса и использовать <xref:System.Windows.Media.Visual> определенные свойства для сохранения данных отрисовки. <xref:System.Windows.Media.Visual> Объект обеспечивает поддержку в следующих целях:  
+ Объект <xref:System.Windows.Media.Visual> — это основной объект [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)], главная роль которого заключается в поддержке отрисовки. Элементы управления пользовательского интерфейса, такие как <xref:System.Windows.Controls.Button> и <xref:System.Windows.Controls.TextBox>, являются производными от <xref:System.Windows.Media.Visual> класса и использовать <xref:System.Windows.Media.Visual> определенные свойства для сохранения данных отрисовки. <xref:System.Windows.Media.Visual> Объект обеспечивает поддержку в следующих целях:  
   
 -   Отображение выходных данных: визуализация сохраненного, сериализованного содержимого визуального элемента.  
   
@@ -38,7 +30,7 @@
   
 -   Отсечение: позволяет указать область отсечения для визуального элемента.  
   
--   Проверка нажатия: определение, содержится ли указанный координат (точку) или геометрическая фигура в пределах границ визуального объекта.  
+-   Проверка нажатия: Определяет, содержится ли указанный координат (точку) или геометрическая фигура в пределах границ визуального объекта.  
   
 -   Вычисление ограничивающего прямоугольника: определение ограничивающего прямоугольника визуального объекта.  
   
@@ -67,7 +59,7 @@
   
  В [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], максимальная глубина <xref:System.Windows.Media.Visual> — 2047, что позволяет гораздо более глубокую визуальных деревьев. В большинстве приложений не хватает пространства стека для обработки такого числа уровней, и в результате <xref:System.StackOverflowException> во время структурирования. Для размер стека по умолчанию, это исключение обычно вызывается при глубина дерева равна приблизительно 800, которой соответствует примерно 190 вложенных <xref:System.Windows.Controls.TreeViewItem> объектов.  
   
- Если это исключение вызывается приложением и необходимо иметь более глубокое визуальное дерево, можно увеличить размер стека приложения. Можно увеличить размер стека, используя параметр/STACK во время компиляции или с помощью служебной программы EDITBIN. Увеличение размера стека может повлиять на производительность приложения. Дополнительные сведения см. в разделе [выделение памяти в стеке](http://go.microsoft.com/fwlink/?LinkId=165510) и [параметры EDITBIN](http://go.microsoft.com/fwlink/?LinkId=165511).  
+ Если это исключение вызывается приложением и необходимо иметь более глубокое визуальное дерево, можно увеличить размер стека приложения. Можно увеличить размер стека, используя параметр/STACK во время компиляции или с помощью служебной программы EDITBIN. Увеличение размера стека может повлиять на производительность приложения. Дополнительные сведения см. в разделе [выделение памяти в стеке](https://go.microsoft.com/fwlink/?LinkId=165510) и [параметры EDITBIN](https://go.microsoft.com/fwlink/?LinkId=165511).  
   
  ]]></format>
     </remarks>
@@ -214,9 +206,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Класс, производный от <see cref="T:System.Windows.Media.Visual" /> необходимо переопределить этот метод, а также <see cref="P:System.Windows.Media.Visual.VisualChildrenCount" /> свойства для визуального дерева, перечисляется.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Класс, производный от <see cref="T:System.Windows.Media.Visual" /> необходимо переопределить этот метод, а также <see cref="P:System.Windows.Media.Visual.VisualChildrenCount" /> свойства для визуального дерева, перечисляется.</para></block>
       </Docs>
     </Member>
     <MemberGroup MemberName="HitTestCore">
@@ -378,8 +368,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="oldDpi" Type="System.Windows.DpiScale" />
-        <Parameter Name="newDpi" Type="System.Windows.DpiScale" />
+        <Parameter Name="oldDpi" Type="System.Windows.DpiScale" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="newDpi" Type="System.Windows.DpiScale" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="oldDpi">Предыдущий параметр масштабирования.</param>
@@ -649,7 +639,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="ancestor" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="ancestor" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="ancestor" /> не является предком визуального объекта.</exception>
         <exception cref="T:System.InvalidOperationException">Визуальные объекты не связаны.</exception>
       </Docs>
@@ -694,7 +684,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="descendant" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="descendant" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Визуальный объект не является предком объекта <paramref name="descendant" />.</exception>
         <exception cref="T:System.InvalidOperationException">Визуальные объекты не связаны.</exception>
       </Docs>
@@ -743,7 +733,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="visual" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="visual" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Визуальные объекты не связаны.</exception>
       </Docs>
     </Member>
@@ -761,7 +751,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
@@ -792,7 +782,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
@@ -898,9 +888,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Класс, производный от <see cref="T:System.Windows.Media.Visual" /> необходимо переопределить это свойство, а также <see cref="M:System.Windows.Media.Visual.GetVisualChild(System.Int32)" /> метод для визуального дерева, перечисляется.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Класс, производный от <see cref="T:System.Windows.Media.Visual" /> необходимо переопределить это свойство, а также <see cref="M:System.Windows.Media.Visual.GetVisualChild(System.Int32)" /> метод для визуального дерева, перечисляется.</para></block>
       </Docs>
     </Member>
     <Member MemberName="VisualClearTypeHint">
@@ -949,7 +937,7 @@
         <summary>Возвращает или задает отсеченную область объекта <see cref="T:System.Windows.Media.Visual" /> в виде значения <see cref="T:System.Windows.Media.Geometry" />.</summary>
         <value>Значение отсеченной области визуального объекта в виде типа <see cref="T:System.Windows.Media.Geometry" />.</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms746710(v=vs.90)">Практическое: Создание области обрезки</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms746710(v=vs.90)">Практическое руководство. Создание области отсечения</related>
       </Docs>
     </Member>
     <Member MemberName="VisualEdgeMode">
@@ -1196,8 +1184,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает <see cref="T:System.Windows.Media.TextHintingMode" /> объекта <see cref="T:System.Windows.Media.Visual" />.</summary>
-        <value>
-          <see cref="T:System.Windows.Media.TextHintingMode" /> применяется к <see cref="T:System.Windows.Media.Visual" />.</value>
+        <value><see cref="T:System.Windows.Media.TextHintingMode" /> применяется к <see cref="T:System.Windows.Media.Visual" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1218,8 +1205,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает <see cref="T:System.Windows.Media.TextRenderingMode" /> объекта <see cref="T:System.Windows.Media.Visual" />.</summary>
-        <value>
-          <see cref="T:System.Windows.Media.TextRenderingMode" /> применяется к <see cref="T:System.Windows.Media.Visual" />.</value>
+        <value><see cref="T:System.Windows.Media.TextRenderingMode" /> применяется к <see cref="T:System.Windows.Media.Visual" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

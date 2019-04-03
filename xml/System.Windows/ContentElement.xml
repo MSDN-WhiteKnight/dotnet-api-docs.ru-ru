@@ -1,13 +1,5 @@
 <Type Name="ContentElement" FullName="System.Windows.ContentElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f36232678eb3b8a808c2991f5ec80d66a7c9fe6e" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48632941" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="aa85743d6a364530c4a2bb6414241b766420cfc5" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935501" /></Metadata><TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ContentElement extends System.Windows.DependencyObject implements class System.Windows.IInputElement, class System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.ContentElement" />
   <TypeSignature Language="VB.NET" Value="Public Class ContentElement&#xA;Inherits DependencyObject&#xA;Implements IAnimatable, IInputElement" />
@@ -37,7 +29,7 @@
 ## Remarks  
  <xref:System.Windows.ContentElement> определяет следующие общие характеристики содержимого:  
   
--   Входные данные: Все <xref:System.Windows.ContentElement> производные классы обеспечивают поддержку базовый ввод с клавиатуры, мыши, операции перетаскивания и вставки, сенсорного экрана и ускорители.  
+-   Вход: Все <xref:System.Windows.ContentElement> производные классы обеспечивают поддержку базовый ввод с клавиатуры, мыши, операции перетаскивания и вставки, сенсорного экрана и ускорители.  
   
 -   Фокус: Все <xref:System.Windows.ContentElement> производные классы могут потенциально может получить фокус. (Однако фокуса по умолчанию для <xref:System.Windows.ContentElement> базовым классом является `false`. Дополнительные сведения о том, как сделать <xref:System.Windows.ContentElement> может получать фокус, см. в разделе <xref:System.Windows.ContentElement.Focusable%2A>.) Кроме того, этот класс содержит [!INCLUDE[TLA#tla_api#plural](~/includes/tlasharptla-apisharpplural-md.md)] , можно использовать для перемещения фокуса между связанных элементов.  
   
@@ -49,10 +41,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>
-        <see cref="T:System.Windows.ContentElement" /> Класс еще не определяет все аспекты полный элемент содержимого для представления в стиле потока. <see cref="T:System.Windows.FrameworkContentElement" /> является непосредственно производным от класса <see cref="T:System.Windows.ContentElement" />. <see cref="T:System.Windows.FrameworkContentElement" /> включает в себя более полный набор дополнительные члены, поддерживающие отрисовки <see cref="T:System.Windows.FrameworkContentElement" /> в пределах узла содержимого и в системе макетов уровня среды WPF.</para>
-    </block>
+    <block subset="none" type="overrides"><para><see cref="T:System.Windows.ContentElement" /> Класс еще не определяет все аспекты полный элемент содержимого для представления в стиле потока. <see cref="T:System.Windows.FrameworkContentElement" /> является непосредственно производным от класса <see cref="T:System.Windows.ContentElement" />. <see cref="T:System.Windows.FrameworkContentElement" /> включает в себя более полный набор дополнительные члены, поддерживающие отрисовки <see cref="T:System.Windows.FrameworkContentElement" /> в пределах узла содержимого и в системе макетов уровня среды WPF.</para></block>
     <altmember cref="T:System.Windows.UIElement" />
     <altmember cref="T:System.Windows.FrameworkContentElement" />
   </Docs>
@@ -86,7 +75,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>Добавляет обработчик перенаправленного события для указанного маршрутизируемого события, помещая этот обработчик в коллекцию обработчиков текущего элемента.</summary>
+        <summary>Добавляет обработчик перенаправленного события для указанного перенаправленного события, помещая этот обработчик в коллекцию обработчиков текущего элемента.</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddHandler">
@@ -117,9 +106,9 @@
         <Parameter Name="handler" Type="System.Delegate" />
       </Parameters>
       <Docs>
-        <param name="routedEvent">Идентификатор для обрабатываемого маршрутизируемого события.</param>
+        <param name="routedEvent">Идентификатор маршрутизируемого события для обработки.</param>
         <param name="handler">Ссылка на реализацию обработчика.</param>
-        <summary>Добавляет обработчик перенаправленного события для указанного маршрутизируемого события, помещая этот обработчик в коллекцию обработчиков текущего элемента.</summary>
+        <summary>Добавляет обработчик перенаправленного события для указанного перенаправленного события, помещая этот обработчик в коллекцию обработчиков текущего элемента.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -155,13 +144,12 @@
       <Docs>
         <param name="routedEvent">Идентификатор для обрабатываемого перенаправленного события.</param>
         <param name="handler">Ссылка на реализацию обработчика.</param>
-        <param name="handledEventsToo">
-          <see langword="true" /> для регистрации обработчика, чтобы он вызывался даже в том случае, если перенаправленное событие помечено как обработанное в его данных события. <see langword="false" /> для регистрации обработчика с условием по умолчанию, что он не будет вызываться, если перенаправленное событие уже помечено как обработанное.  
+        <param name="handledEventsToo"><see langword="true" /> для регистрации обработчика, чтобы он вызывался даже в том случае, если перенаправленное событие помечено как обработанное в его данных события. <see langword="false" /> для регистрации обработчика с условием по умолчанию, что он не будет вызываться, если перенаправленное событие уже помечено как обработанное.  
   
-Значение по умолчанию: <see langword="false" />.  
+Значение по умолчанию — <see langword="false" />.  
   
 Не следует постоянно прибегать к повторной обработке перенаправленного события.</param>
-        <summary>Добавляет обработчик перенаправленного события для указанного маршрутизируемого события, помещая этот обработчик в коллекцию обработчиков текущего элемента. Укажите <paramref name="handledEventsToo" /> как <see langword="true" />, чтобы предоставленный обработчик вызывался для перенаправленного события, которое уже было отмечено как обработанное другим элементом на маршруте события.</summary>
+        <summary>Добавляет обработчик перенаправленного события для указанного перенаправленного события, помещая этот обработчик в коллекцию обработчиков текущего элемента. Укажите <paramref name="handledEventsToo" /> как <see langword="true" />, чтобы предоставленный обработчик вызывался для перенаправленного события, которое уже было отмечено как обработанное другим элементом на маршруте события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -237,7 +225,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение, указывающее, можно ли использовать этот элемент как целевой объект операции перетаскивания.</summary>
+        <summary>Получает или задает значение, указывающее, может ли данный элемент использоваться как место назначения операции перетаскивания.</summary>
         <value>Значение <see langword="true" />, если этот элемент можно использовать в качестве целевого объекта для операции перетаскивания; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -253,7 +241,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.AllowDropProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -283,7 +271,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.AllowDrop" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.AllowDrop" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -364,7 +352,7 @@
       <Docs>
         <param name="dp">Анимируемое свойство.</param>
         <param name="clock">Таймер анимации, контролирующий и объявляющий анимацию.</param>
-        <param name="handoffBehavior">Значение перечисления. Значение по умолчанию — <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />, означающее остановку любой существующей анимации и ее замену новой.</param>
+        <param name="handoffBehavior">Значение перечисления. Значение по умолчанию — <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />; это значение будет останавливать все существующие анимации и заменять их новой анимацией.</param>
         <summary>Применяет анимацию к заданному свойству зависимостей этого элемента с возможностью указать, что должно происходить, если у свойства уже имеется запущенная анимация.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -413,7 +401,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesCaptured" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesCaptured" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -459,7 +447,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesCapturedWithin" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesCapturedWithin" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -500,7 +488,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesDirectlyOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesDirectlyOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -546,7 +534,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.AreAnyTouchesOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -678,7 +666,7 @@
   
  Если вызов <xref:System.Windows.ContentElement.CaptureMouse%2A> возвращает `true`, затем <xref:System.Windows.ContentElement.IsMouseCaptured%2A> также `true`.  
   
- Если вызов <xref:System.Windows.ContentElement.CaptureMouse%2A> возвращает `true`, то <xref:System.Windows.ContentElement.GotMouseCapture> и <xref:System.Windows.ContentElement.IsMouseCapturedChanged> событий, с помощью <xref:System.Windows.RoutedEventArgs.Source%2A?displayProperty=nameWithType> событий данными в отчетах как элемент где <xref:System.Windows.ContentElement.CaptureMouse%2A> вызывается метод. При попытке захвата, возможен конфликт с уже существующим захватом, особенно с относящимися к и перетаскивать мышью.  
+ Если вызов <xref:System.Windows.ContentElement.CaptureMouse%2A> возвращает `true`, то <xref:System.Windows.ContentElement.GotMouseCapture> и <xref:System.Windows.ContentElement.IsMouseCapturedChanged> событий, с помощью <xref:System.Windows.RoutedEventArgs.Source%2A?displayProperty=nameWithType> событий данными в отчетах как элемент где <xref:System.Windows.ContentElement.CaptureMouse%2A> вызывается метод. При попытке захвата, возможен конфликт с существующей записью — особенно с помощью относящимися к и перетаскивать мышью.  
   
  Чтобы очистить захват мыши из всех элементов, вызовите <xref:System.Windows.Input.Mouse.Capture%2A?displayProperty=nameWithType> с `element` указан как параметр `null`.  
   
@@ -751,7 +739,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="touchDevice" Type="System.Windows.Input.TouchDevice" />
+        <Parameter Name="touchDevice" Type="System.Windows.Input.TouchDevice" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="touchDevice">Захватываемое устройство.</param>
@@ -769,7 +757,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="touchDevice" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="touchDevice" /> — <see langword="null" />.</exception>
         <altmember cref="M:System.Windows.Input.TouchDevice.Capture(System.Windows.IInputElement)" />
       </Docs>
     </Member>
@@ -787,10 +775,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
         </Attribute>
       </Attributes>
@@ -895,7 +880,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -969,7 +954,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1045,7 +1030,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1118,7 +1103,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1146,8 +1131,7 @@
       <Parameters />
       <Docs>
         <summary>Попытка задать фокус для данного элемента.</summary>
-        <returns>
-          <see langword="true" /> если элемент может получить клавиатурный фокус; <see langword="false" /> если в результате вызова данного метода элемент фокус не получил.</returns>
+        <returns><see langword="true" /> если элемент может получить клавиатурный фокус; <see langword="false" /> если в результате вызова данного метода элемент фокус не получил.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1197,8 +1181,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получение или установка значения, определяющего возможность получения фокуса элементом.</summary>
-        <value>
-          <see langword="true" />, если элемент может получать фокус; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если данный элемент может иметь фокус; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1215,7 +1198,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.FocusableProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -1226,11 +1209,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Windows.ContentElement" />, следует выбрать элемент должен иметь фокус, так как по умолчанию он не будет, способному получать фокус. Если требуется, чтобы элемент должен иметь возможность получать фокус, переопределите метаданные для этого свойства в статический конструктора производного класса следующим образом: 
-[! code-csharp[CorePseudocode #UIElementShortOverride](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#uielementshortoverride)] [! код vb[CorePseudocode #UIElementShortOverride](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#uielementshortoverride)] 
-где <paramref name="myElement" /> — это имя класса типа, который вы переопределяете значение метаданных.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Windows.ContentElement" />, следует выбрать элемент должен иметь фокус, так как по умолчанию он не будет, способному получать фокус. Если требуется, чтобы элемент должен иметь возможность получать фокус, переопределите метаданные для этого свойства в статический конструктора производного класса следующим образом: 
+[!code-csharp[CorePseudocode#UIElementShortOverride](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#uielementshortoverride)] [!code-vb[CorePseudocode#UIElementShortOverride](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#uielementshortoverride)] 
+где <paramref name="myElement" /> — это имя класса типа, который вы переопределяете значение метаданных.</para></block>
         <altmember cref="M:System.Windows.FrameworkElement.MoveFocus(System.Windows.Input.TraversalRequest)" />
         <altmember cref="E:System.Windows.UIElement.GotKeyboardFocus" />
         <altmember cref="E:System.Windows.UIElement.LostKeyboardFocus" />
@@ -1282,7 +1263,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.Focusable" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.Focusable" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1309,7 +1290,7 @@
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="dp">Свойство зависимостей для проверки.</param>
+        <param name="dp">Проверяемое свойство зависимости.</param>
         <summary>Возвращает значение базового свойства для указанного свойства данного элемента без учета возможного анимированного значения из запущенной или остановленной анимации.</summary>
         <returns>Значение свойства, как если бы анимации не присоединялись к указанному свойству зависимостей.</returns>
         <remarks>
@@ -1423,7 +1404,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1500,7 +1481,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1579,7 +1560,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1658,7 +1639,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1736,7 +1717,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -1820,8 +1801,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, имеет ли экземпляр анимированные свойства.</summary>
-        <value>
-          <see langword="true" />, если элемент имеет анимированные свойства; иначе, <see langword="false" />.</value>
+        <value><see langword="true" />, если элемент имеет анимированные свойства; иначе, <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1846,10 +1826,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1918,7 +1895,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsEnabledProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -1979,9 +1956,7 @@
         <summary>Возвращает значение, которое становится возвращаемым значением свойства <see cref="P:System.Windows.ContentElement.IsEnabled" /> в производных классах.</summary>
         <value>Значение <see langword="true" />, если элемент включен; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Реализация по умолчанию этого свойства кэширует значение, а также вычисляет, включен ли родительский элемент данного элемента. (Если родительский не включена, дочерний элемент может быть успешно активирован в practical [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)].) Если вы решили переопределить эту реализацию, убедитесь, что вы вызывать базовую реализацию для сохранения этого поведения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Реализация по умолчанию этого свойства кэширует значение, а также вычисляет, включен ли родительский элемент данного элемента. (Если родительский не включена, дочерний элемент может быть успешно активирован в practical [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)].) Если вы решили переопределить эту реализацию, убедитесь, что вы вызывать базовую реализацию для сохранения этого поведения.</para></block>
       </Docs>
     </Member>
     <Member MemberName="IsEnabledProperty">
@@ -2001,7 +1976,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsEnabled" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsEnabled" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2023,7 +1998,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, определяющее, имеет ли элемент логический фокус.</summary>
-        <value>Значение <see langword="true" />, если этот элемент имеет логический фокус; в противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если элемент имеет логический фокус; в противном случае — значение <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2036,7 +2011,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsFocusedProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -2067,7 +2042,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsFocused" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsFocused" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2089,7 +2064,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, активирована ли система метода ввода, как [!INCLUDE[TLA#tla_ime](~/includes/tlasharptla-ime-md.md)], для обработки ввода для данного элемента.</summary>
-        <value>Значение <see langword="true" />, если метод ввода активен; в обратном случае — значение <see langword="false" />. Значение по умолчанию базового присоединенного свойства — <see langword="true" />, однако это значение влияет состояние методов ввода во время выполнения.</value>
+        <value>Значение <see langword="true" />, если метод ввода активен; в противном случае — значение <see langword="false" />. Значение по умолчанию базового присоединенного свойства — <see langword="true" />, однако это значение влияет состояние методов ввода во время выполнения.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2125,9 +2100,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, имеет ли данный элемент фокус клавиатуры.</summary>
-        <value>
-          <see langword="true" />, если на данном элементе установлен клавиатурный фокус; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <summary>Возвращает значение, указывающее, имеет ли элемент фокус ввода от клавиатуры.</summary>
+        <value>Значение <see langword="true" />, если элемент имеет фокус клавиатуры; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2139,7 +2113,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsKeyboardFocusedProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2192,7 +2166,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsKeyboardFocused" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsKeyboardFocused" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2222,8 +2196,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, находится ли клавиатурный фокус на элементе, или его дочерних элементах.</summary>
-        <value>
-          <see langword="true" />, если клавиатурный фокус установлен на элементе или его дочерних элементах; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если фокус клавиатуры находится в элементе или в его дочерних элементах; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2238,7 +2211,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsKeyboardFocusWithinProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2290,7 +2263,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsKeyboardFocusWithin" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsKeyboardFocusWithin" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2315,8 +2288,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, захвачена ли мышь данным элементом.</summary>
-        <value>
-          <see langword="true" />, если на элементе установлен захват мыши; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если элемент имеет захват мыши; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2329,7 +2301,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsMouseCapturedProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -2391,7 +2363,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseCaptured" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseCaptured" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2418,7 +2390,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, определяющее, удерживается ли захват мыши данным элементом или дочерними элементами в его дереве элементов.</summary>
-        <value>Значение <see langword="true" />, если этот элемент или содержащийся в нем элемент удерживают захват мыши; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если элемент или содержащийся в нем элемент получил захват мыши; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2430,7 +2402,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsMouseCaptureWithinProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2483,7 +2455,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2513,13 +2485,12 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, соответствует ли позиция указателя мыши результатам проверки нажатия, при которой учитывается компоновка элемента.</summary>
-        <value>
-          <see langword="true" /> Если указатель мыши находится над тем же элементом проверки нажатия; в противном случае <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если указатель мыши находится над тем же элементом, что и результат проверки нажатия; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- В отличие от <xref:System.Windows.ContentElement.IsMouseOver%2A>, это свойство имеет только `true` если указатель мыши находится над элементом литерал, как и для проверки нажатия. Если указатель мыши находится над дочерним элементом, в частности по элементам, которые являются частью глубокого шаблона элемента и его композиции, это свойство будет иметь `false`. Если вы знаете, как элемент управления составных (например, это свойство используется в пользовательский шаблон элемента управления для элемента управления, который определяется), это свойство может возвращать непредвиденные результаты. Для большинства сценариев, где вы не создаете элементы управления, используйте <xref:System.Windows.ContentElement.IsMouseOver%2A> вместо этого.  
+ В отличие от <xref:System.Windows.ContentElement.IsMouseOver%2A>, это свойство имеет только `true` если указатель мыши находится над элементом литерала -, как и для проверки нажатия. Если указатель мыши находится над дочерним элементом, в частности по элементам, которые являются частью глубокого шаблона элемента и его композиции, это свойство будет иметь `false`. Если вы знаете, как элемент управления составных (например, это свойство используется в пользовательский шаблон элемента управления для элемента управления, который определяется), это свойство может возвращать непредвиденные результаты. Для большинства сценариев, где вы не создаете элементы управления, используйте <xref:System.Windows.ContentElement.IsMouseOver%2A> вместо этого.  
   
  Если мышь захвачена этот элемент, и это свойство имеет `true` во время захвата, это свойство будет продолжать возвращать `true` пока захват мыши не будет потерян и указатель не выйдет за границы элемента.  
   
@@ -2529,7 +2500,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsMouseDirectlyOverProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2582,7 +2553,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2612,7 +2583,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, находится ли указатель мыши на элементе (включая видимые дочерние элементы и композицию элемента управления).</summary>
-        <value>Значение <see langword="true" />, если указатель мыши находится на элементе или его дочерних элементах; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если указатель мыши находится над элементом или его дочерними элементами; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2627,7 +2598,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsMouseOverProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
    
   
@@ -2657,7 +2628,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsMouseOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2681,9 +2652,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение, указывающее, захвачено ли перо в этом элементе управления.</summary>
-        <value>
-          <see langword="true" />, если элемент получил захват пера; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <summary>Возвращает значение, определяющее, захвачено ли перо данным элементом.</summary>
+        <value>Значение <see langword="true" />, если элемент имеет захват пера; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2696,7 +2666,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsStylusCapturedProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2750,7 +2720,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusCaptured" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusCaptured" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2777,8 +2747,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, захвачено ли перо этим элементом, включая его дочерние элементы и композицию элемента управления.</summary>
-        <value>
-          <see langword="true" /> если перо захвачено данным элементом; иначе, <see langword="false" />.</value>
+        <value><see langword="true" /> если перо захвачено данным элементом; иначе, <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2791,7 +2760,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsStylusCaptureWithinProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2842,7 +2811,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2872,8 +2841,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, соответствует ли позиция пера результатам проверки нажатия, при которой учитывается компоновка элемента.</summary>
-        <value>
-          <see langword="true" /> если проверка подтверждает результаты проверки нажатия; иначе, <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" /> если проверка подтверждает результаты проверки нажатия; иначе, <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2892,7 +2860,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsStylusDirectlyOverProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2944,7 +2912,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2974,8 +2942,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, определяющее, находится ли перо на элементе (включая видимые дочерние элементы).</summary>
-        <value>
-          <see langword="true" />, если перо находится на элементе, или его дочерних элементах; иначе, <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если перо находится на элементе, или его дочерних элементах; иначе, <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2990,7 +2957,7 @@
 |||  
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.IsStylusOverProperty>|  
-|Значение свойства метаданных `true`|Нет|  
+|Значение свойства метаданных `true`|None|  
   
  ]]></format>
         </remarks>
@@ -3013,7 +2980,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Идентифицирует свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusOver" />.</summary>
+        <summary>Определяет свойство зависимостей <see cref="P:System.Windows.ContentElement.IsStylusOver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -3088,7 +3055,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3163,7 +3130,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3240,7 +3207,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3316,7 +3283,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3394,7 +3361,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3472,7 +3439,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3611,7 +3578,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3687,7 +3654,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3763,7 +3730,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3851,7 +3818,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -3930,7 +3897,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4006,7 +3973,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4087,7 +4054,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4166,7 +4133,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4239,7 +4206,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4315,7 +4282,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -4343,8 +4310,7 @@
       <Docs>
         <param name="request">Запрос перемещения, содержащий свойство, которое определяет способ перемещения в соответствующем порядке по вкладкам, или направление для визуального перемещения.</param>
         <summary>Предпринимает попытки переместить фокус с данного элемента на иной. Направления для перемещения фокуса задается указанием направления, которое обрабатывается внутри видимого родительского элемента данного элемента.</summary>
-        <returns>
-          <see langword="true" />, если запрос на перемещение выполнен; иначе, <see langword="false" />.</returns>
+        <returns><see langword="true" />, если запрос на перемещение выполнен; иначе, <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4377,11 +4343,9 @@
         <summary>Возвращает определяющиеся классом <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> реализации для [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] инфраструктуры.</summary>
         <returns>Реализация <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />, зависящая от конкретного типа.</returns>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод реализуется обычно для вызова конкретного конструктора <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> реализации и вернуть его в качестве возвращаемого значения.  
+        <block subset="none" type="overrides"><para>Этот метод реализуется обычно для вызова конкретного конструктора <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> реализации и вернуть его в качестве возвращаемого значения.  
   
-Все <see cref="T:System.Windows.ContentElement" /> производные классы должны реализовать этот метод, чтобы предоставить свои собственные конкретных <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> реализации [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] инфраструктуры. Дополнительные сведения о реализации этого шаблона, см. в разделе <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />.</para>
-        </block>
+Все <see cref="T:System.Windows.ContentElement" /> производные классы должны реализовать этот метод, чтобы предоставить свои собственные конкретных <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> реализации [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] инфраструктуры. Дополнительные сведения о реализации этого шаблона, см. в разделе <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnDragEnter">
@@ -4606,9 +4570,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если у вас нет необходимости преднамеренным и необычные не вызывают события фокуса, убедитесь, что ваша реализация вызывает базовую реализацию. В противном случае <see cref="E:System.Windows.ContentElement.GotFocus" /> событие не вызывается во время действия пользователя, которые обычно устанавливают фокус в данный элемент. Если элемент должен иметь возможность получать фокус не требуется, вы может помешать элементу, способному получать фокус, задав <see cref="P:System.Windows.ContentElement.Focusable" /> для <see langword="false" />. Обратите внимание, что по умолчанию <see cref="P:System.Windows.ContentElement.Focusable" /> не может получать фокус, поэтому установка <see cref="P:System.Windows.ContentElement.Focusable" /> намеренно может не потребоваться.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если у вас нет необходимости преднамеренным и необычные не вызывают события фокуса, убедитесь, что ваша реализация вызывает базовую реализацию. В противном случае <see cref="E:System.Windows.ContentElement.GotFocus" /> событие не вызывается во время действия пользователя, которые обычно устанавливают фокус в данный элемент. Если элемент должен иметь возможность получать фокус не требуется, вы может помешать элементу, способному получать фокус, задав <see cref="P:System.Windows.ContentElement.Focusable" /> для <see langword="false" />. Обратите внимание, что по умолчанию <see cref="P:System.Windows.ContentElement.Focusable" /> не может получать фокус, поэтому установка <see cref="P:System.Windows.ContentElement.Focusable" /> намеренно может не потребоваться.</para></block>
         <altmember cref="P:System.Windows.ContentElement.Focusable" />
         <altmember cref="E:System.Windows.ContentElement.GotFocus" />
       </Docs>
@@ -4740,7 +4702,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -4776,7 +4738,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные о событии.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsKeyboardFocusedChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsKeyboardFocusedChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4810,7 +4772,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные события.</param>
-        <summary>Вызывается непосредственно перед генерацией данным элементом события <see cref="E:System.Windows.ContentElement.IsKeyboardFocusWithinChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается непосредственно перед вызовом события <see cref="E:System.Windows.ContentElement.IsKeyboardFocusWithinChanged" /> данным элементом. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4844,7 +4806,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные о событии.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseCapturedChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseCapturedChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4878,13 +4840,11 @@
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные события.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Этот виртуальный метод вызывается при значение <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" /> изменении его значения свойства зависимостей. Виртуальный метод вызывается первым и можно управлять данными событий, при необходимости. Затем <see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" /> события с этой же экземпляр данных события. Обратите внимание на то, что событие не является маршрутизируемым; Таким образом его нельзя пометить как обработанное в обработчике класса.  
+        <block subset="none" type="overrides"><para>Этот виртуальный метод вызывается при значение <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" /> изменении его значения свойства зависимостей. Виртуальный метод вызывается первым и можно управлять данными событий, при необходимости. Затем <see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" /> события с этой же экземпляр данных события. Обратите внимание на то, что событие не является маршрутизируемым; Таким образом его нельзя пометить как обработанное в обработчике класса.  
   
-Этот метод не имеет значение по умолчанию реализации. Так как промежуточный класс в цепочке наследования может реализовать этот метод, рекомендуется вызывать базовую реализацию в реализации. Вызов базовой реализации можно до или после особой обработки, в зависимости от требований.</para>
-        </block>
+Этот метод не имеет значение по умолчанию реализации. Так как промежуточный класс в цепочке наследования может реализовать этот метод, рекомендуется вызывать базовую реализацию в реализации. Вызов базовой реализации можно до или после особой обработки, в зависимости от требований.</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnIsMouseDirectlyOverChanged">
@@ -4908,7 +4868,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные о событии.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseDirectlyOverChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsMouseDirectlyOverChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4942,7 +4902,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные события.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusCapturedChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusCapturedChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4976,7 +4936,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные о событии.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusCaptureWithinChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusCaptureWithinChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5010,7 +4970,7 @@
       </Parameters>
       <Docs>
         <param name="e">Объект класса <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />, содержащий данные о событии.</param>
-        <summary>Вызывается, когда в данном элементе инициируется необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusDirectlyOverChanged" />. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
+        <summary>Вызывается, когда необработанное событие <see cref="E:System.Windows.ContentElement.IsStylusDirectlyOverChanged" /> возникает для этого элемента. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5138,9 +5098,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если у вас нет необходимости преднамеренным и необычные не вызывают события фокуса, убедитесь, что ваша реализация вызывает базовую реализацию. В противном случае <see cref="E:System.Windows.ContentElement.LostFocus" /> событие не вызывается во время действия пользователя, которые обычно устанавливают фокус в данный элемент. Если элемент должен иметь возможность получать фокус не требуется, вы может помешать элементу, способному получать фокус, задав <see cref="P:System.Windows.ContentElement.Focusable" /> для <see langword="false" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если у вас нет необходимости преднамеренным и необычные не вызывают события фокуса, убедитесь, что ваша реализация вызывает базовую реализацию. В противном случае <see cref="E:System.Windows.ContentElement.LostFocus" /> событие не вызывается во время действия пользователя, которые обычно устанавливают фокус в данный элемент. Если элемент должен иметь возможность получать фокус не требуется, вы может помешать элементу, способному получать фокус, задав <see cref="P:System.Windows.ContentElement.Focusable" /> для <see langword="false" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnLostKeyboardFocus">
@@ -5163,7 +5121,7 @@
         <Parameter Name="e" Type="System.Windows.Input.KeyboardFocusChangedEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект <see cref="T:System.Windows.Input.KeyboardFocusChangedEventArgs" />, который содержит данные события.</param>
+        <param name="e">Объект <see cref="T:System.Windows.Input.KeyboardFocusChangedEventArgs" />, содержащий данные события.</param>
         <summary>Вызывается, когда необработанное вложенное событие <see cref="E:System.Windows.Input.Keyboard.LostKeyboardFocus" /> встречает на своем маршруте элемент, производный от этого класса. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5200,7 +5158,7 @@
         <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект <see cref="T:System.Windows.Input.MouseEventArgs" />, который содержит данные события.</param>
+        <param name="e">Объект <see cref="T:System.Windows.Input.MouseEventArgs" />, содержащий данные события.</param>
         <summary>Вызывается, когда необработанное вложенное событие <see cref="E:System.Windows.Input.Mouse.LostMouseCapture" /> встречает на своем маршруте элемент, производный от этого класса. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5237,7 +5195,7 @@
         <Parameter Name="e" Type="System.Windows.Input.StylusEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Объект <see cref="T:System.Windows.Input.StylusEventArgs" />, который содержит данные события.</param>
+        <param name="e">Объект <see cref="T:System.Windows.Input.StylusEventArgs" />, содержащий данные события.</param>
         <summary>Вызывается, когда необработанное вложенное событие <see cref="E:System.Windows.Input.Stylus.LostStylusCapture" /> встречает на своем маршруте элемент, производный от этого класса. Реализуйте этот метод, чтобы добавить для класса обработчик данного события.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5270,7 +5228,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -6719,7 +6677,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -6750,7 +6708,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -6781,7 +6739,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7326,7 +7284,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7357,7 +7315,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7388,7 +7346,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7419,7 +7377,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7450,7 +7408,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" />
+        <Parameter Name="e" Type="System.Windows.Input.TouchEventArgs" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="e">Объект <see cref="T:System.Windows.Input.TouchEventArgs" />, содержащий данные события.</param>
@@ -7564,7 +7522,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -7635,7 +7593,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -7706,7 +7664,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -7777,7 +7735,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -7850,7 +7808,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -7927,7 +7885,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8004,7 +7962,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8080,7 +8038,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8157,7 +8115,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8230,7 +8188,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8309,7 +8267,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8387,7 +8345,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8463,7 +8421,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8542,7 +8500,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8621,7 +8579,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8694,7 +8652,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8770,7 +8728,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8843,7 +8801,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8920,7 +8878,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -8996,7 +8954,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9072,7 +9030,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9148,7 +9106,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9224,7 +9182,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9300,7 +9258,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9376,7 +9334,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9454,7 +9412,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9530,7 +9488,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9563,7 +9521,7 @@
 ## Remarks  
  <xref:System.Windows.ContentElement.PreviewTextInput> Событие позволяет компонента или приложения для ожидания передачи данных для ввода текста в аппаратно независимым способом. Клавиатура является основным средством <xref:System.Windows.ContentElement.PreviewTextInput>; но речи, рукописного ввода и других устройств ввода также может сформировать <xref:System.Windows.ContentElement.PreviewTextInput>.  
   
- Из-за сочетания клавиш — клавиатуры по умолчанию или редакторам методов ввода — несколько ключевых событий может вызывать только одно событие ввода текста.  
+ Из-за сочетания клавиш - клавиатуры по умолчанию или редакторам методов ввода — несколько ключевых событий может вызывать только одно событие ввода текста.  
   
  Это событие создает псевдоним для <xref:System.Windows.Input.TextCompositionManager.PreviewTextInput?displayProperty=nameWithType> присоединенного события для этого класса, чтобы <xref:System.Windows.ContentElement.PreviewTextInput> является частью класса список членов, когда <xref:System.Windows.ContentElement> наследуется как базовый элемент. Обработчики событий, присоединенные к <xref:System.Windows.ContentElement.PreviewTextInput> событий присоединяются к базовому объекту <xref:System.Windows.Input.TextCompositionManager.PreviewTextInput?displayProperty=nameWithType> присоединенного события и получать один и тот же экземпляр данных события.  
   
@@ -9609,7 +9567,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9865,7 +9823,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9941,7 +9899,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -9970,9 +9928,8 @@
         <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">
-          <see cref="T:System.Windows.RoutedEventArgs" />, содержащий данные о событии и идентифицирующий событие, которое следует сгенерировать.</param>
-        <summary>Инициирует определенное перенаправленное событие. <see cref="T:System.Windows.RoutedEvent" />, которое должно быть идентифицировано в предоставленном экземпляре <see cref="T:System.Windows.RoutedEventArgs" /> (как и свойство <see cref="P:System.Windows.RoutedEventArgs.RoutedEvent" /> данных события).</summary>
+        <param name="e">Объект <see cref="T:System.Windows.RoutedEventArgs" />, который содержит данные события, а также определяет инициируемое событие.</param>
+        <summary>Инициирует определенное перенаправленное событие. Инициируемое событие <see cref="T:System.Windows.RoutedEvent" /> указывается в предоставленном экземпляре <see cref="T:System.Windows.RoutedEventArgs" /> (как свойство <see cref="P:System.Windows.RoutedEventArgs.RoutedEvent" /> данных этого события).</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10102,14 +10059,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="touchDevice" Type="System.Windows.Input.TouchDevice" />
+        <Parameter Name="touchDevice" Type="System.Windows.Input.TouchDevice" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="touchDevice">Освобождаемое устройство.</param>
         <summary>Предпринимает попытку освободить заданное сенсорное устройство из этого элемента.</summary>
         <returns>Значение <see langword="true" />, если устройство сенсорного ввода освобождено; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="touchDevice" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="touchDevice" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveHandler">
@@ -10135,7 +10092,7 @@
         <Parameter Name="handler" Type="System.Delegate" />
       </Parameters>
       <Docs>
-        <param name="routedEvent">Идентификатор перенаправленного события, к которому присоединен обработчик.</param>
+        <param name="routedEvent">Идентификатор перенаправленного события, к которому прикреплен обработчик.</param>
         <param name="handler">Конкретная реализация удаляемого обработчика из коллекции обработчиков событий этого элемента.</param>
         <summary>Удаляет указанный обработчик маршрутизируемого события из этого элемента.</summary>
         <remarks>
@@ -10171,10 +10128,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -10213,10 +10167,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
-        </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
+        <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -10312,7 +10263,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10389,7 +10340,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10465,7 +10416,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10543,7 +10494,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10619,7 +10570,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10695,7 +10646,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10773,7 +10724,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10799,7 +10750,7 @@
         <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Происходит при движении пера над данным элементом. Для вызова этого события перо должно перемещаться по дигитайзеру. В противном случае вместо данного события инициируется <see cref="E:System.Windows.ContentElement.StylusInAirMove" />.</summary>
+        <summary>Происходит при движении пера над данным элементом. Для вызова этого события перо должно перемещаться по дигитайзеру. В противном случае вызывается событие <see cref="E:System.Windows.ContentElement.StylusInAirMove" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10849,7 +10800,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -10925,7 +10876,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -11003,7 +10954,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -11079,7 +11030,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -11118,7 +11069,7 @@
   
  <xref:System.Windows.ContentElement.TextInput> Событие позволяет компонента или приложения для ожидания передачи данных для ввода текста в аппаратно независимым способом. Клавиатура является основным средством <xref:System.Windows.ContentElement.TextInput>, но также может вызывать речи, рукописного ввода и других устройств ввода <xref:System.Windows.ContentElement.TextInput>.  
   
- Из-за сочетания клавиш — клавиатуры по умолчанию или редакторам методов ввода — несколько ключевых событий может вызвать только одно событие ввода текста.  
+ Из-за сочетания клавиш - клавиатуры по умолчанию или редакторам методов ввода — несколько ключевых событий может вызвать только одно событие ввода текста.  
   
  Это событие создает псевдоним для <xref:System.Windows.Input.TextCompositionManager.TextInput?displayProperty=nameWithType> присоединенного события для этого класса, чтобы <xref:System.Windows.ContentElement.TextInput> является частью класса список членов, когда <xref:System.Windows.ContentElement> наследуется как базовый элемент. Обработчики событий, присоединенные к <xref:System.Windows.ContentElement.TextInput> событий присоединяются к базовому объекту <xref:System.Windows.Input.TextCompositionManager.TextInput?displayProperty=nameWithType> присоединенного события и получать один и тот же экземпляр данных события.  
   
@@ -11163,7 +11114,7 @@
 ## Remarks  
  Идентификаторы перенаправленных событий создаются при их регистрации. Эти идентификаторы содержат идентификационное имя, тип владельца, тип обработчика, стратегию маршрутизации и служебный метод добавления владельцев события. Эти идентификаторы можно использовать для добавления обработчиков классов.  
   
- Дополнительные сведения о регистрации маршрутизированных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов маршрутизируемых событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
+ Дополнительные сведения о регистрации перенаправленных событий см. в разделе <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>. Дополнительные сведения об использовании идентификаторов перенаправленных событий для добавления обработчиков класса см. в описании метода <xref:System.Windows.EventManager.RegisterClassHandler%2A>.  
   
  ]]></format>
         </remarks>
@@ -11264,7 +11215,7 @@
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.TouchEnterEvent>|  
 |Стратегия маршрутизации|Direct|  
-|Делегат|<xref:System.EventHandler%601> имеет тип данных <xref:System.Windows.Input.TouchEventArgs>.|  
+|делегат|<xref:System.EventHandler%601> имеет тип данных <xref:System.Windows.Input.TouchEventArgs>.|  
   
 -   Переопределить <xref:System.Windows.ContentElement.OnTouchEnter%2A> реализовать обработчик класса для этого события в производных классах.  
   
@@ -11405,7 +11356,7 @@
 |-|-|  
 |Поле идентификатора|<xref:System.Windows.ContentElement.TouchLeaveEvent>|  
 |Стратегия маршрутизации|Direct|  
-|Делегат|<xref:System.EventHandler%601> имеет тип данных <xref:System.Windows.Input.TouchEventArgs>.|  
+|делегат|<xref:System.EventHandler%601> имеет тип данных <xref:System.Windows.Input.TouchEventArgs>.|  
   
 -   Переопределить <xref:System.Windows.ContentElement.OnTouchLeave%2A> реализовать обработчик класса для этого события в производных классах.  
   

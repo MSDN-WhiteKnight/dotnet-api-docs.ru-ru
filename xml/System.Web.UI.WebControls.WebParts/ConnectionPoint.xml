@@ -1,13 +1,5 @@
 <Type Name="ConnectionPoint" FullName="System.Web.UI.WebControls.WebParts.ConnectionPoint">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cc82eecf035249111ad14ca20f2bcd1b0a8ac90c" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46630361" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ConnectionPoint" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8533d1bcb2037288a1d1f3165cc140cabc83d902" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51907130" /></Metadata><TypeSignature Language="C#" Value="public abstract class ConnectionPoint" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConnectionPoint extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionPoint" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ConnectionPoint" />
@@ -62,14 +54,14 @@
   
 -   Объяснение того, как запустить пример страницы.  
   
- Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Сохраните следующий исходный код в файле ASCX, задав для него имя файла, который назначен `Src` атрибут `Register` директив для этого пользовательского элемента управления, который находится в верхней размещения веб-страницы. Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: изменение режима отображения страницы](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
+ Первая часть этого примера кода — пользовательский элемент управления, позволяющий пользователю изменять режим отображения на веб-страницы. Сохраните следующий исходный код в файле ASCX, задав для него имя файла, который назначен `Src` атрибут `Register` директив для этого пользовательского элемента управления, который находится в верхней размещения веб-страницы. Сведения о режимах отображения и описание исходного кода в этом элементе управления, см. в разделе [Пошаговое руководство: изменение режима отображения страницы](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
  [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/displaymodemenucs.ascx#6)]
  [!code-aspx-vb[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/DisplayModeMenuVB.ascx#6)]  
   
  Вторая часть в примере кода приведен исходный код для интерфейса и элементов управления. Исходный файл содержит простой интерфейс с именем `IZipCode`. Имеется также <xref:System.Web.UI.WebControls.WebParts.WebPart> класс с именем `ZipCodeWebPart` , реализующий интерфейс и выступает в качестве элемента управления поставщика. Его `ProvideIZipCode` метод является методом обратного вызова, реализующий единственный член этого интерфейса. Метод просто возвращает экземпляр интерфейса. Обратите внимание, что метод помечен атрибутом `ConnectionProvider` атрибут в своих метаданных. Это механизм для идентификации метода как метода обратного вызова для точки подключения поставщика. Другой <xref:System.Web.UI.WebControls.WebParts.WebPart> класс называется `WeatherWebPart`, и он выступает в роли потребителя для соединения. Этот класс содержит метод с именем `GetZipCode` , возвращает экземпляр `IZipCode` интерфейса из элемента управления поставщика. Обратите внимание, что этот метод помечен как метод точки подключения потребителя с `ConnectionConsumer` в метаданных атрибутом. Это механизм идентификации метода точки подключения в элементе управления получателя.  
   
- Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления Custom](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
+ Для выполнения примера кода необходимо скомпилировать этот исходный код. Можно выполнить явную компиляцию и разместить сборку в папку Bin веб сайта или в глобальном кэше сборок. Кроме того можно поместить исходный код в папку App_Code веб сайта, где он будет компилироваться динамически во время выполнения. Данный пример кода использует динамической компиляции. Пошаговое руководство по компиляции, см. в разделе [Пошаговое руководство: разработка и использование элемента управления Custom](https://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08).  
   
  [!code-csharp[WebParts_ConnectionPoint_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/ZipCodeComponent.cs#2)]
  [!code-vb[WebParts_ConnectionPoint_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/ZipCodeComponent.vb#2)]  
@@ -84,8 +76,8 @@
  ]]></format>
     </remarks>
     <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />
-    <related type="Article" href="http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b">Обзор подключений веб-частей</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b">Обзор подключений веб-частей</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
   </Docs>
   <Members>
     <Member MemberName="AllowsMultipleConnections">
@@ -136,7 +128,7 @@
         </remarks>
         <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
         <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="ControlType">
@@ -184,7 +176,7 @@
  ]]></format>
         </remarks>
         <altmember cref="T:System.Type" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="DefaultID">
@@ -256,7 +248,7 @@
         </remarks>
         <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
         <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="GetEnabled">
@@ -299,7 +291,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="ID">
@@ -342,7 +334,7 @@
  ]]></format>
         </remarks>
         <altmember cref="F:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
     <Member MemberName="InterfaceType">
@@ -388,7 +380,7 @@
  ]]></format>
         </remarks>
         <altmember cref="T:System.Type" />
-        <related type="Article" href="http://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">Страницы ASP.NET веб-частей</related>
       </Docs>
     </Member>
   </Members>

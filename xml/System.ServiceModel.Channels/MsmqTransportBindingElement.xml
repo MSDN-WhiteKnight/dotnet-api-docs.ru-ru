@@ -1,13 +1,5 @@
 <Type Name="MsmqTransportBindingElement" FullName="System.ServiceModel.Channels.MsmqTransportBindingElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="402a3e6a0ac2893494ac7cef8a1b19d0648efc3d" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39996292" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class MsmqTransportBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fd45951351fc2f31bab1a0a8b34353fb56cd801b" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53333707" /></Metadata><TypeSignature Language="C#" Value="public sealed class MsmqTransportBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqTransportBindingElement extends System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MsmqTransportBindingElement" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MsmqTransportBindingElement&#xA;Inherits MsmqBindingElementBase" />
@@ -90,8 +82,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Класс <see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" /> или <see cref="T:System.ServiceModel.Channels.IOutputChannel" />.</typeparam>
-        <param name="context">Объект<see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
-        <summary>Выполняет построение фабрики каналов с использованием предоставленного контекста.</summary>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
+        <summary>Выполняет построение фабрики канала с использованием предоставленного контекста.</summary>
         <returns>Фабрика канала MSMQ, которую можно использовать для создания каналов для отправки сообщений в существующие приложения MSMQ.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -108,7 +100,47 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение контекста — null.</exception>
         <exception cref="T:System.ArgumentException">Значение TChannel отлично от IOutputChannel и IOutputSessionChannel.</exception>
-        <exception cref="T:System.InvalidOperationException">Свойство MsmqTransportSecurity.MsmqProtectionLevel имеет значение EncryptAndSign, а свойство UseActiveDirectory имеет значение false.</exception>
+        <exception cref="T:System.InvalidOperationException">ExactlyOnce имеет значение true, а Durable имеет значение false.
+
+- или -
+
+Свойство UseActiveDirectory имеет значение true, а значение свойства QueueTransferProtocol отлично от Native.
+
+-или-
+
+Свойство CustomDeadLetterQueue имеет значение, отличное от нулевого; свойство DeadLetterQueue имеет значение, отличное от «Custom».
+
+-или-
+
+В Windows 2003/XP свойству DeadLetterQueue присваивается значение «Custom».
+
+-или-
+
+Свойство ExactlyOnce имеет значение «false»; свойство DeadLetterQueue имеет значение «Custom».
+
+-или-
+
+Задано свойство CustomDeadLetterQueue, при этом отсутствует разрешение на запись в очередь, или очередь не существует.
+
+- или -
+
+CustomDeadLetterQueue является нетранзакционным.
+
+-или-
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode назначено значение WindowsDomain, и MSMQ установлена без интеграции с ActiveDirectory.
+
+-или-
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode присвоено значение None, а значение свойства MsmqTransportSecurity.MsmqProtectionLevel отлично от None.
+
+- или -
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode присвоено значение Certificate или WindowsDomain, а свойство MsmqTransportSecurity.MsmqProtectionLevel имеет значение None.
+
+-или-
+
+Свойство MsmqTransportSecurity.MsmqProtectionLevel имеет значение EncryptAndSign, а свойство UseActiveDirectory имеет значение false.</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
@@ -140,7 +172,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала, используемый при построении прослушивателя канала. Допустимые типы каналов: класс <see cref="T:System.ServiceModel.Channels.IInputSessionChannel" /> или <see cref="T:System.ServiceModel.Channels.IInputChannel" />.</typeparam>
-        <param name="context">Экземпляр объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
         <summary>Выполняет построение прослушивателя канала с использованием предоставленного контекста.</summary>
         <returns>Прослушиватель канала MSMQ, который можно использовать для создания каналов для получения сообщений из существующих приложений MSMQ.</returns>
         <remarks>
@@ -153,7 +185,43 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение контекста — null.</exception>
         <exception cref="T:System.ArgumentException">Значение TChannel отлично от IInputChannel и IInputSessionChannel.</exception>
-        <exception cref="T:System.InvalidOperationException">Свойству MsmqTransportSecurity.MsmqAuthenticationMode присвоено значение Certificate или WindowsDomain, а свойство MsmqTransportSecurity.MsmqProtectionLevel имеет значение None.</exception>
+        <exception cref="T:System.InvalidOperationException">ExactlyOnce имеет значение true, а Durable имеет значение false.
+
+-или-
+
+Очередь не доступна для чтения.
+
+- или -
+
+Свойство ExactlyOnce имеет значение true, и очередь является нетранзакционной.
+
+-или-
+
+Свойство ExactlyOnce имеет значение false, и очередь является нетранзакционной.
+
+-или-
+
+В Windows Vista свойству ReceiveErrorHandling присваивается значение «Move», и имя очереди содержит «;».
+
+- или -
+
+В Windows Vista свойству ExactlyOnce присвоено значение true, и не удается открыть вложенную очередь повторной отправки.
+
+-или-
+
+Свойству ReceiveErrorHandling присваивается значение «Reject» или «Move»; используется платформа Windows Vista.
+
+-или-
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode назначено значение WindowsDomain, и MSMQ установлена без интеграции с ActiveDirectory.
+
+-или-
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode присвоено значение None, а значение свойства MsmqTransportSecurity.MsmqProtectionLevel отлично от None.
+
+-или-
+
+Свойству MsmqTransportSecurity.MsmqAuthenticationMode присвоено значение Certificate или WindowsDomain, а свойство MsmqTransportSecurity.MsmqProtectionLevel имеет значение None.</exception>
       </Docs>
     </Member>
     <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
@@ -180,10 +248,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала, используемый при построении прослушивателя канала. Допустимые типы каналов: класс <see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" /> или <see cref="T:System.ServiceModel.Channels.IOutputChannel" />.</typeparam>
-        <param name="context">Объект<see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение фабрики канала.</param>
         <summary>Возвращает логическое значение, указывающее, можно ли построить фабрику канала с использованием предоставленного контекста.</summary>
-        <returns>
-          <see langword="true" />, если возможно выполнить построение фабрики канала с использованием предоставленного контекста; в противном случае — <see langword="false" />. Элемент привязки возвращает значение <see langword="true" />, только если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> или <see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" />.</returns>
+        <returns><see langword="true" />, если возможно выполнить построение фабрики канала с использованием предоставленного контекста; в противном случае — <see langword="false" />. Элемент привязки возвращает значение <see langword="true" />, только если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> или <see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -223,10 +290,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип канала, используемый при построении прослушивателя канала. Допустимые типы каналов: класс <see cref="T:System.ServiceModel.Channels.IInputSessionChannel" /> или <see cref="T:System.ServiceModel.Channels.IInputChannel" />.</typeparam>
-        <param name="context">Экземпляр объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />, с помощью которого выполняется построение прослушивателя канала.</param>
         <summary>Возвращает логическое значение, указывающее, можно ли построить прослушиватель канала с использованием предоставленного контекста.</summary>
-        <returns>
-          <see langword="true" />, если возможно выполнить построение прослушивателя канала с использованием предоставленного контекста; в противном случае — <see langword="false" />.  
+        <returns><see langword="true" />, если возможно выполнить построение прослушивателя канала с использованием предоставленного контекста; в противном случае — <see langword="false" />.  
   
 Привязка возвращает значение <see langword="true" />, только если <paramref name="TChannel" /> имеет значение <see cref="T:System.ServiceModel.Channels.IInputChannel" /> или <see cref="T:System.ServiceModel.Channels.IInputSessionChannel" />.</returns>
         <remarks>
@@ -331,7 +397,7 @@
         <ReturnType>System.ServiceModel.QueueTransferProtocol</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение перечисления, которое указывает использующий очереди транспорт коммуникационного канала, используемый данной привязкой.</summary>
+        <summary>Возвращает или задает значение перечисления, которое указывает использующий очереди транспорт канала связи, используемый данной привязкой.</summary>
         <value>Значение перечисления <see cref="T:System.ServiceModel.QueueTransferProtocol" />, указывающее транспорт, используемый для доставки сообщений между диспетчерами очередей.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

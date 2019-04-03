@@ -1,13 +1,5 @@
 <Type Name="OracleString" FullName="System.Data.OracleClient.OracleString">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4d46c2fe619d3009130865a7c9f843b4800f5015" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37675956" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct OracleString : IComparable, System.Data.SqlTypes.INullable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ea4af41124b845c56623f020ea6ae152911c4b92" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53301055" /></Metadata><TypeSignature Language="C#" Value="public struct OracleString : IComparable, System.Data.SqlTypes.INullable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleString extends System.ValueType implements class System.Data.SqlTypes.INullable, class System.IComparable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleString" />
   <TypeSignature Language="VB.NET" Value="Public Structure OracleString&#xA;Implements IComparable, INullable" />
@@ -46,41 +38,41 @@
 using System;  
 using System.Data.OracleClient;  
 public class Class1 {  
-   public static void Main() {  
-      OracleString oraclestring1 = new OracleString("MyOracleString1");  
-      OracleString oraclestring2 = new OracleString("MyOracleString2");  
-      OracleString oraclestring3 = new OracleString("MyOracleString1");  
+   public static void Main() {  
+      OracleString oraclestring1 = new OracleString("MyOracleString1");  
+      OracleString oraclestring2 = new OracleString("MyOracleString2");  
+      OracleString oraclestring3 = new OracleString("MyOracleString1");  
   
-      // Type: System.Data.OracleClient.OracleString  
-      Console.WriteLine("Type: " + oraclestring1.GetType());  
+      // Type: System.Data.OracleClient.OracleString  
+      Console.WriteLine("Type: " + oraclestring1.GetType());  
   
-      // Length: 15  
-      Console.WriteLine("Length: " + oraclestring1.Length);  
+      // Length: 15  
+      Console.WriteLine("Length: " + oraclestring1.Length);  
   
-      // False  
-      Console.WriteLine(oraclestring1.IsNull);  
+      // False  
+      Console.WriteLine(oraclestring1.IsNull);  
   
-      // -1  
-      Console.WriteLine(oraclestring1.CompareTo(oraclestring2));  
+      // -1  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring2));  
   
-      // 0  
-      Console.WriteLine(oraclestring1.CompareTo(oraclestring3));  
+      // 0  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring3));  
   
-      // 1  
-      Console.WriteLine(oraclestring2.CompareTo(oraclestring3));  
+      // 1  
+      Console.WriteLine(oraclestring2.CompareTo(oraclestring3));  
   
-      // False  
-      Console.WriteLine(oraclestring1.Equals(oraclestring2));  
+      // False  
+      Console.WriteLine(oraclestring1.Equals(oraclestring2));  
   
-      // True  
-      Console.WriteLine(oraclestring1.Equals(oraclestring3));  
+      // True  
+      Console.WriteLine(oraclestring1.Equals(oraclestring3));  
   
-      // MyOracleString1  
-      Console.WriteLine(oraclestring1.Value);  
+      // MyOracleString1  
+      Console.WriteLine(oraclestring1.Value);  
   
-      // MyOracleString2  
-      Console.WriteLine(oraclestring2.ToString());  
-   }  
+      // MyOracleString2  
+      Console.WriteLine(oraclestring2.ToString());  
+   }  
 }  
   
 ```  
@@ -140,7 +132,19 @@ public class Class1 {
         <summary>Сравнивает данный экземпляр <see cref="T:System.Data.OracleClient.OracleString" /> с предоставленным объектом и возвращает сведения об их относительных значениях.</summary>
         <returns>Число со знаком, обозначающее относительные значения экземпляра и объекта.  
   
- <list type="table"><listheader><term> Возвращаемое значение </term><description> Условие </description></listheader><item><term> Меньше нуля </term><description> Этот экземпляр меньше объекта.  </description></item><item><term> Нуль </term><description> Этот экземпляр идентичен объекту.  </description></item><item><term> Больше нуля </term><description> Этот экземпляр больше объекта, или объект является пустой ссылкой (<see langword="Nothing" />) </description></item></list></returns>
+ <list type="table"><listheader><term> Возвращаемое значение 
+ </term><description> Условие 
+ </description></listheader><item><term> Меньше нуля 
+ </term><description> Этот экземпляр меньше, чем объект.  
+  
+ </description></item><item><term> Нуль 
+ </term><description> Этот экземпляр равен объекту.  
+  
+ </description></item><item><term> Больше нуля 
+ </term><description> Этот экземпляр больше, чем объект, 
+-или- 
+объект является пустой ссылкой (<see langword="Nothing" />). 
+ </description></item></list></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,8 +173,7 @@ public class Class1 {
         <param name="x">Объект <see cref="T:System.Data.OracleClient.OracleString" />.</param>
         <param name="y">Объект <see cref="T:System.Data.OracleClient.OracleString" />.</param>
         <summary>Сцепляет две указанные структуры <see cref="T:System.Data.OracleClient.OracleString" />.</summary>
-        <returns>
-          <see cref="T:System.Data.OracleClient.OracleString" /> содержит новое сцепленное значение, представляющее собой содержимое двух параметров <see cref="T:System.Data.OracleClient.OracleString" />.</returns>
+        <returns><see cref="T:System.Data.OracleClient.OracleString" /> содержит новое сцепленное значение, представляющее собой содержимое двух параметров <see cref="T:System.Data.OracleClient.OracleString" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -571,8 +574,7 @@ public class Class1 {
         <param name="x">Объект <see cref="T:System.Data.OracleClient.OracleString" />.</param>
         <param name="y">Объект <see cref="T:System.Data.OracleClient.OracleString" />.</param>
         <summary>Сцепляет две указанные структуры <see cref="T:System.Data.OracleClient.OracleString" />.</summary>
-        <returns>
-          <see cref="T:System.Data.OracleClient.OracleString" /> содержит новое сцепленное значение, представляющее собой содержимое двух параметров <see cref="T:System.Data.OracleClient.OracleString" />.</returns>
+        <returns><see cref="T:System.Data.OracleClient.OracleString" /> содержит новое сцепленное значение, представляющее собой содержимое двух параметров <see cref="T:System.Data.OracleClient.OracleString" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[Имеет эквивалентный метод для этого оператора <xref:System.Data.OracleClient.OracleString.Concat%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
         </remarks>
@@ -723,8 +725,7 @@ public class Class1 {
       <Docs>
         <param name="s">Преобразуемая структура <see cref="T:System.String" />.</param>
         <summary>Преобразует параметр <see cref="T:System.String" /> в <see cref="T:System.Data.OracleClient.OracleString" />.</summary>
-        <returns>
-          <see langword="OracleString" /> содержит значение заданного <see langword="String" />.</returns>
+        <returns><see langword="OracleString" /> содержит значение заданного <see langword="String" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -864,9 +865,7 @@ public class Class1 {
       </ReturnValue>
       <Docs>
         <summary>Получает строку, которая хранится в структуре <see cref="T:System.Data.OracleClient.OracleString" />.</summary>
-        <value>Хранимая строка.  
-  
-Это свойство доступно только для чтения.</value>
+        <value>Хранимая строка.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

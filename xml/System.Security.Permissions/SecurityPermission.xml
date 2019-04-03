@@ -1,13 +1,5 @@
 <Type Name="SecurityPermission" FullName="System.Security.Permissions.SecurityPermission">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b3c275a077e3f870f4cab32e3fdf93307a41cf63" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49144021" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class SecurityPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="17a603f8c2b4c1450aeda50bde2bcb034d7ec076" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56791398" /></Metadata><TypeSignature Language="C#" Value="public sealed class SecurityPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SecurityPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.SecurityPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SecurityPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -24,6 +16,7 @@
     <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
@@ -37,12 +30,12 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Описывает набор разрешений безопасности, примененных к коду. Этот класс не наследуется.</summary>
+    <summary>Описывает набор разрешений безопасности, применяемых к коду. Этот класс не наследуется.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -84,13 +77,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
       </Parameters>
       <Docs>
-        <param name="state">Одно из значений перечисления <see cref="T:System.Security.Permissions.PermissionState" />.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.Permissions.SecurityPermission" /> с указанным состоянием разрешения: ограниченным или неограниченным.</summary>
+        <param name="state">Одно из значений <see cref="T:System.Security.Permissions.PermissionState" />.</param>
+        <summary>Выполняет инициализацию нового экземпляра класса <see cref="T:System.Security.Permissions.SecurityPermission" />, используя заданное ограниченное либо неограниченное разрешение.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -121,13 +115,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="flag" Type="System.Security.Permissions.SecurityPermissionFlag" />
       </Parameters>
       <Docs>
-        <param name="flag">Начальное состояние разрешения, представленное побитовым сочетанием всех битов разрешений, определенных <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />, с помощью логической операции ИЛИ.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Security.Permissions.SecurityPermission" /> с заданным исходным состоянием флагов.</summary>
+        <param name="flag">Начальное состояние разрешения, представленное битовой операцией логического сложения любых битов разрешения, определенных флагом <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />.</param>
+        <summary>Выполняет инициализацию нового экземпляра класса <see cref="T:System.Security.Permissions.SecurityPermission" /> с заданным начальным состоянием флагов.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -162,6 +157,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -199,13 +195,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Permissions.SecurityPermissionFlag</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Получает или задает флаги разрешений безопасности.</summary>
-        <value>Состояние текущего разрешения, представленное побитовым сочетанием всех битов разрешений, определенных <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />, с помощью логической операции ИЛИ.</value>
+        <value>Состояние текущего разрешения, представленное битовой операцией логического сложения любых битов разрешения, определенных <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -214,7 +211,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Предпринята попытка задать этому свойству недопустимое значение. Допустимые значения см. в разделе <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />.</exception>
+        <exception cref="T:System.ArgumentException">Предпринята попытка установить для этого свойства недопустимое значение. Сведения о допустимых значениях см. в разделе <see cref="T:System.Security.Permissions.SecurityPermissionFlag" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="FromXml">
@@ -236,6 +233,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -245,12 +243,12 @@
       </Parameters>
       <Docs>
         <param name="esd">Кодировка XML, используемая для восстановления разрешения.</param>
-        <summary>Восстанавливает разрешение с указанным состоянием из кодировки XML.</summary>
+        <summary>Восстанавливает разрешение с определенным состоянием из кодировки XML.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="esd" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="esd" /> не является допустимым элементом разрешения.  
   
-- или - 
+-или- 
 Номер версии параметра <paramref name="esd" /> не поддерживается.</exception>
       </Docs>
     </Member>
@@ -273,6 +271,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -281,18 +280,18 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">Разрешение, пересекающееся с текущим разрешением. Его тип должен совпадать с типом текущего разрешения.</param>
-        <summary>Создает и возвращает разрешение, представляющее собой пересечение текущего и указанного разрешений.</summary>
-        <returns>Новый объект разрешения, представляющий собой пересечение текущего и указанного разрешений. Это новое разрешение равно <see langword="null" />, если пересечение является пустым.</returns>
+        <param name="target">Разрешение, которое должно пересекаться с текущим разрешением. Его тип должен совпадать с типом текущего разрешения.</param>
+        <summary>Создает и возвращает разрешение, представляющее собой пересечение текущего и заданного разрешений.</summary>
+        <returns>Новый объект разрешения, представляющий пересечение текущего разрешения и заданного разрешения. Если пересечение пусто, новое разрешение имеет значение <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Пересечение двух разрешений является разрешением, которое описывает состояние, описываемое обоими разрешениями. Только тот запрос, который передает оба исходных разрешения передаст пересечения.  
+ Пересечением двух разрешений является разрешение, которое описывает состояние, включающее в себя описания обоих разрешений. Только тот запрос, который передает оба исходных разрешения передаст пересечения.  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsSubsetOf">
@@ -314,6 +313,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -322,9 +322,9 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">Разрешение, для которого требуется проверить отношение подмножества. Его тип должен совпадать с типом текущего разрешения.</param>
-        <summary>Определяет, является ли текущее разрешение подмножеством указанного разрешения.</summary>
-        <returns>Значение <see langword="true" />, если текущее разрешение является подмножеством указанного разрешения. В противном случае — значение <see langword="false" />.</returns>
+        <param name="target">Разрешение, для которого требуется проверить отношение подмножества. Данное разрешение должно относиться к тому же типу, что и текущее разрешение.</param>
+        <summary>Определяет, является ли текущее разрешение подмножеством заданного разрешения.</summary>
+        <returns>Значение <see langword="true" />, если текущее разрешение является подмножеством заданного разрешения; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -333,7 +333,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsUnrestricted">
@@ -358,14 +358,15 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает значение, указывающее, является ли текущее разрешение неограниченным.</summary>
-        <returns>Значение <see langword="true" />, если текущее разрешение является неограниченным. В противном случае — значение <see langword="false" />.</returns>
+        <summary>Возвращает значение, определяющее, является ли текущее разрешение неограниченным.</summary>
+        <returns>Значение <see langword="true" />, если текущее разрешение неограниченно; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -395,6 +396,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.SecurityElement</ReturnType>
@@ -402,7 +404,7 @@
       <Parameters />
       <Docs>
         <summary>Создает кодировку XML для разрешения и его текущего состояния.</summary>
-        <returns>Кодировка XML разрешения, включающая любые сведения о состоянии.</returns>
+        <returns>Кодировка XML разрешения, включающая все сведения о состоянии.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -425,6 +427,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -444,7 +447,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и имеет тип, не совпадающий с типом текущего разрешения.</exception>
+        <exception cref="T:System.ArgumentException">Параметр <paramref name="target" /> не равен <see langword="null" /> и не относится к тому же типу, что и текущее разрешение.</exception>
       </Docs>
     </Member>
   </Members>

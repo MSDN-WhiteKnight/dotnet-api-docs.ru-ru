@@ -1,13 +1,5 @@
 <Type Name="LoopExpression" FullName="System.Linq.Expressions.LoopExpression">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="89bf7601976906a57ec0c31276c934905bcad89c" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48727685" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class LoopExpression : System.Linq.Expressions.Expression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8189e49778da38ab5936321f30aef1de426e873e" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58690216" /></Metadata><TypeSignature Language="C#" Value="public sealed class LoopExpression : System.Linq.Expressions.Expression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LoopExpression extends System.Linq.Expressions.Expression" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.LoopExpression" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class LoopExpression&#xA;Inherits Expression" />
@@ -29,6 +21,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Linq.Expressions.Expression</BaseTypeName>
@@ -40,7 +33,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет бесконечный цикл. Он может завершаться прерыванием.</summary>
+    <summary>Представляет бесконечный цикл. Может быть прерван с помощью оператора break.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -78,6 +71,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Linq.Expressions.Expression</ReturnType>
@@ -116,6 +110,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -155,6 +150,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -194,6 +190,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -233,13 +230,14 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Linq.Expressions.ExpressionType</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Возвращает тип узла данного выражения. При переопределении этого метода узлы расширения должны возвращать <see cref="F:System.Linq.Expressions.ExpressionType.Extension" />.</summary>
-        <value>Тип <see cref="T:System.Linq.Expressions.ExpressionType" /> выражения.</value>
+        <value>Объект <see cref="T:System.Linq.Expressions.ExpressionType" /> выражения.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -267,6 +265,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -301,6 +300,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Linq.Expressions.LoopExpression</ReturnType>
@@ -314,8 +314,8 @@
         <param name="breakLabel">Свойство <see cref="P:System.Linq.Expressions.LoopExpression.BreakLabel" /> результата.</param>
         <param name="continueLabel">Свойство <see cref="P:System.Linq.Expressions.LoopExpression.ContinueLabel" /> результата.</param>
         <param name="body">Свойство <see cref="P:System.Linq.Expressions.LoopExpression.Body" /> результата.</param>
-        <summary>Создает новое выражение, аналогичное данному, но с использованием предоставленного дочернего элемента. Если все дочерние элементы совпадают, возвращается данное выражение.</summary>
-        <returns>Данное выражение, если никакие дочерние элементы не изменялись, или выражение с обновленными дочерними элементами.</returns>
+        <summary>Создает новое выражение, идентичное данному, но использующее предоставленные дочерние элементы. Если все дочерние элементы идентичны, возвращается данное выражение.</summary>
+        <returns>Нужно использовать это выражение, если дочерние элементы не изменились, либо выражение с обновленными дочерними элементами.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

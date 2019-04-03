@@ -1,13 +1,5 @@
 <Type Name="CollectionViewGroup" FullName="System.Windows.Data.CollectionViewGroup">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7d89315ebafb13df5e8bc5225c2ba48d74bc5981" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39912289" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class CollectionViewGroup : System.ComponentModel.INotifyPropertyChanged" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bf40a483345bff2ab8b47d970fc8bb4576f34f63" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53463002" /></Metadata><TypeSignature Language="C#" Value="public abstract class CollectionViewGroup : System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CollectionViewGroup extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.CollectionViewGroup" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class CollectionViewGroup&#xA;Implements INotifyPropertyChanged" />
@@ -27,7 +19,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Представляет группу, созданную объектом <see cref="T:System.Windows.Data.CollectionView" /> на основе значения свойства <see cref="P:System.Windows.Data.CollectionView.GroupDescriptions" />.</summary>
+    <summary>Представляет группу, созданную объектом <see cref="T:System.Windows.Data.CollectionView" /> на основе <see cref="P:System.Windows.Data.CollectionView.GroupDescriptions" />.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -60,7 +52,7 @@
       </Parameters>
       <Docs>
         <param name="name">Имя данной группы.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Windows.Data.CollectionViewGroup" /> именем группы.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Windows.Data.CollectionViewGroup" /> с именем группы.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -81,8 +73,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает значение, которое указывает, имеет ли эта группа подгруппы.</summary>
-        <value>Значение <see langword="true" />, если эта группа находится на нижнем уровне и не имеет подгрупп; в противном случае — значение <see langword="false" />.</value>
+        <summary>Получает значение, указывающее, имеет ли эта группа какие-либо вложенные группы.</summary>
+        <value>Значение <see langword="true" />, если эта группа находится на нижнем уровне и не имеет вложенных групп; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,8 +100,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает количество элементов в ветви дерева, находящейся под этой группой.</summary>
-        <value>Количество элементов в ветви дерева, находящейся под этой группой.</value>
+        <summary>Получает количество элементов в поддереве этой группы.</summary>
+        <value>Количество конечных элементов в поддереве этой группы.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -142,8 +134,8 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;System.Object&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает элементы интерпретации, содержащиеся в данной группе.</summary>
-        <value>Доступная только для чтения коллекция непосредственных элементов в этой группе. Это либо коллекция подгрупп, либо коллекция элементов, если данная группа не содержит подгруппы.</value>
+        <summary>Получает непосредственные элементы, содержащиеся в этой группе.</summary>
+        <value>Доступная только для чтения коллекция непосредственных элементов в этой группе. Это коллекция подгрупп или коллекция элементов, если в этой группе нет никаких подгрупп.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -176,8 +168,8 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает имя данной группы.</summary>
-        <value>Имя группы, которое является общим значением свойства, используемого для распределения элементов по группам.</value>
+        <summary>Получает имя этой группы.</summary>
+        <value>Имя этой группы, которое является общим значением свойства, используемого для распределения элементов по группам.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,8 +193,8 @@
         <Parameter Name="e" Type="System.ComponentModel.PropertyChangedEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">Аргументы вызванного события.</param>
-        <summary>Вызывает событие <see cref="E:System.Windows.Data.CollectionViewGroup.PropertyChanged" />, используя предоставленные аргументы.</summary>
+        <param name="e">Аргументы вызываемого события.</param>
+        <summary>Вызывает событие <see cref="E:System.Windows.Data.CollectionViewGroup.PropertyChanged" /> с предоставленным аргументами.</summary>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.ComponentModel.INotifyPropertyChanged" />
       </Docs>
@@ -215,6 +207,9 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual event System::ComponentModel::PropertyChangedEventHandler ^ PropertyChanged;" />
       <MemberSignature Language="F#" Value="member this.PropertyChanged : System.ComponentModel.PropertyChangedEventHandler " Usage="member this.PropertyChanged : System.ComponentModel.PropertyChangedEventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -251,8 +246,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает и задает количество элементов в ветви дерева, находящейся под этой группой.</summary>
-        <value>Количество элементов в ветви дерева, находящейся под этой группой.</value>
+        <summary>Получает или задает количество элементов в поддереве этой группы.</summary>
+        <value>Количество конечных элементов в поддереве этой группы.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -285,8 +280,8 @@
         <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.Object&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает элементы интерпретации, содержащиеся в данной группе.</summary>
-        <value>Коллекция непосредственных элементов в этой группе. Это либо коллекция подгрупп, либо коллекция элементов, если данная группа не содержит подгруппы.</value>
+        <summary>Получает непосредственные элементы, содержащиеся в этой группе.</summary>
+        <value>Коллекция непосредственных элементов в этой группе. Это коллекция подгрупп или коллекция элементов, если в этой группе нет никаких подгрупп.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -309,12 +304,13 @@
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Возникает при смене значения свойства.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

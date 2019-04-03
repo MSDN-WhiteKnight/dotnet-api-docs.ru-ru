@@ -1,13 +1,5 @@
 <Type Name="Freezable" FullName="System.Windows.Freezable">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="973c346f1874ce6fbdd0454e4370d678d8bcf9de" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39786888" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class Freezable : System.Windows.DependencyObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="97fc92af0ea25eec6f71bb4a67579fbfd994f7b4" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52214109" /></Metadata><TypeSignature Language="C#" Value="public abstract class Freezable : System.Windows.DependencyObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Freezable extends System.Windows.DependencyObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Freezable" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Freezable&#xA;Inherits DependencyObject" />
@@ -23,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Определяет объект, имеющий изменяемое состояние и состояние только для чтения (зафиксированное). Классы, которые являются производными от класса <see cref="T:System.Windows.Freezable" />, создают подробные уведомления об изменениях, могут быть фиксированными, а также могут копировать себя.</summary>
+    <summary>Определяет объект, имеющий изменяемое состояние и состояние только для чтения (зафиксированное). Классы, производные от <see cref="T:System.Windows.Freezable" />, предоставляют подробные уведомления об изменениях, могут быть неизменяемыми и могут копировать себя.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -110,11 +102,9 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, которое указывает, можно ли сделать объект неизменяемым.</summary>
-        <value>Значение <see langword="true" />, если текущий объект можно сделать нередактируемым или он уже является нередактируемым. В противном случае — значение <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если текущий объект можно сделать неизменяемым или если он уже является неизменяемым; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>В этой реализации метода используется <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод с <paramref name="isChecking" /> присвоено <see langword="true" /> для определения ли <see cref="T:System.Windows.Freezable" /> может быть сделан неизменяемым. Чтобы изменить способ, это свойство работает в производном классе, переопределять <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>В этой реализации метода используется <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод с <paramref name="isChecking" /> присвоено <see langword="true" /> для определения ли <see cref="T:System.Windows.Freezable" /> может быть сделан неизменяемым. Чтобы изменить способ, это свойство работает в производном классе, переопределять <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Changed">
@@ -163,7 +153,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Создает редактируемую копию объекта <see cref="T:System.Windows.Freezable" />, что позволяет выполнить глубокое копирование значений объекта. При копировании свойств зависимостей объекта этот метод копирует выражения (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
+        <summary>Создает изменяемый клон данного объекта <see cref="T:System.Windows.Freezable" />, делая глубокие копии значений этого объекта. При копировании свойств зависимостей объекта этот метод копирует выражения (которые могут уже не быть разрешимыми), но не копирует анимации и их текущие значения.</summary>
         <returns>Изменяемая копия текущего объекта. Свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> клонированного объекта имеет значение <see langword="false" />, даже если свойство <see cref="P:System.Windows.Freezable.IsFrozen" /> исходного объекта имеет значение <see langword="true." />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -185,9 +175,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" /> для создания клона. Чтобы изменить поведение этого метода в производном классе, переопределять <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод использует <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" /> для создания клона. Чтобы изменить поведение этого метода в производном классе, переопределять <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" /> метод.</para></block>
         <altmember cref="M:System.Windows.Freezable.CloneCurrentValue" />
         <altmember cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />
       </Docs>
@@ -227,9 +215,33 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Причины для переопределения включают следующее:-производный класс включает данные, которые не предоставляются через свойства зависимостей.  -Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />.  Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии все записи, локально заданного свойства, включая внутренние выражения.  Если объект имеет свойства зависимостей с привязкой к данным, выражения копируются, но могут уже не быть разрешимыми. Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируется базовое значение (не анимационные) из этих свойств. Анимации не копируются.  Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения. Если такое свойство имеет значение по умолчанию, который является зафиксированного <see cref="T:System.Windows.Freezable" />, что значение свойства остается фиксированным, в противном случае редактируется.  В следующем списке перечислены ожидаемое поведение для этого метода:-создается копия содержит копии всех <see cref="T:System.Windows.Freezable" /> вложенные объекты.  -Свойства unset, только для чтения, не копируются.  -Выражения копируются.  -Ни один из этих вложенных объектов фиксируются при создании.  -Сама копия не зафиксирован.  -Анимации не копируются.  -Только базовые значения свойств являются копируются, а не текущие анимированные значения.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Чтобы переопределить следующие причины: 
+— Производный класс включает данные, которые не предоставляются через свойства зависимостей.  
+  
+-Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  
+  
+Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />.  
+  
+Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии все записи, локально заданного свойства, включая внутренние выражения.  
+  
+Если объект имеет свойства зависимостей с привязкой к данным, выражения копируются, но могут уже не быть разрешимыми. Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируется базовое значение (не анимационные) из этих свойств. Анимации не копируются.  
+  
+Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения. Если такое свойство имеет значение по умолчанию, который является зафиксированного <see cref="T:System.Windows.Freezable" />, что значение свойства остается фиксированным, в противном случае редактируется.  
+  
+В следующем списке перечислены ожидаемое поведение для этого метода: 
+— Копирование созданных содержит копии всех <see cref="T:System.Windows.Freezable" /> вложенные объекты.  
+  
+-Свойства unset, только для чтения, не копируются.  
+  
+-Выражения копируются.  
+  
+-Ни один из этих вложенных объектов фиксируются при создании.  
+  
+-Сама копия не зафиксирован.  
+  
+-Анимации не копируются.  
+  
+-Только базовые значения свойств являются копируются, а не текущие анимированные значения.</para></block>
         <altmember cref="M:System.Windows.Freezable.Clone" />
       </Docs>
     </Member>
@@ -273,9 +285,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" /> метод для создания клона; <see cref="T:System.Windows.Freezable" /> разработчиков, переопределить <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" /> необходимо убедиться, что копия не является фиксированной при создании.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод использует <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" /> метод для создания клона; <see cref="T:System.Windows.Freezable" /> разработчиков, переопределить <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" /> необходимо убедиться, что копия не является фиксированной при создании.</para></block>
         <altmember cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />
       </Docs>
     </Member>
@@ -305,7 +315,7 @@
       </Parameters>
       <Docs>
         <param name="sourceFreezable">Элемент привязки <see cref="T:System.Windows.Freezable" />, точную копию которого необходимо создать.</param>
-        <summary>Создает экземпляр редактируемой копии (глубокой копии) заданного объекта <see cref="T:System.Windows.Freezable" />, используя текущие значения свойства.</summary>
+        <summary>Делает экземпляр изменяемым клоном (глубокой копией) указанного объекта <see cref="T:System.Windows.Freezable" /> с использованием текущих значений свойств.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -314,9 +324,30 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Причины для переопределения включают следующее:-производный класс включает данные, которые не предоставляются через свойства зависимостей.  -Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />.  Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии все записи, локально заданного свойства. Если объект содержит свойств зависимостей с помощью выражения (например, привязка данных), но не само выражение копируется текущее значение выражения.  Если объект имеет анимированные свойства зависимостей, копируется текущее анимированное значение этих свойств, но не сами анимации.  Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения. Если такое свойство имеет значение по умолчанию, который является зафиксированного <see cref="T:System.Windows.Freezable" />, что значение свойства остается фиксированным, в противном случае редактируется.  В следующем списке перечислены ожидаемое поведение для этого метода.  — Копирование созданных содержит копии всех <see cref="T:System.Windows.Freezable" /> вложенные объекты.  -Свойства unset, только для чтения, не копируются.  — Если свойство анимируется, его текущее значение копируется, но не сама анимация.  -Ни один из этих вложенных объектов фиксируются при создании.  -Сама копия не зафиксирован.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Чтобы переопределить следующие причины: 
+— Производный класс включает данные, которые не предоставляются через свойства зависимостей.  
+  
+-Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  
+  
+Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />.  
+  
+Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии все записи, локально заданного свойства. Если объект содержит свойств зависимостей с помощью выражения (например, привязка данных), но не само выражение копируется текущее значение выражения.  
+  
+Если объект имеет анимированные свойства зависимостей, копируется текущее анимированное значение этих свойств, но не сами анимации.  
+  
+Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения. Если такое свойство имеет значение по умолчанию, который является зафиксированного <see cref="T:System.Windows.Freezable" />, что значение свойства остается фиксированным, в противном случае редактируется.  
+  
+В следующем списке перечислены ожидаемое поведение для этого метода.  
+  
+— Копирование созданных содержит копии всех <see cref="T:System.Windows.Freezable" /> вложенные объекты.  
+  
+-Свойства unset, только для чтения, не копируются.  
+  
+— Если свойство анимируется, его текущее значение копируется, но не сама анимация.  
+  
+-Ни один из этих вложенных объектов фиксируются при создании.  
+  
+-Сама копия не зафиксирован.</para></block>
         <altmember cref="M:System.Windows.Freezable.CloneCurrentValue" />
       </Docs>
     </Member>
@@ -387,9 +418,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Каждый <see cref="T:System.Windows.Freezable" /> производный класс должен реализовывать этот метод. Типичная реализация — это просто вызов конструктора по умолчанию и возвращается результат.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Каждый <see cref="T:System.Windows.Freezable" /> производный класс должен реализовывать этот метод. Типичная реализация — это просто вызов конструктора по умолчанию и возвращается результат.</para></block>
         <altmember cref="M:System.Windows.Freezable.CreateInstance" />
       </Docs>
     </Member>
@@ -420,7 +449,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Делает текущий объект нередактируемым и определяет для его свойства <see cref="P:System.Windows.Freezable.IsFrozen" /> значение <see langword="true" />.</summary>
+        <summary>Делает текущий объект неизменяемым и присваивает его свойству <see cref="P:System.Windows.Freezable.IsFrozen" /> значение <see langword="true" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -429,10 +458,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">Объект <see cref="T:System.Windows.Freezable" /> нельзя сделать нередактируемым.</exception>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод для приготовления <see cref="T:System.Windows.Freezable" /> неизменяемым. Чтобы изменить блокированием, переопределить <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para>
-        </block>
+        <exception cref="T:System.InvalidOperationException">Объект <see cref="T:System.Windows.Freezable" /> невозможно сделать неизменяемым.</exception>
+        <block subset="none" type="overrides"><para>Этот метод использует <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод для приготовления <see cref="T:System.Windows.Freezable" /> неизменяемым. Чтобы изменить блокированием, переопределить <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para></block>
         <altmember cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />
       </Docs>
     </Member>
@@ -456,7 +483,7 @@
         <Parameter Name="isChecking" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="freezable">Объект, который необходимо проверить или сделать нередактируемым. Если параметр <c>isChecking</c> имеет значение <see langword="true" />, объект проверяется, чтобы определить, можно ли его сделать нередактируемым. Если параметр <c>isChecking</c> имеет значение <see langword="false" />, объект делается нередактируемым, если это возможно.</param>
+        <param name="freezable">Объект, который необходимо проверить или сделать нередактируемым. Если параметр <paramref name="isChecking" /> имеет значение <see langword="true" />, объект проверяется, чтобы определить, можно ли его сделать нередактируемым. Если параметр <paramref name="isChecking" /> имеет значение <see langword="false" />, объект делается нередактируемым, если это возможно.</param>
         <param name="isChecking">Значение <see langword="true" /> показывает, что объект можно заморозить (замораживание на самом деле не выполняется); значение <see langword="false" /> показывает, что объект замораживается на самом деле.</param>
         <summary>Если параметр <paramref name="isChecking" /> имеет значение <see langword="true" />, данный метод показывает, можно ли сделать заданный объект <see cref="T:System.Windows.Freezable" /> нередактируемым. Если параметр <paramref name="isChecking" /> имеет значение <see langword="false" />, данный метод пытается сделать заданный объект <see cref="T:System.Windows.Freezable" /> нередактируемым и показывает, была ли операция успешной.</summary>
         <returns>Если параметр <paramref name="isChecking" /> имеет значение <see langword="true" />, этот метод возвращает значение <see langword="true" />, если заданный объект <see cref="T:System.Windows.Freezable" /> можно сделать нередактируемым, или значение <see langword="false" />, если такая возможность отсутствует. Если параметр <paramref name="isChecking" /> имеет значение <see langword="false" />, этот метод возвращает значение <see langword="true" />, если заданный объект <see cref="T:System.Windows.Freezable" /> сейчас является нередактируемым, или значение <see langword="false" />, если его нельзя сделать нередактируемым.</returns>
@@ -471,9 +498,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Если параметр <paramref name="isChecking" /> имеет значение <see langword="false" />, это показывает, что попытка сделать объект <paramref name="freezable" /> была безуспешной; теперь объект имеет неизвестное состояние (он может быть частично заморожен).</exception>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод для приготовления <see cref="T:System.Windows.Freezable" /> неизменяемым. Чтобы изменить блокированием, переопределить <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод использует <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод для приготовления <see cref="T:System.Windows.Freezable" /> неизменяемым. Чтобы изменить блокированием, переопределить <see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" /> метод.</para></block>
         <altmember cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />
       </Docs>
     </Member>
@@ -508,10 +533,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
-            <see cref="T:System.Windows.Freezable" /> реализации должны переопределять этот метод, если класс содержит данные, которые не хранятся с использованием свойств зависимостей.  Типичная реализация будет вызывать базовый, а затем вызовите статический <see cref="M:System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)" /> метод на всех <see cref="T:System.Windows.Freezable" /> типизированные свойства, которые содержит класс, возвращая <see langword="true" /> только в том случае, если все свойства были заморожены (или может быть заморожены в случае указания <see langword="true" /> для <paramref name="isChecking" />).</para>
-        </block>
+        <block subset="none" type="overrides"><para>
+            <see cref="T:System.Windows.Freezable" /> реализации должны переопределять этот метод, если класс содержит данные, которые не хранятся с использованием свойств зависимостей.  
+  
+Типичная реализация будет вызывать базовый, а затем вызовите статический <see cref="M:System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)" /> метод на всех <see cref="T:System.Windows.Freezable" /> типизированные свойства, которые содержит класс, возвращая <see langword="true" /> только в том случае, если все свойства были заморожены (или может быть заморожены в случае указания <see langword="true" /> для <paramref name="isChecking" />).</para></block>
         <altmember cref="M:System.Windows.Freezable.Freeze" />
         <altmember cref="P:System.Windows.Freezable.CanFreeze" />
       </Docs>
@@ -558,9 +583,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Объект <see cref="T:System.Windows.Freezable" /> нельзя заморозить, так как он включает выражения или анимационные свойства.</exception>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует виртуальный <see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" /> метод для создания клона.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод использует виртуальный <see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" /> метод для создания клона.</para></block>
         <altmember cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />
       </Docs>
     </Member>
@@ -590,7 +613,7 @@
       </Parameters>
       <Docs>
         <param name="sourceFreezable">Копируемый экземпляр.</param>
-        <summary>Создает экземпляр фиксированной копии заданного объекта <see cref="T:System.Windows.Freezable" />, используя базовые (не анимационные) значения свойства.</summary>
+        <summary>Делает экземпляр зафиксированной копией указанного <see cref="T:System.Windows.Freezable" />, используя базовые (без анимации) значения свойств.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -599,9 +622,20 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если вы наследуете от <see cref="T:System.Windows.Freezable" /> может потребоваться переопределить этот метод. Причины для переопределения включают следующее:-производный класс включает данные, которые не предоставляются через свойства зависимостей.  -Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />.  Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии любой нефиксированных объектах Freezable и неполные копии всех остальных, локально набор свойств, содержащихся в нем. Если объект имеет свойства зависимостей с привязкой к данным, выражения копируются, но могут уже не быть разрешимыми; Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируются базовые (не анимационные) значения этих свойств. Анимации не копируются.  Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения.  При переопределении этого метода необходимо вызвать базовую реализацию.  Не нужно <see cref="M:System.Windows.Freezable.Freeze" /> значения, они копируются.  Результат заморожен <see cref="M:System.Windows.Freezable.GetAsFrozen" /> перед возвращением.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если вы наследуете от <see cref="T:System.Windows.Freezable" /> может потребоваться переопределить этот метод. Чтобы переопределить следующие причины: 
+— Производный класс включает данные, которые не предоставляются через свойства зависимостей.  
+  
+-Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  
+  
+Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />.  
+  
+Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию делает глубокие копии любой нефиксированных объектах Freezable и неполные копии всех остальных, локально набор свойств, содержащихся в нем. Если объект имеет свойства зависимостей с привязкой к данным, выражения копируются, но могут уже не быть разрешимыми; Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируются базовые (не анимационные) значения этих свойств. Анимации не копируются.  
+  
+Обратите внимание, что неопределенные свойства не копируются, а также доступны только для чтения.  
+  
+При переопределении этого метода необходимо вызвать базовую реализацию.  
+  
+Не нужно <see cref="M:System.Windows.Freezable.Freeze" /> значения, они копируются.  Результат заморожен <see cref="M:System.Windows.Freezable.GetAsFrozen" /> перед возвращением.</para></block>
         <altmember cref="M:System.Windows.Freezable.GetAsFrozen" />
       </Docs>
     </Member>
@@ -646,9 +680,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Этот метод использует виртуальный <see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" /> метод для создания клона.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Этот метод использует виртуальный <see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" /> метод для создания клона.</para></block>
         <altmember cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
         <altmember cref="M:System.Windows.Freezable.CloneCurrentValue" />
       </Docs>
@@ -688,9 +720,20 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Причины для переопределения включают следующее:-производный класс включает данные, которые не предоставляются через свойства зависимостей.  -Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />.  Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию создает новую <see cref="T:System.Windows.Freezable" /> с помощью <see cref="M:System.Windows.Freezable.CreateInstance" /> метод и делает глубокие копии нефиксированных объектах Freezable и неполные копии всех остальных, локально установить свойства, он содержит. Если объект имеет свойства зависимостей с привязкой к данным, привязки данных копируются, но могут уже не быть разрешимыми; Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируется текущее анимированное значение этих свойств, но не сами анимации.  Свойства зависимостей только для чтения в <see cref="T:System.Windows.Freezable" /> не копируются данной реализацией по умолчанию.  При переопределении этого метода необходимо вызвать базовую реализацию.  Не нужно <see cref="M:System.Windows.Freezable.Freeze" /> значения, они копируются.  Результат заморожен <see cref="M:System.Windows.Freezable.GetAsFrozen" /> перед возвращением.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Если вы наследуете от <see cref="T:System.Windows.Freezable" />, может потребоваться переопределить этот метод. Чтобы переопределить следующие причины: 
+— Производный класс включает данные, которые не предоставляются через свойства зависимостей.  
+  
+-Производного класса необходимо выполнить дополнительную инициализацию работы, которая не может быть выполнен, просто переопределив метод <see cref="M:System.Windows.Freezable.CreateInstanceCore" />. Например, это применимо, если производный класс реализует <see cref="T:System.ComponentModel.ISupportInitialize" />.  
+  
+Классы, в которых хранятся все свои данные в свойствах зависимости и, не обязательно для выполнения дополнительной инициализации не требуется переопределять <see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />.  
+  
+Очень важно, что все реализации вызывать базовую реализацию этого метода. Реализации должны выполнять работу, выполняемую в реализации по умолчанию не только. Реализация по умолчанию создает новую <see cref="T:System.Windows.Freezable" /> с помощью <see cref="M:System.Windows.Freezable.CreateInstance" /> метод и делает глубокие копии нефиксированных объектах Freezable и неполные копии всех остальных, локально установить свойства, он содержит. Если объект имеет свойства зависимостей с привязкой к данным, привязки данных копируются, но могут уже не быть разрешимыми; Дополнительные сведения о клонировании объектов с привязкой к данным, см. в разделе [Freezable Общие сведения об объектах](~/docs/framework/wpf/advanced/freezable-objects-overview.md). Если объект имеет анимированные свойства зависимостей, копируется текущее анимированное значение этих свойств, но не сами анимации.  
+  
+Свойства зависимостей только для чтения в <see cref="T:System.Windows.Freezable" /> не копируются данной реализацией по умолчанию.  
+  
+При переопределении этого метода необходимо вызвать базовую реализацию.  
+  
+Не нужно <see cref="M:System.Windows.Freezable.Freeze" /> значения, они копируются.  Результат заморожен <see cref="M:System.Windows.Freezable.GetAsFrozen" /> перед возвращением.</para></block>
         <altmember cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />
       </Docs>
     </Member>
@@ -712,7 +755,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение, указывающее, доступен ли объект для изменения в настоящее время.</summary>
-        <value>Значение <see langword="true" />, если объект заморожен и его нельзя редактировать; значение <see langword="false" />, если объект можно редактировать.</value>
+        <value>Значение <see langword="true" />, если объект заморожен и не может быть изменен; значение <see langword="false" />, если объект может быть изменен.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -752,9 +795,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При реализации класса, производного от <see cref="T:System.Windows.Freezable" />, могут переопределять этот метод для выполнения задачи.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При реализации класса, производного от <see cref="T:System.Windows.Freezable" />, могут переопределять этот метод для выполнения задачи.</para></block>
         <altmember cref="E:System.Windows.Freezable.Changed" />
       </Docs>
     </Member>
@@ -889,9 +930,9 @@
       <Docs>
         <summary>Обеспечивает доступ к <see cref="T:System.Windows.Freezable" /> из допустимого потока. Наследники объекта <see cref="T:System.Windows.Freezable" /> должны вызывать данный метод в начале любого [!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)], который считывает элементы данных, не являющиеся свойствами зависимостей.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Классы, производные от <see cref="T:System.Windows.Freezable" /> должны вызывать <see cref="M:System.Windows.Freezable.ReadPreamble" /> метод, перед тем как пытаться доступ к любым элементам, которые не являются свойствами зависимостей. <see cref="M:System.Windows.Freezable.WritePreamble" /> Метод должен вызываться перед записью таких членов.  Этот метод фактически ничего не делает больше, чем вызов <see cref="M:System.Windows.Threading.DispatcherObject.VerifyAccess" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Классы, производные от <see cref="T:System.Windows.Freezable" /> должны вызывать <see cref="M:System.Windows.Freezable.ReadPreamble" /> метод, перед тем как пытаться доступ к любым элементам, которые не являются свойствами зависимостей. <see cref="M:System.Windows.Freezable.WritePreamble" /> Метод должен вызываться перед записью таких членов.  
+  
+Этот метод фактически ничего не делает больше, чем вызов <see cref="M:System.Windows.Threading.DispatcherObject.VerifyAccess" />.</para></block>
         <altmember cref="M:System.Windows.Freezable.WritePreamble" />
       </Docs>
     </Member>
@@ -920,9 +961,7 @@
       <Docs>
         <summary>Вызывает событие <see cref="E:System.Windows.Freezable.Changed" /> для объекта <see cref="T:System.Windows.Freezable" /> и вызывает его метод <see cref="M:System.Windows.Freezable.OnChanged" />. Классы, производные от <see cref="T:System.Windows.Freezable" />, должны вызывать этот метод в конце любого API, который изменяет члены класса, не сохраненные в виде свойств зависимостей.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>Классы, производные от <see cref="T:System.Windows.Freezable" /> следует вызывать этот метод в конце любого API, который изменяет член класса, который не хранятся в виде <see cref="T:System.Windows.DependencyProperty" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Классы, производные от <see cref="T:System.Windows.Freezable" /> следует вызывать этот метод в конце любого API, который изменяет член класса, который не хранятся в виде <see cref="T:System.Windows.DependencyProperty" />.</para></block>
       </Docs>
     </Member>
     <Member MemberName="WritePreamble">
@@ -953,9 +992,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Экземпляр <see cref="T:System.Windows.Freezable" /> заморожен, и запись в его члены невозможна.</exception>
-        <block subset="none" type="overrides">
-          <para>Классы, производные от <see cref="T:System.Windows.Freezable" /> должны вызывать <see cref="M:System.Windows.Freezable.WritePreamble" /> перед попыткой записи к любым элементам, которые не являются свойствами зависимостей. При вызове метода <see cref="M:System.Windows.Freezable.WritePreamble" /> в [!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)], можно опустить вызова <see cref="M:System.Windows.Freezable.ReadPreamble" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Классы, производные от <see cref="T:System.Windows.Freezable" /> должны вызывать <see cref="M:System.Windows.Freezable.WritePreamble" /> перед попыткой записи к любым элементам, которые не являются свойствами зависимостей. При вызове метода <see cref="M:System.Windows.Freezable.WritePreamble" /> в [!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)], можно опустить вызова <see cref="M:System.Windows.Freezable.ReadPreamble" />.</para></block>
         <altmember cref="M:System.Windows.Freezable.ReadPreamble" />
       </Docs>
     </Member>

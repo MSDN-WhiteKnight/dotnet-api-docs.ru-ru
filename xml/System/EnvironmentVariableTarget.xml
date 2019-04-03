@@ -1,13 +1,5 @@
 <Type Name="EnvironmentVariableTarget" FullName="System.EnvironmentVariableTarget">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="35b8f0d5b4debc17bc81714e0a0ee7e3f6e08297" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48662938" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum EnvironmentVariableTarget" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f4997b7f353585d40b8fbf81a71613f4d2cd3c7a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58706417" /></Metadata><TypeSignature Language="C#" Value="public enum EnvironmentVariableTarget" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EnvironmentVariableTarget extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.EnvironmentVariableTarget" />
   <TypeSignature Language="VB.NET" Value="Public Enum EnvironmentVariableTarget" />
@@ -22,6 +14,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Extensions</AssemblyName>
@@ -42,12 +35,22 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.EnvironmentVariableTarget> Перечисление используется определенные перегрузки <xref:System.Environment.SetEnvironmentVariable%2A>, <xref:System.Environment.GetEnvironmentVariable%2A>, и <xref:System.Environment.GetEnvironmentVariables%2A> методы, чтобы указать расположение, или целевой объект, где хранится или извлечь имя и значение переменной среды.  
+ <xref:System.EnvironmentVariableTarget> Перечисление используется определенные перегрузки <xref:System.Environment.SetEnvironmentVariable%2A?displayProperty=nameWithType>, <xref:System.Environment.GetEnvironmentVariable%2A?displayProperty=nameWithType>, и <xref:System.Environment.GetEnvironmentVariables%2A?displayProperty=nameWithType> методы, чтобы указать расположение, или целевой объект, где хранится или извлечь имя и значение переменной среды.  
   
- Целевой объект может иметь одно из трех расположений: блок среды, связанные с текущим процессом, Windows раздела реестра операционной системы зарезервированный для переменных среды, связанный с текущим пользователем или раздел реестра, зарезервированный для среды переменные, связанные со всеми пользователями на локальном компьютере.  
-  
+ Целевой объект может принимать одно из трех расположений: 
+ 
+ - Блок среды, связанные с текущим процессом (`EnvironmentVariableTarget.Process`).
+
+   Пользователь создает переменную среды в наборе операций. При завершении процесса операционная система удаляет переменную среды, в этом процессе.
+
+ - Windows раздела реестра операционной системы зарезервированный для переменных среды, связанный с текущим пользователем (`EnvironmentVariableTarget.User`).
+ 
+   Когда пользователь создает переменную среды в наборе операций, операционная система сохраняет эту переменную в системном реестре, но не в текущем процессе. Если пользователь запускает новый процесс, операционная система копирует переменную среды из реестра в процесс. При завершении процесса операционная система удаляет переменную среды, в этом процессе. Тем не менее в переменную среды в реестре будет повторяться, пока пользователь не удалит ее программным способом или с помощью средства операционной системы.  
    
-  
+ - Раздел реестра, зарезервированный для переменных среды, связанные со всеми пользователями на локальном компьютере (`EnvironmentVariableTarget.Machine`). 
+
+    Когда пользователь создает переменную среды в наборе операций, операционная система сохраняет эту переменную в системном реестре, но не в текущем процессе. Если любой пользователь, на локальном компьютере, запускает новый процесс, операционная система копирует переменную среды из реестра в процесс. При завершении процесса операционная система удаляет переменную среды, в этом процессе. Тем не менее в переменную среды в реестре будет повторяться, пока пользователь не удалит ее программным способом или с помощью средства операционной системы.
+ 
 ## Examples  
  В следующем примере кода показано <xref:System.EnvironmentVariableTarget> перечисления в методах, создание, изменение и удаление переменных среды.  
   
@@ -76,6 +79,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
@@ -88,16 +92,6 @@
       <MemberValue>2</MemberValue>
       <Docs>
         <summary>Переменная среды хранится в разделе реестра <see langword="HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" /> операционной системы Windows или извлекается из этого раздела.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Когда пользователь создает переменную среды в наборе операций, операционная система сохраняет эту переменную в системном реестре, но не в текущем процессе. Если любой пользователь, на локальном компьютере, запускает новый процесс, операционная система копирует переменную среды из реестра в процесс.  
-  
- При завершении процесса операционная система удаляет переменную среды, в этом процессе. Тем не менее в переменную среды в реестре будет повторяться, пока пользователь не удалит ее программным способом или с помощью средства операционной системы.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Process">
@@ -117,6 +111,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
@@ -129,16 +124,6 @@
       <MemberValue>0</MemberValue>
       <Docs>
         <summary>Переменная среды хранится в блоке переменных среды, связанном с текущим процессом, или извлекается из этого блока.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Пользователь создает переменную среды в наборе операций.  
-  
- При завершении процесса операционная система удаляет переменную среды, в этом процессе.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="User">
@@ -158,6 +143,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
@@ -170,16 +156,6 @@
       <MemberValue>1</MemberValue>
       <Docs>
         <summary>Переменная среды хранится в разделе реестра <see langword="HKEY_CURRENT_USER\Environment" /> операционной системы Windows или извлекается из этого раздела.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Когда пользователь создает переменную среды в наборе операций, операционная система сохраняет эту переменную в системном реестре, но не в текущем процессе. Если пользователь запускает новый процесс, операционная система копирует переменную среды из реестра в процесс.  
-  
- При завершении процесса операционная система удаляет переменную среды, в этом процессе. Тем не менее в переменную среды в реестре будет повторяться, пока пользователь не удалит ее программным способом или с помощью средства операционной системы.  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
   </Members>

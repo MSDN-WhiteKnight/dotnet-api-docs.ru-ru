@@ -1,13 +1,5 @@
 <Type Name="TraceSource" FullName="System.Diagnostics.TraceSource">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1a320149b89e99f7e277e30e96ed2bdff68ffc24" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48758495" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class TraceSource" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0f28ef5eca9523cc53cab30cd635198ecf4754d4" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58706443" /></Metadata><TypeSignature Language="C#" Value="public class TraceSource" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TraceSource extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceSource" />
   <TypeSignature Language="VB.NET" Value="Public Class TraceSource" />
@@ -28,13 +20,14 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Предоставляет набор методов и свойств, которые позволяют приложениям делать трассировку выполнения кода и связывать сообщения трассировки с их источником.</summary>
+    <summary>Предоставляет набор методов и свойств, которые позволяют приложениям отслеживать выполнение кода и связывать сообщения трассировки с их источником.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -85,7 +78,7 @@
 > [!NOTE]
 >  Добавление прослушивателя трассировки для <xref:System.Diagnostics.TraceSource.Listeners%2A> коллекции может вызвать исключение во время трассировки, если ресурс, используемый прослушивателем трассировки недоступен. Условия и возникновение исключения зависят от прослушивателя трассировки и не могут быть перечислены в этом разделе. Часто бывает полезно вызов <xref:System.Diagnostics.TraceSource> методы в `try` / `catch` блоки для обнаружения и обработки исключений из прослушивателей трассировки.  
   
- <xref:System.Diagnostics.SourceSwitch> Класс предоставляет средства для динамического управления выходные данные трассировки. В предыдущем примере файла конфигурации показано, как можно отключить трассировку из источника трассировки и управления, уровень, на какие Трассировка происходит.  Значение переключателя источника можно изменять без перекомпиляции приложения. Сведения об использовании файла конфигурации для задания переключателя см. в разделе <xref:System.Diagnostics.Switch> и [как: создание, инициализация и настройка переключателей трассировки](~/docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+ <xref:System.Diagnostics.SourceSwitch> Класс предоставляет средства для динамического управления выходные данные трассировки. В предыдущем примере файла конфигурации показано, как можно отключить трассировку из источника трассировки и управления, уровень, на какие Трассировка происходит.  Значение переключателя источника можно изменять без перекомпиляции приложения. Сведения об использовании файла конфигурации для задания переключателя см. в разделе <xref:System.Diagnostics.Switch> и [как: Создание, инициализация и настройка переключателей трассировки](~/docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
 > [!NOTE]
 >  Если вы измените файл конфигурации во время выполнения приложения, приложения необходимо остановить и перезапустить или <xref:System.Diagnostics.Trace.Refresh%2A> необходимо вызвать метод, чтобы новые параметры вступили в силу.  
@@ -152,6 +145,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -183,7 +177,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="name" /> является пустой строкой ("").</exception>
       </Docs>
     </Member>
@@ -210,6 +204,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -218,7 +213,7 @@
       <Docs>
         <param name="name">Имя источника, обычно — имя приложения.</param>
         <param name="defaultLevel">Поразрядное сочетание значений перечисления, которое задает уровень источника по умолчанию, при котором должна выполняться трассировка.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Diagnostics.TraceSource" />, используя заданное для источника имя и уровень источника по умолчанию, при котором происходит трассировка.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Diagnostics.TraceSource" />, используя заданное для источника имя и уровень источника По умолчанию при котором происходит трассировка.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -230,7 +225,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="name" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="name" /> является пустой строкой ("").</exception>
       </Docs>
     </Member>
@@ -251,6 +246,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
@@ -315,6 +311,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -364,13 +361,14 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Записывает все прослушиватели трассировки в коллекции таких прослушивателей.</summary>
+        <summary>Очищает все прослушиватели трассировки в коллекции таких прослушивателей.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -407,6 +405,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
@@ -418,7 +417,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Получает настраиваемые атрибуты, поддерживаемые источником трассировки.</summary>
+        <summary>Возвращает настраиваемые атрибуты, поддерживаемые источником трассировки.</summary>
         <returns>Строковый массив, именующий настраиваемые атрибуты, поддерживаемые источником трассировки, или <see langword="null" />, если настраиваемые атрибуты отсутствуют.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -436,9 +435,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>При наследовании от <see cref="T:System.Diagnostics.TraceSource" /> класса или производного класса, можно переопределить <see cref="M:System.Diagnostics.TraceSource.GetSupportedAttributes" /> метод, чтобы предоставить настраиваемые атрибуты для класса.</para>
-        </block>
+        <block subset="none" type="overrides"><para>При наследовании от <see cref="T:System.Diagnostics.TraceSource" /> класса или производного класса, можно переопределить <see cref="M:System.Diagnostics.TraceSource.GetSupportedAttributes" /> метод, чтобы предоставить настраиваемые атрибуты для класса.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Listeners">
@@ -464,12 +461,13 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.TraceListenerCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает коллекцию прослушивателей трассировки для ее источника.</summary>
+        <summary>Возвращает коллекцию прослушивателей трассировки для ее источника.</summary>
         <value>Коллекция <see cref="T:System.Diagnostics.TraceListenerCollection" />, в которой содержатся связанные с источником прослушиватели трассировки.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -505,6 +503,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -515,7 +514,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает имя источника трассировки.</summary>
+        <summary>Возвращает имя источника трассировки.</summary>
         <value>Имя источника трассировки.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -571,12 +570,13 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.SourceSwitch</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает значение переключателя источника.</summary>
+        <summary>Возвращает или задает значение переключателя источника.</summary>
         <value>Объект <see cref="T:System.Diagnostics.SourceSwitch" />, представляющий значение переключателя источника.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -625,9 +625,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -691,9 +692,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -705,7 +707,7 @@
         <Parameter Name="id" Type="System.Int32" />
         <Parameter Name="data" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-1.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -715,7 +717,7 @@
         <param name="eventType">Одно из значений перечисления, с помощью которого можно определить тип события для данных трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
         <param name="data">Массив объектного типа, содержащий данные трассировки.</param>
-        <summary>Записывает данные трассировки в прослушиватели трассировки коллекции <see cref="P:System.Diagnostics.TraceSource.Listeners" />, используя для этого указанный тип и идентификатор события, а также данные трассировки.</summary>
+        <summary>Записывает данные трассировки в прослушиватели трассировки коллекции <see cref="P:System.Diagnostics.TraceSource.Listeners" />, используя для этого указанный тип и идентификатор события, а также массив данных трассировки.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -765,9 +767,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -831,9 +834,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -899,9 +903,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -914,7 +919,7 @@
         <Parameter Name="format" Type="System.String" />
         <Parameter Name="args" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-1.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -923,8 +928,8 @@
       <Docs>
         <param name="eventType">Одно из значений перечисления, с помощью которого можно определить тип события для данных трассировки.</param>
         <param name="id">Числовой идентификатор события.</param>
-        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <c>args</c>.</param>
-        <param name="args">Массив <see langword="object" />, содержащий несколько объектов (или ни одного), которые необходимо отформатировать.</param>
+        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <paramref name="args" />.</param>
+        <param name="args">Массив <see langword="object" />, содержащий несколько (или ни одного) объектов, которые необходимо форматировать.</param>
         <summary>Записывает сообщение о событии трассировки в прослушиватели трассировки коллекции <see cref="P:System.Diagnostics.TraceSource.Listeners" />, используя для этого указанный тип и идентификатор события, а также массив аргументов и формат.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -951,9 +956,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="format" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="format" /> недопустим.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="format" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" /> недопустим.  
   
 - или - 
 Число, указывающее аргумент для форматирования, меньше нуля или больше или равно числу указанных объектов для форматирования.</exception>
@@ -1000,9 +1004,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1054,9 +1059,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1070,14 +1076,14 @@
         <Parameter Name="format" Type="System.String" />
         <Parameter Name="args" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netcore-1.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <c>args</c>.</param>
+        <param name="format">Строка составного формата, содержащая текст, который перемежается несколькими элементами форматирования (или ни одним из них), соответствующими объектам в массиве <paramref name="args" />.</param>
         <param name="args">Массив, содержащий несколько (или ни одного) объектов, которые необходимо отформатировать.</param>
         <summary>Записывает информационное сообщение в прослушиватели трассировки коллекции <see cref="P:System.Diagnostics.TraceSource.Listeners" />, используя для этого указанный массив объектов и сведения о форматировании.</summary>
         <remarks>
@@ -1092,9 +1098,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="format" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.FormatException">
-          <paramref name="format" /> недопустим.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="format" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" /> недопустим.  
   
 - или - 
 Число, указывающее аргумент для форматирования, меньше нуля или больше или равно числу указанных объектов для форматирования.</exception>
@@ -1125,6 +1130,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
@@ -1132,7 +1138,7 @@
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netstandard-2.1">
           <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1140,9 +1146,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="System.Int32" />
-        <Parameter Name="message" Type="System.String" />
-        <Parameter Name="relatedActivityId" Type="System.Guid" />
+        <Parameter Name="id" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="relatedActivityId" Type="System.Guid" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="id">Числовой идентификатор события.</param>

@@ -1,13 +1,5 @@
 <Type Name="ObjectContext" FullName="System.Data.Objects.ObjectContext">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a26ec41c539030bd5dd7cf149dda0b0b669986df" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48635262" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f6e3d77576cbef4a1c6b8633b1cb2a53ec47581e" /><Meta Name="ms.sourcegitcommit" Value="f9e71795ba0f9c2dfaa74bec233343ed0f3ffd99" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/15/2019" /><Meta Name="ms.locfileid" Value="57923421" /></Metadata><TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectContext extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectContext" />
   <TypeSignature Language="VB.NET" Value="Public Class ObjectContext&#xA;Implements IDisposable" />
@@ -27,7 +19,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>Предоставляет возможность выполнять запросы и работать с данными сущности как с объектами.</summary>
+    <summary>Обеспечивает средства обработки запросов и работы с данными сущности как с объектами.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -49,7 +41,7 @@
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере показано создание объекта <xref:System.Data.Objects.ObjectContext>.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере показано создание объекта <xref:System.Data.Objects.ObjectContext>.  
   
  [!code-csharp[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectcontext)]
  [!code-vb[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectcontext)]  
@@ -57,7 +49,7 @@
  ]]></format>
     </remarks>
     <related type="Article" href="~/docs/framework/data/adonet/ef/querying-a-conceptual-model.md">Запросы к данным как к объектам (платформа Entity Framework)</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -87,15 +79,14 @@
       </Parameters>
       <Docs>
         <param name="connection">Объект <see cref="T:System.Data.EntityClient.EntityConnection" />, содержащий ссылки на модель и подключение к источнику данных.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с данным соединением. Во время построения рабочая область метаданных извлекается из объекта <see cref="T:System.Data.EntityClient.EntityConnection" />.</summary>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с заданным подключением. Во время построения рабочая область метаданных извлекается из объекта <see cref="T:System.Data.EntityClient.EntityConnection" />.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="connection" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connection" /> не является допустимым.  
+        <exception cref="T:System.ArgumentException"><paramref name="connection" /> не является допустимым.  
   
-- или - 
+-или- 
 Недопустимая рабочая область метаданных.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -115,8 +106,8 @@
         <Parameter Name="connectionString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connectionString">Строка соединения, которая также предоставляет доступ к метаданным.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с данной строкой соединения и именем контейнера сущностей.</summary>
+        <param name="connectionString">Строка подключения, которая, кроме того, обеспечивает доступ к метаданным.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с заданной строкой подключения и именем контейнера сущностей по умолчанию.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -128,7 +119,7 @@
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере показано создание объекта <xref:System.Data.Objects.ObjectContext>.  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере показано создание объекта <xref:System.Data.Objects.ObjectContext>.  
   
  [!code-csharp[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectcontext)]
  [!code-vb[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectcontext)]  
@@ -136,12 +127,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="connectionString" /> — <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionString" /> не является допустимым.  
+        <exception cref="T:System.ArgumentException"><paramref name="connectionString" /> не является допустимым.  
   
-- или - 
+-или- 
 Недопустимая рабочая область метаданных.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -163,12 +153,12 @@
       </Parameters>
       <Docs>
         <param name="connection">Объект <see cref="T:System.Data.EntityClient.EntityConnection" />, содержащий ссылки на модель и подключение к источнику данных.</param>
-        <param name="defaultContainerName">Имя контейнера сущностей по умолчанию. Если параметр <c>defaultContainerName</c> задается с помощью этого метода, свойство становится доступным только для чтения.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с данным соединением и именем контейнера сущностей.</summary>
+        <param name="defaultContainerName">Имя контейнера сущностей по умолчанию. Если задание <paramref name="defaultContainerName" /> осуществляется посредством данного метода, это свойство становится доступным только для чтения.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с заданным подключением и именем контейнера сущностей.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="connection" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="connection" /> или <paramref name="defaultContainerName" /> либо рабочая область метаданных недопустимы.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -189,9 +179,9 @@
         <Parameter Name="defaultContainerName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connectionString">Строка соединения, которая также предоставляет доступ к метаданным.</param>
-        <param name="defaultContainerName">Имя контейнера сущностей по умолчанию. Если параметр <c>defaultContainerName</c> задается с помощью этого метода, свойство становится доступным только для чтения.</param>
-        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с данной строкой соединения и именем контейнера сущностей.</summary>
+        <param name="connectionString">Строка подключения, которая, кроме того, обеспечивает доступ к метаданным.</param>
+        <param name="defaultContainerName">Имя контейнера сущностей по умолчанию. Если задание <paramref name="defaultContainerName" /> осуществляется посредством данного метода, это свойство становится доступным только для чтения.</param>
+        <summary>Инициализирует новый экземпляр класса <see cref="T:System.Data.Objects.ObjectContext" /> с заданной строкой подключения и именем контейнера сущностей.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -202,7 +192,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="connectionString" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="connectionString" /> или <paramref name="defaultContainerName" /> либо рабочая область метаданных недопустимы.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="AcceptAllChanges">
@@ -236,7 +226,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="AddObject">
@@ -260,14 +250,14 @@
         <Parameter Name="entity" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="entitySetName">Представляет имя набора сущностей, которое можно уточнить именем контейнера сущностей (необязательно).</param>
+        <param name="entitySetName">Представляет имя набора сущностей, которое можно уточнить по имени контейнера сущностей.</param>
         <param name="entity">Добавляемый объект <see cref="T:System.Object" />.</param>
         <summary>Добавляет объект в контекст объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Вызовите метод <xref:System.Data.Objects.ObjectContext.AddObject%2A> для объекта <xref:System.Data.Objects.ObjectContext>, чтобы добавить объект в контекст объекта. Это необходимо сделать в том случае, если объект является объект, который еще не существует в источнике данных. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ Вызовите метод <xref:System.Data.Objects.ObjectContext.AddObject%2A> для объекта <xref:System.Data.Objects.ObjectContext>, чтобы добавить объект в контекст объекта. Это необходимо сделать в том случае, если объект является объект, который еще не существует в источнике данных. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](https://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
  Объекты добавляются в диспетчер <xref:System.Data.Objects.ObjectStateManager> в состоянии <xref:System.Data.EntityState.Detached>, <xref:System.Data.EntityState.Deleted> или <xref:System.Data.EntityState.Added>.  
   
@@ -277,22 +267,22 @@
   
 -   Задайте свойство <xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A> объекта <xref:System.Data.Objects.DataClasses.EntityReference%601> для связанного объекта. Выполните это действие для связей «один к одному» или «многие к одному».  
   
- Дополнительные сведения см. в разделе [создание, добавление, изменение и удаление объектов](http://msdn.microsoft.com/library/f76f1fad-c553-4b59-820b-89b3dec2fad1).  
+ Дополнительные сведения см. в разделе [создание, добавление, изменение и удаление объектов](https://msdn.microsoft.com/library/f76f1fad-c553-4b59-820b-89b3dec2fad1).  
   
  Если объект находится в отсоединенном состоянии он не должен иметь <xref:System.Data.EntityKey>.  
   
  Правила для `entitySetName` формат таковы:  
   
--   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> свойство `null`, а затем `entitySetName` должен быть полностью в формате * \<имени контейнера сущностей >*.* \<Имя набора сущностей >*.  
+-   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> свойство `null`, а затем `entitySetName` должен быть полностью в формате  *\<имени контейнера сущностей >*. *\<Имя набора сущностей >*.  
   
--   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> не `null`, а затем `entitySetName` может быть либо * \<имени контейнера сущностей >*.* \<Имя набора сущностей >* или * \<имя набора сущностей >*.  
+-   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> не `null`, а затем `entitySetName` может быть либо  *\<имени контейнера сущностей >*. *\<Имя набора сущностей >* или  *\<имя набора сущностей >*.  
   
  Если `object` имеет <xref:System.Data.EntityKey> и `entitySetName` имеет значение, а затем <xref:System.Data.Metadata.Edm.EntitySet> сущности, ключ должен соответствовать <xref:System.Data.Metadata.Edm.EntitySet> , найденному на основе `entitySetName` и имени контейнера сущностей.  
   
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В примере добавляется новый продукт и сохраняет изменения в базу данных.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В примере добавляется новый продукт и сохраняет изменения в базу данных.  
   
  [!code-csharp[DP ObjectServices Concepts#AddObject](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#addobject)]
  [!code-vb[DP ObjectServices Concepts#AddObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#addobject)]  
@@ -301,10 +291,10 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entity" /> имеет значение <see langword="null" />.  
   
-- или - 
+-или- 
 Имя <paramref name="entitySetName" /> не уточнено.</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.AddObject(`0)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ApplyCurrentValues&lt;TEntity&gt;">
@@ -330,34 +320,34 @@
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entitySetName" Type="System.String" />
-        <Parameter Name="currentEntity" Type="TEntity" />
+        <Parameter Name="entitySetName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="currentEntity" Type="TEntity" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">Тип сущности объекта.</typeparam>
         <param name="entitySetName">Имя набора сущностей, к которому принадлежит объект.</param>
-        <param name="currentEntity">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту. Ключ сущности объекта <c>currentEntity</c> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> записи в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
+        <param name="currentEntity">Отсоединенный объект, к исходному объекту которого нужно применить обновления свойств. Ключ сущности объекта <paramref name="currentEntity" /> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> сущности в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
         <summary>Копирует скалярные значения из указанного объекта в объект в контексте <see cref="T:System.Data.Objects.ObjectContext" />, содержащем тот же ключ.</summary>
         <returns>Обновленный объект.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> Метод используется для применения изменений, внесенных в объекты вне <xref:System.Data.Objects.ObjectContext>, такие как отсоединенные объекты, которые получены веб-службы. Метод копирует скалярные значения из указанного объекта в объект в <xref:System.Data.Objects.ObjectContext> , имеет тот же ключ. Можно использовать <xref:System.Data.EntityKey> отсоединенного объекта для получения экземпляра этого объекта из источника данных. Дополнительные сведения см. в разделе [как: возвратите определенного объекта, используя свой ключ](http://msdn.microsoft.com/library/2e9902af-29b0-4e5d-92db-03dfe6ec49bd). Все значения, отличные от исходных значений объекта помечаются как измененные. Обратите внимание, что метод не применяется текущие значения к связанным объектам `currentEntity`.  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> Метод используется для применения изменений, внесенных в объекты вне <xref:System.Data.Objects.ObjectContext>, такие как отсоединенные объекты, которые получены веб-службы. Метод копирует скалярные значения из указанного объекта в объект в <xref:System.Data.Objects.ObjectContext> , имеет тот же ключ. Можно использовать <xref:System.Data.EntityKey> отсоединенного объекта для получения экземпляра этого объекта из источника данных. Дополнительные сведения см. в разделе [Как Выполнить возврат конкретного объекта, используя свой ключ](https://msdn.microsoft.com/library/2e9902af-29b0-4e5d-92db-03dfe6ec49bd). Все значения, отличные от исходных значений объекта помечаются как измененные. Обратите внимание, что метод не применяется текущие значения к связанным объектам `currentEntity`.  
   
  Если имеется граф с текущими значениями и нужно применить исходные значения, вызовите <xref:System.Data.Objects.ObjectContext.ApplyOriginalValues%2A> метод.  
   
- Можно также использовать <xref:System.Data.Objects.ObjectSet%601.ApplyCurrentValues%2A> из <xref:System.Data.Objects.ObjectSet%601> или <xref:System.Data.Objects.ObjectStateEntry.ApplyCurrentValues%2A> метод <xref:System.Data.Objects.ObjectStateEntry>. Дополнительные сведения см. в разделе [сборка N-уровневых приложений](http://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
+ Можно также использовать <xref:System.Data.Objects.ObjectSet%601.ApplyCurrentValues%2A> из <xref:System.Data.Objects.ObjectSet%601> или <xref:System.Data.Objects.ObjectStateEntry.ApplyCurrentValues%2A> метод <xref:System.Data.Objects.ObjectStateEntry>. Дополнительные сведения см. в разделе [сборка N-уровневых приложений](https://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entitySetName" /> или <paramref name="current" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="entitySetName" /> или <paramref name="current" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Набор сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> из параметра <paramref name="entitySetName" /> не совпадает с набором сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> ключа <see cref="T:System.Data.EntityKey" /> объекта.  
   
-- или - 
+-или- 
 Объект не находится в состоянии <see cref="T:System.Data.Objects.ObjectStateManager" /> или находится в состоянии <see cref="F:System.Data.EntityState.Detached" />.  
   
-- или - 
+-или- 
 Ключ сущности предоставленного объекта является недопустимым.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="entitySetName" /> равен пустой строке.</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.ApplyCurrentValues(`0)" />
@@ -387,35 +377,35 @@
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entitySetName" Type="System.String" />
-        <Parameter Name="originalEntity" Type="TEntity" />
+        <Parameter Name="entitySetName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="originalEntity" Type="TEntity" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">Тип объекта сущности.</typeparam>
         <param name="entitySetName">Имя набора сущностей, к которому принадлежит объект.</param>
-        <param name="originalEntity">Отсоединенный объект, имеющий исходные значения, применяемые к данному объекту. Ключ сущности объекта <c>originalEntity</c> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> записи в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
-        <summary>Копирует скалярные значения из переданного объекта в набор исходных значений для объекта в <see cref="T:System.Data.Objects.ObjectContext" />, имеющего тот же ключ.</summary>
+        <param name="originalEntity">Отсоединенный объект, имеющий исходные значения, применяемые к данному объекту. Ключ сущности объекта <paramref name="originalEntity" /> должен совпадать со свойством <see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" /> сущности в контексте <see cref="T:System.Data.Objects.ObjectContext" />.</param>
+        <summary>Копирует скалярные значения из указанного объекта в набор исходных значений для объекта в контексте <see cref="T:System.Data.Objects.ObjectContext" />, содержащем тот же ключ.</summary>
         <returns>Обновленный объект.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.ApplyOriginalValues%2A> Метод используется для применения изменений, внесенных в объекты вне <xref:System.Data.Objects.ObjectContext>, такие как отсоединенные объекты, которые получены веб-службы. Метод копирует скалярные значения из указанного объекта в объект в <xref:System.Data.Objects.ObjectContext> , имеет тот же ключ. Можно использовать <xref:System.Data.EntityKey> отсоединенного объекта для получения экземпляра этого объекта из источника данных. Дополнительные сведения см. в разделе [как: возвратите определенного объекта, используя свой ключ](http://msdn.microsoft.com/library/2e9902af-29b0-4e5d-92db-03dfe6ec49bd). Все значения, отличные от текущих значений объекта помечаются как измененные. Обратите внимание, что метод не применяется текущие значения к связанным объектам `originalEntity`.  
+ <xref:System.Data.Objects.ObjectContext.ApplyOriginalValues%2A> Метод используется для применения изменений, внесенных в объекты вне <xref:System.Data.Objects.ObjectContext>, такие как отсоединенные объекты, которые получены веб-службы. Метод копирует скалярные значения из указанного объекта в объект в <xref:System.Data.Objects.ObjectContext> , имеет тот же ключ. Можно использовать <xref:System.Data.EntityKey> отсоединенного объекта для получения экземпляра этого объекта из источника данных. Дополнительные сведения см. в разделе [Как Выполнить возврат конкретного объекта, используя свой ключ](https://msdn.microsoft.com/library/2e9902af-29b0-4e5d-92db-03dfe6ec49bd). Все значения, отличные от текущих значений объекта помечаются как измененные. Обратите внимание, что метод не применяется текущие значения к связанным объектам `originalEntity`.  
   
  Если имеется граф с исходными значениями и хотите применить текущие значения, вызовите <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> метод.  
   
- Можно также использовать <xref:System.Data.Objects.ObjectSet%601.ApplyOriginalValues%2A> из <xref:System.Data.Objects.ObjectSet%601> или <xref:System.Data.Objects.ObjectStateEntry.ApplyOriginalValues%2A> метод <xref:System.Data.Objects.ObjectStateEntry>. Дополнительные сведения см. в разделе [сборка N-уровневых приложений](http://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
+ Можно также использовать <xref:System.Data.Objects.ObjectSet%601.ApplyOriginalValues%2A> из <xref:System.Data.Objects.ObjectSet%601> или <xref:System.Data.Objects.ObjectStateEntry.ApplyOriginalValues%2A> метод <xref:System.Data.Objects.ObjectStateEntry>. Дополнительные сведения см. в разделе [сборка N-уровневых приложений](https://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb).  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Параметр <paramref name="entitySetName" /> или <paramref name="original" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="entitySetName" /> или <paramref name="original" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Набор сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> из параметра <paramref name="entitySetName" /> не совпадает с набором сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> ключа <see cref="T:System.Data.EntityKey" /> объекта.  
   
-- или - 
-Для объекта не удается найти <see cref="T:System.Data.Objects.ObjectStateEntry" /> в <see cref="T:System.Data.Objects.ObjectStateManager" />. - или - 
+-или- 
+Для объекта не удается найти <see cref="T:System.Data.Objects.ObjectStateEntry" /> в <see cref="T:System.Data.Objects.ObjectStateManager" />. -или- 
 Объект находится в состоянии <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Detached" />.  
   
-- или - 
+-или- 
 Ключ сущности предоставленного объекта является недопустимым или имеет измененные свойства.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="entitySetName" /> равен пустой строке.</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.ApplyOriginalValues(`0)" />
@@ -440,10 +430,10 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.Obsolete("Use ApplyCurrentValues instead")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Obsolete("Use ApplyCurrentValues instead")</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -455,8 +445,8 @@
       </Parameters>
       <Docs>
         <param name="entitySetName">Имя набора сущностей, к которому принадлежит объект.</param>
-        <param name="changed">Отсоединенный объект имеет обновления свойств, которые нужно применить к исходному объекту.</param>
-        <summary>Применяет изменения свойств из отсоединенного объекта к объекту, который уже присоединен к контексту объекта.</summary>
+        <param name="changed">Отсоединенный объект, к исходному объекту которого нужно применить обновления свойств.</param>
+        <summary>Применяет изменения свойств из отсоединенного объекта к объекту, который уже был присоединен к контексту объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -477,14 +467,14 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">Если <paramref name="entitySetName" /> равно <see langword="null" /> или пустая строка.  
   
-- или - 
+-или- 
 Если значение параметра <paramref name="changed" /> равно <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Когда набор сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> из параметра <paramref name="entitySetName" /> не совпадает с набором сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> ключа <see cref="T:System.Data.EntityKey" /> объекта.  
   
-- или - 
+-или- 
 Сущность находится в состоянии, отличном от <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Unchanged" />.  
   
-- или - 
+-или- 
 Исходный объект не присоединен к контексту.</exception>
         <exception cref="T:System.ArgumentException">Когда тип объекта <paramref name="changed" /> отличается от типа исходного объекта.</exception>
       </Docs>
@@ -510,12 +500,12 @@
       </Parameters>
       <Docs>
         <param name="entity">Присоединяемый объект.</param>
-        <summary>Присоединяет объект или граф объектов к контексту объекта, если объект имеет ключ сущности.</summary>
+        <summary>Присоединяет объект или граф объекта к контексту объекта, если объект имеет ключ сущности.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Вызовите метод <xref:System.Data.Objects.ObjectContext.Attach%2A> для объекта <xref:System.Data.Objects.ObjectContext>, чтобы присоединить объект к контексту объекта. Это необходимо сделать в том случае, если объект уже существует в источнике данных, но в данный момент не присоединен к контексту. Дополнительные сведения см. в разделе [Настройка объектов](http://msdn.microsoft.com/library/af6f07ce-2261-4c65-87cf-d018ad082921).  
+ Вызовите метод <xref:System.Data.Objects.ObjectContext.Attach%2A> для объекта <xref:System.Data.Objects.ObjectContext>, чтобы присоединить объект к контексту объекта. Это необходимо сделать в том случае, если объект уже существует в источнике данных, но в данный момент не присоединен к контексту. Дополнительные сведения см. в разделе [Настройка объектов](https://msdn.microsoft.com/library/af6f07ce-2261-4c65-87cf-d018ad082921).  
   
  Метод <xref:System.Data.Objects.ObjectContext.Attach%2A> используется для присоединения объекта или объекта высшего уровня в графе объектов.  
   
@@ -536,7 +526,7 @@
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере два объекта присоединяются, а затем определяется связь.  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере два объекта присоединяются, а затем определяется связь.  
   
  [!code-csharp[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#attachrelatedobjects)]
  [!code-vb[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#attachrelatedobjects)]  
@@ -569,22 +559,22 @@
         <Parameter Name="entity" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="entitySetName">Представляет имя набора сущностей, которое можно уточнить именем контейнера сущностей (необязательно).</param>
+        <param name="entitySetName">Представляет имя набора сущностей, которое можно уточнить по имени контейнера сущностей.</param>
         <param name="entity">Присоединяемый объект <see cref="T:System.Object" />.</param>
-        <summary>Присоединяет объект или граф объектов к контексту объекта в конкретном наборе сущностей.</summary>
+        <summary>Присоединяет объект или граф объекта к контексту объекта в конкретном наборе сущностей.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Вызовите <xref:System.Data.Objects.ObjectContext.AttachTo%2A> на <xref:System.Data.Objects.ObjectContext> для присоединения объекта к определенному набору сущностей в контексте объекта или если объект имеет `null` (`Nothing` в Visual Basic) <xref:System.Data.EntityKey> значение. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ Вызовите <xref:System.Data.Objects.ObjectContext.AttachTo%2A> на <xref:System.Data.Objects.ObjectContext> для присоединения объекта к определенному набору сущностей в контексте объекта или если объект имеет `null` (`Nothing` в Visual Basic) <xref:System.Data.EntityKey> значение. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](https://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
  Присоединяемый объект может быть единичным объектом или частью графа.  
   
  Правила для `entitySetName` формат таковы:  
   
--   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> свойство `null`, а затем `entitySetName` должен быть полностью в формате * \<имени контейнера сущностей >*.* \<Имя набора сущностей >*.  
+-   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> свойство `null`, а затем `entitySetName` должен быть полностью в формате  *\<имени контейнера сущностей >*. *\<Имя набора сущностей >*.  
   
--   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> не `null`, а затем `entitySetName` может быть либо * \<имени контейнера сущностей >*.* \<Имя набора сущностей >* или * \<имя набора сущностей >*.  
+-   Если <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A> не `null`, а затем `entitySetName` может быть либо  *\<имени контейнера сущностей >*. *\<Имя набора сущностей >* или  *\<имя набора сущностей >*.  
   
  Присоединяемый объект не обязательно должен иметь ассоциированный с ним ключ <xref:System.Data.EntityKey>. Если объект имеет ключ сущности, затем `entitySetName` не может быть пустой строкой.  
   
@@ -595,28 +585,28 @@
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="entity" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Недопустимый набор сущностей.  
   
-- или - 
+-или- 
 Объект имеет временный ключ.  
   
-- или - 
+-или- 
 Объект имеет ключ <see cref="T:System.Data.EntityKey" />, а набор <see cref="T:System.Data.Metadata.Edm.EntitySet" /> не соответствует набору сущностей, переданному в качества параметра метода.  
   
-- или - 
+-или- 
 Объект не имеет ключа <see cref="T:System.Data.EntityKey" />, и не предоставлено ни одного набора сущностей.  
   
-- или - 
+-или- 
 Объект из графа объектов имеет временный ключ <see cref="T:System.Data.EntityKey" />.  
   
-- или - 
+-или- 
 Объект из графа объектов имеет недопустимый ключ <see cref="T:System.Data.EntityKey" /> (например, значения в ключе не совпадают со значениями в объекте).  
   
-- или - 
+-или- 
 Не удалось найти набор сущностей по заданному имени <paramref name="entitySetName" /> и имени контейнера сущностей.  
   
-- или - 
+-или- 
 Объект из графа объектов уже существует в другом диспетчере состояния.</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.Attach(`0)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="CommandTimeout">
@@ -641,7 +631,7 @@
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает значение времени ожидания (в секундах) для всех операций контекста объекта. Значение <see langword="null" /> указывает, что будет использоваться значение базового поставщика по умолчанию.</summary>
+        <summary>Получает или задает значение времени ожидания (в секундах) для всех операций контекста объекта. Значение <see langword="null" /> указывает, что будет использоваться значение базового поставщика по умолчанию.</summary>
         <value>Значение <see cref="T:System.Int32" />, которое является значением времени ожидания (в секундах).</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -657,11 +647,11 @@
    
   
 ## Examples  
- [Запросы объектов](http://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276)  
+ [Запросы объектов](https://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276)  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">Время ожидания меньше 0.</exception>
+        <exception cref="T:System.ArgumentException">Значение времени ожидания меньше 0.</exception>
       </Docs>
     </Member>
     <Member MemberName="Connection">
@@ -681,8 +671,8 @@
         <ReturnType>System.Data.Common.DbConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает соединение, используемое контекстом объекта.</summary>
-        <value>Объект <see cref="T:System.Data.Common.DbConnection" />, который является соединением.</value>
+        <summary>Получает подключение, используемое контекстом объекта.</summary>
+        <value>Объект <see cref="T:System.Data.Common.DbConnection" />, представляющий собой подключение.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -700,7 +690,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">Когда экземпляр <see cref="T:System.Data.Objects.ObjectContext" /> был удален.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ContextOptions">
@@ -820,8 +810,8 @@
       </Parameters>
       <Docs>
         <param name="entitySetName">Полное имя набора сущностей, к которому принадлежит объект сущности.</param>
-        <param name="entity">Объект, для которого получается ключ сущности.</param>
-        <summary>Создает ключ сущности для определенного объекта или возвращает ключ сущности, если он уже существует.</summary>
+        <param name="entity">Объект, для которого извлекается ключ сущности.</param>
+        <summary>Создает ключ сущности для определенного объекта или возвращает ключ сущности, если тот уже существует.</summary>
         <returns>Ключ сущности <see cref="T:System.Data.EntityKey" /> объекта.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -834,7 +824,7 @@
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере с помощью метода <xref:System.Data.Objects.ObjectContext.CreateEntityKey%2A> получается ключ сущности существующего объекта.  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере с помощью метода <xref:System.Data.Objects.ObjectContext.CreateEntityKey%2A> получается ключ сущности существующего объекта.  
   
  [!code-csharp[DP ObjectServices Concepts#ApplyItemUpdatesGetObject](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#applyitemupdatesgetobject)]
  [!code-vb[DP ObjectServices Concepts#ApplyItemUpdatesGetObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#applyitemupdatesgetobject)]  
@@ -844,10 +834,10 @@
         <exception cref="T:System.ArgumentNullException">Один из параметров имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Если <paramref name="entitySetName" /> пуст.  
   
-- или - 
+-или- 
 Когда тип объекта <paramref name="entity" /> не существует в наборе сущностей.  
   
-- или - 
+-или- 
 Когда имя <paramref name="entitySetName" /> является неполным.</exception>
         <exception cref="T:System.InvalidOperationException">Ключ сущности невозможно построить на основе предоставленных параметров.</exception>
       </Docs>
@@ -883,7 +873,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.CreateObject%2A> Метод используется с помощью пользовательских классов данных POCO, чтобы убедиться в том, что возвращаемый объект можно правильно управлять платформой Entity Framework. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](http://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
+ <xref:System.Data.Objects.ObjectContext.CreateObject%2A> Метод используется с помощью пользовательских классов данных POCO, чтобы убедиться в том, что возвращаемый объект можно правильно управлять платформой Entity Framework. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](https://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
   
  ]]></format>
         </remarks>
@@ -919,7 +909,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" /> не задается в <see cref="T:System.Data.Objects.ObjectContext" />.  
   
-- или - 
+-или- 
 Заданный тип относится к более чем одному набору сущностей.</exception>
       </Docs>
     </Member>
@@ -946,7 +936,7 @@
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entitySetName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">Тип сущности запрошенного объекта <see cref="T:System.Data.Objects.ObjectSet`1" />.</typeparam>
@@ -956,10 +946,10 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Набор сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> из параметра <paramref name="entitySetName" /> не совпадает с набором сущностей <see cref="T:System.Data.Metadata.Edm.EntitySet" /> ключа <see cref="T:System.Data.EntityKey" /> объекта.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" /> не задается на <see cref="T:System.Data.Objects.ObjectContext" />, а имя не задано как часть параметра <paramref name="entitySetName" />.  
   
-- или - 
+-или- 
 Заданный тип относится к более чем одному набору сущностей.</exception>
       </Docs>
     </Member>
@@ -979,7 +969,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="types" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+        <Parameter Name="types" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="types">Перечисление объектов <see cref="T:System.Type" />, представляющих пользовательские классы данных, которые сопоставляются с концептуальной моделью.</param>
@@ -990,7 +980,7 @@
 ## Remarks  
  Отдельные типы в `types` перечисления, который не сопоставлен с типом сущности в концептуальной модели учитываются.  
   
- Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](http://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
+ Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](https://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
   
  ]]></format>
         </remarks>
@@ -1019,7 +1009,7 @@
         <Parameter Name="queryString" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1027,9 +1017,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">Тип сущности возвращенного объекта <see cref="T:System.Data.Objects.ObjectQuery`1" />.</typeparam>
-        <param name="queryString">Выполняемая строка запроса.</param>
-        <param name="parameters">Параметры для передачи запросу.</param>
-        <summary>Создает объект <see cref="T:System.Data.Objects.ObjectQuery`1" /> в контексте текущего объекта с помощью указанной строки запроса.</summary>
+        <param name="queryString">Строка запроса, которую необходимо выполнить.</param>
+        <param name="parameters">Параметры для передачи в запрос.</param>
+        <summary>Создает объект <see cref="T:System.Data.Objects.ObjectQuery`1" /> в текущем контексте объекта с помощью указанной строки запроса.</summary>
         <returns>Объект <see cref="T:System.Data.Objects.ObjectQuery`1" /> указанного типа.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1040,7 +1030,7 @@
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
  В этом примере создается простой запрос и выполняется итерация через коллекцию результатов.  
   
@@ -1104,7 +1094,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает имя контейнера по умолчанию.</summary>
-        <value>Объект <see cref="T:System.String" />, который является именем контейнера по умолчанию.</value>
+        <value>Объект <see cref="T:System.String" />, являющийся именем контейнера по умолчанию.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1115,7 +1105,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="DeleteDatabase">
@@ -1186,7 +1176,7 @@
    
   
 ## Examples  
- Эти примеры основаны на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
+ Эти примеры основаны на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
  В этом примере создает <xref:System.Data.EntityKey> с определенным ProductID, использует ключ для извлечения объекта продукта из источника данных, удаляет продукт и сохраняет изменения в базу данных.  
   
@@ -1200,11 +1190,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="entity" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="entity" /> — не существует.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> — не существует.</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.DeleteObject(`0)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="Detach">
@@ -1227,13 +1216,13 @@
         <Parameter Name="entity" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="entity">Отсоединяемый объект. Удаляется только сущность <c>entity</c>. При наличии каких-либо связанных объектов, которые отслеживаются тем же объектом <see cref="T:System.Data.Objects.ObjectStateManager" />, они не отсоединяются автоматически.</param>
+        <param name="entity">Отсоединяемый объект. Удаляется только <paramref name="entity" />; при наличии связанных объектов, отслеживаемых тем же <see cref="T:System.Data.Objects.ObjectStateManager" />, они не будут автоматически отсоединены.</param>
         <summary>Удаляет объект из контекста объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Удаляет объект из диспетчера <xref:System.Data.Objects.ObjectStateManager>. При этом для этого объекта отключается отслеживание изменений и разрешение идентификаторов. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ Удаляет объект из диспетчера <xref:System.Data.Objects.ObjectStateManager>. При этом для этого объекта отключается отслеживание изменений и разрешение идентификаторов. Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](https://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
  После вызова метода <xref:System.Data.Objects.ObjectContext.Detach%2A> система больше не будет хранить ссылки, указывающие на этот объект и его сможет собрать сборщик мусора.  
   
@@ -1248,7 +1237,7 @@
   
 -   Во время операции отсоединения не применяются директивы каскадного удаления и ссылочные ограничения.  
   
- Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
+ Дополнительные сведения см. в разделе [присоединение и отсоединение объектов](https://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
    
   
@@ -1261,7 +1250,7 @@
         <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="entity" /> — <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Сущность <paramref name="entity" /> не ассоциирована с этим контекстом <see cref="T:System.Data.Objects.ObjectContext" /> (например, она вновь создана и еще не ассоциирована с каким-либо контекстом, или была получена через какой-либо другой контекст, или уже была отсоединена).</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.Detach(`0)" />
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="DetectChanges">
@@ -1322,13 +1311,13 @@
 ## Remarks  
  Этот метод закрывает соединение, если он был открыт платформой Entity Framework. После <xref:System.Data.Objects.ObjectContext.Dispose%2A> вызывается операций, требующих открытого соединения, такие как выполнение запроса или вызова <xref:System.Data.Objects.ObjectQuery.ToTraceString%2A> метода, возникает исключение. Операции, для которых не требуется открытое соединение, такие как составление запроса или присоединение объекта, не вызовут исключения. <xref:System.Data.Objects.ObjectContext.Dispose%2A> Метод не закрывает все явно открытых соединений.  
   
- Ограничение области <xref:System.Data.Objects.ObjectContext> в `using` блока (`Using` в Visual Basic) гарантирует, что правильное освобождение ресурсов. Дополнительные сведения см. в разделе [Управление соединениями и транзакциями](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+ Ограничение области <xref:System.Data.Objects.ObjectContext> в `using` блока (`Using` в Visual Basic) гарантирует, что правильное освобождение ресурсов. Дополнительные сведения см. в разделе [Управление соединениями и транзакциями](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
   
  <xref:System.Data.Objects.ObjectContext.Dispose> Вызовы методов `virtual` (`Overridable` в Visual Basic) <xref:System.Data.Objects.ObjectContext.Dispose%28System.Boolean%29> метод.  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -1351,7 +1340,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает ресурсы, используемые контекстом объекта.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1359,11 +1348,11 @@
 ## Remarks  
  Этот метод закрывает соединение. После <xref:System.Data.Objects.ObjectContext.Dispose%2A> вызывается операций, требующих открытого соединения, такие как выполнение запроса или вызова <xref:System.Data.Objects.ObjectQuery.ToTraceString%2A> метода, возникает исключение. Операции, для которых не требуется открытое соединение, такие как составление запроса или присоединение объекта, не вызовут исключения.  
   
- Ограничение области <xref:System.Data.Objects.ObjectContext> в `using` блока (`Using` в Visual Basic) гарантирует, что ресурсы удаляются должным образом. Дополнительные сведения см. в разделе [Управление соединениями и транзакциями](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+ Ограничение области <xref:System.Data.Objects.ObjectContext> в `using` блока (`Using` в Visual Basic) гарантирует, что ресурсы удаляются должным образом. Дополнительные сведения см. в разделе [Управление соединениями и транзакциями](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ExecuteFunction">
@@ -1382,8 +1371,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="functionName" Type="System.String" />
-        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+        <Parameter Name="functionName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1398,11 +1387,11 @@
         <returns>Число обработанных строк.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="function" /> имеет значение null или пуст 
-- или - 
+-или- 
  <paramref name="function" /> не найден.</exception>
         <exception cref="T:System.InvalidOperationException">Средство чтения сущностей не поддерживает эту функцию <paramref name="function" />.  
   
-- или - 
+-или- 
 Несоответствие типов между средством чтения и функцией <paramref name="function" />.</exception>
       </Docs>
     </Member>
@@ -1434,7 +1423,7 @@
         <Parameter Name="functionName" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1450,7 +1439,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A> Метод — это вспомогательный метод, который используется для выполнения хранимых процедур или функций, определенные в источнике данных и выраженную в концептуальной модели. Средства модели EDM создают метод for each в концептуальной модели. Эти методы вызывают строго типизированный `ExecuteFunction` для возврата типизированного <xref:System.Data.Objects.ObjectResult%601>. Дополнительные сведения см. в разделе [код приложения, с помощью хранимых процедур (платформа Entity Framework)](http://msdn.microsoft.com/library/d13dd33f-fcf9-4e86-bd00-74bc31521536).  
+ <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A> Метод — это вспомогательный метод, который используется для выполнения хранимых процедур или функций, определенные в источнике данных и выраженную в концептуальной модели. Средства модели EDM создают метод for each в концептуальной модели. Эти методы вызывают строго типизированный `ExecuteFunction` для возврата типизированного <xref:System.Data.Objects.ObjectResult%601>. Дополнительные сведения см. в разделе [код приложения, с помощью хранимых процедур (платформа Entity Framework)](https://msdn.microsoft.com/library/d13dd33f-fcf9-4e86-bd00-74bc31521536).  
   
  Все параметры для этой функции в массиве параметров и не все типы проверяются метаданные для функции импорта, включая тип самой функции. `null` значения разрешены для типов значений CLR. Проверка параметров производится поставщиком.  
   
@@ -1459,13 +1448,13 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="function" /> имеет значение null или пуст 
-- или - 
+-или- 
  <paramref name="function" /> не найден.</exception>
         <exception cref="T:System.InvalidOperationException">Средство чтения сущностей не поддерживает эту функцию <paramref name="function" />.  
   
-- или - 
+-или- 
 Несоответствие типов между средством чтения и функцией <paramref name="function" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ExecuteFunction&lt;TElement&gt;">
@@ -1486,9 +1475,9 @@
         <TypeParameter Name="TElement" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="functionName" Type="System.String" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+        <Parameter Name="functionName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1499,7 +1488,7 @@
       <Docs>
         <typeparam name="TElement">Тип сущности объекта <see cref="T:System.Data.Objects.ObjectResult`1" />, возвращаемого при выполнении функции в отношении источника данных. Данный тип должен реализовывать <see cref="T:System.Data.Objects.DataClasses.IEntityWithChangeTracker" />.</typeparam>
         <param name="functionName">Имя хранимой процедуры или функции. Имя может содержать имя контейнера, например <c>&lt;Имя контейнера&gt;.&lt;Имя функции&gt;</c>. Если имя контейнера по умолчанию известно, требуется только имя функции.</param>
-        <param name="mergeOption">Параметр <see cref="T:System.Data.Objects.MergeOption" /> для использования при выполнении запроса.</param>
+        <param name="mergeOption">Значение из перечисления <see cref="T:System.Data.Objects.MergeOption" />, используемое для выполнения запроса.</param>
         <param name="parameters">Массив объектов <see cref="T:System.Data.Objects.ObjectParameter" />.</param>
         <summary>Выполняет данную хранимую процедуру или функцию, определенную в источнике данных и выраженную в концептуальной модели (с применением указанных параметров и команды слияния). Возвращает типизированный объект <see cref="T:System.Data.Objects.ObjectResult`1" />.</summary>
         <returns>Объект <see cref="T:System.Data.Objects.ObjectResult`1" /> для данных, возвращенных хранимой процедурой.</returns>
@@ -1507,20 +1496,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A> Метод — это вспомогательный метод, который используется для выполнения хранимых процедур или функций, определенные в источнике данных и выраженную в концептуальной модели. Средства модели EDM создают метод for each в концептуальной модели. Эти методы вызывают строго типизированный `ExecuteFunction` для возврата типизированного <xref:System.Data.Objects.ObjectResult%601>. Дополнительные сведения см. в разделе [код приложения, с помощью хранимых процедур (платформа Entity Framework)](http://msdn.microsoft.com/library/d13dd33f-fcf9-4e86-bd00-74bc31521536).  
+ <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A> Метод — это вспомогательный метод, который используется для выполнения хранимых процедур или функций, определенные в источнике данных и выраженную в концептуальной модели. Средства модели EDM создают метод for each в концептуальной модели. Эти методы вызывают строго типизированный `ExecuteFunction` для возврата типизированного <xref:System.Data.Objects.ObjectResult%601>. Дополнительные сведения см. в разделе [код приложения, с помощью хранимых процедур (платформа Entity Framework)](https://msdn.microsoft.com/library/d13dd33f-fcf9-4e86-bd00-74bc31521536).  
   
  Все параметры для этой функции в массиве параметров и не все типы проверяются метаданные для функции импорта, включая тип самой функции. `null` значения разрешены для типов значений CLR. Проверка параметров производится поставщиком.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="function" /> имеет значение null или пуст 
-- или - 
+-или- 
  <paramref name="function" /> не найден.</exception>
         <exception cref="T:System.InvalidOperationException">Средство чтения сущностей не поддерживает эту функцию <paramref name="function" />.  
   
-- или - 
+-или- 
 Несоответствие типов между средством чтения и функцией <paramref name="function" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ExecuteStoreCommand">
@@ -1539,8 +1528,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="commandText" Type="System.String" />
-        <Parameter Name="parameters" Type="System.Object[]">
+        <Parameter Name="commandText" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1565,9 +1554,9 @@
   
  Дополнительные сведения:  
   
- [Выполнение команды Store](http://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
+ [Выполнение команды Store](https://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
   
- [Практическое: непосредственное выполнение команд в источнике данных](http://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+ [Практическое руководство. Непосредственное выполнение команд в источнике данных](https://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
   
  ]]></format>
         </remarks>
@@ -1597,8 +1586,8 @@
         <TypeParameter Name="TElement" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="commandText" Type="System.String" />
-        <Parameter Name="parameters" Type="System.Object[]">
+        <Parameter Name="commandText" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1607,11 +1596,11 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <typeparam name="TElement">To be added.</typeparam>
+        <typeparam name="TElement">Тип возвращаемых данных.</typeparam>
         <param name="commandText">Выполняемая команда на языке источника данных.</param>
         <param name="parameters">Массив параметров для передачи команде.</param>
         <summary>Выполняет запрос непосредственно в отношении источника данных, возвращающего последовательность типизированных результатов.</summary>
-        <returns>Перечисление объектов типа <paramref name="TResult" />.</returns>
+        <returns>Перечисление объектов типа <paramref name="TElement" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1630,9 +1619,9 @@
   
  Дополнительные сведения:  
   
- [Выполнение команды Store](http://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
+ [Выполнение команды Store](https://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
   
- [Практическое: непосредственное выполнение команд в источнике данных](http://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+ [Практическое руководство. Непосредственное выполнение команд в источнике данных](https://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
   
  ]]></format>
         </remarks>
@@ -1656,10 +1645,10 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="commandText" Type="System.String" />
-        <Parameter Name="entitySetName" Type="System.String" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="parameters" Type="System.Object[]">
+        <Parameter Name="commandText" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="entitySetName" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="3" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <Attributes>
             <Attribute>
               <AttributeName>System.ParamArray</AttributeName>
@@ -1668,10 +1657,10 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
+        <typeparam name="TEntity">Тип сущности возвращенных данных.</typeparam>
         <param name="commandText">Выполняемая команда на языке источника данных.</param>
-        <param name="entitySetName">Набор сущностей типа <c>TResult</c>. Без указания имени набора сущностей отслеживания результатов не будет.</param>
-        <param name="mergeOption">Параметр <see cref="T:System.Data.Objects.MergeOption" /> для использования при выполнении запроса. Значение по умолчанию: <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />.</param>
+        <param name="entitySetName">Набор сущностей типа <typeparamref name="TEntity" />. Без указания имени набора сущностей отслеживания результатов не будет.</param>
+        <param name="mergeOption">Значение из перечисления <see cref="T:System.Data.Objects.MergeOption" />, используемое для выполнения запроса. Значение по умолчанию — <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />.</param>
         <param name="parameters">Массив параметров для передачи команде.</param>
         <summary>Выполняет запрос непосредственно в отношении источника данных и возвращает последовательность типизированных результатов. Укажите набор сущностей и параметр слияния, посредством которых результаты запроса можно будет отслеживать в качестве сущностей.</summary>
         <returns>Перечисление объектов типа <paramref name="TResult" />.</returns>
@@ -1693,9 +1682,9 @@
   
  Дополнительные сведения:  
   
- [Выполнение команды Store](http://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
+ [Выполнение команды Store](https://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
   
- [Практическое: непосредственное выполнение команд в источнике данных](http://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+ [Практическое руководство. Непосредственное выполнение команд в источнике данных](https://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
   
  ]]></format>
         </remarks>
@@ -1724,7 +1713,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.GetKnownProxyTypes%2A> Метод используется, если включено создание объекта прокси-сервера для сущностей POCO. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](http://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
+ <xref:System.Data.Objects.ObjectContext.GetKnownProxyTypes%2A> Метод используется, если включено создание объекта прокси-сервера для сущностей POCO. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](https://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
   
  ]]></format>
         </remarks>
@@ -1750,14 +1739,14 @@
         <Parameter Name="key" Type="System.Data.EntityKey" />
       </Parameters>
       <Docs>
-        <param name="key">Ключ искомого объекта.</param>
+        <param name="key">Ключ объекта, который нужно найти.</param>
         <summary>Возвращает объект, имеющий указанный ключ сущности.</summary>
-        <returns>Объект <see cref="T:System.Object" />, который является экземпляром типа сущности.</returns>
+        <returns>Объект <see cref="T:System.Object" />, являющийся экземпляром типа сущности.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Метод <xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> пытается получить объект с указанным ключом <xref:System.Data.EntityKey> из диспетчера <xref:System.Data.Objects.ObjectStateManager>. Если объект в данный момент не загружен в контекст объекта, запрос выполняется при попытке получить объект из источника данных. Дополнительные сведения см. в разделе [запросы объектов](http://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276).  
+ Метод <xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> пытается получить объект с указанным ключом <xref:System.Data.EntityKey> из диспетчера <xref:System.Data.Objects.ObjectStateManager>. Если объект в данный момент не загружен в контекст объекта, запрос выполняется при попытке получить объект из источника данных. Дополнительные сведения см. в разделе [запросы объектов](https://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276).  
   
  Если объект невозможно найти, метод <xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> вызывает исключение <xref:System.Data.ObjectNotFoundException>. Чтобы избежать обработки этого исключения, взамен используйте метод <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A>.  
   
@@ -1768,7 +1757,7 @@
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере создается ключ <xref:System.Data.EntityKey> для сущности данного типа, а затем сущность выбирается по ключу.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере создается ключ <xref:System.Data.EntityKey> для сущности данного типа, а затем сущность выбирается по ключу.  
   
  [!code-csharp[DP ObjectServices Concepts#EntityKeyClass_GetObjectByKey](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#entitykeyclass_getobjectbykey)]
  [!code-vb[DP ObjectServices Concepts#EntityKeyClass_GetObjectByKey](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#entitykeyclass_getobjectbykey)]  
@@ -1778,7 +1767,7 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="key" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Data.ObjectNotFoundException">Объект не найден ни в объекте <see cref="T:System.Data.Objects.ObjectStateManager" />, ни в источнике данных.</exception>
         <related type="Article" href="~/docs/framework/data/adonet/ef/querying-a-conceptual-model.md">Запросы к данным как к объектам (платформа Entity Framework)</related>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="GetObjectType">
@@ -1796,7 +1785,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="type" Type="System.Type" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="type">Объект <see cref="T:System.Type" /> прокси-объекта.</param>
@@ -1806,7 +1795,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.GetObjectType%2A> Метод используется, если включено создание объекта прокси-сервера для сущностей POCO. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](http://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
+ <xref:System.Data.Objects.ObjectContext.GetObjectType%2A> Метод используется, если включено создание объекта прокси-сервера для сущностей POCO. Дополнительные сведения см. в разделе [требования для создания прокси-сущностей POCO](https://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8) и [работа с сущностями POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).  
   
  ]]></format>
         </remarks>
@@ -1845,8 +1834,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
-        <Parameter Name="navigationProperty" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="navigationProperty" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">Сущность, для которой необходимо загрузить связанные объекты.</param>
@@ -1867,7 +1856,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="entity" /> в состоянии <see cref="F:System.Data.EntityState.Detached" />, <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />. 
-- или - 
+-или- 
 Если <paramref name="entity" /> присоединен к другому экземпляру <see cref="T:System.Data.Objects.ObjectContext" />.</exception>
       </Docs>
     </Member>
@@ -1886,9 +1875,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
-        <Parameter Name="navigationProperty" Type="System.String" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="navigationProperty" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">Сущность, для которой необходимо загрузить связанные объекты.</param>
@@ -1908,7 +1897,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="entity" /> в состоянии <see cref="F:System.Data.EntityState.Detached" />, <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />. 
-- или - 
+-или- 
 Если <paramref name="entity" /> присоединен к другому экземпляру <see cref="T:System.Data.Objects.ObjectContext" />.</exception>
       </Docs>
     </Member>
@@ -1931,11 +1920,11 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entity" Type="TEntity" />
-        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" />
+        <Parameter Name="entity" Type="TEntity" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
+        <typeparam name="TEntity">Тип предоставленного объекта.</typeparam>
         <param name="entity">Исходный объект, для которого необходимо загрузить связанные объекты.</param>
         <param name="selector">Выражение LINQ, определяющее связанные объекты для загрузки.</param>
         <summary>Явным образом загружает объект, связанный с предоставленным объектом, посредством заданного запроса LINQ и параметра слияния по умолчанию.</summary>
@@ -1953,11 +1942,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="selector" /> не поддерживает допустимый входной параметр.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="selector" /> не поддерживает допустимый входной параметр.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="selector" /> имеет значение null.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="entity" /> в состоянии <see cref="F:System.Data.EntityState.Detached" />, <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />. 
-- или - 
+-или- 
 Если <paramref name="entity" /> присоединен к другому экземпляру <see cref="T:System.Data.Objects.ObjectContext" />.</exception>
       </Docs>
     </Member>
@@ -1979,12 +1967,12 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entity" Type="TEntity" />
-        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+        <Parameter Name="entity" Type="TEntity" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
+        <typeparam name="TEntity">Тип предоставленного объекта.</typeparam>
         <param name="entity">Исходный объект, для которого необходимо загрузить связанные объекты.</param>
         <param name="selector">Выражение LINQ, определяющее связанные объекты для загрузки.</param>
         <param name="mergeOption">Значение <see cref="T:System.Data.Objects.MergeOption" />, используемое при загрузке связанных объектов.</param>
@@ -2003,11 +1991,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="selector" /> не поддерживает допустимый входной параметр.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="selector" /> не поддерживает допустимый входной параметр.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="selector" /> имеет значение null.</exception>
         <exception cref="T:System.InvalidOperationException">Параметр <paramref name="entity" /> в состоянии <see cref="F:System.Data.EntityState.Detached" />, <see cref="F:System.Data.EntityState.Added" /> или <see cref="F:System.Data.EntityState.Deleted" />. 
-- или - 
+-или- 
 Если <paramref name="entity" /> присоединен к другому экземпляру <see cref="T:System.Data.Objects.ObjectContext" />.</exception>
       </Docs>
     </Member>
@@ -2036,17 +2023,17 @@
         <ReturnType>System.Data.Metadata.Edm.MetadataWorkspace</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает рабочую область метаданных, используемую контекстом объекта.</summary>
-        <value>Объект <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" />, ассоциированный с этим классом <see cref="T:System.Data.Objects.ObjectContext" />.</value>
+        <summary>Получает рабочую область метаданных, используемую контекстом объекта.</summary>
+        <value>Объект <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" />, связанный с этим объектом <see cref="T:System.Data.Objects.ObjectContext" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Класс <xref:System.Data.Metadata.Edm.MetadataWorkspace> является центральным API времени выполнения, который можно использовать, чтобы взаимодействовать с метаданными модели EDM в контексте приложения. Дополнительные сведения см. в разделе [рабочая область метаданных](http://msdn.microsoft.com/library/601aee56-3eda-4caa-9082-a01df76c5e84).  
+ Класс <xref:System.Data.Metadata.Edm.MetadataWorkspace> является центральным API времени выполнения, который можно использовать, чтобы взаимодействовать с метаданными модели EDM в контексте приложения. Дополнительные сведения см. в разделе [рабочая область метаданных](https://msdn.microsoft.com/library/601aee56-3eda-4caa-9082-a01df76c5e84).  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="ObjectMaterialized">
@@ -2093,13 +2080,13 @@
         <ReturnType>System.Data.Objects.ObjectStateManager</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает диспетчер состояния объекта, используемый контекстом объекта, чтобы отслеживать изменения объекта.</summary>
-        <value>Диспетчер <see cref="T:System.Data.Objects.ObjectStateManager" />, используемый этим классом <see cref="T:System.Data.Objects.ObjectContext" />.</value>
+        <summary>Получает диспетчер состояния объекта, используемый контекстом объекта для отслеживания изменений объекта.</summary>
+        <value>Хранилище <see cref="T:System.Data.Objects.ObjectStateManager" />, используемое данной службой <see cref="T:System.Data.Objects.ObjectContext" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- Эти примеры основаны на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере диспетчер состояния <xref:System.Data.Objects.ObjectStateManager> возвращается из класса <xref:System.Data.Objects.ObjectContext>, а затем используется для доступа к объекту в этом контексте.  
+ Эти примеры основаны на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере диспетчер состояния <xref:System.Data.Objects.ObjectStateManager> возвращается из класса <xref:System.Data.Objects.ObjectContext>, а затем используется для доступа к объекту в этом контексте.  
   
  [!code-csharp[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstatemanager)]
  [!code-vb[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstatemanager)]  
@@ -2111,7 +2098,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="QueryProvider">
@@ -2179,7 +2166,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Этот метод имеет двойное предназначение: объекты в контексте объекта, для обновления данных из источника данных, и работа в качестве механизма разрешения конфликтов. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](http://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
+ Этот метод имеет двойное предназначение: объекты в контексте объекта, для обновления данных из источника данных, и работа в качестве механизма разрешения конфликтов. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](https://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
   
  Объекты обновляются в недетерминированном порядке.  
   
@@ -2189,13 +2176,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="collection" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="collection" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Недопустимый параметр <paramref name="refreshMode" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="collection" /> пуст.  
   
-- или - 
+-или- 
 Объект не присоединен к контексту.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="Refresh">
@@ -2218,14 +2205,14 @@
         <Parameter Name="entity" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="refreshMode">Одно из значений <see cref="T:System.Data.Objects.RefreshMode" />, которое указывает, какой режим использовать для обновления диспетчера <see cref="T:System.Data.Objects.ObjectStateManager" />.</param>
+        <param name="refreshMode">Одно из значений <see cref="T:System.Data.Objects.RefreshMode" />, которое задает режим, используемый для обновления <see cref="T:System.Data.Objects.ObjectStateManager" />.</param>
         <param name="entity">Обновляемый объект.</param>
         <summary>Обновляет какой-либо объект в контексте объекта, используя данные из источника данных.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.Objects.ObjectContext.Refresh%2A> имеет двойное предназначение: что объект для обновления данных из источника данных и работа в качестве механизма разрешения конфликтов. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](http://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
+ <xref:System.Data.Objects.ObjectContext.Refresh%2A> имеет двойное предназначение: что объект для обновления данных из источника данных и работа в качестве механизма разрешения конфликтов. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](https://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
   
  Объекты обновляются в недетерминированном порядке.  
   
@@ -2236,20 +2223,20 @@
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере выполняется попытка сохранить изменения, и это может вызвать конфликт параллелизма. Затем показывается, как разрешить конфликт параллелизма путем обновления контекста объекта перед повторным сохранением изменений.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере выполняется попытка сохранить изменения, и это может вызвать конфликт параллелизма. Затем показывается, как разрешить конфликт параллелизма путем обновления контекста объекта перед повторным сохранением изменений.  
   
  [!code-csharp[DP ObjectServices Concepts#Concurrency](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#concurrency)]
  [!code-vb[DP ObjectServices Concepts#Concurrency](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#concurrency)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="collection" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="collection" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Недопустимый параметр <paramref name="refreshMode" />.</exception>
         <exception cref="T:System.ArgumentException">Параметр <paramref name="collection" /> пуст.  
   
-- или - 
+-или- 
 Объект не присоединен к контексту.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="SaveChanges">
@@ -2285,21 +2272,21 @@
       <Parameters />
       <Docs>
         <summary>Сохраняет все обновления в источнике данных и сбрасывает отслеживание изменений в контексте объекта.</summary>
-        <returns>Число объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
+        <returns>Количество объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Чтобы гарантировать, что обновленные объекты на стороне клиента с логику на стороне источника данных, можно вызвать <xref:System.Data.Objects.ObjectContext.Refresh%2A> метод с <xref:System.Data.Objects.RefreshMode.StoreWins> значение после вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](http://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
+ Чтобы гарантировать, что обновленные объекты на стороне клиента с логику на стороне источника данных, можно вызвать <xref:System.Data.Objects.ObjectContext.Refresh%2A> метод с <xref:System.Data.Objects.RefreshMode.StoreWins> значение после вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [сохранение изменений и управление параллелизмом](https://msdn.microsoft.com/library/b8378601-4f26-4a05-a24a-f50aeb68610e).  
   
  <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> работает в рамках транзакции. <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> выполняет откат этой транзакции и вызывает исключение, если любой из «грязных» <xref:System.Data.Objects.ObjectStateEntry> объекты не могут быть сохранены.  
   
- Если произошло нарушение оптимистичного параллелизма, вызывается исключение <xref:System.Data.OptimisticConcurrencyException>. Нарушение оптимистичного параллелизма можно разрешить, выявив его путем вызова метода <xref:System.Data.Objects.ObjectContext.Refresh%2A> со значением <xref:System.Data.Objects.RefreshMode.StoreWins> или <xref:System.Data.Objects.RefreshMode.ClientWins>, а затем повторного вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [как: управление параллелизмом данных в контексте объекта](http://msdn.microsoft.com/library/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a).  
+ Если произошло нарушение оптимистичного параллелизма, вызывается исключение <xref:System.Data.OptimisticConcurrencyException>. Нарушение оптимистичного параллелизма можно разрешить, выявив его путем вызова метода <xref:System.Data.Objects.ObjectContext.Refresh%2A> со значением <xref:System.Data.Objects.RefreshMode.StoreWins> или <xref:System.Data.Objects.RefreshMode.ClientWins>, а затем повторного вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [Как Управлять параллелизмом данных в контексте объекта](https://msdn.microsoft.com/library/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a).  
   
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере выполняется попытка сохранить изменения, которые могут вызвать конфликт параллелизма. Затем показывается, как разрешить конфликт параллелизма путем обновления контекста объекта перед повторным сохранением изменений.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере выполняется попытка сохранить изменения, которые могут вызвать конфликт параллелизма. Затем показывается, как разрешить конфликт параллелизма путем обновления контекста объекта перед повторным сохранением изменений.  
   
  [!code-csharp[DP ObjectServices Concepts#Concurrency](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#concurrency)]
  [!code-vb[DP ObjectServices Concepts#Concurrency](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#concurrency)]  
@@ -2307,7 +2294,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.OptimisticConcurrencyException">В источнике данных произошло нарушение оптимистичного параллелизма.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="SaveChanges">
@@ -2328,10 +2315,10 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.Obsolete("Use SaveChanges(SaveOptions options) instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Obsolete("Use SaveChanges(SaveOptions options) instead.")</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2343,7 +2330,7 @@
       <Docs>
         <param name="acceptChangesDuringSave">Этот параметр необходим для поддержки транзакций на стороне клиента. Если он имеет значение <see langword="true" />, сброс отслеживания изменений во всех объектах производится по завершении работы <see cref="M:System.Data.Objects.ObjectContext.SaveChanges(System.Boolean)" />. Если значение параметра равно <see langword="false" />, необходимо вызвать метод <see cref="M:System.Data.Objects.ObjectContext.AcceptAllChanges" /> по окончании работы <see cref="M:System.Data.Objects.ObjectContext.SaveChanges(System.Boolean)" />.</param>
         <summary>Сохраняет все обновления в источнике данных и при необходимости сбрасывает отслеживание изменений в контексте объекта.</summary>
-        <returns>Число объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
+        <returns>Количество объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2352,7 +2339,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Data.OptimisticConcurrencyException">Произошло нарушение оптимистичного параллелизма.</exception>
+        <exception cref="T:System.Data.OptimisticConcurrencyException">Произошло нарушение оптимистической блокировки.</exception>
       </Docs>
     </Member>
     <Member MemberName="SaveChanges">
@@ -2371,12 +2358,12 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="System.Data.Objects.SaveOptions" />
+        <Parameter Name="options" Type="System.Data.Objects.SaveOptions" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="options">Значение <see cref="T:System.Data.Objects.SaveOptions" />, определяющее поведение операции.</param>
         <summary>Сохраняет все обновления в источнике данных, используя указанные параметры <see cref="T:System.Data.Objects.SaveOptions" />.</summary>
-        <returns>Число объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
+        <returns>Количество объектов в состоянии <see cref="F:System.Data.EntityState.Added" />, <see cref="F:System.Data.EntityState.Modified" /> или <see cref="F:System.Data.EntityState.Deleted" /> на момент вызова метода <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2387,11 +2374,11 @@
   
  Чтобы убедиться в том, что обновленные объекты на стороне клиента с логику на стороне источника данных, можно вызвать <xref:System.Data.Objects.ObjectContext.Refresh%2A> метод с <xref:System.Data.Objects.RefreshMode.StoreWins> значение после вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> Метод работает в транзакции. <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> выполняет откат этой транзакции и создания исключения, если какой-либо из «грязных» <xref:System.Data.Objects.ObjectStateEntry> объекты не могут быть сохранены.  
   
- Если произошло нарушение оптимистичного параллелизма, вызывается исключение <xref:System.Data.OptimisticConcurrencyException>. Нарушение оптимистичного параллелизма можно разрешить, выявив его путем вызова метода <xref:System.Data.Objects.ObjectContext.Refresh%2A> со значениями <xref:System.Data.Objects.RefreshMode.StoreWins> или <xref:System.Data.Objects.RefreshMode.ClientWins>, а затем путем повторного вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [как: управление параллелизмом данных в контексте объекта](http://msdn.microsoft.com/library/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a).  
+ Если произошло нарушение оптимистичного параллелизма, вызывается исключение <xref:System.Data.OptimisticConcurrencyException>. Нарушение оптимистичного параллелизма можно разрешить, выявив его путем вызова метода <xref:System.Data.Objects.ObjectContext.Refresh%2A> со значениями <xref:System.Data.Objects.RefreshMode.StoreWins> или <xref:System.Data.Objects.RefreshMode.ClientWins>, а затем путем повторного вызова метода <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>. Дополнительные сведения см. в разделе [Как Управлять параллелизмом данных в контексте объекта](https://msdn.microsoft.com/library/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a).  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Data.OptimisticConcurrencyException">Произошло нарушение оптимистичного параллелизма.</exception>
+        <exception cref="T:System.Data.OptimisticConcurrencyException">Произошло нарушение оптимистической блокировки.</exception>
       </Docs>
     </Member>
     <Member MemberName="SavingChanges">
@@ -2421,14 +2408,14 @@
    
   
 ## Examples  
- Этот пример основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). Таким способом обработчик для события <xref:System.Data.Objects.ObjectContext.SavingChanges>, которое проверяет состояния сущности, будет зарегистрирован.  
+ Этот пример основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). Таким способом обработчик для события <xref:System.Data.Objects.ObjectContext.SavingChanges>, которое проверяет состояния сущности, будет зарегистрирован.  
   
  [!code-csharp[DP ObjectServices Concepts#SavingChanges](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#savingchanges)]
  [!code-vb[DP ObjectServices Concepts#SavingChanges](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#savingchanges)]  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
     <Member MemberName="Translate&lt;TElement&gt;">
@@ -2450,10 +2437,10 @@
         <TypeParameter Name="TElement" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <typeparam name="TElement">To be added.</typeparam>
+        <typeparam name="TElement">Тип сущности данных в интерфейсе <see cref="T:System.Data.Common.DbDataReader" />.</typeparam>
         <param name="reader">Объект <see cref="T:System.Data.Common.DbDataReader" />, содержащий данные сущности для преобразования в объекты сущности.</param>
         <summary>Преобразует объект <see cref="T:System.Data.Common.DbDataReader" />, содержащий строки данных сущности, в объекты запрошенного типа сущности.</summary>
         <returns>Перечисление объектов типа <paramref name="TResult" />.</returns>
@@ -2467,9 +2454,9 @@
   
  Дополнительные сведения:  
   
- [Выполнение команды Store](http://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
+ [Выполнение команды Store](https://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
   
- [Практическое: непосредственное выполнение команд в источнике данных](http://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+ [Практическое руководство. Непосредственное выполнение команд в источнике данных](https://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
   
  ]]></format>
         </remarks>
@@ -2494,15 +2481,15 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
-        <Parameter Name="entitySetName" Type="System.String" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="entitySetName" Type="System.String" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="2" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <typeparam name="TEntity">To be added.</typeparam>
+        <typeparam name="TEntity">Тип сущности данных в интерфейсе <see cref="T:System.Data.Common.DbDataReader" />.</typeparam>
         <param name="reader">Объект <see cref="T:System.Data.Common.DbDataReader" />, содержащий данные сущности для преобразования в объекты сущности.</param>
-        <param name="entitySetName">Набор сущностей типа <c>TResult</c>.</param>
-        <param name="mergeOption">Объект <see cref="T:System.Data.Objects.MergeOption" />, используемый при добавлении преобразованных объектов в контекст объекта. Значение по умолчанию: <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />.</param>
+        <param name="entitySetName">Набор сущностей типа <typeparamref name="TEntity" />.</param>
+        <param name="mergeOption">Объект <see cref="T:System.Data.Objects.MergeOption" />, используемый при добавлении преобразованных объектов в контекст объекта. Значение по умолчанию — <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />.</param>
         <summary>Преобразует объект <see cref="T:System.Data.Common.DbDataReader" />, содержащий строки данных сущности, в объекты запрошенного типа сущности (в определенном наборе сущностей и с применением указанного параметра слияния).</summary>
         <returns>Перечисление объектов типа <paramref name="TResult" />.</returns>
         <remarks>
@@ -2515,9 +2502,9 @@
   
  Дополнительные сведения:  
   
- [Выполнение команды Store](http://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
+ [Выполнение команды Store](https://msdn.microsoft.com/library/5708d0a2-3f76-4825-978a-d06ff5c4bb3d) и  
   
- [Практическое: непосредственное выполнение команд в источнике данных](http://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+ [Практическое руководство. Непосредственное выполнение команд в источнике данных](https://msdn.microsoft.com/library/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
   
  ]]></format>
         </remarks>
@@ -2547,16 +2534,15 @@
         <Parameter Name="value" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="key">Ключ искомого объекта.</param>
-        <param name="value">Если этот метод возвращает значение, содержит объект.</param>
+        <param name="key">Ключ объекта, который нужно найти.</param>
+        <param name="value">При возвращении данного метода содержит объект.</param>
         <summary>Возвращает объект, имеющий указанный ключ сущности.</summary>
-        <returns>
-          <see langword="true" />, если объект был успешно извлечен. Значение <see langword="false" />, если ключ <paramref name="key" /> является временным, подключение равно значению <see langword="null" /> или объект <paramref name="value" /> равен значению <see langword="null" />.</returns>
+        <returns><see langword="true" />, если объект был успешно извлечен. Значение <see langword="false" />, если ключ <paramref name="key" /> является временным, подключение равно значению <see langword="null" /> или объект <paramref name="value" /> равен значению <see langword="null" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Метод <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A> пытается получить объект с указанным ключом <xref:System.Data.EntityKey> из диспетчера <xref:System.Data.Objects.ObjectStateManager>. Если объект в данный момент не загружен в контекст объекта, запрос выполняется при попытке получить объект из источника данных. Дополнительные сведения см. в разделе [запросы объектов](http://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276).  
+ Метод <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A> пытается получить объект с указанным ключом <xref:System.Data.EntityKey> из диспетчера <xref:System.Data.Objects.ObjectStateManager>. Если объект в данный момент не загружен в контекст объекта, запрос выполняется при попытке получить объект из источника данных. Дополнительные сведения см. в разделе [запросы объектов](https://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276).  
   
  Используйте метод <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A>, чтобы избежать обработки исключения <xref:System.Data.ObjectNotFoundException>, вызванного методом <xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A>, когда объект невозможно найти.  
   
@@ -2569,7 +2555,7 @@
    
   
 ## Examples  
- Пример в этом разделе основан на [модели AdventureWorks Sales](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере создается ключ <xref:System.Data.EntityKey> для сущности данного типа, а затем выполняется попытка получить сущность по ключу.  
+ Пример в этом разделе основан на [модели AdventureWorks Sales](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). В этом примере создается ключ <xref:System.Data.EntityKey> для сущности данного типа, а затем выполняется попытка получить сущность по ключу.  
   
  [!code-csharp[DP ObjectServices Concepts#EntityKeyClass_TryGetObjectByKey](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#entitykeyclass_trygetobjectbykey)]
  [!code-vb[DP ObjectServices Concepts#EntityKeyClass_TryGetObjectByKey](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#entitykeyclass_trygetobjectbykey)]  
@@ -2577,8 +2563,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Несовместимые метаданные для <paramref name="key" />.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
-        <related type="Article" href="http://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
+        <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">Работа с объектами (Entity Framework)</related>
       </Docs>
     </Member>
   </Members>

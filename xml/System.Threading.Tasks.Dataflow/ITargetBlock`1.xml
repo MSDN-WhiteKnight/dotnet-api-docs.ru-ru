@@ -1,13 +1,5 @@
 <Type Name="ITargetBlock&lt;TInput&gt;" FullName="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TInput&gt;">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8acdc4f452bc7e4455e3f120340be132eb5d1fff" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36407270" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface ITargetBlock&lt;in TInput&gt; : System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1ef92e88200e574b6fde1fa347bb0d30ce1b7b7f" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56361726" /></Metadata><TypeSignature Language="C#" Value="public interface ITargetBlock&lt;in TInput&gt; : System.Threading.Tasks.Dataflow.IDataflowBlock" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITargetBlock`1&lt;- TInput&gt; implements class System.Threading.Tasks.Dataflow.IDataflowBlock" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITargetBlock(Of In TInput)&#xA;Implements IDataflowBlock" />
@@ -15,10 +7,12 @@
   <TypeSignature Language="F#" Value="type ITargetBlock&lt;'Input&gt; = interface&#xA;    interface IDataflowBlock" />
   <AssemblyInfo>
     <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.5.25.0</AssemblyVersion>
     <AssemblyVersion>4.6.0.0</AssemblyVersion>
     <AssemblyVersion>4.6.1.0</AssemblyVersion>
     <AssemblyVersion>4.6.2.0</AssemblyVersion>
     <AssemblyVersion>4.6.3.0</AssemblyVersion>
+    <AssemblyVersion>4.6.4.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="TInput">
@@ -55,10 +49,12 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.5.25.0</AssemblyVersion>
         <AssemblyVersion>4.6.0.0</AssemblyVersion>
         <AssemblyVersion>4.6.1.0</AssemblyVersion>
         <AssemblyVersion>4.6.2.0</AssemblyVersion>
         <AssemblyVersion>4.6.3.0</AssemblyVersion>
+        <AssemblyVersion>4.6.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Dataflow.DataflowMessageStatus</ReturnType>
@@ -72,8 +68,7 @@
       <Docs>
         <param name="messageHeader">Экземпляр <see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />, представляющий заголовок предлагаемого сообщения.</param>
         <param name="messageValue">Значение предлагаемого свойства.</param>
-        <param name="source">
-          <see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />, предлагающий сообщение. Может содержать пустое значение.</param>
+        <param name="source"><see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />, предлагающий сообщение. Может содержать пустое значение.</param>
         <param name="consumeToAccept">Значение <see langword="true" /> для синхронного вызова целевым объектом метода <see cref="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)" /> во время вызова метода <see cref="M:System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)" /> до возврата <see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted" />, чтобы использовать сообщение.</param>
         <summary>Предлагает сообщение блоку <see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />, предоставляя целевому объекту возможность использовать или отложить его.</summary>
         <returns>Состояние предложенного сообщения. Если сообщение было принято целевым объектом, возвращается <see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted" /> и источник больше не должен использовать предложенное сообщение, поскольку оно теперь принадлежит целевому объекту. Если сообщение было отложено целевым объектом, возвращается <see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed" /> в качестве уведомления о том, что целевой объект может позже попытаться использовать или зарезервировать сообщение; при этом источник будет по-прежнему владеть сообщением и может предлагать его другим блокам.  
@@ -84,8 +79,7 @@
   
 Если целевой объект принял решение не принимать сообщение, возвращается <see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined" />. Если целевой объект принял решение не принимать сообщение и никогда не будет принимать другие сообщения от этого источника, возвращается <see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently" />.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="messageHeader" /> — недопустимое значение.  
+        <exception cref="T:System.ArgumentException"><paramref name="messageHeader" /> — недопустимое значение.  
   
 -или- параметр <paramref name="consumeToAccept" /> может иметь значение true, только если для него предоставлен параметр <paramref name="source" /> со значением, отличным от значения NULL.</exception>
       </Docs>

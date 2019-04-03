@@ -1,13 +1,5 @@
 <Type Name="Monitor" FullName="System.Threading.Monitor">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="df70f7cc62e1ef013835d69cf0220d9e8b42bc5a" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48729804" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class Monitor" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="420a40d5ec114eb0c6230857ac9328eded3c08f9" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57925504" /></Metadata><TypeSignature Language="C#" Value="public static class Monitor" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Monitor extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Monitor" />
   <TypeSignature Language="VB.NET" Value="Public Class Monitor" />
@@ -50,14 +42,14 @@
   
  Содержание этой статьи  
   
- [Класс Monitor: Обзор](#Overview)   
+ [Класс Monitor: Общие сведения о](#Overview)   
  [Объект блокировки](#Lock)   
  [Критический раздел](#CriticalSection)   
  [Ожидания, Pulse и PulseAll](#Pulse)   
  [Мониторы и дескрипторы ожидания](#WaitHandles)  
   
 <a name="Overview"></a>   
-## <a name="the-monitor-class-an-overview"></a>Класс Monitor: Обзор  
+## <a name="the-monitor-class-an-overview"></a>Класс Monitor: Общие сведения о  
  <xref:System.Threading.Monitor> обладает следующими функциями:  
   
 -   Он связан с объектом по требованию.  
@@ -71,7 +63,7 @@
   
  В следующей таблице описаны действия, которые может быть занят потоков, которые обращаются к Синхронизируемые объекты:  
   
-|Действие|Описание:|  
+|Действие|Описание|  
 |------------|-----------------|  
 |<xref:System.Threading.Monitor.Enter%2A>, <xref:System.Threading.Monitor.TryEnter%2A>|Получает блокировку для объекта. Это действие также отмечает начало критической секции. Ни один поток может входить в критический раздел, если он выполняет инструкции в критической секции, используя другой объект с блокировкой.|  
 |<xref:System.Threading.Monitor.Wait%2A>|Освобождает блокировку объекта, чтобы разрешить другим потокам для блокировки и доступа к объекту. Вызывающий поток ожидает, пока другой поток обращается к объекту. Сигналы Pulse используются для уведомления об изменении состояния объекта, для потоков в состоянии ожидания.|  
@@ -157,18 +149,18 @@
   
  Они могут получать доступ из любой задачи, выполняемой в потоке пула потоков, доступ к переменным `total` и `n` также должна быть синхронизирована. <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> Метод используется для этой цели.  
   
- В следующем примере показано совместное использование <xref:System.Threading.Monitor> класс (реализуется с помощью `lock` или `SyncLock` языковой конструкции), <xref:System.Threading.Interlocked> класса и <xref:System.Threading.AutoResetEvent> класса. Он определяет два `internal` (в C#) или `Friend` (в Visual Basic) классы, `SyncResource` и `UnSyncResource`, которые соответственно предоставляют синхронизированный и несинхронизированный доступ к ресурсу. Чтобы убедиться, что в примере показано различие между синхронизированным и несинхронизированным доступом (что может случиться, если каждый вызов метода завершается быстро), метод включает случайную задержку: для потоки, в которых <xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType> свойство является четным, вызовы метода <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> для введения задержки в 2 000 миллисекунд. Обратите внимание, что, поскольку `SyncResource` класс не является общим, ни один из клиентского кода принимает блокировку в синхронизированном ресурсе; внутренний класс сам устанавливает блокировку. Это предотвращает блокировка общедоступного объекта вредоносным кодом.  
+ В следующем примере показано совместное использование <xref:System.Threading.Monitor> класс (реализуется с помощью `lock` или `SyncLock` языковой конструкции), <xref:System.Threading.Interlocked> класса и <xref:System.Threading.AutoResetEvent> класса. Он определяет два класса `internal` (в C#) или `Friend` (в Visual Basic), `SyncResource` и `UnSyncResource`, которые соответственно предоставляют синхронизированный и несинхронизированный доступ к ресурсу. Чтобы обеспечить демонстрацию в примере различия между синхронизированным и несинхронизированным доступом (что может случиться, если каждый вызов метода завершается быстро), метод включает случайную задержку: для потоков, свойство <xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType> которых имеет четное значение, метод вызывает <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> для введения задержки в 2 000 миллисекунд. Обратите внимание, что поскольку класс `SyncResource` не является общим, ни один клиентский код не выполняет блокировку в синхронизированном ресурсе; внутренний класс сам выполняет блокировку. Это предотвращает блокировка общедоступного объекта вредоносным кодом.  
   
  [!code-csharp[Conceptual.Monitors#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.monitors/cs/source.cs#1)]
  [!code-vb[Conceptual.Monitors#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.monitors/vb/source.vb#1)]  
   
- В примере определяется переменная, `numOps`, которое определяет число потоков, которые будут пытаться получить доступ к ресурсу. Поток приложения вызывает <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> метод для синхронизированного и несинхронизированного доступа по пять раз. <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> Метод имеет один параметр, делегат, который не принимает никаких параметров и не возвращает значений. Для синхронизированного доступа он вызывает `SyncUpdateResource` метода; для несинхронизированного доступа он вызывает `UnSyncUpdateResource` метод. После каждого ряда вызовов метода поток приложения вызывает [AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne*) метода, так что он блокируется до <xref:System.Threading.AutoResetEvent> экземпляр переводится в сигнальное состояние.  
+ В примере определяется переменная `numOps`, задающая число потоков, которые будут пытаться получить доступ к ресурсу. Поток приложения вызывает метод <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> для синхронизированного и несинхронизированного доступа по пять раз. Метод <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> имеет единственный параметр, делегат, который не принимает никаких параметров и не возвращает значений. Для синхронизированного доступа он вызывает метод `SyncUpdateResource`; для несинхронизированного доступа он вызывает метод `UnSyncUpdateResource`. После каждого ряда вызовов метода поток приложения вызывает [AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne*) метода, так что он блокируется до <xref:System.Threading.AutoResetEvent> экземпляр переводится в сигнальное состояние.  
   
- Каждый вызов `SyncUpdateResource` вызывает внутренний метод `SyncResource.Access` метод, а затем вызывает <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> способ уменьшения `numOps` счетчика. <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> Метод используется для уменьшения счетчика, так как в противном случае нельзя быть уверенным, что второй поток будет обращаться к значению, прежде чем первый поток уменьшенное значение хранилось в переменной. Когда последний синхронизированный рабочий поток уменьшит счетчик до нуля, указывающее, что все синхронизированные потоки завершили доступ к ресурсу, `SyncUpdateResource` вызовы методов <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> метод, который сигнализирует основному потоку продолжить выполнение.  
+ Каждый вызов метода `SyncUpdateResource` вызывает внутренний метод `SyncResource.Access`, а затем вызывает метод <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> для уменьшения счетчика `numOps`. <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> Метод используется для уменьшения счетчика, так как в противном случае нельзя быть уверенным, что второй поток будет обращаться к значению, прежде чем первый поток уменьшенное значение хранилось в переменной. Когда последний синхронизированный рабочий поток уменьшит счетчик до нуля, указывающее, что все синхронизированные потоки завершили доступ к ресурсу, `SyncUpdateResource` вызовы методов <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> метод, который сигнализирует основному потоку продолжить выполнение.  
   
- Каждый вызов `UnSyncUpdateResource` вызывает внутренний метод `UnSyncResource.Access` метод, а затем вызывает <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> способ уменьшения `numOps` счетчика. Опять же <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> метод используется для уменьшения счетчика, чтобы второй поток не обращаться к значение перед уменьшенное значение первого потока был назначен переменной. Когда последний синхронизированный рабочий поток уменьшит счетчик до нуля, указывающее, что больше нет синхронизированных потоков требуется доступ к ресурсу, `UnSyncUpdateResource` вызовы методов <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> метод, который сигнализирует основному потоку продолжить выполнение .  
+ Каждый вызов метода `UnSyncUpdateResource` вызывает внутренний метод `UnSyncResource.Access`, а затем вызывает метод <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> для уменьшения счетчика `numOps`. Опять же <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> метод используется для уменьшения счетчика, чтобы второй поток не обращаться к значение перед уменьшенное значение первого потока был назначен переменной. Когда последний синхронизированный рабочий поток уменьшит счетчик до нуля, указывающее, что больше нет синхронизированных потоков требуется доступ к ресурсу, `UnSyncUpdateResource` вызовы методов <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> метод, который сигнализирует основному потоку продолжить выполнение .  
   
- Как показывает результат этого примера, синхронизированный доступ обеспечивает, что вызывающий поток выходит из защищенного ресурса до того, как другой поток получит доступ к этому ресурсу; каждый поток ожидает своего предшественника. С другой стороны, без блокировки `UnSyncResource.Access` метод вызывается в том порядке, в котором потоки получить к нему доступ.  
+ Как показывает результат этого примера, синхронизированный доступ обеспечивает, что вызывающий поток выходит из защищенного ресурса до того, как другой поток получит доступ к этому ресурсу; каждый поток ожидает своего предшественника. С другой стороны, без блокировки метод `UnSyncResource.Access` вызывается в том порядке, в котором потоки получают к нему доступ.  
   
  ]]></format>
     </remarks>
@@ -294,8 +286,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, в котором следует ожидать.</param>
@@ -431,11 +423,11 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект для тестирования.</param>
-        <summary>Определяет, содержит ли текущий поток блокировку указанного объекта.</summary>
+        <summary>Определяет, является ли содержит ли текущий поток блокировку на заданном объекте.</summary>
         <returns>Значение <see langword="true" />, если текущий поток владеет блокировкой в <paramref name="obj" />; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -447,7 +439,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Pulse">
@@ -488,7 +480,7 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">Объект, ожидаемый потоком.</param>
+        <param name="obj">Объект, которого ожидает поток.</param>
         <summary>Уведомляет поток в очереди готовности об изменении состояния объекта с блокировкой.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -694,8 +686,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, блокировка которого получается.</param>
@@ -793,8 +785,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> является отрицательным числом и не равно <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> является отрицательным числом и не равно <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
         <related type="Article" href="~/docs/standard/threading/index.md">Управляемая поточность</related>
       </Docs>
@@ -841,7 +832,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Если значение `timeout` преобразуется в миллисекунды равно – 1, этот метод эквивалентен <xref:System.Threading.Monitor.Enter%2A>. Если значение `timeout` равен 0, этот метод эквивалентен <xref:System.Threading.Monitor.TryEnter%2A>.  
+ Если значение `timeout` преобразуется в миллисекунды равно -1, этот метод эквивалентен <xref:System.Threading.Monitor.Enter%2A>. Если значение `timeout` равен 0, этот метод эквивалентен <xref:System.Threading.Monitor.TryEnter%2A>.  
   
 > [!NOTE]
 >  Используйте <xref:System.Threading.Monitor> блокировка объектов (то есть ссылочные типы), не типы значений. Дополнительные сведения см. в разделе <xref:System.Threading.Monitor> разделе, посвященном классу.  
@@ -854,7 +845,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="timeout" /> (в миллисекундах) является отрицательным. Оно не равно <see cref="F:System.Threading.Timeout.Infinite" /> (-1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="timeout" /> в миллисекундах отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" /> (–1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
         <related type="Article" href="~/docs/standard/threading/index.md">Управляемая поточность</related>
       </Docs>
@@ -895,9 +886,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, блокировка которого получается.</param>
@@ -932,8 +923,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Входные данные для <paramref name="lockTaken" /> — <see langword="true" />.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> является отрицательным числом и не равно <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> является отрицательным числом и не равно <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="TryEnter">
@@ -969,9 +959,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lockTaken" Type="System.Boolean" RefType="ref" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, блокировка которого получается.</param>
@@ -982,7 +972,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Если значение `timeout` преобразуется в миллисекунды равно – 1, этот метод эквивалентен <xref:System.Threading.Monitor.Enter%28System.Object%29>. Если значение `timeout` равен 0, этот метод эквивалентен <xref:System.Threading.Monitor.TryEnter%28System.Object%29>.  
+ Если значение `timeout` преобразуется в миллисекунды равно -1, этот метод эквивалентен <xref:System.Threading.Monitor.Enter%28System.Object%29>. Если значение `timeout` равен 0, этот метод эквивалентен <xref:System.Threading.Monitor.TryEnter%28System.Object%29>.  
   
  Если не была выполнена блокировка, так как возникло исключение, переменная, указанная для `lockTaken` параметр `false` после завершения этого метода. Это позволяет программе определить, во всех случаях необходимость для снятия блокировки.  
   
@@ -998,7 +988,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Входные данные для <paramref name="lockTaken" /> — <see langword="true" />.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="timeout" /> (в миллисекундах) является отрицательным. Оно не равно <see cref="F:System.Threading.Timeout.Infinite" /> (-1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение <paramref name="timeout" /> в миллисекундах отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" /> (–1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
         <related type="Article" href="~/docs/standard/threading/index.md">Управляемая поточность</related>
       </Docs>
@@ -1217,7 +1207,7 @@
  Если поток вызывает `Wait`, он освобождает блокировку объекта и переходит в очередь ожидания объекта. Следующий поток в очередь готовности объекта (если таковой имеется), получает блокировку и эксклюзивное использование объекта. Поток, вызвавший `Wait` вызывающий поток, удерживающий блокировку остается в очереди ожидания либо до <xref:System.Threading.Monitor.PulseAll%2A>, или он является следующим в очереди, и вызывающий поток, удерживающий блокировку <xref:System.Threading.Monitor.Pulse%2A>. Тем не менее если `timeout` истечет раньше, чем другой поток вызывает этот объект <xref:System.Threading.Monitor.Pulse%2A> или <xref:System.Threading.Monitor.PulseAll%2A> метод, исходный поток перемещается в очередь готовности, чтобы снова получить блокировку.  
   
 > [!NOTE]
->  Если <xref:System.TimeSpan> представляющий-1 миллисекунда указывается для `timeout` параметра, этот метод неограниченно блокируется, если владелец блокировки вызывает <xref:System.Threading.Monitor.Pulse%2A> или <xref:System.Threading.Monitor.PulseAll%2A>. Если `timeout` равно 0, поток, вызывающий `Wait` снимает блокировку и затем немедленно постановки в очередь готовности, чтобы снова получить блокировку.  
+>  Если <xref:System.TimeSpan> представляющий-1 миллисекунду для указан `timeout` параметра, этот метод неограниченно блокируется, если владелец блокировки вызывает <xref:System.Threading.Monitor.Pulse%2A> или <xref:System.Threading.Monitor.PulseAll%2A>. Если `timeout` равно 0, поток, вызывающий `Wait` снимает блокировку и затем немедленно постановки в очередь готовности, чтобы снова получить блокировку.  
   
  Вызывающий поток выполняет `Wait` один раз, независимо от того, сколько раз <xref:System.Threading.Monitor.Enter%2A> был вызван для указанного объекта. По существу `Wait` метод сохраняет количество раз, вызывающий инструкцию <xref:System.Threading.Monitor.Enter%2A> в объекте и вызывает <xref:System.Threading.Monitor.Exit%2A> столько раз, сколько нужно, чтобы полностью освободить объект с блокировкой. Вызывающий объект затем блокируется, ожидая получения объекта. Если вызывающий поток заново получает блокировку, система вызывает <xref:System.Threading.Monitor.Enter%2A> столько раз, сколько необходимо для восстановления сохраненного <xref:System.Threading.Monitor.Enter%2A> числа. Вызов `Wait` снимает блокировку указанного объекта; если вызывающий объект является владельцем блокировки на другие объекты, они не освобождаются.  
   
@@ -1233,7 +1223,7 @@
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.Threading.SynchronizationLockException">Вызывающий поток не владеет блокировкой для указанного объекта.</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">Поток, который вызывает <see langword="Wait" />, позже прерывается из состояния ожидания. Это происходит, когда другой поток вызывает метод <see cref="M:System.Threading.Thread.Interrupt" /> этого потока.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="timeout" /> в миллисекундах отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" /> (–1 миллисекунда), или больше чем <see cref="F:System.Int32.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="timeout" /> в миллисекундах отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" /> (–1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
         <altmember cref="T:System.Threading.Monitor" />
         <related type="Article" href="~/docs/standard/threading/index.md">Управляемая поточность</related>
@@ -1272,15 +1262,15 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, в котором следует ожидать.</param>
         <param name="millisecondsTimeout">Количество миллисекунд для ожидания постановки в очередь готовности.</param>
         <param name="exitContext">Значение <see langword="true" /> для выхода из домена синхронизации в текущем контексте перед ожиданием (в синхронизированном контексте) с его последующим повторным получением; в противном случае — значение <see langword="false" />.</param>
-        <summary>Освобождает блокировку объекта и блокирует текущий поток до тех пор, пока тот не получит блокировку снова. Если указанные временные интервалы истекают, поток встает в очередь готовности. Этот метод также указывает на выход из области синхронизации для контекста (если она находится в синхронизированном контексте) до ожидания и ее повторное получение впоследствии.</summary>
+        <summary>Освобождает блокировку объекта и блокирует текущий поток до тех пор, пока тот не получит блокировку снова. Если указанные временные интервалы истекают, поток встает в очередь готовности. Этот метод также указывает на наличие завершения области синхронизации для контекста (если в синхронизированном контексте) до получения впоследствии нового состояния ожидания.</summary>
         <returns>Значение <see langword="true" />, если блокировка была получена заново до истечения заданного времени; значение <see langword="false" />, если блокировка была получена заново по истечении заданного времени. Этот метод не осуществляет возврат, если блокировка не была получена.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1316,8 +1306,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.Threading.SynchronizationLockException">
-          <see langword="Wait" /> — не вызывается из синхронизированного блока кода.</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException"><see langword="Wait" /> — не вызывается из синхронизированного блока кода.</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">Поток, который вызывает <see langword="Wait" />, позже прерывается из состояния ожидания. Это происходит, когда другой поток вызывает метод <see cref="M:System.Threading.Thread.Interrupt" /> этого потока.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="millisecondsTimeout" /> отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
@@ -1353,9 +1342,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="exitContext" Type="System.Boolean" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="exitContext" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">Объект, в котором следует ожидать.</param>
@@ -1397,10 +1386,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="obj" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.Threading.SynchronizationLockException">
-          <see langword="Wait" /> — не вызывается из синхронизированного блока кода.</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException"><see langword="Wait" /> — не вызывается из синхронизированного блока кода.</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">Для потока, который вызывает Wait, состояние ожидания позже прерывается. Это происходит, когда другой поток вызывает метод <see cref="M:System.Threading.Thread.Interrupt" /> этого потока.</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="timeout" /> имеет отрицательное значение и не представляет <see cref="F:System.Threading.Timeout.Infinite" /> (-1 миллисекунда) или больше, чем <see cref="F:System.Int32.MaxValue" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="timeout" /> в миллисекундах отрицательно и не равно <see cref="F:System.Threading.Timeout.Infinite" /> (–1 миллисекунда) или больше <see cref="F:System.Int32.MaxValue" />.</exception>
         <altmember cref="T:System.Threading.Thread" />
         <altmember cref="T:System.Threading.Monitor" />
         <related type="Article" href="~/docs/standard/threading/index.md">Управляемая поточность</related>

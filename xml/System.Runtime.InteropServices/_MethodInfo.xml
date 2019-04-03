@@ -1,13 +1,5 @@
 <Type Name="_MethodInfo" FullName="System.Runtime.InteropServices._MethodInfo">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7985c1c028967ff0a3838022cd92c4a77f3f3ddb" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48615573" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface _MethodInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c3ace0ca12da0b9cee4e53ee304d1711577d6882" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53223244" /></Metadata><TypeSignature Language="C#" Value="public interface _MethodInfo" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract _MethodInfo" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices._MethodInfo" />
   <TypeSignature Language="VB.NET" Value="Public Interface _MethodInfo" />
@@ -612,7 +604,7 @@
       </Parameters>
       <Docs>
         <param name="obj">Экземпляр, создавший этот метод.</param>
-        <param name="parameters">Список аргументов для вызываемого метода или конструктора. Этот список представляет собой массив объектов с таким же количеством, последовательностью и типом элементов, что и у параметров вызываемого метода или конструктора. Если параметров нет, для <c>parameters</c> должно быть указано значение <see langword="null" />.  
+        <param name="parameters">Список аргументов для вызываемого метода или конструктора. Это массив объектов, количество, порядок и тип которых должны соответствовать списку параметров вызываемого метода или конструктора. В отсутствие параметров значение <paramref name="parameters" /> должно быть равно <see langword="null" />.  
   
 Если метод или конструктор, представленный этим экземпляром, принимает параметр <see langword="ref" /> (<see langword="ByRef" /> в Visual Basic) для вызова метода или конструктора с использованием этой функции никакие специальные атрибуты не требуются. Любой объект этого массива, который не был явно инициализирован с помощью значения, будет содержать значение по умолчанию для данного типа объекта. Для элементов ссылочного типа это значение равно <see langword="null" />. Для элементов, тип которых соответствует значению, это значение равно 0, 0,0 или <see langword="false" />, в зависимости от заданного типа элемента.</param>
         <summary>Предоставляет COM-объектам независимый от версии доступ к методу <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />.</summary>
@@ -654,9 +646,8 @@
       <Docs>
         <param name="obj">Экземпляр, создавший этот метод.</param>
         <param name="invokeAttr">Одно из значений <see langword="BindingFlags" />, определяющих тип связывания.</param>
-        <param name="binder">
-          <see langword="Binder" />, определяющий набор свойств и разрешающий связывание, приведение типов аргументов и вызов элементов с помощью отражения. Если параметр <c>binder</c> имеет значение <see langword="null" />, используется свойство <see langword="Binder.DefaultBinding" />.</param>
-        <param name="parameters">Массив типа <see langword="Object" />, используемый для проверки соответствия количества, порядка и типов параметров этого конструктора с учетом ограничений <c>binder</c>. Если этот конструктор не требует параметров, передается массив нулей, как в <c>Object[] parameters = new Object[0]</c>. Любой объект этого массива, который не был явно инициализирован с помощью значения, будет содержать значение по умолчанию для данного типа объекта. Для элементов ссылочного типа это значение равно <see langword="null" />. Для элементов, тип которых соответствует значению, это значение равно 0, 0,0 или <see langword="false" />, в зависимости от заданного типа элемента.</param>
+        <param name="binder"><see langword="Binder" />, определяющий набор свойств и разрешающий связывание, приведение типов аргументов и вызов элементов с помощью отражения. Если параметр <paramref name="binder" /> принимает значение <see langword="null" />, используется свойство <see langword="Binder.DefaultBinding" />.</param>
+        <param name="parameters">Массив типа <see langword="Object" />, используемый для проверки соответствия количества, порядка и типа параметрам данного конструктора, с учетом ограничений <paramref name="binder" />. Если этот конструктор не требует параметров, передается массив нулей, как в <c>Object[] parameters = new Object[0]</c>. Любой объект этого массива, который не был явно инициализирован с помощью значения, будет содержать значение по умолчанию для данного типа объекта. Для элементов ссылочного типа это значение равно <see langword="null" />. Для элементов, тип которых соответствует значению, это значение равно 0, 0,0 или <see langword="false" />, в зависимости от заданного типа элемента.</param>
         <param name="culture">Объект <see cref="T:System.Globalization.CultureInfo" />, используемый для управления приведением типов. Если значение этого объекта — <see langword="null" />, для текущего потока используется <see cref="T:System.Globalization.CultureInfo" />.</param>
         <summary>Предоставляет COM-объектам независимый от версии доступ к методу <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />.</summary>
         <returns>Экземпляр класса, связанного с конструктором.</returns>

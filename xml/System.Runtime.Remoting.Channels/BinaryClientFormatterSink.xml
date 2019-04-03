@@ -1,17 +1,9 @@
 <Type Name="BinaryClientFormatterSink" FullName="System.Runtime.Remoting.Channels.BinaryClientFormatterSink">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b59d0dbbf4661ce131a840ac162cc773c58e2b37" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46655412" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class BinaryClientFormatterSink : System.Runtime.Remoting.Channels.IChannelSinkBase, System.Runtime.Remoting.Channels.IClientChannelSink, System.Runtime.Remoting.Channels.IClientFormatterSink, System.Runtime.Remoting.Messaging.IMessageSink" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b681f1a46b82da93eeba7507f9322000037681fe" /><Meta Name="ms.sourcegitcommit" Value="800d45fb80a298c4bde743e8a40af69755fc850f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/24/2019" /><Meta Name="ms.locfileid" Value="54895230" /></Metadata><TypeSignature Language="C#" Value="public class BinaryClientFormatterSink : System.Runtime.Remoting.Channels.IClientFormatterSink" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BinaryClientFormatterSink extends System.Object implements class System.Runtime.Remoting.Channels.IChannelSinkBase, class System.Runtime.Remoting.Channels.IClientChannelSink, class System.Runtime.Remoting.Channels.IClientFormatterSink, class System.Runtime.Remoting.Messaging.IMessageSink" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.BinaryClientFormatterSink" />
-  <TypeSignature Language="VB.NET" Value="Public Class BinaryClientFormatterSink&#xA;Implements IChannelSinkBase, IClientChannelSink, IClientFormatterSink, IMessageSink" />
-  <TypeSignature Language="C++ CLI" Value="public ref class BinaryClientFormatterSink : System::Runtime::Remoting::Channels::IChannelSinkBase, System::Runtime::Remoting::Channels::IClientChannelSink, System::Runtime::Remoting::Channels::IClientFormatterSink, System::Runtime::Remoting::Messaging::IMessageSink" />
+  <TypeSignature Language="VB.NET" Value="Public Class BinaryClientFormatterSink&#xA;Implements IClientFormatterSink" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BinaryClientFormatterSink : System::Runtime::Remoting::Channels::IClientFormatterSink" />
   <TypeSignature Language="F#" Value="type BinaryClientFormatterSink = class&#xA;    interface IClientFormatterSink&#xA;    interface IMessageSink&#xA;    interface IClientChannelSink&#xA;    interface IChannelSinkBase" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Remoting</AssemblyName>
@@ -44,12 +36,12 @@
 ## Remarks  
  Функция приемника модуля форматирования — создать необходимые заголовки и сериализовать сообщение в поток. После приемника модуля форматирования <xref:System.Runtime.Remoting.Messaging.IMessage> перенаправляется всем приемникам в цепочке через <xref:System.Runtime.Remoting.Channels.IClientChannelSink.ProcessMessage%2A> или <xref:System.Runtime.Remoting.Channels.IClientChannelSink.AsyncProcessRequest%2A> вызовы. На этом этапе сообщение уже сериализовано и служит только в информационных целях. Приемники, необходимые для создания или изменения сообщения должен быть помещен в цепочке приемников до форматера. Это легко достигается путем реализации <xref:System.Runtime.Remoting.Channels.IClientFormatterSink> интерфейс, который создает впечатление наличия ссылки на приемник модуля форматирования. Настоящий приемник модуля форматирования может быть помещен в цепочку приемников позже.  
   
-|Свойство.|Описание:|  
+|Свойство.|Описание|  
 |--------------|-----------------|  
 |`includeVersions`|Указывает, будет ли модуль форматирования включать сведения об управлении версиями. Значения: `true` или `false`.|  
   
 > [!IMPORTANT]
->  С помощью экземпляра этого объекта с ненадежными данными или через незащищенный канал представляет угрозу безопасности. Этот объект можно используйте только с надежными данными и через защищенный канал. Дополнительные сведения см. в разделе [проверки данных](https://www.owasp.org/index.php/Data_Validation).  
+>  С помощью экземпляра этого объекта с ненадежными данными или через незащищенный канал представляет угрозу безопасности. Этот объект можно используйте только с надежными данными и через защищенный канал. Дополнительные сведения: [Data Validation](https://www.owasp.org/index.php/Data_Validation) (Проверка данных).  
   
  ]]></format>
     </remarks>
@@ -87,6 +79,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::Messaging::IMessageCtrl ^ AsyncProcessMessage(System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Messaging::IMessageSink ^ replySink);" />
       <MemberSignature Language="F#" Value="abstract member AsyncProcessMessage : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Messaging.IMessageSink -&gt; System.Runtime.Remoting.Messaging.IMessageCtrl&#xA;override this.AsyncProcessMessage : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Messaging.IMessageSink -&gt; System.Runtime.Remoting.Messaging.IMessageCtrl" Usage="binaryClientFormatterSink.AsyncProcessMessage (msg, replySink)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -104,8 +99,7 @@
         <param name="msg">Сообщение для обработки.</param>
         <param name="replySink">Приемник, получающий ответ на предоставленное сообщение.</param>
         <summary>Асинхронно обрабатывает предоставленное сообщение.</summary>
-        <returns>
-          <see cref="T:System.Runtime.Remoting.Messaging.IMessageCtrl" />, который обеспечивает способ контроля асинхронного сообщения, после того, как оно отправлено.</returns>
+        <returns><see cref="T:System.Runtime.Remoting.Messaging.IMessageCtrl" />, который обеспечивает способ контроля асинхронного сообщения, после того, как оно отправлено.</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/tdzwhfy3(v=vs.100)">Приемники и цепочки приемников</related>
       </Docs>
@@ -117,6 +111,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AsyncProcessRequest(System::Runtime::Remoting::Channels::IClientChannelSinkStack ^ sinkStack, System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Channels::ITransportHeaders ^ headers, System::IO::Stream ^ stream);" />
       <MemberSignature Language="F#" Value="abstract member AsyncProcessRequest : System.Runtime.Remoting.Channels.IClientChannelSinkStack * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit&#xA;override this.AsyncProcessRequest : System.Runtime.Remoting.Channels.IClientChannelSinkStack * System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit" Usage="binaryClientFormatterSink.AsyncProcessRequest (sinkStack, msg, headers, stream)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IClientChannelSink.AsyncProcessRequest(System.Runtime.Remoting.Channels.IClientChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -149,6 +146,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AsyncProcessResponse(System::Runtime::Remoting::Channels::IClientResponseChannelSinkStack ^ sinkStack, System::Object ^ state, System::Runtime::Remoting::Channels::ITransportHeaders ^ headers, System::IO::Stream ^ stream);" />
       <MemberSignature Language="F#" Value="abstract member AsyncProcessResponse : System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack * obj * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit&#xA;override this.AsyncProcessResponse : System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack * obj * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream -&gt; unit" Usage="binaryClientFormatterSink.AsyncProcessResponse (sinkStack, state, headers, stream)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IClientChannelSink.AsyncProcessResponse(System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -184,6 +184,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IO::Stream ^ GetRequestStream(System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Channels::ITransportHeaders ^ headers);" />
       <MemberSignature Language="F#" Value="abstract member GetRequestStream : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders -&gt; System.IO.Stream&#xA;override this.GetRequestStream : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders -&gt; System.IO.Stream" Usage="binaryClientFormatterSink.GetRequestStream (msg, headers)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IClientChannelSink.GetRequestStream(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -221,6 +224,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Remoting::Channels::IClientChannelSink ^ NextChannelSink { System::Runtime::Remoting::Channels::IClientChannelSink ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.NextChannelSink : System.Runtime.Remoting.Channels.IClientChannelSink" Usage="System.Runtime.Remoting.Channels.BinaryClientFormatterSink.NextChannelSink" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IClientChannelSink.NextChannelSink</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -244,6 +250,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Remoting::Messaging::IMessageSink ^ NextSink { System::Runtime::Remoting::Messaging::IMessageSink ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.NextSink : System.Runtime.Remoting.Messaging.IMessageSink" Usage="System.Runtime.Remoting.Channels.BinaryClientFormatterSink.NextSink" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Messaging.IMessageSink.NextSink</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -267,6 +276,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ProcessMessage(System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Channels::ITransportHeaders ^ requestHeaders, System::IO::Stream ^ requestStream, [Runtime::InteropServices::Out] System::Runtime::Remoting::Channels::ITransportHeaders ^ % responseHeaders, [Runtime::InteropServices::Out] System::IO::Stream ^ % responseStream);" />
       <MemberSignature Language="F#" Value="abstract member ProcessMessage : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream *  *  -&gt; unit&#xA;override this.ProcessMessage : System.Runtime.Remoting.Messaging.IMessage * System.Runtime.Remoting.Channels.ITransportHeaders * System.IO.Stream *  *  -&gt; unit" Usage="binaryClientFormatterSink.ProcessMessage (msg, requestHeaders, requestStream, responseHeaders, responseStream)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IClientChannelSink.ProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream,System.Runtime.Remoting.Channels.ITransportHeaders@,System.IO.Stream@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -302,6 +314,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IDictionary ^ Properties { System::Collections::IDictionary ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Properties : System.Collections.IDictionary" Usage="System.Runtime.Remoting.Channels.BinaryClientFormatterSink.Properties" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IChannelSinkBase.Properties</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -318,7 +333,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Дополнительные сведения см. в разделе [ &#91; \<topic://cpconchannelformatterconfigurationproperties >&#93;](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).  
+ Дополнительные сведения см. в разделе [канала и свойства конфигурации модуля форматирования](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).  
   
  ]]></format>
         </remarks>
@@ -333,6 +348,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::Messaging::IMessage ^ SyncProcessMessage(System::Runtime::Remoting::Messaging::IMessage ^ msg);" />
       <MemberSignature Language="F#" Value="abstract member SyncProcessMessage : System.Runtime.Remoting.Messaging.IMessage -&gt; System.Runtime.Remoting.Messaging.IMessage&#xA;override this.SyncProcessMessage : System.Runtime.Remoting.Messaging.IMessage -&gt; System.Runtime.Remoting.Messaging.IMessage" Usage="binaryClientFormatterSink.SyncProcessMessage msg" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>

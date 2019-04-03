@@ -1,13 +1,5 @@
 <Type Name="ServiceManager" FullName="System.Activities.Presentation.ServiceManager">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="ef01108ef35eb58ce57912f1ab763e7f18bc9feb" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51311408" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ServiceManager : IServiceProvider, System.Collections.Generic.IEnumerable&lt;Type&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a8cc9b3aa8275919866a2392e7ce80180f1762c0" /><Meta Name="ms.sourcegitcommit" Value="9802d4c6745a8ae514b26f144fb3969265b224ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/22/2018" /><Meta Name="ms.locfileid" Value="53751236" /></Metadata><TypeSignature Language="C#" Value="public abstract class ServiceManager : IServiceProvider, System.Collections.Generic.IEnumerable&lt;Type&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceManager extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt;, class System.Collections.IEnumerable, class System.IServiceProvider" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.ServiceManager" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ServiceManager&#xA;Implements IEnumerable(Of Type), IServiceProvider" />
@@ -163,7 +155,7 @@
       <Docs>
         <typeparam name="TServiceType">Тип возвращаемой службы.</typeparam>
         <summary>Извлекает запрошенную службу.</summary>
-        <returns>Возвращает универсальный тип, который является экземпляром службы.</returns>
+        <returns>Универсальный тип, который является экземпляром службы.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -183,6 +175,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Object ^ GetService(Type ^ serviceType);" />
       <MemberSignature Language="F#" Value="abstract member GetService : Type -&gt; obj" Usage="serviceManager.GetService serviceType" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Activities.Presentation</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -222,8 +217,8 @@
       <Parameters />
       <Docs>
         <typeparam name="TServiceType">Тип возвращаемой службы.</typeparam>
-        <summary>Извлекает запрошенную службу.  Этот метод возвращает значение <see langword="null" />, если служба не обнаружена.</summary>
-        <returns>Возвращает универсальный тип, который является экземпляром службы, или значение <see langword="null" />, если служба не была опубликована.</returns>
+        <summary>Извлекает запрошенную службу. Этот метод возвращает значение <see langword="null" />, если служба не обнаружена.</summary>
+        <returns>Универсальный тип, который является экземпляром службы, или значение <see langword="null" />, если служба не была опубликована.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -287,8 +282,7 @@
         <summary>Публикует указанный тип службы, но не объявляет экземпляр. Когда служба запрошена, будет вызван обратный вызов службы публикации для создания экземпляра. Обратный вызов выполняется только один раз. После этого возвращенный экземпляр записывается в кэш.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="callback" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="serviceType" /> уже опубликован.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="serviceType" /> уже опубликован.</exception>
       </Docs>
     </Member>
     <Member MemberName="Publish">
@@ -316,8 +310,7 @@
         <summary>Публикует заданную службу. После публикации экземпляр службы остается в диспетчере служб до тех пор, пока контекст редактирования не удален.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="serviceType" /> или <paramref name="serviceInstance" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="serviceInstance" /> не является производным от объекта <paramref name="serviceType" />, не реализует его или <paramref name="serviceType" /> уже опубликован.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="serviceInstance" /> не является производным от объекта <paramref name="serviceType" />, не реализует его или <paramref name="serviceType" /> уже опубликован.</exception>
       </Docs>
     </Member>
     <Member MemberName="Publish&lt;TServiceType&gt;">

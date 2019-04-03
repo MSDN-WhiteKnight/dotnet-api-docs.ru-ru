@@ -1,13 +1,5 @@
 <Type Name="IHostEx" FullName="Microsoft.IE.IHostEx">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="709b3078aabe28ff21369c1da9a34b74dffe2f9d" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39858885" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IHostEx" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bc1a61c7819572af41a2fdc446225ef752ff5209" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55413349" /></Metadata><TypeSignature Language="C#" Value="public interface IHostEx" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHostEx" />
   <TypeSignature Language="DocId" Value="T:Microsoft.IE.IHostEx" />
   <TypeSignature Language="VB.NET" Value="Public Interface IHostEx" />
@@ -20,15 +12,15 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("FC3DA537-C144-42C3-92F8-EA88267EC73B")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(1)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Предоставляет методы для создания фабрик классов.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -53,10 +45,10 @@
         <Parameter Name="fileName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="className">To be added.</param>
-        <param name="fileName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="className">Имя типа.</param>
+        <param name="fileName">Имя сборки.</param>
+        <summary>Создает фабрику класса для типа в заданной сборке.</summary>
+        <returns>Объект, представляющий фабрику класса.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,15 +78,29 @@
         <Parameter Name="fileName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dwIdentityFlags">To be added.</param>
-        <param name="dwZone">To be added.</param>
-        <param name="lpSite">To be added.</param>
-        <param name="pbSecurityId">To be added.</param>
-        <param name="lpHash">To be added.</param>
-        <param name="className">To be added.</param>
-        <param name="fileName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dwIdentityFlags">Одно из следующих значений CORIESECURITY:
+
+— CORIESECURITY_ZONE: 0x01
+
+— CORIESECURITY_SITE: 0x02</param>
+        <param name="dwZone">Одно из следующих значений URLZONE:
+
+— URLZONE_LOCAL_MACHINE: 0x00
+
+— URLZONE_INTRANET: 0x01
+
+— URLZONE_TRUSTED: 0x02
+
+— URLZONE_INTERNET: 0x03
+
+— URLZONE_UNTRUSTED: 0x04</param>
+        <param name="lpSite">Адрес сайта.</param>
+        <param name="pbSecurityId">Уникальный идентификатор сайта.</param>
+        <param name="lpHash">Хэш-значение загружаемой сборки в шестнадцатеричной кодировке.</param>
+        <param name="className">Имя типа.</param>
+        <param name="fileName">Имя сборки.</param>
+        <summary>Создает фабрику защищенного класса для типа в заданной сборке.</summary>
+        <returns>Объект, представляющий фабрику защищенного класса.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,13 +1,5 @@
 <Type Name="Duration" FullName="System.Windows.Duration">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="93704e4edda16d771754528513ae940bcca04bdf" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48590106" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public struct Duration" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0ce3df1fc7d8c6d11b872391e950b61e474d8106" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55366861" /></Metadata><TypeSignature Language="C#" Value="public struct Duration" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Duration extends System.ValueType" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Duration" />
   <TypeSignature Language="VB.NET" Value="Public Structure Duration" />
@@ -23,12 +15,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DurationConverter))</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Представляет продолжительность периода нахождения <see cref="T:System.Windows.Media.Animation.Timeline" /> в активном состоянии.</summary>
+    <summary>Представляет продолжительность времени, в течение которого активен <see cref="T:System.Windows.Media.Animation.Timeline" />.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -36,19 +28,19 @@
   
 <a name="xamlAttributeUsage_Duration"></a>   
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
- \<*Объект* *свойство*= "[*дней*.] *часов*:*минут*:*секунд*[.* доли секунды*] "/ >  
+ \<*Объект* *свойство*= "[*дней*.] *часов*:*минут*:*секунд*[. *доли секунды*] "/ >  
   
- \- или -  
+-или-
   
  \<*Объект* *свойство*= "[*дней*.] *часов*:*минут*«/ >  
   
- \- или -  
+-или-
   
- \<*Объект* *свойство*=»<xref:System.Windows.Duration.Automatic%2A>«/ >  
+ \<*object* *property*="<xref:System.Windows.Duration.Automatic%2A>"/>  
   
- \- или -  
+-или-
   
- \<*Объект* *свойство*=»<xref:System.Windows.Duration.Forever%2A>«/ >  
+ \<*object* *property*="<xref:System.Windows.Duration.Forever%2A>"/>  
   
 <a name="xamlValues_MinWidth"></a>   
 ## <a name="xaml-values"></a>Значения XAML  
@@ -79,7 +71,7 @@
   
  ]]></format>
     </remarks>
-    <related type="ExternalDocumentation" href="http://go.microsoft.com/fwlink/?LinkID=159969">Коллекция примеров анимации</related>
+    <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkID=159969">Коллекция примеров анимации</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -123,7 +115,7 @@
         <Parameter Name="duration" Type="System.Windows.Duration" />
       </Parameters>
       <Docs>
-        <param name="duration">Экземпляр <see cref="T:System.Windows.Duration" />, представляющий значение текущего экземпляра плюс <c>duration</c>.</param>
+        <param name="duration">Экземпляр <see cref="T:System.Windows.Duration" />, представляющий значение текущего экземпляра плюс <paramref name="duration" />.</param>
         <summary>Добавляет значение заданного экземпляра <see cref="T:System.Windows.Duration" /> к значению текущего экземпляра.</summary>
         <returns>Если оба экземпляра <see cref="T:System.Windows.Duration" /> имеют значения, экземпляр <see cref="T:System.Windows.Duration" />, представляющий суммарное значение. В противном случае метод возвращает значение <see langword="null" />.</returns>
         <remarks>To be added.</remarks>
@@ -147,7 +139,7 @@
       </ReturnValue>
       <Docs>
         <summary>Получает значение <see cref="T:System.Windows.Duration" />, которое определяется автоматически.</summary>
-        <value>Объект <see cref="T:System.Windows.Duration" />, инициализируемый автоматическим значением.</value>
+        <value><see cref="T:System.Windows.Duration" /> инициализируется в автоматическое значение.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -157,7 +149,7 @@
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
   
 ```  
-<object property="Automatic" />  
+<object property="Automatic" />  
 ```  
   
 <a name="xamlValues_Automatic"></a>   
@@ -241,8 +233,7 @@
       <Docs>
         <param name="value">Объект для проверки на равенство.</param>
         <summary>Определяет, равен ли заданный объект экземпляру <see cref="T:System.Windows.Duration" />.</summary>
-        <returns>
-          <see langword="true" />, если значение равняется текущему экземпляру длительности; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значение равняется текущему экземпляру длительности; в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -267,8 +258,7 @@
       <Docs>
         <param name="duration">Экземпляр <see cref="T:System.Windows.Duration" /> для проверки на равенство.</param>
         <summary>Определяет, равен ли заданный объект <see cref="T:System.Windows.Duration" /> данному экземпляру <see cref="T:System.Windows.Duration" />.</summary>
-        <returns>
-          <see langword="true" />, если <paramref name="duration" /> равнозначен текущему экземпляру <see cref="T:System.Windows.Duration" />; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если <paramref name="duration" /> равнозначен текущему экземпляру <see cref="T:System.Windows.Duration" />; в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -296,8 +286,7 @@
         <param name="t1">Первый экземпляр <see cref="T:System.Windows.Duration" /> для сравнения.</param>
         <param name="t2">Второй экземпляр <see cref="T:System.Windows.Duration" /> для сравнения.</param>
         <summary>Определяет, равны ли два экземпляра <see cref="T:System.Windows.Duration" />.</summary>
-        <returns>
-          <see langword="true" />, если значения параметров <paramref name="t1" /> и <paramref name="t2" /> равны; в противном случае — <see langword="false" />.</returns>
+        <returns><see langword="true" />, если значения параметров <paramref name="t1" /> и <paramref name="t2" /> равны; в противном случае — <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,9 +307,8 @@
         <ReturnType>System.Windows.Duration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение <see cref="T:System.Windows.Duration" />, которое представляет неограниченный интервал.</summary>
-        <value>
-          <see cref="T:System.Windows.Duration" /> инициализируется вечным значением.</value>
+        <summary>Получает значение <see cref="T:System.Windows.Duration" />, представляющее неограниченный интервал.</summary>
+        <value>Объект <see cref="T:System.Windows.Duration" />, инициализируемый неограниченным значением.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -330,7 +318,7 @@
 ## <a name="xaml-attribute-usage"></a>Использование атрибута XAML  
   
 ```  
-<object property="Forever" />  
+<object property="Forever" />  
 ```  
   
 <a name="xamlValues_Forever"></a>   
@@ -361,7 +349,7 @@
       <Parameters />
       <Docs>
         <summary>Получает хэш-код для данного экземпляра.</summary>
-        <returns>Хэш-код в виде 32-разрядного целого числа со знаком.</returns>
+        <returns>Подписанный хэш-код в виде 32-разрядного целого числа.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -538,10 +526,9 @@
         <Parameter Name="timeSpan" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="timeSpan">
-          <see cref="T:System.TimeSpan" />, из которого неявно создан экземпляр <see cref="T:System.Windows.Duration" />.</param>
+        <param name="timeSpan"><see cref="T:System.TimeSpan" />, из которого неявно создан экземпляр <see cref="T:System.Windows.Duration" />.</param>
         <summary>Неявно создает объект <see cref="T:System.Windows.Duration" /> из заданного объекта <see cref="T:System.TimeSpan" />.</summary>
-        <returns>Новый экземпляр <see cref="T:System.Windows.Duration" />.</returns>
+        <returns>Новый экземпляр класса <see cref="T:System.Windows.Duration" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[Имеет эквивалентный метод для этого оператора <xref:System.Windows.Duration.%23ctor%28System.TimeSpan%29?displayProperty=nameWithType>]]></format>
         </remarks>
@@ -791,10 +778,10 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает значение <see cref="T:System.TimeSpan" />, представляемое данным объектом <see cref="T:System.Windows.Duration" />.</summary>
-        <value>Значение <see cref="T:System.TimeSpan" />, представляемое данным объектом <see cref="T:System.Windows.Duration" />.</value>
+        <summary>Получает значение <see cref="T:System.TimeSpan" />, представляемое этим объектом <see cref="T:System.Windows.Duration" />.</summary>
+        <value>Значение <see cref="T:System.TimeSpan" />, представляемое этим объектом <see cref="T:System.Windows.Duration" />.</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException">Происходит, если <see cref="T:System.Windows.Duration" /> является <see langword="null" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Возникает, если <see cref="T:System.Windows.Duration" /> имеет значение <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">

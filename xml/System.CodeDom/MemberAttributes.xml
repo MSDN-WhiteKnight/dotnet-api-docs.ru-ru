@@ -1,13 +1,5 @@
 <Type Name="MemberAttributes" FullName="System.CodeDom.MemberAttributes">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a11953ebf782ecf7a77f508fd253b46b263ffc60" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49144918" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public enum MemberAttributes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="730d3f03125dbad3a0e18d89cca6d19ccc71426e" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58557600" /></Metadata><TypeSignature Language="C#" Value="public enum MemberAttributes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MemberAttributes extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.CodeDom.MemberAttributes" />
   <TypeSignature Language="VB.NET" Value="Public Enum MemberAttributes" />
@@ -23,6 +15,7 @@
     <AssemblyName>System.CodeDom</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Enum</BaseTypeName>
@@ -31,8 +24,8 @@
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -44,7 +37,7 @@
  Идентификаторы, определенные в <xref:System.CodeDom.MemberAttributes> перечисления можно использовать для указания атрибутов области действия и доступа члена класса.  
   
 > [!NOTE]
->  Существует не `Virtual` атрибут элемента. Член объявлен виртуальной, задав общий доступ к его членам (`property1.Attributes = MemberAttributes.Public`) без указания его как Final. Отсутствие окончательный флага делает член `virtual` в C# (`public virtual`), `overrideable` в Visual Basic (`Public Overrideable`). Во избежание объявления члена как `virtual` или `overrideable`, задайте оба открытый и окончательное флагов в <xref:System.CodeDom.CodeTypeMember.Attributes%2A> свойство. См. в разделе <xref:System.CodeDom.CodeTypeMember.Attributes%2A> Дополнительные сведения о настройке атрибуты элементов.  
+>  Существует не `Virtual` атрибут элемента. Член объявлен виртуальной, задав общий доступ к его членам (`property1.Attributes = MemberAttributes.Public`) без указания его как Final. Отсутствие окончательный флага делает член `virtual` в C# (`public virtual`), `overridable` в Visual Basic (`Public Overridable`). Во избежание объявления члена как `virtual` или `overridable`, задайте оба открытый и окончательное флагов в <xref:System.CodeDom.CodeTypeMember.Attributes%2A> свойство. См. в разделе <xref:System.CodeDom.CodeTypeMember.Attributes%2A> Дополнительные сведения о настройке атрибуты элементов.  
   
 > [!NOTE]
 >  Шаблон для установки флагов доступа (флаги, содержащую термины `Public`, `Private`, `Assembly`, или `Family`) — чтобы замаскировать out все флаги доступа, используя маску AccessMask, а затем установить флаг необходимый тип доступа. Например, оператор кода для идентификации конструктора (с именем `constructor1`) как открытый — `constructor1.Attributes = (constructor1.Attributes & ~MemberAttributes.AccessMask) | MemberAttributes.Public;`. Установка <xref:System.CodeDom.CodeTypeMember.Attributes%2A> свойства непосредственно с флагом доступа (например, `constructor1.Attributes = MemberAttributes.Public;`) стирает все флаги, которые могут быть установлены. Этот шаблон также следует использовать для установки флагов область (абстрактный, Final, Static, переопределение или Const) используя ScopeMask маску.  
@@ -84,6 +77,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -111,6 +105,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -138,6 +133,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -165,6 +161,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -192,6 +189,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -219,6 +217,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -246,6 +245,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -273,6 +273,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -300,6 +301,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -327,6 +329,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -354,6 +357,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -381,6 +385,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -408,6 +413,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -435,6 +441,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -462,6 +469,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
@@ -489,6 +497,7 @@
         <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.CodeDom.MemberAttributes</ReturnType>

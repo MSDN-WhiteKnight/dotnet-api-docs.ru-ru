@@ -1,13 +1,5 @@
 <Type Name="ThreadAbortException" FullName="System.Threading.ThreadAbortException">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2cdb50de89e49e5911fcda64602753550e391a83" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48694795" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class ThreadAbortException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a77e7a2363e23a7235dcaeac3d260f53b4771dcd" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52346970" /></Metadata><TypeSignature Language="C#" Value="public sealed class ThreadAbortException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ThreadAbortException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ThreadAbortException" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ThreadAbortException&#xA;Inherits SystemException" />
@@ -37,8 +29,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -50,7 +42,7 @@
  Когда выполняется вызов для <xref:System.Threading.Thread.Abort%2A> метод, чтобы уничтожать поток, среда CLR вызывает <xref:System.Threading.ThreadAbortException>. <xref:System.Threading.ThreadAbortException> — Это специальное исключение, которое может быть перехвачено, но он будет автоматически вызываться снова в конце `catch` блока. Если возникает это исключение, среда выполнения выполняет все `finally` блоки до завершения потока. Так как поток может выполнять код `finally` блоки или вызов <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType> для отмены инструкции abort, нет никакой гарантии, что поток, когда-нибудь закончится. Если вы хотите дождаться завершения прерванный поток, можно вызвать <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> метод. <xref:System.Threading.Thread.Join%2A> вызов является блокирующим, не возвращается до действительного окончания выполнения потока.  
   
 > [!NOTE]
->  При остановке threadsafter фона, завершились все потоки переднего плана в управляемом исполняемом файле общеязыковой среды выполнения (CLR) не использует <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Следовательно, нельзя использовать <xref:System.Threading.ThreadAbortException> обнаруживать фоновые потоки завершаются в среде CLR.  
+>  Если общеязыковой среды выполнения (CLR) останавливает фоновые потоки, после окончания всех основных потоков в управляемом исполняемом файле, он не будет использоваться <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Следовательно, нельзя использовать <xref:System.Threading.ThreadAbortException> обнаруживать фоновые потоки завершаются в среде CLR.  
   
  <xref:System.Threading.ThreadAbortException> использует COR_E_THREADABORTED HRESULT, которое имеет значение 0x80131530.  
   

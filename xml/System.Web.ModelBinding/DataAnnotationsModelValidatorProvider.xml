@@ -1,13 +1,5 @@
 <Type Name="DataAnnotationsModelValidatorProvider" FullName="System.Web.ModelBinding.DataAnnotationsModelValidatorProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1e0c5c728559f2502ce7666d34ab0a9142cf4320" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="36399977" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class DataAnnotationsModelValidatorProvider : System.Web.ModelBinding.AssociatedValidatorProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5b1c7330cd795a7ec28c391e07cfa1aeb70aa96" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53390733" /></Metadata><TypeSignature Language="C#" Value="public class DataAnnotationsModelValidatorProvider : System.Web.ModelBinding.AssociatedValidatorProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataAnnotationsModelValidatorProvider extends System.Web.ModelBinding.AssociatedValidatorProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class DataAnnotationsModelValidatorProvider&#xA;Inherits AssociatedValidatorProvider" />
@@ -223,7 +215,11 @@
         <summary>Регистрирует адаптер для проверки объектов по умолчанию.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="type" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Тип адаптера не имеет открытый конструктор, принимающий два параметра, принадлежащие к типам <see cref="T:System.Web.ModelBinding.ModelMetadata" /> и <see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />.</exception>
+        <exception cref="T:System.ArgumentException">Тип адаптера не является производным от <see cref="T:System.Web.ModelBinding.ModelValidator" />.
+
+- или -
+
+Тип адаптера не имеет открытый конструктор, принимающий два параметра, принадлежащие к типам <see cref="T:System.Web.ModelBinding.ModelMetadata" /> и <see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="RegisterDefaultValidatableObjectAdapterFactory">
@@ -276,7 +272,15 @@
         <summary>Регистрирует адаптер для проверки объектов.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="adapterType" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Тип адаптера не имеет открытый конструктор, принимающий два параметра, принадлежащие к типам <see cref="T:System.Web.ModelBinding.ModelMetadata" /> и <see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />.</exception>
+        <exception cref="T:System.ArgumentException">Тип модели не реализует интерфейс <see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject" />.
+
+- или -
+
+Тип адаптера не реализует <see cref="T:System.Web.ModelBinding.ModelValidator" />.
+
+-или-
+
+Тип адаптера не имеет открытый конструктор, принимающий два параметра, принадлежащие к типам <see cref="T:System.Web.ModelBinding.ModelMetadata" /> и <see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="RegisterValidatableObjectAdapterFactory">

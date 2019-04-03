@@ -1,13 +1,5 @@
 <Type Name="SslStreamSecurityBindingElement" FullName="System.ServiceModel.Channels.SslStreamSecurityBindingElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4aae1a28640eee404d274214c32f477e4e725924" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49148649" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SslStreamSecurityBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.ITransportTokenAssertionProvider, System.ServiceModel.Description.IPolicyExportExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8291187f16159a12adada0f18cb61c197f69d453" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58687885" /></Metadata><TypeSignature Language="C#" Value="public class SslStreamSecurityBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.ITransportTokenAssertionProvider, System.ServiceModel.Description.IPolicyExportExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SslStreamSecurityBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Channels.ITransportTokenAssertionProvider, class System.ServiceModel.Description.IPolicyExportExtension" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />
   <TypeSignature Language="VB.NET" Value="Public Class SslStreamSecurityBindingElement&#xA;Inherits BindingElement&#xA;Implements IPolicyExportExtension, ITransportTokenAssertionProvider" />
@@ -21,9 +13,12 @@
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.2.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.1</AssemblyVersion>
+    <AssemblyVersion>4.5.0.3</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ServiceModel.Channels.StreamUpgradeBindingElement</BaseTypeName>
@@ -59,11 +54,11 @@
   
 5.  Добавьте в коллекцию любые дополнительные элементы пользовательской привязки, такие как <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.  
   
- Существует три сценария, в которых требуется либо вручную задать правильное имя участника пользователя или имя участника службы на конечной точке клиента после импорта WSDL, либо задать пользовательский параметр <xref:System.ServiceModel.Security.IdentityVerifier> в элементе клиента <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.  
+ Существует три сценария, в которых необходимо вручную задать правильное имя участника-пользователя или имя участника службы на конечной точке клиента после импорта WSDL, или задать пользовательский <xref:System.ServiceModel.Security.IdentityVerifier> на стороне клиента <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.  
   
 1.  В WSDL не опубликован идентификатор службы. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> и HTTPS используются (например, объект <xref:System.ServiceModel.WSHttpBinding>, для которого SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>). Если служба не работает с удостоверением компьютера, необходимо вручную задать правильное имя участника пользователя или имя участника службы на конечной точке клиента после импорта WSDL.  
   
-2.  Удостоверение DNSservice опубликовано в WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> и <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> используются (например, <xref:System.ServiceModel.NetTcpBinding>, для которого SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) вместо UPN/SPN. Если служба не работает с удостоверением компьютера или удостоверение DNS не является удостоверением компьютера, необходимо вручную задать правильное имя участника пользователя или имя участника службы на конечной точке клиента после импорта WSDL.  
+2.  Удостоверение службы DNS опубликовано в WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> и <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> используются (например, <xref:System.ServiceModel.NetTcpBinding>, для которого SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) вместо UPN/SPN. Если служба не работает с удостоверением компьютера или удостоверение DNS не является удостоверением компьютера, необходимо вручную задать правильное имя участника пользователя или имя участника службы на конечной точке клиента после импорта WSDL.  
   
 3.  Удостоверение DNS опубликовано в WSDL. Если элемент <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> переопределяется на клиенте, необходимо задать пользовательский параметр <xref:System.ServiceModel.Security.IdentityVerifier> на элементе клиента <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.  
   
@@ -197,9 +192,12 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -224,7 +222,7 @@ namespace ServiceNamespace
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="elementToBeCloned" Type="System.ServiceModel.Channels.SslStreamSecurityBindingElement" />
+        <Parameter Name="elementToBeCloned" Type="System.ServiceModel.Channels.SslStreamSecurityBindingElement" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="elementToBeCloned">Копируемый объект <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />.</param>
@@ -248,9 +246,12 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
@@ -263,8 +264,7 @@ namespace ServiceNamespace
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
         <summary>Создает фабрику каналов заданного типа.</summary>
         <returns>Объект <see cref="T:System.ServiceModel.Channels.IChannelFactory" />, представляющий фабрику каналов типа <paramref name="TChannel" />.</returns>
         <remarks>
@@ -275,7 +275,7 @@ namespace ServiceNamespace
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="context" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
@@ -306,14 +306,13 @@ namespace ServiceNamespace
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип прослушивателя каналов.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
         <summary>Создает прослушиватель каналов заданного типа.</summary>
-        <returns>Объект <see cref="T:System.ServiceModel.Channels.IChannelListener" />, представляющий прослушиватель канала типа <paramref name="TChannel" />.</returns>
+        <returns>Объект <see cref="T:System.ServiceModel.Channels.IChannelListener" />, представляющий прослушиватель каналов типа <paramref name="TChannel" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -322,7 +321,7 @@ namespace ServiceNamespace
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="context" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildClientStreamUpgradeProvider">
@@ -345,7 +344,7 @@ namespace ServiceNamespace
         <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">Контекст <see cref="T:System.ServiceModel.Channels.BindingContext" /> для всего стека каналов.</param>
@@ -383,7 +382,7 @@ namespace ServiceNamespace
         <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">Контекст <see cref="T:System.ServiceModel.Channels.BindingContext" /> для всего стека каналов.</param>
@@ -417,9 +416,12 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -432,8 +434,7 @@ namespace ServiceNamespace
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
         <summary>Возвращает значение, определяющее, можно ли создать фабрику каналов указанного типа.</summary>
         <returns>Значение <see langword="true" />, если можно создать фабрику каналов указанного типа; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -444,7 +445,7 @@ namespace ServiceNamespace
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="context" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
@@ -475,12 +476,11 @@ namespace ServiceNamespace
         </TypeParameter>
       </TypeParameters>
       <Parameters>
-        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <typeparam name="TChannel">Тип прослушивателя каналов.</typeparam>
-        <param name="context">
-          <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
         <summary>Возвращает значение, определяющее, можно ли создать прослушиватель каналов указанного типа.</summary>
         <returns>Значение <see langword="true" />, если можно создать прослушиватель каналов указанного типа; в противном случае — значение <see langword="false" />.</returns>
         <remarks>
@@ -491,7 +491,7 @@ namespace ServiceNamespace
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="context" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Clone">
@@ -510,9 +510,12 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
@@ -540,9 +543,12 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -628,7 +634,7 @@ namespace ServiceNamespace
         <ReturnType>System.ServiceModel.Security.IdentityVerifier</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает или задает средство проверки удостоверения для этой привязки.</summary>
+        <summary>Получает или задает средство проверки удостоверения для этой привязки.</summary>
         <value>Объект <see cref="T:System.ServiceModel.Security.IdentityVerifier" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Значение, которое необходимо задать, равно null.</exception>
@@ -667,7 +673,7 @@ namespace ServiceNamespace
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее, требуется ли для этой привязки сертификат клиента.</summary>
-        <value>Значение <see langword="true" />, если для этой привязки требуется сертификат клиента; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если для этой привязки требуется сертификат клиента; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -688,7 +694,7 @@ namespace ServiceNamespace
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -696,8 +702,8 @@ namespace ServiceNamespace
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает значение, указывающее, нужно ли выполнять сериализацию средства проверки удостоверений.</summary>
-        <returns>Значение <see langword="true" />, если средство проверки удостоверений следует сериализовать; в противном случае — значение <see langword="false" />.</returns>
+        <summary>Получает значение, показывающее, нужно ли выполнять сериализацию средства проверки удостоверения.</summary>
+        <returns>Значение <see langword="true" />, если средство проверки удостоверения следует сериализовать; в противном случае — значение <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -719,12 +725,14 @@ namespace ServiceNamespace
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.1</AssemblyVersion>
+        <AssemblyVersion>4.5.0.3</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;dotnet-plat-ext-2.1">
+        <Attribute FrameworkAlternate="netcore-2.0;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0">
           <AttributeName>System.ComponentModel.DefaultValue</AttributeName>
         </Attribute>
       </Attributes>
@@ -753,10 +761,10 @@ sslStream.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12;
 EndpointAddress a = new EndpointAddress("net.tcp://contoso.com/TcpAddress");  
 ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(b, a);  
 cf.Credentials.ClientCertificate.SetCertificate(  
-    StoreLocation.LocalMachine,  
-    StoreName.My,  
-    X509FindType.FindByThumbprint,  
-    "0000000000000000000000000000000000000000");  
+    StoreLocation.LocalMachine,  
+    StoreName.My,  
+    X509FindType.FindByThumbprint,  
+    "0000000000000000000000000000000000000000");  
 ```  
   
  ]]></format>
@@ -785,8 +793,8 @@ cf.Credentials.ClientCertificate.SetCertificate(
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
-        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" Index="0" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="exporter">Объект <see cref="T:System.ServiceModel.Description.MetadataExporter" />, который можно использовать для изменения процесса экспорта.</param>

@@ -1,13 +1,5 @@
 <Type Name="DecoderFallbackBuffer" FullName="System.Text.DecoderFallbackBuffer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1f1a265984500a0f372a13cb04864c094ef55829" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46688025" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class DecoderFallbackBuffer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c266f2f408a7bd93db4c1d26db2170aad8f773d6" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58686712" /></Metadata><TypeSignature Language="C#" Value="public abstract class DecoderFallbackBuffer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DecoderFallbackBuffer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Text.DecoderFallbackBuffer" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DecoderFallbackBuffer" />
@@ -26,6 +18,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
@@ -37,7 +30,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Предоставляет буфер, позволяющий резервному обработчику возвращать в декодер альтернативную строку, если он не может декодировать входную последовательность байтов.</summary>
+    <summary>Предоставляет буфер, который позволяет резервному обработчику возвращать альтернативную строку средству декодирования, если не удается декодировать входную последовательность байтов.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -94,6 +87,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -127,6 +121,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -142,10 +137,9 @@
       </Parameters>
       <Docs>
         <param name="bytesUnknown">Входной массив байтов.</param>
-        <param name="index">Позиция индекса байта в <c>bytesUnknown</c>.</param>
+        <param name="index">Позиция байта в <paramref name="bytesUnknown" />.</param>
         <summary>При переопределении в производном классе готовит резервный буфер для обработки указанной входной последовательности байтов.</summary>
-        <returns>
-          <see langword="true" />, если резервный буфер может обработать <paramref name="bytesUnknown" />; <see langword="false" />, если резервный буфер игнорирует <paramref name="bytesUnknown" />.</returns>
+        <returns><see langword="true" />, если резервный буфер может обработать <paramref name="bytesUnknown" />; <see langword="false" />, если резервный буфер игнорирует <paramref name="bytesUnknown" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -177,6 +171,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -223,6 +218,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -267,6 +263,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -312,6 +309,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -325,9 +323,7 @@
       <Docs>
         <summary>Инициализирует все данные и сведения о состоянии, относящиеся к этому резервному буферу.</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>После вызова метода <see cref="M:System.Text.DecoderFallbackBuffer.Reset" /> метод, <see cref="P:System.Text.DecoderFallbackBuffer.Remaining" /> свойство должно возвращать 0, <see cref="M:System.Text.DecoderFallbackBuffer.GetNextChar" /> метод должен возвращать U + 0000 и <see cref="M:System.Text.DecoderFallbackBuffer.MovePrevious" /> метод должен возвращать <see langword="false" />.</para>
-        </block>
+        <block subset="none" type="overrides"><para>После вызова метода <see cref="M:System.Text.DecoderFallbackBuffer.Reset" /> метод, <see cref="P:System.Text.DecoderFallbackBuffer.Remaining" /> свойство должно возвращать 0, <see cref="M:System.Text.DecoderFallbackBuffer.GetNextChar" /> метод должен возвращать U + 0000 и <see cref="M:System.Text.DecoderFallbackBuffer.MovePrevious" /> метод должен возвращать <see langword="false" />.</para></block>
       </Docs>
     </Member>
   </Members>

@@ -1,13 +1,5 @@
 <Type Name="PartialCachingAttribute" FullName="System.Web.UI.PartialCachingAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4c7e78aefcb73f4c0d5b008a248ac9a3e980c13c" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48750578" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class PartialCachingAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="69c23d6d23ae7174f30d4cd195d9d52c208b3399" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57921432" /></Metadata><TypeSignature Language="C#" Value="public sealed class PartialCachingAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PartialCachingAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.PartialCachingAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PartialCachingAttribute&#xA;Inherits Attribute" />
@@ -24,7 +16,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
     </Attribute>
   </Attributes>
@@ -46,7 +38,7 @@
   
  Если пользовательский элемент управления содержит директиву или <xref:System.Web.UI.PartialCachingAttribute> применения анализатору ASP.NET создает экземпляр <xref:System.Web.UI.PartialCachingControl> класса программы-оболочки для пользовательского элемента управления.  
   
- Дополнительные сведения о кэшировании ASP.NET см. в разделе [кэширование](http://msdn.microsoft.com/library/ac11c8ea-df5d-4de8-b315-9ccf1048b0ce). Дополнительные сведения об использовании атрибутов см. в разделе [атрибуты](~/docs/standard/attributes/index.md).  
+ Дополнительные сведения о кэшировании ASP.NET см. в разделе [кэширование](https://msdn.microsoft.com/library/ac11c8ea-df5d-4de8-b315-9ccf1048b0ce). Дополнительные сведения об использовании атрибутов см. в разделе [атрибуты](~/docs/standard/attributes/index.md).  
   
    
   
@@ -77,8 +69,8 @@
  ]]></format>
     </remarks>
     <altmember cref="T:System.Web.UI.UserControl" />
-    <related type="Article" href="http://msdn.microsoft.com/library/5e601b3d-bb16-4dbe-9e35-7e92a34565ca">Пользовательские элементы управления Web Forms</related>
-    <related type="Article" href="http://msdn.microsoft.com/library/cdd8e523-7305-4685-a456-c5be1de1367e">Кэширование частей страницы ASP.NET</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/5e601b3d-bb16-4dbe-9e35-7e92a34565ca">Пользовательские элементы управления Web Forms</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/cdd8e523-7305-4685-a456-c5be1de1367e">Кэширование частей страницы ASP.NET</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -203,8 +195,7 @@
         <param name="varyByParams">Разделяемый точками с запятой список строк, используемых для изменения кэша выходного потока. По умолчанию эти строки соответствуют значению строки запроса, отправленному с атрибутами метода <see langword="GET" />, или параметру, отправленному при помощи метода <see langword="POST" />. Если данный атрибут установлен на множество параметров, кэш выходного потока содержит отдельную версию запрашиваемого документа для каждого указанного параметра. Возможные значения включают "none", "*", любую действительную строку запроса или имя параметра <see langword="POST" />.</param>
         <param name="varyByControls">Разделяемый точками с запятой список строк, используемых для изменения кэша выходного потока. Эти строки представляют полностью определенные имена свойств пользовательского элемента управления. Когда данный параметр используется для пользовательского элемента управления, выходной поток пользовательского элемента управления изменяется на кэш каждого свойства пользовательского элемента управления.</param>
         <param name="varyByCustom">Любой текст, представляющий пользовательские требования по кэшированию выходного потока. Если этот параметр имеет значение "browser", то кэш изменяется в соответствии с именем и версией браузера. Если вводится пользовательская строка, необходимо переопределить метод <see cref="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" /> в файле Global.asax приложения.</param>
-        <param name="shared">
-          <see langword="true" />, если выходной поток пользовательского элемента управления разделяем несколькими страницами; в противном случае — <see langword="false" />.</param>
+        <param name="shared"><see langword="true" />, если выходной поток пользовательского элемента управления разделяем несколькими страницами; в противном случае — <see langword="false" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.UI.PartialCachingAttribute" />, определяющий длительность кэширования, любые значения <see langword="GET" /> и <see langword="POST" />, имена элементов управления и требования к пользовательскому выходному кэшированию, используемые для изменения кэша.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -228,12 +219,12 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="duration" Type="System.Int32" />
-        <Parameter Name="varyByParams" Type="System.String" />
-        <Parameter Name="varyByControls" Type="System.String" />
-        <Parameter Name="varyByCustom" Type="System.String" />
-        <Parameter Name="sqlDependency" Type="System.String" />
-        <Parameter Name="shared" Type="System.Boolean" />
+        <Parameter Name="duration" Type="System.Int32" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="varyByParams" Type="System.String" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="varyByControls" Type="System.String" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="varyByCustom" Type="System.String" Index="3" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="sqlDependency" Type="System.String" Index="4" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="shared" Type="System.Boolean" Index="5" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="duration">Время, в секундах, в течение которого кэшируется пользовательский элемент управления.</param>
@@ -241,8 +232,7 @@
         <param name="varyByControls">Разделяемый точками с запятой список строк, используемых для изменения кэша выходного потока. Эти строки представляют полностью определенные имена свойств пользовательского элемента управления. Когда данный параметр используется для пользовательского элемента управления, выходной поток пользовательского элемента управления изменяется на кэш каждого свойства пользовательского элемента управления.</param>
         <param name="varyByCustom">Любой текст, представляющий пользовательские требования по кэшированию выходного потока. Если этот параметр имеет значение "browser", то кэш изменяется в соответствии с именем и версией браузера. Если вводится пользовательская строка, необходимо переопределить метод <see cref="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" /> в файле Global.asax приложения.</param>
         <param name="sqlDependency">Список с разделителями имен баз данных и таблиц, при изменении которого явно заканчивается время хранения кэша ASP.NET. Эти имена баз данных соответствуют зависимостям кэша SQL Server в вашем разделе конфигурации Интернета.</param>
-        <param name="shared">
-          <see langword="true" />, если выходной поток пользовательского элемента управления разделяем несколькими страницами; в противном случае — <see langword="false" />.</param>
+        <param name="shared"><see langword="true" />, если выходной поток пользовательского элемента управления разделяем несколькими страницами; в противном случае — <see langword="false" />.</param>
         <summary>Инициализирует новый экземпляр класса <see cref="T:System.Web.UI.PartialCachingAttribute" />, определяющий длительность кэширования, любые значения <see langword="GET" /> и <see langword="POST" />, имена элементов управления и требования к пользовательскому выходному кэшированию, используемые для изменения кэша, зависимости базы данных и признак, может ли выходной поток пользовательского элемента управления разделяться несколькими страницами.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -343,8 +333,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, указывающее, может ли выходной поток пользовательского элемента управления разделяться несколькими страницами.</summary>
-        <value>
-          <see langword="true" />, если пользовательский элемент управления разделяем несколькими страницами; в противном случае — <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value><see langword="true" />, если пользовательский элемент управления разделяем несколькими страницами; в противном случае — <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

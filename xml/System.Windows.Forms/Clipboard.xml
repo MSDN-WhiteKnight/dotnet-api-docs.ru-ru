@@ -1,13 +1,5 @@
 <Type Name="Clipboard" FullName="System.Windows.Forms.Clipboard">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="af990011e6af130e6f7549b1967ce7027c54052c" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46658376" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Clipboard" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="88a16129d664b8c905b8e4e7cabb75c81fc669a8" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57930509" /></Metadata><TypeSignature Language="C#" Value="public sealed class Clipboard" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Clipboard extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Clipboard" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Clipboard" />
@@ -47,7 +39,7 @@
 >   
 >  <xref:System.Windows.Forms.Clipboard> Класс может использоваться только в потоках в однопотоковое подразделение (STA) режиме. Чтобы использовать этот класс, убедитесь, что ваш `Main` метод помечен атрибутом <xref:System.STAThreadAttribute> атрибута.  
 >   
->  Особые замечания, может потребоваться при использовании формата метафайла с буфером обмена. Из-за ограничения в текущей реализации <xref:System.Windows.Forms.DataObject> класса, в формате метафайла, используемых в .NET Framework могут не распознаваться приложениями, которые используют более старый формат метафайла. В этом случае необходимо взаимодействовать с буфера обмена Win32 прикладного программирования (API). Дополнительные сведения см. в статье 323530 «Метафайлы на буфер обмена являются не отображается для всех приложений,» в базе знаний Майкрософт в http://support.microsoft.com.  
+>  Особые замечания, может потребоваться при использовании формата метафайла с буфером обмена. Из-за ограничения в текущей реализации <xref:System.Windows.Forms.DataObject> класса, в формате метафайла, используемых в .NET Framework могут не распознаваться приложениями, которые используют более старый формат метафайла. В этом случае необходимо взаимодействовать с буфера обмена Win32 прикладного программирования (API).
   
    
   
@@ -67,7 +59,7 @@
     <altmember cref="T:System.Windows.Forms.DataObject" />
     <altmember cref="T:System.Windows.Forms.DataFormats" />
     <altmember cref="T:System.Windows.Forms.IDataObject" />
-    <related type="Article" href="http://msdn.microsoft.com/library/15abda8b-0527-47c7-aedb-77ab595f2bf1">Дополнительные вопросы безопасности в формах Windows Forms</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/15abda8b-0527-47c7-aedb-77ab595f2bf1">Дополнительные вопросы безопасности в формах Windows Forms</related>
   </Docs>
   <Members>
     <Member MemberName="Clear">
@@ -177,7 +169,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format">Искомый формат данных. Сведения о предварительно определенных форматах см. в разделе <see cref="T:System.Windows.Forms.DataFormats" />.</param>
@@ -390,10 +382,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="format">Одно из значений перечисления <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
+        <param name="format">Одно из значений <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
         <summary>Показывает, имеются ли в буфере обмена текстовые данные в формате, указываемом заданным значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</summary>
         <returns>Значение <see langword="true" />, если в буфере обмена имеются текстовые данные в значении, заданном для <paramref name="format" />; в противном случае — значение <see langword="false" />. </returns>
         <remarks>
@@ -417,8 +409,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
-          <paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа в системный буфер обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="T:System.Windows.Forms.TextDataFormat" />
         <altmember cref="Overload:System.Windows.Forms.Clipboard.GetText" />
@@ -492,7 +483,7 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format">Формат извлекаемых данных. Сведения о предварительно определенных форматах см. в разделе <see cref="T:System.Windows.Forms.DataFormats" />.</param>
@@ -772,10 +763,10 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="format">Одно из значений перечисления <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
+        <param name="format">Одно из значений <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
         <summary>Извлекает текстовые данные из буфера обмена в формате, указанном заданным значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</summary>
         <returns>Текстовые данные буфера обмена или <see cref="F:System.String.Empty" />, если буфер обмена не содержит данных в указанном формате.</returns>
         <remarks>
@@ -801,8 +792,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
-          <paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для доступа в системный буфер обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="T:System.Windows.Forms.TextDataFormat" />
         <altmember cref="Overload:System.Windows.Forms.Clipboard.ContainsText" />
@@ -838,7 +828,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="audioBytes" Type="System.Byte[]" />
+        <Parameter Name="audioBytes" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="audioBytes">Массив <see cref="T:System.Byte" />, содержащий аудиозаписи.</param>
@@ -864,7 +854,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="audioBytes" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="audioBytes" /> — <see langword="null" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления звуковых данных в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="F:System.Windows.Forms.DataFormats.WaveAudio" />
         <altmember cref="M:System.Windows.Forms.Clipboard.ContainsAudio" />
@@ -888,7 +878,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="audioStream" Type="System.IO.Stream" />
+        <Parameter Name="audioStream" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="audioStream">Поток <see cref="T:System.IO.Stream" />, содержащий аудиозаписи.</param>
@@ -914,7 +904,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="audioStream" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="audioStream" /> — <see langword="null" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления звуковых данных в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="F:System.Windows.Forms.DataFormats.WaveAudio" />
         <altmember cref="M:System.Windows.Forms.Clipboard.ContainsAudio" />
@@ -938,8 +928,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="data" Type="System.Object" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format">Формат задаваемых данных. Сведения о предварительно определенных форматах см. в разделе <see cref="T:System.Windows.Forms.DataFormats" />.</param>
@@ -970,7 +960,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="data" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> — <see langword="null" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления данных любого типа или формата в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="T:System.Windows.Forms.DataFormats" />
         <altmember cref="M:System.Windows.Forms.Clipboard.ContainsData(System.String)" />
@@ -1139,10 +1129,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.Object" />
-        <Parameter Name="copy" Type="System.Boolean" />
-        <Parameter Name="retryTimes" Type="System.Int32" />
-        <Parameter Name="retryDelay" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="copy" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="retryTimes" Type="System.Int32" Index="2" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="retryDelay" Type="System.Int32" Index="3" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="data">Данные, которые будут помещены в буфер обмена.</param>
@@ -1166,10 +1156,10 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="data" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="retryTimes" /> меньше нуля.  
   
-- или - 
+-или- 
  Значение параметра <paramref name="retryDelay" /> меньше нуля.</exception>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Данные невозможно поместить в буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления данных любого типа или формата в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
@@ -1196,7 +1186,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" />
+        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="filePaths">Коллекция <see cref="T:System.Collections.Specialized.StringCollection" />, содержащая имена файлов.</param>
@@ -1226,11 +1216,10 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="filePaths" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="filePaths" /> не содержит никаких строковых значений.  
+        <exception cref="T:System.ArgumentNullException"><paramref name="filePaths" /> — <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="filePaths" /> не содержит никаких строковых значений.  
   
-- или - 
+-или- 
 Хотя бы одна из строк в <paramref name="filePaths" /> равна <see cref="F:System.String.Empty" />, содержит только пробелы, содержит один или более недопустимых символов согласно определению <see cref="F:System.IO.Path.InvalidPathChars" />, равна <see langword="null" />, содержит двоеточие (:) или превышает максимум, определенный в системе для длины строки.  
   
 Дополнительные сведения см. в описании свойства <see cref="P:System.Exception.InnerException" /> исключения <see cref="T:System.ArgumentException" />.</exception>
@@ -1257,7 +1246,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="image" Type="System.Drawing.Image" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="image">Объект <see cref="T:System.Drawing.Image" />, добавляемый в буфер обмена.</param>
@@ -1283,7 +1272,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="image" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="image" /> — <see langword="null" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления данных в <see cref="F:System.Windows.Forms.DataFormats.Bitmap" /> формате в буфер обмена системы. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
         <altmember cref="F:System.Windows.Forms.DataFormats.Bitmap" />
         <altmember cref="M:System.Windows.Forms.Clipboard.ContainsImage" />
@@ -1319,7 +1308,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="text">Текст, добавляемый в буфер обмена.</param>
@@ -1347,8 +1336,7 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="text" /> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="text" /> равно <see langword="null" /> или <see cref="F:System.String.Empty" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления текстовых данных в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" /></permission>
         <altmember cref="T:System.Windows.Forms.TextDataFormat" />
         <altmember cref="Overload:System.Windows.Forms.Clipboard.ContainsText" />
@@ -1372,12 +1360,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="text" Type="System.String" />
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="text">Текст, добавляемый в буфер обмена.</param>
-        <param name="format">Одно из значений перечисления <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
+        <param name="format">Одно из значений <see cref="T:System.Windows.Forms.TextDataFormat" />.</param>
         <summary>Очищает буфер обмена и добавляет текстовые данные в формате, указанном заданным значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1400,10 +1388,8 @@
         </remarks>
         <exception cref="T:System.Runtime.InteropServices.ExternalException">Не удалось очистить буфер обмена. Обычно это происходит, когда буфер обмена используется другим процессом.</exception>
         <exception cref="T:System.Threading.ThreadStateException">Текущий поток не выполняется в режиме апартмента с одним потоком (STA). Добавьте <see cref="T:System.STAThreadAttribute" /> в метод <see langword="Main" /> своего приложения.</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="text" /> имеет значение <see langword="null" /> или <see cref="F:System.String.Empty" />.</exception>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
-          <paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
+        <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="text" /> равно <see langword="null" /> или <see cref="F:System.String.Empty" />.</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="format" /> не является допустимым значением <see cref="T:System.Windows.Forms.TextDataFormat" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">для добавления текстовых данных в системном буфере обмена. Связанное перечисление: <see cref="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" /></permission>
         <altmember cref="T:System.Windows.Forms.TextDataFormat" />
         <altmember cref="Overload:System.Windows.Forms.Clipboard.ContainsText" />

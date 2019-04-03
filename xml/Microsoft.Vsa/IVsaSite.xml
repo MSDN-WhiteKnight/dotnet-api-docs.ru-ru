@@ -1,13 +1,5 @@
 <Type Name="IVsaSite" FullName="Microsoft.Vsa.IVsaSite">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="19adea0b9d436428fcf3978d7a116bf0ab38c7f2" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39956544" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface IVsaSite" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e971618104945c98b07d85e517cb2ffd7ee4eb8d" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55358281" /></Metadata><TypeSignature Language="C#" Value="public interface IVsaSite" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaSite" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Vsa.IVsaSite" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVsaSite" />
@@ -23,15 +15,15 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
       <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("E0C0FFE2-7eea-4ee2-b7e4-0080c7eb0b74")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
+    <Attribute>
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Обеспечивает связь между основным приложением и обработчиком сценариев. Этот интерфейс реализуется ведущим приложением.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -56,9 +48,9 @@
         <Parameter Name="debugInfo" Type="System.Byte[]" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pe">To be added.</param>
-        <param name="debugInfo">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="pe">Компилированное состояние обработчика; сборка в форме байтов.</param>
+        <param name="debugInfo">Отладочная информация для сборки или пустая ссылка, если такая информация не существует или недоступна.</param>
+        <summary>Возвращает компилированное состояние обработчика сценариев и (необязательно) соответствующую отладочную информацию.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,10 +75,10 @@
         <Parameter Name="eventSourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="itemName">To be added.</param>
-        <param name="eventSourceName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="itemName">Указанное имя элемента.</param>
+        <param name="eventSourceName">Указанное имя источника события.</param>
+        <summary>Возвращает ссылку на источник события, ранее добавленный в обработчик сценариев с помощью метода AddEventSource.</summary>
+        <returns>Источник события в обработчике.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -110,9 +102,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">Возвращает ссылку на глобальный элемент, например предоставленный ведущим приложением объект приложения.</param>
+        <summary>Возвращает ссылку на глобальный элемент, например предоставленный ведущим приложением объект приложения.</summary>
+        <returns>Ссылка на глобальный объект.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +129,9 @@
         <Parameter Name="info" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="notify">To be added.</param>
-        <param name="info">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="notify">Уведомляет ведущее приложение о событиях, создаваемых обработчиком сценариев .NET.</param>
+        <param name="info">Уведомляет ведущее приложение о событиях, создаваемых обработчиком сценариев .NET.</param>
+        <summary>Уведомляет ведущее приложение о событиях, создаваемых обработчиком сценариев .NET.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,9 +155,9 @@
         <Parameter Name="error" Type="Microsoft.Vsa.IVsaError" />
       </Parameters>
       <Docs>
-        <param name="error">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="error">Объект <see cref="T:Microsoft.Vsa.IVsaError" />, который представляет ошибку, вызывающую неполадки.</param>
+        <summary>Уведомляет ведущее приложение о способе ответа на ошибки компилятора, с которыми сталкивается обработчик сценариев.</summary>
+        <returns>Значение <see langword="true" />, если компилятору дано указание продолжать передавать сведения об ошибках объекту <see cref="T:Microsoft.Vsa.IVsaSite" />; значение <see langword="false" />, если компилятору дано указание прекратить передачу сведений об ошибках объекту IVsaSite.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

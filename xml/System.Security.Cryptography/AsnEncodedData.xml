@@ -1,13 +1,5 @@
 <Type Name="AsnEncodedData" FullName="System.Security.Cryptography.AsnEncodedData">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a79b9b35006197cd3cc7ff315118a8d28f7ecfba" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39847718" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class AsnEncodedData" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="897375788e5af053d273c5f104882d06aa3c424b" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56404192" /></Metadata><TypeSignature Language="C#" Value="public class AsnEncodedData" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsnEncodedData extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.AsnEncodedData" />
   <TypeSignature Language="VB.NET" Value="Public Class AsnEncodedData" />
@@ -34,7 +26,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Представляет данные в кодировке ASN.1 (Abstract Syntax Notation One).</summary>
+    <summary>Представляет данные в кодировке ASN.1.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -190,7 +182,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asnEncodedData" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asnEncodedData" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -333,7 +325,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="asnEncodedData" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asnEncodedData" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Format">
@@ -376,7 +368,14 @@
 ## Remarks  
  Этот метод следует используйте, если вам нужно распечатать данные в кодировке ASN.1 один Abstract Syntax Notation или вывода информации в текстовое поле. Используйте `multiLine` параметр для управления размещением выходных данных.  
   
-   
+ ### <a name="os-dependency"></a>Зависимости операционной системы
+  Не следует полагаться на выходе из этого метода, так как она предназначена для красивое расположение материала и его формат выходных данных не гарантируется.
+  
+  ```csharp
+   // output "DNS Name=san1.example.com\r\nDNS Name=san2.example.com\r\n" on .NET Core 2.2 Windows
+   // output "DNS:san1.example.com, DNS:san2.example.com" on .NET Core 2.2 Linux
+   extension.Format(true);
+  ```
   
 ## Examples  
  Приведенный ниже пример кода показывает, как использовать класс <xref:System.Security.Cryptography.AsnEncodedData>.  

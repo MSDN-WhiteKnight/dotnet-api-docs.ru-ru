@@ -1,13 +1,5 @@
 <Type Name="_AppDomain" FullName="System._AppDomain">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f77d87732bd7b4c4f3967ae204c19835b4f3bb64" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48636256" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public interface _AppDomain" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bf8b3735132463c5ead1da7747a8713b6f633ef9" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57945420" /></Metadata><TypeSignature Language="C#" Value="public interface _AppDomain" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract _AppDomain" />
   <TypeSignature Language="DocId" Value="T:System._AppDomain" />
   <TypeSignature Language="VB.NET" Value="Public Interface _AppDomain" />
@@ -390,12 +382,12 @@
         <param name="assemblyName">Отображаемое имя сборки. См. раздел <see cref="P:System.Reflection.Assembly.FullName" />.</param>
         <param name="typeName">Полное имя запрошенного типа, включая пространство имен, но не сборку (см. описание свойства <see cref="P:System.Type.FullName" />).</param>
         <param name="ignoreCase">Логическое значение, указывающее, следует ли учитывать регистр при поиске.</param>
-        <param name="bindingAttr">Сочетание битовых флагов (от нуля и более), влияющих на поиск конструктора <c>typeName</c>. Если значение параметра <c>bindingAttr</c> равно нулю, проводится поиск открытых конструкторов с учетом регистра.</param>
-        <param name="binder">Объект, позволяющий осуществлять привязку, приведение типов аргументов, вызов элементов, а также поиск объектов <see cref="T:System.Reflection.MemberInfo" /> с помощью отражения. Если параметр <c>binder</c> имеет значение NULL, то используется модуль привязки по умолчанию.</param>
-        <param name="args">Аргументы для передачи конструктору. Массив аргументов должен соответствовать по числу, порядку и типу параметров вызываемому конструктору. Если предпочтителен конструктор по умолчанию, то объект <c>args</c> должен быть пустым массивом или иметь значение NULL.</param>
-        <param name="culture">Сведения о языке и региональных параметрах, которые влияют на приведение <c>args</c> к формальным типам, объявленным для конструктора <c>typeName</c>. Если параметр <c>culture</c> имеет значение <see langword="null" />, используется <see cref="T:System.Globalization.CultureInfo" /> для текущего потока.</param>
+        <param name="bindingAttr">Сочетание битовых флагов (от нуля и более), влияющих на поиск конструктора <paramref name="typeName" />. Если значение параметра <paramref name="bindingAttr" /> равно нулю, проводится поиск открытых конструкторов с учетом регистра.</param>
+        <param name="binder">Объект, позволяющий осуществлять привязку, приведение типов аргументов, вызов элементов, а также поиск объектов <see cref="T:System.Reflection.MemberInfo" /> с помощью отражения. Если параметр <paramref name="binder" /> имеет значение null, то используется модуль привязки по умолчанию.</param>
+        <param name="args">Аргументы для передачи конструктору. Массив аргументов должен соответствовать по числу, порядку и типу параметров вызываемому конструктору. Если предпочтителен конструктор по умолчанию, то объект <paramref name="args" /> должен быть пустым массивом или значением null.</param>
+        <param name="culture">Сведения о языке и региональных параметрах, которые влияют на приведение <paramref name="args" /> к формальным типам, объявленным для конструктора <paramref name="typeName" />. Если параметр <paramref name="culture" /> имеет значение <see langword="null" />, для текущего потока используется объект <see cref="T:System.Globalization.CultureInfo" />.</param>
         <param name="activationAttributes">Массив, состоящий из одного или нескольких атрибутов, которые могут участвовать в активации. Как правило, массив, который содержит единственный объект <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />. Атрибут <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> указывает URL-адрес, требуемый для активации удаленного объекта.</param>
-        <param name="securityAttributes">Сведения, используемые для авторизации создания <c>typeName</c>.</param>
+        <param name="securityAttributes">Сведения, используемые для авторизации создания <paramref name="typeName" />.</param>
         <summary>Предоставляет COM-объекты с независящим от версии доступом к перегрузке метода <see cref="M:System.AppDomain.CreateInstance(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />.</summary>
         <returns>Объект, являющийся оболочкой для нового экземпляра, заданного параметром <paramref name="typeName" />. Необходимо распаковать возвращенное значение, чтобы получить доступ к реальному объекту.</returns>
         <remarks>
@@ -530,12 +522,12 @@
         <param name="assemblyFile">Имя (включая путь) файла, который содержит сборку, определяющую запрошенный тип. Эта сборка загружается с помощью метода <see cref="M:System.Reflection.Assembly.LoadFrom(System.String)" />.</param>
         <param name="typeName">Полное имя запрошенного типа, включая пространство имен, но не сборку (см. описание свойства <see cref="P:System.Type.FullName" />).</param>
         <param name="ignoreCase">Логическое значение, указывающее, следует ли учитывать регистр при поиске.</param>
-        <param name="bindingAttr">Сочетание битовых флагов (от нуля и более), влияющих на поиск конструктора <c>typeName</c>. Если значение параметра <c>bindingAttr</c> равно нулю, проводится поиск открытых конструкторов с учетом регистра.</param>
-        <param name="binder">Объект, который допускает привязку, приведение типов аргументов, вызов элементов и извлечение объектов <see cref="T:System.Reflection.MemberInfo" /> путем отражения. Если параметр <c>binder</c> имеет значение NULL, то используется модуль привязки по умолчанию.</param>
-        <param name="args">Аргументы для передачи конструктору. Массив аргументов должен соответствовать по числу, порядку и типу параметров вызываемому конструктору. Если предпочтителен конструктор по умолчанию, то объект <c>args</c> должен быть пустым массивом или иметь значение NULL.</param>
-        <param name="culture">Сведения о языке и региональных параметрах, которые влияют на приведение <c>args</c> к формальным типам, объявленным для конструктора <c>typeName</c>. Если параметр <c>culture</c> имеет значение <see langword="null" />, используется <see cref="T:System.Globalization.CultureInfo" /> для текущего потока.</param>
+        <param name="bindingAttr">Сочетание битовых флагов (от нуля и более), влияющих на поиск конструктора <paramref name="typeName" />. Если значение параметра <paramref name="bindingAttr" /> равно нулю, проводится поиск открытых конструкторов с учетом регистра.</param>
+        <param name="binder">Объект, который допускает привязку, приведение типов аргументов, вызов элементов и извлечение объектов <see cref="T:System.Reflection.MemberInfo" /> путем отражения. Если параметр <paramref name="binder" /> имеет значение null, то используется модуль привязки по умолчанию.</param>
+        <param name="args">Аргументы для передачи конструктору. Массив аргументов должен соответствовать по числу, порядку и типу параметров вызываемому конструктору. Если предпочтителен конструктор по умолчанию, то объект <paramref name="args" /> должен быть пустым массивом или значением null.</param>
+        <param name="culture">Сведения о языке и региональных параметрах, которые влияют на приведение <paramref name="args" /> к формальным типам, объявленным для конструктора <paramref name="typeName" />. Если параметр <paramref name="culture" /> имеет значение <see langword="null" />, для текущего потока используется объект <see cref="T:System.Globalization.CultureInfo" />.</param>
         <param name="activationAttributes">Массив, состоящий из одного или нескольких атрибутов, которые могут участвовать в активации. Как правило, массив, который содержит единственный объект <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />. Атрибут <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> указывает URL-адрес, требуемый для активации удаленного объекта.</param>
-        <param name="securityAttributes">Сведения, используемые для авторизации создания <c>typeName</c>.</param>
+        <param name="securityAttributes">Сведения, используемые для авторизации создания <paramref name="typeName" />.</param>
         <summary>Предоставляет COM-объекты с независящим от версии доступом к перегрузке метода <see cref="M:System.AppDomain.CreateInstanceFrom(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />.</summary>
         <returns>Объект, являющийся оболочкой для нового экземпляра, или значение <see langword="null" />, если объект <paramref name="typeName" /> не найден. Необходимо распаковать возвращенное значение, чтобы получить доступ к реальному объекту.</returns>
         <remarks>
@@ -579,8 +571,8 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
@@ -615,9 +607,9 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
@@ -654,14 +646,14 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="dir" Type="System.String" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="dir" Type="System.String" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
         <param name="access">Режим, в котором будет осуществляться доступ к динамической сборке.</param>
-        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <c>dir</c> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
+        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <paramref name="dir" /> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
         <summary>Предоставляет COM-объекты с независящим от версии доступом к перегрузке метода <see cref="M:System.AppDomain.DefineDynamicAssembly(System.Reflection.AssemblyName,System.Reflection.Emit.AssemblyBuilderAccess,System.String)" />.</summary>
         <returns>Представляет созданную динамическую сборку.</returns>
         <remarks>
@@ -692,15 +684,15 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="dir" Type="System.String" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="dir" Type="System.String" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
         <param name="access">Режим, в котором будет осуществляться доступ к динамической сборке.</param>
-        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <c>dir</c> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
+        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <paramref name="dir" /> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
         <param name="evidence">Свидетельство, предоставляемое для динамической сборки. Используемое свидетельство является постоянным, как конечный набор свидетельств, используемых для разрешения политики.</param>
         <summary>Предоставляет COM-объекты с независящим от версии доступом к перегрузке метода <see cref="M:System.AppDomain.DefineDynamicAssembly(System.Reflection.AssemblyName,System.Reflection.Emit.AssemblyBuilderAccess,System.String,System.Security.Policy.Evidence)" />.</summary>
         <returns>Представляет созданную динамическую сборку.</returns>
@@ -733,11 +725,11 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
@@ -775,12 +767,12 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
-        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
@@ -820,17 +812,17 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="dir" Type="System.String" />
-        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="dir" Type="System.String" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
         <param name="access">Режим, в котором будет осуществляться доступ к динамической сборке.</param>
-        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <c>dir</c> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
+        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <paramref name="dir" /> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
         <param name="requiredPermissions">Запрос обязательных разрешений.</param>
         <param name="optionalPermissions">Запрос дополнительных разрешений.</param>
         <param name="refusedPermissions">Запрос разрешений, в которых отказано.</param>
@@ -864,18 +856,18 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="dir" Type="System.String" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
-        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="dir" Type="System.String" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" Index="6" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
         <param name="access">Режим, в котором будет осуществляться доступ к динамической сборке.</param>
-        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <c>dir</c> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
+        <param name="dir">Имя папки, в которой будет сохранена сборка. Если параметр <paramref name="dir" /> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
         <param name="evidence">Свидетельство, предоставляемое для динамической сборки. Используемое свидетельство является постоянным, как конечный набор свидетельств, используемых для разрешения политики.</param>
         <param name="requiredPermissions">Запрос обязательных разрешений.</param>
         <param name="optionalPermissions">Запрос дополнительных разрешений.</param>
@@ -910,19 +902,19 @@
         <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
-        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" />
-        <Parameter Name="dir" Type="System.String" />
-        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
-        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" />
-        <Parameter Name="isSynchronized" Type="System.Boolean" />
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="access" Type="System.Reflection.Emit.AssemblyBuilderAccess" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="dir" Type="System.String" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="requiredPermissions" Type="System.Security.PermissionSet" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="optionalPermissions" Type="System.Security.PermissionSet" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="refusedPermissions" Type="System.Security.PermissionSet" Index="6" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
+        <Parameter Name="isSynchronized" Type="System.Boolean" Index="7" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">Уникальный идентификатор динамической сборки.</param>
         <param name="access">Режим, в котором будет осуществляться доступ к динамической сборке.</param>
-        <param name="dir">Имя каталога, в котором будет сохранена динамическая сборка. Если параметр <c>dir</c> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
+        <param name="dir">Имя каталога, в котором будет сохранена динамическая сборка. Если параметр <paramref name="dir" /> имеет значение <see langword="null" />, по умолчанию используется текущий каталог.</param>
         <param name="evidence">Свидетельство, предоставляемое для динамической сборки. Используемое свидетельство является постоянным, как конечный набор свидетельств, используемых для разрешения политики.</param>
         <param name="requiredPermissions">Запрос обязательных разрешений.</param>
         <param name="optionalPermissions">Запрос дополнительных разрешений.</param>
@@ -2031,7 +2023,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="domainPolicy" Type="System.Security.Policy.PolicyLevel" />
+        <Parameter Name="domainPolicy" Type="System.Security.Policy.PolicyLevel" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8" />
       </Parameters>
       <Docs>
         <param name="domainPolicy">Уровень политики безопасности.</param>
@@ -2148,7 +2140,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="policy" Type="System.Security.Principal.PrincipalPolicy" />
+        <Parameter Name="policy" Type="System.Security.Principal.PrincipalPolicy" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8" />
       </Parameters>
       <Docs>
         <param name="policy">Одно из значений <see cref="T:System.Security.Principal.PrincipalPolicy" />, определяющее тип объекта-участника, который необходимо подключить к потоку.</param>
@@ -2222,7 +2214,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8" />
       </Parameters>
       <Docs>
         <param name="principal">Объект-участник, который необходимо подключить к потоку.</param>

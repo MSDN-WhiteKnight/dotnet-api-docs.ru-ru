@@ -1,13 +1,5 @@
 <Type Name="HttpBrowserCapabilitiesBase" FullName="System.Web.HttpBrowserCapabilitiesBase">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="0413b9d701989fd55a63941c5782dd9725bfbbc2" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48664297" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class HttpBrowserCapabilitiesBase : System.Web.UI.IFilterResolutionService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5535b26e017877a3da8876f5e7caea9165cc4388" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57923177" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpBrowserCapabilitiesBase : System.Web.UI.IFilterResolutionService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpBrowserCapabilitiesBase extends System.Object implements class System.Web.UI.IFilterResolutionService" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpBrowserCapabilitiesBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HttpBrowserCapabilitiesBase&#xA;Implements IFilterResolutionService" />
@@ -35,14 +27,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Служит базовым классом для классов, которые позволяют серверу собирать информацию о возможностях браузера, от которого поступил текущий запрос.</summary>
+    <summary>Служит базовым классом для классов, позволяющих серверу осуществлять сбор сведений о возможностях браузера, от которого поступил текущий запрос.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  <xref:System.Web.HttpBrowserCapabilitiesBase> Класс является абстрактным классом, который содержит те же члены, что <xref:System.Web.HttpBrowserCapabilities> класса. <xref:System.Web.HttpBrowserCapabilitiesBase> Класс позволяет создавать производные классы, которые похожи на <xref:System.Web.HttpBrowserCapabilities> класса, но это можно настроить, и работающие за пределами конвейера ASP.NET. При выполнении модульного тестирования производный класс обычно используется для реализации элементов с настраиваемым поведением, тестируемый сценарий, который вы тестируете.  
   
- Класс <xref:System.Web.HttpBrowserCapabilitiesWrapper> является производным от класса <xref:System.Web.HttpBrowserCapabilitiesBase>. <xref:System.Web.HttpBrowserCapabilitiesWrapper> Класс служит оболочкой для <xref:System.Web.HttpBrowserCapabilities> класса. Во время выполнения, обычно используется экземпляр <xref:System.Web.HttpBrowserCapabilitiesWrapper> класс мог вызывать члены <xref:System.Web.HttpBrowserCapabilities> объекта.  
+ Класс <xref:System.Web.HttpBrowserCapabilitiesWrapper> является производным от класса <xref:System.Web.HttpBrowserCapabilitiesBase> . <xref:System.Web.HttpBrowserCapabilitiesWrapper> Класс служит оболочкой для <xref:System.Web.HttpBrowserCapabilities> класса. Во время выполнения, обычно используется экземпляр <xref:System.Web.HttpBrowserCapabilitiesWrapper> класс мог вызывать члены <xref:System.Web.HttpBrowserCapabilities> объекта.  
   
  ]]></format>
     </remarks>
@@ -94,7 +86,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, обеспечивает ли браузер поддержку элементов управления ActiveX.</summary>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер элементы управления ActiveX.</summary>
         <value>Значение <see langword="true" />, если браузер обеспечивает поддержку элементов ActiveX; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -146,7 +138,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="browserName" Type="System.String" />
+        <Parameter Name="browserName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="browserName">Имя добавляемого браузера.</param>
@@ -175,9 +167,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, является ли клиент браузером America Online (AOL).</summary>
-        <value>
-          <see langword="true" />, если браузер является браузером AOL; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли America Online (AOL) клиентским браузером.</summary>
+        <value><see langword="true" />, если браузер является браузером AOL; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -359,8 +350,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер содержимое страницы, следующее за элементами WMI <see langword="select" /> или <see langword="input" />.</summary>
-        <value>
-          <see langword="true" /> Если браузер поддерживает содержимое страницы, следующий за HTML <see langword="select" /> или <see langword="input" /> элементов; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" /> Если браузер поддерживает содержимое страницы, следующий за HTML <see langword="select" /> или <see langword="input" /> элементов; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -386,8 +376,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер пустые элементы HTML <see langword="select" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает пустые элементы HTML <see langword="select" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает пустые элементы HTML <see langword="select" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -543,8 +532,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе возвращает значение, указывающее, поддерживает ли браузер отправку сообщений электронной почты с помощью схемы HTML <see langword="mailto" />.</summary>
-        <value>
-          <see langword="true" /> Если браузер поддерживает отправку сообщения электронной почты с помощью HTML <see langword="mailto" /> схема; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" /> Если браузер поддерживает отправку сообщения электронной почты с помощью HTML <see langword="mailto" /> схема; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -595,7 +583,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, которое указывает, поддерживает ли браузер формат CDF (Channel Definition Format) для веб-трансляций.</summary>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер формат веб-трансляции CDF.</summary>
         <value>Значение <see langword="true" />, если браузер поддерживает CDF; в противном случае — значение <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -621,7 +609,7 @@
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает версию платформы .NET Framework, установленной на клиенте.</summary>
+        <summary>При переопределении в производном классе возвращает версию платформы .NET Framework, установленную на клиенте.</summary>
         <value>Версия среды CLR.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -650,8 +638,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filter1" Type="System.String" />
-        <Parameter Name="filter2" Type="System.String" />
+        <Parameter Name="filter1" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="filter2" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="filter1">Первый сравниваемый фильтр.</param>
@@ -682,9 +670,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, обеспечивает ли браузер поддержку файлов cookie.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает файлы cookie; в противном случае <see langword="false" />.  
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер файлы cookie.</summary>
+        <value><see langword="true" />, если браузер поддерживает файлы cookie; в противном случае <see langword="false" />.  
   
  <block subset="none" type="note"><para>  
  Это свойство не позволяет определить, разрешены ли файлы cookie в браузере в текущий момент, а только то, поддерживаются ли они браузером.  
@@ -740,7 +727,7 @@
         <ReturnType>System.Web.UI.HtmlTextWriter</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="w" Type="System.IO.TextWriter" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="w">Создаваемый объект.</param>
@@ -770,8 +757,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает максимально допустимое для формы количество кнопок отправки.</summary>
-        <value>Максимально допустимое для формы количество кнопок отправки.</value>
+        <summary>При переопределении в производном классе получает максимальное количество кнопок отправки, допустимых для формы.</summary>
+        <value>Максимальное количество кнопок отправки, допустимых для формы.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -797,7 +784,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе используется внутри системы, чтобы блокировать использование оптимизированного ключа кэша.</summary>
+        <summary>При переопределении в производном классе предназначено для внутреннего использования с целью отключения использования оптимизированного ключа кэша.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -822,8 +809,8 @@
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает номер версии ECMAScript (JavaScript), поддерживаемый браузером.</summary>
-        <value>Номер версии ECMAScript (JavaScript), поддерживаемый браузером.</value>
+        <summary>При переопределении в производном классе получает номер версии языка ECMAScript (JavaScript), поддерживаемой браузером.</summary>
+        <value>Номер версии языка ECMAScript (JavaScript), поддерживаемой браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -851,12 +838,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filterName" Type="System.String" />
+        <Parameter Name="filterName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="filterName">Рассчитываемый фильтр.</param>
-        <summary>Если переопределено в производном классе, используется для вычисления условий фильтрации.</summary>
-        <returns>Значение <see langword="true" />, если фильтр успешно рассчитан; в противном случае значение <see langword="false" />.</returns>
+        <param name="filterName">Фильтр для оценки.</param>
+        <summary>При переопределении в производном классе предназначено для внутреннего использования с целью оценки фильтра.</summary>
+        <returns><see langword="true" /> при успешной оценке фильтра; в противном случае <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -881,9 +868,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, которое указывает, поддерживает ли браузер фреймы HTTP.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает фрейм; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер фреймы HTML.</summary>
+        <value><see langword="true" />, если браузер поддерживает фрейм; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -908,8 +894,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает основной номер версии беспроводного шлюза, используемый для доступа к серверу, если он известен.</summary>
-        <value>Основной номер версии беспроводного шлюза, используемый для доступа к серверу, если он известен.</value>
+        <summary>При переопределении в производном классе получает основной номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</summary>
+        <value>Основной номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -934,8 +920,8 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает дополнительный номер версии беспроводного шлюза, используемый для доступа к серверу, если он известен.</summary>
-        <value>Дополнительный номер версии беспроводного шлюза, используемый для доступа к серверу, если он известен.</value>
+        <summary>При переопределении в производном классе получает дополнительный номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</summary>
+        <value>Дополнительный номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -960,8 +946,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает версию беспроводного шлюза, используемого для доступа к серверу, если она известна.</summary>
-        <value>Номер версии беспроводного шлюза, используемого для доступа к серверу, если она известна.</value>
+        <summary>При переопределении в производном классе получает номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</summary>
+        <value>Номер версии беспроводного шлюза, используемого для доступа к серверу, если он известен.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -987,7 +973,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>При переопределении в производном классе возвращает все версии среды CLR .NET Framework, установленные на клиенте.</summary>
+        <summary>При переопределении в производном классе получает все версии общеязыковой среды CLR платформы .NET Framework, установленные на клиенте.</summary>
         <returns>Массив объектов <see cref="T:System.Version" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -1013,9 +999,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, имеется ли в браузере специальная кнопка "Назад".</summary>
-        <value>
-          <see langword="true" />, если в браузере есть специальная кнопка "Назад"; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее наличие у браузера специальной кнопки "Назад".</summary>
+        <value><see langword="true" />, если в браузере есть специальная кнопка "Назад"; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1144,13 +1129,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="browserName" Type="System.String" />
+        <Parameter Name="browserName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="browserName">Заданный браузер.</param>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, совпадает ли браузер клиента с заданным браузером.</summary>
-        <returns>
-          <see langword="true" />, если браузер клиента является аналогичным указанному браузером; в противном случае <see langword="false" />.</returns>
+        <param name="browserName">Указанный браузер.</param>
+        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли браузер клиента аналогичным указанному.</summary>
+        <returns><see langword="true" />, если браузер клиента является аналогичным указанному браузером; в противном случае <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1175,9 +1159,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, имеется ли в браузере цветной дисплей.</summary>
-        <value>
-          <see langword="true" />, если браузер отображается на цветном дисплее; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, отображается ли браузер на цветном дисплее.</summary>
+        <value><see langword="true" />, если браузер отображается на цветном дисплее; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1202,9 +1185,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, которое указывает, находится ли браузер на опознанном мобильном устройстве.</summary>
-        <value>
-          <see langword="true" />, если браузер является определяемым мобильным устройством; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, является ли браузер определяемым мобильным устройством.</summary>
+        <value><see langword="true" />, если браузер является определяемым мобильным устройством; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1229,12 +1211,12 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="key" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="key">Имя извлекаемой возможности браузера.</param>
-        <summary>При переопределении в производном классе получает значение указанной возможности браузера. В C# это свойство является индексатором класса.</summary>
-        <value>Возможность браузера с указанным именем ключа.</value>
+        <param name="key">Имя возможности браузера для извлечения.</param>
+        <summary>При переопределении в производном классе получает значение заданной возможности браузера. В C# данное свойство является индексатором для класса.</summary>
+        <value>Возможность браузера с указанным ключевым именем.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1259,9 +1241,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает значение, которое указывает, поддерживает ли браузер Java.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает Java; в противном случае <see langword="false" />.  
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер Java.</summary>
+        <value><see langword="true" />, если браузер поддерживает Java; в противном случае <see langword="false" />.  
   
  <block subset="none" type="note"><para>  
  Это свойство не позволяет определить, разрешено ли использование Java в браузере в текущий момент, а только то, поддерживаются ли Java браузером.  
@@ -1291,7 +1272,7 @@
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает версию JScript, поддерживаемую браузером.</summary>
+        <summary>При переопределении в производном классе получает номер версии языка JScript, поддерживаемой браузером.</summary>
         <value>Версия JScript, поддерживаемая браузером.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1324,8 +1305,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе основной (в виде целого числа) номер версии браузера.</summary>
-        <value>Основной номер версии браузера.</value>
+        <summary>При переопределении в производном классе получает основной номер (целое значение) версии браузера.</summary>
+        <value>Номер основной версии браузера.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1377,7 +1358,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает максимальную длину страницы в байтах, которую может отобразить браузер.</summary>
-        <value>Максимальная длина страницы в байтах, которую может отобразить браузер.</value>
+        <value>Максимальная длину страницы в байтах, которую может отобразить браузер.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1402,8 +1383,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает максимальную длину текста, который может отобразить метка программной клавиши.</summary>
-        <value>Максимальная длина текста, которую может отобразить метка программной клавиши.</value>
+        <summary>При переопределении в производном классе получает максимальную длина текста, которая может быть отображена в подписи к функциональной клавише.</summary>
+        <value>Максимальная длина текста для отображения подписи функциональной клавиши.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1428,7 +1409,7 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает дополнительный (десятичный) номер версии браузера.</summary>
+        <summary>При переопределении в производном классе получает дополнительный номер (значение после десятичной точки) версии браузера.</summary>
         <value>Дополнительный номер версии браузера.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -1454,7 +1435,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает дополнительный (десятичный) номер версии браузера в виде строки.</summary>
+        <summary>При переопределении в производном классе получает дополнительный номер (значение после десятичной точки) версии браузера в виде строки.</summary>
         <value>Строка, представляющая дополнительный номер версии браузера.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -1480,8 +1461,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает имя производителя мобильного устройства, если оно известно.</summary>
-        <value>Имя производителя мобильного устройства, если оно известно.</value>
+        <summary>При переопределении в производном классе получает наименование производителя мобильного устройства, если оно известно.</summary>
+        <value>Наименование производителя мобильного устройства, если оно известно.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1506,8 +1487,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает название модели мобильного устройства, если оно известно.</summary>
-        <value>Название модели мобильного устройства, если оно известно.</value>
+        <summary>При переопределении в производном классе получает наименование модели мобильного устройства, если оно известно.</summary>
+        <value>Наименование модели мобильного устройства, если оно известно.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1532,8 +1513,8 @@
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает версию модели DOM Microsoft HTML, поддерживаемой браузером.</summary>
-        <value>Версия MSHTML DOM, поддерживаемая браузером</value>
+        <summary>При переопределении в производном классе получает версию объектной модели документов (DOM) Microsoft HTML (MSHTML), поддерживаемой браузером.</summary>
+        <value>Версия MSHTML DOM, поддерживаемая браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1558,8 +1539,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает количество программных клавиш на мобильном устройстве.</summary>
-        <value>Количество программных клавиш на мобильном устройстве.</value>
+        <summary>При переопределении в производном классе получает количество функциональных клавиш мобильного устройства.</summary>
+        <value>Количество функциональных клавиш мобильного устройства.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1610,8 +1591,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает MIME-тип типа графического содержимого, которое, как правило, является предпочтительным для браузера.</summary>
-        <value>MIME-тип графического содержимого, которое, как правило, является предпочтительным для браузера.</value>
+        <summary>При переопределении в производном классе получает тип MIME типа графического содержимого, предпочитаемого браузером.</summary>
+        <value>Тип MIME типа графического содержимого, предпочитаемого браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1636,8 +1617,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает MIME-тип типа содержимого, которое, как правило, является предпочтительным для браузера.</summary>
-        <value>MIME-тип типа содержимого, которое, как правило, является предпочтительным для браузера.</value>
+        <summary>При переопределении в производном классе получает тип MIME типа содержимого, предпочитаемого браузером.</summary>
+        <value>Тип MIME типа содержимого, предпочитаемого браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1662,8 +1643,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает общее имя типа содержимого, которое является предпочтительным для браузера.</summary>
-        <value>Значения "html32" или "chtml10".</value>
+        <summary>При переопределении в производном классе получает общее имя типа содержимого, предпочитаемого браузером.</summary>
+        <value>Значение "html32" или "chtml10".</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1688,8 +1669,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает предпочтительную для браузера кодировку запроса.</summary>
-        <value>Предпочтительная для браузера кодировка запроса.</value>
+        <summary>При переопределении в производном классе получает кодирование запроса, предпочитаемое браузером.</summary>
+        <value>Кодирование запроса, предпочитаемое браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1714,8 +1695,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает предпочтительную для браузера кодировку ответа.</summary>
-        <value>Предпочтительная для браузера кодировка ответа.</value>
+        <summary>При переопределении в производном классе получает кодирование ответа, предпочитаемое браузером.</summary>
+        <value>Кодирование ответа, предпочитаемое браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1741,8 +1722,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер разрыв строки перед элементами <see langword="select" /> или <see langword="input" />.</summary>
-        <value>
-          <see langword="true" />, если браузер отрисовывает разрыв строки перед элементами <see langword="select" /> или <see langword="input" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер отрисовывает разрыв строки перед элементами <see langword="select" /> или <see langword="input" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1767,9 +1747,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер разрыв строки после элементов list-item.</summary>
-        <value>
-          <see langword="true" />, если браузер отрисовывает разрыв строки после элементов списка; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер разрыв строки после элементов списка.</summary>
+        <value><see langword="true" />, если браузер отрисовывает разрыв строки после элементов списка; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1795,8 +1774,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер разрыв строки после отдельного элемента WML <see langword="a" /> (привязки).</summary>
-        <value>
-          <see langword="true" />, если браузер отрисовывает разрыв строки после отдельного элемента WML <see langword="a" /> (привязки); в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер отрисовывает разрыв строки после отдельного элемента WML <see langword="a" /> (привязки); в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1822,8 +1800,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер разрыв строки после элемента WML <see langword="input" />.</summary>
-        <value>
-          <see langword="true" />, если браузер отрисовывает разрыв строки после элемента WML <see langword="input" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер отрисовывает разрыв строки после элемента WML <see langword="input" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1849,8 +1826,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер мобильного устройства WML-форму <see langword="do" /> конструкций принятия в виде встроенной кнопки, а не функциональной клавиши.</summary>
-        <value>
-          <see langword="true" />, если браузер мобильного устройства отрисовывает WML-форму <see langword="do" /> конструкций принятия в виде встроенной кнопки; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер мобильного устройства отрисовывает WML-форму <see langword="do" /> конструкций принятия в виде встроенной кнопки; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1876,8 +1852,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, отрисовывает ли браузер элементы WML <see langword="select" /> в виде карточек меню, а не поля со списком.</summary>
-        <value>
-          <see langword="true" />, если браузер отрисовывает элементы WML <see langword="select" /> в качестве карточек меню; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер отрисовывает элементы WML <see langword="select" /> в качестве карточек меню; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1902,8 +1877,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе используется внутри системы для создания метатега, необходимого для некоторых браузеров.</summary>
-        <value>Метатег, необходимый для некоторых браузеров.</value>
+        <summary>При переопределении в производном классе предназначен для внутреннего использования с целью создания мета-тега, необходимого для некоторых браузеров.</summary>
+        <value>Мета-тег, необходимый для некоторых браузеров.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1928,9 +1903,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, требует ли браузер замены двоеточий в значениях атрибутов элементов на другой символ.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется замена двоеточий в значениях атрибутов элементов на другие символы; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру заменять двоеточие в значениях атрибутов элементов на другой символ.</summary>
+        <value><see langword="true" />, если браузеру требуется замена двоеточий в значениях атрибутов элементов на другие символы; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1956,8 +1930,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру элемент HTML <see langword="meta" />, для которого указан атрибут <see langword="content-type" />.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется элемент HTML <see langword="meta" />, для которого указан атрибут <see langword="content-type" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузеру требуется элемент HTML <see langword="meta" />, для которого указан атрибут <see langword="content-type" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -1982,9 +1955,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, требует ли браузер поддержку состояния элемента управления в сеансах.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется система управления версиями в сеансах; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру хранение состояний элементов управления в сеансах.</summary>
+        <value><see langword="true" />, если браузеру требуется система управления версиями в сеансах; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2010,8 +1982,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру двухбайтовая кодировка.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется двухбайтовая кодировка; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузеру требуется двухбайтовая кодировка; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2037,8 +2008,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, требуются ли браузеру нестандартные сообщения об ошибках.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуются нестандартные сообщения об ошибках; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузеру требуются нестандартные сообщения об ошибках; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2064,8 +2034,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру, чтобы первый элемент в теле веб-страницы был элементом HTML <see langword="br" />.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется, чтобы первым элементом в теле веб-страницы был элемент HTML <see langword="br" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузеру требуется, чтобы первым элементом в теле веб-страницы был элемент HTML <see langword="br" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2091,8 +2060,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер элементы HTML <see langword="br" /> для форматирования разрывов строк.</summary>
-        <value>
-          <see langword="true" />, если браузер не поддерживает элементы HTML <see langword="br" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер не поддерживает элементы HTML <see langword="br" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2118,8 +2086,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру, чтобы страницы содержали оптимизированную по размеру форму тегов языка разметки.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется, чтобы страницы содержали оптимизированную по размеру фору тегов форматирования; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузеру требуется, чтобы страницы содержали оптимизированную по размеру фору тегов форматирования; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2145,8 +2112,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер набор телефонного номера из обычного текста или же требуется специальное форматирование.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает набор телефонного номера из обычного текста; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает набор телефонного номера из обычного текста; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2171,9 +2137,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, требует ли браузер специального кодирования значений состояния просмотра.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуется, чтобы значения состояния представления были специально закодированы; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, требуется ли браузеру, чтобы значения состояния представления были специально закодированы.</summary>
+        <value><see langword="true" />, если браузеру требуется, чтобы значения состояния представления были специально закодированы; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2198,9 +2163,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, требуются ли браузеру уникальные URL-адреса действий формы.</summary>
-        <value>
-          <see langword="true" />, если браузеру требуются уникальные URL действия форм; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, требуются ли браузеру уникальные URL-адреса действий форм.</summary>
+        <value><see langword="true" />, если браузеру требуются уникальные URL действия форм; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2277,9 +2241,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, будут ли данные обратной передачи, отправленные браузером, кодироваться в URL-адрес.</summary>
-        <value>
-          <see langword="true" />, если данные обратной передачи, отправленные браузером, кодируются как URL-адрес; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, кодируются ли как URL-адрес данные обратной передачи, отправленные браузером.</summary>
+        <value><see langword="true" />, если данные обратной передачи, отправленные браузером, кодируются как URL-адрес; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2304,7 +2267,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает глубину отображения в битах на пиксель.</summary>
+        <summary>При переопределении в производном классе получает глубину цвета дисплея в битах на пиксель.</summary>
         <value>Глубина цвета дисплея в битах на пиксель.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
@@ -2330,8 +2293,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает примерную высоту дисплея в строках символов.</summary>
-        <value>Примерная высота дисплея в строках символов.</value>
+        <summary>При переопределении в производном классе получает приблизительную высоту дисплея в символьных строках.</summary>
+        <value>Приблизительная высота дисплея в символьных строках.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2357,7 +2320,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает приблизительную ширину дисплея в символах.</summary>
-        <value>Примерная ширина дисплея в символах.</value>
+        <value>Приблизительная ширина дисплея в символах.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2383,7 +2346,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает приблизительную высоту дисплея в пикселях.</summary>
-        <value>Примерная высота дисплея в пикселях.</value>
+        <value>Приблизительная высота дисплея в пикселях.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2435,8 +2398,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="accesskey" /> элементов HTML <see langword="a" /> (привязка) и <see langword="input" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="accesskey" /> элементов HTML <see langword="a" /> (привязка) и <see langword="input" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="accesskey" /> элементов HTML <see langword="a" /> (привязка) и <see langword="input" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2462,8 +2424,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="bgcolor" /> элемента HTML <see langword="body" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="bgcolor" /> элемента HTML <see langword="body" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="bgcolor" /> элемента HTML <see langword="body" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2489,8 +2450,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер элементы HTML <see langword="b" /> для форматирования полужирного текста.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает элементы HTML <see langword="b" /> для форматирования полужирного текста; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает элементы HTML <see langword="b" /> для форматирования полужирного текста; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2516,8 +2476,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер значение <see langword="cache-control" /> для атрибута <see langword="http-equiv" /> элементов HTML <see langword="meta" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает значение <see langword="cache-control" /> для атрибута <see langword="http-equiv" /> элементов HTML <see langword="meta" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает значение <see langword="cache-control" /> для атрибута <see langword="http-equiv" /> элементов HTML <see langword="meta" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2542,9 +2501,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает значение, которое указывает, поддерживает ли браузер сценарии обратного вызова.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает скрипты обратного вызова; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер скрипты обратного вызова.</summary>
+        <value><see langword="true" />, если браузер поддерживает скрипты обратного вызова; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2569,9 +2527,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Если переопределено в производном классе, возвращает значение, указывающее, поддерживает ли браузер каскадные таблицы стилей (CSS).</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает CSS; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер каскадные таблицы стилей (CSS).</summary>
+        <value><see langword="true" />, если браузер поддерживает CSS; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2597,8 +2554,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="align" /> элементов HTML <see langword="div" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="align" /> элементов HTML <see langword="div" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="align" /> элементов HTML <see langword="div" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2624,8 +2580,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="nowrap" /> элементов HTML <see langword="div" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут элементы HTML <see langword="nowrap" /> с атрибутом <see langword="div" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут элементы HTML <see langword="nowrap" /> с атрибутом <see langword="div" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2650,9 +2605,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер пустые строки в значениях файла cookie.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает пустые строки в значениях cookie; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер пустые строки в значениях cookie.</summary>
+        <value><see langword="true" />, если браузер поддерживает пустые строки в значениях cookie; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2678,8 +2632,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="color" /> элементов HTML <see langword="font" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="color" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="color" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2705,8 +2658,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="name" /> элементов HTML <see langword="font" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="name" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="name" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2732,8 +2684,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="size" /> элементов HTML <see langword="font" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="size" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="size" /> элементов HTML <see langword="font" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2758,9 +2709,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер использование пользовательского изображения вместо кнопки "Отправить" стандартной формы.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает использование пользовательского изображения на месте стандартной кнопки формы "Отправить"; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер использование пользовательского изображения на месте стандартной кнопки формы "Отправить".</summary>
+        <value><see langword="true" />, если браузер поддерживает использование пользовательского изображения на месте стандартной кнопки формы "Отправить"; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2785,9 +2735,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, которое указывает, поддерживает ли браузер символы i-mode.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает символы i-mode; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер символы i-mode.</summary>
+        <value><see langword="true" />, если браузер поддерживает символы i-mode; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2813,8 +2762,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="istyle" /> элементов HTML <see langword="input" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="istyle" /> элементов HTML <see langword="input" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="istyle" /> элементов HTML <see langword="input" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2840,8 +2788,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="mode" /> элементов HTML <see langword="input" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="mode" /> элементов HTML <see langword="input" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="mode" /> элементов HTML <see langword="input" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2867,8 +2814,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер элементы HTML <see langword="i" /> для форматирования курсива.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает элементы HTML <see langword="i" /> для форматирования курсивного текста; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает элементы HTML <see langword="i" /> для форматирования курсивного текста; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2893,9 +2839,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, поддерживает ли браузер мультимедийные атрибуты J-Phone.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает мультимедийные атрибуты J-Phone; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер мультимедийные атрибуты J-Phone.</summary>
+        <value><see langword="true" />, если браузер поддерживает мультимедийные атрибуты J-Phone; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2920,9 +2865,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, поддерживает ли браузер символы-рисунки J-Phone.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает характерные для J-Phone символы изображений; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе возвращает значение, указывающее, поддерживает ли браузер характерные для J-Phone символы изображений.</summary>
+        <value><see langword="true" /> Если браузер поддерживает символы J-Phone-рисунок; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2948,8 +2892,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер строки запроса в значении атрибута <see langword="action" /> элементов HTML <see langword="form" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает строки запроса в значении атрибута <see langword="action" /> элементов HTML <see langword="form" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает строки запроса в значении атрибута <see langword="action" /> элементов HTML <see langword="form" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -2974,9 +2917,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер файлы cookie при перенаправлении.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает файлы cookie по перенаправлению; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер файлы cookie по перенаправлению.</summary>
+        <value><see langword="true" />, если браузер поддерживает файлы cookie по перенаправлению; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3002,8 +2944,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер атрибут <see langword="multiple" /> элементов HTML <see langword="select" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает атрибут <see langword="multiple" /> элементов HTML <see langword="select" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает атрибут <see langword="multiple" /> элементов HTML <see langword="select" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3054,9 +2995,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер получение XML по протоколу HTML.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает получение XML по HTTP; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер получение XML-данных по протоколу HTTP.</summary>
+        <value><see langword="true" />, если браузер поддерживает получение XML по HTTP; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3082,8 +3022,7 @@
       </ReturnValue>
       <Docs>
         <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер элементы HTML <see langword="table" />.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает элементы HTML <see langword="table" />; в противном случае <see langword="false" />.</value>
+        <value><see langword="true" />, если браузер поддерживает элементы HTML <see langword="table" />; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3108,8 +3047,8 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе используется внутренним образом для получения типа объекта, с помощью которого записываются теги для браузера.</summary>
-        <value>Типа объекта, с помощью которого записываются теги для браузера.</value>
+        <summary>При переопределении в производном классе предназначено для внутреннего использования с целью получения типа объекта, используемого для записи тегов для браузера.</summary>
+        <value>Тип объекта, который используется для записи тегов для браузера.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3134,8 +3073,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает имя и основной (целое число) номер версии браузера.</summary>
-        <value>Имя и основной номер версии браузера.</value>
+        <summary>При переопределении в производном классе получает имя и основной номер (целое значение) версии браузера.</summary>
+        <value>Имя и номер основной версии браузера.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3160,9 +3099,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе используется внутри системы для получения значения, указывающего, нужно ли использовать оптимизированный ключ кэша.</summary>
-        <value>
-          <see langword="true" />, для использования оптимизированного ключа кэша; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе предназначено для внутреннего использования с целью получения значения, указывающего необходимость использования оптимизированного ключа кэша.</summary>
+        <value><see langword="true" />, для использования оптимизированного ключа кэша; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3187,9 +3125,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе возвращает значение, указывающее, поддерживает ли браузер язык сценариев VBScript.</summary>
-        <value>
-          <see langword="true" />, если браузер поддерживает VBScript; в противном случае <see langword="false" />.  
+        <summary>При переопределении в производном классе получает значение, указывающее, поддерживает ли браузер язык скриптов VBScript.</summary>
+        <value><see langword="true" />, если браузер поддерживает VBScript; в противном случае <see langword="false" />.  
   
  <block subset="none" type="note"><para>  
  Это свойство не позволяет определить, разрешено ли использование языка скриптов VBScript в браузере в текущий момент, а только то, поддерживаются ли он браузером.  
@@ -3219,8 +3156,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает полный (целое число и десятичное число) номер версии браузера в виде строки.</summary>
-        <value>Полный номер версии браузера в виде строки.</value>
+        <summary>При переопределении в производном классе получает полный номер (целое значение и значение после десятичной точки) версии браузера в виде строки.</summary>
+        <value>Полный номер версии браузера в качестве строки.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3245,8 +3182,8 @@
         <ReturnType>System.Version</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает версию модели DOM XML консорциума W3C, поддерживаемой браузером.</summary>
-        <value>Номер версии модели DOM XML W3C XML, поддерживаемой обозревателем.</value>
+        <summary>При переопределении в производном классе получает версию объектной модели документа XML (DOM) консорциума World Wide Web (W3C), поддерживаемую браузером.</summary>
+        <value>Номер версии W3C XML DOM, поддерживаемой браузером.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3271,9 +3208,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, является ли клиент компьютером под управлением 16-разрядной ОС Windows.</summary>
-        <value>
-          <see langword="true" />, если браузер запущен на компьютере на базе Win16; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли клиент компьютером на платформе Win16.</summary>
+        <value><see langword="true" />, если браузер запущен на компьютере на базе Win16; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>
@@ -3298,9 +3234,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>При переопределении в производном классе получает значение, указывающее, является ли клиент компьютером на базе Win32.</summary>
-        <value>
-          <see langword="true" />, если клиент запущен на компьютере на базе Win32; в противном случае <see langword="false" />.</value>
+        <summary>При переопределении в производном классе возвращает значение, указывающее, является ли клиент компьютером на платформе Win32.</summary>
+        <value><see langword="true" />, если клиент запущен на компьютере на базе Win32; в противном случае <see langword="false" />.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">Всегда.</exception>
       </Docs>

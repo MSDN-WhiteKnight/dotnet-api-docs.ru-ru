@@ -1,13 +1,5 @@
 <Type Name="PropertyCollection" FullName="System.DirectoryServices.PropertyCollection">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b7dbbe3e0524ddf2a7aba2f94d5f169865d418cc" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51323083" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class PropertyCollection : System.Collections.IDictionary" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="abd4ee0e23abce72993670195f7aad19b2dc61f5" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56784703" /></Metadata><TypeSignature Language="C#" Value="public class PropertyCollection : System.Collections.IDictionary" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.PropertyCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class PropertyCollection&#xA;Implements IDictionary" />
@@ -37,9 +29,7 @@
   <Docs>
     <summary>Класс <see cref="T:System.DirectoryServices.PropertyCollection" /> содержит свойства <see cref="T:System.DirectoryServices.DirectoryEntry" />.</summary>
     <remarks>To be added.</remarks>
-    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
-      <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
-    </permission>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission"><see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
   </Docs>
   <Members>
     <Member MemberName="Contains">
@@ -94,7 +84,7 @@
       </Parameters>
       <Docs>
         <param name="array">Массив объектов <see cref="T:System.DirectoryServices.PropertyValueCollection" />, который принимает элементы данной коллекции.</param>
-        <param name="index">Отсчитываемый от нуля индекс в <c>array</c>, с которого данный метод начинает копирование коллекции.</param>
+        <param name="index">Отсчитываемый от нуля индекс в массиве <paramref name="array" />, с которого этот метод начинает копирование коллекции.</param>
         <summary>Копирует все объекты из данной коллекции в массив, начиная с указанного индекса в массиве назначения.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Runtime.InteropServices.COMException">Произошла ошибка при вызове базового интерфейса.</exception>
@@ -159,7 +149,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Возвращает перечислитель, который можно использовать для перебора этой коллекции.</summary>
+        <summary>Возвращает перечислитель, который может использоваться для итерации по этой коллекции.</summary>
         <returns>Объект <see cref="T:System.Collections.IDictionaryEnumerator" />, который может использоваться для перебора всей этой коллекции.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Runtime.InteropServices.COMException">Произошла ошибка при вызове базового интерфейса.</exception>
@@ -187,7 +177,7 @@
         <Parameter Name="propertyName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="propertyName">Имя свойства, которое необходимо извлечь.</param>
+        <param name="propertyName">Имя извлекаемого свойства.</param>
         <summary>Получает указанное свойство.</summary>
         <value>Значение заданного свойства.</value>
         <remarks>
@@ -258,15 +248,15 @@
       </Parameters>
       <Docs>
         <param name="array">Одномерный массив <see cref="T:System.Array" />, в который копируются элементы из интерфейса <see cref="T:System.Collections.ICollection" />. Массив <see cref="T:System.Array" /> должен иметь индексацию, начинающуюся с нуля.</param>
-        <param name="index">Отсчитываемый от нуля индекс в <c>массиве</c> с которого начинается копирование.</param>
+        <param name="index">Отсчитываемый от нуля индекс в массиве <paramref name="array" />, указывающий начало копирования.</param>
         <summary>Копирует элементы коллекции <see cref="T:System.Collections.ICollection" /> в массив <see cref="T:System.Array" />, начиная с указанного индекса массива <see cref="T:System.Array" />.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="index" /> меньше нуля.</exception>
         <exception cref="T:System.ArgumentException">Массив <paramref name="array" /> является многомерным.  
   
-- или - 
-Число элементов в исходном массиве <see cref="T:System.Collections.ICollection" /> больше возможного для размещения числа элементов от положения, заданного значением параметра <paramref name="index" />, до конца массива назначения <paramref name="array" />.</exception>
+-или- 
+Число элементов в исходной коллекции <see cref="T:System.Collections.ICollection" /> больше доступного места от положения, заданного значением параметра <paramref name="index" />, до конца массива назначения <paramref name="array" />.</exception>
         <exception cref="T:System.InvalidCastException">Тип исходного массива <see cref="T:System.Collections.ICollection" /> не может быть автоматически приведен к типу массива назначения <paramref name="array" />.</exception>
       </Docs>
     </Member>
@@ -292,8 +282,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает значение, показывающее, является ли доступ к коллекции <see cref="T:System.Collections.ICollection" /> синхронизированным (потокобезопасным).</summary>
-        <value>
-          <see langword="true" />, если доступ к классу <see cref="T:System.Collections.ICollection" /> является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если доступ к классу <see cref="T:System.Collections.ICollection" /> является синхронизированным (потокобезопасным); в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -436,7 +425,7 @@ Dim myCollection As New ICollection()
       <Docs>
         <param name="key">Объект <see cref="T:System.Object" /> используется в качестве ключа добавляемого элемента.</param>
         <param name="value">Объект <see cref="T:System.Object" /> используется в качестве значения добавляемого элемента.</param>
-        <summary>Добавляет элемент с указанными ключом и значением в объект <see cref="T:System.Collections.IDictionary" />.</summary>
+        <summary>Добавляет элемент с предоставленными ключом и значением в объект <see cref="T:System.Collections.IDictionary" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -454,11 +443,11 @@ Dim myCollection As New ICollection()
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Элемент с таким ключом уже существует в объекте <see cref="T:System.Collections.IDictionary" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.IDictionary" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер.</exception>
         <altmember cref="P:System.Collections.IDictionary.Item(System.Object)" />
       </Docs>
@@ -540,7 +529,7 @@ Dim myCollection As New ICollection()
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IDictionary.IsFixedSize">
@@ -565,8 +554,7 @@ Dim myCollection As New ICollection()
       </ReturnValue>
       <Docs>
         <summary>Получает значение, показывающее, имеет ли объект <see cref="T:System.Collections.IDictionary" /> фиксированный размер.</summary>
-        <value>
-          <see langword="true" />, если объект <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер, в противном случае — <see langword="false" />.</value>
+        <value><see langword="true" />, если объект <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер, в противном случае — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -651,7 +639,7 @@ Dim myCollection As New ICollection()
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="key" Type="System.Object" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="key">Ключ элемента, который требуется получить или задать.</param>
@@ -676,11 +664,11 @@ Dim myCollection As New ICollection()
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Свойство задано, и объект <see cref="T:System.Collections.IDictionary" /> доступен только для чтения.  
   
-- или - 
-Свойство задано, <paramref name="key" /> не существует в коллекции, а <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер.</exception>
+-или- 
+Свойство задано, ключ <paramref name="key" /> не существует в коллекции, и коллекция <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер.</exception>
         <altmember cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />
       </Docs>
     </Member>
@@ -751,7 +739,7 @@ Dim myCollection As New ICollection()
         <Parameter Name="key" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="key">Ключ элемента, который требуется удалить.</param>
+        <param name="key">Ключ удаляемого элемента.</param>
         <summary>Удаляет элемент с указанным ключом из объекта <see cref="T:System.Collections.IDictionary" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -765,10 +753,10 @@ Dim myCollection As New ICollection()
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">Свойство <paramref name="key" /> имеет значение <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> — <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">Объект <see cref="T:System.Collections.IDictionary" /> доступен только для чтения.  
   
-- или - 
+-или- 
 <see cref="T:System.Collections.IDictionary" /> имеет фиксированный размер.</exception>
       </Docs>
     </Member>

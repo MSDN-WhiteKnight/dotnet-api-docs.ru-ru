@@ -1,13 +1,5 @@
 <Type Name="Process" FullName="System.Diagnostics.Process">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="16b5135dbebdd235e3c0055158b3dd27b87cdae5" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51324526" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Process : System.ComponentModel.Component" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="738e978e4247fe3d388927b8137573b1f560c992" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58456994" /></Metadata><TypeSignature Language="C#" Value="public class Process : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Process extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Process" />
   <TypeSignature Language="VB.NET" Value="Public Class Process&#xA;Inherits Component" />
@@ -256,7 +248,7 @@
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для свойства <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс завершен.  
   
-- или - 
+-или- 
 Процесс не запущен, поэтому нет идентификатора процесса.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
@@ -339,10 +331,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" /> — <see langword="false" />.  
   
-\- или - 
+-или- 
 Асинхронная операция чтения уже выполняется в потоке <see cref="P:System.Diagnostics.Process.StandardError" />.  
   
-\- или - 
+-или- 
 Поток <see cref="P:System.Diagnostics.Process.StandardError" /> используется синхронной операцией чтения.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
@@ -429,10 +421,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">Значение свойства <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" /> — <see langword="false" />.  
   
-\- или - 
+-или- 
 Асинхронная операция чтения уже выполняется в потоке <see cref="P:System.Diagnostics.Process.StandardOutput" />.  
   
-\- или - 
+-или- 
 Поток <see cref="P:System.Diagnostics.Process.StandardOutput" /> используется синхронной операцией чтения.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
@@ -485,7 +477,7 @@
   
  После отмены, можно возобновить асинхронную операцию чтения, вызвав <xref:System.Diagnostics.Process.BeginErrorReadLine%2A> еще раз.  
   
- При вызове <xref:System.Diagnostics.Process.CancelErrorRead%2A>, что все выполняющиеся операции чтения для <xref:System.Diagnostics.Process.StandardError%2A> завершены и затем отключен обработчик событий. Все дополнительные перенаправление выходных данных в <xref:System.Diagnostics.Process.StandardError%2A> сохраняется в буфере. Если вы включите обработчик событий с помощью вызова <xref:System.Diagnostics.Process.BeginErrorReadLine%2A>, сохраненные данные выводятся в обработчик событий, и возобновить операции асинхронного чтения. Если вы хотите изменить обработчик событий перед возобновлением асинхронных операций чтения, необходимо удалить существующий обработчик событий, прежде чем добавлять новый обработчик событий:  
+ При вызове <xref:System.Diagnostics.Process.CancelErrorRead%2A>, что все выполняющиеся операции чтения для <xref:System.Diagnostics.Process.StandardError%2A> завершены и затем отключен обработчик событий. Все дополнительные перенаправление выходных данных в <xref:System.Diagnostics.Process.StandardError%2A> будут потеряны. Если вы включите обработчик событий с помощью вызова <xref:System.Diagnostics.Process.BeginErrorReadLine%2A>асинхронных чтение возобновить операции. Если вы хотите изменить обработчик событий перед возобновлением асинхронных операций чтения, необходимо удалить существующий обработчик событий, прежде чем добавлять новый обработчик событий:  
   
 ```csharp  
 // At this point the DataReceivedEventHandler(ErrorHandler1)   
@@ -718,7 +710,7 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для свойства <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.InvalidOperationException">Этот процесс уже завершился.  
   
-- или - 
+-или- 
 Нет процессов, связанных с этим объектом <see cref="T:System.Diagnostics.Process" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
@@ -785,7 +777,7 @@ process.BeginOutputReadLine();
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">Значение <see langword="true" /> позволяет освободить как управляемые, так и неуправляемые ресурсы; значение <see langword="false" /> освобождает только неуправляемые ресурсы.</param>
+        <param name="disposing">Значение <see langword="true" /> позволяет освободить управляемые и неуправляемые ресурсы; значение <see langword="false" /> позволяет освободить только неуправляемые ресурсы.</param>
         <summary>Освобождает все ресурсы, используемые этим процессом.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -819,7 +811,7 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -837,7 +829,7 @@ process.BeginOutputReadLine();
       </ReturnValue>
       <Docs>
         <summary>Получает или задает значение, указывающее, следует ли вызывать событие <see cref="E:System.Diagnostics.Process.Exited" /> при прекращении процесса.</summary>
-        <value>Значение <see langword="true" />, если событие <see cref="E:System.Diagnostics.Process.Exited" /> должно быть вызвано при завершении связанного процесса (выход или вызов метода <see cref="M:System.Diagnostics.Process.Kill" />); в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />. Обратите внимание, что <see cref="E:System.Diagnostics.Process.Exited" /> события даже в том случае, если значение <see cref="P:System.Diagnostics.Process.EnableRaisingEvents" /> — <see langword="false" /> при завершении процесса во время или до выполнения пользователем <see cref="P:System.Diagnostics.Process.HasExited" /> проверки.</value>
+        <value>Значение <see langword="true" />, если событие <see cref="E:System.Diagnostics.Process.Exited" /> должно быть вызвано при завершении связанного процесса (выход или вызов метода <see cref="M:System.Diagnostics.Process.Kill" />); в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />. Обратите внимание, что <see cref="E:System.Diagnostics.Process.Exited" /> события даже в том случае, если значение <see cref="P:System.Diagnostics.Process.EnableRaisingEvents" /> — <see langword="false" /> при завершении процесса во время или до выполнения пользователем <see cref="P:System.Diagnostics.Process.HasExited" /> проверки.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1063,9 +1055,9 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Процесс не был завершен.  
   
-- или - 
+-или- 
 Процесс <see cref="P:System.Diagnostics.Process.Handle" /> не является допустимым.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.ExitCode" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.ExitCode" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.HasExited" />
         <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
@@ -1411,7 +1403,7 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.ArgumentException">Процесс, указанный параметром <paramref name="processId" />, не выполняется. Возможно, истек срок действия идентификатора.  
   
-- или - 
+-или- 
 Недопустимый синтаксис параметра <paramref name="machineName" />. Возможно, имя имеет нулевую длину (0).</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="machineName" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс не был запущен этим объектом.</exception>
@@ -1726,7 +1718,7 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">Платформа операционной системы не поддерживает эту операцию на удаленных компьютерах.</exception>
         <exception cref="T:System.InvalidOperationException">Попытка подключиться к <paramref name="machineName" /> завершилась ошибкой.
 
-- или - 
+-или- 
 Существуют проблемы при доступе к API счетчиков производительности, которые используются для получения сведений о процессе. Это исключение характерно для Windows NT, Windows 2000 и Windows XP.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Возникла проблема при доступе к базовому системному API.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -1796,7 +1788,7 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Процесс не был запущен или был завершен. Невозможно прочитать свойство <see cref="P:System.Diagnostics.Process.Handle" />, поскольку ни один процесс не связан с этим экземпляром <see cref="T:System.Diagnostics.Process" />.  
   
-- или - 
+-или- 
 Экземпляр <see cref="T:System.Diagnostics.Process" /> был присоединен к запущенному процессу, но у вас нет необходимых разрешений для получения маркера с полными правами доступа.</exception>
         <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Handle" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -2012,7 +2004,7 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Diagnostics.Process.Id" /> процесса не задано.  
   
-- или - 
+-или- 
 С этим объектом <see cref="T:System.Diagnostics.Process" /> никакие процессы не связаны.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для свойства <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -2071,20 +2063,50 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.ComponentModel.Win32Exception">Связанный процесс не может быть завершен.  
   
-- или - 
+-или- 
 Выполняется завершение процесса.  
   
-- или - 
+-или- 
 Связанный процесс является исполняемым файлом Win16.</exception>
         <exception cref="T:System.NotSupportedException">Вы пытаетесь вызвать метод <see cref="M:System.Diagnostics.Process.Kill" /> для процесса, выполняющегося на удаленном компьютере. Этот метод доступен только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Этот процесс уже завершился.  
   
-- или - 
+-или- 
 С этим объектом <see cref="T:System.Diagnostics.Process" /> никакие процессы не связаны.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="M:System.Environment.Exit(System.Int32)" />
         <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
         <altmember cref="M:System.Diagnostics.Process.Start" />
+      </Docs>
+    </Member>
+    <Member MemberName="Kill">
+      <MemberSignature Language="C#" Value="public void Kill (bool entireProcessTree);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Kill(bool entireProcessTree) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Kill(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Kill (entireProcessTree As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Kill(bool entireProcessTree);" />
+      <MemberSignature Language="F#" Value="member this.Kill : bool -&gt; unit" Usage="process.Kill entireProcessTree" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entireProcessTree" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="entireProcessTree">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="LeaveDebugMode">
@@ -2254,12 +2276,12 @@ process.BeginOutputReadLine();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainModule" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainModule" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">32-разрядный процесс пытается получить доступ к модулям 64-разрядного процесса.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.  
   
-- или - 
+-или- 
 Процесс завершен.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.Modules" />
@@ -2324,7 +2346,7 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Diagnostics.Process.MainWindowHandle" /> не определено, так как процесс завершился.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainWindowHandle" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainWindowHandle" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.MainWindowTitle" />
@@ -2396,7 +2418,7 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Свойство <see cref="P:System.Diagnostics.Process.MainWindowTitle" /> не определено, так как процесс завершился.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainWindowTitle" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MainWindowTitle" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
@@ -2463,12 +2485,12 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ArgumentException">Максимальный размер рабочего множества является недопустимым. Это значение должно быть больше минимального размера рабочего множества или равно ему.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Не удается получить сведения о рабочем множестве из ресурса связанного процесса.  
   
-- или - 
+-или- 
 Идентификатор или дескриптор процесса равен нулю, так как процесс не запущен.</exception>
         <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MaxWorkingSet" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.  
   
-- или - 
+-или- 
 Процесс завершен.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -2539,12 +2561,12 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ArgumentException">Минимальный размер рабочего множества является недопустимым. Это значение должно быть не больше максимального размера рабочего множества.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Не удается получить сведения о рабочем множестве из ресурса связанного процесса.  
   
-- или - 
+-или- 
 Идентификатор или дескриптор процесса равен нулю, так как процесс не запущен.</exception>
         <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.MinWorkingSet" /> процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.  
   
-- или - 
+-или- 
 Процесс завершен.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -2610,7 +2632,7 @@ process.BeginOutputReadLine();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Modules" /> для процесса, выполняемого на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Modules" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Modules" /> системного или бездействующего процесса. Эти процессы не имеют модулей.</exception>
@@ -2655,11 +2677,14 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use NonpagedSystemMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.NonpagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessNonpagedSystemMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.NonpagedSystemMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2720,7 +2745,7 @@ process.BeginOutputReadLine();
       </ReturnValue>
       <Docs>
         <summary>Возвращает объем невыгружаемой системной памяти в байтах, выделенной для связанного процесса.</summary>
-        <value>Объем системной памяти в байтах, выделенной для связанного процесса, которую нельзя записать в файл подкачки виртуальной памяти.</value>
+        <value>Количество системной памяти в байтах, выделенной для связанного процесса, которую нельзя записать в файл подкачки виртуальной памяти.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2775,7 +2800,7 @@ process.BeginOutputReadLine();
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Вызывает событие <see cref="E:System.Diagnostics.Process.Exited" />.</summary>
+        <summary>Создает событие <see cref="E:System.Diagnostics.Process.Exited" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2909,11 +2934,14 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PagedMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPagedMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PagedMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3031,18 +3059,21 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PagedSystemMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPagedSystemMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PagedSystemMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает объем выгружаемой системной памяти (в байтах), выделенной для связанного процесса.</summary>
+        <summary>Возвращает объем выгружаемой системной памяти в байтах, выделенной для связанного процесса.</summary>
         <value>Объем памяти в байтах, выделенной системой для связанного процесса, который можно записать в файл подкачки виртуальной памяти.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
@@ -3092,8 +3123,8 @@ process.BeginOutputReadLine();
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает объем выгружаемой системной памяти (в байтах), выделенной для связанного процесса.</summary>
-        <value>Объем системной памяти в байтах, выделенной для связанного процесса, которую можно записать в файл подкачки виртуальной памяти.</value>
+        <summary>Возвращает объем выгружаемой системной памяти в байтах, выделенной для связанного процесса.</summary>
+        <value>Количество системной памяти в байтах, выделенной для связанного процесса, которую можно записать в файл подкачки виртуальной памяти.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3156,18 +3187,21 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PeakPagedMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakPagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPeakPagedMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakPagedMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает максимальный объем памяти в байтах в файле подкачки виртуальной памяти, используемой связанным процессом.</summary>
+        <summary>Получает максимальный объем памяти в байтах в файле подкачки виртуальной памяти, используемой связанным процессом.</summary>
         <value>Максимальный объем памяти в байтах, выделенной связанным процессом, который можно записать в файл подкачки виртуальной памяти.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
@@ -3220,8 +3254,8 @@ process.BeginOutputReadLine();
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Возвращает максимальный объем памяти в байтах в файле подкачки виртуальной памяти, используемой связанным процессом.</summary>
-        <value>Максимальный объем памяти в байтах, выделенной в файле подкачки виртуальной памяти для связанного процесса с момента его запуска.</value>
+        <summary>Получает максимальный объем памяти в байтах в файле подкачки виртуальной памяти, используемой связанным процессом.</summary>
+        <value>Максимальное количество памяти в байтах, выделенной в файле подкачки виртуальной памяти для связанного процесса с момента его запуска.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3280,11 +3314,14 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PeakVirtualMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakVirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPeakVirtualMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakVirtualMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3342,7 +3379,7 @@ process.BeginOutputReadLine();
       </ReturnValue>
       <Docs>
         <summary>Получает максимальный объем виртуальной памяти (в байтах), используемой связанным процессом.</summary>
-        <value>Максимальный объем виртуальной памяти в байтах, выделенной для связанного процесса с момента его запуска.</value>
+        <value>Максимальное количество виртуальной памяти в байтах, выделенной для связанного процесса с момента его запуска.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3401,11 +3438,14 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PeakWorkingSet64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakWorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPeakWorkingSet")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PeakWorkingSet64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3547,8 +3587,8 @@ process.BeginOutputReadLine();
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает значение, указывающее, должна ли операционная система временно увеличить приоритет связанного процесса, когда основное окно процесса получит фокус.</summary>
-        <value>Значение <see langword="true" />, если требуется динамическое увеличение приоритета процесса, когда процесс выходит из состояния ожидания; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <summary>Возвращает или задает значение, указывающее, должна ли операционная система временно увеличить приоритет связанного процесса, когда основное окно процесса получит фокус.</summary>
+        <value>Значение <see langword="true" />, если требуется динамическое увеличение приоритета процесса, когда процесс выходит из состояния ожидания; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3563,9 +3603,9 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ComponentModel.Win32Exception">Не удается получить информацию о повышении приоритета от связанного ресурса процесса.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.  
   
-- или - 
+-или- 
 Идентификатор процесса или дескриптор процесса равен нулю. (Процесс не был запущен.)</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PriorityBoostEnabled" /> для процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PriorityBoostEnabled" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
@@ -3644,9 +3684,9 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.ComponentModel.Win32Exception">Не удается задать или получить сведения о приоритете процесса от связанного ресурса процесса.  
   
-- или - 
+-или- 
 Идентификатор процесса или дескриптор процесса равен нулю. (Процесс не был запущен.)</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PriorityClass" /> для процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PriorityClass" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Вы задали для класса <see cref="P:System.Diagnostics.Process.PriorityClass" /> значение <see langword="AboveNormal" /> или <see langword="BelowNormal" /> при использовании Windows 98 или Windows Millennium Edition (Windows Me). Эти платформы не поддерживают такие значения для класса приоритета.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Невозможно задать класс приоритета, поскольку он не использует допустимое значение, как определено в перечислении <see cref="T:System.Diagnostics.ProcessPriorityClass" />.</exception>
@@ -3689,11 +3729,14 @@ process.BeginOutputReadLine();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use PrivateMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PrivateMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessPrivateMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.PrivateMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3830,7 +3873,7 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" /> для процесса, выполняемого на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
         <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
@@ -3893,7 +3936,7 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Процесс не имеет идентификатора, или нет процесса, связанного с <see cref="T:System.Diagnostics.Process" />.  
   
-- или - 
+-или- 
 Связанный процесс завершился.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.NotSupportedException">Процесс отсутствует на этом компьютере.</exception>
@@ -3944,7 +3987,7 @@ process.BeginOutputReadLine();
         <ReturnType>System.IntPtr</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает или задает процессоры, на которых может быть запланировано выполнение потоков данного процесса.</summary>
+        <summary>Возвращает или задает процессоры, на которых может быть запланировано выполнение потоков данного процесса.</summary>
         <value>Битовая маска, представляющая процессоры, на которых могут выполняться потоки связанного процесса. По умолчанию маска зависит от числа процессоров в компьютере. Значение по умолчанию — 2 <sup>n</sup> -1, где n — число процессоров.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3968,12 +4011,12 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.ComponentModel.Win32Exception">Не удается задать или получить сведения о <see cref="P:System.Diagnostics.Process.ProcessorAffinity" /> от связанного ресурса процесса.  
   
-- или - 
+-или- 
 Идентификатор процесса или дескриптор процесса равен нулю. (Процесс не был запущен.)</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.ProcessorAffinity" /> для процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.ProcessorAffinity" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс <see cref="P:System.Diagnostics.Process.Id" /> недоступен.  
   
-- или - 
+-или- 
 Процесс завершен.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
@@ -4096,7 +4139,7 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <exception cref="T:System.InvalidOperationException">С этим объектом <see cref="T:System.Diagnostics.Process" /> никакие процессы не связаны.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Responding" /> для процесса, запущенного на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.Responding" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.MainWindowHandle" />
       </Docs>
@@ -4136,7 +4179,7 @@ process.BeginOutputReadLine();
         <ReturnType>Microsoft.Win32.SafeHandles.SafeProcessHandle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Получает собственный дескриптор процесса.</summary>
+        <summary>Возвращает собственный дескриптор процесса.</summary>
         <value>Собственный дескриптор процесса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4203,7 +4246,7 @@ process.BeginOutputReadLine();
         <exception cref="T:System.NullReferenceException">С этим процессом никакие сеансы не связаны.</exception>
         <exception cref="T:System.InvalidOperationException">С этим идентификатором сеанса не связаны никакие процессы.  
   
-- или - 
+-или- 
 На этом компьютере нет связанного процесса.</exception>
         <exception cref="T:System.PlatformNotSupportedException">В Windows 98 свойство <see cref="P:System.Diagnostics.Process.SessionId" /> не поддерживается.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -4268,44 +4311,22 @@ process.BeginOutputReadLine();
  Напротив <xref:System.Diagnostics.Process.BeginErrorReadLine%2A> начинается асинхронных операций чтения на <xref:System.Diagnostics.Process.StandardError%2A> потока. Этот метод включает назначенный обработчик событий для выходного потока и немедленно возвращает вызывающему объекту, который может выполнять другую работу, пока выходной поток направляется обработчику событий.  
   
  Синхронное чтение операций вводит зависимость между считыванием из вызывающего <xref:System.Diagnostics.Process.StandardError%2A> потока и дочерний процесс записи в поток. Эти зависимости можно привести в состоянии взаимоблокировки. Когда вызывающий объект считывает из перенаправленного потока дочернего процесса, он зависит от дочернего. Вызывающий объект ожидает операции считывания дочерние записывает в поток или закрывает поток. Когда дочерний процесс записывает достаточно данных для заполнения своего перенаправленного потока, он зависит от родительского. Дочерний процесс ожидает следующей операции записи до родительского считывает из полного потока или закрывает поток. Взаимоблокировка возникает, когда вызывающий объект и дочерний процесс ждут друг от друга, для завершения операции и не может продолжить работу. Взаимоблокировок можно избежать, оценивая зависимости между вызывающим и дочерний процесс.  
-  
- Следующий код C#, например, показано, как считывание из перенаправленного потока и ожидание завершения дочернего процесса.  
-  
-```csharp  
-// Start the child process.  
- Process p = new Process();  
- // Redirect the error stream of the child process.  
- p.StartInfo.UseShellExecute = false;  
- p.StartInfo.RedirectStandardError = true;  
- p.StartInfo.FileName = "Write500Lines.exe";  
- p.Start();  
- // Do not wait for the child process to exit before  
- // reading to the end of its redirected error stream.  
- // p.WaitForExit();  
- // Read the error stream first and then wait.  
- string error = p.StandardError.ReadToEnd();  
- p.WaitForExit();  
-```  
-  
- В примере кода позволяет избежать взаимоблокировки, вызвав `p.StandardError.ReadToEnd` перед `p.WaitForExit`. Если родительский обработки вызовов может привести к взаимоблокировки `p.WaitForExit` перед `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения перенаправленного потока. Родительский процесс неограниченно долго будет ожидать завершения дочернего процесса. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.  
-  
- Есть аналогичная проблема возникает при считывании весь текст из стандартного вывода и потоков стандартной ошибки. Например, следующий код C#, выполняет операции чтения в обоих потоках.  
-  
-```csharp  
-// Do not perform a synchronous read to the end of both   
-// redirected streams.  
-// string output = p.StandardOutput.ReadToEnd();  
-// string error = p.StandardError.ReadToEnd();  
-// p.WaitForExit();  
-// Use asynchronous read operations on at least one of the streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- В примере кода позволяет избежать взаимоблокировки, выполняя асинхронные операции чтения на <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Взаимоблокировка возникает, если родительский обрабатывать вызовы `p.StandardOutput.ReadToEnd` следуют `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения его поток сообщений об ошибках. Родительский процесс будет ожидать неопределенно долго дочерний процесс закрыть его <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.  
-  
- Чтобы избежать этих зависимостей и возможных взаимоблокировок можно использовать асинхронных операций чтения. Кроме того можно избежать этого состояния взаимоблокировки путем создания двух потоков и чтении выходных данных каждого потока в отдельном потоке.  
+
+В последних двух примерах этого раздела используется <xref:System.Diagnostics.Process.Start%2A> метод для запуска исполняемого файла с именем *Write500Lines.exe*. Следующий пример содержит его исходный код.
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+Приведенный ниже показано, как читать из потока перенаправленный ошибки и дождитесь завершения дочернего процесса. Это позволяет избежать взаимоблокировки, вызвав `p.StandardError.ReadToEnd` перед `p.WaitForExit`. Если родительский обработки вызовов может привести к взаимоблокировки `p.WaitForExit` перед `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения перенаправленного потока. Родительский процесс неограниченно долго будет ожидать завершения дочернего процесса. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.   
+
+[!code-csharp[Reading from the error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standarderror/stderror-sync.cs)]
+[!code-vb[Reading from the error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standarderror/stderror-sync.vb)]  
+
+Есть аналогичная проблема возникает при считывании весь текст из стандартного вывода и потоков стандартной ошибки. В следующем примере выполняется операция считывания в обоих потоках. Это позволяет избежать взаимоблокировки, выполняя асинхронные операции чтения на <xref:System.Diagnostics.Process.StandardError%2A> потока. Взаимоблокировка возникает, если родительский обрабатывать вызовы `p.StandardOutput.ReadToEnd` следуют `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения его поток сообщений об ошибках. Родительский процесс будет ожидать неопределенно долго дочерний процесс закрыть его <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.  
+[!code-csharp[Reading from both streams](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]
+[!code-vb[Reading from both streams](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]  
+
+Чтобы избежать этих зависимостей и возможных взаимоблокировок можно использовать асинхронных операций чтения. Кроме того можно избежать этого состояния взаимоблокировки путем создания двух потоков и чтении выходных данных каждого потока в отдельном потоке.  
   
 > [!NOTE]
 >  Нельзя смешивать асинхронные и синхронные операции чтения в перенаправленном потоке. Один раз перенаправленного потока <xref:System.Diagnostics.Process> открыт в режиме асинхронной или синхронной, все дополнительные чтения операции в этом потоке должен быть в одном режиме. Например, не выполняйте <xref:System.Diagnostics.Process.BeginErrorReadLine%2A> вызовом <xref:System.IO.StreamReader.ReadLine%2A> на <xref:System.Diagnostics.Process.StandardError%2A> потока, или наоборот. Тем не менее вы найдете в двух разных потоках в разных режимах. Например, можно вызвать <xref:System.Diagnostics.Process.BeginOutputReadLine%2A> , а затем вызвать <xref:System.IO.StreamReader.ReadLine%2A> для <xref:System.Diagnostics.Process.StandardError%2A> потока.  
@@ -4323,7 +4344,7 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Поток <see cref="P:System.Diagnostics.Process.StandardError" /> не был определен для переадресации. Убедитесь, что для <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" /> задано <see langword="true" />, а для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> — <see langword="false" />.  
   
-\- или - 
+-или- 
 Поток <see cref="P:System.Diagnostics.Process.StandardError" /> был открыт для асинхронных операций чтения с <see cref="M:System.Diagnostics.Process.BeginErrorReadLine" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.StandardInput" />
@@ -4396,8 +4417,7 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="P:System.Diagnostics.Process.StandardInput" /> Поток не был определен, так как для <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" /> установлено значение <see langword="false" />.</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Diagnostics.Process.StandardInput" /> Поток не был определен, так как для <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" /> установлено значение <see langword="false" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
         <altmember cref="P:System.Diagnostics.Process.StandardError" />
@@ -4463,34 +4483,20 @@ p.WaitForExit();
  Напротив <xref:System.Diagnostics.Process.BeginOutputReadLine%2A> начинается асинхронных операций чтения на <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Этот метод включает назначенный обработчик событий для выходного потока и немедленно возвращает вызывающему объекту, который может выполнять другую работу, пока выходной поток направляется обработчику событий.  
   
  Синхронное чтение операций вводит зависимость между считыванием из вызывающего <xref:System.Diagnostics.Process.StandardOutput%2A> потока и дочерний процесс записи в поток. Эти зависимости можно привести в состоянии взаимоблокировки. Когда вызывающий объект считывает из перенаправленного потока дочернего процесса, он зависит от дочернего. Вызывающий объект ожидает операции считывания дочерние записывает в поток или закрывает поток. Когда дочерний процесс записывает достаточно данных для заполнения своего перенаправленного потока, он зависит от родительского. Дочерний процесс ожидает следующей операции записи до родительского считывает из полного потока или закрывает поток. Взаимоблокировка возникает, когда вызывающий объект и дочерний процесс ждут друг от друга, для завершения операции и не может продолжить работу. Взаимоблокировок можно избежать, оценивая зависимости между вызывающим и дочерний процесс.  
-  
- Следующий код C#, например, показано, как считывание из перенаправленного потока и ожидание завершения дочернего процесса.  
-  
-```csharp  
-Process p = new Process();  
-p.StartInfo.UseShellExecute = false;  
-p.StartInfo.RedirectStandardOutput = true;  
-p.StartInfo.FileName = "Write500Lines.exe";  
-p.Start();  
-  
-// To avoid deadlocks, always read the output stream first and then wait.  
-string output = p.StandardOutput.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- В примере кода позволяет избежать взаимоблокировки, вызвав `p.StandardOutput.ReadToEnd` перед `p.WaitForExit`. Если родительский обработки вызовов может привести к взаимоблокировки `p.WaitForExit` перед `p.StandardOutput.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения перенаправленного потока. Родительский процесс неограниченно долго будет ожидать завершения дочернего процесса. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardOutput%2A> потока.  
-  
- Есть аналогичная проблема возникает при считывании весь текст из стандартного вывода и потоков стандартной ошибки. Например, следующий код C#, выполняет операции чтения в обоих потоках.  
-  
-```csharp  
-// To avoid deadlocks, use asynchronous read operations on at least one of the streams.  
-// Do not perform a synchronous read to the end of both redirected streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- В примере кода позволяет избежать взаимоблокировки, выполняя асинхронные операции чтения на <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Взаимоблокировка возникает, если родительский обрабатывать вызовы `p.StandardOutput.ReadToEnd` следуют `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения его поток сообщений об ошибках. Родительский процесс будет ожидать неопределенно долго дочерний процесс закрыть его <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.  
+
+В последних двух примерах этого раздела используется <xref:System.Diagnostics.Process.Start%2A> метод для запуска исполняемого файла с именем *Write500Lines.exe*. Следующий пример содержит его исходный код.
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+В следующем примере показано, как считывание из перенаправленного потока и ожидание завершения дочернего процесса. Пример позволяет избежать взаимоблокировки, вызвав `p.StandardOutput.ReadToEnd` перед `p.WaitForExit`. Если родительский обработки вызовов может привести к взаимоблокировки `p.WaitForExit` перед `p.StandardOutput.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения перенаправленного потока. Родительский процесс неограниченно долго будет ожидать завершения дочернего процесса. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardOutput%2A> потока.  
+
+[!code-csharp[Reading synchronously from a redirected output stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-sync.cs)]  
+[!code-vb[Reading synchronously from a redirected output stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-sync.vb)]  
+
+Есть аналогичная проблема возникает при считывании весь текст из стандартного вывода и потоков стандартной ошибки. В следующем примере выполняется операция считывания в обоих потоках. Это позволяет избежать взаимоблокировки, выполняя асинхронные операции чтения на <xref:System.Diagnostics.Process.StandardError%2A> потока. Взаимоблокировка возникает, если родительский обрабатывать вызовы `p.StandardOutput.ReadToEnd` следуют `p.StandardError.ReadToEnd` и дочерний процесс записывает достаточно текста для заполнения его поток сообщений об ошибках. Родительский процесс будет ожидать неопределенно долго дочерний процесс закрыть его <xref:System.Diagnostics.Process.StandardOutput%2A> потока. Дочерний процесс будет ожидать неопределенно долго родительским для чтения из полной <xref:System.Diagnostics.Process.StandardError%2A> потока.   
+[!code-csharp[Reading from a redirected output and error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]  
+[!code-vb[Reading from a redirected output and error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]    
   
  Чтобы избежать этих зависимостей и возможных взаимоблокировок можно использовать асинхронных операций чтения. Кроме того можно избежать этого состояния взаимоблокировки путем создания двух потоков и чтении выходных данных каждого потока в отдельном потоке.  
   
@@ -4510,7 +4516,7 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Поток <see cref="P:System.Diagnostics.Process.StandardOutput" /> не был определен для переадресации. Убедитесь, что для <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" /> задано <see langword="true" />, а для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> — <see langword="false" />.  
   
-\- или - 
+-или- 
 Поток <see cref="P:System.Diagnostics.Process.StandardOutput" /> был открыт для асинхронных операций чтения с <see cref="M:System.Diagnostics.Process.BeginOutputReadLine" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.StandardInput" />
@@ -4690,18 +4696,18 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Имя файла не было указано в свойстве <see cref="P:System.Diagnostics.ProcessStartInfo.FileName" /> параметра <paramref name="startInfo" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> параметра<paramref name="startInfo" /> имеет значение <see langword="true" /> и <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" />, <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" /> или свойство <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" /> также имеет значение <see langword="true" />.  
   
-- или - 
+-или- 
 Свойство <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> параметра <paramref name="startInfo" /> имеет значение <see langword="true" />, и свойство <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> не равно <see langword="null" /> или не является пустым или свойство <see cref="P:System.Diagnostics.ProcessStartInfo.Password" /> не равно <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">Параметр <paramref name="startInfo" /> имеет значение <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Объект процесса уже удален.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Файл, указанный в свойстве <see cref="P:System.Diagnostics.ProcessStartInfo.FileName" /> параметра <paramref name="startInfo" />, не найден.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Возникла ошибка при открытии связанного файла.  
   
-- или - 
-Сумма длины аргументов и длины полного пути к процессу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала" или "Отказано в доступе".</exception>
+-или- 
+Сумма длины аргументов и длины полного пути к процессу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала". или "Отказано в доступе".</exception>
         <exception cref="T:System.PlatformNotSupportedException">Метод не поддерживается в операционных системах без поддержки оболочки, таких как Nano Server (только в .NET Core).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.StartInfo" />
@@ -4852,7 +4858,7 @@ p.WaitForExit();
 > [!NOTE]
 >  Код элемента управления страницы и сервера веб-ASP.NET выполняется в контексте рабочего процесса ASP.NET на веб-сервере.  Если вы используете <xref:System.Diagnostics.Process.Start%2A> выполнения нового процесса метода в веб-страницы ASP.NET или серверный элемент управления, на веб-сервере с ограниченными разрешениями. Процесс не запускается в контексте клиентского браузера и не имеет доступа к рабочему столу пользователя.  
   
- При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство...  
+ При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство. 
   
  Примечание о состояния подразделения в управляемых потоках здесь не требуется. Когда <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> — `true` на компонент обработки <xref:System.Diagnostics.Process.StartInfo%2A> свойство, убедитесь, что установки потоковой модели приложения, задав атрибуту `[STAThread]` на `main()` метод. В противном случае может быть управляемый поток в `unknown` состояние или поместить в `MTA` state, последний который конфликтует с <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> , `true`. Некоторые методы требуют состояние подразделения не `unknown`. Если состояние не задано явно, когда приложение обнаруживает такой метод, по умолчанию `MTA`, а затем состояние подразделения не может быть изменено. Тем не менее `MTA` приводит к возникновению исключения, исключение, когда оболочке операционной системы управляет потоком.  
   
@@ -4870,8 +4876,8 @@ p.WaitForExit();
         <exception cref="T:System.InvalidOperationException">Значение параметра <paramref name="fileName" /> или параметра <paramref name="arguments" /> — <see langword="null" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Возникла ошибка при открытии связанного файла.  
   
-- или - 
-Сумма длины аргументов и длины полного пути к процессу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала" или "Отказано в доступе".</exception>
+-или- 
+Сумма длины аргументов и длины полного пути к процессу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала". или "Отказано в доступе".</exception>
         <exception cref="T:System.ObjectDisposedException">Объект процесса уже удален.</exception>
         <exception cref="T:System.IO.FileNotFoundException">Переменная среды PATH содержит строку с кавычками.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -4906,7 +4912,7 @@ p.WaitForExit();
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4914,10 +4920,10 @@ p.WaitForExit();
         <ReturnType>System.Diagnostics.Process</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="fileName" Type="System.String" />
-        <Parameter Name="userName" Type="System.String" />
-        <Parameter Name="password" Type="System.Security.SecureString" />
-        <Parameter Name="domain" Type="System.String" />
+        <Parameter Name="fileName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="userName" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="password" Type="System.Security.SecureString" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="domain" Type="System.String" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="fileName">Имя файла приложения для запуска в процессе.</param>
@@ -4945,7 +4951,7 @@ p.WaitForExit();
 > [!NOTE]
 >  Имя файла должно предоставлять исполняемый файл в <xref:System.Diagnostics.Process.Start%2A> перегрузок, имеющих `userName`, `password`, и `domain` параметров.  
   
- При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство...  
+ При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство. 
   
    
   
@@ -4988,7 +4994,7 @@ p.WaitForExit();
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4996,11 +5002,11 @@ p.WaitForExit();
         <ReturnType>System.Diagnostics.Process</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="fileName" Type="System.String" />
-        <Parameter Name="arguments" Type="System.String" />
-        <Parameter Name="userName" Type="System.String" />
-        <Parameter Name="password" Type="System.Security.SecureString" />
-        <Parameter Name="domain" Type="System.String" />
+        <Parameter Name="fileName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="arguments" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="userName" Type="System.String" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="password" Type="System.Security.SecureString" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="domain" Type="System.String" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="fileName">Имя файла приложения для запуска в процессе.</param>
@@ -5029,15 +5035,15 @@ p.WaitForExit();
 > [!NOTE]
 >  Имя файла должно предоставлять исполняемый файл в <xref:System.Diagnostics.Process.Start%2A> перегрузок, имеющих `userName`, `password`, и `domain` параметров.  
   
- При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство...  
+ При использовании <xref:System.Diagnostics.Process.Start%2A> для запуска процесса, может потребоваться закрыть его, или существует риск потери системных ресурсов. Закрыть процессы, используя <xref:System.Diagnostics.Process.CloseMainWindow%2A> или <xref:System.Diagnostics.Process.Kill%2A>. Вы можете проверить, был ли процесс уже закрыт, используя его <xref:System.Diagnostics.Process.HasExited%2A> свойство. 
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Не указано имя файла.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">Возникла ошибка при открытии связанного файла.  
   
-- или - 
-Сумма длины аргументов и длины полного пути к соответствующему файлу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала" или "Отказано в доступе".</exception>
+-или- 
+Сумма длины аргументов и длины полного пути к соответствующему файлу превышает 2080. Сообщение об ошибке, связанной с этим исключением, может иметь следующую формулировку: "Область данных, переданная системному вызову, слишком мала". или "Отказано в доступе".</exception>
         <exception cref="T:System.ObjectDisposedException">Объект процесса уже удален.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Метод не поддерживается в Linux или macOS (только в .NET Core).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -5165,10 +5171,10 @@ p.WaitForExit();
         <value>Объект, показывающий время запуска процесса. Если процесс не выполняется, возникает исключение.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.StartTime" /> для процесса, выполняемого на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.StartTime" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.InvalidOperationException">Процесс завершен.  
   
-- или - 
+-или- 
 Процесс не был запущен.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">В вызове функции Windows произошла ошибка.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -5310,7 +5316,7 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.SystemException">Процесс не имеет <see cref="P:System.Diagnostics.Process.Id" />, или нет процесса, связанного с экземпляром <see cref="T:System.Diagnostics.Process" />.  
   
-- или - 
+-или- 
 Связанный процесс завершился.</exception>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me). Задайте для <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> значение <see langword="false" />, чтобы получить доступ к этому свойству в Windows 98 и Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -5361,8 +5367,7 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">
-          <see cref="M:System.Diagnostics.Process.ToString" /> не поддерживается в Windows 98.</exception>
+        <exception cref="T:System.PlatformNotSupportedException"><see cref="M:System.Diagnostics.Process.ToString" /> не поддерживается в Windows 98.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
       </Docs>
     </Member>
@@ -5421,7 +5426,7 @@ p.WaitForExit();
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.TotalProcessorTime" /> для процесса, выполняемого на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.TotalProcessorTime" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
         <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
@@ -5482,7 +5487,7 @@ p.WaitForExit();
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">Используется платформа Windows 98 или Windows Millennium Edition (Windows Me), которая не поддерживает это свойство.</exception>
-        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.UserProcessorTime" /> для процесса, выполняемого на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
+        <exception cref="T:System.NotSupportedException">Вы пытаетесь получить доступ к свойству <see cref="P:System.Diagnostics.Process.UserProcessorTime" /> процесса, выполняющегося на удаленном компьютере. Это свойство доступно только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
         <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
@@ -5522,11 +5527,14 @@ p.WaitForExit();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use VirtualMemorySize64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.VirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessVirtualMemorySize")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.VirtualMemorySize64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -5585,7 +5593,7 @@ p.WaitForExit();
       </ReturnValue>
       <Docs>
         <summary>Возвращает объем виртуальной памяти в байтах, выделенной для связанного процесса.</summary>
-        <value>Объем виртуальной памяти в байтах, выделенной для связанного процесса.</value>
+        <value>Возвращает количество виртуальной памяти в байтах, выделенной для связанного процесса.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5680,10 +5688,10 @@ p.WaitForExit();
         <exception cref="T:System.ComponentModel.Win32Exception">Нет доступа к параметру ожидания.</exception>
         <exception cref="T:System.SystemException">Не задан <see cref="P:System.Diagnostics.Process.Id" /> процесса, и <see cref="P:System.Diagnostics.Process.Handle" />, из которого можно определить свойство <see cref="P:System.Diagnostics.Process.Id" />, не существует.  
   
-- или - 
+-или- 
 С этим объектом <see cref="T:System.Diagnostics.Process" /> никакие процессы не связаны.  
   
-- или - 
+-или- 
 Вы пытаетесь вызвать метод <see cref="M:System.Diagnostics.Process.WaitForExit" /> для процесса, выполняющегося на удаленном компьютере. Этот метод доступен только для процессов, запущенных на локальном компьютере.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
@@ -5757,10 +5765,10 @@ p.WaitForExit();
         <exception cref="T:System.ComponentModel.Win32Exception">Нет доступа к параметру ожидания.</exception>
         <exception cref="T:System.SystemException">Не задан <see cref="P:System.Diagnostics.Process.Id" /> процесса, и <see cref="P:System.Diagnostics.Process.Handle" />, из которого можно определить свойство <see cref="P:System.Diagnostics.Process.Id" />, не существует.  
   
-- или - 
+-или- 
 С этим объектом <see cref="T:System.Diagnostics.Process" /> никакие процессы не связаны.  
   
-- или - 
+-или- 
 Вы пытаетесь вызвать метод <see cref="M:System.Diagnostics.Process.WaitForExit(System.Int32)" /> для процесса, выполняющегося на удаленном компьютере. Этот метод доступен только для процессов, запущенных на локальном компьютере.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="milliseconds" /> является отрицательным числом, отличным от –1, что означает бесконечное время ожидания.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
@@ -5834,13 +5842,13 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Процесс не имеет графического интерфейса.  
   
-- или - 
+-или- 
 Произошла неизвестная ошибка. Процессу не удалось перейти в состояние бездействия.  
   
-- или - 
+-или- 
 Этот процесс уже завершился.  
   
-- или - 
+-или- 
 Нет процессов, связанных с этим объектом <see cref="T:System.Diagnostics.Process" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="M:System.Diagnostics.Process.Start" />
@@ -5875,7 +5883,7 @@ p.WaitForExit();
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="milliseconds" Type="System.Int32" />
+        <Parameter Name="milliseconds" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="milliseconds">Значение от 1 до <see cref="F:System.Int32.MaxValue" />, определяющее количество времени в миллисекундах, в течение которого ожидается переход связанного процесса в состояние простоя. Значение "0" указывает немедленный возврат, а значение "-1" указывает неопределенно долгое ожидание.</param>
@@ -5897,13 +5905,13 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">Процесс не имеет графического интерфейса.  
   
-- или - 
+-или- 
 Произошла неизвестная ошибка. Процессу не удалось перейти в состояние бездействия.  
   
-- или - 
+-или- 
 Этот процесс уже завершился.  
   
-- или - 
+-или- 
 Нет процессов, связанных с этим объектом <see cref="T:System.Diagnostics.Process" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">для полного доверия для непосредственного вызывающего объекта. Этот член не может быть использован частично доверенным кодом.</permission>
         <altmember cref="M:System.Diagnostics.Process.Start" />
@@ -5944,11 +5952,14 @@ p.WaitForExit();
         <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
           <AttributeName>System.Obsolete("Use WorkingSet64")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.WorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Diagnostics.MonitoringDescription("ProcessWorkingSet")</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("This property has been deprecated.  Please use System.Diagnostics.Process.WorkingSet64 instead.  https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -5956,7 +5967,7 @@ p.WaitForExit();
       </ReturnValue>
       <Docs>
         <summary>Возвращает использование физической памяти связанного процесса (в байтах).</summary>
-        <value>Общий объем физической памяти в байтах, используемой связанный процесс.</value>
+        <value>Полное количество физической памяти в байтах, которое использует связанный процесс.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -6,9 +6,9 @@
 |----------------------------|-------------------------------------|  
 |.NET Framework 1.1|[Стандарт Юникод, версия 4.0.0](https://www.unicode.org/versions/Unicode4.0.0/)|  
 |.NET Framework 2.0|[Стандарт Юникод, версия 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
-|.NET Framework 3.5|[Стандарт Юникод, версия 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
+|.NET Framework 3,5|[Стандарт Юникод, версия 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
 |.NET Framework 4|[Стандарт Юникод, версия 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
-|.NET Framework 4.5|[Стандарт Юникод, версия 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  
+|.NET Framework 4,5|[Стандарт Юникод, версия 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  
 |.NET Framework 4.51|[Стандарт Юникод, версия 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  
 |.NET Framework 4.52|[Стандарт Юникод, версия 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  
 |.NET Framework 4.6|[Стандарт Юникод, версия 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  

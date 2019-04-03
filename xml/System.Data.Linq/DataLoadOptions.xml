@@ -1,13 +1,5 @@
 <Type Name="DataLoadOptions" FullName="System.Data.Linq.DataLoadOptions">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="68d7a106a236150ca9a1a8a2a5972fb7ae8eee39" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39833080" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class DataLoadOptions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c519a3ffc7eb35a524e3ede6d2440a5fed491e6f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57919368" /></Metadata><TypeSignature Language="C#" Value="public sealed class DataLoadOptions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataLoadOptions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.Linq.DataLoadOptions" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DataLoadOptions" />
@@ -44,7 +36,7 @@
 ## <a name="cycle-handling"></a>Цикл обработки  
  <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> и <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> директивы не следует создавать циклы. Ниже приводятся примеры таких диаграмм:  
   
--   : Пример 1 рекурсивные  
+-   Пример 1: Собственный рекурсивные  
   
     -   `dlo.LoadWith<Employee>(e => e.Reports);`  
   
@@ -54,7 +46,7 @@
   
     -   `dlo.LoadWith <Order>(o => o.Customer);`  
   
--   Пример 3: Больше циклов  
+-   Пример 3. Больше циклов  
   
      Несмотря на то, что это не должно происходить в хорошо нормированной модели, это возможно.  
   
@@ -64,11 +56,11 @@
   
     -   `dlo.LoadWith <C>(c => c.As);`  
   
--   Пример 4: Self рекурсивных вложенных запросов  
+-   Пример 4. Собственный рекурсивных вложенных запросов  
   
     -   `dlo.AssociateWith<A>(a=>a.As.Where(a=>a.Id=33));`  
   
--   Пример 5: Больше рекурсивной, вложенные запросы  
+-   Пример 5. Больше рекурсивных вложенных запросов  
   
     -   `dlo.AssociateWith<A>(a=>a.Bs.Where(b=>b.Id==3));`  
   
@@ -131,11 +123,11 @@
         <Parameter Name="expression" Type="System.Linq.Expressions.LambdaExpression" />
       </Parameters>
       <Docs>
-        <param name="expression">Определяет запрос, который следует использовать для свойства или поля связи "один ко многим". Следует отметить следующее. 
+        <param name="expression">Определяет запрос, который следует использовать для свойства или поля связи "один ко многим". Обратите внимание на следующее условия: 
 Если выражение не запускается с помощью поля или свойства, представляющих связь "один ко многим", создается исключение.  
   
 Если в выражении отображается оператор, отличный от допустимого оператора, создается исключение. Допустимы следующие операторы: 
-Где 
+Where 
 OrderBy 
 ThenBy 
 OrderByDescending 
@@ -184,17 +176,17 @@ Take</param>
         <typeparam name="T">Запрашиваемый тип.  
   
 Если тип не сопоставляется, создается исключение.</typeparam>
-        <param name="expression">Определяет запрос, который следует использовать для свойства или поля связи "один ко многим". Следует отметить следующее. 
+        <param name="expression">Определяет запрос, который следует использовать для свойства или поля связи "один ко многим". Обратите внимание на следующее условия: 
 Если выражение не запускается с помощью поля или свойства, представляющих связь "один ко многим", создается исключение.  
   
 Если в выражении отображается оператор, отличный от допустимого оператора, создается исключение. Допустимы следующие операторы: 
-Где 
+Where 
 OrderBy 
 ThenBy 
 OrderByDescending 
 ThenByDescending 
 Take</param>
-        <summary>Фильтрует объекты, извлеченные для определенной связи.</summary>
+        <summary>Фильтрует объекты, полученные для определенной связи.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -228,8 +220,8 @@ Take</param>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="memberInfo" Type="System.Reflection.MemberInfo" />
-        <Parameter Name="associationCriteria" Type="System.Linq.Expressions.LambdaExpression" RefType="out" />
+        <Parameter Name="memberInfo" Type="System.Reflection.MemberInfo" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="associationCriteria" Type="System.Linq.Expressions.LambdaExpression" RefType="out" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="memberInfo">To be added.</param>
@@ -254,7 +246,7 @@ Take</param>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="memberInfo" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="memberInfo" Type="System.Reflection.MemberInfo" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="memberInfo">To be added.</param>

@@ -1,13 +1,5 @@
 <Type Name="ServicedComponent" FullName="System.EnterpriseServices.ServicedComponent">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d7ed2d31e426020359bf888e9c66db4b575ea0bf" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48688126" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class ServicedComponent : ContextBoundObject, IDisposable, System.EnterpriseServices.IRemoteDispatch, System.EnterpriseServices.IServicedComponentInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="00e02120d42de1b82158f6fc4417db027d7f4152" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55384294" /></Metadata><TypeSignature Language="C#" Value="public abstract class ServicedComponent : ContextBoundObject, IDisposable, System.EnterpriseServices.IRemoteDispatch, System.EnterpriseServices.IServicedComponentInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable ServicedComponent extends System.ContextBoundObject implements class System.EnterpriseServices.IRemoteDispatch, class System.EnterpriseServices.IServicedComponentInfo, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ServicedComponent" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ServicedComponent&#xA;Inherits ContextBoundObject&#xA;Implements IDisposable, IRemoteDispatch, IServicedComponentInfo" />
@@ -34,8 +26,8 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute>
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -44,7 +36,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- При определенных условиях, класс, производный от <xref:System.EnterpriseServices.ServicedComponent> , выполняется в приложении COM + может перестать отвечать на запросы. Эта проблема связана с возникновением взаимоблокировки действий. Действия могут блокировать многопоточных приложений из-за асинхронной очистки, ссылок на компоненты. Чтобы обойти эту проблему, вызовите <xref:System.EnterpriseServices.ServicedComponent.Dispose%2A> метод при завершении работы с объектами, производный от <xref:System.EnterpriseServices.ServicedComponent>. Дополнительные сведения см. в разделе [ http://support.microsoft.com/default.aspx?scid=kb; en-us; 327443](http://support.microsoft.com/default.aspx?scid=kb;en-us;327443).  
+ При определенных условиях, класс, производный от <xref:System.EnterpriseServices.ServicedComponent> , выполняется в приложении COM + может перестать отвечать на запросы. Эта проблема связана с возникновением взаимоблокировки действий. Действия могут блокировать многопоточных приложений из-за асинхронной очистки, ссылок на компоненты. Чтобы обойти эту проблему, вызовите <xref:System.EnterpriseServices.ServicedComponent.Dispose%2A> метод при завершении работы с объектами, производный от <xref:System.EnterpriseServices.ServicedComponent>.
   
 > [!NOTE]
 >  Клиентский код должен вызвать `Dispose` на обслуживаемом компоненте, чтобы гарантировать правильную работу.  
@@ -268,9 +260,7 @@ regsvcs Calculator.dll
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Переопределить <see cref="M:System.EnterpriseServices.ServicedComponent.Dispose(System.Boolean)" /> метод, чтобы настроить логику dispose для этого класса.</para>
-        </block>
+        <block subset="none" type="overrides"><para>Переопределить <see cref="M:System.EnterpriseServices.ServicedComponent.Dispose(System.Boolean)" /> метод, чтобы настроить логику dispose для этого класса.</para></block>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -306,12 +296,10 @@ regsvcs Calculator.dll
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>Метод 
+        <block subset="none" type="overrides"><para>Метод 
             <see langword="Dispose" /> может вызываться несколько раз другими объектами. При переопределении метода <see langword="Dispose(Boolean)" /> нужно избегать ссылок на объекты, которые были уничтожены предыдущими вызовами метода <see langword="Dispose" />. Дополнительные сведения о том, как реализовать <see langword="Dispose(Boolean)" />, см. в разделе [реализация метода Dispose](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
-Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para>
-        </block>
+Дополнительные сведения о <see langword="Dispose" /> и <see cref="M:System.Object.Finalize" />, см. в разделе [очистки неуправляемых ресурсов](~/docs/standard/garbage-collection/unmanaged.md) и [переопределение метода Finalize](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100)).</para></block>
       </Docs>
     </Member>
     <Member MemberName="DisposeObject">
@@ -364,7 +352,7 @@ regsvcs Calculator.dll
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.EnterpriseServices.AutoComplete(true)</AttributeName>
         </Attribute>
       </Attributes>
@@ -375,17 +363,18 @@ regsvcs Calculator.dll
         <Parameter Name="s" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="s">To be added.</param>
+        <param name="s">Строка, преобразуемая в объект запроса, который реализует интерфейс <see cref="T:System.Runtime.Remoting.Messaging.IMessage" />.</param>
         <summary>Гарантирует, что в контексте COM+ для объекта класса <see cref="T:System.EnterpriseServices.ServicedComponent" /> бит <see langword="done" /> устанавливается в значение <see langword="true" /> после удаленного вызова метода.</summary>
         <returns>Строка, преобразованная из объекта запроса, реализующего интерфейс <see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
+          <format type="text/markdown"><![CDATA[
+
 ## Remarks  
- <xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone%2A> Метод не принадлежит опубликованного интерфейса <xref:System.EnterpriseServices.ServicedComponent> класса и не должны быть реализованы в другом месте.  
-  
- ]]></format>
+<xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone%2A> Метод не принадлежит опубликованного интерфейса <xref:System.EnterpriseServices.ServicedComponent> класса и не должны быть реализованы в другом месте.  
+
+]]></format>
         </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone">
@@ -405,7 +394,7 @@ regsvcs Calculator.dll
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.EnterpriseServices.AutoComplete(false)</AttributeName>
         </Attribute>
       </Attributes>

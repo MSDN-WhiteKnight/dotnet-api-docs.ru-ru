@@ -1,13 +1,5 @@
 <Type Name="ChannelDispatcher" FullName="System.ServiceModel.Dispatcher.ChannelDispatcher">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e6a1d2d62c3ea8da4277e703c9b090f6825caf9b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="ru-RU" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39854926" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ChannelDispatcher : System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="64dc4c5d742c5867797292781de3cf5cf782be73" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="ru-RU" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53294634" /></Metadata><TypeSignature Language="C#" Value="public class ChannelDispatcher : System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelDispatcher extends System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ChannelDispatcher" />
   <TypeSignature Language="VB.NET" Value="Public Class ChannelDispatcher&#xA;Inherits ChannelDispatcherBase" />
@@ -439,7 +431,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Свойство <paramref name="host" /> имеет значение <see langword="null" />.</exception>
-        <exception cref="T:System.InvalidOperationException">Объект связи находится в состоянии <see cref="F:System.ServiceModel.CommunicationState.Opening" /> или <see cref="F:System.ServiceModel.CommunicationState.Opened" />.</exception>
+        <exception cref="T:System.InvalidOperationException">Параметр <paramref name="host" /> не является узлом диспетчера каналов.
+
+-или-
+
+Объект связи находится в состоянии <see cref="F:System.ServiceModel.CommunicationState.Opening" /> или <see cref="F:System.ServiceModel.CommunicationState.Opened" />.</exception>
         <exception cref="T:System.ObjectDisposedException">Объект связи находится в состоянии <see cref="F:System.ServiceModel.CommunicationState.Closing" /> или <see cref="F:System.ServiceModel.CommunicationState.Closed" />.</exception>
         <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">Объект связи находится в состоянии <see cref="F:System.ServiceModel.CommunicationState.Faulted" />.</exception>
       </Docs>
@@ -735,7 +731,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее, добавляет ли диспетчер каналов заголовки адресации в сообщения типа запрос-ответ.</summary>
-        <value>Значение <see langword="true" />, если прокси не добавляет заголовки адресации; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если прокси не добавляет заголовки адресации; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -921,8 +917,7 @@
         <param name="callback">Делегат <see cref="T:System.AsyncCallback" />, принимающий уведомление об асинхронном завершении операции закрытия.</param>
         <param name="state">Задаваемый приложением объект, который содержит сведения о состоянии, связанные с асинхронной операцией закрытия.</param>
         <summary>Начинает асинхронную операцию закрытия прослушивателя канала для диспетчера, которая должна завершиться в течение указанного временного интервала.</summary>
-        <returns>
-          <see cref="T:System.IAsyncResult" />, который ссылается на асинхронную операцию, чтобы закрыть прослушиватель канала для диспетчера.</returns>
+        <returns><see cref="T:System.IAsyncResult" />, который ссылается на асинхронную операцию, чтобы закрыть прослушиватель канала для диспетчера.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -952,8 +947,7 @@
         <param name="callback">Делегат <see cref="T:System.AsyncCallback" />, принимающий уведомление об асинхронном завершении операции открытия.</param>
         <param name="state">Заданный приложением объект, который содержит сведения о состоянии, связанные с асинхронной операцией открытия.</param>
         <summary>Начинает асинхронную операцию открытия прослушивателя канала для диспетчера, которая должна завершиться в течение указанного временного интервала.</summary>
-        <returns>
-          <see cref="T:System.IAsyncResult" />, который ссылается на асинхронную операцию, чтобы открыть прослушиватель канала для диспетчера.</returns>
+        <returns><see cref="T:System.IAsyncResult" />, который ссылается на асинхронную операцию, чтобы открыть прослушиватель канала для диспетчера.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1211,7 +1205,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее, использует ли диспетчер синхронные вызовы для чтения сообщений из каналов.</summary>
-        <value>Значение <see langword="true" />, если диспетчер использует синхронные методы для чтения сообщений из каналов; в противном случае — значение <see langword="false" />. Значение по умолчанию: <see langword="false" />.</value>
+        <value>Значение <see langword="true" />, если диспетчер использует синхронные методы для чтения сообщений из каналов; в противном случае — значение <see langword="false" />. Значение по умолчанию — <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1327,7 +1321,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает уровень изоляции по умолчанию для транзакций.</summary>
-        <value>Одно из значений перечисления <see cref="T:System.Transactions.IsolationLevel" />. Значение по умолчанию: <see cref="F:System.Transactions.IsolationLevel.Unspecified" />.</value>
+        <value>Одно из значений <see cref="T:System.Transactions.IsolationLevel" />. Значение по умолчанию — <see cref="F:System.Transactions.IsolationLevel.Unspecified" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1373,7 +1367,7 @@
       </ReturnValue>
       <Docs>
         <summary>Возвращает или задает значение, указывающее время ожидания по умолчанию для новых транзакций, созданных диспетчером от имени службы.</summary>
-        <value>Значение <see cref="T:System.TimeSpan" />, которое представляет время ожидания по умолчанию для транзакций. Значение по умолчанию: <see cref="F:System.TimeSpan.Zero" />.</value>
+        <value>Значение <see cref="T:System.TimeSpan" />, которое представляет время ожидания по умолчанию для транзакций. Значение по умолчанию — <see cref="F:System.TimeSpan.Zero" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
